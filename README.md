@@ -35,7 +35,7 @@ codex plugin marketplace add https://github.com/junqicheng765-oss/fusion-product
 codex plugin add fusion-product-agent@fusion-product-agent
 ```
 
-仓库为私有，安装和后续更新需要当前Git环境具备该仓库的读取权限。安装后新开Codex聊天，明确选择“融合产品锤”插件或输入：
+仓库公开可见，可直接访问、下载或通过上面的命令安装。安装后新开Codex聊天，明确选择“融合产品锤”插件或输入：
 
 > 使用 $fusion-product-agent。我可能不懂产品和业务领域，请先理解下面的想法与业务目标，主动研究并构建领域需求、系统边界及上下游交接，按本次范围推进。
 
@@ -103,4 +103,4 @@ python3 package/scripts/test_package.py
 
 ## 来源与使用范围
 
-继承强子产品Agent、JQ Product Agent及Peter Matrix-AI的固定本地版本与方法；具体版本、原文保留范围及hash见包内来源说明。版本标识不表示各上游当前最新版本。本仓库作为私有工作副本保存，不宣称取得整个融合包的开放再分发许可，也不附加未经确认的开放许可。
+继承强子产品Agent、JQ Product Agent及Peter Matrix-AI的固定本地版本与方法；具体版本、原文保留范围及hash见包内来源说明。版本标识不表示各上游当前最新版本。仓库公开可见不代表整个融合包获得统一的开放再分发许可；各来源的权利说明继续适用，本仓库不附加未经确认的开放许可。

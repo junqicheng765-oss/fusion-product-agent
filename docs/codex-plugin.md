@@ -9,7 +9,7 @@ codex plugin marketplace add https://github.com/junqicheng765-oss/fusion-product
 codex plugin add fusion-product-agent@fusion-product-agent
 ```
 
-仓库为私有；Git需要已具备该仓库的读取权限。可在Codex的插件界面添加同一仓库作为市场，再安装“融合产品锤”。使用仓库地址，不填写单个JSON的网页地址。
+仓库公开可见，可直接访问和安装。也可在Codex的插件界面添加同一仓库作为市场，再安装“融合产品锤”。使用仓库地址，不填写单个JSON的网页地址。
 
 ## 使用
 
