@@ -1,0 +1,20 @@
+{
+  "name": "fusion-product-agent",
+  "interface": {
+    "displayName": "融合产品锤 · Fusion Product Agent"
+  },
+  "plugins": [
+    {
+      "name": "fusion-product-agent",
+      "source": {
+        "source": "local",
+        "path": "./package"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

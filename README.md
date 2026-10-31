@@ -4,11 +4,12 @@
 
 帮助有业务想法、但缺乏产品与业务领域知识的使用者，将想法推进为有依据的领域需求、产品规则、系统边界、可操作体验及上下游交接。
 
-本仓库与原有 `jq-product-agent` 仓库独立，使用 `fusion-product-agent` 名称。存放本仓库不会更新或替换原锤子；安装器仅向你指定的项目写入，不修改全局模型、Provider或原锤子的插件配置。
+本仓库与原有 `jq-product-agent` 仓库独立，使用 `fusion-product-agent` 名称。Codex插件通过独立市场安装；包内辅助安装器提供项目级Skill或Subagent安装方式。两条安装路径都独立于原锤子。
 
 ## 先看这里
 
 - [完整工作流程：各场景输入、输出及什么时候需要使用者参与](docs/workflow.md)
+- [Codex插件安装、使用及验证边界](docs/codex-plugin.md)
 - [详细使用与安装说明](package/README.md)
 - [主Skill入口](package/skills/fusion-product-agent/SKILL.md)
 - [领域构建与价值路径](package/skills/fusion-product-agent/references/domain-and-value.md)
@@ -23,13 +24,32 @@
 
 GitHub的 **Code → Download ZIP** 会下载整个仓库，包含文档和完整能力包。上面的能力包ZIP仅包含可独立使用的v0.2.0包。
 
-## 最直接的使用方式
+## 作为Codex插件安装（推荐）
+
+本仓库提供独立的Codex插件市场，插件标识为 `fusion-product-agent@fusion-product-agent`，能力包版本为 **0.2.0**。市场入口为 `.agents/plugins/marketplace.json`，指向原有完整 `package/`，能力文件与下载ZIP保持一致。
+
+在本机终端执行：
+
+```sh
+codex plugin marketplace add https://github.com/junqicheng765-oss/fusion-product-agent.git
+codex plugin add fusion-product-agent@fusion-product-agent
+```
+
+仓库为私有，安装和后续更新需要当前Git环境具备该仓库的读取权限。安装后新开Codex聊天，明确选择“融合产品锤”插件或输入：
+
+> 使用 $fusion-product-agent。我可能不懂产品和业务领域，请先理解下面的想法与业务目标，主动研究并构建领域需求、系统边界及上下游交接，按本次范围推进。
+
+插件与原来的 `tc-product-agent@tc-product-agent` 可以共存。每次任务明确选择需要使用的一套。当前聊天不保证热加载；界面列表若未刷新，退出并重新打开应用。
+
+插件安装会由Codex添加相应市场和启用配置，不修改模型、Provider或原插件配置。无需再执行项目级安装器。
+
+## 直接读取或项目级安装
 
 下载或克隆后，在一个新项目聊天中，让Agent读取仓库中的 `package/skills/fusion-product-agent/SKILL.md`，再输入业务需求，例如：
 
 > 请读取融合产品锤的SKILL.md。我可能不懂产品和业务领域，请围绕我的想法与业务目标交互，主动研究并构建领域需求、边界和上下游交接。本次做到开发前，并说明后续如何验证采用与收益。
 
-如需按名称发现，选择下面一种项目级安装方式。
+若不使用上面的插件方式，可选择下面一种项目级安装方式。
 
 ### 方式一：项目级Skill
 
@@ -53,7 +73,7 @@ python3 package/scripts/install.py --project /absolute/path/to/new-project --mod
 
 然后在该项目新开聊天，请主Agent调用项目内的 `fusion-product-agent`。
 
-两种方式互斥。安装器拒绝覆盖已有同名安装，保留既有项目配置，不修改全局设置。首次试用建议选择一个新的项目目录；仓库上传本身不执行安装。
+项目级Skill和Subagent两种方式互斥。安装器拒绝覆盖已有同名安装，保留既有项目配置，不修改全局设置。已经安装Codex插件时直接使用插件，避免额外建立同名入口。
 
 ## 核心工作方式
 
