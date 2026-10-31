@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "note": "Illustrative schema only. Replace with actual project references; rule versions may differ from artifact versions.",
+  "rules": [
+    {"id": "R-01", "version": "1", "status": "confirmed", "source": "产品正文.md", "decision_evidence": "决定记录.md"}
+  ],
+  "artifacts": [
+    {"id": "PRD", "required": true, "status": "done", "path": "产品正文.md", "covers": {"R-01": "1"}},
+    {"id": "DEMO", "required": true, "status": "done", "path": "demo/index.html", "covers": {"R-01": "1"}}
+  ]
+}

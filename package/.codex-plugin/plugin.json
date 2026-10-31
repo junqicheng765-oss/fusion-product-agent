@@ -1,0 +1,18 @@
+{
+  "name": "fusion-product-agent",
+  "version": "0.2.0",
+  "description": "帮助非专家从想法与目标构建领域需求、系统边界、体验及上下游交接。",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "融合产品锤",
+    "shortDescription": "补齐产品与领域知识，构建需求、边界和交接，服务从想法到价值验证。",
+    "longDescription": "独立产品锤试用包，默认使用者缺乏产品和业务领域专家支持，主动研究领域规则、构建边界与交接并持续校准业务目标。保留体验、复杂状态和追溯方法，按授权衔接后续交付、采用与收益验证。",
+    "category": "Productivity",
+    "capabilities": [
+      "Write"
+    ],
+    "defaultPrompt": [
+      "使用融合产品锤，我可能不懂产品和业务领域，请围绕我的想法与目标交互，主动研究并补齐领域需求、边界和交接，按本次范围推进。"
+    ]
+  }
+}
