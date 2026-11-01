@@ -140,5 +140,12 @@
     "inventory": "design-source.json",
     "integration": "Replace previous fusion design runtime, not parallelize; keep domain/product reasoning and unique product baseline. Import full design core plus its auxiliary skill trees.",
     "status": "Distribution version 0.3.0; structural and offline checks passed; real-project design effectiveness remains unverified."
+  },
+  "figma_execution_restoration": {
+    "source": "JQ Product Agent 1.1.5",
+    "inventory": "figma-source.json",
+    "design_judgment": "fusion-design-core",
+    "execution": "fusion-figma-workflow",
+    "scope": "Configuration reuse, authorized target, Figma Agent generation, Computer Use refinement, Dev Mode/MCP reconstruction and copy/interaction verification."
   }
 }

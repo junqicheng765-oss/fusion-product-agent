@@ -37,16 +37,16 @@ description: >-
      4. **在汇报末尾调用提问工具（`request_user_input_async` / `AskQuestion`，不同维度分成独立单选题，最多 3 题）征求用户意见**：
         - **问题 1（视觉风格方向选择 `V0`）**：根据前面的竞品与定位，给出 **2–3 个差异化的整体视觉风格方向**（用大白话讲清各自要传达的意思和视觉手段，首项标 `(Recommended)`），让用户选择；
         - **问题 2（人物头像画风选择 `V5`，当界面包含玩家/用户头像时必问）**：询问用户偏好哪种头像画风——例如 **① 3D 潮玩 / Q 版卡通头像**、**② 国风 / 精致插画头像**、还是 **③ 写实人物头像**（避免未经询问直接生出写实大叔或违和泥人）；
-        - **问题 3（交互方案与交付载体确认）**：确认上述交互方案与设备场景是否合理，以及直接在浏览器预览出高保真可交互组件稿，还是需要同步进 Figma。
+        - **问题 3（交互方案与交付载体确认）**：确认上述交互方案与设备场景是否合理，以及直接在浏览器预览出高保真可交互组件稿，还是先在 Figma 完成设计后还原 Demo。
      5. **🛑 第一轮硬停止点**：发出上述汇报和提问后，**本轮立即停止等待用户回复！在用户选定视觉风格之前，严禁运行 `style_preset.py`、严禁运行 `component_recipe.py`、严禁运行 `iconscout.py`、严禁调 Figma 或写代码！**
 
    - **【第二轮（用户选定风格并确认交互后）：调取风格/组件/IconScout 库落盘 → 写出 `design-decisions.md` → 制作与总监终审】**
      - 收到用户选定的风格方向后，必须依次真实执行：
        1. `python3 scripts/style_preset.py show <用户选定的风格编号>` 与 `color_intelligence.py contrast`、`typography_intelligence.py pick`；
-       2. `python3 scripts/component_recipe.py copy <本页所用全部配方ID> --to <任务目录> --preset <风格编号>`（同时生成 `recipes.css` 与 `theme.css`，完整复用配方实现，禁止只跑 `show` 看一眼就自己手画平涂色块）；
+       2. 仅本地组件代码路线执行 `python3 scripts/component_recipe.py copy <本页所用全部配方ID> --to <任务目录> --preset <风格编号>`（同时生成 `recipes.css` 与 `theme.css`，完整复用配方实现，禁止只跑 `show` 看一眼就自己手画平涂色块）；
        3. `python3 scripts/iconscout.py search -q "<英文关键词>" -a <icon|3d|illustration|lottie> -d <任务目录>/assets`（实际下载素材文件落盘，严禁去 GitHub 乱扒 `SVG-cards` 等老旧剪贴画）；
        4. 凡有角色/用户头像，先用 `iconscout.py` 检索并过 `V5` 第 7 条判断门；库内无匹配同套系头像时，**严格按用户在第一轮选定的头像画风（Q版3D卡通 / 国风插画 / 写实人物）**锁定统一母体风格前缀，调用生图工具成套生成头像图片（`avatar-*.png/jpg` 存入 `<任务目录>/assets`），**严禁用“名字首字圆圈（如 周/林/宁/我）”回退充数！**
-       5. 写出完整的 `<任务目录>/design-decisions.md`，并运行 `python3 scripts/verify_library_usage.py <任务目录> [--require-avatars N] [--require-photos]`，返回 `"passed": true` 后才允许进入工具制作！
+       5. 写出完整的 `<任务目录>/design-decisions.md`；仅本地组件代码路线运行 `python3 scripts/verify_library_usage.py <任务目录> [--require-avatars N] [--require-photos]`，返回 `"passed": true`。Figma 路线把配方结构、主题参数和真实素材引用纳入设计任务包，检查目标组件/变量与素材可访问性，不以本地 CSS 已生成作为 Figma 开工条件。
    - **砍掉 4 项浪费时间的无用功（不要再白跑）**：
      1. **0→1 新项目且无 `.design-memory/index.json` 时，不跑 `asset_memory.py search`**（空库必未命中）；
      2. **0→1 新建的空白 Figma 文件，严禁调用 `figma_search_design_system` / `figma_get_libraries`**（空白文件只会搜出无关的 Material 普通内容卡片，语义完全不适用）；
@@ -122,16 +122,12 @@ description: >-
    - **成熟组件库与通用配方**（[methods-style-engine.md](methods-style-engine.md) `DS3`）：React 项目调 `shadcn/ui`、`Magic UI`、`Ant Design` 等组件库；跨技术栈或 HTML 原型用 `python3 scripts/component_recipe.py` 调取结构配方。
 
 2. **按最终交付物类型走对应的工具与制作工作流（[methods-tool-routing.md](methods-tool-routing.md) + [methods-visual.md](methods-visual.md) `VT` / `V7`）**：
-   - **路线 A｜产出是 UI / 产品界面（最终要接入 `fusion-product-agent` 落地成可交互 Demo 或 Figma 稿）**
-     - **核心铁律（为什么严禁打开 Figma 自带的 `Agents` 面板徒手生图，也严禁用 `use_figma` 裸写 JS 画框）**：
-       - 你内置的组件配方库（`component-recipes/` 的 3D 按钮、扑克牌、铭牌、倒计时环）、风格预设（`style-presets/`）、开源组件库（`shadcn`、`Magic UI`）和 `iconscout.py` 下载的图标，全部在**本地 HTML/CSS/React 环境**中。
-       - Figma 左边栏自带的 `Agents` 聊天框运行在 Figma 云端，**完全读不到你本地的组件库 CSS 和 IconScout 素材**，只会用基础矩形纯徒手画出一堆没有样式的丑方块！
-     - **唯一正确的标准做法（先用本地库做出高保真 HTML 组件页 → 再按需一键转入 Figma）**：
-       1. **第一步（必做，让所有库 100% 生效）**：一律先在本地用 `component_recipe.py copy`（导出 `recipes.css`）+ `style_preset.py`（导出 `theme.css`）+ `iconscout.py` 下载的真实图标/3D + 成套生成的头像/真图，搭出高保真 HTML/前端页面，在内置浏览器（`http://127.0.0.1:<port>`）打开预览，并跑通 `verify_library_usage.py`、`ui_geometry_audit.py`、`style_consistency_audit.py`、`color_intelligence.py`、`a11y_audit.py` 五大脚本。
-       2. **第二步（当用户需要 Figma 设计稿时，用官方转换接口把本地高保真页直接导进 Figma，绝不让 Figma AI 徒手重画）**：
-          - 需要 **Figma 可编辑设计图层（Design Frame）**：直接调用 Figma MCP 的 **`generate_figma_design`**（捕获本地运行的 `127.0.0.1` 页面）或 **`html_to_figma`**（将内联了 CSS 与 base64 图片的 HTML 直接转为 Figma 可编辑图层 Frame）；
-          - 需要 **Figma 可交互代码图层（Code Layer / Make）**：直接调用 Figma MCP 的 **`send_code_to_figma`** 将本地项目导入 Figma。
-          - **严禁通过 Computer Use 去点开 Figma 左边栏的 `Agents` 聊天框让它徒手画页面，也严禁调 `use_figma` 裸写 `SOLID` 平涂矩形！**
+   - **路线 A｜UI / 产品界面**
+     - 先读取同包 [Figma 执行入口](../fusion-figma-workflow/SKILL.md)的初始化部分，复用配置、目标和有效决定。已有本产品 Figma 主稿或已选择 Figma 时，先在指定 Figma 中完成设计，再按同版 Dev Mode / MCP 上下文还原 Demo；竞品参考链接不触发此默认。
+     - 设计专家负责交互、风格、组件/真实素材、提示词和 QA0；Figma 执行模块负责工具配置、文件边界、实际生成/编辑、证据和还原。已有页用 Computer Use 精修；需要生成的新增整页用实际可用的 Figma Agent 后串行精修，不为局部修改强制生成。
+     - 本地配方 CSS、素材路径和代码不会自动传入 Figma Agent。将参数、真实素材及组件映射显式带入任务包，核验实际画布；不能只传风格词，也不能把整屏位图当作可编辑 UI 稿。
+     - 用户明确选择本地代码路线时，复用组件、主题与真实素材制作高保真页面并执行适用脚本。选定 Figma 但工具缺项时引导配置，不静默改成本地页面。
+     - HTML 转 Figma 仅在用户明确选择、实际转换能力可用时采用；核验可编辑图层、组件、素材和版本，不承诺一键转换已实现或已验证。
    - **路线 B｜产出本身是一张图（概念图、插画、角色立绘/头像、局部材质/背景图等纯图片交付）**
      - **标准动作**：**Codex 负责产出结构化提示词（Prompt）+ 准备参考垫图（`reference_image_paths`）→ 直接调用生图工具（`GenerateImage` / Figma `generate_image`）生成图片**。
    - **路线 C｜产出是海报 / 运营图 / Banner / 主视觉 KV（[methods-visual.md](methods-visual.md) `V7 路径 B`）**
@@ -159,9 +155,10 @@ description: >-
    - **零 AI 廉价感检查**：有没有一眼假的 AI 生成图标？有没有红底黑字等低级对比度错误？有没有把 `Photo: / CC BY` 版权字印在界面上？人物头像是不是符合产品文化且同屏统一画风？
 
 3. **三审：组件库/素材库真调核验与工程规范准不准？（`QA0` 维度三 + `VE` 脚本）**
-   - **必跑调库核验脚本（防止“只看不用、自己瞎画”）**：
-     - `python3 scripts/verify_library_usage.py <任务目录> [--require-avatars N] [--require-photos]`（核验 `recipes.css`、`theme.css`、IconScout 真实素材、真实头像图片是否全部落盘，拦截“名字首字当头像”和第三方老旧剪贴画，必须 `"passed": true`！）
-   - 凡产出 HTML/代码界面，交付前还必须运行：
+   - **按制作载体核验真实调库（防止“只看不用、自己瞎画”）**：
+     - 本地组件代码路线运行 `python3 scripts/verify_library_usage.py <任务目录> [--require-avatars N] [--require-photos]`（核验 `recipes.css`、`theme.css`、IconScout 真实素材、真实头像图片是否全部落盘，拦截“名字首字当头像”和第三方老旧剪贴画，必须 `"passed": true`！）
+   - Figma 原生稿核对实际组件实例、Variables / Styles、字体、真实素材及同版截图，记录证据；CSS 文件不作为原生设计稿的门槛。按稿还原复用既有项目组件时，核验真实组件/Token映射，不强造配方 CSS。
+   - 凡产出 HTML/代码界面，交付前还必须运行适用的检查，工具不适配时用等价实测并记录原因，不能把未检查写成通过：
      - `python3 scripts/ui_geometry_audit.py <html文件> --width <宽> --height <高>`（检查对齐、横排条垂直居中、**拦截容器或卡牌行倾斜旋转 `CROOKED_ROTATED_ELEMENT` / `CARD_ROW_NOT_LEVEL`（严禁给 `.played` 或卡牌行加 `transform: rotate(...)` 把牌弄歪）**、图标来源、跨区文字碰撞、首页完备度）；
      - `python3 scripts/color_intelligence.py contrast --css <主题CSS>`（检查实际对比度）；
      - `python3 scripts/style_consistency_audit.py <页面> --preset <预设编号>`（检查 Token 与跨页一致性）；
@@ -194,7 +191,7 @@ description: >-
    - 第一轮必须先完成并向用户汇报 **【① 用户与场景痛点、② 三类竞品调研拆解、③ 任务流程与具体交互控件方案】**，然后在同一次回复末尾用提问工具弹出 **2–3 道独立单选题**：
      - **第 1 题（选定整体视觉风格方向）**：提供 2–3 个适合该产品的差异化视觉风格选项（用大白话讲清各自想表达的感受与视觉手段，首项标 `(Recommended)`），让用户选择；
      - **第 2 题（选定人物头像画风，当界面有玩家/用户头像时必问）**：让用户选择想要 **3D 潮玩/Q 版卡通头像**、**国风/精致插画头像**、还是 **写实人物头像**；
-     - **第 3 题（确认交互方案与交付载体）**：确认设备场景与交互控件方案，以及直接出浏览器高保真组件预览/可交互 Demo 还是需要进 Figma。
+     - **第 3 题（确认交互方案与交付载体）**：确认设备场景与交互控件方案，以及直接出浏览器高保真组件预览/可交互 Demo 还是先在 Figma 完成设计后还原 Demo。
    - **发出提问后立即停止本轮，等用户回复选定视觉风格后，第二轮再跑 `style_preset.py`、`component_recipe.py`、`iconscout.py` 调库制作！**
 2. **其他情况什么时候征求用户意见**：
    - **做海报 / KV 走 AI 生图时**：先搜 2–3 张不同感觉的风格参考图并排给用户看，让用户挑 1 张最想要的感觉拿去垫图；
@@ -205,4 +202,4 @@ description: >-
 
 ## 同包集成说明
 
-本模块沿用作者最新主入口的开工门禁及第三步工具路线；细则中较早的概括不覆盖这两处明确要求。具体工具名称只表示能力目标，实际按宿主可用工具及权限调用，不把文档中的自动安装描述视为全局配置或账号授权。产品主线提供目标、领域规则与约束，设计推导和QA0由本模块负责。
+本模块负责设计研究、交互、风格、素材、提示词和QA0专业判断；工具配置、目标绑定、Figma生成/精修与Dev Mode还原执行同包 [fusion-figma-workflow](../fusion-figma-workflow/SKILL.md)。初始化只读核对可先于视觉选择，实际制作仍遵守有效设计决定。工具名称不是能力或权限证明，不把自动安装描述当成全局配置授权。已有有效选择或委托直接复用，缺少外部工具不静默更换设计主稿。

@@ -9,11 +9,11 @@
 3. Figma 的正式职责是 **UI 设计**。它不是所有设计工作的默认画布。
 4. Figma 可以承载低保真交互稿和动效原型预览，但这两类必须标明用途，不能冒充正式 UI 主稿或最终动效成品。
 5. 按最终交付物类型选定工具链（见 [methods-visual.md](methods-visual.md) `VT`）：
-   - **产出是 UI / 产品界面（最终要做出可交互 Demo 或 Figma 稿）**：**一律先在本地用内置组件库（`component_recipe.py copy` / `shadcn` / `Magic UI`）+ 风格预设（`style_preset.py`）+ `iconscout.py` 真实素材 + 成套头像搭出高保真 HTML/前端页面并在内置浏览器预览跑通全部校验脚本；若需交付 Figma，再调用 `generate_figma_design` / `html_to_figma` / `send_code_to_figma` 将该高保真页面一键转入 Figma。严禁打开 Figma 自带的 `Agents` 面板徒手画丑方块，严禁调 `use_figma` 裸写平涂矩形，也严禁给一张整屏 AI 位图充当 UI！**
+   - **产出是 UI / 产品界面**：先按同包 [Figma 执行入口](../fusion-figma-workflow/SKILL.md)初始化与分流；已有本产品 Figma 主稿或已选 Figma 时，先生成/精修设计主稿，再由同版 Dev Mode / MCP 还原 Demo。已明确选择本地代码时才走本地组件路线。HTML 转 Figma 仅在显式选择且实际可用时采用，不作为默认承诺。设计参数、组件结构和真实素材须按目标载体实际应用并核验，不能用整屏位图充当可编辑 UI。
    - **产出本身是一张图（概念图、插画、角色头像、局部材质图）**：**Codex 产出结构化提示词 + 参考垫图 → 直接调用生图工具**；
    - **产出是海报 / 运营图 / 主视觉 KV**：先定版面结构草图，**去搜索素材（IconScout 3D/插画 + 真实摄影）拼装**，或**搜风格参考图选定感觉后拿「结构草图 + 风格垫图 + 提示词」调用生图工具**。
 6. 正式动效成品调用动效工具或写代码实现；Figma 只能提供已定稿 UI、起止帧、组件状态或预览原型。
-7. 工具不可用时先换能产出同等成品的载体（如 Figma → HTML/代码、IconScout MCP → 内置脚本）；通用素材缺失时获取或生成。只有用户明确指定的交付格式无法产出，或用户方才有的素材缺失时，才标 `BLOCKED/WAIT_EXTERNAL`。任何情况都不得用占位、近似、静态截图或简化替代品冒充交付。
+7. 素材工具可换用等效渠道；用户已选择 Figma 或已有本产品主稿时，缺失执行能力先按同包工作流引导恢复，不自行改成本地独立设计。交付载体变更需要明确决定。未检查、占位或近似产物不冒充正式交付。
 
 ## TR0 先写产物—工具合同
 
@@ -78,7 +78,7 @@ Figma 不是这类产物的默认工具。若只是为了在团队已有文件�
 - 进入 UI 设计时只复用已确认的交互决定，不自动把低保真表现升级成正式主稿。
 - 低保真通过只能证明交互载体符合当前规则，不能证明正式 UI 或行为效果。
 
-## TR3 UI 设计：高保真组件页面与按需 Figma 主稿
+## TR3 UI 设计：按已定路线制作与核验
 
 适用产物：
 
@@ -111,10 +111,10 @@ D7 不是“离开 Figma 去做视觉成品”的固定下一阶段。只有最�
 
 ### Figma 合同与 UI 内原位生图
 
-- 最终载体按 TR0 合同确定；需要 Figma 正式主稿时，记录文件、页面、Frame/组件/变量和准确版本。
+- 已选择 Figma 或已有本产品设计主稿时，以指定文件、页面、Frame/组件/变量和准确版本为主稿；本地路线记录对应代码与预览版本。
 - 先搜索并复用现有设计系统或已绑定的公开组件库；共享扩展或新增必须有所有者授权。
 - 页面、组件、状态、响应式、真实文案和真实资产必须在主稿中对应。
-- 新建界面按本文件核心规则与主入口第三步，先在本地组件页面完成颜色、字体、间距、密度、图标、插画、图片裁切和状态表现；需要 Figma 时转换并核对，不改回 Figma 云端 Agents 重画。
+- Figma 路线在主稿完成颜色、字体、间距、密度、图标、图片裁切及状态；已有页直接精修，新增整页按需生成后精修，再还原 Demo。具体执行、配置及授权见同包 [工作流](../fusion-figma-workflow/SKILL.md)。本地路线沿用组件与素材要求。
 - **IconScout 双通道真实资产调取（优先官方 MCP `https://mcp.iconscout.com/mcp` + 内置 v3 API 脚本自动兜底，覆盖 `icon` / `3d` / `lottie` / `illustration`）**：
   1. **通道 A（MCP 优先）**：先用 `GetDynamicTools` 检查当前宿主是否已连接 `iconscout` MCP（端点：`https://mcp.iconscout.com/mcp`，指南：`https://iconscout.com/mcp`）。若已连接，优先调用 MCP 工具用自然语言按风格与色板检索同系列 Pack，并直接下载 `SVG`、`PNG`、`Lottie JSON`、`GIF` 或 `MP4`。
   2. **未安装时直接安装 + 通道 B（内置 API 脚本兜底）**：若未连接 MCP，Agent 按 [methods-visual.md](methods-visual.md) `V5` 第 6 条直接替用户安装并发起登录（不询问）；新装服务本轮未生效前，先调用预置的 `scripts/iconscout.py`（已内置 `Client-ID: 232598791050530`，文档：`https://api-docs.iconscout.com/#description/credits-and-limits`），按 `V0` 第 6 维选定的风格（`line` / `glyph` / `dualtone` / `flat` / `gradient` / `isometric`）和 `--icon-grid 24` 拉取真实素材导入 Figma 或代码，严禁手画劣质 SVG 占位。

@@ -1,6 +1,6 @@
 {
   "name": "fusion-product-agent",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "帮助非专家从想法与目标构建领域需求、系统边界、体验及上下游交接。",
   "skills": "./skills/",
   "interface": {

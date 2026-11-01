@@ -1,15 +1,16 @@
-# 融合产品锤 0.3.0
+# 融合产品锤 0.3.1
 
-2026-11-01版本。产品领域研究、需求与规则、复杂状态、业务验收和交接沿用融合锤子；设计部分整体替换为同事分支的设计专家模块，不再运行旧设计方法。本版通过融合锤子独立GitHub仓库分发。
+2026-11-01版本。产品领域研究、需求与规则、复杂状态、业务验收和交接沿用融合锤子；设计判断采用同事分支的专家模块；原有Figma执行流程独立随包提供，不再运行旧设计判断方法。本版通过融合锤子独立GitHub仓库分发。
 
 ## 设计由谁负责
 
 - [fusion-product-agent](skills/fusion-product-agent/SKILL.md)：产品主线，提供目标、领域依据、规则、范围与验收预期；接回设计结果，核对业务与版本。
-- [fusion-design-core](skills/fusion-design-core/SKILL.md)：设计主责，负责设计研究、竞品、信息架构、流程/交互、风格、组件/素材、Figma/代码与QA0终审。
+- [fusion-design-core](skills/fusion-design-core/SKILL.md)：设计主责，负责设计研究、竞品、信息架构、流程/交互、风格、组件/素材、提示词与QA0终审。
 - [fusion-design-ui-ux-pro-max](skills/fusion-design-ui-ux-pro-max/SKILL.md)：按设计任务检索UI/UX方法与实现建议。
+- [fusion-figma-workflow](skills/fusion-figma-workflow/SKILL.md)：初始化与复用、工具/文件权限、生成/精修、真实画布证据、Dev Mode到Demo还原及文案/交互复核。
 - [fusion-design-impeccable](skills/fusion-design-impeccable/SKILL.md)：按需制作、审视和精修；服务设计主流程，不另立产品规则或覆盖QA0。
 
-原融合版的设计分层、风格选择办法、Figma优先路线、视觉/交互制作清单已撤换。产品能力模型保留原文，作为产品判断依据；它不与新设计模块争夺设计执行权。详见[替换范围与来源](SOURCE-MAP.md)。
+旧设计判断方法已撤换；原有Figma配置、目标绑定、生成/精修、Dev Mode还原和专项复核由同包执行模块承接。产品能力模型保留原文，作为产品判断依据；它不与新设计模块争夺设计执行权。详见[替换范围与来源](SOURCE-MAP.md)。
 
 ## 当前工作链
 
@@ -17,7 +18,7 @@
 
 0到1设计按同事入口先完成并汇报研究、竞品、流程和具体交互，再原生提问确认风格等事项，随后调组件、主题、字体与真实素材制作。存量延展和按正式稿还原走设计模块对应分流。不是所有任务都重新走0到1。
 
-同事最新版的新建UI路线为本地高保真组件页面优先，需要Figma时再按实际可用能力转换。若用户指定已有Figma主稿或交付格式，按任务合同与相应分流处理，不能暗换路线。Figma云端Agents不是本版新建页面的默认生成路径。
+首次设计先按[执行工作流](skills/fusion-figma-workflow/SKILL.md)读取配置、询问未定路线并绑定用户目标。已有本产品Figma主稿或已选Figma时，先在Figma完成设计；旧页Computer Use精修，新增整页按需Figma Agent生成后精修，核验后由同版Dev Mode / MCP还原Demo。缺工具先恢复，不静默改走本地；明确选本地代码时沿用专业组件与素材。HTML转Figma仅为显式且实际可用的可选分支。
 
 ## 使用与完整安装
 
@@ -30,7 +31,7 @@ python3 scripts/install.py --project /absolute/path/to/project --mode skill --dr
 python3 scripts/install.py --project /absolute/path/to/project --mode skill
 ```
 
-四项Skill完整复制到项目`.agents/skills/`，新会话使用`$fusion-product-agent`。
+五项Skill完整复制到项目`.agents/skills/`，新会话使用`$fusion-product-agent`。
 
 项目级Subagent：
 
@@ -39,11 +40,11 @@ python3 scripts/install.py --project /absolute/path/to/project --mode agent --dr
 python3 scripts/install.py --project /absolute/path/to/project --mode agent
 ```
 
-四份完整资源复制到项目`.codex/resources/`，注册一个产品主Subagent。子Agent按相邻路径读取设计模块，不注册第二套项目Skill，也不自动启动额外Agent。主任务统一向用户提问。
+五份完整资源复制到项目`.codex/resources/`，注册一个产品主Subagent。子Agent按相邻路径读取设计模块，不注册第二套项目Skill，也不自动启动额外Agent。主任务统一向用户提问。
 
 两种安装方式互斥；任一同名资源已存在时拒绝整个安装，不覆盖本地定制；复制中途失败撤回本次资源。安装记录包含所有资源路径与摘要。既有项目配置保持原样，无配置时按原安装器规则写入最小Agent配置；不改全局设置。
 
-包内插件元数据同时指向四项Skill和IconScout MCP声明。项目安装器仅复制规则/资源，不修改宿主MCP配置。首次安装后新会话加载；文件存在不代表运行已验证。
+包内插件元数据同时指向五项Skill和IconScout MCP声明。项目安装器仅复制规则/资源，不修改宿主MCP配置。首次安装后新会话加载；文件存在不代表运行已验证。
 
 ## 工具条件
 
@@ -60,4 +61,4 @@ python3 scripts/test_package.py
 
 校验范围见[验证说明](VALIDATION.md)。安装清单`.codex/fusion-product-agent-install.json`包含`resources`及每份资源的摘要；卸载或升级要检查这些资源是否被本地修改，保留项目产物与定制，不整体删除`.agents`或`.codex`。旧版本仍用旧记录处理。
 
-来源固定为同事分支`6dcc771`；完整文件及适配前后摘要见[设计来源清单](design-source.json)。仅做隔离标识、宿主/父流程接入，以及按作者最新入口澄清两处遗留Figma概括。脚本、组件和素材未删改。来源的既有许可与权利说明继续适用，本版不添加未经确认的统一开放许可。
+专业设计来源固定为同事分支`6dcc771`，见[设计来源清单](design-source.json)；原JQ 1.1.5的Figma执行层及本地适配见[Figma来源清单](figma-source.json)。明确适配了HTML优先、Figma Agent禁令和仅适合本地CSS的门槛，专业方法与QA0继续保留。脚本、组件和素材未删改。来源的既有许可与权利说明继续适用，本版不添加未经确认的统一开放许可。

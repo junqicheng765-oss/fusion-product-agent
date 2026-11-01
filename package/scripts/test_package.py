@@ -34,13 +34,17 @@ def run():
             result = install.install(project, mode)
             target = Path(result['skill_or_resource'])
             assert install.digest_tree(target) == install.digest_tree(ROOT / 'skills/fusion-product-agent')
-            assert len(result['resources']) == 4
+            assert len(result['resources']) == 5
             for name, dest in result['resources'].items():
                 assert install.digest_tree(Path(dest)) == install.digest_tree(ROOT / 'skills' / name)
             assert (target.parent / 'fusion-design-core/component-recipes/registry.json').is_file()
             assert (target.parent / 'fusion-design-ui-ux-pro-max/scripts/search.py').is_file()
             assert (target.parent / 'fusion-design-impeccable/SKILL.md').is_file()
-            checks.append(mode + ': designer methods, scripts and assets installed with relative sibling paths intact')
+            figma = target.parent / 'fusion-figma-workflow'
+            assert len(list(figma.rglob('*.md'))) == 7
+            assert (figma / 'references/design-to-demo.md').is_file()
+            assert (figma / 'references/initialization.md').is_file()
+            checks.append(mode + ': designer resources and complete Figma execution dependency installed with sibling paths intact')
             assert not (project / ('.codex/resources/fusion-product-agent' if mode == 'skill' else '.agents/skills/fusion-product-agent')).exists()
             checks.append(mode + ': copied complete independent rule tree; only selected registration mode')
             before = install.digest_tree(project)
@@ -100,6 +104,19 @@ def run():
                 pass
         assert not install.digest_tree(project), 'failed install left files behind'
         checks.append('failure during multi-Skill installation rolls back copied resources')
+        for mode in ['skill', 'agent']:
+            project = base / ('figma-collision-' + mode)
+            dependency = project / ('.agents/skills' if mode == 'skill' else '.codex/resources') / 'fusion-figma-workflow'
+            dependency.mkdir(parents=True)
+            (dependency / 'custom.txt').write_text('keep local Figma workflow')
+            before = install.digest_tree(project)
+            try:
+                install.install(project, mode)
+                raise AssertionError('existing Figma workflow overwritten')
+            except ValueError:
+                pass
+            assert before == install.digest_tree(project)
+            checks.append(mode + ': Figma dependency collision refuses install without partial writes')
         fixture = base / 'delivery'
         fixture.mkdir()
         (fixture / 'rules.md').write_text('Rule R1 version 2\n')

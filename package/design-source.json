@@ -2,13 +2,13 @@
   "repository": "https://github.com/savvydd/jq-product-agent",
   "branch": "feat/design-handoff-contract",
   "commit": "6dcc771bb7b5d0c5f4d2ca25fc13994af12c73a1",
-  "adaptations": "Isolated Skill names and parent references; remove old D/E wrapper alias; align two inherited blanket Figma statements with latest author HTML-first route; clarify entrypoint precedence and host permissions. No script, component or asset removed. Product-stage wrapper skills are not imported.",
+  "adaptations": "Isolated Skill names and parent references; remove old D/E wrapper alias. Preserve designer methods, style decisions and QA0; route Figma execution to bundled workflow, remove mandatory HTML-first and Figma-Agent bans, scope CSS-only gates to local component code. No script, component or asset removed. Product-stage wrapper skills are not imported.",
   "files": [
     {
       "source": "plugins/tc-product-agent/skills/design-thinking-os/SKILL.md",
       "destination": "skills/fusion-design-core/SKILL.md",
       "source_sha256": "d9f64406baf6b29bc2777891ac23d2094fd7fc32bc6f51569708e471e0f92288",
-      "sha256": "1e0a48383806aaf180d27942fc06e0a20fafda2f27ef2ecb36ab80381919501c",
+      "sha256": "c6d65dfc11538f2350ce67096da434c026c06904038b930a22fce24e08376afc",
       "adapted": true
     },
     {
@@ -876,7 +876,7 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-close.md",
       "destination": "skills/fusion-design-core/methods-close.md",
       "source_sha256": "5a022478c8ae03faa7f1127e28e1e6efe4ef556e07ef6081e79c002c002fe683",
-      "sha256": "9cbd0e8a39e705e7a232eb6385912c8c081475c9f54eb9b9aaf28a72f30474e4",
+      "sha256": "f5d91bee14443e534a03ab0f0b6a9171cd3952a22f67b7dc6ffe2fab94e13f36",
       "adapted": true
     },
     {
@@ -988,21 +988,21 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-tool-routing.md",
       "destination": "skills/fusion-design-core/methods-tool-routing.md",
       "source_sha256": "4738da3fa47aa8a837b0c9fe16c754892e77722a273db2857f0847dbc8e71864",
-      "sha256": "a43ecda27a4fb613371c33d11adf820322d096af0389367f6a11fb05e1487ba5",
+      "sha256": "e6aa41a5daf6121c203dc469403bbd067479fc6ede0a516968ff691faeeb78db",
       "adapted": true
     },
     {
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-ui.md",
       "destination": "skills/fusion-design-core/methods-ui.md",
       "source_sha256": "a439365430b4e07351f6ede017ec08052a866b220fc886d68a5df2ac222f5134",
-      "sha256": "a439365430b4e07351f6ede017ec08052a866b220fc886d68a5df2ac222f5134",
-      "adapted": false
+      "sha256": "14ee8b37155a7dbdb32fc2e2139eea7d0d86eccd8f0617930998e69518438eb2",
+      "adapted": true
     },
     {
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-visual.md",
       "destination": "skills/fusion-design-core/methods-visual.md",
       "source_sha256": "b44611081d536ab13bb32bc57ed54b47c972ac0b9d3080de45900c652e730f53",
-      "sha256": "3176cce9815c86f7dbb2ac38dafb73483f685d4faf3ccdc5291a2429b12ddc47",
+      "sha256": "60841921978d3e930e83b5a016ac6f9b4dae0a82b43723968feebca1bb55bd78",
       "adapted": true
     },
     {

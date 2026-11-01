@@ -1,10 +1,10 @@
 # 融合产品锤 · Fusion Product Agent
 
-**v0.3.0 · 2026-11-01**
+**v0.3.1 · 2026-11-01**
 
 帮助有业务想法、但缺乏产品与领域知识的使用者，完成领域研究、产品规则、范围、专业设计、可操作体验及上下游交接。支持产品领域能力校验；首期可在Codex下运行，也可由具备文件读取能力的Agent按入口使用。
 
-本版设计部分整体采用设计同事的专业模块，产品主线维护业务目标、领域依据、规则与验收预期；设计模块负责信息架构、交互、风格、组件素材、制作及QA0终审。
+本版采用设计同事的专业方法与QA0，同时保留原有Figma执行工作流：初始化并复用配置，在指定Figma生成或精修设计，再按同版Dev Mode / MCP还原Demo。产品主线维护业务目标、领域依据、规则及交接。
 
 ## 安装使用
 
@@ -23,18 +23,18 @@ codex plugin add fusion-product-agent@fusion-product-agent
 
 ## 完整能力包与工作方式
 
-- [v0.3.0完整能力包](downloads/fusion-product-agent-v0.3.0.zip) · [SHA-256](downloads/fusion-product-agent-v0.3.0.zip.sha256)
-- [详细使用、四项Skill与项目级Skill/Subagent安装](package/README.md)
+- [v0.3.1完整能力包](downloads/fusion-product-agent-v0.3.1.zip) · [SHA-256](downloads/fusion-product-agent-v0.3.1.zip.sha256)
+- [详细使用、五项Skill与项目级Skill/Subagent安装](package/README.md)
 - [完整工作流程](docs/workflow.md)
-- [产品主入口](package/skills/fusion-product-agent/SKILL.md) · [设计专家入口](package/skills/fusion-design-core/SKILL.md)
+- [产品主入口](package/skills/fusion-product-agent/SKILL.md) · [设计专家入口](package/skills/fusion-design-core/SKILL.md) · [Figma执行入口](package/skills/fusion-figma-workflow/SKILL.md)
 - [设计替换范围及固定来源](package/SOURCE-MAP.md) · [版本记录](CHANGELOG.md)
 - [检查结果与能力边界](package/VALIDATION.md)
 
 产品输入 → 设计专家判断切入点 → 研究/流程/交互 → 风格确认 → 组件与素材制作 → QA0及实际验证 → 产品核对业务与版本 → 下游交接。存量延展、已有稿还原和从0到1按设计专家规则分流。
 
-新建UI采用本地高保真组件页面，按需通过实际可用能力转换进Figma；已有正式主稿还原按相应分流。用户指定交付格式、编辑位置和保护范围必须遵守。
+已有本产品Figma主稿或已选Figma时，先在指定Figma完成设计：旧页Computer Use精修，新整页按需Figma Agent生成后精修，再由Dev Mode / MCP还原Demo。明确选择本地代码时才走本地组件路线；HTML转Figma为实际可用且显式选择的可选分支。
 
-包内包含设计主模块、UI/UX Pro Max、Impeccable及完整资源。方法和资源不附带Figma、素材、生图或浏览器账号与权限，需检查宿主实际能力和授权。
+包内包含设计主模块、UI/UX Pro Max、Impeccable、Figma执行工作流及完整资源。方法和资源不附带Figma、素材、生图或浏览器账号与权限，需检查宿主实际能力和授权。
 
 ## 验证
 

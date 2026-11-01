@@ -8,7 +8,7 @@
 
 同一工作包可有多项证据，必须分别记录结果。不要把“做实验”强加给直接制作，也不要用“已按稿”冒充方案有效。
 
-工具产物按 [methods-tool-routing.md](methods-tool-routing.md) 分开验收：`LOW_FIDELITY_INTERACTION` 不能通过正式 UI 验收；界面视觉以本轮已确认的交付载体及准确版本为准；需要 Figma 主稿时按最新工具路线从高保真组件页面转换并核对，按已有正式稿还原时仍以该稿为依据；非界面视觉成品按独立视觉合同验收；`FIGMA_MOTION_PREVIEW` 不能通过正式动效成品和性能验收。
+工具产物按 [methods-tool-routing.md](methods-tool-routing.md) 分开验收：`LOW_FIDELITY_INTERACTION` 不能通过正式 UI 验收；Figma 路线的界面视觉以当前有效 Figma UI 主稿为准，经同包执行工作流完成设计后还原 Demo；本地路线以已明确选择的代码与预览版本为准；非界面视觉成品按独立视觉合同验收；`FIGMA_MOTION_PREVIEW` 不能通过正式动效成品和性能验收。
 
 ## 0. QA0 交付前三大维度综合验收与回炉修改闭环（用户可用性 × 审美与品位 × 设计标准）
 
@@ -81,9 +81,10 @@ Agent 必须同时从 **「一、用户可用性审查（好不好用）」**、
   - 所有横排条强制 `align-items: center`；图标按钮里放成品 SVG 文件且光学居中（不用 `<` `>` 等文本字符）；
   - **凡产出 HTML/Web 界面，交付前必须运行 `python3 scripts/ui_geometry_audit.py <html文件> --width <目标宽> --height <目标高> --expect <区>=<九宫格位置> ...`**，且每个顶层功能区已按 `U3` 标 `data-zone`，`--expect` 逐区写入 `design-decisions.md` 第 2 块的位置。消费级主屏加 `--consumer`；首页再加 `--page-type home`；第 2 块写了视觉主角面积的加 `--hero <区>=<百分比>`。报 `HOME_IS_ONE_OBJECT`（首页看不出产品会给出什么）或 `LICENSE_ON_SCREEN`（授权句画在界面上）也是 FAIL。脚本优先用 Playwright 按目标尺寸实测；实测尺寸和目标不同会报 `VIEWPORT_MISMATCH`，区的位置和第 2 块不同会报 `ZONE_POSITION_MISMATCH`，区内内容压到别的区会报 `ZONE_CONTENT_INTRUSION`，主角区比写下的面积小会报 `HERO_AREA_SHORT`，第一屏是输入框而最大的图不足屏幕 40% 会报 `FORM_SCREEN`，都算 `FAIL`。脚本自动实测 DOM `getBoundingClientRect()`，若报出 `ZONE_MARKUP_MISSING`（没标功能区，无法检查分区碰撞）、`ICON_RAW_TEXT_GLYPH`（字符冒充图标）、`ICON_INLINE_HAND_DRAWN`（按钮里是手写 SVG 路径）、`ICON_CHILD_OFF_CENTER`（图标未居中）、`HEADER_VERTICAL_MISALIGNMENT`（横排条未垂直居中）、`ZONE_BOUNDING_BOX_COLLISION`（功能区重叠打架）、`FORM_SCREEN`、`HERO_AREA_SHORT` 或 `BANNED_HAND_DRAWN_SVG_AVATAR`（代码手画人脸），一律判定为 `FAIL` 并回炉，直到脚本 `"passed": true`。`FORM_SCREEN` 和 `HERO_AREA_SHORT` 同时算维度二第 5 项不过，退回画面级配方和视觉主角，不许只改颜色。几何对齐过了、色值过了，灰条测试和并排对比仍要做。若报 `AVATAR_CULTURAL_FIT_CHECK`（`WARN`），说明用了素材库 3D 人物头像：读图确认画风与产品文化一致、同屏同一套系即可保留，否则转 AI 同母体成套生图。3D 图标、道具、徽章不在此检查范围内。
 - [ ] **2. 风格参数字典与排版规范**：实际 Hex 色值、圆角/切角阶梯、阴影/毛玻璃/金属石材边框参数、字族与字阶严格匹配 `V0` 所选风格编号（`INT-01..08` / `CN-01..08` / `GAME-01..10` / 公开组件库）或 `style-presets/` 里所选预设的参数包；颜色必须是产品级语义色（背景、文字、按钮、边框、状态、亮暗），对比度跑过 `python3 scripts/color_intelligence.py contrast --css <页面引入的主题 CSS>`（页面实际用的颜色；预设本身不达标时，把按钮底在同一色相加深，直到浅色字达到 4.5:1。报「主按钮深字贴在高饱和底上」就是不过，不要改成黑字。黄、柠檬这类浅色实心才用深色字。）；token 只在一处定义，页面里没有新的写死色值和圆角；**多页面交付必须运行 `python3 scripts/style_consistency_audit.py <所有页面> --preset <预设>`**，报出 `OFF_TOKEN_COLOR`（色板外颜色）、`OFF_SCALE_RADIUS`（阶梯外圆角）、`OFF_TOKEN_FONT`（字体栈外字体）或 `CROSS_PAGE_DRIFT`（同类组件跨页不一致）一律 `FAIL`，按 [methods-style-engine.md](methods-style-engine.md) `DS4` 收口后重跑，直到 `"passed": true`；使用字体原生字重（无描边假加粗）、多行行高只增不减、金额与核心数据使用等宽数字（`DIN` / `tabular-nums`）。
-- [ ] **3. 组件库/素材库真调核验与图标资产标准（强制运行 `scripts/verify_library_usage.py`）**：
-  - **严禁把“知道这些库怎么用 / 跑了 `show` 查阅”当成实际调库！** 交付前必须运行 `python3 scripts/verify_library_usage.py <任务目录> [--require-avatars N] [--require-photos]` 且返回 `"passed": true`：
-    - 已通过 `component_recipe.py copy` 和 `style_preset.py export` 实际落盘 `recipes.css` 与 `theme.css`，并完整复用配方实现（严禁只看结构却用 `use_figma` 手画平涂色块）；
+- [ ] **3. 组件库/素材库真调核验与图标资产标准（按实际制作载体检查）**：
+  - Figma 原生稿以实际组件实例、变量/样式、字体、真实素材、截图与版本为证据，不要求先生成 recipes.css/theme.css；按稿还原复用项目组件时核对组件/Token映射。缺少适用实测证据不能判通过。
+  - **严禁把“知道这些库怎么用 / 跑了 `show` 查阅”当成实际调库！** 本地组件代码路线交付前必须运行 `python3 scripts/verify_library_usage.py <任务目录> [--require-avatars N] [--require-photos]` 且返回 `"passed": true`：
+    - 仅本地组件代码路线：已通过 `component_recipe.py copy` 和 `style_preset.py export` 实际落盘 `recipes.css` 与 `theme.css`，并完整复用配方实现（严禁只看结构却用 `use_figma` 手画平涂色块）；
     - 已实际执行 `iconscout.py search` 下载图标/3D/插画素材落盘（严禁去 GitHub 乱扒 `SVG-cards` 等老旧剪贴画）；
     - 凡有玩家/用户席位头像，必须有真实头像图片文件（`avatar*.png/jpg`），**严禁用“名字首字圆圈（如 周/林/宁/我）”回退冒充高保真头像**；
   - 全套工具图标的描边粗细、圆角/尖角、透视视角三统一且像素对齐无毛边；返回、设置、关闭等功能图标是 IconScout 或图标库的成品文件，不是手写 `<path>`。用户认得的对象按 `U7` 用它自己的视觉惯例表现，没有用名称文字代替，最小尺寸下同类仍能区分。材质语言覆盖每个组件：全屏最弱的元素也达到所选风格的工艺。所有图片、Logo、字体授权与版本清晰，真实摄影能指到作者和许可证，零占位符、零乱码假文字。

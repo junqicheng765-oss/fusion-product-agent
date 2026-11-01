@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import re
 import subprocess
+from design_execution_adapter import adapt_execution
 
 COMMIT = '6dcc771bb7b5d0c5f4d2ca25fc13994af12c73a1'
 MAPPING = {'design-thinking-os': 'fusion-design-core', 'impeccable': 'fusion-design-impeccable', 'ui-ux-pro-max': 'fusion-design-ui-ux-pro-max'}
@@ -26,16 +27,9 @@ def adapt(data, suffix, filename):
     text = text.replace('通过 tc-product-agent 插件', '通过 fusion-product-agent 插件')
     text = text.replace('## JQ Product Agent integration', '## Fusion Product Agent integration')
     text = text.replace('invokes this bundled Skill in D/E', 'invokes this bundled Skill for design work')
-    # Align two inherited blanket Figma statements with the author's latest HTML-first route.
-    if filename == 'methods-close.md':
-        text = text.replace('全部界面视觉以 Figma UI 主稿为准', '界面视觉以本轮已确认的交付载体及准确版本为准；需要 Figma 主稿时按最新工具路线从高保真组件页面转换并核对，按已有正式稿还原时仍以该稿为依据')
-    if filename == 'methods-tool-routing.md':
-        text = text.replace('## TR3 UI 设计：Figma 正式主稿', '## TR3 UI 设计：高保真组件页面与按需 Figma 主稿')
-        text = text.replace('进入 Figma UI 前先按', '进入 UI 制作前先按')
-        text = text.replace('- 正式 UI 以 Figma 文件、页面、Frame/组件/变量和准确版本为主稿。', '- 最终载体按 TR0 合同确定；需要 Figma 正式主稿时，记录文件、页面、Frame/组件/变量和准确版本。')
-        text = text.replace('- 所有界面视觉在 Figma 完成，包括颜色、字体、间距、密度、图标、插画、图片裁切和状态表现。', '- 新建界面按本文件核心规则与主入口第三步，先在本地组件页面完成颜色、字体、间距、密度、图标、插画、图片裁切和状态表现；需要 Figma 时转换并核对，不改回 Figma 云端 Agents 重画。')
+    text = adapt_execution(text, filename)
     if filename == 'SKILL.md' and 'name: fusion-design-core\n' in text:
-        text += '\n\n## 同包集成说明\n\n本模块沿用作者最新主入口的开工门禁及第三步工具路线；细则中较早的概括不覆盖这两处明确要求。具体工具名称只表示能力目标，实际按宿主可用工具及权限调用，不把文档中的自动安装描述视为全局配置或账号授权。产品主线提供目标、领域规则与约束，设计推导和QA0由本模块负责。\n'
+        text += '\n\n## 同包集成说明\n\n本模块负责设计研究、交互、风格、素材、提示词和QA0专业判断；工具配置、目标绑定、Figma生成/精修与Dev Mode还原执行同包 [fusion-figma-workflow](../fusion-figma-workflow/SKILL.md)。初始化只读核对可先于视觉选择，实际制作仍遵守有效设计决定。工具名称不是能力或权限证明，不把自动安装描述当成全局配置授权。已有有效选择或委托直接复用，缺少外部工具不静默更换设计主稿。\n'
     return text.encode('utf-8')
 
 
@@ -55,7 +49,7 @@ def main():
             dest.parent.mkdir(parents=True, exist_ok=True)
             dest.write_bytes(converted)
             files.append({'source': source, 'destination': rel.as_posix(), 'source_sha256': hashlib.sha256(raw).hexdigest(), 'sha256': hashlib.sha256(converted).hexdigest(), 'adapted': converted != raw})
-    (ROOT / 'package/design-source.json').write_text(json.dumps({'repository': 'https://github.com/savvydd/jq-product-agent', 'branch': 'feat/design-handoff-contract', 'commit': COMMIT, 'adaptations': 'Isolated Skill names and parent references; remove old D/E wrapper alias; align two inherited blanket Figma statements with latest author HTML-first route; clarify entrypoint precedence and host permissions. No script, component or asset removed. Product-stage wrapper skills are not imported.', 'files': files}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    (ROOT / 'package/design-source.json').write_text(json.dumps({'repository': 'https://github.com/savvydd/jq-product-agent', 'branch': 'feat/design-handoff-contract', 'commit': COMMIT, 'adaptations': 'Isolated Skill names and parent references; remove old D/E wrapper alias. Preserve designer methods, style decisions and QA0; route Figma execution to bundled workflow, remove mandatory HTML-first and Figma-Agent bans, scope CSS-only gates to local component code. No script, component or asset removed. Product-stage wrapper skills are not imported.', 'files': files}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({'imported': len(files), 'adapted': sum(f['adapted'] for f in files), 'commit': COMMIT}))
 
 

@@ -1,7 +1,7 @@
 # UI 方法库
 
 UI 方法只解决已知职责内的信息表达与操作表现，不能替代未解决的流程或交互决定。
-正式 UI 方案按 [methods-tool-routing.md](methods-tool-routing.md) `TR3` 和 [methods-visual.md](methods-visual.md) `VT` 分需求：要画面的在 Figma 里先出方向再拼装；只换文案、灰框、B 端、写明不验观感的，用 HTML/代码，并先用画面级配方。并与 D7 界面视觉方法组成同一 UI 分支；不要求 UI 完成后再固定进入一个独立视觉阶段。
+正式 UI 方案按 [methods-tool-routing.md](methods-tool-routing.md) `TR3` 与 [methods-visual.md](methods-visual.md) `VT` 分流。制作载体由同包 [Figma执行工作流](../fusion-figma-workflow/SKILL.md)恢复或收集：已有本产品Figma主稿或已选Figma时，先在Figma设计、精修，再还原Demo；B端或只换文案也不自动改变此路线。明确选择本地代码时复用组件与配方。UI与界面视觉组成同一分支，不固定另开视觉阶段。
 
 ## U0 UI 落地前置分流（存量延展 / 纯 B 端公开库快搭 / C 端 0→1 视觉决策）
 

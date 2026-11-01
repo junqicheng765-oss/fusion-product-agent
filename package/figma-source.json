@@ -1,0 +1,63 @@
+{
+  "source": "JQ Product Agent 1.1.5",
+  "repository": "https://github.com/junqicheng765-oss/jq-product-agent",
+  "adaptations": "Restore execution, configuration reuse, task/preflight, generation, Computer Use, Dev Mode reconstruction and copy/interaction review. Relink all dependencies within this package; design judgment and QA0 belong to designer core, product facts to fusion product entry; no legacy product-stage wrappers imported.",
+  "files": [
+    {
+      "source": "skills/jq-figma-workflow/SKILL.md",
+      "destination": "skills/fusion-figma-workflow/SKILL.md",
+      "source_sha256": "7489045df0d6ed26e43e585291f312b5ae607c595160e99921c8464cbde4f9e6",
+      "sha256": "ab46dc27513110c7f2564bef6c51ef0a2fa304db8b5e108b77a123fbf0dd9f2a",
+      "adapted": true,
+      "excerpt": false
+    },
+    {
+      "source": "skills/jq-figma-workflow/references/figma-execution.md",
+      "destination": "skills/fusion-figma-workflow/references/figma-execution.md",
+      "source_sha256": "1cbea9aff8e451f187195f153954dffaa2a9d674927f02756279016d09e63449",
+      "sha256": "1c7aa678a72b1fa92d8b976e4f87c9c126d0ea0a0cc6d60626d6504669267925",
+      "adapted": true,
+      "excerpt": false
+    },
+    {
+      "source": "skills/jq-figma-workflow/references/design-to-demo.md",
+      "destination": "skills/fusion-figma-workflow/references/design-to-demo.md",
+      "source_sha256": "b82d8b0a09f5aaa27d6c963dc280e0898e1c3468c7f02ccb4aa31666e88c1f2e",
+      "sha256": "3b192b599f700117d553dc8230d4444ab3c92902ef7bbfe6e01844daf69d0a38",
+      "adapted": true,
+      "excerpt": false
+    },
+    {
+      "source": "skills/tc-product-agent/references/26-设计能力初始化与复用.md",
+      "destination": "skills/fusion-figma-workflow/references/initialization.md",
+      "source_sha256": "e883411cb983bd411bf2cc4647a261256569e0c3a6120d47245391901c1fd76e",
+      "sha256": "6a137ca0898cfa31a13f9b1760d33ac7a058b1e4ccc43e2caabc0d5ec3894b6f",
+      "adapted": true,
+      "excerpt": false
+    },
+    {
+      "source": "skills/tc-product-agent/references/18-Figma执行前核对卡.md",
+      "destination": "skills/fusion-figma-workflow/references/preflight.md",
+      "source_sha256": "982624bca11a58a131358312b4e7f2709c3ebacb17085958be6b0a5b5a1276a3",
+      "sha256": "cb055ff14aee4b64c2ed9d811715e073f9fb5298ec625659f044ddaf40a6b557",
+      "adapted": true,
+      "excerpt": false
+    },
+    {
+      "source": "skills/tc-product-agent/references/15-设计交付与Figma回传规范.md",
+      "destination": "skills/fusion-figma-workflow/references/task-package.md",
+      "source_sha256": "b83ee12f94eec0e37dcc663d37abcf2954be0e760e3f80a2d39863315692d7ee",
+      "sha256": "4e2fc4987700b6164eb3cb577ef3fe6fb5de973f380bcd87a62e00fde49c2146",
+      "adapted": true,
+      "excerpt": true
+    },
+    {
+      "source": "skills/tc-product-agent/references/24-Demo文案与交互复核.md",
+      "destination": "skills/fusion-figma-workflow/references/demo-review.md",
+      "source_sha256": "7e0f27da82c85e21076552f085661a68825790c5b78dafb9a5cd9cb0678f09b0",
+      "sha256": "21787cb225a311168b05623c1bed27f1234052ad51ec9d8b9c1e7d0c8efecfff",
+      "adapted": true,
+      "excerpt": false
+    }
+  ]
+}

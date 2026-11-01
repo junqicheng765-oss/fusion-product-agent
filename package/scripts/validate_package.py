@@ -23,9 +23,10 @@ def validate():
     if not entry.startswith('---\nname: fusion-product-agent\n'):
         errors.append('main Skill frontmatter/name invalid')
     skills = list((ROOT / 'skills').glob('*/SKILL.md'))
-    expected_skills = {'fusion-product-agent', 'fusion-design-core', 'fusion-design-impeccable', 'fusion-design-ui-ux-pro-max'}
+    design_skills = {'fusion-design-core', 'fusion-design-impeccable', 'fusion-design-ui-ux-pro-max'}
+    expected_skills = design_skills | {'fusion-product-agent', 'fusion-figma-workflow'}
     if {p.parent.name for p in skills} != expected_skills:
-        errors.append('expected product entry and three bundled design Skills')
+        errors.append('expected product entry, three design Skills and bundled Figma execution Skill')
     for p in skills:
         if not p.read_text(encoding='utf-8').startswith('---\nname: ' + p.parent.name + '\n'):
             errors.append('Skill frontmatter/name invalid: ' + p.parent.name)
@@ -46,9 +47,14 @@ def validate():
     provenance = json.loads((ROOT / 'provenance.json').read_text(encoding='utf-8'))
     design = json.loads((ROOT / 'design-source.json').read_text(encoding='utf-8'))
     expected_design = {f['destination']: f['sha256'] for f in design['files']}
-    actual_design = {k: v for k, v in actual.items() if any(k.startswith('skills/' + n + '/') for n in expected_skills - {'fusion-product-agent'})}
+    actual_design = {k: v for k, v in actual.items() if any(k.startswith('skills/' + n + '/') for n in design_skills)}
     if expected_design != actual_design:
         errors.append('designer source adaptation inventory differs')
+    figma = json.loads((ROOT / 'figma-source.json').read_text(encoding='utf-8'))
+    expected_figma = {f['destination']: f['sha256'] for f in figma['files']}
+    actual_figma = {k: v for k, v in actual.items() if k.startswith('skills/fusion-figma-workflow/')}
+    if expected_figma != actual_figma:
+        errors.append('Figma execution source adaptation inventory differs')
     for rel, expected in provenance['bundled_knowledge']['files'].items():
         p = ROOT / rel
         if not p.is_file() or hashlib.sha256(p.read_bytes()).hexdigest() != expected:
