@@ -1,0 +1,114 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dto-game-07-game-tactical",
+  "type": "registry:theme",
+  "title": "GAME-07 斜切战术面板轻机能二次元风",
+  "cssVars": {
+    "theme": {
+      "font-sans": "Rajdhani, \"HarmonyOS Sans\", \"PingFang SC\", sans-serif",
+      "radius": "0.125rem",
+      "font-mono": "\"JetBrains Mono\", monospace"
+    },
+    "light": {
+      "background": "#121316",
+      "foreground": "#FFFFFF",
+      "card": "#181A20",
+      "card-foreground": "#FFFFFF",
+      "popover": "#181A20",
+      "popover-foreground": "#FFFFFF",
+      "primary": "#FFE600",
+      "primary-foreground": "#121316",
+      "secondary": "#121316",
+      "secondary-foreground": "#FFFFFF",
+      "muted": "#121316",
+      "muted-foreground": "#9AA4B2",
+      "accent": "#121316",
+      "accent-foreground": "#FFFFFF",
+      "destructive": "#E70B0B",
+      "destructive-foreground": "#FFFFFF",
+      "border": "rgba(255,255,255,0.15)",
+      "input": "rgba(255,255,255,0.15)",
+      "ring": "#FFE600"
+    },
+    "dark": {
+      "background": "#121316",
+      "foreground": "#FFFFFF",
+      "card": "#181A20",
+      "card-foreground": "#FFFFFF",
+      "popover": "#181A20",
+      "popover-foreground": "#FFFFFF",
+      "primary": "#FFE600",
+      "primary-foreground": "#121316",
+      "secondary": "#121316",
+      "secondary-foreground": "#FFFFFF",
+      "muted": "#121316",
+      "muted-foreground": "#9AA4B2",
+      "accent": "#121316",
+      "accent-foreground": "#FFFFFF",
+      "destructive": "#E70B0B",
+      "destructive-foreground": "#FFFFFF",
+      "border": "rgba(255,255,255,0.15)",
+      "input": "rgba(255,255,255,0.15)",
+      "ring": "#FFE600"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "GAME-07",
+      "tier": "theme",
+      "displayName": "斜切战术面板轻机能二次元风",
+      "modes": [
+        "dark"
+      ],
+      "palette": {
+        "bg": "#121316",
+        "card": "#181A20",
+        "text": [
+          "#FFFFFF",
+          "#9AA4B2",
+          "#6B7380"
+        ],
+        "primary": "#FFE600",
+        "extra": [
+          "#00D2FF",
+          "#FF6B00",
+          "#ECEFF4"
+        ],
+        "extraSource": "methods-visual.md 参数字典同一行里写到、原预设漏收的颜色"
+      },
+      "radiusScale": {
+        "card": 2,
+        "control": 2
+      },
+      "border": {
+        "color": "rgba(255,255,255,0.15)",
+        "width": "1px"
+      },
+      "shadow": "",
+      "blur": "",
+      "typeScale": "几何无衬线 700 + 8px 英文编号",
+      "spacing": "",
+      "family": [
+        "futuristic",
+        "game"
+      ],
+      "derived": [
+        "secondary",
+        "muted",
+        "accent",
+        "input",
+        "ring",
+        "popover",
+        "destructive"
+      ],
+      "source": "methods-visual.md V0 参数字典（本 Skill 内置）",
+      "installables": {
+        "tweakcnNearest": [
+          "bold-tech"
+        ],
+        "system": ""
+      },
+      "clip": "单侧 45° 斜切角"
+    }
+  }
+}

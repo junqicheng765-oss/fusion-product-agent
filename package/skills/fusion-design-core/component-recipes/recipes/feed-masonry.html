@@ -1,0 +1,29 @@
+<!-- recipe
+{
+  "id": "feed-masonry",
+  "name": "双列瀑布流",
+  "tags": ["content", "mobile-consumer"],
+  "source": "按小红书、Pinterest 双列瀑布流做法整理，用 CSS columns，不依赖脚本",
+  "license": "MIT",
+  "states": ["默认", "加载更多（配 skeleton）"],
+  "use": "灵感、攻略、UGC 类信息流；图片比例混排 3:4 / 1:1 / 4:5 制造节奏",
+  "dont": "需要严格顺序阅读的列表（如行程按天）不要用瀑布流",
+  "icons": [],
+  "requires": ["photo-card"]
+}
+-->
+<style>
+.r-masonry { columns: 2; column-gap: 10px; padding: 0 var(--r-gap-3); }
+.r-masonry > * { break-inside: avoid; margin-bottom: 18px; }
+.r-masonry .r-photo__img[data-ratio="1"] { aspect-ratio: 1; }
+.r-masonry .r-photo__img[data-ratio="4/5"] { aspect-ratio: 4 / 5; }
+.r-masonry .r-photo__img[data-ratio="2/3"] { aspect-ratio: 2 / 3; }
+</style>
+<!-- demo -->
+<div class="r-masonry" style="max-width:390px">
+  <a class="r-photo" href="#"><img class="r-photo__img" data-ratio="2/3" src="preview-assets/photo-1080.jpg" alt="草莓与早餐"><span class="r-photo__title">北京胡同早餐，豆汁要不要试？</span><span class="r-photo__meta">Lena · 3.2k</span></a>
+  <a class="r-photo" href="#"><img class="r-photo__img" data-ratio="1" src="preview-assets/photo-164.jpg" alt="城市街道"><span class="r-photo__title">地铁换乘只要记住这一条</span><span class="r-photo__meta">Marco · 860</span></a>
+  <a class="r-photo" href="#"><img class="r-photo__img" data-ratio="4/5" src="preview-assets/photo-1040.jpg" alt="古建筑"><span class="r-photo__title">平遥古城住一晚值不值</span><span class="r-photo__meta">Yuki · 1.4k</span></a>
+  <a class="r-photo" href="#"><img class="r-photo__img" data-ratio="2/3" src="preview-assets/photo-1036.jpg" alt="山景"><span class="r-photo__title">黄山看日出，前一晚住哪</span><span class="r-photo__meta">Tom · 2.7k</span></a>
+</div>
+<!-- /demo -->

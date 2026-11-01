@@ -1,0 +1,47 @@
+<!-- recipe
+{
+  "id": "number-stepper",
+  "name": "数字步进器",
+  "tags": ["base", "form", "mobile-consumer"],
+  "source": "改写自 Origin UI Number Input（MIT）https://originui.com/number-input",
+  "license": "MIT",
+  "states": ["默认", "到达最小值（减号禁用）", "到达最大值（加号禁用）"],
+  "use": "小范围整数：人数、天数、房间数；整行一个标签 + 步进器",
+  "dont": "大范围数字用输入框",
+  "icons": ["minus", "plus"]
+}
+-->
+<style>
+.r-stepper-row { display: flex; align-items: center; justify-content: space-between; gap: var(--r-gap-4); min-height: 56px; }
+.r-stepper-row__label { display: grid; gap: 2px; font: 500 15px/1.35 var(--r-font); }
+.r-stepper-row__label small { font: 400 13px/1.35 var(--r-font); color: var(--muted-foreground); }
+.r-stepper { display: inline-flex; align-items: center; gap: var(--r-gap-3); }
+.r-stepper button { width: 36px; height: 36px; padding: 0; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--border); background: var(--background); color: var(--foreground); cursor: pointer; }
+.r-stepper button:disabled { opacity: .35; cursor: not-allowed; }
+.r-stepper output { min-width: 2ch; text-align: center; font: 600 17px/1 var(--r-font); font-variant-numeric: tabular-nums; }
+</style>
+<!-- demo -->
+<div style="max-width:360px">
+  <div class="r-stepper-row">
+    <span class="r-stepper-row__label" id="r-st1">成人<small>13 岁及以上</small></span>
+    <span class="r-stepper" data-min="1" data-max="9" role="group" aria-labelledby="r-st1">
+      <button aria-label="减少"><span class="r-ico r-ico-sm i-minus" aria-hidden="true"></span></button><output aria-live="polite">2</output><button aria-label="增加"><span class="r-ico r-ico-sm i-plus" aria-hidden="true"></span></button>
+    </span>
+  </div>
+  <div class="r-stepper-row">
+    <span class="r-stepper-row__label" id="r-st2">儿童<small>2–12 岁</small></span>
+    <span class="r-stepper" data-min="0" data-max="6" role="group" aria-labelledby="r-st2">
+      <button aria-label="减少"><span class="r-ico r-ico-sm i-minus" aria-hidden="true"></span></button><output aria-live="polite">0</output><button aria-label="增加"><span class="r-ico r-ico-sm i-plus" aria-hidden="true"></span></button>
+    </span>
+  </div>
+</div>
+<!-- /demo -->
+<script>
+document.querySelectorAll('.r-stepper').forEach(function (s) {
+  var min = +s.dataset.min, max = +s.dataset.max, out = s.querySelector('output'), b = s.querySelectorAll('button');
+  function sync() { var v = +out.textContent; b[0].disabled = v <= min; b[1].disabled = v >= max; }
+  b[0].addEventListener('click', function () { out.textContent = Math.max(min, +out.textContent - 1); sync(); });
+  b[1].addEventListener('click', function () { out.textContent = Math.min(max, +out.textContent + 1); sync(); });
+  sync();
+});
+</script>

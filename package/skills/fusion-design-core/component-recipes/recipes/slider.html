@@ -1,0 +1,37 @@
+<!-- recipe
+{
+  "id": "slider",
+  "name": "滑块",
+  "tags": ["base", "form"],
+  "source": "改写自 shadcn/ui Slider（MIT），用原生 range",
+  "license": "MIT",
+  "states": ["默认", "拖动", "聚焦", "禁用"],
+  "use": "连续数值且精确值不重要（预算区间、步行强度）；旁边实时显示当前值",
+  "dont": "需要精确数字用 number-stepper 或输入框",
+  "icons": []
+}
+-->
+<style>
+.r-slider { --_p: 50%; width: 100%; height: 28px; margin: 0; background: transparent; appearance: none; -webkit-appearance: none; cursor: pointer; }
+.r-slider::-webkit-slider-runnable-track { height: 6px; border-radius: 999px; background: linear-gradient(to right, var(--primary) var(--_p), var(--r-fill) var(--_p)); }
+.r-slider::-moz-range-track { height: 6px; border-radius: 999px; background: var(--r-fill); }
+.r-slider::-moz-range-progress { height: 6px; border-radius: 999px; background: var(--primary); }
+.r-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; margin-top: -8px; border-radius: 50%; background: var(--background); border: 2px solid var(--primary); box-shadow: var(--r-shadow-sm); }
+.r-slider::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: var(--background); border: 2px solid var(--primary); }
+.r-slider:disabled { opacity: .5; cursor: not-allowed; }
+.r-slider-head { display: flex; justify-content: space-between; align-items: baseline; font: 500 14px/1.4 var(--r-font); margin-bottom: 4px; }
+.r-slider-head output { font: 600 15px/1 var(--r-font); font-variant-numeric: tabular-nums; }
+</style>
+<!-- demo -->
+<div style="max-width:360px">
+  <div class="r-slider-head"><label for="r-sl1">每天步行</label><output for="r-sl1" id="r-sl1o">约 8 公里</output></div>
+  <input class="r-slider" id="r-sl1" type="range" min="2" max="15" value="8">
+</div>
+<!-- /demo -->
+<script>
+document.querySelectorAll('.r-slider').forEach(function (s) {
+  var out = document.querySelector('output[for="' + s.id + '"]');
+  function sync() { var p = (s.value - s.min) / (s.max - s.min) * 100; s.style.setProperty('--_p', p + '%'); if (out) out.textContent = '约 ' + s.value + ' 公里'; }
+  s.addEventListener('input', sync); sync();
+});
+</script>

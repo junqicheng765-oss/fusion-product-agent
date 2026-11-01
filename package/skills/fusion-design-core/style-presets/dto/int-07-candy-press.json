@@ -1,0 +1,111 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dto-int-07-candy-press",
+  "type": "registry:theme",
+  "title": "INT-07 高饱和立体按压糖果风",
+  "cssVars": {
+    "theme": {
+      "font-sans": "Nunito, \"Baloo 2\", \"PingFang SC\", sans-serif",
+      "radius": "1rem"
+    },
+    "light": {
+      "background": "#FFFFFF",
+      "foreground": "#3C3C3C",
+      "card": "#F7F9FA",
+      "card-foreground": "#3C3C3C",
+      "popover": "#F7F9FA",
+      "popover-foreground": "#3C3C3C",
+      "primary": "#398301",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#FFFFFF",
+      "secondary-foreground": "#3C3C3C",
+      "muted": "#FFFFFF",
+      "muted-foreground": "#747474",
+      "accent": "#FFFFFF",
+      "accent-foreground": "#3C3C3C",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#E5E5E5",
+      "input": "#E5E5E5",
+      "ring": "#58CC02"
+    },
+    "dark": {
+      "background": "#FFFFFF",
+      "foreground": "#3C3C3C",
+      "card": "#F7F9FA",
+      "card-foreground": "#3C3C3C",
+      "popover": "#F7F9FA",
+      "popover-foreground": "#3C3C3C",
+      "primary": "#398301",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#FFFFFF",
+      "secondary-foreground": "#3C3C3C",
+      "muted": "#FFFFFF",
+      "muted-foreground": "#747474",
+      "accent": "#FFFFFF",
+      "accent-foreground": "#3C3C3C",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#E5E5E5",
+      "input": "#E5E5E5",
+      "ring": "#58CC02"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "INT-07",
+      "tier": "theme",
+      "displayName": "高饱和立体按压糖果风",
+      "modes": [
+        "light"
+      ],
+      "palette": {
+        "bg": "#FFFFFF",
+        "card": "#F7F9FA",
+        "text": [
+          "#3C3C3C",
+          "#777777",
+          "#AFAFAF"
+        ],
+        "primary": "#58CC02",
+        "extra": [
+          "#FFC800",
+          "#1CB0F6"
+        ]
+      },
+      "radiusScale": {
+        "card": 16,
+        "control": 14
+      },
+      "border": {
+        "color": "#E5E5E5",
+        "width": "2px"
+      },
+      "shadow": "按钮底部实心阴影 0 4px 0 #46A302（零模糊）",
+      "blur": "",
+      "typeScale": "26/20/16/14px，700/800",
+      "spacing": "内边距 16–20px，间距 12/16px",
+      "family": [
+        "soft-ui"
+      ],
+      "derived": [
+        "secondary",
+        "muted",
+        "accent",
+        "input",
+        "ring",
+        "popover",
+        "destructive"
+      ],
+      "source": "methods-visual.md V0 参数字典（本 Skill 内置）",
+      "installables": {
+        "tweakcnNearest": [
+          "claymorphism",
+          "candyland",
+          "bubblegum"
+        ],
+        "system": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dto-cn-01-cn-workbench",
+  "type": "registry:theme",
+  "title": "CN-01 标准蓝白高效工作台风",
+  "cssVars": {
+    "theme": {
+      "font-sans": "\"PingFang SC\", \"HarmonyOS Sans\", sans-serif",
+      "radius": "0.5rem"
+    },
+    "light": {
+      "background": "#F7F8FA",
+      "foreground": "#1D2129",
+      "card": "#FFFFFF",
+      "card-foreground": "#1D2129",
+      "popover": "#FFFFFF",
+      "popover-foreground": "#1D2129",
+      "primary": "#006AFF",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#F7F8FA",
+      "secondary-foreground": "#1D2129",
+      "muted": "#F7F8FA",
+      "muted-foreground": "#4E5969",
+      "accent": "#F7F8FA",
+      "accent-foreground": "#1D2129",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#E5E6EB",
+      "input": "#E5E6EB",
+      "ring": "#1677FF"
+    },
+    "dark": {
+      "background": "#F7F8FA",
+      "foreground": "#1D2129",
+      "card": "#FFFFFF",
+      "card-foreground": "#1D2129",
+      "popover": "#FFFFFF",
+      "popover-foreground": "#1D2129",
+      "primary": "#006AFF",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#F7F8FA",
+      "secondary-foreground": "#1D2129",
+      "muted": "#F7F8FA",
+      "muted-foreground": "#4E5969",
+      "accent": "#F7F8FA",
+      "accent-foreground": "#1D2129",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#E5E6EB",
+      "input": "#E5E6EB",
+      "ring": "#1677FF"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "CN-01",
+      "tier": "theme",
+      "displayName": "标准蓝白高效工作台风",
+      "modes": [
+        "light"
+      ],
+      "palette": {
+        "bg": "#F7F8FA",
+        "card": "#FFFFFF",
+        "text": [
+          "#1D2129",
+          "#4E5969",
+          "#86909C"
+        ],
+        "primary": "#1677FF",
+        "extra": [
+          "#3370FF"
+        ],
+        "extraSource": "methods-visual.md 参数字典同一行里写到、原预设漏收的颜色"
+      },
+      "radiusScale": {
+        "card": 8,
+        "control": 6
+      },
+      "border": {
+        "color": "#E5E6EB",
+        "width": "1px"
+      },
+      "shadow": "0 2px 8px rgba(0,0,0,0.04)",
+      "blur": "",
+      "typeScale": "20/16/14/12px，标题 500/600",
+      "spacing": "内边距 16–20px，间距 8/12/16px",
+      "family": [
+        "enterprise"
+      ],
+      "derived": [
+        "secondary",
+        "muted",
+        "accent",
+        "input",
+        "ring",
+        "popover",
+        "destructive"
+      ],
+      "source": "methods-visual.md V0 参数字典（本 Skill 内置）",
+      "installables": {
+        "tweakcnNearest": [
+          "clean-slate"
+        ],
+        "system": "ant-design"
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+<!-- recipe
+{
+  "id": "chip-group",
+  "name": "筛选胶囊组",
+  "tags": ["base", "mobile-consumer", "content"],
+  "source": "改写自 Origin UI checkbox chips / toggle group（MIT）",
+  "license": "MIT",
+  "states": ["未选", "已选", "聚焦", "横向滚动"],
+  "use": "兴趣、筛选条件、标签多选；手机上单行横滑，左右留 16px 出血",
+  "dont": "互斥且只有 2–4 项时用 segmented",
+  "icons": ["check", "sliders-horizontal"]
+}
+-->
+<style>
+.r-chips { display: flex; gap: var(--r-gap-2); overflow-x: auto; scrollbar-width: none; padding: 2px var(--r-gap-4); scroll-padding: var(--r-gap-4); }
+.r-chips::-webkit-scrollbar { display: none; }
+.r-chips--wrap { flex-wrap: wrap; overflow: visible; padding: 0; }
+.r-chip {
+  flex: none; display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 14px; cursor: pointer;
+  border: 1px solid var(--border); border-radius: 999px; background: var(--background); color: var(--foreground);
+  font: 500 14px/1 var(--r-font); transition: background-color .15s var(--r-ease), border-color .15s var(--r-ease), color .15s var(--r-ease);
+}
+.r-chip .r-ico--on { display: none; }
+.r-chip[aria-pressed="true"] { background: var(--foreground); border-color: var(--foreground); color: var(--background); }
+.r-chip[aria-pressed="true"] .r-ico--on { display: inline-block; }
+.r-chip--filter { padding: 0 12px; }
+</style>
+<!-- demo -->
+<div style="max-width:390px">
+  <div class="r-chips" role="group" aria-label="兴趣">
+    <button class="r-chip r-chip--filter" aria-label="更多筛选"><span class="r-ico r-ico-sm i-sliders-horizontal" aria-hidden="true"></span></button>
+    <button class="r-chip" aria-pressed="true"><span class="r-ico r-ico-sm r-ico--on i-check" aria-hidden="true"></span>历史古迹</button>
+    <button class="r-chip" aria-pressed="false"><span class="r-ico r-ico-sm r-ico--on i-check" aria-hidden="true"></span>地道小吃</button>
+    <button class="r-chip" aria-pressed="true"><span class="r-ico r-ico-sm r-ico--on i-check" aria-hidden="true"></span>自然风光</button>
+    <button class="r-chip" aria-pressed="false"><span class="r-ico r-ico-sm r-ico--on i-check" aria-hidden="true"></span>夜生活</button>
+    <button class="r-chip" aria-pressed="false"><span class="r-ico r-ico-sm r-ico--on i-check" aria-hidden="true"></span>亲子</button>
+  </div>
+</div>
+<!-- /demo -->
+<script>
+document.querySelectorAll('.r-chip[aria-pressed]').forEach(function (c) {
+  c.addEventListener('click', function () { c.setAttribute('aria-pressed', String(c.getAttribute('aria-pressed') !== 'true')); });
+});
+</script>

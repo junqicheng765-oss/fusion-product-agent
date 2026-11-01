@@ -1,0 +1,373 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "apple-minimal",
+  "type": "registry:theme",
+  "title": "Apple Minimal",
+  "cssVars": {
+    "theme": {
+      "radius": "0.5rem"
+    },
+    "light": {
+      "background": "#FFFFFF",
+      "foreground": "#202020",
+      "card": "#f9f9f9",
+      "card-foreground": "#202020",
+      "popover": "#FFFFFF",
+      "popover-foreground": "#202020",
+      "primary": "#0d74ce",
+      "primary-foreground": "#FFFFFF",
+      "tint": "#007AFF",
+      "secondary": "#f0f0f0",
+      "secondary-foreground": "#202020",
+      "muted": "#f0f0f0",
+      "muted-foreground": "#646464",
+      "accent": "#d5efff",
+      "accent-foreground": "#0d74ce",
+      "destructive": "#ce2c31",
+      "destructive-foreground": "#FFFFFF",
+      "success": "#218358",
+      "success-foreground": "#FFFFFF",
+      "warning": "#ab6400",
+      "warning-foreground": "#FFFFFF",
+      "border": "#d9d9d9",
+      "input": "#cecece",
+      "ring": "#5eb1ef",
+      "chart-1": "#0d74ce",
+      "chart-2": "#30a46c",
+      "chart-3": "#ffc53d",
+      "chart-4": "#0d74ce",
+      "chart-5": "#e5484d"
+    },
+    "dark": {
+      "background": "#000000",
+      "foreground": "#eeeeee",
+      "card": "#191919",
+      "card-foreground": "#eeeeee",
+      "popover": "#191919",
+      "popover-foreground": "#eeeeee",
+      "primary": "#70b8ff",
+      "primary-foreground": "#1C2024",
+      "tint": "#0A84FF",
+      "secondary": "#222222",
+      "secondary-foreground": "#eeeeee",
+      "muted": "#222222",
+      "muted-foreground": "#b4b4b4",
+      "accent": "#003362",
+      "accent-foreground": "#70b8ff",
+      "destructive": "#ff9592",
+      "destructive-foreground": "#1C2024",
+      "success": "#3dd68c",
+      "success-foreground": "#1C2024",
+      "warning": "#ffca16",
+      "warning-foreground": "#1C2024",
+      "border": "#3a3a3a",
+      "input": "#484848",
+      "ring": "#2870bd",
+      "chart-1": "#70b8ff",
+      "chart-2": "#30a46c",
+      "chart-3": "#ffc53d",
+      "chart-4": "#70b8ff",
+      "chart-5": "#e5484d"
+    }
+  },
+  "meta": {
+    "color": {
+      "id": "apple-minimal",
+      "tier": "semantic-system",
+      "displayName": "中性、克制、系统感",
+      "scenes": [
+        "工具",
+        "效率",
+        "iOS 风 Web",
+        "系统设置"
+      ],
+      "families": [
+        "apple-native",
+        "minimal-saas",
+        "glassmorphism"
+      ],
+      "dto": [
+        "INT-01",
+        "INT-02"
+      ],
+      "neutral": "gray",
+      "accent": "blue",
+      "defaultMode": "light",
+      "note": "主色覆盖为 Apple HIG systemBlue；中性色阶来自 Radix gray。",
+      "roles": {
+        "background": "页面底",
+        "foreground": "主文字",
+        "card": "卡片 / 面板",
+        "muted": "弱化表面",
+        "muted-foreground": "次级文字",
+        "primary": "主行动 / 按钮",
+        "primary-foreground": "主行动上的文字",
+        "accent": "点缀表面（选中、hover 浅底）",
+        "border": "非交互边框 / 分割线",
+        "input": "输入框边框",
+        "ring": "焦点环",
+        "destructive": "错误 / 危险",
+        "success": "成功",
+        "warning": "警告"
+      },
+      "radixSteps": "1–2 背景，3–5 组件底，6–8 边框，9–10 实心，11–12 文字",
+      "scales": {
+        "neutral": {
+          "1": {
+            "light": "#fcfcfc",
+            "dark": "#111111"
+          },
+          "2": {
+            "light": "#f9f9f9",
+            "dark": "#191919"
+          },
+          "3": {
+            "light": "#f0f0f0",
+            "dark": "#222222"
+          },
+          "4": {
+            "light": "#e8e8e8",
+            "dark": "#2a2a2a"
+          },
+          "5": {
+            "light": "#e0e0e0",
+            "dark": "#313131"
+          },
+          "6": {
+            "light": "#d9d9d9",
+            "dark": "#3a3a3a"
+          },
+          "7": {
+            "light": "#cecece",
+            "dark": "#484848"
+          },
+          "8": {
+            "light": "#bbbbbb",
+            "dark": "#606060"
+          },
+          "9": {
+            "light": "#8d8d8d",
+            "dark": "#6e6e6e"
+          },
+          "10": {
+            "light": "#838383",
+            "dark": "#7b7b7b"
+          },
+          "11": {
+            "light": "#646464",
+            "dark": "#b4b4b4"
+          },
+          "12": {
+            "light": "#202020",
+            "dark": "#eeeeee"
+          }
+        },
+        "accent": {
+          "1": {
+            "light": "#fbfdff",
+            "dark": "#0d1520"
+          },
+          "2": {
+            "light": "#f4faff",
+            "dark": "#111927"
+          },
+          "3": {
+            "light": "#e6f4fe",
+            "dark": "#0d2847"
+          },
+          "4": {
+            "light": "#d5efff",
+            "dark": "#003362"
+          },
+          "5": {
+            "light": "#c2e5ff",
+            "dark": "#004074"
+          },
+          "6": {
+            "light": "#acd8fc",
+            "dark": "#104d87"
+          },
+          "7": {
+            "light": "#8ec8f6",
+            "dark": "#205d9e"
+          },
+          "8": {
+            "light": "#5eb1ef",
+            "dark": "#2870bd"
+          },
+          "9": {
+            "light": "#0090ff",
+            "dark": "#0090ff"
+          },
+          "10": {
+            "light": "#0588f0",
+            "dark": "#3b9eff"
+          },
+          "11": {
+            "light": "#0d74ce",
+            "dark": "#70b8ff"
+          },
+          "12": {
+            "light": "#113264",
+            "dark": "#c2e6ff"
+          }
+        },
+        "success": {
+          "1": {
+            "light": "#fbfefc",
+            "dark": "#0e1512"
+          },
+          "2": {
+            "light": "#f4fbf6",
+            "dark": "#121b17"
+          },
+          "3": {
+            "light": "#e6f6eb",
+            "dark": "#132d21"
+          },
+          "4": {
+            "light": "#d6f1df",
+            "dark": "#113b29"
+          },
+          "5": {
+            "light": "#c4e8d1",
+            "dark": "#174933"
+          },
+          "6": {
+            "light": "#adddc0",
+            "dark": "#20573e"
+          },
+          "7": {
+            "light": "#8eceaa",
+            "dark": "#28684a"
+          },
+          "8": {
+            "light": "#5bb98b",
+            "dark": "#2f7c57"
+          },
+          "9": {
+            "light": "#30a46c",
+            "dark": "#30a46c"
+          },
+          "10": {
+            "light": "#2b9a66",
+            "dark": "#33b074"
+          },
+          "11": {
+            "light": "#218358",
+            "dark": "#3dd68c"
+          },
+          "12": {
+            "light": "#193b2d",
+            "dark": "#b1f1cb"
+          }
+        },
+        "warning": {
+          "1": {
+            "light": "#fefdfb",
+            "dark": "#16120c"
+          },
+          "2": {
+            "light": "#fefbe9",
+            "dark": "#1d180f"
+          },
+          "3": {
+            "light": "#fff7c2",
+            "dark": "#302008"
+          },
+          "4": {
+            "light": "#ffee9c",
+            "dark": "#3f2700"
+          },
+          "5": {
+            "light": "#fbe577",
+            "dark": "#4d3000"
+          },
+          "6": {
+            "light": "#f3d673",
+            "dark": "#5c3d05"
+          },
+          "7": {
+            "light": "#e9c162",
+            "dark": "#714f19"
+          },
+          "8": {
+            "light": "#e2a336",
+            "dark": "#8f6424"
+          },
+          "9": {
+            "light": "#ffc53d",
+            "dark": "#ffc53d"
+          },
+          "10": {
+            "light": "#ffba18",
+            "dark": "#ffd60a"
+          },
+          "11": {
+            "light": "#ab6400",
+            "dark": "#ffca16"
+          },
+          "12": {
+            "light": "#4f3422",
+            "dark": "#ffe7b3"
+          }
+        },
+        "danger": {
+          "1": {
+            "light": "#fffcfc",
+            "dark": "#191111"
+          },
+          "2": {
+            "light": "#fff7f7",
+            "dark": "#201314"
+          },
+          "3": {
+            "light": "#feebec",
+            "dark": "#3b1219"
+          },
+          "4": {
+            "light": "#ffdbdc",
+            "dark": "#500f1c"
+          },
+          "5": {
+            "light": "#ffcdce",
+            "dark": "#611623"
+          },
+          "6": {
+            "light": "#fdbdbe",
+            "dark": "#72232d"
+          },
+          "7": {
+            "light": "#f4a9aa",
+            "dark": "#8c333a"
+          },
+          "8": {
+            "light": "#eb8e90",
+            "dark": "#b54548"
+          },
+          "9": {
+            "light": "#e5484d",
+            "dark": "#e5484d"
+          },
+          "10": {
+            "light": "#dc3e42",
+            "dark": "#ec5d5e"
+          },
+          "11": {
+            "light": "#ce2c31",
+            "dark": "#ff9592"
+          },
+          "12": {
+            "light": "#641723",
+            "dark": "#ffd1d9"
+          }
+        }
+      },
+      "sources": [
+        "https://www.radix-ui.com/colors/docs/palette-composition/understanding-the-scale",
+        "color-presets/radix/scales.json"
+      ],
+      "license": "色阶取自 Radix Colors（MIT）。apple-minimal 的主色覆盖取自 Apple HIG 公开规范。"
+    }
+  }
+}

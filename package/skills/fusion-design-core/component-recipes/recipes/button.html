@@ -1,0 +1,60 @@
+<!-- recipe
+{
+  "id": "button",
+  "name": "按钮",
+  "tags": ["base"],
+  "source": "改写自 shadcn/ui Button（MIT）https://ui.shadcn.com/docs/components/button",
+  "license": "MIT",
+  "states": ["默认", "悬停", "按下", "键盘聚焦", "禁用", "加载中"],
+  "variants": ["primary", "secondary", "outline", "ghost", "destructive", "link", "icon"],
+  "use": "一屏只放一个 primary；次要动作用 secondary 或 outline；纯图标按钮必须有 aria-label",
+  "dont": "不要用按钮做导航标签或筛选，那是 tabs / chip-group",
+  "icons": ["arrow-right", "heart", "loader-circle"]
+}
+-->
+<style>
+.r-btn {
+  --_h: 40px; --_px: 16px; --_fs: 14px;
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--r-gap-2);
+  height: var(--_h); min-width: var(--_h); padding: 0 var(--_px);
+  border-radius: var(--r-radius); border: 1px solid transparent;
+  font: 600 var(--_fs)/1 var(--r-font); letter-spacing: 0; white-space: nowrap;
+  cursor: pointer; user-select: none; text-decoration: none;
+  transition: background-color .15s var(--r-ease), color .15s var(--r-ease), border-color .15s var(--r-ease), transform .1s var(--r-ease);
+}
+.r-btn:active:not(:disabled) { transform: scale(0.98); }
+.r-btn:disabled, .r-btn[aria-disabled="true"] { opacity: .5; cursor: not-allowed; }
+.r-btn--sm { --_h: 32px; --_px: 12px; --_fs: 13px; }
+.r-btn--lg { --_h: 48px; --_px: 24px; --_fs: 16px; border-radius: var(--r-radius-lg); }
+.r-btn--block { display: flex; width: 100%; }
+.r-btn--primary { background: var(--primary); color: var(--primary-foreground); }
+.r-btn--primary:hover:not(:disabled) { background: color-mix(in srgb, var(--primary) 90%, var(--foreground)); }
+.r-btn--secondary { background: var(--secondary); color: var(--secondary-foreground); }
+.r-btn--secondary:hover:not(:disabled) { background: color-mix(in srgb, var(--secondary) 92%, var(--foreground)); }
+.r-btn--outline { background: var(--background); color: var(--foreground); border-color: var(--border); }
+.r-btn--outline:hover:not(:disabled) { background: var(--accent); color: var(--accent-foreground); }
+.r-btn--ghost { background: transparent; color: var(--foreground); }
+.r-btn--ghost:hover:not(:disabled) { background: var(--accent); color: var(--accent-foreground); }
+.r-btn--destructive { background: var(--destructive); color: var(--destructive-foreground, #fff); }
+.r-btn--link { background: none; color: var(--primary); height: auto; min-width: 0; padding: 0; text-underline-offset: 4px; }
+.r-btn--link:hover { text-decoration: underline; }
+.r-btn--icon { padding: 0; width: var(--_h); }
+.r-btn--round { border-radius: 999px; }
+.r-btn[data-loading="true"] { pointer-events: none; }
+.r-btn[data-loading="true"] .r-ico { animation: r-btn-spin .8s linear infinite; }
+@keyframes r-btn-spin { to { transform: rotate(360deg); } }
+</style>
+<!-- demo -->
+<div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+  <button class="r-btn r-btn--primary">保存行程</button>
+  <button class="r-btn r-btn--secondary">稍后再看</button>
+  <button class="r-btn r-btn--outline">分享</button>
+  <button class="r-btn r-btn--ghost">取消</button>
+  <button class="r-btn r-btn--destructive">删除</button>
+  <button class="r-btn r-btn--link">查看全部</button>
+  <button class="r-btn r-btn--primary r-btn--lg">开始规划 <span class="r-ico r-ico-sm i-arrow-right" aria-hidden="true"></span></button>
+  <button class="r-btn r-btn--outline r-btn--icon r-btn--round" aria-label="收藏"><span class="r-ico i-heart" aria-hidden="true"></span></button>
+  <button class="r-btn r-btn--primary" data-loading="true"><span class="r-ico r-ico-sm i-loader-circle" aria-hidden="true"></span>生成中</button>
+  <button class="r-btn r-btn--primary" disabled>不可用</button>
+</div>
+<!-- /demo -->

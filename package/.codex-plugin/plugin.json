@@ -1,6 +1,6 @@
 {
   "name": "fusion-product-agent",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "帮助非专家从想法与目标构建领域需求、系统边界、体验及上下游交接。",
   "skills": "./skills/",
   "interface": {
@@ -14,5 +14,6 @@
     "defaultPrompt": [
       "使用融合产品锤，我可能不懂产品和业务领域，请围绕我的想法与目标交互，主动研究并补齐领域需求、边界和交接，按本次范围推进。"
     ]
-  }
+  },
+  "mcpServers": "./.mcp.json"
 }

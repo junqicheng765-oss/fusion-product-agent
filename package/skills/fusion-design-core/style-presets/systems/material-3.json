@@ -1,0 +1,126 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "material-3",
+  "type": "registry:theme",
+  "title": "Material Design 3 (baseline scheme)",
+  "cssVars": {
+    "theme": {
+      "font-sans": "Roboto, \"Noto Sans SC\", \"PingFang SC\", sans-serif",
+      "font-serif": "\"Roboto Serif\", serif",
+      "font-mono": "\"Roboto Mono\", monospace",
+      "radius": "0.75rem"
+    },
+    "light": {
+      "background": "#FEF7FF",
+      "foreground": "#1D1B20",
+      "card": "#F3EDF7",
+      "card-foreground": "#1D1B20",
+      "popover": "#F3EDF7",
+      "popover-foreground": "#1D1B20",
+      "primary": "#6750A4",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#E8DEF8",
+      "secondary-foreground": "#1D192B",
+      "muted": "#E7E0EC",
+      "muted-foreground": "#49454F",
+      "accent": "#EADDFF",
+      "accent-foreground": "#21005D",
+      "destructive": "#B3261E",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#CAC4D0",
+      "input": "#79747E",
+      "ring": "#6750A4",
+      "chart-1": "#6750A4",
+      "chart-2": "#625B71",
+      "chart-3": "#7D5260",
+      "chart-4": "#B69DF8",
+      "chart-5": "#D29DAC"
+    },
+    "dark": {
+      "background": "#141218",
+      "foreground": "#E6E0E9",
+      "card": "#211F26",
+      "card-foreground": "#E6E0E9",
+      "popover": "#211F26",
+      "popover-foreground": "#E6E0E9",
+      "primary": "#D0BCFF",
+      "primary-foreground": "#381E72",
+      "secondary": "#4A4458",
+      "secondary-foreground": "#E8DEF8",
+      "muted": "#49454F",
+      "muted-foreground": "#CAC4D0",
+      "accent": "#4F378B",
+      "accent-foreground": "#EADDFF",
+      "destructive": "#F2B8B5",
+      "destructive-foreground": "#601410",
+      "border": "#49454F",
+      "input": "#938F99",
+      "ring": "#D0BCFF",
+      "chart-1": "#D0BCFF",
+      "chart-2": "#CCC2DC",
+      "chart-3": "#EFB8C8",
+      "chart-4": "#9A82DB",
+      "chart-5": "#B58392"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "material-3",
+      "tier": "design-system",
+      "displayName": "安卓原生风格：色阶表面、胶囊按钮、动态取色",
+      "scenes": ["Android 原生 App", "跨平台 App（Flutter / Compose）", "Google 生态工具", "需要动态主题色的产品"],
+      "avoid": ["面向苹果用户的 iOS 原生 App（改用 apple-native）"],
+      "colorGeneration": "品牌色作为 seed，用 @material/material-color-utilities（Apache-2.0）或 Material Theme Builder 生成整套 light/dark 色阶，不手调单个色值",
+      "typeScale": {
+        "unit": "sp / px",
+        "displayLarge": [57, 64, 400],
+        "displayMedium": [45, 52, 400],
+        "displaySmall": [36, 44, 400],
+        "headlineLarge": [32, 40, 400],
+        "headlineMedium": [28, 36, 400],
+        "headlineSmall": [24, 32, 400],
+        "titleLarge": [22, 28, 400],
+        "titleMedium": [16, 24, 500],
+        "titleSmall": [14, 20, 500],
+        "bodyLarge": [16, 24, 400],
+        "bodyMedium": [14, 20, 400],
+        "bodySmall": [12, 16, 400],
+        "labelLarge": [14, 20, 500],
+        "labelMedium": [12, 16, 500],
+        "labelSmall": [11, 16, 500]
+      },
+      "spacing": { "base": 4, "scale": [4, 8, 12, 16, 24, 32] },
+      "radiusScale": { "none": 0, "extraSmall": 4, "small": 8, "medium": 12, "large": 16, "extraLarge": 28, "full": 9999 },
+      "minTapTarget": 48,
+      "elevation": "优先用 surface container 色阶表达层级（lowest/low/default/high/highest），阴影只用于浮动元素",
+      "components": {
+        "navigation": "顶部 App Bar（small/medium/large）；底部 Navigation Bar 3–5 项，选中项带胶囊指示器；大屏用 Navigation Rail / Drawer",
+        "button": "Filled / Tonal / Outlined / Text / Elevated 五级，高度 40dp，全圆角",
+        "fab": "主操作用 FAB（圆角 16dp），一屏最多一个",
+        "card": "Filled / Outlined / Elevated 三种，圆角 12dp",
+        "chip": "Assist / Filter / Input / Suggestion，圆角 8dp",
+        "dialog": "圆角 28dp，标题 headlineSmall",
+        "textField": "Filled 或 Outlined，带浮动标签",
+        "icons": "Material Symbols 风格；Web 端从 IconScout 选同风格成品"
+      },
+      "motion": "Emphasized 缓动为主（cubic-bezier(0.2, 0, 0, 1)）；容器变换转场；尊重减少动态效果",
+      "implementation": {
+        "compose": "MaterialTheme(colorScheme, typography, shapes)，Material3 组件",
+        "flutter": "ThemeData(useMaterial3: true, colorScheme: ColorScheme.fromSeed(seedColor: ...))",
+        "web": "Material Web（@material/web）或 MUI；shadcn 项目用本文件 cssVars"
+      },
+      "sources": [
+        "https://m3.material.io/styles/color/static/baseline",
+        "https://m3.material.io/styles/shape/corner-radius-scale",
+        "https://m3.material.io/styles/typography/type-scale-tokens",
+        "https://github.com/material-foundation/material-theme-builder"
+      ],
+      "license": "Material Design 规范公开；Material Theme Builder 与 material-color-utilities 为 Apache-2.0",
+      "installables": {
+        "designSystem": "Jetpack Compose Material3 / Flutter Material 3 / @material/web / MUI",
+        "layout": ["originui", "magicui"],
+        "motion": ["motion"]
+      }
+    }
+  }
+}

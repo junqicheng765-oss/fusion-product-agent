@@ -1,0 +1,57 @@
+<!-- recipe
+{
+  "id": "toast",
+  "name": "轻提示",
+  "tags": [
+    "base",
+    "mobile-consumer"
+  ],
+  "source": "改写自 shadcn/ui Sonner 样式（MIT）",
+  "license": "MIT",
+  "states": [
+    "出现",
+    "停留 3 秒",
+    "消失",
+    "带撤销"
+  ],
+  "use": "操作完成的反馈（已保存、已复制）；可带一个撤销按钮；role=status",
+  "dont": "错误需要用户处理时放在出错的位置旁边，不用 toast",
+  "icons": [
+    "check"
+  ],
+  "demoRequires": [
+    "button"
+  ]
+}
+-->
+<style>
+.r-toast-region { position: fixed; left: 50%; bottom: calc(24px + var(--r-safe-bottom)); transform: translateX(-50%); display: grid; gap: 8px; z-index: 50; width: min(360px, calc(100vw - 32px)); pointer-events: none; }
+.r-toast {
+  display: flex; align-items: center; gap: var(--r-gap-3); padding: 12px 14px; pointer-events: auto;
+  border-radius: var(--r-radius-lg); background: var(--foreground); color: var(--background); box-shadow: var(--r-shadow-lg);
+  font: 500 14px/1.4 var(--r-font); animation: r-toast-in .25s var(--r-ease);
+}
+.r-toast__text { flex: 1; }
+.r-toast__action { border: 0; background: none; color: inherit; font: 600 14px/1 var(--r-font); opacity: .85; cursor: pointer; padding: 6px 4px; }
+.r-toast[data-leaving] { animation: r-toast-out .2s var(--r-ease) forwards; }
+@keyframes r-toast-in { from { opacity: 0; transform: translateY(12px); } }
+@keyframes r-toast-out { to { opacity: 0; transform: translateY(12px); } }
+</style>
+<!-- demo -->
+<button class="r-btn r-btn--outline" data-toast="已加入收藏">加入收藏</button>
+<div class="r-toast-region" role="status" aria-live="polite"></div>
+<!-- /demo -->
+<script>
+(function () {
+  var region = document.querySelector('.r-toast-region');
+  window.rToast = function (text, actionLabel) {
+    var t = document.createElement('div'); t.className = 'r-toast';
+    t.innerHTML = '<span class="r-ico r-ico-sm i-check" aria-hidden="true"></span><span class="r-toast__text"></span>' + (actionLabel ? '<button class="r-toast__action"></button>' : '');
+    t.querySelector('.r-toast__text').textContent = text;
+    if (actionLabel) t.querySelector('.r-toast__action').textContent = actionLabel;
+    region.appendChild(t);
+    setTimeout(function () { t.dataset.leaving = '1'; setTimeout(function () { t.remove(); }, 200); }, 3000);
+  };
+  document.querySelectorAll('[data-toast]').forEach(function (b) { b.addEventListener('click', function () { rToast(b.dataset.toast, '撤销'); }); });
+})();
+</script>

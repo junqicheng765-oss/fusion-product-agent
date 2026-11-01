@@ -1,0 +1,33 @@
+<!-- recipe
+{
+  "id": "ai-thinking",
+  "name": "AI 生成进度（分步）",
+  "tags": ["ai"],
+  "source": "按 Perplexity 搜索步骤、Claude 思考展示做法整理",
+  "license": "MIT",
+  "states": ["进行中步骤（转圈）", "已完成步骤（打勾）", "未开始步骤（灰）"],
+  "use": "生成超过 3 秒时，用 3–5 个用户能懂的步骤说明正在做什么（不是技术日志）",
+  "dont": "不要只放一个转圈；步骤文字不要写“调用模型”“检索向量”",
+  "icons": ["check", "loader-circle"]
+}
+-->
+<style>
+.r-thinking { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.r-thinking li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; align-items: center; font: 400 14px/1.4 var(--r-font); color: var(--muted-foreground); }
+.r-thinking__mark { width: 20px; height: 20px; display: grid; place-items: center; border-radius: 50%; border: 1.5px solid var(--border); }
+.r-thinking li[data-state="done"] { color: var(--foreground); }
+.r-thinking li[data-state="done"] .r-thinking__mark { border-color: var(--primary); background: var(--primary); color: var(--primary-foreground); }
+.r-thinking li[data-state="active"] { color: var(--foreground); font-weight: 600; }
+.r-thinking li[data-state="active"] .r-thinking__mark { border: 0; color: var(--primary); }
+.r-thinking li[data-state="active"] .r-ico { animation: r-think-spin .9s linear infinite; }
+.r-thinking li:not([data-state="done"]) .r-ico--done, .r-thinking li:not([data-state="active"]) .r-ico--busy { display: none; }
+@keyframes r-think-spin { to { transform: rotate(360deg); } }
+</style>
+<!-- demo -->
+<ol class="r-thinking" aria-live="polite" style="max-width:358px">
+  <li data-state="done"><span class="r-thinking__mark"><span class="r-ico r-ico-sm r-ico--done i-check" aria-hidden="true"></span><span class="r-ico r-ico-sm r-ico--busy i-loader-circle" aria-hidden="true"></span></span>读懂你的需求：2 位老人，5 天，少走路</li>
+  <li data-state="done"><span class="r-thinking__mark"><span class="r-ico r-ico-sm r-ico--done i-check" aria-hidden="true"></span><span class="r-ico r-ico-sm r-ico--busy i-loader-circle" aria-hidden="true"></span></span>筛掉台阶多、需要排长队的景点</li>
+  <li data-state="active"><span class="r-thinking__mark"><span class="r-ico r-ico-sm r-ico--done i-check" aria-hidden="true"></span><span class="r-ico r-ico-sm r-ico--busy i-loader-circle" aria-hidden="true"></span></span>按地铁线路排每天的顺序</li>
+  <li><span class="r-thinking__mark"><span class="r-ico r-ico-sm r-ico--done i-check" aria-hidden="true"></span><span class="r-ico r-ico-sm r-ico--busy i-loader-circle" aria-hidden="true"></span></span>挑附近有英文菜单的餐厅</li>
+</ol>
+<!-- /demo -->

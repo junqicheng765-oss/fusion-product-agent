@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 import sys
 import tempfile
+from unittest.mock import patch
 
 sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parents[1]
@@ -33,6 +34,13 @@ def run():
             result = install.install(project, mode)
             target = Path(result['skill_or_resource'])
             assert install.digest_tree(target) == install.digest_tree(ROOT / 'skills/fusion-product-agent')
+            assert len(result['resources']) == 4
+            for name, dest in result['resources'].items():
+                assert install.digest_tree(Path(dest)) == install.digest_tree(ROOT / 'skills' / name)
+            assert (target.parent / 'fusion-design-core/component-recipes/registry.json').is_file()
+            assert (target.parent / 'fusion-design-ui-ux-pro-max/scripts/search.py').is_file()
+            assert (target.parent / 'fusion-design-impeccable/SKILL.md').is_file()
+            checks.append(mode + ': designer methods, scripts and assets installed with relative sibling paths intact')
             assert not (project / ('.codex/resources/fusion-product-agent' if mode == 'skill' else '.agents/skills/fusion-product-agent')).exists()
             checks.append(mode + ': copied complete independent rule tree; only selected registration mode')
             before = install.digest_tree(project)
@@ -63,6 +71,35 @@ def run():
             pass
         assert not list(outside.iterdir())
         checks.append('symlink destination escape refused')
+        for mode in ['skill', 'agent']:
+            project = base / ('dependency-collision-' + mode)
+            dependency = project / ('.agents/skills' if mode == 'skill' else '.codex/resources') / 'fusion-design-core'
+            dependency.mkdir(parents=True)
+            (dependency / 'custom.txt').write_text('keep local work')
+            before = install.digest_tree(project)
+            try:
+                install.install(project, mode)
+                raise AssertionError('existing design dependency overwritten')
+            except ValueError:
+                pass
+            assert before == install.digest_tree(project)
+            checks.append(mode + ': dependency collision refuses entire install without partial writes')
+        project = base / 'rollback'
+        real_rename = install.os.rename
+        moves = []
+        def fail_second_move(src, dst):
+            moves.append(dst)
+            if len(moves) == 2:
+                raise OSError('simulated failure during dependency installation')
+            return real_rename(src, dst)
+        with patch.object(install.os, 'rename', side_effect=fail_second_move):
+            try:
+                install.install(project, 'agent')
+                raise AssertionError('simulated failure not raised')
+            except OSError:
+                pass
+        assert not install.digest_tree(project), 'failed install left files behind'
+        checks.append('failure during multi-Skill installation rolls back copied resources')
         fixture = base / 'delivery'
         fixture.mkdir()
         (fixture / 'rules.md').write_text('Rule R1 version 2\n')

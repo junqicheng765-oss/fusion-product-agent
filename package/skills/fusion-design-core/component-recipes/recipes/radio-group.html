@@ -1,0 +1,42 @@
+<!-- recipe
+{
+  "id": "radio-group",
+  "name": "单选组 / 选项卡片",
+  "tags": ["base", "form", "mobile-consumer"],
+  "source": "改写自 shadcn/ui Radio Group（MIT）与 Origin UI radio cards（MIT）https://originui.com/radio",
+  "license": "MIT",
+  "states": ["未选", "已选", "聚焦", "禁用"],
+  "use": "2–5 个互斥选项且每项需要一句说明时用卡片式；消费产品里比下拉更易选",
+  "dont": "选项只有两个字且不需说明时用 segmented",
+  "icons": []
+}
+-->
+<style>
+.r-radio-group { display: grid; gap: var(--r-gap-2); border: 0; padding: 0; margin: 0; }
+.r-radio-group legend { font: 500 14px/1.4 var(--r-font); margin-bottom: var(--r-gap-2); padding: 0; }
+.r-radio {
+  position: relative; display: flex; align-items: flex-start; gap: var(--r-gap-3);
+  padding: 14px 16px; min-height: var(--r-touch); cursor: pointer;
+  border: 1px solid var(--border); border-radius: var(--r-radius-lg); background: var(--card); color: var(--card-foreground);
+  transition: border-color .15s var(--r-ease), background-color .15s var(--r-ease);
+}
+.r-radio input { position: absolute; opacity: 0; }
+.r-radio__dot { flex: none; width: 20px; height: 20px; margin-top: 1px; border-radius: 50%; border: 1.5px solid var(--border); display: grid; place-items: center; }
+.r-radio__dot::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--primary); transform: scale(0); transition: transform .15s var(--r-ease); }
+.r-radio__text { display: grid; gap: 2px; }
+.r-radio__title { font: 600 15px/1.35 var(--r-font); }
+.r-radio__desc { font: 400 13px/1.45 var(--r-font); color: var(--muted-foreground); }
+.r-radio:has(input:checked) { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 6%, var(--card)); }
+.r-radio:has(input:checked) .r-radio__dot { border-color: var(--primary); }
+.r-radio:has(input:checked) .r-radio__dot::after { transform: scale(1); }
+.r-radio:has(input:focus-visible) { outline: 2px solid var(--ring); outline-offset: 2px; }
+.r-radio:has(input:disabled) { opacity: .5; cursor: not-allowed; }
+</style>
+<!-- demo -->
+<fieldset class="r-radio-group" style="max-width:360px">
+  <legend>旅行节奏</legend>
+  <label class="r-radio"><input type="radio" name="pace" checked><span class="r-radio__dot"></span><span class="r-radio__text"><span class="r-radio__title">慢慢逛</span><span class="r-radio__desc">每天 2 个点，午后留空休息</span></span></label>
+  <label class="r-radio"><input type="radio" name="pace"><span class="r-radio__dot"></span><span class="r-radio__text"><span class="r-radio__title">刚刚好</span><span class="r-radio__desc">每天 3–4 个点，晚上有安排</span></span></label>
+  <label class="r-radio"><input type="radio" name="pace" disabled><span class="r-radio__dot"></span><span class="r-radio__text"><span class="r-radio__title">特种兵</span><span class="r-radio__desc">当前人数不支持</span></span></label>
+</fieldset>
+<!-- /demo -->

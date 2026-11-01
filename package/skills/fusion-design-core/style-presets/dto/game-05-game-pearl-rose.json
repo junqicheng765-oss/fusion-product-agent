@@ -1,0 +1,113 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dto-game-05-game-pearl-rose",
+  "type": "registry:theme",
+  "title": "GAME-05 珠光毛玻璃玫瑰金浪漫轻奢风",
+  "cssVars": {
+    "theme": {
+      "font-sans": "\"Cormorant Garamond\", Didot, \"Songti SC\", serif",
+      "radius": "0.75rem",
+      "font-serif": "\"Cormorant Garamond\", serif"
+    },
+    "light": {
+      "background": "#F8F4F9",
+      "foreground": "#2E2532",
+      "card": "#FFFFFF",
+      "card-foreground": "#2E2532",
+      "popover": "#FFFFFF",
+      "popover-foreground": "#2E2532",
+      "primary": "#A7615A",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#F8F4F9",
+      "secondary-foreground": "#2E2532",
+      "muted": "#F8F4F9",
+      "muted-foreground": "#7A6B82",
+      "accent": "#F8F4F9",
+      "accent-foreground": "#2E2532",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "rgba(229,193,189,0.75)",
+      "input": "rgba(229,193,189,0.75)",
+      "ring": "#C99E9A"
+    },
+    "dark": {
+      "background": "#F8F4F9",
+      "foreground": "#2E2532",
+      "card": "#FFFFFF",
+      "card-foreground": "#2E2532",
+      "popover": "#FFFFFF",
+      "popover-foreground": "#2E2532",
+      "primary": "#A7615A",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#F8F4F9",
+      "secondary-foreground": "#2E2532",
+      "muted": "#F8F4F9",
+      "muted-foreground": "#7A6B82",
+      "accent": "#F8F4F9",
+      "accent-foreground": "#2E2532",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "rgba(229,193,189,0.75)",
+      "input": "rgba(229,193,189,0.75)",
+      "ring": "#C99E9A"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "GAME-05",
+      "tier": "theme",
+      "displayName": "珠光毛玻璃玫瑰金浪漫轻奢风",
+      "modes": [
+        "light"
+      ],
+      "palette": {
+        "bg": "#F8F4F9",
+        "card": "rgba(255,255,255,0.68)",
+        "text": [
+          "#2E2532",
+          "#7A6B82",
+          "#B5A3BE"
+        ],
+        "primary": "#C99E9A",
+        "extra": [
+          "#161426",
+          "#E5C1BD",
+          "#F0EBF8"
+        ],
+        "extraSource": "methods-visual.md 参数字典同一行里写到、原预设漏收的颜色"
+      },
+      "radiusScale": {
+        "card": 12,
+        "control": 999
+      },
+      "border": {
+        "color": "rgba(229,193,189,0.75)",
+        "width": "1px"
+      },
+      "shadow": "0 8px 32px rgba(180,140,190,0.18)",
+      "blur": "backdrop-filter: blur(24px)",
+      "typeScale": "26/18/14/11px，500，字距 +0.08em",
+      "spacing": "",
+      "family": [
+        "glassmorphism",
+        "game"
+      ],
+      "derived": [
+        "secondary",
+        "muted",
+        "accent",
+        "input",
+        "ring",
+        "popover",
+        "destructive"
+      ],
+      "source": "methods-visual.md V0 参数字典（本 Skill 内置）",
+      "installables": {
+        "tweakcnNearest": [
+          "quantum-rose"
+        ],
+        "system": ""
+      }
+    }
+  }
+}

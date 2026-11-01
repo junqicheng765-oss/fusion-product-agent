@@ -1,0 +1,377 @@
+{
+  "version": 1,
+  "rule": "接入库不等于复制网址。每个资源必须有 mode / search / returns / acquire / license / fallback。mode=reference 的不得假装能自动安装或抓取。",
+  "searchOrder": [
+    "asset-memory",
+    "local-preset",
+    "auto-adapter",
+    "mcp-if-authed",
+    "reference-link"
+  ],
+  "adapters": [
+    {
+      "id": "asset-memory",
+      "stage": [
+        "all"
+      ],
+      "capability": "memory",
+      "mode": "auto",
+      "priority": "S",
+      "search": "python3 scripts/asset_memory.py search <关键词>",
+      "returns": "已验收资产：模式 / 页面 / 风格 / 动效 / 组件",
+      "acquire": "优先于任何外部库",
+      "license": "本项目或本 Skill 沉淀",
+      "fallback": "没有命中再走外部 adapter",
+      "wired": true
+    },
+    {
+      "id": "mobbin",
+      "stage": [
+        "research",
+        "flow",
+        "interaction",
+        "ui"
+      ],
+      "capability": "reference",
+      "mode": "mcp",
+      "priority": "S",
+      "endpoint": "https://api.mobbin.com/mcp",
+      "tools": [
+        "search_screens",
+        "search_flows",
+        "search_sections"
+      ],
+      "auth": "OAuth；需要 Mobbin Pro / Team / Enterprise",
+      "search": "按用户任务和界面状态搜，不搜产品名当风格",
+      "returns": "真实产品截图、流程、区块和 Mobbin 链接",
+      "acquire": "只作参考，不复制品牌资产和文案",
+      "license": "Mobbin 会员内容，不得再分发截图库",
+      "fallback": "未授权或无套餐：打开 https://mobbin.com/search/<query> 给用户看，不抓取。改用内部资产和公开产品。",
+      "wired": true
+    },
+    {
+      "id": "pageflows",
+      "stage": [
+        "research",
+        "flow"
+      ],
+      "capability": "reference",
+      "mode": "reference",
+      "priority": "S",
+      "url": "https://pageflows.com",
+      "search": "按任务类型打开分类（onboarding / checkout / permission / search）",
+      "returns": "无公开 API。只给用户链接和自己记录的步骤观察。",
+      "acquire": null,
+      "license": "付费站点，不抓取",
+      "fallback": "用 Mobbin search_flows；或用户提供录屏",
+      "wired": true
+    },
+    {
+      "id": "nng",
+      "stage": [
+        "research"
+      ],
+      "capability": "reference",
+      "mode": "reference",
+      "priority": "A",
+      "url": "https://www.nngroup.com",
+      "search": "按研究方法名检索公开文章",
+      "returns": "原则摘要 + 原文链接",
+      "acquire": null,
+      "license": "文章版权归 NN/g，只引用不转载全文",
+      "fallback": "沿用本 Skill 研究方法和 QA0",
+      "wired": true
+    },
+    {
+      "id": "checklist-design",
+      "stage": [
+        "flow",
+        "close"
+      ],
+      "capability": "reference",
+      "mode": "reference",
+      "priority": "A",
+      "url": "https://www.checklist.design",
+      "search": "按页面类型对照；本 Skill 的检查项以 QA0 / U / I 为准",
+      "returns": "补充检查项，不替代 QA0",
+      "license": "站点版权，不抓取清单全文",
+      "fallback": "只用 QA0 和各方法的完成证据",
+      "wired": true
+    },
+    {
+      "id": "ui-patterns",
+      "stage": [
+        "interaction"
+      ],
+      "capability": "reference",
+      "mode": "reference",
+      "priority": "A",
+      "url": "https://ui-patterns.com",
+      "search": "按交互问题（搜索、筛选、表单、空状态）",
+      "returns": "模式名 + 适用条件，写入 CMP2 样本",
+      "license": "不抓取站点正文",
+      "fallback": "U4 组件决策轴 + ARIA APG",
+      "wired": true
+    },
+    {
+      "id": "aria-apg",
+      "stage": [
+        "interaction",
+        "close"
+      ],
+      "capability": "spec",
+      "mode": "auto",
+      "priority": "S",
+      "index": "resource-adapters/aria-apg.json",
+      "search": "python3 scripts/resource_router.py apg <pattern>",
+      "returns": "官方模式页 URL、键盘与角色要求",
+      "acquire": "实现时对照 APG；shadcn/Radix 组件已覆盖大部分",
+      "license": "W3C 可引用",
+      "fallback": "打开 APG 模式页",
+      "wired": true
+    },
+    {
+      "id": "figma-kits",
+      "stage": [
+        "ui"
+      ],
+      "capability": "component",
+      "mode": "mcp",
+      "priority": "S",
+      "url": "https://www.figma.com/community",
+      "official": [
+        "https://www.figma.com/community/file/1253687933230252835",
+        "https://developer.apple.com/design/resources/",
+        "https://m3.material.io"
+      ],
+      "search": "Figma MCP search_design_system / get_libraries；官方 Apple / Material 套件优先于社区截图",
+      "returns": "可插入的组件、样式、变量；有 Code Connect 时对接代码组件",
+      "acquire": "插入组件，不复制社区文件再分发",
+      "license": "各套件自己的许可；Apple Design Resources 只作参考",
+      "fallback": "shadcn / 风格预设 / HTML",
+      "wired": true
+    },
+    {
+      "id": "tweakcn",
+      "stage": [
+        "ui"
+      ],
+      "capability": "style",
+      "mode": "auto",
+      "priority": "S",
+      "wired": true,
+      "note": "已在 style-presets/themes/tweakcn 与风格引擎"
+    },
+    {
+      "id": "radix-colors",
+      "stage": [
+        "ui"
+      ],
+      "capability": "style",
+      "mode": "auto",
+      "priority": "S",
+      "wired": true,
+      "note": "已在 color-presets/radix 与配色智能"
+    },
+    {
+      "id": "google-fonts",
+      "stage": [
+        "ui"
+      ],
+      "capability": "type",
+      "mode": "auto",
+      "priority": "S",
+      "search": "python3 scripts/typography_intelligence.py pick --family <风格族> --langs zh,en",
+      "returns": "标题/正文/等宽/CJK 字族、字阶、CSS2 链接",
+      "acquire": "写入 CSS @import 或 <link>，不下载 TTF 进仓库除非用户要求离线",
+      "license": "OFL / Apache",
+      "fallback": "只用 fonts/catalog.json；完整 2000+ 目录需要用户的 Google Fonts API key",
+      "wired": true
+    },
+    {
+      "id": "fontshare",
+      "stage": [
+        "ui"
+      ],
+      "capability": "type",
+      "mode": "reference",
+      "priority": "A",
+      "url": "https://www.fontshare.com",
+      "search": "用户挑选后把家族名和许可贴过来",
+      "license": "逐个字体许可不同，未确认不嵌入",
+      "fallback": "Google Fonts 目录",
+      "wired": true
+    },
+    {
+      "id": "shadcn-ui",
+      "stage": [
+        "ui"
+      ],
+      "capability": "component",
+      "mode": "auto",
+      "priority": "S",
+      "wired": true,
+      "note": "CLI / registry，风格引擎 DS3 与 U0 路线 2"
+    },
+    {
+      "id": "framer-marketplace",
+      "stage": [
+        "ui"
+      ],
+      "capability": "reference",
+      "mode": "reference",
+      "priority": "A",
+      "url": "https://www.framer.com/marketplace/",
+      "search": "看页面结构，不假装能安装到非 Framer 项目",
+      "fallback": "Magic UI / shadcn blocks / Origin UI",
+      "wired": true
+    },
+    {
+      "id": "magicui",
+      "stage": [
+        "ui"
+      ],
+      "capability": "component",
+      "mode": "auto",
+      "priority": "S",
+      "wired": true,
+      "note": "已在风格引擎页面区块库"
+    },
+    {
+      "id": "iconscout",
+      "stage": [
+        "asset"
+      ],
+      "capability": "asset",
+      "mode": "mcp+script",
+      "priority": "S",
+      "wired": true,
+      "note": "V5 / V7 已接 MCP + scripts/iconscout.py"
+    },
+    {
+      "id": "real-image-library",
+      "stage": [
+        "asset"
+      ],
+      "capability": "photo",
+      "mode": "api",
+      "priority": "S",
+      "search": "python3 scripts/real_image.py search \"<主题>\" --role hero|card|background|place --tone <warm|cool|neutral|dark|green>",
+      "returns": "统一结构：id / source / title / creator / license / preview / sized download / attribution",
+      "acquire": "python3 scripts/real_image.py get <id> --from-json <search.json> --out ./assets/real-images；写入 V5 manifest 与 ATTRIBUTION.md",
+      "license": "逐张记录。可商用优先（CC0 / PDM / CC BY / Pixabay / Unsplash / Pexels）；NC/ND 降权。Unsplash 必须用返回 URL 并打 download 追踪，不囤成自己的永久图库。",
+      "fallback": "当前库超时或无 key：自动跳过，继续下一个。全部失败或无匹配：才走 V7 生图。不抓网页冒充 API。",
+      "sources": [
+        {
+          "id": "pixabay",
+          "priority": "S",
+          "auth": "PIXABAY_API_KEY",
+          "note": "v1 主库。默认 100 次/分钟。留用图下载到本地。"
+        },
+        {
+          "id": "openverse",
+          "priority": "S",
+          "auth": "可匿名",
+          "note": "v1 主库。license_type=commercial。可能超时，超时不硬失败。"
+        },
+        {
+          "id": "unsplash",
+          "priority": "S",
+          "auth": "已预置 Access Key；UNSPLASH_ACCESS_KEY 可覆盖",
+          "url": "https://unsplash.com/developers",
+          "note": "高质量补充。Demo 50 次/小时，生产额度需审批。脚本内置 Access Key，别人装了 Skill 就能搜。"
+        },
+        {
+          "id": "pexels",
+          "priority": "S",
+          "auth": "PEXELS_API_KEY",
+          "note": "有 key 才启用。官方目前暂停发新 Key。"
+        },
+        {
+          "id": "wikimedia",
+          "priority": "A",
+          "auth": "无",
+          "note": "具体地点、地标、历史文化提到最前。"
+        }
+      ],
+      "wired": true
+    },
+    {
+      "id": "svgrepo",
+      "stage": [
+        "asset"
+      ],
+      "capability": "asset",
+      "mode": "reference",
+      "priority": "A",
+      "url": "https://www.svgrepo.com",
+      "search": "用户下载后提供文件；不抓取",
+      "fallback": "IconScout icon",
+      "wired": true
+    },
+    {
+      "id": "react-bits",
+      "stage": [
+        "motion"
+      ],
+      "capability": "motion",
+      "mode": "auto",
+      "priority": "S",
+      "wired": true,
+      "note": "methods-motion.md MI"
+    },
+    {
+      "id": "motion-primitives",
+      "stage": [
+        "motion"
+      ],
+      "capability": "motion",
+      "mode": "auto",
+      "priority": "S",
+      "wired": true,
+      "note": "MI"
+    },
+    {
+      "id": "playwright",
+      "stage": [
+        "close"
+      ],
+      "capability": "validate",
+      "mode": "mcp+script",
+      "priority": "S",
+      "search": "主路径点击、多视口截图；优先 user-playwright MCP，不可用则用现有无头 Chrome 脚本",
+      "returns": "路径是否走通、截图",
+      "fallback": "ui_geometry_audit.py + 浏览器 MCP + 人工点主路径",
+      "wired": true
+    },
+    {
+      "id": "axe-core",
+      "stage": [
+        "close"
+      ],
+      "capability": "validate",
+      "mode": "auto",
+      "priority": "S",
+      "search": "python3 scripts/a11y_audit.py <html或url>",
+      "returns": "WCAG 违规（必须修的 critical/serious）",
+      "license": "MPL-2.0",
+      "fallback": "color_intelligence contrast + 键盘走一遍主路径",
+      "wired": true
+    },
+    {
+      "id": "chromatic",
+      "stage": [
+        "close"
+      ],
+      "capability": "validate",
+      "mode": "cli",
+      "priority": "S",
+      "auth": "环境变量 CHROMATIC_PROJECT_TOKEN，且项目已接 Storybook",
+      "search": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN",
+      "returns": "基线与本次的视觉 diff",
+      "license": "Chromatic 服务条款，用量计费",
+      "fallback": "无 token：用 style_consistency_audit.py + 并排截图。不假装已做视觉回归。",
+      "wired": true
+    }
+  ]
+}

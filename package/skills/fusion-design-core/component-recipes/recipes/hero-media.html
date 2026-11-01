@@ -1,0 +1,35 @@
+<!-- recipe
+{
+  "id": "hero-media",
+  "name": "大图头图",
+  "tags": ["content", "travel", "mobile-consumer"],
+  "source": "按 Airbnb 房源详情、Apple 旅行类 App 详情页头图做法整理",
+  "license": "MIT",
+  "states": ["默认", "多图时带页码"],
+  "use": "详情页顶部，图片占首屏 40–55% 高；顶部按钮用 app-bar 透明款叠在图上；标题放在图下方",
+  "dont": "不要把标题和说明压在图片上再加暗色渐变；不要用插画或色块代替真实照片",
+  "icons": [],
+  "requires": ["app-bar"]
+}
+-->
+<style>
+.r-hero { position: relative; }
+.r-hero__img { width: 100%; height: var(--r-hero-h, 46vh); min-height: 260px; max-height: 480px; object-fit: cover; display: block; }
+.r-hero__count { position: absolute; right: 12px; bottom: 12px; padding: 4px 10px; border-radius: 999px; background: rgba(0, 0, 0, .55); color: #fff; font: 500 12px/1.4 var(--r-font); font-variant-numeric: tabular-nums; }
+.r-hero__body { position: relative; margin-top: -16px; padding: 20px 20px 4px; border-radius: var(--r-radius-xl) var(--r-radius-xl) 0 0; background: var(--background); display: grid; gap: 6px; }
+.r-hero__eyebrow { font: 600 12px/1.2 var(--r-font); letter-spacing: .06em; text-transform: uppercase; color: var(--primary); }
+.r-hero__title { margin: 0; font: 700 26px/1.2 var(--r-font-display); letter-spacing: -0.02em; }
+.r-hero__meta { margin: 0; font: 400 14px/1.5 var(--r-font); color: var(--muted-foreground); }
+</style>
+<!-- demo -->
+<div class="r-hero" style="max-width:390px">
+  <header class="r-appbar r-appbar--overlay">
+    <button class="r-appbar__btn" aria-label="返回"><span class="r-ico i-chevron-left" aria-hidden="true"></span></button>
+    <span></span>
+    <div class="r-appbar__actions"><button class="r-appbar__btn" aria-label="分享"><span class="r-ico i-share-2" aria-hidden="true"></span></button><button class="r-appbar__btn" aria-label="收藏"><span class="r-ico i-heart" aria-hidden="true"></span></button></div>
+  </header>
+  <img class="r-hero__img" src="preview-assets/photo-1067.jpg" alt="城市全景">
+  <span class="r-hero__count">1 / 12</span>
+  <div class="r-hero__body"><span class="r-hero__eyebrow">城市 · 4–5 天</span><h1 class="r-hero__title">成都</h1><p class="r-hero__meta">熊猫基地清晨最安静，川菜可以要求不辣</p></div>
+</div>
+<!-- /demo -->

@@ -1,0 +1,41 @@
+<!-- recipe
+{
+  "id": "game-tokens",
+  "name": "牌桌材质变量",
+  "tags": [
+    "game-table"
+  ],
+  "source": "取自 GAME-09 风格（实体牌桌）字典色：绒面绿 #0F5132→#072B1A、胡桃木 #3E2723、金 #D4AF37",
+  "license": "MIT",
+  "states": [
+    "静态"
+  ],
+  "use": "所有 game-table 配方都读这组变量；换桌布颜色或木色只改这里。和风格预设的 --primary 等变量并存",
+  "dont": "不要在单个组件里写死颜色",
+  "icons": [],
+  "skin": "CSS 版材质只是兜底：有 VT 材质件（绒面、木边、牌面、按钮皮肤图片）时换成图片，CSS 只管布局和状态"
+}
+-->
+<style>
+:root {
+  --g-felt: #0F5132;
+  --g-felt-deep: #072B1A;
+  --g-wood: #3E2723;
+  --g-wood-light: #6D4C41;
+  --g-gold: #D4AF37;
+  --g-card: #FFFDF7;
+  --g-card-edge: #E8E2D0;
+  --g-red: #C62828;
+  --g-black: #1A1A1A;
+  --g-ink-on-felt: #F5F1E6;
+  --g-ink-on-felt-muted: color-mix(in srgb, #F5F1E6 70%, transparent);
+  --g-card-shadow: 0 1px 1px rgba(0, 0, 0, .25), 0 4px 10px rgba(0, 0, 0, .28);
+}
+.g-swatches { display: flex; gap: 8px; }
+.g-swatches span { width: 44px; height: 44px; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .1); }
+</style>
+<!-- demo -->
+<div class="g-swatches" aria-label="牌桌材质色">
+  <span style="background:var(--g-felt)"></span><span style="background:var(--g-felt-deep)"></span><span style="background:var(--g-wood)"></span><span style="background:var(--g-gold)"></span><span style="background:var(--g-card)"></span><span style="background:var(--g-red)"></span>
+</div>
+<!-- /demo -->

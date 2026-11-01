@@ -1,0 +1,37 @@
+<!-- recipe
+{
+  "id": "tooltip",
+  "name": "提示气泡",
+  "tags": [
+    "base"
+  ],
+  "source": "改写自 shadcn/ui Tooltip（MIT），纯 CSS，悬停和键盘聚焦都能触发",
+  "license": "MIT",
+  "states": [
+    "隐藏",
+    "悬停/聚焦显示"
+  ],
+  "use": "桌面端给图标按钮补一句说明",
+  "dont": "手机上没有悬停，关键信息要直接写出来或放进 sheet",
+  "icons": [
+    "info"
+  ],
+  "demoRequires": [
+    "button"
+  ]
+}
+-->
+<style>
+.r-tip { position: relative; display: inline-flex; }
+.r-tip__bubble {
+  position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translate(-50%, 4px); opacity: 0; pointer-events: none; z-index: 20;
+  padding: 6px 10px; border-radius: var(--r-radius-sm); background: var(--foreground); color: var(--background);
+  font: 500 12px/1.4 var(--r-font); white-space: nowrap; transition: opacity .15s var(--r-ease), transform .15s var(--r-ease);
+}
+.r-tip:hover .r-tip__bubble, .r-tip:focus-within .r-tip__bubble { opacity: 1; transform: translate(-50%, 0); }
+</style>
+<!-- demo -->
+<div style="padding-top:40px">
+  <span class="r-tip"><button class="r-btn r-btn--ghost r-btn--icon r-btn--round" aria-describedby="r-tip1" aria-label="价格说明"><span class="r-ico i-info" aria-hidden="true"></span></button><span class="r-tip__bubble" role="tooltip" id="r-tip1">含门票，不含餐饮</span></span>
+</div>
+<!-- /demo -->

@@ -1,0 +1,105 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dto-cn-02-cn-lifestyle",
+  "type": "registry:theme",
+  "title": "CN-02 清爽大图生活卡片风",
+  "cssVars": {
+    "theme": {
+      "font-sans": "\"PingFang SC\", sans-serif",
+      "radius": "0.75rem"
+    },
+    "light": {
+      "background": "#F8F8F8",
+      "foreground": "#111111",
+      "card": "#FFFFFF",
+      "card-foreground": "#111111",
+      "popover": "#FFFFFF",
+      "popover-foreground": "#111111",
+      "primary": "#E80020",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#F8F8F8",
+      "secondary-foreground": "#111111",
+      "muted": "#F8F8F8",
+      "muted-foreground": "#666666",
+      "accent": "#F8F8F8",
+      "accent-foreground": "#111111",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#EEEEEE",
+      "input": "#EEEEEE",
+      "ring": "#FF2442"
+    },
+    "dark": {
+      "background": "#F8F8F8",
+      "foreground": "#111111",
+      "card": "#FFFFFF",
+      "card-foreground": "#111111",
+      "popover": "#FFFFFF",
+      "popover-foreground": "#111111",
+      "primary": "#E80020",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#F8F8F8",
+      "secondary-foreground": "#111111",
+      "muted": "#F8F8F8",
+      "muted-foreground": "#666666",
+      "accent": "#F8F8F8",
+      "accent-foreground": "#111111",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#EEEEEE",
+      "input": "#EEEEEE",
+      "ring": "#FF2442"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "CN-02",
+      "tier": "theme",
+      "displayName": "清爽大图生活卡片风",
+      "modes": [
+        "light"
+      ],
+      "palette": {
+        "bg": "#F8F8F8",
+        "card": "#FFFFFF",
+        "text": [
+          "#111111",
+          "#666666",
+          "#999999"
+        ],
+        "primary": "#FF2442",
+        "extra": []
+      },
+      "radiusScale": {
+        "card": 12,
+        "control": 999
+      },
+      "border": {
+        "color": "#EEEEEE",
+        "width": "1px"
+      },
+      "shadow": "0 2px 12px rgba(0,0,0,0.03)",
+      "blur": "",
+      "typeScale": "22/17/15/12px，标题 600，行高 1.5",
+      "spacing": "内边距 12–16px，间距 8/12px",
+      "family": [
+        "content-feed",
+        "travel"
+      ],
+      "derived": [
+        "secondary",
+        "muted",
+        "accent",
+        "input",
+        "ring",
+        "popover",
+        "destructive"
+      ],
+      "source": "methods-visual.md V0 参数字典（本 Skill 内置）",
+      "installables": {
+        "tweakcnNearest": [],
+        "system": ""
+      }
+    }
+  }
+}

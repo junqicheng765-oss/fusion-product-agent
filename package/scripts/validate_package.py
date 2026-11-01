@@ -22,9 +22,13 @@ def validate():
     entry = (runtime / 'SKILL.md').read_text(encoding='utf-8')
     if not entry.startswith('---\nname: fusion-product-agent\n'):
         errors.append('main Skill frontmatter/name invalid')
-    skills = list((ROOT / 'skills').rglob('SKILL.md'))
-    if len(skills) != 1:
-        errors.append('expected one discoverable Skill')
+    skills = list((ROOT / 'skills').glob('*/SKILL.md'))
+    expected_skills = {'fusion-product-agent', 'fusion-design-core', 'fusion-design-impeccable', 'fusion-design-ui-ux-pro-max'}
+    if {p.parent.name for p in skills} != expected_skills:
+        errors.append('expected product entry and three bundled design Skills')
+    for p in skills:
+        if not p.read_text(encoding='utf-8').startswith('---\nname: ' + p.parent.name + '\n'):
+            errors.append('Skill frontmatter/name invalid: ' + p.parent.name)
     metadata = json.loads((ROOT / '.codex-plugin/plugin.json').read_text(encoding='utf-8'))
     if metadata['name'] != manifest['name'] or metadata['version'] != manifest['version']:
         errors.append('plugin and manifest identities differ')
@@ -40,6 +44,11 @@ def validate():
             if not target.is_relative_to(ROOT) or not target.exists():
                 errors.append(str(p.relative_to(ROOT)) + ': invalid local link ' + raw)
     provenance = json.loads((ROOT / 'provenance.json').read_text(encoding='utf-8'))
+    design = json.loads((ROOT / 'design-source.json').read_text(encoding='utf-8'))
+    expected_design = {f['destination']: f['sha256'] for f in design['files']}
+    actual_design = {k: v for k, v in actual.items() if any(k.startswith('skills/' + n + '/') for n in expected_skills - {'fusion-product-agent'})}
+    if expected_design != actual_design:
+        errors.append('designer source adaptation inventory differs')
     for rel, expected in provenance['bundled_knowledge']['files'].items():
         p = ROOT / rel
         if not p.is_file() or hashlib.sha256(p.read_bytes()).hexdigest() != expected:

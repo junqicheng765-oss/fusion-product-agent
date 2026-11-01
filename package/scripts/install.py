@@ -18,6 +18,8 @@ def digest_tree(root):
 
 
 def install(project, mode, dry_run=False):
+    if mode not in ('skill', 'agent'):
+        raise ValueError('Unsupported installation mode')
     project = project.expanduser().resolve()
     if project in [Path('/'), Path.home(), Path.home() / '.codex', Path.home() / '.agents']:
         raise ValueError('Choose a dedicated project directory, not home or global config')
@@ -25,23 +27,25 @@ def install(project, mode, dry_run=False):
         raise ValueError('Project must be a directory')
     relative = '.agents/skills/' + NAME if mode == 'skill' else '.codex/resources/' + NAME
     target = project / relative
+    sources = sorted(p for p in (PACKAGE / 'skills').iterdir() if (p / 'SKILL.md').is_file())
+    resources = {p.name: target.parent / p.name for p in sources}
     preset = project / '.codex/agents' / (NAME + '.toml')
     record = project / '.codex' / (NAME + '-install.json')
     config = project / '.codex/config.toml'
-    destinations = [target, record] + ([preset] if mode == 'agent' else [])
+    destinations = list(resources.values()) + [record] + ([preset] if mode == 'agent' else [])
     for dest in destinations + [config]:
         if not dest.resolve().is_relative_to(project):
             raise ValueError('Destination resolves outside project: ' + str(dest))
     for dest in destinations:
         if dest.exists() or dest.is_symlink():
             raise ValueError('Refusing to overwrite existing installation: ' + str(dest))
-    source = PACKAGE / 'skills' / NAME
     manifest = json.loads((PACKAGE / 'manifest.json').read_text(encoding='utf-8'))
     for rel, expected in manifest['files'].items():
         p = PACKAGE / rel
         if not p.is_file() or hashlib.sha256(p.read_bytes()).hexdigest() != expected:
             raise ValueError('Package integrity failed: ' + rel)
     plan = {'project': str(project), 'mode': mode, 'skill_or_resource': str(target),
+            'resources': {name: str(dest) for name, dest in resources.items()},
             'preset': str(preset) if mode == 'agent' else None,
             'create_project_config': mode == 'agent' and not config.exists(),
             'existing_config_preserved': config.exists(), 'global_changes': False,
@@ -52,10 +56,12 @@ def install(project, mode, dry_run=False):
     created = []
     staging = Path(tempfile.mkdtemp(prefix='.fusion-install-', dir=project))
     try:
-        shutil.copytree(source, staging / NAME, ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
+        for source in sources:
+            shutil.copytree(source, staging / source.name, ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
         target.parent.mkdir(parents=True, exist_ok=True)
-        os.rename(staging / NAME, target)
-        created.append(target)
+        for name, dest in resources.items():
+            os.rename(staging / name, dest)
+            created.append(dest)
         if mode == 'agent':
             preset.parent.mkdir(parents=True, exist_ok=True)
             instructions = (
@@ -76,7 +82,9 @@ def install(project, mode, dry_run=False):
                 created.append(config)
         record.parent.mkdir(parents=True, exist_ok=True)
         with record.open('x', encoding='utf-8') as handle:
-            json.dump({**plan, 'files': digest_tree(target)}, handle, ensure_ascii=False, indent=2)
+            json.dump({**plan, 'files': digest_tree(target),
+                       'resource_files': {name: digest_tree(dest) for name, dest in resources.items()}},
+                      handle, ensure_ascii=False, indent=2)
         created.append(record)
     except Exception:
         for p in reversed(created):

@@ -1,0 +1,40 @@
+<!-- recipe
+{
+  "id": "place-row",
+  "name": "地点行",
+  "tags": ["travel", "mobile-consumer"],
+  "source": "按 Google Maps、大众点评列表行做法整理",
+  "license": "MIT",
+  "states": ["默认", "已加入行程", "暂停营业"],
+  "use": "地点、餐厅、酒店的列表；左图右文，一行给出名称、类别、评分和一个对外国游客关键的事实",
+  "dont": "不要把评分、距离、价格、标签全部塞进一行",
+  "icons": ["star", "plus", "check"]
+}
+-->
+<style>
+.r-place { display: grid; grid-template-columns: 72px 1fr auto; gap: var(--r-gap-3); align-items: center; padding: 10px var(--r-gap-4); text-decoration: none; color: var(--foreground); }
+.r-place + .r-place { border-top: 1px solid var(--border); }
+.r-place__img { width: 72px; height: 72px; border-radius: var(--r-radius); object-fit: cover; }
+.r-place__body { display: grid; gap: 3px; min-width: 0; }
+.r-place__name { font: 600 15px/1.3 var(--r-font); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.r-place__meta { display: flex; align-items: center; gap: 6px; font: 400 13px/1.3 var(--r-font); color: var(--muted-foreground); }
+.r-place__meta .r-ico { color: #F5A524; width: 14px; height: 14px; }
+.r-place__key { font: 500 13px/1.3 var(--r-font); color: var(--foreground); }
+.r-place__add { width: 36px; height: 36px; padding: 0; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 50%; background: var(--background); color: var(--foreground); cursor: pointer; }
+.r-place__add .r-ico--on { display: none; }
+.r-place__add[aria-pressed="true"] { background: var(--primary); border-color: var(--primary); color: var(--primary-foreground); }
+.r-place__add[aria-pressed="true"] .r-ico--on { display: inline-block; }
+.r-place__add[aria-pressed="true"] .r-ico--off { display: none; }
+.r-place[data-closed] .r-place__img { filter: grayscale(1); opacity: .6; }
+</style>
+<!-- demo -->
+<div style="max-width:390px">
+  <div class="r-place"><img class="r-place__img" src="preview-assets/photo-1080.jpg" alt=""><div class="r-place__body"><span class="r-place__name">南门涮肉（天坛店）</span><span class="r-place__meta"><span class="r-ico i-star" aria-hidden="true"></span>4.6 · 铜锅涮肉 · 人均 ¥120</span><span class="r-place__key">有英文菜单，可刷外卡</span></div><button class="r-place__add" aria-label="加入行程" aria-pressed="false"><span class="r-ico r-ico-sm r-ico--off i-plus" aria-hidden="true"></span><span class="r-ico r-ico-sm r-ico--on i-check" aria-hidden="true"></span></button></div>
+  <div class="r-place"><img class="r-place__img" src="preview-assets/photo-164.jpg" alt=""><div class="r-place__body"><span class="r-place__name">南锣鼓巷</span><span class="r-place__meta"><span class="r-ico i-star" aria-hidden="true"></span>4.2 · 胡同街区</span><span class="r-place__key">周末 15 点后人最多</span></div><button class="r-place__add" aria-label="已加入行程" aria-pressed="true"><span class="r-ico r-ico-sm r-ico--off i-plus" aria-hidden="true"></span><span class="r-ico r-ico-sm r-ico--on i-check" aria-hidden="true"></span></button></div>
+</div>
+<!-- /demo -->
+<script>
+document.querySelectorAll('.r-place__add').forEach(function (b) {
+  b.addEventListener('click', function () { var on = b.getAttribute('aria-pressed') !== 'true'; b.setAttribute('aria-pressed', String(on)); b.setAttribute('aria-label', on ? '已加入行程' : '加入行程'); });
+});
+</script>

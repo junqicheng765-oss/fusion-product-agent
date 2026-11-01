@@ -1,87 +1,63 @@
-# 融合产品锤 v0.2.0
+# 融合产品锤 0.3.0
 
-方向调整试用版，构建日期2026-10-31。基于0.1.0融合包及本次用户转述的老板输入更新运行规则；继承来源未重新查询上游版本。融合强子产品Agent 2026.09.30.2、俊琦JQ Product Agent 1.1.5和Peter Matrix-AI v0.26的已核对方法。版本标识对应本次本地来源，不声称是各上游最新发布。
+2026-11-01版本。产品领域研究、需求与规则、复杂状态、业务验收和交接沿用融合锤子；设计部分整体替换为同事分支的设计专家模块，不再运行旧设计方法。本版通过融合锤子独立GitHub仓库分发。
 
-**默认没有专家补位，由锤子主动研究并构建领域需求、边界与上下游交接，与人持续校准创意和业务目标。** 一套主线、一处规则来源、按任务风险加载深度；不要求原三套同时安装。
+## 设计由谁负责
 
-## 本次方向调整
+- [fusion-product-agent](skills/fusion-product-agent/SKILL.md)：产品主线，提供目标、领域依据、规则、范围与验收预期；接回设计结果，核对业务与版本。
+- [fusion-design-core](skills/fusion-design-core/SKILL.md)：设计主责，负责设计研究、竞品、信息架构、流程/交互、风格、组件/素材、Figma/代码与QA0终审。
+- [fusion-design-ui-ux-pro-max](skills/fusion-design-ui-ux-pro-max/SKILL.md)：按设计任务检索UI/UX方法与实现建议。
+- [fusion-design-impeccable](skills/fusion-design-impeccable/SKILL.md)：按需制作、审视和精修；服务设计主流程，不另立产品规则或覆盖QA0。
 
-领域构建成为常规迭代/完整设计的必需工作，按任务风险确定深度。产品能力模型提供产品判断方法，业务领域知识需另行研究与验证。人的“不知道”不会被当作研究工作的终点。
+原融合版的设计分层、风格选择办法、Figma优先路线、视觉/交互制作清单已撤换。产品能力模型保留原文，作为产品判断依据；它不与新设计模块争夺设计执行权。详见[替换范围与来源](SOURCE-MAP.md)。
 
-以从想法到变现为服务目标，当前包仍是产品锤：主动构建后续研发、上线、采用和收益验证所需输入，在用户授权范围内衔接工作；生成文件不代表整条链路已跑通。
+## 当前工作链
 
-评测优先看目标理解、领域需求补齐、边界构建、上下游承接及真实任务/价值证据；Token、篇幅、流程和轮数只作诊断。详见 [领域方法](skills/fusion-product-agent/references/domain-and-value.md) 与 [新测评口径](skills/fusion-product-agent/references/nonexpert-evaluation.md)。本轮仅验证包格式、引用、完整性和继承的安装脚本行为，尚未完成新口径业务实测。
+产品理解与领域研究 → 规则/范围/场景与业务验收 → [设计交接](skills/fusion-product-agent/references/design-and-demo.md) → 设计专家判断切入点 → 专业设计与QA0 → 产品核对业务/版本与下游交接。
 
-## 这版有什么
+0到1设计按同事入口先完成并汇报研究、竞品、流程和具体交互，再原生提问确认风格等事项，随后调组件、主题、字体与真实素材制作。存量延展和按正式稿还原走设计模块对应分流。不是所有任务都重新走0到1。
 
-- 咨询/清单、局部迭代、完整产品设计与复杂任务的统一路由。
-- 渐进澄清、已有决定与委托复用；内部检查不变成逐步人工放行。
-- 业务正文优先，历史与确认可回查；设计/研发/QA共用同一规则来源。
-- 设计准备前置，代表链路→模块/状态→实际文案、交互和视觉检查。
-- 对象、权限、资金、异步、结果未知、恢复与关键变更方法。
-- 七类48项产品能力原文按需参考；正式基线/交接筛适用性，局部任务只查受影响项。
-- 设计、Demo、规则与验收的语义/版本对应；可选机器引用检查。
-- 项目级Skill或Subagent两种安装方式，互斥选择；没有全局安装副作用。
+同事最新版的新建UI路线为本地高保真组件页面优先，需要Figma时再按实际可用能力转换。若用户指定已有Figma主稿或交付格式，按任务合同与相应分流处理，不能暗换路线。Figma云端Agents不是本版新建页面的默认生成路径。
 
-运行规则是融合后重写的执行合同，未把三套入口或审批串起来。具体取舍见 [融合来源与取舍](SOURCE-MAP.md)。
+## 使用与完整安装
 
-## 从这里使用
+可在新的试验项目让Agent读取本包`skills/fusion-product-agent/SKILL.md`，按当前需求调用同包设计模块。无需把同事的整个JQ产品流程也装进来。
 
-无需安装即可在一个新项目聊天中提供本包入口的绝对路径，请Agent读取：
-
-> 请读取这个包的 `skills/fusion-product-agent/SKILL.md`，用融合产品锤处理下面的需求。我可能不懂产品和业务领域，请围绕我的想法与目标交互，主动研究并构建领域需求、边界及上下游交接。本次做到开发前，说明后续如何验证采用与收益。
-
-这种方式验证的是读取并使用包内规则，不代表已注册为宿主Skill。要在项目中按名称发现，使用下述安装方式。
-
-### 方式一：项目级Skill
-
-在本包目录运行，替换为你真实项目的绝对路径：
+项目级Skill：
 
 ```sh
 python3 scripts/install.py --project /absolute/path/to/project --mode skill --dry-run
 python3 scripts/install.py --project /absolute/path/to/project --mode skill
 ```
 
-生成项目内 `.agents/skills/fusion-product-agent/`。在该项目新开聊天，输入：
+四项Skill完整复制到项目`.agents/skills/`，新会话使用`$fusion-product-agent`。
 
-> 使用 $fusion-product-agent，先理解我的需求，按本次范围完成产品方案与交付。
-
-### 方式二：仅项目级Subagent
+项目级Subagent：
 
 ```sh
 python3 scripts/install.py --project /absolute/path/to/project --mode agent --dry-run
 python3 scripts/install.py --project /absolute/path/to/project --mode agent
 ```
 
-生成 `.codex/agents/fusion-product-agent.toml` 和 `.codex/resources/fusion-product-agent/`，不注册项目Skill。项目无config时创建最小Agent启用配置；已有config完整保留，若其禁用自定义Agent，需由项目使用者按宿主要求启用。新开该项目聊天后输入：
+四份完整资源复制到项目`.codex/resources/`，注册一个产品主Subagent。子Agent按相邻路径读取设计模块，不注册第二套项目Skill，也不自动启动额外Agent。主任务统一向用户提问。
 
-> 请调用本项目的 fusion-product-agent Subagent，完成下面的产品任务。由你统一向我提问和汇总。
+两种安装方式互斥；任一同名资源已存在时拒绝整个安装，不覆盖本地定制；复制中途失败撤回本次资源。安装记录包含所有资源路径与摘要。既有项目配置保持原样，无配置时按原安装器规则写入最小Agent配置；不改全局设置。
 
-首次安装后需新聊天加载；文件存在、宿主发现和实际运行分别验证。移动项目后重装到新位置以更新Subagent规则绝对路径；Skill引用采用相对路径。安装器默认拒绝覆盖旧安装，不合并现有AGENTS.md、不改变模型/Provider、不触及全局配置。
+包内插件元数据同时指向四项Skill和IconScout MCP声明。项目安装器仅复制规则/资源，不修改宿主MCP配置。首次安装后新会话加载；文件存在不代表运行已验证。
 
-## 环境与边界
+## 工具条件
 
-主Skill是Markdown规则，可由具备文件读取能力的Agent使用。附带脚本使用Python 3.9+标准库，不需pip安装。Figma、浏览器和Computer Use依赖宿主实际提供与授权，是可选适配，不随包附带账号或工具。
+自带方法、组件配方、主题/字体数据、真实素材处理和检查脚本，不提供Figma、Computer Use、浏览器、生图服务账号或付费素材权限。按[工具接入](skills/fusion-product-agent/references/figma-adapter.md)检查；已有有效配置复用，不乱建Figma文件。
 
-包内 `.codex-plugin/plugin.json` 提供插件元数据；本地项目Skill/Subagent是本版实际试装路径。本版未发布市场、不声称市场导入已通过。
+安装/校验/交付引用辅助脚本使用Python 3.9+标准库；设计脚本依功能还可能依赖Node、Playwright、Pillow、网络或宿主工具，不应沿用旧包“所有脚本只需标准库”的描述。具体见各脚本帮助与实际环境。
 
-## 检查与试用
+## 检查与升级
 
 ```sh
 python3 scripts/validate_package.py
 python3 scripts/test_package.py
 ```
 
-第一个检查文件清单、相对引用和入口，第二个在临时目录验证两种安装及覆盖保护、路径边界和交付引用失败场景。它们不证明产品判断效果。真实试用结果与范围见 [验证说明](VALIDATION.md)。
+校验范围见[验证说明](VALIDATION.md)。安装清单`.codex/fusion-product-agent-install.json`包含`resources`及每份资源的摘要；卸载或升级要检查这些资源是否被本地修改，保留项目产物与定制，不整体删除`.agents`或`.codex`。旧版本仍用旧记录处理。
 
-多载体交接需要机械校对时，可按 [清单示例](skills/fusion-product-agent/assets/delivery.example.json) 记录实际引用，用 `skills/fusion-product-agent/scripts/check_delivery.py` 检查。它只查声明过的内容；建议在规则记录 `source_sha256`、产物记录 `sha256` 绑定实际内容，不改哈希让旧结果通过。自动检查不审查业务语义或批准真实性。
-
-## 卸载与升级
-
-安装记录在项目 `.codex/fusion-product-agent-install.json`。卸载前检查是否有项目新增内容；只删除记录对应的Skill目录或Agent预设/资源及该记录。安装器创建的config只有在确认仍是原始最小配置且项目不再需要时才可移除，不整体删除`.codex`。
-
-升级时先保留旧版与项目产物，核对记录和本地改动；在新隔离目录试装新包，不用强制覆盖来丢弃项目定制。本包版本独立于各来源版本。
-
-## 来源与使用范围
-
-本版供用户本地融合试用。来源、复制范围及校验见 [SOURCE-MAP.md](SOURCE-MAP.md) 和 [provenance.json](provenance.json)。本地来源包未提供可据此授予整个融合包公开再分发的统一许可，因此本版不添加开放许可、不宣称获得上游官方背书；公开再分发前应核对来源权利。未包含业务样本、历史会话、凭据或来源项目产物。
+来源固定为同事分支`6dcc771`；完整文件及适配前后摘要见[设计来源清单](design-source.json)。仅做隔离标识、宿主/父流程接入，以及按作者最新入口澄清两处遗留Figma概括。脚本、组件和素材未删改。来源的既有许可与权利说明继续适用，本版不添加未经确认的统一开放许可。

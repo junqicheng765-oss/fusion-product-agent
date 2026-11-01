@@ -1,0 +1,36 @@
+<!-- recipe
+{
+  "id": "countdown-ring",
+  "name": "出牌倒计时",
+  "tags": [
+    "game-table"
+  ],
+  "source": "按牌类游戏通行倒计时做法整理：闹钟式圆环 + 秒数，最后 5 秒变红",
+  "license": "MIT",
+  "states": [
+    "正常",
+    "最后 5 秒（变红 + 轻跳）"
+  ],
+  "use": "贴在当前出牌人铭牌旁或出牌区上方；秒数用等宽数字",
+  "dont": "不要只靠颜色提示时间快到，秒数必须可见",
+  "icons": [],
+  "requires": [
+    "game-tokens"
+  ],
+  "skin": "CSS 版材质只是兜底：有 VT 材质件（绒面、木边、牌面、按钮皮肤图片）时换成图片，CSS 只管布局和状态"
+}
+-->
+<style>
+.g-timer { --_p: 60%; position: relative; width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; background: conic-gradient(var(--g-gold) var(--_p), rgba(0, 0, 0, .35) 0); }
+.g-timer::before { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #4A3A2A, #1F1610); }
+.g-timer span { position: relative; font: 800 17px/1 "Roboto Condensed", DIN, var(--r-font); color: var(--g-ink-on-felt); font-variant-numeric: tabular-nums; }
+.g-timer[data-urgent] { background: conic-gradient(var(--g-red) var(--_p), rgba(0, 0, 0, .35) 0); animation: g-timer-pulse 1s ease-in-out infinite; }
+.g-timer[data-urgent] span { color: #FFCDD2; }
+@keyframes g-timer-pulse { 50% { transform: scale(1.08); } }
+</style>
+<!-- demo -->
+<div style="display:flex;gap:20px;padding:20px;background:var(--g-felt);border-radius:12px">
+  <span class="g-timer" role="timer" aria-label="剩余 12 秒" style="--_p:80%"><span>12</span></span>
+  <span class="g-timer" role="timer" aria-label="剩余 4 秒" data-urgent style="--_p:27%"><span>4</span></span>
+</div>
+<!-- /demo -->

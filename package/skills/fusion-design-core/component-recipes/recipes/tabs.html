@@ -1,0 +1,59 @@
+<!-- recipe
+{
+  "id": "tabs",
+  "name": "标签页（下划线式）",
+  "tags": ["base", "mobile-consumer", "content"],
+  "source": "改写自 shadcn/ui Tabs（MIT）https://ui.shadcn.com/docs/components/tabs",
+  "license": "MIT",
+  "states": ["选中", "未选", "聚焦", "横向溢出可滚"],
+  "use": "同一页面内切换平级内容（如 行程 / 住宿 / 美食）；超出宽度时横向滚动，不换行",
+  "dont": "App 一级导航用 tab-bar；筛选条件用 chip-group",
+  "icons": []
+}
+-->
+<style>
+.r-tabs { display: block; }
+.r-tabs__list { display: flex; gap: var(--r-gap-5); overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid var(--border); padding: 0 var(--r-gap-4); }
+.r-tabs__list::-webkit-scrollbar { display: none; }
+.r-tabs__tab {
+  position: relative; flex: none; min-height: var(--r-touch); padding: 0 2px; border: 0; background: none; cursor: pointer;
+  font: 500 15px/1 var(--r-font); color: var(--muted-foreground);
+}
+.r-tabs__tab[aria-selected="true"] { color: var(--foreground); font-weight: 600; }
+.r-tabs__tab[aria-selected="true"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; border-radius: 2px; background: var(--primary); }
+.r-tabs__panel { padding: var(--r-gap-4); font: 400 15px/1.6 var(--r-font); }
+.r-tabs__panel[hidden] { display: none; }
+</style>
+<!-- demo -->
+<div class="r-tabs" style="max-width:390px">
+  <div class="r-tabs__list" role="tablist">
+    <button class="r-tabs__tab" role="tab" aria-selected="true" aria-controls="r-tp1" id="r-tt1">行程</button>
+    <button class="r-tabs__tab" role="tab" aria-selected="false" aria-controls="r-tp2" id="r-tt2" tabindex="-1">住宿</button>
+    <button class="r-tabs__tab" role="tab" aria-selected="false" aria-controls="r-tp3" id="r-tt3" tabindex="-1">美食</button>
+    <button class="r-tabs__tab" role="tab" aria-selected="false" aria-controls="r-tp4" id="r-tt4" tabindex="-1">交通</button>
+  </div>
+  <div class="r-tabs__panel" role="tabpanel" id="r-tp1" aria-labelledby="r-tt1">5 天 4 晚，北京 → 西安</div>
+  <div class="r-tabs__panel" role="tabpanel" id="r-tp2" aria-labelledby="r-tt2" hidden>3 家候选酒店</div>
+  <div class="r-tabs__panel" role="tabpanel" id="r-tp3" aria-labelledby="r-tt3" hidden>12 家本地人常去的店</div>
+  <div class="r-tabs__panel" role="tabpanel" id="r-tp4" aria-labelledby="r-tt4" hidden>高铁 4 小时 18 分</div>
+</div>
+<!-- /demo -->
+<script>
+document.querySelectorAll('.r-tabs').forEach(function (root) {
+  var tabs = Array.prototype.slice.call(root.querySelectorAll('[role=tab]'));
+  function select(t) {
+    tabs.forEach(function (x) {
+      var on = x === t; x.setAttribute('aria-selected', String(on)); x.tabIndex = on ? 0 : -1;
+      var p = document.getElementById(x.getAttribute('aria-controls')); if (p) p.hidden = !on;
+    });
+    t.focus(); t.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { select(t); });
+    t.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') select(tabs[(i + 1) % tabs.length]);
+      if (e.key === 'ArrowLeft') select(tabs[(i - 1 + tabs.length) % tabs.length]);
+    });
+  });
+});
+</script>

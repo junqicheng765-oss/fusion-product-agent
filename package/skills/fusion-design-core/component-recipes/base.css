@@ -1,0 +1,80 @@
+/* component-recipes base
+   Every recipe reads only the shadcn-style variables that style_preset.py writes into :root
+   (--background, --foreground, --card, --primary, --border, --radius, --font-sans ...).
+   The derived variables below are the only extra layer; override them per product, not per page. */
+
+:root {
+  --r-radius: var(--radius, 0.5rem);
+  --r-radius-sm: calc(var(--r-radius) - 2px);
+  --r-radius-lg: calc(var(--r-radius) + 4px);
+  --r-radius-xl: calc(var(--r-radius) + 8px);
+  --r-font: var(--font-sans, -apple-system, "PingFang SC", "Noto Sans SC", system-ui, sans-serif);
+  --r-font-display: var(--font-serif, var(--r-font));
+  --r-font-mono: var(--font-mono, ui-monospace, "SF Mono", Menlo, monospace);
+  --r-touch: 44px;
+  --r-gap-1: 4px;
+  --r-gap-2: 8px;
+  --r-gap-3: 12px;
+  --r-gap-4: 16px;
+  --r-gap-5: 20px;
+  --r-gap-6: 24px;
+  --r-shadow-sm: 0 1px 2px color-mix(in srgb, var(--foreground, #000) 8%, transparent);
+  --r-shadow-md: 0 4px 16px color-mix(in srgb, var(--foreground, #000) 10%, transparent);
+  --r-shadow-lg: 0 12px 32px color-mix(in srgb, var(--foreground, #000) 16%, transparent);
+  --r-overlay: color-mix(in srgb, var(--foreground, #000) 45%, transparent);
+  /* Many presets set --muted equal to --background; surface fills use these so they never vanish. */
+  --r-fill: color-mix(in srgb, var(--foreground, #000) 6%, var(--background, #fff));
+  --r-fill-strong: color-mix(in srgb, var(--foreground, #000) 11%, var(--background, #fff));
+  --r-ease: cubic-bezier(0.2, 0, 0, 1);
+  --r-safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.r-root,
+.r-root *,
+.r-root *::before,
+.r-root *::after { box-sizing: border-box; }
+
+.r-root {
+  font-family: var(--r-font);
+  color: var(--foreground);
+  background: var(--background);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:where(.r-root) img { display: block; max-width: 100%; }
+:where(.r-root) button { font: inherit; color: inherit; }
+
+.r-sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+.r-focus:focus-visible,
+:where(.r-root) :where(button, a, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--ring, var(--primary));
+  outline-offset: 2px;
+}
+
+/* Icons are real SVG files (Lucide set in icons/, or IconScout / brand files) painted with currentColor:
+   <span class="r-ico i-search" aria-hidden="true"></span>
+   .i-<name> rules carry the file as a data URI (component_recipe.py copy / icon-css), because CSS masks
+   loaded by URL are blocked on file:// pages. Never replace icons with text glyphs or hand-written <path>. */
+.r-ico {
+  display: inline-block;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  background-color: currentColor;
+  -webkit-mask: var(--ico) center / contain no-repeat;
+  mask: var(--ico) center / contain no-repeat;
+}
+.r-ico-sm { width: 16px; height: 16px; }
+.r-ico-lg { width: 24px; height: 24px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .r-root *, .r-root *::before, .r-root *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

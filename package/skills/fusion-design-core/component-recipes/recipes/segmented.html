@@ -1,0 +1,39 @@
+<!-- recipe
+{
+  "id": "segmented",
+  "name": "分段控件",
+  "tags": ["base", "mobile-consumer"],
+  "source": "改写自 shadcn/ui Toggle Group（MIT）与 iOS Segmented Control 规范",
+  "license": "MIT",
+  "states": ["选中", "未选", "聚焦", "禁用"],
+  "use": "2–4 个短选项、切换同一区域的视图或单个参数（如天数、人数类型）",
+  "dont": "切换整页内容用 tabs；超过 4 项用 chip-group",
+  "icons": []
+}
+-->
+<style>
+.r-seg { display: inline-grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 2px; padding: 3px; border-radius: var(--r-radius); background: var(--r-fill); }
+.r-seg--block { display: grid; width: 100%; }
+.r-seg button {
+  min-height: 36px; padding: 0 14px; border: 0; border-radius: var(--r-radius-sm); background: transparent; cursor: pointer;
+  font: 500 14px/1 var(--r-font); color: var(--muted-foreground); transition: background-color .15s var(--r-ease), color .15s var(--r-ease);
+}
+.r-seg button[aria-pressed="true"] { background: var(--background); color: var(--foreground); box-shadow: var(--r-shadow-sm); font-weight: 600; }
+.r-seg button:disabled { opacity: .5; cursor: not-allowed; }
+</style>
+<!-- demo -->
+<div style="display:grid;gap:16px;max-width:360px">
+  <div class="r-seg r-seg--block" role="group" aria-label="行程天数">
+    <button aria-pressed="false">3 天</button><button aria-pressed="true">5 天</button><button aria-pressed="false">7 天</button><button aria-pressed="false">更多</button>
+  </div>
+  <div class="r-seg" role="group" aria-label="视图"><button aria-pressed="true">列表</button><button aria-pressed="false">地图</button></div>
+</div>
+<!-- /demo -->
+<script>
+document.querySelectorAll('.r-seg').forEach(function (g) {
+  g.addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b || b.disabled) return;
+    g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+  });
+});
+</script>

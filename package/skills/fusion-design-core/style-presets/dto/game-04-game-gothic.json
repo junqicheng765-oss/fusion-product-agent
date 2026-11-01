@@ -1,0 +1,107 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dto-game-04-game-gothic",
+  "type": "registry:theme",
+  "title": "GAME-04 哥特羊皮纸手绘拼贴悬疑风",
+  "cssVars": {
+    "theme": {
+      "font-sans": "\"Special Elite\", \"Playfair Display\", serif",
+      "radius": "0.125rem",
+      "font-serif": "\"Playfair Display\", serif"
+    },
+    "light": {
+      "background": "#1A1615",
+      "foreground": "#B69E91",
+      "card": "#D8CBB8",
+      "card-foreground": "#241C18",
+      "popover": "#D8CBB8",
+      "popover-foreground": "#241C18",
+      "primary": "#8C1D1D",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#1A1615",
+      "secondary-foreground": "#241C18",
+      "muted": "#1A1615",
+      "muted-foreground": "#9B7C67",
+      "accent": "#1A1615",
+      "accent-foreground": "#241C18",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#2B221E",
+      "input": "#2B221E",
+      "ring": "#8C1D1D"
+    },
+    "dark": {
+      "background": "#1A1615",
+      "foreground": "#B69E91",
+      "card": "#D8CBB8",
+      "card-foreground": "#241C18",
+      "popover": "#D8CBB8",
+      "popover-foreground": "#241C18",
+      "primary": "#8C1D1D",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#1A1615",
+      "secondary-foreground": "#241C18",
+      "muted": "#1A1615",
+      "muted-foreground": "#9B7C67",
+      "accent": "#1A1615",
+      "accent-foreground": "#241C18",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#2B221E",
+      "input": "#2B221E",
+      "ring": "#8C1D1D"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "GAME-04",
+      "tier": "theme",
+      "displayName": "哥特羊皮纸手绘拼贴悬疑风",
+      "modes": [
+        "light"
+      ],
+      "palette": {
+        "bg": "#1A1615",
+        "card": "#D8CBB8",
+        "text": [
+          "#241C18",
+          "#5E4B3E",
+          "#8C1D1D"
+        ],
+        "primary": "#8C1D1D",
+        "extra": [
+          "#9C7A44"
+        ]
+      },
+      "radiusScale": {
+        "card": 2,
+        "control": 2
+      },
+      "border": {
+        "color": "#2B221E",
+        "width": "2px"
+      },
+      "shadow": "4px 6px 14px rgba(0,0,0,0.65)",
+      "blur": "",
+      "typeScale": "28/20/15/12px",
+      "spacing": "",
+      "family": [
+        "game"
+      ],
+      "derived": [
+        "secondary",
+        "muted",
+        "accent",
+        "input",
+        "ring",
+        "popover",
+        "destructive"
+      ],
+      "source": "methods-visual.md V0 参数字典（本 Skill 内置）",
+      "installables": {
+        "tweakcnNearest": [],
+        "system": ""
+      }
+    }
+  }
+}

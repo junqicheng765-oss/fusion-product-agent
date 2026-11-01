@@ -1,0 +1,40 @@
+<!-- recipe
+{
+  "id": "search-field",
+  "name": "搜索框",
+  "tags": ["base", "mobile-consumer"],
+  "source": "改写自 Origin UI Input with icon / clear button（MIT）https://originui.com/input",
+  "license": "MIT",
+  "states": ["空", "输入中（出现清除）", "聚焦"],
+  "use": "顶部搜索入口；手机上可做成按钮外观，点开进入全屏搜索页",
+  "dont": "不要在搜索框里塞多个条件，条件用 chip-group",
+  "icons": ["search", "x"]
+}
+-->
+<style>
+.r-search { position: relative; display: flex; align-items: center; }
+.r-search > .r-ico { position: absolute; left: 14px; color: var(--muted-foreground); pointer-events: none; }
+.r-search input {
+  width: 100%; height: 44px; padding: 0 40px 0 42px; border: 1px solid transparent; border-radius: 999px;
+  background: var(--r-fill); color: var(--foreground); font: 400 16px/1 var(--r-font); -webkit-appearance: none; appearance: none;
+}
+.r-search input::-webkit-search-cancel-button { display: none; }
+.r-search input::placeholder { color: var(--muted-foreground); }
+.r-search input:focus { outline: none; background: var(--background); border-color: var(--ring); }
+.r-search__clear { position: absolute; right: 6px; width: 32px; height: 32px; padding: 0; display: grid; place-items: center; border: 0; border-radius: 50%; background: transparent; color: var(--muted-foreground); cursor: pointer; }
+.r-search input:placeholder-shown ~ .r-search__clear { display: none; }
+</style>
+<!-- demo -->
+<div style="max-width:360px">
+  <label class="r-search"><span class="r-sr-only">搜索目的地</span>
+    <span class="r-ico r-ico-sm i-search" aria-hidden="true"></span>
+    <input type="search" placeholder="搜索城市、景点或美食">
+    <button class="r-search__clear" type="button" aria-label="清除"><span class="r-ico r-ico-sm i-x" aria-hidden="true"></span></button>
+  </label>
+</div>
+<!-- /demo -->
+<script>
+document.querySelectorAll('.r-search__clear').forEach(function (b) {
+  b.addEventListener('click', function (e) { e.preventDefault(); var i = b.parentNode.querySelector('input'); i.value = ''; i.focus(); });
+});
+</script>

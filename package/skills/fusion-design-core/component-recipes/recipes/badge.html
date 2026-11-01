@@ -1,0 +1,37 @@
+<!-- recipe
+{
+  "id": "badge",
+  "name": "徽标 / 标签",
+  "tags": ["base"],
+  "source": "改写自 shadcn/ui Badge（MIT）https://ui.shadcn.com/docs/components/badge",
+  "license": "MIT",
+  "states": ["静态"],
+  "variants": ["solid", "soft", "outline", "dot"],
+  "use": "状态、类别、数量；文字 2–6 个字",
+  "dont": "可点击的筛选项用 chip-group；不要一张卡上堆 3 个以上",
+  "icons": []
+}
+-->
+<style>
+.r-badge {
+  display: inline-flex; align-items: center; gap: 5px; height: 22px; padding: 0 8px; border-radius: 999px; border: 1px solid transparent;
+  font: 600 12px/1 var(--r-font); white-space: nowrap; vertical-align: middle;
+}
+.r-badge--solid { background: var(--primary); color: var(--primary-foreground); }
+.r-badge--soft { background: color-mix(in srgb, var(--primary) 12%, var(--background)); color: color-mix(in srgb, var(--primary) 80%, var(--foreground)); }
+.r-badge--outline { border-color: var(--border); color: var(--foreground); background: transparent; }
+.r-badge--muted { background: var(--r-fill); color: var(--muted-foreground); }
+.r-badge--danger { background: color-mix(in srgb, var(--destructive) 12%, var(--background)); color: var(--destructive); }
+.r-badge--dot::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.r-badge--count { min-width: 18px; height: 18px; padding: 0 5px; justify-content: center; background: var(--destructive); color: var(--destructive-foreground, #fff); font-size: 11px; }
+</style>
+<!-- demo -->
+<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+  <span class="r-badge r-badge--solid">本周热门</span>
+  <span class="r-badge r-badge--soft">适合带老人</span>
+  <span class="r-badge r-badge--outline">需预约</span>
+  <span class="r-badge r-badge--muted">已结束</span>
+  <span class="r-badge r-badge--danger r-badge--dot">今日闭馆</span>
+  <span class="r-badge r-badge--count">3</span>
+</div>
+<!-- /demo -->

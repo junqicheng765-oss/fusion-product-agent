@@ -1,0 +1,104 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dto-cn-04-cn-miniprogram",
+  "type": "registry:theme",
+  "title": "CN-04 轻快白卡直达工具风",
+  "cssVars": {
+    "theme": {
+      "font-sans": "\"PingFang SC\", sans-serif",
+      "radius": "0.75rem"
+    },
+    "light": {
+      "background": "#F5F5F5",
+      "foreground": "#191919",
+      "card": "#FFFFFF",
+      "card-foreground": "#191919",
+      "popover": "#FFFFFF",
+      "popover-foreground": "#191919",
+      "primary": "#058643",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#F5F5F5",
+      "secondary-foreground": "#191919",
+      "muted": "#F5F5F5",
+      "muted-foreground": "#576B95",
+      "accent": "#F5F5F5",
+      "accent-foreground": "#191919",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#EDEDED",
+      "input": "#EDEDED",
+      "ring": "#07C160"
+    },
+    "dark": {
+      "background": "#F5F5F5",
+      "foreground": "#191919",
+      "card": "#FFFFFF",
+      "card-foreground": "#191919",
+      "popover": "#FFFFFF",
+      "popover-foreground": "#191919",
+      "primary": "#058643",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#F5F5F5",
+      "secondary-foreground": "#191919",
+      "muted": "#F5F5F5",
+      "muted-foreground": "#576B95",
+      "accent": "#F5F5F5",
+      "accent-foreground": "#191919",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#EDEDED",
+      "input": "#EDEDED",
+      "ring": "#07C160"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "CN-04",
+      "tier": "theme",
+      "displayName": "轻快白卡直达工具风",
+      "modes": [
+        "light"
+      ],
+      "palette": {
+        "bg": "#F5F5F5",
+        "card": "#FFFFFF",
+        "text": [
+          "#191919",
+          "#576B95",
+          "#888888"
+        ],
+        "primary": "#07C160",
+        "extra": []
+      },
+      "radiusScale": {
+        "card": 12,
+        "control": 8
+      },
+      "border": {
+        "color": "#EDEDED",
+        "width": "1px"
+      },
+      "shadow": "底部操作栏 0 -2px 10px rgba(0,0,0,0.04)",
+      "blur": "",
+      "typeScale": "20/17/15/12px，主按钮 16px 600",
+      "spacing": "内边距 12–16px，间距 8/12px",
+      "family": [
+        "minimal-saas"
+      ],
+      "derived": [
+        "secondary",
+        "muted",
+        "accent",
+        "input",
+        "ring",
+        "popover",
+        "destructive"
+      ],
+      "source": "methods-visual.md V0 参数字典（本 Skill 内置）",
+      "installables": {
+        "tweakcnNearest": [],
+        "system": ""
+      }
+    }
+  }
+}

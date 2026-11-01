@@ -1,0 +1,1215 @@
+{
+  "version": 1,
+  "updated": "2026-11-01",
+  "tiers": {
+    "copyable": "可复制的 UI 组件 / 区块：能直接拿源码，可自动化",
+    "system": "可应用的完整设计系统 / 主题：Token + 组件 + 规则，可自动化批量应用",
+    "referenceOnly": "只有视觉参考的网站：不可自动化，只能人工提取参数后沉淀为新预设"
+  },
+  "families": [
+    {
+      "id": "apple-native",
+      "name": "苹果原生",
+      "scenes": "iOS 原生、面向苹果用户的工具与内容 App",
+      "systems": [
+        "apple-native"
+      ],
+      "dto": [
+        "INT-01"
+      ],
+      "tweakcn": [],
+      "layout": [
+        "magicui",
+        "originui"
+      ],
+      "motion": [
+        "motion-primitives"
+      ],
+      "recipes": [
+        "base",
+        "mobile-consumer"
+      ],
+      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+    },
+    {
+      "id": "material",
+      "name": "安卓原生 / Material",
+      "scenes": "Android、Flutter、Compose 跨平台",
+      "systems": [
+        "material-3"
+      ],
+      "dto": [
+        "INT-06"
+      ],
+      "tweakcn": [],
+      "layout": [
+        "originui"
+      ],
+      "motion": [
+        "motion"
+      ],
+      "recipes": [
+        "base",
+        "mobile-consumer"
+      ],
+      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+    },
+    {
+      "id": "enterprise",
+      "name": "企业中后台",
+      "scenes": "后台、复杂表单、数据密集",
+      "systems": [
+        "ant-design"
+      ],
+      "dto": [
+        "CN-01"
+      ],
+      "tweakcn": [
+        "clean-slate",
+        "graphite"
+      ],
+      "layout": [
+        "ant-design-pro",
+        "shadcn-blocks"
+      ],
+      "motion": [],
+      "recipes": [
+        "base",
+        "form"
+      ],
+      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+    },
+    {
+      "id": "minimal-saas",
+      "name": "极简 SaaS",
+      "scenes": "B 端 SaaS、开发者工具、效率产品",
+      "systems": [],
+      "dto": [
+        "INT-02",
+        "INT-04",
+        "CN-03",
+        "CN-04"
+      ],
+      "tweakcn": [
+        "modern-minimal",
+        "vercel",
+        "mono",
+        "clean-slate",
+        "graphite",
+        "amber-minimal",
+        "supabase"
+      ],
+      "layout": [
+        "shadcn-blocks",
+        "originui",
+        "magicui"
+      ],
+      "motion": [
+        "motion-primitives"
+      ],
+      "recipes": [
+        "base",
+        "form"
+      ],
+      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+    },
+    {
+      "id": "ai-product",
+      "name": "AI 产品",
+      "scenes": "AI 对话、生成工具本身。AI 只是交互方式、产品主题是别的行业（如 AI 行程规划）时，按行业选，不进这一族",
+      "systems": [],
+      "dto": [
+        "INT-03",
+        "INT-05"
+      ],
+      "tweakcn": [
+        "claude",
+        "t3-chat",
+        "darkmatter",
+        "cosmic-night",
+        "amethyst-haze"
+      ],
+      "layout": [
+        "magicui",
+        "shadcn-blocks"
+      ],
+      "motion": [
+        "motion-primitives",
+        "react-bits",
+        "aceternity"
+      ],
+      "recipes": [
+        "base",
+        "mobile-consumer",
+        "ai"
+      ],
+      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+    },
+    {
+      "id": "editorial",
+      "name": "编辑式 / 强排版",
+      "scenes": "品牌官网、内容媒体、作品集",
+      "systems": [],
+      "dto": [
+        "INT-05",
+        "INT-08",
+        "CN-06"
+      ],
+      "tweakcn": [
+        "vintage-paper",
+        "starry-night",
+        "neo-brutalism",
+        "notebook",
+        "kodama-grove",
+        "sage-garden"
+      ],
+      "layout": [
+        "magicui",
+        "floatui"
+      ],
+      "motion": [
+        "react-bits",
+        "motion"
+      ],
+      "recipes": [
+        "base",
+        "content"
+      ],
+      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+    },
+    {
+      "id": "soft-ui",
+      "name": "柔和 Soft UI",
+      "scenes": "生活方式、健康、教育、亲和型 C 端",
+      "systems": [],
+      "dto": [
+        "INT-06",
+        "INT-07"
+      ],
+      "tweakcn": [
+        "soft-pop",
+        "pastel-dreams",
+        "claymorphism",
+        "violet-bloom",
+        "candyland",
+        "bubblegum",
+        "ocean-breeze"
+      ],
+      "layout": [
+        "magicui",
+        "floatui"
+      ],
+      "motion": [
+        "motion-primitives"
+      ],
+      "recipes": [
+        "base",
+        "mobile-consumer",
+        "content"
+      ],
+      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+    },
+    {
+      "id": "glassmorphism",
+      "name": "玻璃拟态",
+      "scenes": "浮层导航、叠层卡片、深浅过渡",
+      "systems": [
+        "apple-native"
+      ],
+      "dto": [
+        "INT-01",
+        "GAME-05"
+      ],
+      "tweakcn": [],
+      "layout": [
+        "magicui"
+      ],
+      "motion": [
+        "motion-primitives",
+        "aceternity"
+      ],
+      "recipes": [
+        "base",
+        "mobile-consumer"
+      ],
+      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+    },
+    {
+      "id": "futuristic",
+      "name": "科技感 / 未来暗色",
+      "scenes": "AI 基础设施、Web3、潮流、游戏周边",
+      "systems": [],
+      "dto": [
+        "INT-03",
+        "CN-07",
+        "GAME-07"
+      ],
+      "tweakcn": [
+        "cyberpunk",
+        "cosmic-night",
+        "bold-tech",
+        "doom-64",
+        "darkmatter",
+        "midnight-bloom",
+        "northern-lights"
+      ],
+      "layout": [
+        "magicui"
+      ],
+      "motion": [
+        "react-bits",
+        "aceternity"
+      ],
+      "recipes": [
+        "base"
+      ],
+      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+    },
+    {
+      "id": "content-feed",
+      "name": "内容 / 电商信息流",
+      "scenes": "种草、电商导购、生活服务",
+      "systems": [],
+      "dto": [
+        "CN-02",
+        "CN-05"
+      ],
+      "tweakcn": [
+        "tangerine",
+        "sunset-horizon",
+        "twitter"
+      ],
+      "layout": [
+        "originui"
+      ],
+      "motion": [
+        "motion-primitives"
+      ],
+      "recipes": [
+        "base",
+        "mobile-consumer",
+        "content"
+      ],
+      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+    },
+    {
+      "id": "accessible",
+      "name": "大字普惠",
+      "scenes": "适老化、公共服务",
+      "systems": [],
+      "dto": [
+        "CN-08"
+      ],
+      "tweakcn": [],
+      "layout": [],
+      "motion": [],
+      "recipes": [
+        "base",
+        "form",
+        "mobile-consumer"
+      ],
+      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+    },
+    {
+      "id": "game",
+      "name": "游戏与互动娱乐",
+      "scenes": "游戏大厅、棋牌、二次元、派对",
+      "systems": [],
+      "dto": [
+        "GAME-01",
+        "GAME-02",
+        "GAME-03",
+        "GAME-04",
+        "GAME-05",
+        "GAME-06",
+        "GAME-07",
+        "GAME-08",
+        "GAME-09",
+        "GAME-10"
+      ],
+      "tweakcn": [
+        "retro-arcade",
+        "doom-64"
+      ],
+      "layout": [],
+      "motion": [
+        "react-bits"
+      ],
+      "recipes": [
+        "base",
+        "game-table"
+      ],
+      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+    },
+    {
+      "id": "travel",
+      "name": "旅行与目的地",
+      "scenes": "旅行规划、目的地内容、文旅、酒店民宿、出行。第一眼靠目的地画面和行程预览，不靠表单",
+      "systems": [],
+      "dto": [
+        "CN-02",
+        "INT-06",
+        "INT-01",
+        "CN-06"
+      ],
+      "tweakcn": [
+        "sunset-horizon",
+        "ocean-breeze",
+        "kodama-grove"
+      ],
+      "layout": [],
+      "motion": [
+        "motion-primitives"
+      ],
+      "recipes": [
+        "base",
+        "mobile-consumer",
+        "content",
+        "travel"
+      ],
+      "layoutNote": "开源区块库里没有旅行类手机页面；用 component-recipes/ 的 travel 与 content 配方，构图先按 RR 看同类真实页面"
+    }
+  ],
+  "presets": {
+    "systems": [
+      {
+        "id": "apple-native",
+        "file": "systems/apple-native.json"
+      },
+      {
+        "id": "material-3",
+        "file": "systems/material-3.json"
+      },
+      {
+        "id": "ant-design",
+        "file": "systems/ant-design.json"
+      }
+    ],
+    "dto": [
+      {
+        "id": "INT-01",
+        "file": "dto/int-01-glass.json",
+        "name": "现代毛玻璃通透风",
+        "family": [
+          "apple-native",
+          "glassmorphism"
+        ],
+        "mode": "light",
+        "tweakcnNearest": [],
+        "system": "apple-native"
+      },
+      {
+        "id": "INT-02",
+        "file": "dto/int-02-swiss-minimal.json",
+        "name": "瑞士极简细线网格风",
+        "family": [
+          "minimal-saas"
+        ],
+        "mode": "light",
+        "tweakcnNearest": [
+          "modern-minimal",
+          "vercel",
+          "mono",
+          "graphite"
+        ],
+        "system": ""
+      },
+      {
+        "id": "INT-03",
+        "file": "dto/int-03-dark-bento.json",
+        "name": "暗色微光便当盒风",
+        "family": [
+          "ai-product",
+          "futuristic"
+        ],
+        "mode": "dark",
+        "tweakcnNearest": [
+          "darkmatter",
+          "cosmic-night"
+        ],
+        "system": ""
+      },
+      {
+        "id": "INT-04",
+        "file": "dto/int-04-fintech-fluid.json",
+        "name": "冷灰理性流体渐变风",
+        "family": [
+          "minimal-saas"
+        ],
+        "mode": "light",
+        "tweakcnNearest": [
+          "clean-slate",
+          "modern-minimal"
+        ],
+        "system": ""
+      },
+      {
+        "id": "INT-05",
+        "file": "dto/int-05-warm-editorial.json",
+        "name": "暖纸人文书刊风",
+        "family": [
+          "ai-product",
+          "editorial"
+        ],
+        "mode": "light",
+        "tweakcnNearest": [
+          "claude",
+          "vintage-paper",
+          "caffeine"
+        ],
+        "system": ""
+      },
+      {
+        "id": "INT-06",
+        "file": "dto/int-06-tonal-soft.json",
+        "name": "柔和色阶胶囊亲和风",
+        "family": [
+          "material",
+          "soft-ui"
+        ],
+        "mode": "light",
+        "tweakcnNearest": [
+          "soft-pop",
+          "pastel-dreams",
+          "violet-bloom"
+        ],
+        "system": "material-3"
+      },
+      {
+        "id": "INT-07",
+        "file": "dto/int-07-candy-press.json",
+        "name": "高饱和立体按压糖果风",
+        "family": [
+          "soft-ui"
+        ],
+        "mode": "light",
+        "tweakcnNearest": [
+          "claymorphism",
+          "candyland",
+          "bubblegum"
+        ],
+        "system": ""
+      },
+      {
+        "id": "INT-08",
+        "file": "dto/int-08-neo-brutal.json",
+        "name": "先锋粗黑描边撞色风",
+        "family": [
+          "editorial"
+        ],
+        "mode": "light",
+        "tweakcnNearest": [
+          "neo-brutalism"
+        ],
+        "system": ""
+      },
+      {
+        "id": "CN-01",
+        "file": "dto/cn-01-cn-workbench.json",
+        "name": "标准蓝白高效工作台风",
+        "family": [
+          "enterprise"
+        ],
+        "mode": "light",
+        "tweakcnNearest": [
+          "clean-slate"
+        ],
+        "system": "ant-design"
+      },
+      {
+        "id": "CN-02",
+        "file": "dto/cn-02-cn-lifestyle.json",
+        "name": "清爽大图生活卡片风",
+        "family": [
+          "content-feed"
+        ],
+        "mode": "light",
+        "tweakcnNearest": [],
+        "system": ""
+      },
+      {
+        "id": "CN-03",
+        "file": "dto/cn-03-cn-wealth.json",
+        "name": "深海藏青稳重财富风",
+        "family": [
+          "minimal-saas"
+        ],
+        "mode": "light",
+        "tweakcnNearest": [
+          "elegant-luxury"
+        ],
+        "system": ""
+      },
+      {
+        "id": "CN-04",
+        "file": "dto/cn-04-cn-miniprogram.json",
+        "name": "轻快白卡直达工具风",
+        "family": [
+          "minimal-saas"
+        ],
+        "mode": "light",
+        "tweakcnNearest": [],
+        "system": ""
+      },
+      {
+        "id": "CN-05",
+        "file": "dto/cn-05-cn-ecommerce.json",
+        "name": "暖橙红高密导购转化风",
+        "family": [
+          "content-feed"
+        ],
+        "mode": "light",
+        "tweakcnNearest": [
+          "tangerine",
+          "sunset-horizon"
+        ],
+        "system": ""
+      },
+      {
+        "id": "CN-06",
+        "file": "dto/cn-06-cn-oriental.json",
+        "name": "东方宣纸留白雅致风",
+        "family": [
+          "editorial"
+        ],
+        "mode": "light",
+        "tweakcnNearest": [
+          "sage-garden",
+          "kodama-grove"
+        ],
+        "system": ""
+      },
+      {
+        "id": "CN-07",
+        "file": "dto/cn-07-cn-acid-dark.json",
+        "name": "暗黑酸性机能潮酷风",
+        "family": [
+          "futuristic"
+        ],
+        "mode": "dark",
+        "tweakcnNearest": [
+          "cyberpunk",
+          "doom-64"
+        ],
+        "system": ""
+      },
+      {
+        "id": "CN-08",
+        "file": "dto/cn-08-cn-accessible.json",
+        "name": "大字高对比普惠直白风",
+        "family": [
+          "accessible"
+        ],
+        "mode": "light",
+        "tweakcnNearest": [],
+        "system": ""
+      },
+      {
+        "id": "GAME-01",
+        "file": "dto/game-01-game-dark-fantasy.json",
+        "name": "史诗暗黑锻金重拟物风",
+        "family": [
+          "game"
+        ],
+        "mode": "dark",
+        "tweakcnNearest": [],
+        "system": ""
+      },
+      {
+        "id": "GAME-02",
+        "file": "dto/game-02-game-cartoon.json",
+        "name": "高饱和粗描边 Q 弹立体卡通风",
+        "family": [
+          "game"
+        ],
+        "mode": "dark",
+        "tweakcnNearest": [
+          "retro-arcade"
+        ],
+        "system": ""
+      },
+      {
+        "id": "GAME-03",
+        "file": "dto/game-03-game-moba-gold.json",
+        "name": "深海鎏金斜切流光竞技风",
+        "family": [
+          "game"
+        ],
+        "mode": "dark",
+        "tweakcnNearest": [],
+        "system": ""
+      },
+      {
+        "id": "GAME-04",
+        "file": "dto/game-04-game-gothic.json",
+        "name": "哥特羊皮纸手绘拼贴悬疑风",
+        "family": [
+          "game"
+        ],
+        "mode": "light",
+        "tweakcnNearest": [],
+        "system": ""
+      },
+      {
+        "id": "GAME-05",
+        "file": "dto/game-05-game-pearl-rose.json",
+        "name": "珠光毛玻璃玫瑰金浪漫轻奢风",
+        "family": [
+          "glassmorphism",
+          "game"
+        ],
+        "mode": "light",
+        "tweakcnNearest": [
+          "quantum-rose"
+        ],
+        "system": ""
+      },
+      {
+        "id": "GAME-06",
+        "file": "dto/game-06-game-xianxia.json",
+        "name": "水墨丹青鎏金云纹国风仙侠风",
+        "family": [
+          "game"
+        ],
+        "mode": "light",
+        "tweakcnNearest": [],
+        "system": ""
+      },
+      {
+        "id": "GAME-07",
+        "file": "dto/game-07-game-tactical.json",
+        "name": "斜切战术面板轻机能二次元风",
+        "family": [
+          "futuristic",
+          "game"
+        ],
+        "mode": "dark",
+        "tweakcnNearest": [
+          "bold-tech"
+        ],
+        "system": ""
+      },
+      {
+        "id": "GAME-08",
+        "file": "dto/game-08-game-pixel.json",
+        "name": "复古阶梯边框 8-Bit 像素街机风",
+        "family": [
+          "game"
+        ],
+        "mode": "dark",
+        "tweakcnNearest": [
+          "retro-arcade",
+          "doom-64"
+        ],
+        "system": ""
+      },
+      {
+        "id": "GAME-09",
+        "file": "dto/game-09-game-card-table.json",
+        "name": "绿毡胡桃木奢金棋牌桌游风",
+        "family": [
+          "game"
+        ],
+        "mode": "dark",
+        "tweakcnNearest": [],
+        "system": ""
+      },
+      {
+        "id": "GAME-10",
+        "file": "dto/game-10-game-board-party.json",
+        "name": "等轴立体棋盘果冻漆面富豪派对风",
+        "family": [
+          "game"
+        ],
+        "mode": "light",
+        "tweakcnNearest": [
+          "candyland"
+        ],
+        "system": ""
+      }
+    ],
+    "tweakcn": [
+      {
+        "id": "amber-minimal",
+        "file": "themes/tweakcn/amber-minimal.json",
+        "fontSans": "Inter",
+        "radius": "0.375rem",
+        "primary": "oklch(0.7686 0.1647 70.0804)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/amber-minimal.json"
+      },
+      {
+        "id": "amethyst-haze",
+        "file": "themes/tweakcn/amethyst-haze.json",
+        "fontSans": "Geist",
+        "radius": "0.5rem",
+        "primary": "oklch(0.6104 0.0767 299.7335)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/amethyst-haze.json"
+      },
+      {
+        "id": "bold-tech",
+        "file": "themes/tweakcn/bold-tech.json",
+        "fontSans": "Roboto",
+        "radius": "0.625rem",
+        "primary": "oklch(0.6056 0.2189 292.7172)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/bold-tech.json"
+      },
+      {
+        "id": "bubblegum",
+        "file": "themes/tweakcn/bubblegum.json",
+        "fontSans": "Poppins",
+        "radius": "0.4rem",
+        "primary": "oklch(0.6209 0.1801 348.1385)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/bubblegum.json"
+      },
+      {
+        "id": "caffeine",
+        "file": "themes/tweakcn/caffeine.json",
+        "fontSans": "ui-sans-serif",
+        "radius": "0.5rem",
+        "primary": "oklch(0.4341 0.0392 41.9938)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/caffeine.json"
+      },
+      {
+        "id": "candyland",
+        "file": "themes/tweakcn/candyland.json",
+        "fontSans": "Poppins",
+        "radius": "0.5rem",
+        "primary": "oklch(0.8677 0.0735 7.0855)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/candyland.json"
+      },
+      {
+        "id": "catppuccin",
+        "file": "themes/tweakcn/catppuccin.json",
+        "fontSans": "Montserrat",
+        "radius": "0.35rem",
+        "primary": "oklch(0.5547 0.2503 297.0156)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/catppuccin.json"
+      },
+      {
+        "id": "claude",
+        "file": "themes/tweakcn/claude.json",
+        "fontSans": "ui-sans-serif",
+        "radius": "0.5rem",
+        "primary": "oklch(0.6171 0.1375 39.0427)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/claude.json"
+      },
+      {
+        "id": "claymorphism",
+        "file": "themes/tweakcn/claymorphism.json",
+        "fontSans": "Plus Jakarta Sans",
+        "radius": "1.25rem",
+        "primary": "oklch(0.5854 0.2041 277.1173)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/claymorphism.json"
+      },
+      {
+        "id": "clean-slate",
+        "file": "themes/tweakcn/clean-slate.json",
+        "fontSans": "Inter",
+        "radius": "0.5rem",
+        "primary": "oklch(0.5854 0.2041 277.1173)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/clean-slate.json"
+      },
+      {
+        "id": "cosmic-night",
+        "file": "themes/tweakcn/cosmic-night.json",
+        "fontSans": "Inter",
+        "radius": "0.5rem",
+        "primary": "oklch(0.5417 0.1790 288.0332)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/cosmic-night.json"
+      },
+      {
+        "id": "cyberpunk",
+        "file": "themes/tweakcn/cyberpunk.json",
+        "fontSans": "Outfit",
+        "radius": "0.5rem",
+        "primary": "oklch(0.6726 0.2904 341.4084)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/cyberpunk.json"
+      },
+      {
+        "id": "darkmatter",
+        "file": "themes/tweakcn/darkmatter.json",
+        "fontSans": "Geist Mono",
+        "radius": "0.75rem",
+        "primary": "oklch(0.6716 0.1368 48.5130)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/darkmatter.json"
+      },
+      {
+        "id": "doom-64",
+        "file": "themes/tweakcn/doom-64.json",
+        "fontSans": "Oxanium",
+        "radius": "0px",
+        "primary": "oklch(0.5016 0.1887 27.4816)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/doom-64.json"
+      },
+      {
+        "id": "elegant-luxury",
+        "file": "themes/tweakcn/elegant-luxury.json",
+        "fontSans": "Poppins",
+        "radius": "0.375rem",
+        "primary": "oklch(0.4650 0.1470 24.9381)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/elegant-luxury.json"
+      },
+      {
+        "id": "graphite",
+        "file": "themes/tweakcn/graphite.json",
+        "fontSans": "Inter",
+        "radius": "0.35rem",
+        "primary": "oklch(0.4891 0 0)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/graphite.json"
+      },
+      {
+        "id": "kodama-grove",
+        "file": "themes/tweakcn/kodama-grove.json",
+        "fontSans": "Merriweather",
+        "radius": "0.425rem",
+        "primary": "oklch(0.6657 0.1050 118.9078)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/kodama-grove.json"
+      },
+      {
+        "id": "midnight-bloom",
+        "file": "themes/tweakcn/midnight-bloom.json",
+        "fontSans": "Montserrat",
+        "radius": "0.5rem",
+        "primary": "oklch(0.5676 0.2021 283.0838)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/midnight-bloom.json"
+      },
+      {
+        "id": "mocha-mousse",
+        "file": "themes/tweakcn/mocha-mousse.json",
+        "fontSans": "DM Sans",
+        "radius": "0.5rem",
+        "primary": "oklch(0.6083 0.0623 44.3588)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/mocha-mousse.json"
+      },
+      {
+        "id": "modern-minimal",
+        "file": "themes/tweakcn/modern-minimal.json",
+        "fontSans": "Inter",
+        "radius": "0.375rem",
+        "primary": "oklch(0.6231 0.1880 259.8145)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/modern-minimal.json"
+      },
+      {
+        "id": "mono",
+        "file": "themes/tweakcn/mono.json",
+        "fontSans": "Geist Mono",
+        "radius": "0rem",
+        "primary": "oklch(0.5555 0 0)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/mono.json"
+      },
+      {
+        "id": "nature",
+        "file": "themes/tweakcn/nature.json",
+        "fontSans": "Montserrat",
+        "radius": "0.5rem",
+        "primary": "oklch(0.5234 0.1347 144.1672)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/nature.json"
+      },
+      {
+        "id": "neo-brutalism",
+        "file": "themes/tweakcn/neo-brutalism.json",
+        "fontSans": "DM Sans",
+        "radius": "0px",
+        "primary": "oklch(0.6489 0.2370 26.9728)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/neo-brutalism.json"
+      },
+      {
+        "id": "northern-lights",
+        "file": "themes/tweakcn/northern-lights.json",
+        "fontSans": "Plus Jakarta Sans",
+        "radius": "0.5rem",
+        "primary": "oklch(0.6487 0.1538 150.3071)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/northern-lights.json"
+      },
+      {
+        "id": "notebook",
+        "file": "themes/tweakcn/notebook.json",
+        "fontSans": "Architects Daughter",
+        "radius": "0.625rem",
+        "primary": "oklch(0.4891 0 0)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/notebook.json"
+      },
+      {
+        "id": "ocean-breeze",
+        "file": "themes/tweakcn/ocean-breeze.json",
+        "fontSans": "DM Sans",
+        "radius": "0.5rem",
+        "primary": "oklch(0.7227 0.1920 149.5793)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/ocean-breeze.json"
+      },
+      {
+        "id": "pastel-dreams",
+        "file": "themes/tweakcn/pastel-dreams.json",
+        "fontSans": "Open Sans",
+        "radius": "1.5rem",
+        "primary": "oklch(0.7090 0.1592 293.5412)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/pastel-dreams.json"
+      },
+      {
+        "id": "perpetuity",
+        "file": "themes/tweakcn/perpetuity.json",
+        "fontSans": "Source Code Pro",
+        "radius": "0.125rem",
+        "primary": "oklch(0.5624 0.0947 203.2755)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/perpetuity.json"
+      },
+      {
+        "id": "quantum-rose",
+        "file": "themes/tweakcn/quantum-rose.json",
+        "fontSans": "Quicksand",
+        "radius": "0.5rem",
+        "primary": "oklch(0.6002 0.2414 0.1348)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/quantum-rose.json"
+      },
+      {
+        "id": "retro-arcade",
+        "file": "themes/tweakcn/retro-arcade.json",
+        "fontSans": "Outfit",
+        "radius": "0.25rem",
+        "primary": "oklch(0.5924 0.2025 355.8943)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/retro-arcade.json"
+      },
+      {
+        "id": "sage-garden",
+        "file": "themes/tweakcn/sage-garden.json",
+        "fontSans": "Antic",
+        "radius": "0.35rem",
+        "primary": "oklch(0.6333 0.0309 154.9039)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/sage-garden.json"
+      },
+      {
+        "id": "soft-pop",
+        "file": "themes/tweakcn/soft-pop.json",
+        "fontSans": "DM Sans",
+        "radius": "1rem",
+        "primary": "oklch(0.5106 0.2301 276.9656)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/soft-pop.json"
+      },
+      {
+        "id": "solar-dusk",
+        "file": "themes/tweakcn/solar-dusk.json",
+        "fontSans": "Oxanium",
+        "radius": "0.3rem",
+        "primary": "oklch(0.5553 0.1455 48.9975)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/solar-dusk.json"
+      },
+      {
+        "id": "starry-night",
+        "file": "themes/tweakcn/starry-night.json",
+        "fontSans": "Libre Baskerville",
+        "radius": "0.5rem",
+        "primary": "oklch(0.4815 0.1178 263.3758)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/starry-night.json"
+      },
+      {
+        "id": "sunset-horizon",
+        "file": "themes/tweakcn/sunset-horizon.json",
+        "fontSans": "Montserrat",
+        "radius": "0.625rem",
+        "primary": "oklch(0.7357 0.1641 34.7091)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/sunset-horizon.json"
+      },
+      {
+        "id": "supabase",
+        "file": "themes/tweakcn/supabase.json",
+        "fontSans": "Outfit",
+        "radius": "0.5rem",
+        "primary": "oklch(0.8348 0.1302 160.9080)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/supabase.json"
+      },
+      {
+        "id": "t3-chat",
+        "file": "themes/tweakcn/t3-chat.json",
+        "fontSans": "ui-sans-serif",
+        "radius": "0.5rem",
+        "primary": "oklch(0.5316 0.1409 355.1999)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/t3-chat.json"
+      },
+      {
+        "id": "tangerine",
+        "file": "themes/tweakcn/tangerine.json",
+        "fontSans": "Inter",
+        "radius": "0.75rem",
+        "primary": "oklch(0.6397 0.1720 36.4421)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/tangerine.json"
+      },
+      {
+        "id": "twitter",
+        "file": "themes/tweakcn/twitter.json",
+        "fontSans": "Open Sans",
+        "radius": "1.3rem",
+        "primary": "oklch(0.6723 0.1606 244.9955)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/twitter.json"
+      },
+      {
+        "id": "vercel",
+        "file": "themes/tweakcn/vercel.json",
+        "fontSans": "Geist",
+        "radius": "0.5rem",
+        "primary": "oklch(0 0 0)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/vercel.json"
+      },
+      {
+        "id": "vintage-paper",
+        "file": "themes/tweakcn/vintage-paper.json",
+        "fontSans": "Libre Baskerville",
+        "radius": "0.25rem",
+        "primary": "oklch(0.6180 0.0778 65.5444)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/vintage-paper.json"
+      },
+      {
+        "id": "violet-bloom",
+        "file": "themes/tweakcn/violet-bloom.json",
+        "fontSans": "Plus Jakarta Sans",
+        "radius": "1.4rem",
+        "primary": "oklch(0.5393 0.2713 286.7462)",
+        "install": "npx shadcn@latest add https://tweakcn.com/r/themes/violet-bloom.json"
+      }
+    ]
+  },
+  "libraries": {
+    "componentsAndBlocks": [
+      {
+        "id": "shadcn-ui",
+        "url": "https://ui.shadcn.com",
+        "tier": "copyable+system",
+        "stack": "React + Tailwind",
+        "get": "npx shadcn@latest add <name>；整套预设 npx shadcn@latest apply --preset <id> [--only theme,font]",
+        "license": "MIT",
+        "paid": false
+      },
+      {
+        "id": "shadcn-blocks",
+        "url": "https://ui.shadcn.com/blocks",
+        "tier": "copyable",
+        "stack": "React + Tailwind",
+        "get": "npx shadcn@latest add <block>（如 dashboard-01、login-03、sidebar-07）",
+        "license": "MIT",
+        "paid": false
+      },
+      {
+        "id": "magicui",
+        "url": "https://magicui.design",
+        "tier": "copyable",
+        "stack": "React + Tailwind + motion",
+        "get": "npx shadcn@latest add @magicui/<name>",
+        "license": "MIT（Pro 区块付费，不用）",
+        "paid": false
+      },
+      {
+        "id": "originui",
+        "url": "https://originui.com",
+        "tier": "copyable",
+        "stack": "React + Tailwind v4",
+        "get": "npx shadcn@latest add https://originui.com/r/<comp-id>.json",
+        "license": "MIT",
+        "paid": false
+      },
+      {
+        "id": "floatui",
+        "url": "https://floatui.com",
+        "tier": "copyable",
+        "stack": "React / HTML + Tailwind",
+        "get": "组件页复制",
+        "license": "Float UI License：可用于终端产品；不得单独再分发、不得做模板/建站器",
+        "paid": false
+      },
+      {
+        "id": "shadcn-studio",
+        "url": "https://shadcnstudio.com",
+        "tier": "copyable",
+        "stack": "React + Tailwind",
+        "get": "shadcn CLI（免费部分）",
+        "license": "免费部分 MIT + Commons Clause；Pro 付费，不用",
+        "paid": "partial"
+      },
+      {
+        "id": "tailwind-plus",
+        "url": "https://tailwindcss.com/plus",
+        "tier": "copyable",
+        "stack": "React / Vue / HTML + Tailwind",
+        "get": "仅当用户已购买许可证并提供代码时使用",
+        "license": "付费商业许可，不得再分发",
+        "paid": true
+      },
+      {
+        "id": "ant-design-pro",
+        "url": "https://pro.ant.design",
+        "tier": "copyable",
+        "stack": "React + antd",
+        "get": "官方脚手架与页面模板",
+        "license": "MIT",
+        "paid": false
+      }
+    ],
+    "designSystems": [
+      {
+        "id": "tweakcn",
+        "url": "https://tweakcn.com",
+        "tier": "system",
+        "get": "已离线打包 42 个主题（themes/tweakcn）；新主题 npx shadcn@latest add https://tweakcn.com/r/themes/<name>.json",
+        "license": "Apache-2.0（见 themes/tweakcn/LICENSE）"
+      },
+      {
+        "id": "material-3",
+        "url": "https://m3.material.io",
+        "tier": "system",
+        "get": "已离线打包 baseline（systems/material-3.json）；品牌色生成用 @material/material-color-utilities",
+        "license": "规范公开；工具 Apache-2.0"
+      },
+      {
+        "id": "ant-design",
+        "url": "https://ant.design",
+        "tier": "system",
+        "get": "已离线打包默认 token（systems/ant-design.json）；ConfigProvider theme",
+        "license": "MIT"
+      },
+      {
+        "id": "apple-hig",
+        "url": "https://developer.apple.com/design/human-interface-guidelines",
+        "tier": "system",
+        "get": "已离线打包（systems/apple-native.json）；原生直接用 SwiftUI 系统组件",
+        "license": "规范公开；Apple Design Resources 套件只作参考"
+      }
+    ],
+    "motion": "见 methods-motion.md MI（React Bits、Aceternity UI、Motion Primitives、Uiverse、21st.dev；引擎 Motion、Anime.js）",
+    "referenceOnly": [
+      {
+        "id": "awwwards",
+        "url": "https://www.awwwards.com"
+      },
+      {
+        "id": "dribbble",
+        "url": "https://dribbble.com"
+      },
+      {
+        "id": "codrops",
+        "url": "https://tympanus.net/codrops",
+        "note": "demo 代码 MIT，可按 MI 规则取用"
+      },
+      {
+        "id": "apple-design-resources",
+        "url": "https://developer.apple.com/design/resources/",
+        "note": "Figma/Sketch 套件，不是代码"
+      }
+    ]
+  },
+  "color": {
+    "module": "methods-color.md",
+    "registry": "color-presets/registry.json",
+    "defaultByFamily": {
+      "apple-native": "apple-minimal",
+      "glassmorphism": "apple-minimal",
+      "minimal-saas": "apple-minimal",
+      "editorial": "warm-editorial",
+      "soft-ui": "nature-calm",
+      "ai-product": "ai-gradient",
+      "futuristic": "dark-premium",
+      "content-feed": "nature-calm",
+      "enterprise": "apple-minimal",
+      "material": "nature-calm",
+      "accessible": "apple-minimal",
+      "game": "dark-premium"
+    }
+  }
+}

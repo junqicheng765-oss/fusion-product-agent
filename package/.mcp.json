@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "iconscout": {
+      "type": "http",
+      "url": "https://mcp.iconscout.com/mcp"
+    }
+  }
+}

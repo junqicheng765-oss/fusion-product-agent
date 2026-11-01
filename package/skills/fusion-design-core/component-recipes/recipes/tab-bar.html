@@ -1,0 +1,32 @@
+<!-- recipe
+{
+  "id": "tab-bar",
+  "name": "底部标签栏",
+  "tags": ["mobile-consumer"],
+  "source": "按 iOS HIG Tab Bar 与 Material 3 Navigation Bar 规范整理",
+  "license": "MIT",
+  "states": ["当前", "其他", "带红点"],
+  "use": "App 一级导航，3–5 项；每项图标 + 2–4 字标签；底部留安全区",
+  "dont": "不要放动作（如“发布”）冒充导航，除非产品核心就是发布；二级页隐藏",
+  "icons": ["house", "route", "message-circle", "user"]
+}
+-->
+<style>
+.r-tabbar {
+  position: sticky; bottom: 0; z-index: 10; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr;
+  padding: 6px 4px calc(6px + var(--r-safe-bottom)); background: color-mix(in srgb, var(--background) 92%, transparent);
+  -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px); border-top: 1px solid var(--border);
+}
+.r-tabbar a { position: relative; display: grid; justify-items: center; gap: 3px; min-height: 44px; padding-top: 4px; text-decoration: none; color: var(--muted-foreground); font: 500 11px/1 var(--r-font); }
+.r-tabbar a[aria-current="page"] { color: var(--primary); font-weight: 600; }
+.r-tabbar .r-ico { width: 24px; height: 24px; }
+.r-tabbar__dot { position: absolute; top: 2px; left: calc(50% + 8px); width: 8px; height: 8px; border-radius: 50%; background: var(--destructive); box-shadow: 0 0 0 2px var(--background); }
+</style>
+<!-- demo -->
+<nav class="r-tabbar" aria-label="主导航" style="max-width:390px">
+  <a href="#" aria-current="page"><span class="r-ico i-house" aria-hidden="true"></span>首页</a>
+  <a href="#"><span class="r-ico i-route" aria-hidden="true"></span>行程</a>
+  <a href="#"><span class="r-ico i-message-circle" aria-hidden="true"></span>助手<span class="r-tabbar__dot"></span></a>
+  <a href="#"><span class="r-ico i-user" aria-hidden="true"></span>我的</a>
+</nav>
+<!-- /demo -->

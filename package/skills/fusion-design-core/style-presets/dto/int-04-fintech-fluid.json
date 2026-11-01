@@ -1,0 +1,107 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dto-int-04-fintech-fluid",
+  "type": "registry:theme",
+  "title": "INT-04 冷灰理性流体渐变风",
+  "cssVars": {
+    "theme": {
+      "font-sans": "Inter, \"PingFang SC\", sans-serif",
+      "radius": "0.625rem"
+    },
+    "light": {
+      "background": "#F6F9FC",
+      "foreground": "#0A2540",
+      "card": "#FFFFFF",
+      "card-foreground": "#0A2540",
+      "popover": "#FFFFFF",
+      "popover-foreground": "#0A2540",
+      "primary": "#635BFF",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#F6F9FC",
+      "secondary-foreground": "#0A2540",
+      "muted": "#F6F9FC",
+      "muted-foreground": "#425466",
+      "accent": "#F6F9FC",
+      "accent-foreground": "#0A2540",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#E3E8EE",
+      "input": "#E3E8EE",
+      "ring": "#635BFF"
+    },
+    "dark": {
+      "background": "#F6F9FC",
+      "foreground": "#0A2540",
+      "card": "#FFFFFF",
+      "card-foreground": "#0A2540",
+      "popover": "#FFFFFF",
+      "popover-foreground": "#0A2540",
+      "primary": "#635BFF",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#F6F9FC",
+      "secondary-foreground": "#0A2540",
+      "muted": "#F6F9FC",
+      "muted-foreground": "#425466",
+      "accent": "#F6F9FC",
+      "accent-foreground": "#0A2540",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#E3E8EE",
+      "input": "#E3E8EE",
+      "ring": "#635BFF"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "INT-04",
+      "tier": "theme",
+      "displayName": "冷灰理性流体渐变风",
+      "modes": [
+        "light"
+      ],
+      "palette": {
+        "bg": "#F6F9FC",
+        "card": "#FFFFFF",
+        "text": [
+          "#0A2540",
+          "#425466",
+          "#8898AA"
+        ],
+        "primary": "#635BFF",
+        "extra": []
+      },
+      "radiusScale": {
+        "card": 10,
+        "control": 6
+      },
+      "border": {
+        "color": "#E3E8EE",
+        "width": "1px"
+      },
+      "shadow": "0 6px 24px rgba(15,23,42,0.06)",
+      "blur": "局部 blur(12px)",
+      "typeScale": "28/20/15/13px，数字 700 tabular-nums",
+      "spacing": "内边距 20–24px，间距 12/16px",
+      "family": [
+        "minimal-saas"
+      ],
+      "derived": [
+        "secondary",
+        "muted",
+        "accent",
+        "input",
+        "ring",
+        "popover",
+        "destructive"
+      ],
+      "source": "methods-visual.md V0 参数字典（本 Skill 内置）",
+      "installables": {
+        "tweakcnNearest": [
+          "clean-slate",
+          "modern-minimal"
+        ],
+        "system": ""
+      }
+    }
+  }
+}

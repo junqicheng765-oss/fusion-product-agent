@@ -1,0 +1,205 @@
+{
+  "version": 1,
+  "updated": "2026-11-01",
+  "tiers": {
+    "inspiration": "现成配色方案：只作灵感。用户粘贴色板或 URL 后，再转成语义色。禁止自动批量抓取。",
+    "semantic-system": "产品级语义色：背景、文字、按钮、边框、状态色、亮暗模式、12 阶色阶。可自动化。",
+    "theme-apply": "已是完整 UI 主题（含颜色以外的字体圆角）：走风格引擎 DS，不走配色模块单独换肤。"
+  },
+  "systems": [
+    {
+      "id": "apple-minimal",
+      "title": "Apple Minimal",
+      "display": "中性、克制、系统感",
+      "scenes": [
+        "工具",
+        "效率",
+        "iOS 风 Web",
+        "系统设置"
+      ],
+      "family": [
+        "apple-native",
+        "minimal-saas",
+        "glassmorphism"
+      ],
+      "dto": [
+        "INT-01",
+        "INT-02"
+      ]
+    },
+    {
+      "id": "warm-editorial",
+      "title": "Warm Editorial",
+      "display": "温暖、杂志感、高级",
+      "scenes": [
+        "内容媒体",
+        "品牌官网",
+        "人文阅读",
+        "生活方式"
+      ],
+      "family": [
+        "editorial",
+        "soft-ui"
+      ],
+      "dto": [
+        "INT-05",
+        "CN-06"
+      ]
+    },
+    {
+      "id": "ai-gradient",
+      "title": "AI Gradient",
+      "display": "智能产品、清爽科技感",
+      "scenes": [
+        "AI 对话",
+        "生成工具",
+        "开发者工作台"
+      ],
+      "family": [
+        "ai-product",
+        "futuristic",
+        "minimal-saas"
+      ],
+      "dto": [
+        "INT-03",
+        "INT-04"
+      ]
+    },
+    {
+      "id": "nature-calm",
+      "title": "Nature Calm",
+      "display": "自然、生活方式、柔和",
+      "scenes": [
+        "健康",
+        "生活服务",
+        "环保",
+        "轻社交"
+      ],
+      "family": [
+        "soft-ui",
+        "content-feed"
+      ],
+      "dto": [
+        "INT-06",
+        "CN-02",
+        "CN-04"
+      ]
+    },
+    {
+      "id": "dark-premium",
+      "title": "Dark Premium",
+      "display": "暗色、精密、高对比",
+      "scenes": [
+        "专业工具",
+        "数据看板",
+        "夜间优先产品",
+        "高端品牌"
+      ],
+      "family": [
+        "futuristic",
+        "ai-product"
+      ],
+      "dto": [
+        "INT-03",
+        "CN-07"
+      ]
+    }
+  ],
+  "radix": {
+    "file": "radix/scales.json",
+    "license": "MIT",
+    "count": 31,
+    "steps": 12
+  },
+  "libraries": [
+    {
+      "id": "radix-colors",
+      "url": "https://www.radix-ui.com/colors",
+      "tier": "semantic-system",
+      "value": "极高",
+      "get": "已离线打包 color-presets/radix/scales.json",
+      "license": "MIT",
+      "auto": true,
+      "note": "自动化底座。12 阶语义：1–2 背景，3–5 组件，6–8 边框，9–10 实心，11–12 文字。"
+    },
+    {
+      "id": "tweakcn",
+      "url": "https://tweakcn.com",
+      "tier": "theme-apply",
+      "value": "极高",
+      "get": "已离线打包 style-presets/themes/tweakcn/",
+      "license": "Apache-2.0",
+      "auto": true,
+      "note": "完整主题，颜色只是其中一层。换整套主题走 DS，只换颜色走 CI。"
+    },
+    {
+      "id": "shadcn-create",
+      "url": "https://ui.shadcn.com/create",
+      "tier": "theme-apply",
+      "value": "极高",
+      "get": "npx shadcn@latest apply --preset <id> --only theme",
+      "license": "MIT",
+      "auto": true,
+      "note": "已有 shadcn 项目用 --only theme 只换颜色和字体，不重装组件。"
+    },
+    {
+      "id": "realtimecolors",
+      "url": "https://www.realtimecolors.com",
+      "tier": "inspiration",
+      "value": "很高",
+      "get": "把本模块生成的 5 个主色拼进 URL 的 colors 参数，给用户打开预览；或用户从站点导出 CSS 后粘贴进来",
+      "license": "站点导出的 CSS 由用户提供",
+      "auto": false,
+      "note": "不抓取站点。脚本 preview 会生成本地三栏预览页，并给出 Realtime Colors 链接。"
+    },
+    {
+      "id": "uicolors",
+      "url": "https://uicolors.app",
+      "tier": "semantic-system",
+      "value": "很高",
+      "get": "主色已知时，用本模块 from-brand 在本地用 OKLCH 插值生成 12 阶，不调用它的 API（API 要 key，且禁止做竞品色阶生成器）",
+      "license": "站点条款；本模块不调用其 API",
+      "auto": true,
+      "note": "能力用本地算法覆盖。"
+    },
+    {
+      "id": "huemint",
+      "url": "https://huemint.com",
+      "tier": "inspiration",
+      "value": "高",
+      "get": "打开网站，把生成结果的 hex 粘贴给 Agent",
+      "license": "公开 API 仅限非商用，Skill 不调用",
+      "auto": false,
+      "note": "禁止打 https://api.huemint.com。"
+    },
+    {
+      "id": "coolors",
+      "url": "https://coolors.co",
+      "tier": "inspiration",
+      "value": "高",
+      "get": "用户从站点复制 5 色或分享链接，Agent 只解析用户贴进来的 hex",
+      "license": "色板可用于自己的产品；禁止再分发色板合集、禁止批量抓取",
+      "auto": false,
+      "note": "禁止爬取、囤积、把色板打包装进 Skill。"
+    },
+    {
+      "id": "colorhunt",
+      "url": "https://colorhunt.co",
+      "tier": "inspiration",
+      "value": "中",
+      "get": "用户挑选后粘贴 4 色",
+      "license": "按站点条款，只作用户提供的色板",
+      "auto": false
+    },
+    {
+      "id": "happyhues",
+      "url": "https://www.happyhues.co",
+      "tier": "inspiration",
+      "value": "中",
+      "get": "看真实网页示例后，把角色（背景/标题/按钮）对应的 hex 记下来",
+      "license": "参考",
+      "auto": false,
+      "note": "偏参考，不自动化。"
+    }
+  ]
+}

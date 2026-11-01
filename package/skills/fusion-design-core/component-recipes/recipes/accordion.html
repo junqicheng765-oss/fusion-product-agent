@@ -1,0 +1,30 @@
+<!-- recipe
+{
+  "id": "accordion",
+  "name": "折叠面板",
+  "tags": ["base", "content"],
+  "source": "改写自 shadcn/ui Accordion（MIT），用原生 <details>",
+  "license": "MIT",
+  "states": ["收起", "展开", "聚焦"],
+  "use": "常见问题、次要细节；默认收起，标题要能单独读懂",
+  "dont": "用户做决定必须看到的信息不要折起来",
+  "icons": ["chevron-down"]
+}
+-->
+<style>
+.r-acc { border-bottom: 1px solid var(--border); }
+.r-acc summary {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--r-gap-3); min-height: 52px; cursor: pointer; list-style: none;
+  font: 600 15px/1.4 var(--r-font); color: var(--foreground);
+}
+.r-acc summary::-webkit-details-marker { display: none; }
+.r-acc summary .r-ico { color: var(--muted-foreground); transition: transform .2s var(--r-ease); }
+.r-acc[open] summary .r-ico { transform: rotate(180deg); }
+.r-acc__body { padding: 0 0 16px; font: 400 14px/1.65 var(--r-font); color: var(--muted-foreground); }
+</style>
+<!-- demo -->
+<div style="max-width:390px">
+  <details class="r-acc" open><summary>没有中国手机号能用吗？<span class="r-ico r-ico-sm i-chevron-down" aria-hidden="true"></span></summary><div class="r-acc__body">可以。用邮箱登录，支付宝外卡绑定只需护照。</div></details>
+  <details class="r-acc"><summary>行程能离线看吗？<span class="r-ico r-ico-sm i-chevron-down" aria-hidden="true"></span></summary><div class="r-acc__body">保存后自动缓存，地铁里也能打开。</div></details>
+</div>
+<!-- /demo -->

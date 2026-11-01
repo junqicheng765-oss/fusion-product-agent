@@ -1,0 +1,109 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dto-game-03-game-moba-gold",
+  "type": "registry:theme",
+  "title": "GAME-03 深海鎏金斜切流光竞技风",
+  "cssVars": {
+    "theme": {
+      "font-sans": "\"PingFang SC\", sans-serif",
+      "radius": "0.125rem",
+      "font-mono": "\"DINPro-Bold\", ui-monospace, monospace"
+    },
+    "light": {
+      "background": "#0A1324",
+      "foreground": "#F7E6C4",
+      "card": "#101C34",
+      "card-foreground": "#F7E6C4",
+      "popover": "#101C34",
+      "popover-foreground": "#F7E6C4",
+      "primary": "#F5D08A",
+      "primary-foreground": "#0A1324",
+      "secondary": "#0A1324",
+      "secondary-foreground": "#F7E6C4",
+      "muted": "#0A1324",
+      "muted-foreground": "#D0DDF0",
+      "accent": "#0A1324",
+      "accent-foreground": "#F7E6C4",
+      "destructive": "#E70B0B",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#C89D54",
+      "input": "#C89D54",
+      "ring": "#F5D08A"
+    },
+    "dark": {
+      "background": "#0A1324",
+      "foreground": "#F7E6C4",
+      "card": "#101C34",
+      "card-foreground": "#F7E6C4",
+      "popover": "#101C34",
+      "popover-foreground": "#F7E6C4",
+      "primary": "#F5D08A",
+      "primary-foreground": "#0A1324",
+      "secondary": "#0A1324",
+      "secondary-foreground": "#F7E6C4",
+      "muted": "#0A1324",
+      "muted-foreground": "#D0DDF0",
+      "accent": "#0A1324",
+      "accent-foreground": "#F7E6C4",
+      "destructive": "#E70B0B",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#C89D54",
+      "input": "#C89D54",
+      "ring": "#F5D08A"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "GAME-03",
+      "tier": "theme",
+      "displayName": "深海鎏金斜切流光竞技风",
+      "modes": [
+        "dark"
+      ],
+      "palette": {
+        "bg": "#0A1324",
+        "card": "#101C34",
+        "text": [
+          "#F7E6C4",
+          "#D0DDF0",
+          "#6C84A6"
+        ],
+        "primary": "#F5D08A",
+        "extra": [
+          "#00E5FF",
+          "#C49346"
+        ]
+      },
+      "radiusScale": {
+        "card": 2,
+        "control": 2
+      },
+      "border": {
+        "color": "#C89D54",
+        "width": "1px"
+      },
+      "shadow": "0 0 18px rgba(245,208,138,0.35)",
+      "blur": "blur(12px)",
+      "typeScale": "28/20/14/12px，700/800",
+      "spacing": "",
+      "family": [
+        "game"
+      ],
+      "derived": [
+        "secondary",
+        "muted",
+        "accent",
+        "input",
+        "ring",
+        "popover",
+        "destructive"
+      ],
+      "source": "methods-visual.md V0 参数字典（本 Skill 内置）",
+      "installables": {
+        "tweakcnNearest": [],
+        "system": ""
+      },
+      "clip": "45° 斜切角 8–12px"
+    }
+  }
+}

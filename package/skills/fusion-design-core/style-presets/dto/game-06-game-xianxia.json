@@ -1,0 +1,110 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dto-game-06-game-xianxia",
+  "type": "registry:theme",
+  "title": "GAME-06 水墨丹青鎏金云纹国风仙侠风",
+  "cssVars": {
+    "theme": {
+      "font-sans": "\"Noto Serif SC\", \"Songti SC\", serif",
+      "radius": "0.25rem",
+      "font-serif": "\"Noto Serif SC\", serif"
+    },
+    "light": {
+      "background": "#ECE6DA",
+      "foreground": "#1F1E1B",
+      "card": "#F7F4ED",
+      "card-foreground": "#1F1E1B",
+      "popover": "#F7F4ED",
+      "popover-foreground": "#1F1E1B",
+      "primary": "#C89B57",
+      "primary-foreground": "#1F1E1B",
+      "secondary": "#ECE6DA",
+      "secondary-foreground": "#1F1E1B",
+      "muted": "#ECE6DA",
+      "muted-foreground": "#5C574F",
+      "accent": "#ECE6DA",
+      "accent-foreground": "#1F1E1B",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#C89B57",
+      "input": "#C89B57",
+      "ring": "#C89B57"
+    },
+    "dark": {
+      "background": "#ECE6DA",
+      "foreground": "#1F1E1B",
+      "card": "#F7F4ED",
+      "card-foreground": "#1F1E1B",
+      "popover": "#F7F4ED",
+      "popover-foreground": "#1F1E1B",
+      "primary": "#C89B57",
+      "primary-foreground": "#1F1E1B",
+      "secondary": "#ECE6DA",
+      "secondary-foreground": "#1F1E1B",
+      "muted": "#ECE6DA",
+      "muted-foreground": "#5C574F",
+      "accent": "#ECE6DA",
+      "accent-foreground": "#1F1E1B",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#C89B57",
+      "input": "#C89B57",
+      "ring": "#C89B57"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "GAME-06",
+      "tier": "theme",
+      "displayName": "水墨丹青鎏金云纹国风仙侠风",
+      "modes": [
+        "light"
+      ],
+      "palette": {
+        "bg": "#ECE6DA",
+        "card": "#F7F4ED",
+        "text": [
+          "#1F1E1B",
+          "#5C574F",
+          "#9E2A2B"
+        ],
+        "primary": "#C89B57",
+        "extra": [
+          "#B82923",
+          "#3B6E6C",
+          "#141619"
+        ],
+        "extraSource": "methods-visual.md 参数字典同一行里写到、原预设漏收的颜色"
+      },
+      "radiusScale": {
+        "card": 4,
+        "control": 4
+      },
+      "border": {
+        "color": "#C89B57",
+        "width": "1px"
+      },
+      "shadow": "0 6px 20px rgba(31,30,27,0.12)",
+      "blur": "",
+      "typeScale": "30/20/15/12px，书法标题 + 宋体正文",
+      "spacing": "",
+      "family": [
+        "game"
+      ],
+      "derived": [
+        "secondary",
+        "muted",
+        "accent",
+        "input",
+        "ring",
+        "popover",
+        "destructive"
+      ],
+      "source": "methods-visual.md V0 参数字典（本 Skill 内置）",
+      "installables": {
+        "tweakcnNearest": [],
+        "system": ""
+      }
+    }
+  }
+}

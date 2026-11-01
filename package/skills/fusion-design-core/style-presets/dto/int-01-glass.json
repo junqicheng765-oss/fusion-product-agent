@@ -1,0 +1,106 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dto-int-01-glass",
+  "type": "registry:theme",
+  "title": "INT-01 现代毛玻璃通透风",
+  "cssVars": {
+    "theme": {
+      "font-sans": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"PingFang SC\", sans-serif",
+      "radius": "1rem"
+    },
+    "light": {
+      "background": "#F2F2F7",
+      "foreground": "#000000",
+      "card": "#FFFFFF",
+      "card-foreground": "#000000",
+      "popover": "#FFFFFF",
+      "popover-foreground": "#000000",
+      "primary": "#006FE9",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#F2F2F7",
+      "secondary-foreground": "#000000",
+      "muted": "#F2F2F7",
+      "muted-foreground": "#3C3C43",
+      "accent": "#F2F2F7",
+      "accent-foreground": "#000000",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "rgba(0,0,0,0.06)",
+      "input": "rgba(0,0,0,0.06)",
+      "ring": "#007AFF"
+    },
+    "dark": {
+      "background": "#F2F2F7",
+      "foreground": "#000000",
+      "card": "#FFFFFF",
+      "card-foreground": "#000000",
+      "popover": "#FFFFFF",
+      "popover-foreground": "#000000",
+      "primary": "#006FE9",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#F2F2F7",
+      "secondary-foreground": "#000000",
+      "muted": "#F2F2F7",
+      "muted-foreground": "#3C3C43",
+      "accent": "#F2F2F7",
+      "accent-foreground": "#000000",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "rgba(0,0,0,0.06)",
+      "input": "rgba(0,0,0,0.06)",
+      "ring": "#007AFF"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "INT-01",
+      "tier": "theme",
+      "displayName": "现代毛玻璃通透风",
+      "modes": [
+        "light"
+      ],
+      "palette": {
+        "bg": "#F2F2F7",
+        "card": "#FFFFFF",
+        "text": [
+          "#000000",
+          "#3C3C43",
+          "#8E8E93"
+        ],
+        "primary": "#007AFF",
+        "extra": []
+      },
+      "radiusScale": {
+        "card": 16,
+        "control": 12
+      },
+      "border": {
+        "color": "rgba(0,0,0,0.06)",
+        "width": "1px"
+      },
+      "shadow": "0 4px 20px rgba(0,0,0,0.05)",
+      "blur": "backdrop-filter: blur(20px)（只用于浮层/导航）",
+      "typeScale": "28/20/16/13px，标题 700，正文 400 行高 1.45",
+      "spacing": "内边距 16–20px，间距 12/16px",
+      "family": [
+        "apple-native",
+        "glassmorphism",
+        "travel"
+      ],
+      "derived": [
+        "secondary",
+        "muted",
+        "accent",
+        "input",
+        "ring",
+        "popover",
+        "destructive"
+      ],
+      "source": "methods-visual.md V0 参数字典（本 Skill 内置）",
+      "installables": {
+        "tweakcnNearest": [],
+        "system": "apple-native"
+      }
+    }
+  }
+}

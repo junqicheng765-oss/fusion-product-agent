@@ -1,0 +1,25 @@
+<!-- recipe
+{
+  "id": "trip-summary-bar",
+  "name": "行程条件摘要条",
+  "tags": ["travel", "mobile-consumer"],
+  "source": "按 Airbnb 搜索结果页顶部摘要条、Booking 条件条做法整理",
+  "license": "MIT",
+  "states": ["默认", "点开编辑（打开 sheet）"],
+  "use": "结果页顶部把已填条件压成一行（地点 · 日期 · 人数），点一下改；替代把整张表单留在页面上",
+  "dont": "不要在结果页重复展示完整表单",
+  "icons": ["sliders-horizontal"]
+}
+-->
+<style>
+.r-summary { display: flex; align-items: center; gap: var(--r-gap-2); margin: 0 var(--r-gap-4); padding: 6px 6px 6px 16px; min-height: 52px; border: 1px solid var(--border); border-radius: 999px; background: var(--card); box-shadow: var(--r-shadow-sm); cursor: pointer; text-align: left; width: calc(100% - 2 * var(--r-gap-4)); color: var(--foreground); }
+.r-summary__text { flex: 1; display: grid; gap: 2px; min-width: 0; }
+.r-summary__main { font: 600 14px/1.2 var(--r-font); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.r-summary__sub { font: 400 12px/1.2 var(--r-font); color: var(--muted-foreground); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.r-summary__edit { flex: none; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--border); }
+</style>
+<!-- demo -->
+<div style="max-width:390px">
+  <button class="r-summary"><span class="r-summary__text"><span class="r-summary__main">北京 · 西安</span><span class="r-summary__sub">4 月 10–15 日 · 2 位成人 · 慢节奏</span></span><span class="r-summary__edit" aria-hidden="true"><span class="r-ico r-ico-sm i-sliders-horizontal"></span></span><span class="r-sr-only">修改条件</span></button>
+</div>
+<!-- /demo -->

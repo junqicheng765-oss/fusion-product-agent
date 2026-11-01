@@ -1,0 +1,37 @@
+<!-- recipe
+{
+  "id": "photo-card",
+  "name": "图片卡（图在上、字在下）",
+  "tags": ["content", "mobile-consumer", "travel"],
+  "source": "按小红书、Airbnb、Pinterest 的图文卡做法整理",
+  "license": "MIT",
+  "variants": ["portrait 3:4", "square 1:1", "landscape 4:3", "wide 16:9"],
+  "states": ["加载中（配 skeleton）", "默认", "按下", "已收藏"],
+  "use": "内容和目的地以图片为主角时；图片占卡片面积 70% 以上；字放图片下方，不压在图上",
+  "dont": "不要用渐变遮罩压字在图上来省空间；不要用纯色块或图标替代真实照片",
+  "icons": ["heart"]
+}
+-->
+<style>
+.r-photo { position: relative; display: grid; gap: 2px; align-content: start; text-decoration: none; color: var(--foreground); }
+.r-photo__img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: var(--r-radius-lg); background: var(--r-fill); transition: transform .2s var(--r-ease); }
+.r-photo:active .r-photo__img { transform: scale(.98); }
+.r-photo--square .r-photo__img { aspect-ratio: 1; }
+.r-photo--landscape .r-photo__img { aspect-ratio: 4 / 3; }
+.r-photo--wide .r-photo__img { aspect-ratio: 16 / 9; }
+.r-photo__title { margin-top: 8px; font: 600 15px/1.35 var(--r-font); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.r-photo__meta { font: 400 13px/1.35 var(--r-font); color: var(--muted-foreground); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.r-photo__save { position: absolute; top: 8px; right: 8px; width: 36px; height: 36px; padding: 0; display: grid; place-items: center; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .9); color: #111; cursor: pointer; }
+.r-photo__save[aria-pressed="true"] { color: var(--primary); }
+</style>
+<!-- demo -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px 12px;max-width:390px;padding:0 16px">
+  <a class="r-photo" href="#"><img class="r-photo__img" src="preview-assets/photo-1047.jpg" alt="城市天际线"><span class="r-photo__title">外滩夜景最佳机位，避开人潮的 3 个角度</span><span class="r-photo__meta">上海 · 2.1 万人收藏</span><button class="r-photo__save" aria-label="收藏" aria-pressed="false"><span class="r-ico r-ico-sm i-heart" aria-hidden="true"></span></button></a>
+  <a class="r-photo" href="#"><img class="r-photo__img" src="preview-assets/photo-1043.jpg" alt="湖面与山"><span class="r-photo__title">西湖慢走一日线</span><span class="r-photo__meta">杭州 · 步行 9 公里</span><button class="r-photo__save" aria-label="收藏" aria-pressed="true"><span class="r-ico r-ico-sm i-heart" aria-hidden="true"></span></button></a>
+</div>
+<!-- /demo -->
+<script>
+document.querySelectorAll('.r-photo__save').forEach(function (b) {
+  b.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); b.setAttribute('aria-pressed', String(b.getAttribute('aria-pressed') !== 'true')); });
+});
+</script>

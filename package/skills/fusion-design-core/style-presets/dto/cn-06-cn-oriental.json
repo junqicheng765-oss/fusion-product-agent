@@ -1,0 +1,112 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dto-cn-06-cn-oriental",
+  "type": "registry:theme",
+  "title": "CN-06 东方宣纸留白雅致风",
+  "cssVars": {
+    "theme": {
+      "font-sans": "\"PingFang SC\", sans-serif",
+      "radius": "0.375rem",
+      "font-serif": "\"Songti SC\", \"Noto Serif SC\", serif"
+    },
+    "light": {
+      "background": "#F7F4ED",
+      "foreground": "#2B2B28",
+      "card": "#FCFBF7",
+      "card-foreground": "#2B2B28",
+      "popover": "#FCFBF7",
+      "popover-foreground": "#2B2B28",
+      "primary": "#2F4F4F",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#F7F4ED",
+      "secondary-foreground": "#2B2B28",
+      "muted": "#F7F4ED",
+      "muted-foreground": "#6E6A63",
+      "accent": "#F7F4ED",
+      "accent-foreground": "#2B2B28",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#DED6C6",
+      "input": "#DED6C6",
+      "ring": "#2F4F4F"
+    },
+    "dark": {
+      "background": "#F7F4ED",
+      "foreground": "#2B2B28",
+      "card": "#FCFBF7",
+      "card-foreground": "#2B2B28",
+      "popover": "#FCFBF7",
+      "popover-foreground": "#2B2B28",
+      "primary": "#2F4F4F",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#F7F4ED",
+      "secondary-foreground": "#2B2B28",
+      "muted": "#F7F4ED",
+      "muted-foreground": "#6E6A63",
+      "accent": "#F7F4ED",
+      "accent-foreground": "#2B2B28",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#DED6C6",
+      "input": "#DED6C6",
+      "ring": "#2F4F4F"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "CN-06",
+      "tier": "theme",
+      "displayName": "东方宣纸留白雅致风",
+      "modes": [
+        "light"
+      ],
+      "palette": {
+        "bg": "#F7F4ED",
+        "card": "#FCFBF7",
+        "text": [
+          "#2B2B28",
+          "#6E6A63",
+          "#9E988E"
+        ],
+        "primary": "#2F4F4F",
+        "extra": [
+          "#5B7A57",
+          "#9E2A2B"
+        ]
+      },
+      "radiusScale": {
+        "card": 6,
+        "control": 4
+      },
+      "border": {
+        "color": "#DED6C6",
+        "width": "1px"
+      },
+      "shadow": "无，细线框 + 充足留白",
+      "blur": "",
+      "typeScale": "24/18/15/12px，标题宋体 600，行高 1.6",
+      "spacing": "内边距 20–24px，间距 16/20px",
+      "family": [
+        "editorial",
+        "travel"
+      ],
+      "derived": [
+        "secondary",
+        "muted",
+        "accent",
+        "input",
+        "ring",
+        "popover",
+        "destructive"
+      ],
+      "source": "methods-visual.md V0 参数字典（本 Skill 内置）",
+      "installables": {
+        "tweakcnNearest": [
+          "sage-garden",
+          "kodama-grove"
+        ],
+        "system": ""
+      }
+    }
+  }
+}

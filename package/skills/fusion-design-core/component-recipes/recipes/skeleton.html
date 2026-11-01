@@ -1,0 +1,24 @@
+<!-- recipe
+{
+  "id": "skeleton",
+  "name": "骨架屏",
+  "tags": ["base", "mobile-consumer", "content"],
+  "source": "改写自 shadcn/ui Skeleton（MIT）",
+  "license": "MIT",
+  "states": ["加载中"],
+  "use": "加载状态；形状和最终内容一致（图片块、标题条、正文条）",
+  "dont": "不要拿骨架当正式页面交付",
+  "icons": []
+}
+-->
+<style>
+.r-skel { display: block; border-radius: var(--r-radius-sm); background: linear-gradient(90deg, var(--r-fill-strong) 0%, var(--r-fill) 50%, var(--r-fill-strong) 100%); background-size: 200% 100%; animation: r-skel 1.4s ease-in-out infinite; }
+@keyframes r-skel { from { background-position: 100% 0; } to { background-position: -100% 0; } }
+</style>
+<!-- demo -->
+<div style="display:grid;gap:10px;max-width:360px" aria-busy="true" aria-label="加载中">
+  <span class="r-skel" style="height:180px;border-radius:var(--r-radius-lg)"></span>
+  <span class="r-skel" style="height:18px;width:70%"></span>
+  <span class="r-skel" style="height:14px;width:45%"></span>
+</div>
+<!-- /demo -->

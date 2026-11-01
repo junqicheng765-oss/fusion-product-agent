@@ -1,0 +1,41 @@
+<!-- recipe
+{
+  "id": "checkbox",
+  "name": "复选框",
+  "tags": ["base", "form"],
+  "source": "改写自 shadcn/ui Checkbox（MIT）https://ui.shadcn.com/docs/components/checkbox",
+  "license": "MIT",
+  "states": ["未选", "已选", "半选", "聚焦", "禁用"],
+  "use": "可多选的独立项；整行可点，点击区至少 44px 高",
+  "dont": "互斥选项用 radio-group；即时生效的开关用 switch",
+  "icons": ["check", "minus"]
+}
+-->
+<style>
+.r-check { display: flex; align-items: center; gap: var(--r-gap-3); min-height: var(--r-touch); cursor: pointer; font: 400 15px/1.4 var(--r-font); color: var(--foreground); }
+.r-check input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.r-check__box {
+  flex: none; width: 20px; height: 20px; display: grid; place-items: center;
+  border: 1.5px solid var(--border); border-radius: calc(var(--r-radius-sm) * .6);
+  background: var(--background); color: var(--primary-foreground);
+  transition: background-color .15s var(--r-ease), border-color .15s var(--r-ease);
+}
+.r-check__box .r-ico { width: 14px; height: 14px; opacity: 0; transform: scale(.6); transition: opacity .15s, transform .15s var(--r-ease); }
+.r-check input:checked + .r-check__box, .r-check input:indeterminate + .r-check__box { background: var(--primary); border-color: var(--primary); }
+.r-check input:checked + .r-check__box .r-ico--check, .r-check input:indeterminate + .r-check__box .r-ico--minus { opacity: 1; transform: none; }
+.r-check input:indeterminate + .r-check__box .r-ico--check { display: none; }
+.r-check input:not(:indeterminate) + .r-check__box .r-ico--minus { display: none; }
+.r-check input:focus-visible + .r-check__box { outline: 2px solid var(--ring); outline-offset: 2px; }
+.r-check input:disabled + .r-check__box, .r-check:has(input:disabled) { opacity: .5; cursor: not-allowed; }
+</style>
+<!-- demo -->
+<div style="display:grid;gap:4px;max-width:360px">
+  <label class="r-check"><input type="checkbox" checked><span class="r-check__box"><span class="r-ico r-ico--check i-check" aria-hidden="true"></span><span class="r-ico r-ico--minus i-minus" aria-hidden="true"></span></span>想看博物馆</label>
+  <label class="r-check"><input type="checkbox"><span class="r-check__box"><span class="r-ico r-ico--check i-check" aria-hidden="true"></span><span class="r-ico r-ico--minus i-minus" aria-hidden="true"></span></span>需要无障碍通道</label>
+  <label class="r-check"><input type="checkbox" data-mixed><span class="r-check__box"><span class="r-ico r-ico--check i-check" aria-hidden="true"></span><span class="r-ico r-ico--minus i-minus" aria-hidden="true"></span></span>全部景点（部分已选）</label>
+  <label class="r-check"><input type="checkbox" disabled><span class="r-check__box"><span class="r-ico r-ico--check i-check" aria-hidden="true"></span><span class="r-ico r-ico--minus i-minus" aria-hidden="true"></span></span>夜间活动（本季不开放）</label>
+</div>
+<!-- /demo -->
+<script>
+document.querySelectorAll('.r-check input[data-mixed]').forEach(function (el) { el.indeterminate = true; });
+</script>

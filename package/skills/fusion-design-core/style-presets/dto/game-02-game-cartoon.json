@@ -1,0 +1,112 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dto-game-02-game-cartoon",
+  "type": "registry:theme",
+  "title": "GAME-02 高饱和粗描边 Q 弹立体卡通风",
+  "cssVars": {
+    "theme": {
+      "font-sans": "\"Lilita One\", \"Luckiest Guy\", \"PingFang SC\", sans-serif",
+      "radius": "1.25rem"
+    },
+    "light": {
+      "background": "#1E5799",
+      "foreground": "#FFFFFF",
+      "card": "#F4F6F9",
+      "card-foreground": "#1A1A1A",
+      "popover": "#F4F6F9",
+      "popover-foreground": "#1A1A1A",
+      "primary": "#FFCC00",
+      "primary-foreground": "#000000",
+      "secondary": "#1E5799",
+      "secondary-foreground": "#FFFFFF",
+      "muted": "#1E5799",
+      "muted-foreground": "#FFE600",
+      "accent": "#1E5799",
+      "accent-foreground": "#FFFFFF",
+      "destructive": "#E70B0B",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#000000",
+      "input": "#000000",
+      "ring": "#FFCC00"
+    },
+    "dark": {
+      "background": "#1E5799",
+      "foreground": "#FFFFFF",
+      "card": "#F4F6F9",
+      "card-foreground": "#1A1A1A",
+      "popover": "#F4F6F9",
+      "popover-foreground": "#1A1A1A",
+      "primary": "#FFCC00",
+      "primary-foreground": "#000000",
+      "secondary": "#1E5799",
+      "secondary-foreground": "#FFFFFF",
+      "muted": "#1E5799",
+      "muted-foreground": "#FFE600",
+      "accent": "#1E5799",
+      "accent-foreground": "#FFFFFF",
+      "destructive": "#E70B0B",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#000000",
+      "input": "#000000",
+      "ring": "#FFCC00"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "GAME-02",
+      "tier": "theme",
+      "displayName": "高饱和粗描边 Q 弹立体卡通风",
+      "modes": [
+        "dark"
+      ],
+      "palette": {
+        "bg": "#1E5799",
+        "card": "#F4F6F9",
+        "text": [
+          "#FFFFFF",
+          "#FFE600",
+          "#C9D6E8"
+        ],
+        "primary": "#FFCC00",
+        "extra": [
+          "#38E54D",
+          "#B537F2",
+          "#2C3E50",
+          "#FF9900"
+        ],
+        "extraSource": "methods-visual.md 参数字典同一行里写到、原预设漏收的颜色"
+      },
+      "radiusScale": {
+        "card": 20,
+        "control": 14
+      },
+      "border": {
+        "color": "#000000",
+        "width": "2.5px"
+      },
+      "shadow": "inset 0 3px 0 rgba(255,255,255,0.65), 0 6px 0 #995500, 0 8px 12px rgba(0,0,0,0.45)",
+      "blur": "",
+      "typeScale": "30/22/16/13px，900，黑描边",
+      "spacing": "",
+      "family": [
+        "game"
+      ],
+      "derived": [
+        "secondary",
+        "muted",
+        "accent",
+        "input",
+        "ring",
+        "popover",
+        "destructive"
+      ],
+      "source": "methods-visual.md V0 参数字典（本 Skill 内置）",
+      "installables": {
+        "tweakcnNearest": [
+          "retro-arcade"
+        ],
+        "system": ""
+      }
+    }
+  }
+}

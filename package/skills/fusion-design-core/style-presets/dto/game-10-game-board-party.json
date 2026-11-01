@@ -1,0 +1,113 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dto-game-10-game-board-party",
+  "type": "registry:theme",
+  "title": "GAME-10 等轴立体棋盘果冻漆面富豪派对风",
+  "cssVars": {
+    "theme": {
+      "font-sans": "Fredoka, \"Baloo 2\", \"PingFang SC\", sans-serif",
+      "radius": "1.5rem"
+    },
+    "light": {
+      "background": "#E0F7FA",
+      "foreground": "#2D3436",
+      "card": "#FFFFFF",
+      "card-foreground": "#2D3436",
+      "popover": "#FFFFFF",
+      "popover-foreground": "#2D3436",
+      "primary": "#FFD700",
+      "primary-foreground": "#2D3436",
+      "secondary": "#E0F7FA",
+      "secondary-foreground": "#2D3436",
+      "muted": "#E0F7FA",
+      "muted-foreground": "#636E72",
+      "accent": "#E0F7FA",
+      "accent-foreground": "#2D3436",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#FFFFFF",
+      "input": "#FFFFFF",
+      "ring": "#FFD700"
+    },
+    "dark": {
+      "background": "#E0F7FA",
+      "foreground": "#2D3436",
+      "card": "#FFFFFF",
+      "card-foreground": "#2D3436",
+      "popover": "#FFFFFF",
+      "popover-foreground": "#2D3436",
+      "primary": "#FFD700",
+      "primary-foreground": "#2D3436",
+      "secondary": "#E0F7FA",
+      "secondary-foreground": "#2D3436",
+      "muted": "#E0F7FA",
+      "muted-foreground": "#636E72",
+      "accent": "#E0F7FA",
+      "accent-foreground": "#2D3436",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#FFFFFF",
+      "input": "#FFFFFF",
+      "ring": "#FFD700"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "GAME-10",
+      "tier": "theme",
+      "displayName": "等轴立体棋盘果冻漆面富豪派对风",
+      "modes": [
+        "light"
+      ],
+      "palette": {
+        "bg": "#E0F7FA",
+        "card": "#FFFFFF",
+        "text": [
+          "#2D3436",
+          "#636E72",
+          "#B2BEC3"
+        ],
+        "primary": "#FFD700",
+        "extra": [
+          "#00C853",
+          "#FF3838",
+          "#FFFDF9",
+          "#00B894",
+          "#FFA502"
+        ],
+        "extraSource": "methods-visual.md 参数字典同一行里写到、原预设漏收的颜色"
+      },
+      "radiusScale": {
+        "card": 24,
+        "control": 999
+      },
+      "border": {
+        "color": "#FFFFFF",
+        "width": "1px"
+      },
+      "shadow": "0 8px 0 #C23616, 0 12px 20px rgba(0,0,0,0.3)",
+      "blur": "",
+      "typeScale": "32/22/16/13px，800",
+      "spacing": "",
+      "family": [
+        "game"
+      ],
+      "derived": [
+        "secondary",
+        "muted",
+        "accent",
+        "input",
+        "ring",
+        "popover",
+        "destructive"
+      ],
+      "source": "methods-visual.md V0 参数字典（本 Skill 内置）",
+      "installables": {
+        "tweakcnNearest": [
+          "candyland"
+        ],
+        "system": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+<!-- recipe
+{
+  "id": "action-pill",
+  "name": "牌桌操作按钮（不出 / 提示 / 出牌）",
+  "tags": [
+    "game-table"
+  ],
+  "source": "按腾讯欢乐系列、JJ 牌桌操作按钮做法整理：立体胶囊、上亮下暗、按下下沉",
+  "license": "MIT",
+  "states": [
+    "可点",
+    "按下（下沉 2px）",
+    "不可点（压暗）"
+  ],
+  "use": "放在手牌上方居中；出牌是主色（金/橙），提示是蓝，不出是灰；高度至少 44px",
+  "dont": "不要用扁平网页按钮；不要把三个按钮做成同一颜色",
+  "icons": [],
+  "requires": [
+    "game-tokens"
+  ],
+  "skin": "CSS 版材质只是兜底：有 VT 材质件（绒面、木边、牌面、按钮皮肤图片）时换成图片，CSS 只管布局和状态"
+}
+-->
+<style>
+.g-actions { display: flex; justify-content: center; gap: 12px; }
+.g-pill {
+  --_c: #8D8D8D; position: relative; min-width: 84px; height: 44px; padding: 0 20px; border: 0; border-radius: 999px; cursor: pointer;
+  color: #fff; font: 800 16px/1 var(--r-font); letter-spacing: .08em; text-shadow: 0 1px 1px rgba(0, 0, 0, .35);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--_c) 70%, #fff) 0%, var(--_c) 48%, color-mix(in srgb, var(--_c) 78%, #000) 100%);
+  box-shadow: 0 3px 0 color-mix(in srgb, var(--_c) 55%, #000), 0 6px 10px rgba(0, 0, 0, .35), inset 0 1px 0 rgba(255, 255, 255, .5);
+  transition: transform .08s, box-shadow .08s;
+}
+.g-pill:active:not(:disabled) { transform: translateY(2px); box-shadow: 0 1px 0 color-mix(in srgb, var(--_c) 55%, #000), 0 3px 6px rgba(0, 0, 0, .3), inset 0 1px 0 rgba(255, 255, 255, .5); }
+.g-pill:disabled { filter: grayscale(.7) brightness(.7); cursor: not-allowed; }
+.g-pill--play { --_c: #E67E00; }
+.g-pill--hint { --_c: #1E73BE; }
+.g-pill--pass { --_c: #7A7A7A; }
+</style>
+<!-- demo -->
+<div class="g-actions" style="padding:20px;background:var(--g-felt);border-radius:12px">
+  <button class="g-pill g-pill--pass">不出</button>
+  <button class="g-pill g-pill--hint">提示</button>
+  <button class="g-pill g-pill--play">出牌</button>
+</div>
+<!-- /demo -->

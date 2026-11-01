@@ -1,0 +1,113 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dto-int-03-dark-bento",
+  "type": "registry:theme",
+  "title": "INT-03 暗色微光便当盒风",
+  "cssVars": {
+    "theme": {
+      "font-sans": "Inter, Geist, \"PingFang SC\", sans-serif",
+      "radius": "0.75rem",
+      "font-mono": "\"JetBrains Mono\", monospace"
+    },
+    "light": {
+      "background": "#08090A",
+      "foreground": "#F7F8F8",
+      "card": "#111214",
+      "card-foreground": "#F7F8F8",
+      "popover": "#111214",
+      "popover-foreground": "#F7F8F8",
+      "primary": "#5E6AD2",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#08090A",
+      "secondary-foreground": "#F7F8F8",
+      "muted": "#08090A",
+      "muted-foreground": "#8A8F98",
+      "accent": "#08090A",
+      "accent-foreground": "#F7F8F8",
+      "destructive": "#E70B0B",
+      "destructive-foreground": "#FFFFFF",
+      "border": "rgba(255,255,255,0.08)",
+      "input": "rgba(255,255,255,0.08)",
+      "ring": "#5E6AD2"
+    },
+    "dark": {
+      "background": "#08090A",
+      "foreground": "#F7F8F8",
+      "card": "#111214",
+      "card-foreground": "#F7F8F8",
+      "popover": "#111214",
+      "popover-foreground": "#F7F8F8",
+      "primary": "#5E6AD2",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#08090A",
+      "secondary-foreground": "#F7F8F8",
+      "muted": "#08090A",
+      "muted-foreground": "#8A8F98",
+      "accent": "#08090A",
+      "accent-foreground": "#F7F8F8",
+      "destructive": "#E70B0B",
+      "destructive-foreground": "#FFFFFF",
+      "border": "rgba(255,255,255,0.08)",
+      "input": "rgba(255,255,255,0.08)",
+      "ring": "#5E6AD2"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "INT-03",
+      "tier": "theme",
+      "displayName": "暗色微光便当盒风",
+      "modes": [
+        "dark"
+      ],
+      "palette": {
+        "bg": "#08090A",
+        "card": "rgba(255,255,255,0.03)",
+        "text": [
+          "#F7F8F8",
+          "#8A8F98",
+          "#575BC7"
+        ],
+        "primary": "#5E6AD2",
+        "extra": [
+          "#4EA7FC",
+          "#B59AFF"
+        ],
+        "extraSource": "methods-visual.md 参数字典同一行里写到、原预设漏收的颜色"
+      },
+      "radiusScale": {
+        "card": 12,
+        "control": 8
+      },
+      "border": {
+        "color": "rgba(255,255,255,0.08)",
+        "width": "1px"
+      },
+      "shadow": "0 0 24px rgba(94,106,210,0.22)",
+      "blur": "blur(16px)",
+      "typeScale": "28/20/14/12px，标题 600，数字/标签等宽",
+      "spacing": "内边距 20–24px，网格间距 12/16px",
+      "family": [
+        "ai-product",
+        "futuristic"
+      ],
+      "derived": [
+        "secondary",
+        "muted",
+        "accent",
+        "input",
+        "ring",
+        "popover",
+        "destructive"
+      ],
+      "source": "methods-visual.md V0 参数字典（本 Skill 内置）",
+      "installables": {
+        "tweakcnNearest": [
+          "darkmatter",
+          "cosmic-night"
+        ],
+        "system": ""
+      }
+    }
+  }
+}

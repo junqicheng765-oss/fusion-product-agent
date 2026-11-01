@@ -1,0 +1,36 @@
+<!-- recipe
+{
+  "id": "avatar",
+  "name": "头像 / 头像组",
+  "tags": ["base", "mobile-consumer", "game-table"],
+  "source": "改写自 shadcn/ui Avatar（MIT）与 Origin UI avatar group（MIT），接入 V5 文化风格与同套系头像门禁",
+  "license": "MIT",
+  "states": ["同套系图片头像", "在线点", "当前回合光圈"],
+  "use": "用户、同行人、玩家头像：必须装载真实图片资产（先调 IconScout 检索并过 V5 第 7 条文化风格与同套系判断门；库内无匹配同套系头像时，必须按统一风格前缀调用生图工具成套生成头像图片）",
+  "dont": "严禁在高保真设计稿或 Demo 中用『名字首字文字圆圈（如 周/林/宁/我）』冒充头像！不要用表情符号、通用剪影或跨画风拼凑图当头像",
+  "icons": []
+}
+-->
+<style>
+.r-avatar {
+  --_s: 40px; position: relative; flex: none; width: var(--_s); height: var(--_s); border-radius: 50%;
+  display: inline-grid; place-items: center; overflow: visible;
+  background: var(--r-fill); color: var(--muted-foreground); font: 600 calc(var(--_s) * .4)/1 var(--r-font);
+}
+.r-avatar img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; border-radius: 50%; object-fit: cover; }
+.r-avatar--sm { --_s: 28px; } .r-avatar--lg { --_s: 56px; }
+.r-avatar__status { position: absolute; right: 0; bottom: 0; width: 28%; height: 28%; border-radius: 50%; background: #22C55E; box-shadow: 0 0 0 2px var(--background); }
+.r-avatar-group { display: inline-flex; }
+.r-avatar-group .r-avatar { box-shadow: 0 0 0 2px var(--background); }
+.r-avatar-group .r-avatar + .r-avatar { margin-left: calc(var(--_s) * -0.3); }
+</style>
+<!-- demo -->
+<div style="display:flex;gap:16px;align-items:center">
+  <span class="r-avatar r-avatar--lg"><img src="preview-assets/photo-1015.jpg" alt="Anna"><span class="r-avatar__status"></span></span>
+  <span class="r-avatar"><img src="preview-assets/photo-1036.jpg" alt="Lin"></span>
+  <span class="r-avatar-group" aria-label="3 位同行人">
+    <span class="r-avatar r-avatar--sm"><img src="preview-assets/photo-1036.jpg" alt=""></span>
+    <span class="r-avatar r-avatar--sm"><img src="preview-assets/photo-1043.jpg" alt=""></span>
+  </span>
+</div>
+<!-- /demo -->

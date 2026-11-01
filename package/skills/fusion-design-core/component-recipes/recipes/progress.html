@@ -1,0 +1,27 @@
+<!-- recipe
+{
+  "id": "progress",
+  "name": "进度条 / 步骤进度",
+  "tags": ["base", "form", "mobile-consumer"],
+  "source": "改写自 shadcn/ui Progress（MIT）与 Origin UI stepper（MIT）",
+  "license": "MIT",
+  "states": ["进行中", "完成"],
+  "use": "多步流程告诉用户还剩几步；长任务显示完成比例",
+  "dont": "不知道总量时用 ai-thinking 或 skeleton",
+  "icons": []
+}
+-->
+<style>
+.r-progress { height: 6px; border-radius: 999px; background: var(--r-fill); overflow: hidden; }
+.r-progress__bar { height: 100%; border-radius: inherit; background: var(--primary); transition: width .3s var(--r-ease); }
+.r-steps { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 4px; }
+.r-steps span { height: 4px; border-radius: 2px; background: var(--r-fill); }
+.r-steps span[data-done] { background: var(--primary); }
+.r-progress-label { display: flex; justify-content: space-between; font: 500 13px/1 var(--r-font); color: var(--muted-foreground); margin-bottom: 8px; }
+</style>
+<!-- demo -->
+<div style="display:grid;gap:20px;max-width:360px">
+  <div><div class="r-progress-label"><span>第 2 步，共 4 步</span><span>同行人</span></div><div class="r-steps" aria-label="第 2 步，共 4 步"><span data-done></span><span data-done></span><span></span><span></span></div></div>
+  <div><div class="r-progress-label"><span>下载离线地图</span><span>64%</span></div><div class="r-progress" role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100"><div class="r-progress__bar" style="width:64%"></div></div></div>
+</div>
+<!-- /demo -->

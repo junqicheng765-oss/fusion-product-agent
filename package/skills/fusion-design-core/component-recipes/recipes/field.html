@@ -1,0 +1,52 @@
+<!-- recipe
+{
+  "id": "field",
+  "name": "输入框（含标签、说明、错误）",
+  "tags": ["base", "form"],
+  "source": "改写自 shadcn/ui Input + Label + Form message（MIT）https://ui.shadcn.com/docs/components/input",
+  "license": "MIT",
+  "states": ["空", "已填", "聚焦", "错误", "禁用", "只读"],
+  "use": "标签永远在框外可见；说明和错误放框下，错误时用 aria-invalid + aria-describedby",
+  "dont": "不要只用 placeholder 当标签；手机消费主屏不要让表单当视觉主角",
+  "icons": []
+}
+-->
+<style>
+.r-field { display: grid; gap: 6px; }
+.r-field__label { font: 500 14px/1.4 var(--r-font); color: var(--foreground); }
+.r-field__label small { font-weight: 400; color: var(--muted-foreground); margin-left: 4px; }
+.r-input {
+  width: 100%; height: var(--r-touch); padding: 0 12px;
+  border: 1px solid var(--input); border-radius: var(--r-radius);
+  background: var(--background); color: var(--foreground);
+  font: 400 16px/1.2 var(--r-font);
+  transition: border-color .15s var(--r-ease), box-shadow .15s var(--r-ease);
+}
+.r-input::placeholder { color: var(--muted-foreground); }
+.r-input:focus { outline: none; border-color: var(--ring); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 22%, transparent); }
+.r-input:disabled { opacity: .5; cursor: not-allowed; background: var(--r-fill); }
+.r-input[readonly] { background: var(--r-fill); }
+.r-input[aria-invalid="true"] { border-color: var(--destructive); }
+.r-input[aria-invalid="true"]:focus { box-shadow: 0 0 0 3px color-mix(in srgb, var(--destructive) 20%, transparent); }
+textarea.r-input { height: auto; min-height: 96px; padding: 10px 12px; line-height: 1.5; resize: vertical; }
+.r-field__help { font: 400 13px/1.4 var(--r-font); color: var(--muted-foreground); }
+.r-field__error { font: 500 13px/1.4 var(--r-font); color: var(--destructive); }
+</style>
+<!-- demo -->
+<div style="display:grid;gap:20px;max-width:360px">
+  <div class="r-field">
+    <label class="r-field__label" for="r-f1">出发城市</label>
+    <input class="r-input" id="r-f1" placeholder="例如：上海" aria-describedby="r-f1h">
+    <p class="r-field__help" id="r-f1h">我们按这个城市推荐第一站</p>
+  </div>
+  <div class="r-field">
+    <label class="r-field__label" for="r-f2">邮箱</label>
+    <input class="r-input" id="r-f2" value="anna@mail" aria-invalid="true" aria-describedby="r-f2e">
+    <p class="r-field__error" id="r-f2e">邮箱格式不对，少了域名后缀</p>
+  </div>
+  <div class="r-field">
+    <label class="r-field__label" for="r-f3">备注 <small>选填</small></label>
+    <textarea class="r-input" id="r-f3" placeholder="饮食禁忌、行动不便等"></textarea>
+  </div>
+</div>
+<!-- /demo -->

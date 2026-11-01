@@ -1,0 +1,47 @@
+<!-- recipe
+{
+  "id": "select",
+  "name": "下拉选择",
+  "tags": [
+    "base",
+    "form"
+  ],
+  "source": "改写自 shadcn/ui Native Select（MIT）https://ui.shadcn.com/docs/components/select",
+  "license": "MIT",
+  "states": [
+    "默认",
+    "聚焦",
+    "错误",
+    "禁用"
+  ],
+  "use": "选项 5 个以上用它；手机上用原生 select，系统会弹出滚轮",
+  "dont": "2–4 个选项用 segmented 或 radio-group，一眼能看全",
+  "icons": [
+    "chevron-down"
+  ],
+  "demoRequires": [
+    "field"
+  ]
+}
+-->
+<style>
+.r-select { position: relative; display: block; }
+.r-select select {
+  appearance: none; -webkit-appearance: none; width: 100%; height: var(--r-touch);
+  padding: 0 40px 0 12px; border: 1px solid var(--input); border-radius: var(--r-radius);
+  background: var(--background); color: var(--foreground); font: 400 16px/1.2 var(--r-font); cursor: pointer;
+}
+.r-select select:focus { outline: none; border-color: var(--ring); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 22%, transparent); }
+.r-select select:disabled { opacity: .5; cursor: not-allowed; }
+.r-select select[aria-invalid="true"] { border-color: var(--destructive); }
+.r-select .r-ico { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--muted-foreground); pointer-events: none; }
+</style>
+<!-- demo -->
+<div class="r-field" style="max-width:360px">
+  <label class="r-field__label" for="r-s1">旅行月份</label>
+  <span class="r-select">
+    <select id="r-s1"><option>2026 年 4 月</option><option>2026 年 5 月</option><option>2026 年 6 月</option></select>
+    <span class="r-ico r-ico-sm i-chevron-down" aria-hidden="true"></span>
+  </span>
+</div>
+<!-- /demo -->

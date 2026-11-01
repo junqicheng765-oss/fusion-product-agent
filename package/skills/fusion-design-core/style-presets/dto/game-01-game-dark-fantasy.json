@@ -1,0 +1,110 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dto-game-01-game-dark-fantasy",
+  "type": "registry:theme",
+  "title": "GAME-01 史诗暗黑锻金重拟物风",
+  "cssVars": {
+    "theme": {
+      "font-sans": "Cinzel, \"Noto Serif SC\", serif",
+      "radius": "0.25rem",
+      "font-serif": "Cinzel, serif"
+    },
+    "light": {
+      "background": "#0D0A08",
+      "foreground": "#F3E5AB",
+      "card": "#1C1613",
+      "card-foreground": "#F3E5AB",
+      "popover": "#1C1613",
+      "popover-foreground": "#F3E5AB",
+      "primary": "#FF8000",
+      "primary-foreground": "#0D0A08",
+      "secondary": "#0D0A08",
+      "secondary-foreground": "#F3E5AB",
+      "muted": "#0D0A08",
+      "muted-foreground": "#B8A68E",
+      "accent": "#0D0A08",
+      "accent-foreground": "#F3E5AB",
+      "destructive": "#E70B0B",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#8C6D3F",
+      "input": "#8C6D3F",
+      "ring": "#FF8000"
+    },
+    "dark": {
+      "background": "#0D0A08",
+      "foreground": "#F3E5AB",
+      "card": "#1C1613",
+      "card-foreground": "#F3E5AB",
+      "popover": "#1C1613",
+      "popover-foreground": "#F3E5AB",
+      "primary": "#FF8000",
+      "primary-foreground": "#0D0A08",
+      "secondary": "#0D0A08",
+      "secondary-foreground": "#F3E5AB",
+      "muted": "#0D0A08",
+      "muted-foreground": "#B8A68E",
+      "accent": "#0D0A08",
+      "accent-foreground": "#F3E5AB",
+      "destructive": "#E70B0B",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#8C6D3F",
+      "input": "#8C6D3F",
+      "ring": "#FF8000"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "GAME-01",
+      "tier": "theme",
+      "displayName": "史诗暗黑锻金重拟物风",
+      "modes": [
+        "dark"
+      ],
+      "palette": {
+        "bg": "#0D0A08",
+        "card": "#1C1613",
+        "text": [
+          "#F3E5AB",
+          "#B8A68E",
+          "#7A6A58"
+        ],
+        "primary": "#FF8000",
+        "extra": [
+          "#A335EE",
+          "#9E1B1B",
+          "#D8C39E"
+        ],
+        "extraSource": "methods-visual.md 参数字典同一行里写到、原预设漏收的颜色"
+      },
+      "radiusScale": {
+        "card": 4,
+        "control": 4
+      },
+      "border": {
+        "color": "#8C6D3F",
+        "width": "2px"
+      },
+      "shadow": "inset 0 1px 0 rgba(255,230,160,0.45), 0 8px 24px rgba(0,0,0,0.85)",
+      "blur": "",
+      "typeScale": "32/22/15/12px，700，标题文字投影",
+      "spacing": "",
+      "family": [
+        "game"
+      ],
+      "derived": [
+        "secondary",
+        "muted",
+        "accent",
+        "input",
+        "ring",
+        "popover",
+        "destructive"
+      ],
+      "source": "methods-visual.md V0 参数字典（本 Skill 内置）",
+      "installables": {
+        "tweakcnNearest": [],
+        "system": ""
+      }
+    }
+  }
+}

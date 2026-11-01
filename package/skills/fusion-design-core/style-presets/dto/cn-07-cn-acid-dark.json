@@ -1,0 +1,109 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dto-cn-07-cn-acid-dark",
+  "type": "registry:theme",
+  "title": "CN-07 暗黑酸性机能潮酷风",
+  "cssVars": {
+    "theme": {
+      "font-sans": "\"Archivo Black\", \"PingFang SC\", sans-serif",
+      "radius": "0.25rem",
+      "font-mono": "\"JetBrains Mono\", monospace"
+    },
+    "light": {
+      "background": "#0B0C10",
+      "foreground": "#FFFFFF",
+      "card": "#161821",
+      "card-foreground": "#FFFFFF",
+      "popover": "#161821",
+      "popover-foreground": "#FFFFFF",
+      "primary": "#CCFF00",
+      "primary-foreground": "#0B0C10",
+      "secondary": "#0B0C10",
+      "secondary-foreground": "#FFFFFF",
+      "muted": "#0B0C10",
+      "muted-foreground": "#A0A6B8",
+      "accent": "#0B0C10",
+      "accent-foreground": "#FFFFFF",
+      "destructive": "#E70B0B",
+      "destructive-foreground": "#FFFFFF",
+      "border": "rgba(204,255,0,0.35)",
+      "input": "rgba(204,255,0,0.35)",
+      "ring": "#CCFF00"
+    },
+    "dark": {
+      "background": "#0B0C10",
+      "foreground": "#FFFFFF",
+      "card": "#161821",
+      "card-foreground": "#FFFFFF",
+      "popover": "#161821",
+      "popover-foreground": "#FFFFFF",
+      "primary": "#CCFF00",
+      "primary-foreground": "#0B0C10",
+      "secondary": "#0B0C10",
+      "secondary-foreground": "#FFFFFF",
+      "muted": "#0B0C10",
+      "muted-foreground": "#A0A6B8",
+      "accent": "#0B0C10",
+      "accent-foreground": "#FFFFFF",
+      "destructive": "#E70B0B",
+      "destructive-foreground": "#FFFFFF",
+      "border": "rgba(204,255,0,0.35)",
+      "input": "rgba(204,255,0,0.35)",
+      "ring": "#CCFF00"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "CN-07",
+      "tier": "theme",
+      "displayName": "暗黑酸性机能潮酷风",
+      "modes": [
+        "dark"
+      ],
+      "palette": {
+        "bg": "#0B0C10",
+        "card": "#161821",
+        "text": [
+          "#FFFFFF",
+          "#A0A6B8",
+          "#6B7080"
+        ],
+        "primary": "#CCFF00",
+        "extra": []
+      },
+      "radiusScale": {
+        "card": 4,
+        "control": 4
+      },
+      "border": {
+        "color": "rgba(204,255,0,0.35)",
+        "width": "1px"
+      },
+      "shadow": "0 0 16px rgba(204,255,0,0.2)",
+      "blur": "",
+      "typeScale": "28/20/14/11px，800 + 等宽标签",
+      "spacing": "内边距 16px，间距 10/12px",
+      "family": [
+        "futuristic"
+      ],
+      "derived": [
+        "secondary",
+        "muted",
+        "accent",
+        "input",
+        "ring",
+        "popover",
+        "destructive"
+      ],
+      "source": "methods-visual.md V0 参数字典（本 Skill 内置）",
+      "installables": {
+        "tweakcnNearest": [
+          "cyberpunk",
+          "doom-64"
+        ],
+        "system": ""
+      },
+      "gradient": "#7000FF -> #00F0FF"
+    }
+  }
+}

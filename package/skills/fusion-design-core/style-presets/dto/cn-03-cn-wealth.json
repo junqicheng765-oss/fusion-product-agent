@@ -1,0 +1,112 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dto-cn-03-cn-wealth",
+  "type": "registry:theme",
+  "title": "CN-03 深海藏青稳重财富风",
+  "cssVars": {
+    "theme": {
+      "font-sans": "\"PingFang SC\", sans-serif",
+      "radius": "0.625rem",
+      "font-mono": "\"DIN Alternate\", ui-monospace, monospace"
+    },
+    "light": {
+      "background": "#F5F7FA",
+      "foreground": "#141E28",
+      "card": "#FFFFFF",
+      "card-foreground": "#141E28",
+      "popover": "#FFFFFF",
+      "popover-foreground": "#141E28",
+      "primary": "#0F2942",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#F5F7FA",
+      "secondary-foreground": "#141E28",
+      "muted": "#F5F7FA",
+      "muted-foreground": "#5A6675",
+      "accent": "#F5F7FA",
+      "accent-foreground": "#141E28",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#E8EDF3",
+      "input": "#E8EDF3",
+      "ring": "#0F2942"
+    },
+    "dark": {
+      "background": "#F5F7FA",
+      "foreground": "#141E28",
+      "card": "#FFFFFF",
+      "card-foreground": "#141E28",
+      "popover": "#FFFFFF",
+      "popover-foreground": "#141E28",
+      "primary": "#0F2942",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#F5F7FA",
+      "secondary-foreground": "#141E28",
+      "muted": "#F5F7FA",
+      "muted-foreground": "#5A6675",
+      "accent": "#F5F7FA",
+      "accent-foreground": "#141E28",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#E8EDF3",
+      "input": "#E8EDF3",
+      "ring": "#0F2942"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "CN-03",
+      "tier": "theme",
+      "displayName": "深海藏青稳重财富风",
+      "modes": [
+        "light"
+      ],
+      "palette": {
+        "bg": "#F5F7FA",
+        "card": "#FFFFFF",
+        "text": [
+          "#141E28",
+          "#5A6675",
+          "#8C97A6"
+        ],
+        "primary": "#0F2942",
+        "extra": [
+          "#D4AF37",
+          "#165DFF",
+          "#1A2233"
+        ],
+        "extraSource": "methods-visual.md 参数字典同一行里写到、原预设漏收的颜色"
+      },
+      "radiusScale": {
+        "card": 10,
+        "control": 8
+      },
+      "border": {
+        "color": "#E8EDF3",
+        "width": "1px"
+      },
+      "shadow": "0 4px 16px rgba(15,41,66,0.06)",
+      "blur": "",
+      "typeScale": "26(金额)/18/14/12px，金额 DIN tabular-nums 700",
+      "spacing": "内边距 16–20px，间距 10/12px",
+      "family": [
+        "minimal-saas"
+      ],
+      "derived": [
+        "secondary",
+        "muted",
+        "accent",
+        "input",
+        "ring",
+        "popover",
+        "destructive"
+      ],
+      "source": "methods-visual.md V0 参数字典（本 Skill 内置）",
+      "installables": {
+        "tweakcnNearest": [
+          "elegant-luxury"
+        ],
+        "system": ""
+      }
+    }
+  }
+}

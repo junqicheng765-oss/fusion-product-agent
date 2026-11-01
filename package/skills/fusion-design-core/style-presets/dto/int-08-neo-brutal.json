@@ -1,0 +1,109 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dto-int-08-neo-brutal",
+  "type": "registry:theme",
+  "title": "INT-08 先锋粗黑描边撞色风",
+  "cssVars": {
+    "theme": {
+      "font-sans": "\"Space Grotesk\", \"Archivo Black\", \"PingFang SC\", sans-serif",
+      "radius": "0.25rem"
+    },
+    "light": {
+      "background": "#FFFDF7",
+      "foreground": "#000000",
+      "card": "#FFFFFF",
+      "card-foreground": "#000000",
+      "popover": "#FFFFFF",
+      "popover-foreground": "#000000",
+      "primary": "#E80700",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#FFFDF7",
+      "secondary-foreground": "#000000",
+      "muted": "#FFFDF7",
+      "muted-foreground": "#222222",
+      "accent": "#FFFDF7",
+      "accent-foreground": "#000000",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#000000",
+      "input": "#000000",
+      "ring": "#FF433D"
+    },
+    "dark": {
+      "background": "#FFFDF7",
+      "foreground": "#000000",
+      "card": "#FFFFFF",
+      "card-foreground": "#000000",
+      "popover": "#FFFFFF",
+      "popover-foreground": "#000000",
+      "primary": "#E80700",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#FFFDF7",
+      "secondary-foreground": "#000000",
+      "muted": "#FFFDF7",
+      "muted-foreground": "#222222",
+      "accent": "#FFFDF7",
+      "accent-foreground": "#000000",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#000000",
+      "input": "#000000",
+      "ring": "#FF433D"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "INT-08",
+      "tier": "theme",
+      "displayName": "先锋粗黑描边撞色风",
+      "modes": [
+        "light"
+      ],
+      "palette": {
+        "bg": "#FFFDF7",
+        "card": "#FFFFFF",
+        "text": [
+          "#000000",
+          "#222222",
+          "#555555"
+        ],
+        "primary": "#FF433D",
+        "extra": [
+          "#5200FF",
+          "#F8E000"
+        ]
+      },
+      "radiusScale": {
+        "card": 4,
+        "control": 4
+      },
+      "border": {
+        "color": "#000000",
+        "width": "2.5px"
+      },
+      "shadow": "4px 4px 0 #000000（零模糊）",
+      "blur": "",
+      "typeScale": "36/22/15/12px，800",
+      "spacing": "内边距 16–24px，间距 12/16px",
+      "family": [
+        "editorial"
+      ],
+      "derived": [
+        "secondary",
+        "muted",
+        "accent",
+        "input",
+        "ring",
+        "popover",
+        "destructive"
+      ],
+      "source": "methods-visual.md V0 参数字典（本 Skill 内置）",
+      "installables": {
+        "tweakcnNearest": [
+          "neo-brutalism"
+        ],
+        "system": ""
+      }
+    }
+  }
+}

@@ -116,7 +116,7 @@
       "skills/fusion-product-agent/knowledge/product-capability-model/standards/P1/cases.md": "5f518fad6fb45fb2ee76b22f0e60b3b8d15d9607737f12824ae47f9f20486690"
     }
   },
-  "runtime": "Domain construction and value-path rules added to the existing independent fusion runtime. No new production, research-tool or industry-dataset capability bundled.",
+  "runtime": "Product/domain runtime inherited from fusion 0.2.0; design runtime replaced by designer core and its complete bundled dependencies.",
   "redistribution": "Local internal trial. No unified upstream redistribution license is asserted.",
   "base_package": {
     "version": "0.1.0",
@@ -132,5 +132,13 @@
       "Evaluate professional task and value evidence; token usage and process length are diagnostic"
     ],
     "status": "Runtime instruction and evaluation-contract revision; business effectiveness not yet demonstrated"
+  },
+  "design_replacement": {
+    "repository": "https://github.com/savvydd/jq-product-agent",
+    "branch": "feat/design-handoff-contract",
+    "commit": "6dcc771bb7b5d0c5f4d2ca25fc13994af12c73a1",
+    "inventory": "design-source.json",
+    "integration": "Replace previous fusion design runtime, not parallelize; keep domain/product reasoning and unique product baseline. Import full design core plus its auxiliary skill trees.",
+    "status": "Distribution version 0.3.0; structural and offline checks passed; real-project design effectiveness remains unverified."
   }
 }

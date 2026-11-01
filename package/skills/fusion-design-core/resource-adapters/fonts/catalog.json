@@ -1,0 +1,815 @@
+{
+  "version": 1,
+  "fonts": {
+    "inter": {
+      "family": "Inter",
+      "css": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+      "weights": [
+        400,
+        500,
+        600,
+        700
+      ],
+      "subsets": [
+        "latin",
+        "latin-ext",
+        "cyrillic",
+        "vietnamese"
+      ],
+      "category": "sans-serif",
+      "roles": [
+        "ui",
+        "body",
+        "heading"
+      ],
+      "styleFamilies": [
+        "minimal-saas",
+        "ai-product",
+        "enterprise"
+      ],
+      "cjk": false,
+      "mono": false,
+      "display": false,
+      "license": "OFL 或 Apache（Google Fonts 目录内）"
+    },
+    "geist": {
+      "family": "Geist",
+      "css": "https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap",
+      "weights": [
+        400,
+        500,
+        600,
+        700
+      ],
+      "subsets": [
+        "latin",
+        "latin-ext"
+      ],
+      "category": "sans-serif",
+      "roles": [
+        "ui",
+        "body",
+        "heading"
+      ],
+      "styleFamilies": [
+        "minimal-saas",
+        "ai-product"
+      ],
+      "cjk": false,
+      "mono": false,
+      "display": false,
+      "license": "OFL 或 Apache（Google Fonts 目录内）"
+    },
+    "ibm-plex-sans": {
+      "family": "IBM Plex Sans",
+      "css": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap",
+      "weights": [
+        400,
+        500,
+        600,
+        700
+      ],
+      "subsets": [
+        "latin",
+        "latin-ext",
+        "cyrillic",
+        "vietnamese"
+      ],
+      "category": "sans-serif",
+      "roles": [
+        "ui",
+        "body"
+      ],
+      "styleFamilies": [
+        "enterprise",
+        "minimal-saas"
+      ],
+      "cjk": false,
+      "mono": false,
+      "display": false,
+      "license": "OFL 或 Apache（Google Fonts 目录内）"
+    },
+    "source-sans-3": {
+      "family": "Source Sans 3",
+      "css": "https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap",
+      "weights": [
+        400,
+        600,
+        700
+      ],
+      "subsets": [
+        "latin",
+        "latin-ext",
+        "cyrillic",
+        "vietnamese"
+      ],
+      "category": "sans-serif",
+      "roles": [
+        "ui",
+        "body"
+      ],
+      "styleFamilies": [
+        "enterprise",
+        "accessible"
+      ],
+      "cjk": false,
+      "mono": false,
+      "display": false,
+      "license": "OFL 或 Apache（Google Fonts 目录内）"
+    },
+    "dm-sans": {
+      "family": "DM Sans",
+      "css": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap",
+      "weights": [
+        400,
+        500,
+        700
+      ],
+      "subsets": [
+        "latin",
+        "latin-ext"
+      ],
+      "category": "sans-serif",
+      "roles": [
+        "ui",
+        "body"
+      ],
+      "styleFamilies": [
+        "soft-ui",
+        "content-feed"
+      ],
+      "cjk": false,
+      "mono": false,
+      "display": false,
+      "license": "OFL 或 Apache（Google Fonts 目录内）"
+    },
+    "plus-jakarta-sans": {
+      "family": "Plus Jakarta Sans",
+      "css": "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap",
+      "weights": [
+        400,
+        500,
+        600,
+        700
+      ],
+      "subsets": [
+        "latin",
+        "latin-ext"
+      ],
+      "category": "sans-serif",
+      "roles": [
+        "heading",
+        "ui"
+      ],
+      "styleFamilies": [
+        "soft-ui",
+        "ai-product"
+      ],
+      "cjk": false,
+      "mono": false,
+      "display": false,
+      "license": "OFL 或 Apache（Google Fonts 目录内）"
+    },
+    "manrope": {
+      "family": "Manrope",
+      "css": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap",
+      "weights": [
+        400,
+        500,
+        600,
+        700
+      ],
+      "subsets": [
+        "latin",
+        "latin-ext",
+        "cyrillic"
+      ],
+      "category": "sans-serif",
+      "roles": [
+        "heading",
+        "ui"
+      ],
+      "styleFamilies": [
+        "soft-ui",
+        "minimal-saas"
+      ],
+      "cjk": false,
+      "mono": false,
+      "display": false,
+      "license": "OFL 或 Apache（Google Fonts 目录内）"
+    },
+    "outfit": {
+      "family": "Outfit",
+      "css": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap",
+      "weights": [
+        400,
+        500,
+        600,
+        700
+      ],
+      "subsets": [
+        "latin",
+        "latin-ext"
+      ],
+      "category": "sans-serif",
+      "roles": [
+        "heading",
+        "ui"
+      ],
+      "styleFamilies": [
+        "ai-product",
+        "futuristic"
+      ],
+      "cjk": false,
+      "mono": false,
+      "display": false,
+      "license": "OFL 或 Apache（Google Fonts 目录内）"
+    },
+    "space-grotesk": {
+      "family": "Space Grotesk",
+      "css": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap",
+      "weights": [
+        400,
+        500,
+        700
+      ],
+      "subsets": [
+        "latin",
+        "latin-ext"
+      ],
+      "category": "sans-serif",
+      "roles": [
+        "heading"
+      ],
+      "styleFamilies": [
+        "editorial",
+        "futuristic"
+      ],
+      "cjk": false,
+      "mono": false,
+      "display": true,
+      "license": "OFL 或 Apache（Google Fonts 目录内）"
+    },
+    "fraunces": {
+      "family": "Fraunces",
+      "css": "https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&display=swap",
+      "weights": [
+        400,
+        600,
+        700
+      ],
+      "subsets": [
+        "latin",
+        "latin-ext",
+        "vietnamese"
+      ],
+      "category": "serif",
+      "roles": [
+        "heading"
+      ],
+      "styleFamilies": [
+        "editorial"
+      ],
+      "cjk": false,
+      "mono": false,
+      "display": true,
+      "license": "OFL 或 Apache（Google Fonts 目录内）"
+    },
+    "newsreader": {
+      "family": "Newsreader",
+      "css": "https://fonts.googleapis.com/css2?family=Newsreader:wght@400;600;700&display=swap",
+      "weights": [
+        400,
+        600,
+        700
+      ],
+      "subsets": [
+        "latin",
+        "latin-ext",
+        "vietnamese"
+      ],
+      "category": "serif",
+      "roles": [
+        "heading"
+      ],
+      "styleFamilies": [
+        "editorial"
+      ],
+      "cjk": false,
+      "mono": false,
+      "display": true,
+      "license": "OFL 或 Apache（Google Fonts 目录内）"
+    },
+    "source-serif-4": {
+      "family": "Source Serif 4",
+      "css": "https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&display=swap",
+      "weights": [
+        400,
+        600,
+        700
+      ],
+      "subsets": [
+        "latin",
+        "latin-ext",
+        "cyrillic",
+        "vietnamese"
+      ],
+      "category": "serif",
+      "roles": [
+        "heading",
+        "body"
+      ],
+      "styleFamilies": [
+        "editorial"
+      ],
+      "cjk": false,
+      "mono": false,
+      "display": false,
+      "license": "OFL 或 Apache（Google Fonts 目录内）"
+    },
+    "libre-baskerville": {
+      "family": "Libre Baskerville",
+      "css": "https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap",
+      "weights": [
+        400,
+        700
+      ],
+      "subsets": [
+        "latin",
+        "latin-ext"
+      ],
+      "category": "serif",
+      "roles": [
+        "heading"
+      ],
+      "styleFamilies": [
+        "editorial"
+      ],
+      "cjk": false,
+      "mono": false,
+      "display": true,
+      "license": "OFL 或 Apache（Google Fonts 目录内）"
+    },
+    "cormorant-garamond": {
+      "family": "Cormorant Garamond",
+      "css": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap",
+      "weights": [
+        400,
+        500,
+        600
+      ],
+      "subsets": [
+        "latin",
+        "latin-ext",
+        "cyrillic",
+        "vietnamese"
+      ],
+      "category": "serif",
+      "roles": [
+        "heading"
+      ],
+      "styleFamilies": [
+        "editorial",
+        "game"
+      ],
+      "cjk": false,
+      "mono": false,
+      "display": true,
+      "license": "OFL 或 Apache（Google Fonts 目录内）"
+    },
+    "jetbrains-mono": {
+      "family": "JetBrains Mono",
+      "css": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap",
+      "weights": [
+        400,
+        500,
+        700
+      ],
+      "subsets": [
+        "latin",
+        "latin-ext",
+        "cyrillic",
+        "vietnamese"
+      ],
+      "category": "monospace",
+      "roles": [
+        "mono"
+      ],
+      "styleFamilies": [
+        "ai-product",
+        "futuristic",
+        "minimal-saas"
+      ],
+      "cjk": false,
+      "mono": true,
+      "display": false,
+      "license": "OFL 或 Apache（Google Fonts 目录内）"
+    },
+    "ibm-plex-mono": {
+      "family": "IBM Plex Mono",
+      "css": "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap",
+      "weights": [
+        400,
+        500,
+        700
+      ],
+      "subsets": [
+        "latin",
+        "latin-ext",
+        "cyrillic"
+      ],
+      "category": "monospace",
+      "roles": [
+        "mono"
+      ],
+      "styleFamilies": [
+        "enterprise",
+        "ai-product"
+      ],
+      "cjk": false,
+      "mono": true,
+      "display": false,
+      "license": "OFL 或 Apache（Google Fonts 目录内）"
+    },
+    "noto-sans-sc": {
+      "family": "Noto Sans SC",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap",
+      "weights": [
+        400,
+        500,
+        700
+      ],
+      "subsets": [
+        "chinese-simplified",
+        "latin"
+      ],
+      "category": "sans-serif",
+      "roles": [
+        "ui",
+        "body",
+        "heading"
+      ],
+      "styleFamilies": [
+        "enterprise",
+        "content-feed",
+        "accessible"
+      ],
+      "cjk": true,
+      "mono": false,
+      "display": false,
+      "license": "OFL 或 Apache（Google Fonts 目录内）"
+    },
+    "noto-serif-sc": {
+      "family": "Noto Serif SC",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap",
+      "weights": [
+        400,
+        600,
+        700
+      ],
+      "subsets": [
+        "chinese-simplified",
+        "latin"
+      ],
+      "category": "serif",
+      "roles": [
+        "heading"
+      ],
+      "styleFamilies": [
+        "editorial"
+      ],
+      "cjk": true,
+      "mono": false,
+      "display": false,
+      "license": "OFL 或 Apache（Google Fonts 目录内）"
+    },
+    "noto-sans-tc": {
+      "family": "Noto Sans TC",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap",
+      "weights": [
+        400,
+        500,
+        700
+      ],
+      "subsets": [
+        "chinese-traditional",
+        "latin"
+      ],
+      "category": "sans-serif",
+      "roles": [
+        "ui",
+        "body"
+      ],
+      "styleFamilies": [
+        "content-feed"
+      ],
+      "cjk": true,
+      "mono": false,
+      "display": false,
+      "license": "OFL 或 Apache（Google Fonts 目录内）"
+    },
+    "noto-sans-jp": {
+      "family": "Noto Sans JP",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap",
+      "weights": [
+        400,
+        500,
+        700
+      ],
+      "subsets": [
+        "japanese",
+        "latin"
+      ],
+      "category": "sans-serif",
+      "roles": [
+        "ui",
+        "body"
+      ],
+      "styleFamilies": [
+        "minimal-saas"
+      ],
+      "cjk": true,
+      "mono": false,
+      "display": false,
+      "license": "OFL 或 Apache（Google Fonts 目录内）"
+    },
+    "noto-sans-kr": {
+      "family": "Noto Sans KR",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap",
+      "weights": [
+        400,
+        500,
+        700
+      ],
+      "subsets": [
+        "korean",
+        "latin"
+      ],
+      "category": "sans-serif",
+      "roles": [
+        "ui",
+        "body"
+      ],
+      "styleFamilies": [
+        "minimal-saas"
+      ],
+      "cjk": true,
+      "mono": false,
+      "display": false,
+      "license": "OFL 或 Apache（Google Fonts 目录内）"
+    },
+    "noto-sans-arabic": {
+      "family": "Noto Sans Arabic",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;700&display=swap",
+      "weights": [
+        400,
+        500,
+        700
+      ],
+      "subsets": [
+        "arabic",
+        "latin"
+      ],
+      "category": "sans-serif",
+      "roles": [
+        "ui",
+        "body"
+      ],
+      "styleFamilies": [
+        "minimal-saas"
+      ],
+      "cjk": false,
+      "mono": false,
+      "display": false,
+      "license": "OFL 或 Apache（Google Fonts 目录内）"
+    },
+    "sf-system": {
+      "family": "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'PingFang SC', 'Helvetica Neue', sans-serif",
+      "css": null,
+      "weights": [
+        400,
+        600,
+        700
+      ],
+      "subsets": [
+        "latin",
+        "chinese-simplified"
+      ],
+      "category": "sans-serif",
+      "roles": [
+        "ui",
+        "body",
+        "heading"
+      ],
+      "styleFamilies": [
+        "apple-native",
+        "glassmorphism"
+      ],
+      "cjk": true,
+      "mono": false,
+      "display": false,
+      "license": "系统字体；不嵌入 SF Pro 文件"
+    },
+    "pingfang-stack": {
+      "family": "'PingFang SC', 'HarmonyOS Sans', 'Noto Sans SC', sans-serif",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap",
+      "weights": [
+        400,
+        500,
+        700
+      ],
+      "subsets": [
+        "chinese-simplified",
+        "latin"
+      ],
+      "category": "sans-serif",
+      "roles": [
+        "ui",
+        "body",
+        "heading"
+      ],
+      "styleFamilies": [
+        "content-feed",
+        "enterprise",
+        "accessible"
+      ],
+      "cjk": true,
+      "license": "系统优先，缺字回退 Noto Sans SC（OFL）"
+    }
+  },
+  "pairings": {
+    "apple-native": {
+      "heading": "sf-system",
+      "body": "sf-system",
+      "mono": "jetbrains-mono",
+      "cjk": "sf-system"
+    },
+    "minimal-saas": {
+      "heading": "inter",
+      "body": "inter",
+      "mono": "jetbrains-mono",
+      "cjk": "noto-sans-sc"
+    },
+    "ai-product": {
+      "heading": "geist",
+      "body": "inter",
+      "mono": "jetbrains-mono",
+      "cjk": "noto-sans-sc"
+    },
+    "editorial": {
+      "heading": "fraunces",
+      "body": "source-sans-3",
+      "mono": "ibm-plex-mono",
+      "cjk": "noto-serif-sc"
+    },
+    "soft-ui": {
+      "heading": "plus-jakarta-sans",
+      "body": "dm-sans",
+      "mono": "ibm-plex-mono",
+      "cjk": "noto-sans-sc"
+    },
+    "futuristic": {
+      "heading": "space-grotesk",
+      "body": "outfit",
+      "mono": "jetbrains-mono",
+      "cjk": "noto-sans-sc"
+    },
+    "enterprise": {
+      "heading": "ibm-plex-sans",
+      "body": "ibm-plex-sans",
+      "mono": "ibm-plex-mono",
+      "cjk": "noto-sans-sc"
+    },
+    "content-feed": {
+      "heading": "pingfang-stack",
+      "body": "pingfang-stack",
+      "mono": "ibm-plex-mono",
+      "cjk": "pingfang-stack"
+    },
+    "accessible": {
+      "heading": "source-sans-3",
+      "body": "source-sans-3",
+      "mono": "ibm-plex-mono",
+      "cjk": "noto-sans-sc"
+    },
+    "game": {
+      "heading": "cormorant-garamond",
+      "body": "noto-sans-sc",
+      "mono": "ibm-plex-mono",
+      "cjk": "noto-sans-sc"
+    },
+    "material": {
+      "heading": "source-sans-3",
+      "body": "source-sans-3",
+      "mono": "ibm-plex-mono",
+      "cjk": "noto-sans-sc"
+    },
+    "glassmorphism": {
+      "heading": "sf-system",
+      "body": "sf-system",
+      "mono": "jetbrains-mono",
+      "cjk": "sf-system"
+    }
+  },
+  "scales": {
+    "compact": {
+      "h1": [
+        20,
+        28,
+        600
+      ],
+      "h2": [
+        16,
+        24,
+        600
+      ],
+      "body": [
+        14,
+        22,
+        400
+      ],
+      "caption": [
+        12,
+        18,
+        400
+      ],
+      "tracking": 0
+    },
+    "default": {
+      "h1": [
+        24,
+        32,
+        600
+      ],
+      "h2": [
+        18,
+        26,
+        600
+      ],
+      "body": [
+        15,
+        24,
+        400
+      ],
+      "caption": [
+        13,
+        20,
+        400
+      ],
+      "tracking": -0.01
+    },
+    "relaxed": {
+      "h1": [
+        28,
+        36,
+        600
+      ],
+      "h2": [
+        20,
+        28,
+        600
+      ],
+      "body": [
+        16,
+        26,
+        400
+      ],
+      "caption": [
+        13,
+        20,
+        400
+      ],
+      "tracking": -0.015
+    },
+    "accessible": {
+      "h1": [
+        26,
+        34,
+        700
+      ],
+      "h2": [
+        22,
+        30,
+        600
+      ],
+      "body": [
+        18,
+        28,
+        500
+      ],
+      "caption": [
+        16,
+        24,
+        400
+      ],
+      "tracking": 0
+    }
+  },
+  "rules": [
+    "目标语言含中日韩时，正文必须有 CJK 字体，不能只用 Inter / Geist 再指望浏览器乱回退。",
+    "标题衬线和正文无衬线可以混，但同一角色只用一个主字族。",
+    "等宽字体只用于代码、金额、编号，不用于正文。",
+    "不嵌入 SF Pro；苹果风用系统栈。",
+    "Google Fonts 用 CSS2 URL 加载，不需要 API key。完整目录检索需要用户自己的 Google Fonts API key，没有 key 就只用本目录。"
+  ]
+}

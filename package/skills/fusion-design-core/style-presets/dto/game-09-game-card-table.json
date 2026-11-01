@@ -1,0 +1,114 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dto-game-09-game-card-table",
+  "type": "registry:theme",
+  "title": "GAME-09 绿毡胡桃木奢金棋牌桌游风",
+  "cssVars": {
+    "theme": {
+      "font-sans": "\"Roboto Condensed\", DIN, \"PingFang SC\", sans-serif",
+      "radius": "0.5rem"
+    },
+    "light": {
+      "background": "#0F5132",
+      "foreground": "#FFF8E7",
+      "card": "#FFFFFF",
+      "card-foreground": "#1A1A1A",
+      "popover": "#FFFFFF",
+      "popover-foreground": "#1A1A1A",
+      "primary": "#FFB800",
+      "primary-foreground": "#1A1A1A",
+      "secondary": "#0F5132",
+      "secondary-foreground": "#FFF8E7",
+      "muted": "#0F5132",
+      "muted-foreground": "#FFD700",
+      "accent": "#0F5132",
+      "accent-foreground": "#FFF8E7",
+      "destructive": "#E70B0B",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#D4AF37",
+      "input": "#D4AF37",
+      "ring": "#FFB800"
+    },
+    "dark": {
+      "background": "#0F5132",
+      "foreground": "#FFF8E7",
+      "card": "#FFFFFF",
+      "card-foreground": "#1A1A1A",
+      "popover": "#FFFFFF",
+      "popover-foreground": "#1A1A1A",
+      "primary": "#FFB800",
+      "primary-foreground": "#1A1A1A",
+      "secondary": "#0F5132",
+      "secondary-foreground": "#FFF8E7",
+      "muted": "#0F5132",
+      "muted-foreground": "#FFD700",
+      "accent": "#0F5132",
+      "accent-foreground": "#FFF8E7",
+      "destructive": "#E70B0B",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#D4AF37",
+      "input": "#D4AF37",
+      "ring": "#FFB800"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "GAME-09",
+      "tier": "theme",
+      "displayName": "绿毡胡桃木奢金棋牌桌游风",
+      "modes": [
+        "dark"
+      ],
+      "palette": {
+        "bg": "#0F5132",
+        "card": "#FFFFFF",
+        "text": [
+          "#FFF8E7",
+          "#FFD700",
+          "#C8D6CC"
+        ],
+        "primary": "#FFB800",
+        "extra": [
+          "#2ECC71",
+          "#4A6572",
+          "#D92626",
+          "#3E2723",
+          "#0C2340",
+          "#E67E00"
+        ],
+        "extraSource": "methods-visual.md 参数字典同一行里写到、原预设漏收的颜色"
+      },
+      "radiusScale": {
+        "card": 8,
+        "control": 999
+      },
+      "border": {
+        "color": "#D4AF37",
+        "width": "1px"
+      },
+      "shadow": "牌 0 4px 10px rgba(0,0,0,0.45)；按钮 inset 0 2px 0 rgba(255,255,255,0.5), inset 0 -3px 0 rgba(0,0,0,0.28)",
+      "blur": "",
+      "typeScale": "牌角标大号粗体 800",
+      "spacing": "",
+      "family": [
+        "game"
+      ],
+      "derived": [
+        "secondary",
+        "muted",
+        "accent",
+        "input",
+        "ring",
+        "popover",
+        "destructive"
+      ],
+      "source": "methods-visual.md V0 参数字典（本 Skill 内置）",
+      "installables": {
+        "tweakcnNearest": [],
+        "system": ""
+      },
+      "gradient": "#0F5132 -> #072B1A（径向）",
+      "minControlHeight": 48
+    }
+  }
+}

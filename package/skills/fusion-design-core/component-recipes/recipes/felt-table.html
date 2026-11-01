@@ -1,0 +1,51 @@
+<!-- recipe
+{
+  "id": "felt-table",
+  "name": "牌桌（绒面 + 木边）",
+  "tags": [
+    "game-table"
+  ],
+  "source": "按实体牌桌与腾讯欢乐系列牌桌做法整理：中心有光的绒面、细纤维纹理、一圈胡桃木边、内侧金线",
+  "license": "MIT",
+  "states": [
+    "静态"
+  ],
+  "use": "整屏背景；四个座位按方位放：对家在上中、上家在左中、下家在右中、自己在下中；出牌区在正中",
+  "dont": "不要用平涂纯绿；不要把四个座位排成一行",
+  "icons": [],
+  "requires": [
+    "game-tokens"
+  ],
+  "skin": "CSS 版材质只是兜底：有 VT 材质件（绒面、木边、牌面、按钮皮肤图片）时换成图片，CSS 只管布局和状态"
+}
+-->
+<style>
+.g-table { position: relative; overflow: hidden; background: var(--g-wood); padding: 10px; }
+.g-table::before { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255, 255, 255, .08), transparent 40%, rgba(0, 0, 0, .25)); pointer-events: none; }
+.g-table__felt {
+  position: relative; height: 100%; border-radius: 28px; overflow: hidden;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 45%, color-mix(in srgb, var(--g-felt) 82%, #fff) 0%, var(--g-felt) 45%, var(--g-felt-deep) 100%);
+  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--g-gold) 55%, transparent), inset 0 0 40px rgba(0, 0, 0, .45);
+}
+.g-table__felt::after {
+  content: ""; position: absolute; inset: 0; opacity: .18; mix-blend-mode: overlay; pointer-events: none;
+  background-image: repeating-radial-gradient(circle at 30% 20%, rgba(255, 255, 255, .35) 0 1px, transparent 1px 3px), repeating-linear-gradient(90deg, rgba(0, 0, 0, .25) 0 1px, transparent 1px 2px);
+}
+.g-zone { position: absolute; display: grid; place-items: center; }
+.g-zone--top { top: 12px; left: 50%; transform: translateX(-50%); }
+.g-zone--left { left: 8px; top: 40%; transform: translateY(-50%); }
+.g-zone--right { right: 8px; top: 40%; transform: translateY(-50%); }
+.g-zone--center { left: 50%; top: 42%; transform: translate(-50%, -50%); }
+.g-zone--bottom { left: 0; right: 0; bottom: 0; }
+</style>
+<!-- demo -->
+<div class="g-table" style="max-width:390px;height:360px">
+  <div class="g-table__felt">
+    <div class="g-zone g-zone--top" data-zone="对家"></div>
+    <div class="g-zone g-zone--left" data-zone="上家"></div>
+    <div class="g-zone g-zone--right" data-zone="下家"></div>
+    <div class="g-zone g-zone--center" data-zone="出牌区"></div>
+  </div>
+</div>
+<!-- /demo -->

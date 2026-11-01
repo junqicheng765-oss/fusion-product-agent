@@ -1,0 +1,25 @@
+<!-- recipe
+{
+  "id": "section-header",
+  "name": "区块标题",
+  "tags": ["content", "mobile-consumer", "travel"],
+  "source": "按 App Store、Airbnb 首页区块标题做法整理",
+  "license": "MIT",
+  "states": ["静态", "带“查看全部”"],
+  "use": "首页、发现页里分隔每组内容；标题说用户能得到什么，不说栏目名",
+  "dont": "不要每个区块都配图标和副标题；“查看全部”只在内容确实更多时出现",
+  "icons": ["chevron-right"]
+}
+-->
+<style>
+.r-section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--r-gap-3); padding: 0 var(--r-gap-4); margin: 28px 0 12px; }
+.r-section-head__text { display: grid; gap: 2px; min-width: 0; }
+.r-section-head__title { margin: 0; font: 700 20px/1.25 var(--r-font-display); letter-spacing: -0.015em; }
+.r-section-head__sub { margin: 0; font: 400 13px/1.4 var(--r-font); color: var(--muted-foreground); }
+.r-section-head__more { flex: none; display: inline-flex; align-items: center; gap: 2px; min-height: 32px; font: 500 14px/1 var(--r-font); color: var(--muted-foreground); text-decoration: none; }
+</style>
+<!-- demo -->
+<div style="max-width:390px">
+  <div class="r-section-head"><div class="r-section-head__text"><h2 class="r-section-head__title">第一次来中国，从这里开始</h2><p class="r-section-head__sub">按交通便利和英文友好度挑选</p></div><a class="r-section-head__more" href="#">全部<span class="r-ico r-ico-sm i-chevron-right" aria-hidden="true"></span></a></div>
+</div>
+<!-- /demo -->

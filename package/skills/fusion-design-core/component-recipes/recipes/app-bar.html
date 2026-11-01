@@ -1,0 +1,49 @@
+<!-- recipe
+{
+  "id": "app-bar",
+  "name": "顶部导航栏",
+  "tags": ["mobile-consumer"],
+  "source": "按 iOS HIG Navigation Bar 与 Material 3 Top App Bar 规范整理",
+  "license": "MIT",
+  "variants": ["标准（返回 + 居中标题 + 动作）", "大标题（首页 / 一级页）", "透明叠在图上"],
+  "states": ["静止", "滚动后加底线和背景"],
+  "use": "二级页用标准；一级页用大标题，左对齐；叠在大图上时用透明款，按钮加半透明底保证可读",
+  "dont": "不要一栏放 3 个以上动作；首页不要放返回",
+  "icons": ["chevron-left", "share-2", "bookmark"]
+}
+-->
+<style>
+.r-appbar {
+  position: sticky; top: 0; z-index: 10; display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: var(--r-gap-2);
+  height: 52px; padding: 0 8px; background: var(--background); color: var(--foreground);
+  transition: box-shadow .2s var(--r-ease);
+}
+.r-appbar[data-scrolled] { box-shadow: 0 1px 0 var(--border); }
+.r-appbar__title { margin: 0; text-align: center; font: 600 17px/1.2 var(--r-font); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.r-appbar__actions { display: flex; gap: 2px; min-width: 44px; justify-content: flex-end; }
+.r-appbar__btn { width: 44px; height: 44px; padding: 0; display: grid; place-items: center; border: 0; border-radius: 50%; background: transparent; color: inherit; cursor: pointer; }
+.r-appbar--large { grid-template-columns: 1fr auto; height: auto; padding: 8px 16px 8px 20px; }
+.r-appbar--large .r-appbar__title { text-align: left; font: 700 28px/1.15 var(--r-font-display); letter-spacing: -0.02em; }
+.r-appbar--overlay { position: absolute; left: 0; right: 0; background: transparent; color: #fff; }
+.r-appbar--overlay .r-appbar__btn { background: rgba(0, 0, 0, .32); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); width: 36px; height: 36px; margin: 4px; }
+</style>
+<!-- demo -->
+<div style="display:grid;gap:16px;max-width:390px">
+  <header class="r-appbar" data-scrolled>
+    <button class="r-appbar__btn" aria-label="返回"><span class="r-ico i-chevron-left" aria-hidden="true"></span></button>
+    <h1 class="r-appbar__title">北京 5 日</h1>
+    <div class="r-appbar__actions"><button class="r-appbar__btn" aria-label="分享"><span class="r-ico i-share-2" aria-hidden="true"></span></button></div>
+  </header>
+  <header class="r-appbar r-appbar--large">
+    <h1 class="r-appbar__title">我的行程</h1>
+    <div class="r-appbar__actions"><button class="r-appbar__btn" aria-label="收藏夹"><span class="r-ico i-bookmark" aria-hidden="true"></span></button></div>
+  </header>
+</div>
+<!-- /demo -->
+<script>
+(function () {
+  var bars = document.querySelectorAll('.r-appbar:not(.r-appbar--overlay)');
+  function sync() { bars.forEach(function (b) { if (window.scrollY > 4) b.dataset.scrolled = ''; else if (!b.hasAttribute('data-static')) b.removeAttribute('data-scrolled'); }); }
+  window.addEventListener('scroll', sync, { passive: true });
+})();
+</script>

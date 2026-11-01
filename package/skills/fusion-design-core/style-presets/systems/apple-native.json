@@ -1,0 +1,136 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "apple-native",
+  "type": "registry:theme",
+  "title": "Apple Native (iOS Human Interface Guidelines)",
+  "cssVars": {
+    "theme": {
+      "font-sans": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"PingFang SC\", \"Helvetica Neue\", sans-serif",
+      "font-serif": "\"New York\", ui-serif, Georgia, serif",
+      "font-mono": "ui-monospace, \"SF Mono\", Menlo, monospace",
+      "radius": "0.625rem"
+    },
+    "light": {
+      "background": "#FFFFFF",
+      "foreground": "#000000",
+      "card": "#FFFFFF",
+      "card-foreground": "#000000",
+      "popover": "#FFFFFF",
+      "popover-foreground": "#000000",
+      "primary": "#007AFF",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#F2F2F7",
+      "secondary-foreground": "#000000",
+      "muted": "#F2F2F7",
+      "muted-foreground": "rgba(60, 60, 67, 0.6)",
+      "accent": "rgba(120, 120, 128, 0.2)",
+      "accent-foreground": "#000000",
+      "destructive": "#FF3B30",
+      "destructive-foreground": "#FFFFFF",
+      "border": "rgba(60, 60, 67, 0.29)",
+      "input": "rgba(118, 118, 128, 0.12)",
+      "ring": "#007AFF",
+      "chart-1": "#007AFF",
+      "chart-2": "#34C759",
+      "chart-3": "#FF9500",
+      "chart-4": "#AF52DE",
+      "chart-5": "#FF2D55"
+    },
+    "dark": {
+      "background": "#000000",
+      "foreground": "#FFFFFF",
+      "card": "#1C1C1E",
+      "card-foreground": "#FFFFFF",
+      "popover": "#2C2C2E",
+      "popover-foreground": "#FFFFFF",
+      "primary": "#0A84FF",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#1C1C1E",
+      "secondary-foreground": "#FFFFFF",
+      "muted": "#1C1C1E",
+      "muted-foreground": "rgba(235, 235, 245, 0.6)",
+      "accent": "rgba(120, 120, 128, 0.36)",
+      "accent-foreground": "#FFFFFF",
+      "destructive": "#FF453A",
+      "destructive-foreground": "#FFFFFF",
+      "border": "rgba(84, 84, 88, 0.65)",
+      "input": "rgba(118, 118, 128, 0.24)",
+      "ring": "#0A84FF",
+      "chart-1": "#0A84FF",
+      "chart-2": "#30D158",
+      "chart-3": "#FF9F0A",
+      "chart-4": "#BF5AF2",
+      "chart-5": "#FF375F"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "apple-native",
+      "tier": "design-system",
+      "displayName": "苹果原生风格：系统层级、毛玻璃导航、精细动效",
+      "scenes": ["iOS / iPadOS / macOS 原生 App", "面向苹果用户的 Web App 或 PWA", "工具、效率、健康、内容消费"],
+      "avoid": ["Android 原生 App（改用 material-3）", "高密度中后台表格（改用 ant-design）"],
+      "platformColors": {
+        "systemBlue": ["#007AFF", "#0A84FF"],
+        "systemGreen": ["#34C759", "#30D158"],
+        "systemRed": ["#FF3B30", "#FF453A"],
+        "systemOrange": ["#FF9500", "#FF9F0A"],
+        "systemYellow": ["#FFCC00", "#FFD60A"],
+        "systemIndigo": ["#5856D6", "#5E5CE6"],
+        "systemPurple": ["#AF52DE", "#BF5AF2"],
+        "systemPink": ["#FF2D55", "#FF375F"],
+        "systemGray": ["#8E8E93", "#8E8E93"],
+        "systemGroupedBackground": ["#F2F2F7", "#000000"],
+        "secondarySystemGroupedBackground": ["#FFFFFF", "#1C1C1E"],
+        "label": ["#000000", "#FFFFFF"],
+        "secondaryLabel": ["rgba(60,60,67,0.6)", "rgba(235,235,245,0.6)"],
+        "tertiaryLabel": ["rgba(60,60,67,0.3)", "rgba(235,235,245,0.3)"],
+        "separator": ["rgba(60,60,67,0.29)", "rgba(84,84,88,0.65)"]
+      },
+      "typeScale": {
+        "unit": "pt (Dynamic Type, Large default)",
+        "largeTitle": [34, 41, 400],
+        "title1": [28, 34, 400],
+        "title2": [22, 28, 400],
+        "title3": [20, 25, 400],
+        "headline": [17, 22, 600],
+        "body": [17, 22, 400],
+        "callout": [16, 21, 400],
+        "subheadline": [15, 20, 400],
+        "footnote": [13, 18, 400],
+        "caption1": [12, 16, 400],
+        "caption2": [11, 13, 400]
+      },
+      "spacing": { "base": 8, "screenMargin": 16, "listRowMinHeight": 44 },
+      "radiusScale": { "control": 10, "card": 12, "groupedList": 10, "sheet": 16, "button": "capsule or 12" },
+      "minTapTarget": 44,
+      "materials": "导航栏、标签栏、浮层用系统材质（半透明 + 背景模糊）；内容区不用玻璃",
+      "components": {
+        "navigation": "大标题导航栏（滚动后收为内联标题）；返回按钮 = chevron + 上一页标题；顶部最多 1 个主操作",
+        "tabBar": "底部标签栏 2–5 项，图标 + 文字，选中用 tint 色",
+        "list": "Inset grouped 列表：分组背景 systemGroupedBackground，行背景 secondarySystemGroupedBackground，行高 ≥ 44pt，分隔线左缩进",
+        "button": "填充 / 灰色填充 / 纯文字三级；主操作一屏一个",
+        "sheet": "底部弹出 Sheet，顶部抓手，可拖动到中/大两档",
+        "segmented": "分段控件做 2–5 个同级切换",
+        "toggle": "系统开关，开 = systemGreen",
+        "icons": "SF Symbols 风格线性/填充图标；Web 端从 IconScout 选同风格成品"
+      },
+      "motion": "弹簧曲线为主，转场跟随手势可打断；导航 push 横向、Sheet 纵向；尊重 Reduce Motion",
+      "implementation": {
+        "swiftui": "直接用系统组件与语义色（Color(.systemBackground)、.tint、List(.insetGrouped)），不硬编码色值",
+        "web": "用本文件 cssVars；字体只用系统字体栈，不嵌入 SF Pro 字体文件（SF 字体授权仅限苹果平台）"
+      },
+      "sources": [
+        "https://developer.apple.com/design/human-interface-guidelines/typography",
+        "https://developer.apple.com/design/human-interface-guidelines/color",
+        "https://developer.apple.com/design/resources/"
+      ],
+      "license": "数值取自 Apple HIG 公开规范；Apple Design Resources 的 Figma/Sketch 套件受 Apple 许可约束，只作参考，不再分发",
+      "installables": {
+        "designSystem": "SwiftUI 系统组件（原生）；Web 用 shadcn/ui + 本主题",
+        "layout": ["magicui", "originui"],
+        "motion": ["motion-primitives", "motion"]
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ant-design",
+  "type": "registry:theme",
+  "title": "Ant Design 5 (default tokens)",
+  "cssVars": {
+    "theme": {
+      "font-sans": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"PingFang SC\", sans-serif",
+      "font-serif": "Georgia, serif",
+      "font-mono": "\"SFMono-Regular\", Consolas, \"Liberation Mono\", Menlo, Courier, monospace",
+      "radius": "0.375rem"
+    },
+    "light": {
+      "background": "#F5F5F5",
+      "foreground": "rgba(0, 0, 0, 0.88)",
+      "card": "#FFFFFF",
+      "card-foreground": "rgba(0, 0, 0, 0.88)",
+      "popover": "#FFFFFF",
+      "popover-foreground": "rgba(0, 0, 0, 0.88)",
+      "primary": "#1677FF",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#FAFAFA",
+      "secondary-foreground": "rgba(0, 0, 0, 0.88)",
+      "muted": "rgba(0, 0, 0, 0.04)",
+      "muted-foreground": "rgba(0, 0, 0, 0.45)",
+      "accent": "#E6F4FF",
+      "accent-foreground": "#1677FF",
+      "destructive": "#FF4D4F",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#D9D9D9",
+      "input": "#D9D9D9",
+      "ring": "#1677FF",
+      "chart-1": "#1677FF",
+      "chart-2": "#52C41A",
+      "chart-3": "#FAAD14",
+      "chart-4": "#722ED1",
+      "chart-5": "#13C2C2"
+    },
+    "dark": {
+      "background": "#000000",
+      "foreground": "rgba(255, 255, 255, 0.85)",
+      "card": "#141414",
+      "card-foreground": "rgba(255, 255, 255, 0.85)",
+      "popover": "#1F1F1F",
+      "popover-foreground": "rgba(255, 255, 255, 0.85)",
+      "primary": "#1668DC",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#1F1F1F",
+      "secondary-foreground": "rgba(255, 255, 255, 0.85)",
+      "muted": "rgba(255, 255, 255, 0.08)",
+      "muted-foreground": "rgba(255, 255, 255, 0.45)",
+      "accent": "#111A2C",
+      "accent-foreground": "#1668DC",
+      "destructive": "#DC4446",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#424242",
+      "input": "#424242",
+      "ring": "#1668DC",
+      "chart-1": "#1668DC",
+      "chart-2": "#49AA19",
+      "chart-3": "#D89614",
+      "chart-4": "#642AB5",
+      "chart-5": "#13A8A8"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "ant-design",
+      "tier": "design-system",
+      "displayName": "企业中后台风格：高信息密度、规整表格表单",
+      "scenes": ["中后台、管理系统", "复杂表单与审批", "数据密集型工作台"],
+      "avoid": ["强品牌 C 端官网", "游戏与娱乐"],
+      "antdToken": {
+        "colorPrimary": "#1677ff",
+        "colorSuccess": "#52c41a",
+        "colorWarning": "#faad14",
+        "colorError": "#ff4d4f",
+        "colorInfo": "#1677ff",
+        "colorTextBase": "#000",
+        "colorBgBase": "#fff",
+        "fontSize": 14,
+        "borderRadius": 6,
+        "controlHeight": 32,
+        "sizeUnit": 4,
+        "sizeStep": 4,
+        "lineWidth": 1,
+        "motionUnit": 0.1,
+        "wireframe": false
+      },
+      "typeScale": {
+        "unit": "px",
+        "h1": [38, 46, 600],
+        "h2": [30, 38, 600],
+        "h3": [24, 32, 600],
+        "h4": [20, 28, 600],
+        "h5": [16, 24, 600],
+        "body": [14, 22, 400],
+        "small": [12, 20, 400]
+      },
+      "spacing": { "base": 4, "scale": [4, 8, 12, 16, 24, 32, 48] },
+      "radiusScale": { "sm": 4, "default": 6, "lg": 8 },
+      "controlHeights": { "sm": 24, "default": 32, "lg": 40 },
+      "components": {
+        "navigation": "左侧菜单 + 顶部面包屑 / 页头；页面内容区背景 colorBgLayout #F5F5F5，内容卡片白底",
+        "table": "Table 默认中号密度，表头加粗，操作列靠右，分页靠右下",
+        "form": "Form 标签右对齐或顶部对齐，控件高 32px，校验信息紧贴控件下方",
+        "button": "Primary / Default / Dashed / Text / Link，同组只有一个 Primary",
+        "feedback": "Message 轻提示、Notification 通知、Modal 确认、Result 结果页"
+      },
+      "motion": "时长 0.1s 一档（motionUnit），缓动 motionEaseInOut cubic-bezier(0.645, 0.045, 0.355, 1)；动效克制",
+      "implementation": {
+        "react": "ConfigProvider theme={{ token: meta.dto.antdToken, algorithm }}；暗色用 theme.darkAlgorithm，紧凑用 theme.compactAlgorithm",
+        "web-shadcn": "非 antd 项目想要同样观感时用本文件 cssVars"
+      },
+      "sources": [
+        "https://ant.design/docs/react/customize-theme",
+        "https://ant.design/docs/spec/introduce"
+      ],
+      "license": "Ant Design 为 MIT",
+      "installables": {
+        "designSystem": "antd（React）/ ant-design-vue",
+        "layout": ["ant-design-pro"],
+        "motion": []
+      }
+    }
+  }
+}

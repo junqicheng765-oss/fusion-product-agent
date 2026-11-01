@@ -1,0 +1,65 @@
+<!-- recipe
+{
+  "id": "playing-card",
+  "name": "扑克牌面",
+  "tags": [
+    "game-table"
+  ],
+  "source": "按实体扑克牌面规范整理（5:7 标准比例、角标点数 + 花色、红黑两色、中央大花色），花色用 Lucide 图标文件",
+  "license": "MIT",
+  "variants": [
+    "L 出牌区 58×82（5:7 标准扑克比例）",
+    "M 手牌 54×76（5:7 标准扑克比例，同列竖叠露顶 25px）",
+    "S 记牌/他人暗牌计数 34×48",
+    "背面"
+  ],
+  "states": [
+    "默认",
+    "选中（上移 10px + 金边）",
+    "逢人配（金边 + 配字角标）",
+    "不可出（压暗）"
+  ],
+  "use": "自己的手牌和出牌区都是标准 5:7 完整牌面（54×76 / 58×82）：左上角标（点数+花色在顶部 25px 内），牌心有一枚实心大花色。同点数竖向叠放时上层牌露出顶部 25px，最前一张露出完整牌面。S 尺寸只用于别人的暗牌计数",
+  "dont": "不要用整屏 AI 生图去乱画尺寸不一的假扑克牌；不要用一排角标或半截牌顶代替自己的手牌；不要用文字符号 ♠♥ 代替花色图形；花色用实心的 suit-* 图标",
+  "icons": [
+    "suit-spade",
+    "suit-heart",
+    "suit-club",
+    "suit-diamond"
+  ],
+  "requires": [
+    "game-tokens"
+  ]
+}
+-->
+<style>
+.g-card {
+  --_w: 54px; --_h: 76px; --_fs: 15px;
+  position: relative; flex: none; width: var(--_w); height: var(--_h); padding: 3px 0 0 5px; border: 0; cursor: pointer;
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start;
+  border-radius: 6px; background: linear-gradient(180deg, #FFFFFF 0%, var(--g-card, #FFFDF7) 100%);
+  box-shadow: var(--g-card-shadow), inset 0 0 0 1px var(--g-card-edge, #E2DAC6);
+  color: var(--g-black, #1A1A1A); text-align: left; transition: transform .15s var(--r-ease), box-shadow .15s var(--r-ease);
+}
+.g-card--l { --_w: 58px; --_h: 82px; --_fs: 17px; border-radius: 7px; }
+.g-card--s { --_w: 34px; --_h: 48px; --_fs: 12px; padding: 2px 0 0 3px; border-radius: 4px; }
+.g-card[data-suit="heart"], .g-card[data-suit="diamond"] { color: var(--g-red, #C62828); }
+.g-card__rank { display: block; font: 800 var(--_fs)/1 "Roboto Condensed", DIN, var(--r-font); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.g-card__suit { display: block; width: 10px; height: 10px; margin-top: 1px; background: currentColor; -webkit-mask: var(--ico) center / contain no-repeat; mask: var(--ico) center / contain no-repeat; }
+.g-card--l .g-card__suit { width: 11px; height: 11px; }
+.g-card__pip { position: absolute; right: 6px; bottom: 6px; width: 24px; height: 24px; background: currentColor; -webkit-mask: var(--ico) center / contain no-repeat; mask: var(--ico) center / contain no-repeat; opacity: .92; }
+.g-card--l .g-card__pip { width: 28px; height: 28px; right: 7px; bottom: 7px; }
+.g-card--s .g-card__pip { display: none; }
+.g-card[aria-pressed="true"] { transform: translateY(-10px); box-shadow: 0 6px 14px rgba(0,0,0,.45), 0 0 0 2px #FFD700; }
+.g-card[aria-disabled="true"] { filter: brightness(.72); cursor: not-allowed; }
+.g-card--back { background: radial-gradient(circle at 50% 50%, #8E1B1B 0%, #4A0E0E 100%); box-shadow: var(--g-card-shadow), inset 0 0 0 2px #D4AF37; }
+</style>
+<!-- demo -->
+<div style="display:flex;gap:14px;align-items:flex-end;padding:20px;background:var(--g-felt);border-radius:12px">
+  <button class="g-card g-card--l i-suit-spade" data-suit="spade" aria-label="黑桃 A"><span class="g-card__rank">A</span><span class="g-card__suit"></span><span class="g-card__pip"></span></button>
+  <button class="g-card i-suit-heart" data-suit="heart" aria-label="红桃 10" aria-pressed="true"><span class="g-card__rank">10</span><span class="g-card__suit"></span><span class="g-card__pip"></span></button>
+  <button class="g-card i-suit-club" data-suit="club" aria-label="梅花 7" aria-disabled="true"><span class="g-card__rank">7</span><span class="g-card__suit"></span><span class="g-card__pip"></span></button>
+  <button class="g-card g-card--s i-suit-diamond" data-suit="diamond" aria-label="方块 Q"><span class="g-card__rank">Q</span><span class="g-card__suit"></span></button>
+  <span class="g-card g-card--s g-card--back" aria-label="牌背"></span>
+</div>
+<!-- /demo -->

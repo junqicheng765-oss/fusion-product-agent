@@ -1,0 +1,48 @@
+<!-- recipe
+{
+  "id": "prompt-composer",
+  "name": "AI 输入框",
+  "tags": ["ai", "mobile-consumer"],
+  "source": "按 ChatGPT、Claude、Perplexity 移动端输入框做法整理",
+  "license": "MIT",
+  "states": ["空（显示示例）", "输入中（发送可用）", "生成中（变停止）", "多行自动长高"],
+  "use": "用户用一句话说需求；输入框上方放 2–3 个可点的示例，降低开口难度",
+  "dont": "AI 只是交互方式时，输入框不当首屏视觉主角；不要在输入框里塞模型选择等工程选项",
+  "icons": ["send", "mic", "plus"]
+}
+-->
+<style>
+.r-composer { display: grid; gap: var(--r-gap-2); padding: 8px var(--r-gap-3) calc(8px + var(--r-safe-bottom)); background: var(--background); }
+.r-composer__examples { display: flex; gap: var(--r-gap-2); overflow-x: auto; scrollbar-width: none; padding: 0 2px; }
+.r-composer__examples::-webkit-scrollbar { display: none; }
+.r-composer__example { flex: none; max-width: 240px; padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--r-radius-lg); background: var(--card); color: var(--foreground); font: 400 13px/1.35 var(--r-font); text-align: left; cursor: pointer; }
+.r-composer__box { display: flex; align-items: flex-end; gap: 6px; padding: 6px; border: 1px solid var(--border); border-radius: 26px; background: var(--card); box-shadow: var(--r-shadow-sm); }
+.r-composer__box:focus-within { border-color: var(--ring); }
+.r-composer__input { flex: 1; min-height: 40px; max-height: 140px; padding: 10px 6px; border: 0; background: transparent; resize: none; color: var(--foreground); font: 400 16px/1.25 var(--r-font); outline: none; }
+.r-composer__input::placeholder { color: var(--muted-foreground); }
+.r-composer__btn { flex: none; width: 40px; height: 40px; padding: 0; display: grid; place-items: center; border: 0; border-radius: 50%; background: transparent; color: var(--muted-foreground); cursor: pointer; }
+.r-composer__send { background: var(--primary); color: var(--primary-foreground); }
+.r-composer__send:disabled { background: var(--r-fill); color: var(--muted-foreground); cursor: not-allowed; }
+</style>
+<!-- demo -->
+<div class="r-composer" style="max-width:390px">
+  <div class="r-composer__examples">
+    <button class="r-composer__example">带父母去北京 5 天，别太累</button>
+    <button class="r-composer__example">成都吃 3 天，我不能吃辣</button>
+  </div>
+  <div class="r-composer__box">
+    <button class="r-composer__btn" aria-label="添加图片或链接"><span class="r-ico i-plus" aria-hidden="true"></span></button>
+    <textarea class="r-composer__input" rows="1" placeholder="说说你想怎么玩" aria-label="描述你的旅行"></textarea>
+    <button class="r-composer__btn" aria-label="语音输入"><span class="r-ico i-mic" aria-hidden="true"></span></button>
+    <button class="r-composer__btn r-composer__send" aria-label="发送" disabled><span class="r-ico r-ico-sm i-send" aria-hidden="true"></span></button>
+  </div>
+</div>
+<!-- /demo -->
+<script>
+document.querySelectorAll('.r-composer').forEach(function (c) {
+  var ta = c.querySelector('textarea'), send = c.querySelector('.r-composer__send');
+  function grow() { ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, 140) + 'px'; send.disabled = !ta.value.trim(); }
+  ta.addEventListener('input', grow);
+  c.querySelectorAll('.r-composer__example').forEach(function (b) { b.addEventListener('click', function () { ta.value = b.textContent; grow(); ta.focus(); }); });
+});
+</script>

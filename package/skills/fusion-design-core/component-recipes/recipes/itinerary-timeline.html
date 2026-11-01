@@ -1,0 +1,43 @@
+<!-- recipe
+{
+  "id": "itinerary-timeline",
+  "name": "行程时间线（按天）",
+  "tags": ["travel"],
+  "source": "按 Wanderlog、TripIt、Google Travel 行程页做法整理",
+  "license": "MIT",
+  "states": ["默认", "当前进行中的地点高亮", "地点之间显示交通方式和时长"],
+  "use": "一天内的地点按时间排开；每个地点有缩略图、名称、停留时长；地点之间写交通",
+  "dont": "不要把每个地点做成大卡片堆叠；不要省掉地点之间的交通，那是外国游客最怕的部分",
+  "icons": ["route", "clock"]
+}
+-->
+<style>
+.r-day { padding: 0 var(--r-gap-4); }
+.r-day__head { display: flex; align-items: baseline; gap: var(--r-gap-2); margin: 0 0 12px; }
+.r-day__n { font: 700 20px/1.2 var(--r-font-display); }
+.r-day__date { font: 400 13px/1.2 var(--r-font); color: var(--muted-foreground); }
+.r-tl { list-style: none; margin: 0; padding: 0; display: grid; }
+.r-tl__stop { display: grid; grid-template-columns: 44px 1fr 64px; gap: var(--r-gap-3); align-items: center; padding: 6px 0; }
+.r-tl__time { font: 600 13px/1.2 var(--r-font); font-variant-numeric: tabular-nums; color: var(--muted-foreground); text-align: right; }
+.r-tl__body { display: grid; gap: 2px; min-width: 0; }
+.r-tl__name { font: 600 15px/1.3 var(--r-font); }
+.r-tl__note { font: 400 13px/1.4 var(--r-font); color: var(--muted-foreground); }
+.r-tl__thumb { width: 64px; height: 64px; border-radius: var(--r-radius); object-fit: cover; }
+.r-tl__stop[aria-current="step"] .r-tl__time { color: var(--primary); }
+.r-tl__stop[aria-current="step"] .r-tl__name::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 6px; border-radius: 50%; background: var(--primary); vertical-align: middle; }
+.r-tl__leg { display: grid; grid-template-columns: 44px 1fr; gap: var(--r-gap-3); align-items: center; min-height: 36px; }
+.r-tl__leg::before { content: ""; justify-self: end; width: 2px; height: 100%; min-height: 28px; margin-right: 10px; border-radius: 1px; background: repeating-linear-gradient(to bottom, var(--border) 0 4px, transparent 4px 8px); }
+.r-tl__leg span { display: inline-flex; align-items: center; gap: 6px; font: 500 12px/1.2 var(--r-font); color: var(--muted-foreground); }
+</style>
+<!-- demo -->
+<section class="r-day" style="max-width:390px">
+  <h3 class="r-day__head"><span class="r-day__n">第 2 天</span><span class="r-day__date">4 月 12 日 周日</span></h3>
+  <ol class="r-tl">
+    <li class="r-tl__stop" aria-current="step"><span class="r-tl__time">09:00</span><span class="r-tl__body"><span class="r-tl__name">天坛公园</span><span class="r-tl__note">清晨有本地人打太极 · 停留 2 小时</span></span><img class="r-tl__thumb" src="preview-assets/photo-1040.jpg" alt=""></li>
+    <li class="r-tl__leg"><span><span class="r-ico r-ico-sm i-route" aria-hidden="true"></span>地铁 5 号线 · 25 分钟</span></li>
+    <li class="r-tl__stop"><span class="r-tl__time">11:30</span><span class="r-tl__body"><span class="r-tl__name">四季民福烤鸭</span><span class="r-tl__note">有英文菜单，建议提前取号</span></span><img class="r-tl__thumb" src="preview-assets/photo-1080.jpg" alt=""></li>
+    <li class="r-tl__leg"><span><span class="r-ico r-ico-sm i-clock" aria-hidden="true"></span>步行 12 分钟</span></li>
+    <li class="r-tl__stop"><span class="r-tl__time">14:00</span><span class="r-tl__body"><span class="r-tl__name">故宫博物院</span><span class="r-tl__note">需护照实名预约 · 停留 3 小时</span></span><img class="r-tl__thumb" src="preview-assets/photo-1047.jpg" alt=""></li>
+  </ol>
+</section>
+<!-- /demo -->

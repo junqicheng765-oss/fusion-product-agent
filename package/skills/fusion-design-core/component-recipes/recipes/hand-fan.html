@@ -1,0 +1,55 @@
+<!-- recipe
+{
+  "id": "hand-fan",
+  "name": "手牌排列（标准 5:7 全高扑克横向叠排）",
+  "tags": ["game-table"],
+  "source": "按主流棋牌手游手牌区规范整理：每张牌保持统一 64×90px（5:7 标准扑克比例）全高展示，横向均匀叠放露出左侧 28px 角标区，选中牌向上抬起 14px",
+  "license": "MIT",
+  "states": ["默认", "选中提牌（上移 14px + 金框）", "逢人配金标"],
+  "use": "手牌在屏幕底部居中横向叠排，每张牌保持完全一致的 64×90px（5:7）全高尺寸，左侧露出 28px 清晰显示点数与花色角标，严禁把牌裁成上下大小不一的半截方块",
+  "dont": "不要把同列牌纵向截断成扁窄条导致上下牌尺寸比例不一致；不要把牌缩成只有角标的小方块",
+  "icons": [],
+  "requires": ["playing-card"]
+}
+-->
+<style>
+.g-hand {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 18px 12px 6px;
+}
+.g-hand .g-card {
+  --_w: 64px;
+  --_h: 90px;
+  --_fs: 18px;
+  flex: none;
+}
+.g-hand .g-card + .g-card {
+  margin-left: -34px;
+}
+.g-hand .g-card[aria-pressed="true"] {
+  transform: translateY(-14px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, .45), 0 0 0 2px var(--g-gold, #FFD700);
+}
+</style>
+<!-- demo -->
+<div style="background:var(--g-felt);border-radius:12px;padding:12px;max-width:640px">
+  <div class="g-hand" aria-label="我的手牌">
+    <button class="g-card i-suit-heart" data-suit="heart" data-wild="true" aria-label="红桃 5"><span class="g-card__rank">5</span><span class="g-card__suit"></span><span class="g-card__pip"></span></button>
+    <button class="g-card i-suit-spade" data-suit="spade" aria-label="黑桃 A"><span class="g-card__rank">A</span><span class="g-card__suit"></span><span class="g-card__pip"></span></button>
+    <button class="g-card i-suit-heart" data-suit="heart" aria-label="红桃 K"><span class="g-card__rank">K</span><span class="g-card__suit"></span><span class="g-card__pip"></span></button>
+    <button class="g-card i-suit-spade" data-suit="spade" aria-pressed="true" aria-label="黑桃 Q"><span class="g-card__rank">Q</span><span class="g-card__suit"></span><span class="g-card__pip"></span></button>
+    <button class="g-card i-suit-heart" data-suit="heart" aria-pressed="true" aria-label="红桃 Q"><span class="g-card__rank">Q</span><span class="g-card__suit"></span><span class="g-card__pip"></span></button>
+    <button class="g-card i-suit-diamond" data-suit="diamond" aria-pressed="true" aria-label="方块 Q"><span class="g-card__rank">Q</span><span class="g-card__suit"></span><span class="g-card__pip"></span></button>
+    <button class="g-card i-suit-spade" data-suit="spade" aria-pressed="true" aria-label="黑桃 J"><span class="g-card__rank">J</span><span class="g-card__suit"></span><span class="g-card__pip"></span></button>
+    <button class="g-card i-suit-heart" data-suit="heart" aria-pressed="true" aria-label="红桃 J"><span class="g-card__rank">J</span><span class="g-card__suit"></span><span class="g-card__pip"></span></button>
+    <button class="g-card i-suit-club" data-suit="club" aria-label="梅花 10"><span class="g-card__rank">10</span><span class="g-card__suit"></span><span class="g-card__pip"></span></button>
+  </div>
+</div>
+<!-- /demo -->
+<script>
+document.querySelectorAll('.g-hand .g-card').forEach(function (c) {
+  c.addEventListener('click', function () { if (c.getAttribute('aria-disabled') === 'true') return; c.setAttribute('aria-pressed', String(c.getAttribute('aria-pressed') !== 'true')); });
+});
+</script>

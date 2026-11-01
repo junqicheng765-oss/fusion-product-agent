@@ -1,0 +1,39 @@
+<!-- recipe
+{
+  "id": "empty-state",
+  "name": "空状态",
+  "tags": [
+    "base",
+    "mobile-consumer"
+  ],
+  "source": "改写自 shadcn/ui Empty（MIT）",
+  "license": "MIT",
+  "states": [
+    "无数据",
+    "无搜索结果",
+    "出错可重试"
+  ],
+  "use": "说清为什么空、下一步做什么，给一个主动作；图形用真实插画或产品图，没有就只用图标",
+  "dont": "不要用表情符号或随手画的 SVG 插画",
+  "icons": [
+    "route"
+  ],
+  "requires": [
+    "button"
+  ]
+}
+-->
+<style>
+.r-empty { display: grid; justify-items: center; gap: var(--r-gap-3); padding: 40px 24px; text-align: center; }
+.r-empty__icon { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: var(--r-fill); color: var(--muted-foreground); }
+.r-empty__title { margin: 4px 0 0; font: 600 17px/1.3 var(--r-font); }
+.r-empty__desc { margin: 0; max-width: 28ch; font: 400 14px/1.6 var(--r-font); color: var(--muted-foreground); }
+</style>
+<!-- demo -->
+<div class="r-empty" style="max-width:390px">
+  <span class="r-empty__icon"><span class="r-ico r-ico-lg i-route" aria-hidden="true"></span></span>
+  <h3 class="r-empty__title">还没有保存的行程</h3>
+  <p class="r-empty__desc">告诉我们想去哪、玩几天，一分钟生成第一版。</p>
+  <button class="r-btn r-btn--primary">开始规划</button>
+</div>
+<!-- /demo -->

@@ -1,0 +1,110 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dto-int-06-tonal-soft",
+  "type": "registry:theme",
+  "title": "INT-06 柔和色阶胶囊亲和风",
+  "cssVars": {
+    "theme": {
+      "font-sans": "Roboto, \"Google Sans\", \"Noto Sans SC\", sans-serif",
+      "radius": "1.25rem"
+    },
+    "light": {
+      "background": "#FEF7FF",
+      "foreground": "#1D1B20",
+      "card": "#F3EDF7",
+      "card-foreground": "#1D1B20",
+      "popover": "#F3EDF7",
+      "popover-foreground": "#1D1B20",
+      "primary": "#6750A4",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#FEF7FF",
+      "secondary-foreground": "#1D1B20",
+      "muted": "#FEF7FF",
+      "muted-foreground": "#49454F",
+      "accent": "#EADDFF",
+      "accent-foreground": "#1D1B20",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#CAC4D0",
+      "input": "#CAC4D0",
+      "ring": "#6750A4"
+    },
+    "dark": {
+      "background": "#FEF7FF",
+      "foreground": "#1D1B20",
+      "card": "#F3EDF7",
+      "card-foreground": "#1D1B20",
+      "popover": "#F3EDF7",
+      "popover-foreground": "#1D1B20",
+      "primary": "#6750A4",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#FEF7FF",
+      "secondary-foreground": "#1D1B20",
+      "muted": "#FEF7FF",
+      "muted-foreground": "#49454F",
+      "accent": "#EADDFF",
+      "accent-foreground": "#1D1B20",
+      "destructive": "#DC2626",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#CAC4D0",
+      "input": "#CAC4D0",
+      "ring": "#6750A4"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "INT-06",
+      "tier": "theme",
+      "displayName": "柔和色阶胶囊亲和风",
+      "modes": [
+        "light"
+      ],
+      "palette": {
+        "bg": "#FEF7FF",
+        "card": "#F3EDF7",
+        "text": [
+          "#1D1B20",
+          "#49454F",
+          "#79747E"
+        ],
+        "primary": "#6750A4",
+        "extra": []
+      },
+      "radiusScale": {
+        "card": 20,
+        "control": 999
+      },
+      "border": {
+        "color": "#CAC4D0",
+        "width": "1px"
+      },
+      "shadow": "极轻或无，靠 Tonal Surface 色阶区分",
+      "blur": "",
+      "typeScale": "28/22/16/12px，标题 500/600",
+      "spacing": "内边距 16–24px，间距 12/16px",
+      "family": [
+        "material",
+        "soft-ui",
+        "travel"
+      ],
+      "derived": [
+        "secondary",
+        "muted",
+        "accent",
+        "input",
+        "ring",
+        "popover",
+        "destructive"
+      ],
+      "source": "methods-visual.md V0 参数字典（本 Skill 内置）",
+      "installables": {
+        "tweakcnNearest": [
+          "soft-pop",
+          "pastel-dreams",
+          "violet-bloom"
+        ],
+        "system": "material-3"
+      }
+    }
+  }
+}

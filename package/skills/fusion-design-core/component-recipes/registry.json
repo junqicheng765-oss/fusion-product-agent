@@ -1,0 +1,1168 @@
+{
+  "version": 1,
+  "about": "通用组件配方：纯 HTML/CSS，只读风格预设变量。由 scripts/component_recipe.py index 生成，不要手改。",
+  "tags": [
+    "base",
+    "form",
+    "mobile-consumer",
+    "content",
+    "travel",
+    "ai",
+    "game-table",
+    "motion"
+  ],
+  "recipes": [
+    {
+      "id": "accordion",
+      "name": "折叠面板",
+      "tags": [
+        "base",
+        "content"
+      ],
+      "use": "常见问题、次要细节；默认收起，标题要能单独读懂",
+      "dont": "用户做决定必须看到的信息不要折起来",
+      "states": [
+        "收起",
+        "展开",
+        "聚焦"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [
+        "chevron-down"
+      ],
+      "source": "改写自 shadcn/ui Accordion（MIT），用原生 <details>",
+      "license": "MIT",
+      "file": "recipes/accordion.html"
+    },
+    {
+      "id": "action-pill",
+      "name": "牌桌操作按钮（不出 / 提示 / 出牌）",
+      "tags": [
+        "game-table"
+      ],
+      "use": "放在手牌上方居中；出牌是主色（金/橙），提示是蓝，不出是灰；高度至少 44px",
+      "dont": "不要用扁平网页按钮；不要把三个按钮做成同一颜色",
+      "states": [
+        "可点",
+        "按下（下沉 2px）",
+        "不可点（压暗）"
+      ],
+      "variants": [],
+      "requires": [
+        "game-tokens"
+      ],
+      "icons": [],
+      "source": "按腾讯欢乐系列、JJ 牌桌操作按钮做法整理：立体胶囊、上亮下暗、按下下沉",
+      "license": "MIT",
+      "file": "recipes/action-pill.html"
+    },
+    {
+      "id": "ai-result-card",
+      "name": "AI 结果卡（带适合理由）",
+      "tags": [
+        "ai",
+        "travel"
+      ],
+      "use": "AI 生成的推荐：先给结论，再给 2–3 条和用户条件对应的理由，每条理由能追到用户说过的话；底部给采纳和“不合适”",
+      "dont": "不要只给结论不给理由；理由不要写“根据你的偏好”这种空话",
+      "states": [
+        "默认",
+        "已采纳",
+        "已反馈不合适"
+      ],
+      "variants": [],
+      "requires": [
+        "button"
+      ],
+      "icons": [
+        "check",
+        "sparkles",
+        "x"
+      ],
+      "source": "按 Perplexity 答案卡、Google AI Overview 引用卡做法整理，加入“为什么适合你”与反馈",
+      "license": "MIT",
+      "file": "recipes/ai-result-card.html"
+    },
+    {
+      "id": "ai-thinking",
+      "name": "AI 生成进度（分步）",
+      "tags": [
+        "ai"
+      ],
+      "use": "生成超过 3 秒时，用 3–5 个用户能懂的步骤说明正在做什么（不是技术日志）",
+      "dont": "不要只放一个转圈；步骤文字不要写“调用模型”“检索向量”",
+      "states": [
+        "进行中步骤（转圈）",
+        "已完成步骤（打勾）",
+        "未开始步骤（灰）"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [
+        "check",
+        "loader-circle"
+      ],
+      "source": "按 Perplexity 搜索步骤、Claude 思考展示做法整理",
+      "license": "MIT",
+      "file": "recipes/ai-thinking.html"
+    },
+    {
+      "id": "app-bar",
+      "name": "顶部导航栏",
+      "tags": [
+        "mobile-consumer"
+      ],
+      "use": "二级页用标准；一级页用大标题，左对齐；叠在大图上时用透明款，按钮加半透明底保证可读",
+      "dont": "不要一栏放 3 个以上动作；首页不要放返回",
+      "states": [
+        "静止",
+        "滚动后加底线和背景"
+      ],
+      "variants": [
+        "标准（返回 + 居中标题 + 动作）",
+        "大标题（首页 / 一级页）",
+        "透明叠在图上"
+      ],
+      "requires": [],
+      "icons": [
+        "bookmark",
+        "chevron-left",
+        "share-2"
+      ],
+      "source": "按 iOS HIG Navigation Bar 与 Material 3 Top App Bar 规范整理",
+      "license": "MIT",
+      "file": "recipes/app-bar.html"
+    },
+    {
+      "id": "avatar",
+      "name": "头像 / 头像组",
+      "tags": [
+        "base",
+        "mobile-consumer",
+        "game-table"
+      ],
+      "use": "用户、同行人、玩家头像：必须装载真实图片资产（先调 IconScout 检索并过 V5 第 7 条文化风格与同套系判断门；库内无匹配同套系头像时，必须按统一风格前缀调用生图工具成套生成头像图片）",
+      "dont": "严禁在高保真设计稿或 Demo 中用『名字首字文字圆圈（如 周/林/宁/我）』冒充头像！不要用表情符号、通用剪影或跨画风拼凑图当头像",
+      "states": [
+        "同套系图片头像",
+        "在线点",
+        "当前回合光圈"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [],
+      "source": "改写自 shadcn/ui Avatar（MIT）与 Origin UI avatar group（MIT），接入 V5 文化风格与同套系头像门禁",
+      "license": "MIT",
+      "file": "recipes/avatar.html"
+    },
+    {
+      "id": "badge",
+      "name": "徽标 / 标签",
+      "tags": [
+        "base"
+      ],
+      "use": "状态、类别、数量；文字 2–6 个字",
+      "dont": "可点击的筛选项用 chip-group；不要一张卡上堆 3 个以上",
+      "states": [
+        "静态"
+      ],
+      "variants": [
+        "solid",
+        "soft",
+        "outline",
+        "dot"
+      ],
+      "requires": [],
+      "icons": [],
+      "source": "改写自 shadcn/ui Badge（MIT）https://ui.shadcn.com/docs/components/badge",
+      "license": "MIT",
+      "file": "recipes/badge.html"
+    },
+    {
+      "id": "blur-fade",
+      "name": "模糊淡入（进场动效）",
+      "tags": [
+        "base",
+        "motion"
+      ],
+      "use": "首屏内容或列表项依次进场；每项延迟 40–80ms，总时长不超过 600ms",
+      "dont": "不要给按钮、表单、频繁更新的数据加进场动效",
+      "states": [
+        "未进入视口",
+        "已进入（播放一次）",
+        "减少动效时直接显示"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [],
+      "source": "改写自 Magic UI Blur Fade（MIT）https://magicui.design/docs/components/blur-fade，去掉 framer-motion 依赖，用 IntersectionObserver",
+      "license": "MIT",
+      "file": "recipes/blur-fade.html"
+    },
+    {
+      "id": "button",
+      "name": "按钮",
+      "tags": [
+        "base"
+      ],
+      "use": "一屏只放一个 primary；次要动作用 secondary 或 outline；纯图标按钮必须有 aria-label",
+      "dont": "不要用按钮做导航标签或筛选，那是 tabs / chip-group",
+      "states": [
+        "默认",
+        "悬停",
+        "按下",
+        "键盘聚焦",
+        "禁用",
+        "加载中"
+      ],
+      "variants": [
+        "primary",
+        "secondary",
+        "outline",
+        "ghost",
+        "destructive",
+        "link",
+        "icon"
+      ],
+      "requires": [],
+      "icons": [
+        "arrow-right",
+        "heart",
+        "loader-circle"
+      ],
+      "source": "改写自 shadcn/ui Button（MIT）https://ui.shadcn.com/docs/components/button",
+      "license": "MIT",
+      "file": "recipes/button.html"
+    },
+    {
+      "id": "card",
+      "name": "卡片容器",
+      "tags": [
+        "base"
+      ],
+      "use": "把一组相关信息框成一个单位；可点卡片整卡是一个链接或按钮",
+      "dont": "不要卡片套卡片；内容图片为主时用 photo-card；整屏都是卡片时先想能否去掉一层框",
+      "states": [
+        "静态",
+        "可点（悬停/按下）"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [
+        "chevron-right"
+      ],
+      "source": "改写自 shadcn/ui Card（MIT）https://ui.shadcn.com/docs/components/card",
+      "license": "MIT",
+      "file": "recipes/card.html"
+    },
+    {
+      "id": "carousel",
+      "name": "横滑卡片带",
+      "tags": [
+        "mobile-consumer",
+        "content",
+        "travel"
+      ],
+      "use": "同类内容的横向浏览：目的地、推荐、近期行程；卡宽约屏宽 70–80%，露出下一张一角",
+      "dont": "不要自动轮播；不要让唯一重要的内容藏在第 2 张之后",
+      "states": [
+        "静止",
+        "滑动吸附",
+        "末尾露出下一张提示可滑"
+      ],
+      "variants": [],
+      "requires": [
+        "photo-card"
+      ],
+      "icons": [],
+      "source": "改写自 shadcn/ui Carousel（MIT）的布局，去掉 embla 依赖，用 CSS scroll-snap",
+      "license": "MIT",
+      "file": "recipes/carousel.html"
+    },
+    {
+      "id": "checkbox",
+      "name": "复选框",
+      "tags": [
+        "base",
+        "form"
+      ],
+      "use": "可多选的独立项；整行可点，点击区至少 44px 高",
+      "dont": "互斥选项用 radio-group；即时生效的开关用 switch",
+      "states": [
+        "未选",
+        "已选",
+        "半选",
+        "聚焦",
+        "禁用"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [
+        "check",
+        "minus"
+      ],
+      "source": "改写自 shadcn/ui Checkbox（MIT）https://ui.shadcn.com/docs/components/checkbox",
+      "license": "MIT",
+      "file": "recipes/checkbox.html"
+    },
+    {
+      "id": "chip-group",
+      "name": "筛选胶囊组",
+      "tags": [
+        "base",
+        "mobile-consumer",
+        "content"
+      ],
+      "use": "兴趣、筛选条件、标签多选；手机上单行横滑，左右留 16px 出血",
+      "dont": "互斥且只有 2–4 项时用 segmented",
+      "states": [
+        "未选",
+        "已选",
+        "聚焦",
+        "横向滚动"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [
+        "check",
+        "sliders-horizontal"
+      ],
+      "source": "改写自 Origin UI checkbox chips / toggle group（MIT）",
+      "license": "MIT",
+      "file": "recipes/chip-group.html"
+    },
+    {
+      "id": "countdown-ring",
+      "name": "出牌倒计时",
+      "tags": [
+        "game-table"
+      ],
+      "use": "贴在当前出牌人铭牌旁或出牌区上方；秒数用等宽数字",
+      "dont": "不要只靠颜色提示时间快到，秒数必须可见",
+      "states": [
+        "正常",
+        "最后 5 秒（变红 + 轻跳）"
+      ],
+      "variants": [],
+      "requires": [
+        "game-tokens"
+      ],
+      "icons": [],
+      "source": "按牌类游戏通行倒计时做法整理：闹钟式圆环 + 秒数，最后 5 秒变红",
+      "license": "MIT",
+      "file": "recipes/countdown-ring.html"
+    },
+    {
+      "id": "destination-hero",
+      "name": "目的地主视觉（首页里的一块，不是整页）",
+      "tags": [
+        "travel",
+        "mobile-consumer"
+      ],
+      "use": "旅行首页里的一块主视觉：一张目的地照片，下面一句价值主张和一个入口。入口是去开始自己的行程，不是「就这一个地方」。整页还要另有行程例子或继续入口",
+      "dont": "不要把这一块当成整页；不要做成某一个目的地的详情（一张图、一个行程名、一颗「开始这一个」）；不要在这块里铺开出发地、日期、人数多个输入框；不要用渐变色块或插画代替目的地照片",
+      "states": [
+        "默认",
+        "多目的地横滑（配 carousel）"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [
+        "map-pin",
+        "sparkles"
+      ],
+      "source": "按 Airbnb、Booking、Klook、Trip.com 首页首屏做法整理：主视觉是目的地照片，入口是一个按钮外观的搜索条，不是展开的表单",
+      "license": "MIT",
+      "file": "recipes/destination-hero.html"
+    },
+    {
+      "id": "dialog",
+      "name": "对话框（居中）",
+      "tags": [
+        "base"
+      ],
+      "use": "需要用户确认的不可逆操作、短表单；原生 dialog 自带焦点约束和 Esc",
+      "dont": "手机上的选择、筛选、详情用 sheet（底部弹层）",
+      "states": [
+        "关闭",
+        "打开",
+        "Esc 关闭",
+        "点遮罩关闭"
+      ],
+      "variants": [],
+      "requires": [
+        "button"
+      ],
+      "icons": [
+        "x"
+      ],
+      "source": "改写自 shadcn/ui Dialog / Alert Dialog（MIT），用原生 <dialog>",
+      "license": "MIT",
+      "file": "recipes/dialog.html"
+    },
+    {
+      "id": "empty-state",
+      "name": "空状态",
+      "tags": [
+        "base",
+        "mobile-consumer"
+      ],
+      "use": "说清为什么空、下一步做什么，给一个主动作；图形用真实插画或产品图，没有就只用图标",
+      "dont": "不要用表情符号或随手画的 SVG 插画",
+      "states": [
+        "无数据",
+        "无搜索结果",
+        "出错可重试"
+      ],
+      "variants": [],
+      "requires": [
+        "button"
+      ],
+      "icons": [
+        "route"
+      ],
+      "source": "改写自 shadcn/ui Empty（MIT）",
+      "license": "MIT",
+      "file": "recipes/empty-state.html"
+    },
+    {
+      "id": "feed-masonry",
+      "name": "双列瀑布流",
+      "tags": [
+        "content",
+        "mobile-consumer"
+      ],
+      "use": "灵感、攻略、UGC 类信息流；图片比例混排 3:4 / 1:1 / 4:5 制造节奏",
+      "dont": "需要严格顺序阅读的列表（如行程按天）不要用瀑布流",
+      "states": [
+        "默认",
+        "加载更多（配 skeleton）"
+      ],
+      "variants": [],
+      "requires": [
+        "photo-card"
+      ],
+      "icons": [],
+      "source": "按小红书、Pinterest 双列瀑布流做法整理，用 CSS columns，不依赖脚本",
+      "license": "MIT",
+      "file": "recipes/feed-masonry.html"
+    },
+    {
+      "id": "felt-table",
+      "name": "牌桌（绒面 + 木边）",
+      "tags": [
+        "game-table"
+      ],
+      "use": "整屏背景；四个座位按方位放：对家在上中、上家在左中、下家在右中、自己在下中；出牌区在正中",
+      "dont": "不要用平涂纯绿；不要把四个座位排成一行",
+      "states": [
+        "静态"
+      ],
+      "variants": [],
+      "requires": [
+        "game-tokens"
+      ],
+      "icons": [],
+      "source": "按实体牌桌与腾讯欢乐系列牌桌做法整理：中心有光的绒面、细纤维纹理、一圈胡桃木边、内侧金线",
+      "license": "MIT",
+      "file": "recipes/felt-table.html"
+    },
+    {
+      "id": "field",
+      "name": "输入框（含标签、说明、错误）",
+      "tags": [
+        "base",
+        "form"
+      ],
+      "use": "标签永远在框外可见；说明和错误放框下，错误时用 aria-invalid + aria-describedby",
+      "dont": "不要只用 placeholder 当标签；手机消费主屏不要让表单当视觉主角",
+      "states": [
+        "空",
+        "已填",
+        "聚焦",
+        "错误",
+        "禁用",
+        "只读"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [],
+      "source": "改写自 shadcn/ui Input + Label + Form message（MIT）https://ui.shadcn.com/docs/components/input",
+      "license": "MIT",
+      "file": "recipes/field.html"
+    },
+    {
+      "id": "game-tokens",
+      "name": "牌桌材质变量",
+      "tags": [
+        "game-table"
+      ],
+      "use": "所有 game-table 配方都读这组变量；换桌布颜色或木色只改这里。和风格预设的 --primary 等变量并存",
+      "dont": "不要在单个组件里写死颜色",
+      "states": [
+        "静态"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [],
+      "source": "取自 GAME-09 风格（实体牌桌）字典色：绒面绿 #0F5132→#072B1A、胡桃木 #3E2723、金 #D4AF37",
+      "license": "MIT",
+      "file": "recipes/game-tokens.html"
+    },
+    {
+      "id": "hand-fan",
+      "name": "手牌排列（标准 5:7 全高扑克横向叠排）",
+      "tags": [
+        "game-table"
+      ],
+      "use": "手牌在屏幕底部居中横向叠排，每张牌保持完全一致的 64×90px（5:7）全高尺寸，左侧露出 28px 清晰显示点数与花色角标，严禁把牌裁成上下大小不一的半截方块",
+      "dont": "不要把同列牌纵向截断成扁窄条导致上下牌尺寸比例不一致；不要把牌缩成只有角标的小方块",
+      "states": [
+        "默认",
+        "选中提牌（上移 14px + 金框）",
+        "逢人配金标"
+      ],
+      "variants": [],
+      "requires": [
+        "playing-card"
+      ],
+      "icons": [
+        "suit-club",
+        "suit-diamond",
+        "suit-heart",
+        "suit-spade"
+      ],
+      "source": "按主流棋牌手游手牌区规范整理：每张牌保持统一 64×90px（5:7 标准扑克比例）全高展示，横向均匀叠放露出左侧 28px 角标区，选中牌向上抬起 14px",
+      "license": "MIT",
+      "file": "recipes/hand-fan.html"
+    },
+    {
+      "id": "hero-media",
+      "name": "大图头图",
+      "tags": [
+        "content",
+        "travel",
+        "mobile-consumer"
+      ],
+      "use": "详情页顶部，图片占首屏 40–55% 高；顶部按钮用 app-bar 透明款叠在图上；标题放在图下方",
+      "dont": "不要把标题和说明压在图片上再加暗色渐变；不要用插画或色块代替真实照片",
+      "states": [
+        "默认",
+        "多图时带页码"
+      ],
+      "variants": [],
+      "requires": [
+        "app-bar"
+      ],
+      "icons": [
+        "chevron-left",
+        "heart",
+        "share-2"
+      ],
+      "source": "按 Airbnb 房源详情、Apple 旅行类 App 详情页头图做法整理",
+      "license": "MIT",
+      "file": "recipes/hero-media.html"
+    },
+    {
+      "id": "itinerary-preview-card",
+      "name": "行程预览卡",
+      "tags": [
+        "travel",
+        "ai"
+      ],
+      "use": "首页“示例行程 / 我的行程 / 生成结果”的单元：一张拼图（主图 + 两张小图）+ 路线 + 天数 + 一句为什么适合",
+      "dont": "不要只放文字列表；不要把每天的安排塞进预览卡",
+      "states": [
+        "默认",
+        "已保存"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [
+        "calendar",
+        "map-pin"
+      ],
+      "source": "按 Wanderlog 行程卡、Airbnb 体验卡做法整理",
+      "license": "MIT",
+      "file": "recipes/itinerary-preview-card.html"
+    },
+    {
+      "id": "itinerary-timeline",
+      "name": "行程时间线（按天）",
+      "tags": [
+        "travel"
+      ],
+      "use": "一天内的地点按时间排开；每个地点有缩略图、名称、停留时长；地点之间写交通",
+      "dont": "不要把每个地点做成大卡片堆叠；不要省掉地点之间的交通，那是外国游客最怕的部分",
+      "states": [
+        "默认",
+        "当前进行中的地点高亮",
+        "地点之间显示交通方式和时长"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [
+        "clock",
+        "route"
+      ],
+      "source": "按 Wanderlog、TripIt、Google Travel 行程页做法整理",
+      "license": "MIT",
+      "file": "recipes/itinerary-timeline.html"
+    },
+    {
+      "id": "map-with-sheet",
+      "name": "地图 + 底部抽屉",
+      "tags": [
+        "travel",
+        "mobile-consumer"
+      ],
+      "use": "地点要按位置理解时：地图占满背景，列表放在可拖的底部抽屉；标记点带序号和行程顺序对应",
+      "dont": "地图必须是真实地图（地图 SDK 或真实瓦片，带版权署名）；不要用手绘或色块冒充地图",
+      "states": [
+        "抽屉收起（露标题）",
+        "抽屉半开",
+        "选中地点（标记放大）"
+      ],
+      "variants": [],
+      "requires": [
+        "app-bar",
+        "place-row"
+      ],
+      "icons": [
+        "chevron-left"
+      ],
+      "source": "按 Google Maps、Citymapper、Airbnb 地图模式做法整理",
+      "license": "MIT",
+      "file": "recipes/map-with-sheet.html"
+    },
+    {
+      "id": "number-stepper",
+      "name": "数字步进器",
+      "tags": [
+        "base",
+        "form",
+        "mobile-consumer"
+      ],
+      "use": "小范围整数：人数、天数、房间数；整行一个标签 + 步进器",
+      "dont": "大范围数字用输入框",
+      "states": [
+        "默认",
+        "到达最小值（减号禁用）",
+        "到达最大值（加号禁用）"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [
+        "minus",
+        "plus"
+      ],
+      "source": "改写自 Origin UI Number Input（MIT）https://originui.com/number-input",
+      "license": "MIT",
+      "file": "recipes/number-stepper.html"
+    },
+    {
+      "id": "photo-card",
+      "name": "图片卡（图在上、字在下）",
+      "tags": [
+        "content",
+        "mobile-consumer",
+        "travel"
+      ],
+      "use": "内容和目的地以图片为主角时；图片占卡片面积 70% 以上；字放图片下方，不压在图上",
+      "dont": "不要用渐变遮罩压字在图上来省空间；不要用纯色块或图标替代真实照片",
+      "states": [
+        "加载中（配 skeleton）",
+        "默认",
+        "按下",
+        "已收藏"
+      ],
+      "variants": [
+        "portrait 3:4",
+        "square 1:1",
+        "landscape 4:3",
+        "wide 16:9"
+      ],
+      "requires": [],
+      "icons": [
+        "heart"
+      ],
+      "source": "按小红书、Airbnb、Pinterest 的图文卡做法整理",
+      "license": "MIT",
+      "file": "recipes/photo-card.html"
+    },
+    {
+      "id": "place-row",
+      "name": "地点行",
+      "tags": [
+        "travel",
+        "mobile-consumer"
+      ],
+      "use": "地点、餐厅、酒店的列表；左图右文，一行给出名称、类别、评分和一个对外国游客关键的事实",
+      "dont": "不要把评分、距离、价格、标签全部塞进一行",
+      "states": [
+        "默认",
+        "已加入行程",
+        "暂停营业"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [
+        "check",
+        "plus",
+        "star"
+      ],
+      "source": "按 Google Maps、大众点评列表行做法整理",
+      "license": "MIT",
+      "file": "recipes/place-row.html"
+    },
+    {
+      "id": "playing-card",
+      "name": "扑克牌面",
+      "tags": [
+        "game-table"
+      ],
+      "use": "自己的手牌和出牌区都是标准 5:7 完整牌面（54×76 / 58×82）：左上角标（点数+花色在顶部 25px 内），牌心有一枚实心大花色。同点数竖向叠放时上层牌露出顶部 25px，最前一张露出完整牌面。S 尺寸只用于别人的暗牌计数",
+      "dont": "不要用整屏 AI 生图去乱画尺寸不一的假扑克牌；不要用一排角标或半截牌顶代替自己的手牌；不要用文字符号 ♠♥ 代替花色图形；花色用实心的 suit-* 图标",
+      "states": [
+        "默认",
+        "选中（上移 10px + 金边）",
+        "逢人配（金边 + 配字角标）",
+        "不可出（压暗）"
+      ],
+      "variants": [
+        "L 出牌区 58×82（5:7 标准扑克比例）",
+        "M 手牌 54×76（5:7 标准扑克比例，同列竖叠露顶 25px）",
+        "S 记牌/他人暗牌计数 34×48",
+        "背面"
+      ],
+      "requires": [
+        "game-tokens"
+      ],
+      "icons": [
+        "suit-club",
+        "suit-diamond",
+        "suit-heart",
+        "suit-spade"
+      ],
+      "source": "按实体扑克牌面规范整理（5:7 标准比例、角标点数 + 花色、红黑两色、中央大花色），花色用 Lucide 图标文件",
+      "license": "MIT",
+      "file": "recipes/playing-card.html"
+    },
+    {
+      "id": "progress",
+      "name": "进度条 / 步骤进度",
+      "tags": [
+        "base",
+        "form",
+        "mobile-consumer"
+      ],
+      "use": "多步流程告诉用户还剩几步；长任务显示完成比例",
+      "dont": "不知道总量时用 ai-thinking 或 skeleton",
+      "states": [
+        "进行中",
+        "完成"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [],
+      "source": "改写自 shadcn/ui Progress（MIT）与 Origin UI stepper（MIT）",
+      "license": "MIT",
+      "file": "recipes/progress.html"
+    },
+    {
+      "id": "prompt-composer",
+      "name": "AI 输入框",
+      "tags": [
+        "ai",
+        "mobile-consumer"
+      ],
+      "use": "用户用一句话说需求；输入框上方放 2–3 个可点的示例，降低开口难度",
+      "dont": "AI 只是交互方式时，输入框不当首屏视觉主角；不要在输入框里塞模型选择等工程选项",
+      "states": [
+        "空（显示示例）",
+        "输入中（发送可用）",
+        "生成中（变停止）",
+        "多行自动长高"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [
+        "mic",
+        "plus",
+        "send"
+      ],
+      "source": "按 ChatGPT、Claude、Perplexity 移动端输入框做法整理",
+      "license": "MIT",
+      "file": "recipes/prompt-composer.html"
+    },
+    {
+      "id": "radio-group",
+      "name": "单选组 / 选项卡片",
+      "tags": [
+        "base",
+        "form",
+        "mobile-consumer"
+      ],
+      "use": "2–5 个互斥选项且每项需要一句说明时用卡片式；消费产品里比下拉更易选",
+      "dont": "选项只有两个字且不需说明时用 segmented",
+      "states": [
+        "未选",
+        "已选",
+        "聚焦",
+        "禁用"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [],
+      "source": "改写自 shadcn/ui Radio Group（MIT）与 Origin UI radio cards（MIT）https://originui.com/radio",
+      "license": "MIT",
+      "file": "recipes/radio-group.html"
+    },
+    {
+      "id": "search-field",
+      "name": "搜索框",
+      "tags": [
+        "base",
+        "mobile-consumer"
+      ],
+      "use": "顶部搜索入口；手机上可做成按钮外观，点开进入全屏搜索页",
+      "dont": "不要在搜索框里塞多个条件，条件用 chip-group",
+      "states": [
+        "空",
+        "输入中（出现清除）",
+        "聚焦"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [
+        "search",
+        "x"
+      ],
+      "source": "改写自 Origin UI Input with icon / clear button（MIT）https://originui.com/input",
+      "license": "MIT",
+      "file": "recipes/search-field.html"
+    },
+    {
+      "id": "seat-nameplate",
+      "name": "座位铭牌",
+      "tags": [
+        "game-table"
+      ],
+      "use": "放在牌桌方位区；剩余张数是最重要的数，字号最大；队友用同一颜色小标",
+      "dont": "不要把铭牌做成白色信息卡片；不要用表情符号当头像",
+      "states": [
+        "等待",
+        "轮到他（金色光圈 + 倒计时）",
+        "已出完",
+        "队友（同色标记）"
+      ],
+      "variants": [],
+      "requires": [
+        "game-tokens",
+        "avatar"
+      ],
+      "icons": [],
+      "source": "按腾讯欢乐系列、JJ 牌桌座位做法整理：头像 + 名字 + 剩余张数，当前出牌人金色光圈",
+      "license": "MIT",
+      "file": "recipes/seat-nameplate.html"
+    },
+    {
+      "id": "section-header",
+      "name": "区块标题",
+      "tags": [
+        "content",
+        "mobile-consumer",
+        "travel"
+      ],
+      "use": "首页、发现页里分隔每组内容；标题说用户能得到什么，不说栏目名",
+      "dont": "不要每个区块都配图标和副标题；“查看全部”只在内容确实更多时出现",
+      "states": [
+        "静态",
+        "带“查看全部”"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [
+        "chevron-right"
+      ],
+      "source": "按 App Store、Airbnb 首页区块标题做法整理",
+      "license": "MIT",
+      "file": "recipes/section-header.html"
+    },
+    {
+      "id": "segmented",
+      "name": "分段控件",
+      "tags": [
+        "base",
+        "mobile-consumer"
+      ],
+      "use": "2–4 个短选项、切换同一区域的视图或单个参数（如天数、人数类型）",
+      "dont": "切换整页内容用 tabs；超过 4 项用 chip-group",
+      "states": [
+        "选中",
+        "未选",
+        "聚焦",
+        "禁用"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [],
+      "source": "改写自 shadcn/ui Toggle Group（MIT）与 iOS Segmented Control 规范",
+      "license": "MIT",
+      "file": "recipes/segmented.html"
+    },
+    {
+      "id": "select",
+      "name": "下拉选择",
+      "tags": [
+        "base",
+        "form"
+      ],
+      "use": "选项 5 个以上用它；手机上用原生 select，系统会弹出滚轮",
+      "dont": "2–4 个选项用 segmented 或 radio-group，一眼能看全",
+      "states": [
+        "默认",
+        "聚焦",
+        "错误",
+        "禁用"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [
+        "chevron-down"
+      ],
+      "source": "改写自 shadcn/ui Native Select（MIT）https://ui.shadcn.com/docs/components/select",
+      "license": "MIT",
+      "file": "recipes/select.html"
+    },
+    {
+      "id": "sheet",
+      "name": "底部弹层",
+      "tags": [
+        "base",
+        "mobile-consumer"
+      ],
+      "use": "手机上的选择、筛选、详情预览；顶部有拖拽条，底部留安全区",
+      "dont": "需要强确认的危险操作用 dialog",
+      "states": [
+        "关闭",
+        "打开",
+        "Esc 关闭",
+        "点遮罩关闭"
+      ],
+      "variants": [],
+      "requires": [
+        "button"
+      ],
+      "icons": [
+        "x"
+      ],
+      "source": "改写自 shadcn/ui Sheet / Drawer（MIT，Drawer 基于 vaul 的交互），用原生 <dialog>",
+      "license": "MIT",
+      "file": "recipes/sheet.html"
+    },
+    {
+      "id": "skeleton",
+      "name": "骨架屏",
+      "tags": [
+        "base",
+        "mobile-consumer",
+        "content"
+      ],
+      "use": "加载状态；形状和最终内容一致（图片块、标题条、正文条）",
+      "dont": "不要拿骨架当正式页面交付",
+      "states": [
+        "加载中"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [],
+      "source": "改写自 shadcn/ui Skeleton（MIT）",
+      "license": "MIT",
+      "file": "recipes/skeleton.html"
+    },
+    {
+      "id": "slider",
+      "name": "滑块",
+      "tags": [
+        "base",
+        "form"
+      ],
+      "use": "连续数值且精确值不重要（预算区间、步行强度）；旁边实时显示当前值",
+      "dont": "需要精确数字用 number-stepper 或输入框",
+      "states": [
+        "默认",
+        "拖动",
+        "聚焦",
+        "禁用"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [],
+      "source": "改写自 shadcn/ui Slider（MIT），用原生 range",
+      "license": "MIT",
+      "file": "recipes/slider.html"
+    },
+    {
+      "id": "sticky-cta",
+      "name": "底部固定主动作",
+      "tags": [
+        "mobile-consumer",
+        "travel"
+      ],
+      "use": "详情页、配置页的唯一主动作；左边放决策需要的一个关键数（价格、天数），右边放按钮",
+      "dont": "不要和 tab-bar 同时出现；不要放两个同等分量的按钮",
+      "states": [
+        "默认",
+        "主动作禁用并说明原因"
+      ],
+      "variants": [],
+      "requires": [
+        "button"
+      ],
+      "icons": [],
+      "source": "按电商 / 旅行详情页通行做法整理（Airbnb、Booking、携程详情页底栏）",
+      "license": "MIT",
+      "file": "recipes/sticky-cta.html"
+    },
+    {
+      "id": "switch",
+      "name": "开关",
+      "tags": [
+        "base",
+        "form",
+        "mobile-consumer"
+      ],
+      "use": "点了立即生效的设置；用 role=switch",
+      "dont": "需要点保存才生效的选项用 checkbox",
+      "states": [
+        "关",
+        "开",
+        "聚焦",
+        "禁用"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [],
+      "source": "改写自 shadcn/ui Switch（MIT）https://ui.shadcn.com/docs/components/switch",
+      "license": "MIT",
+      "file": "recipes/switch.html"
+    },
+    {
+      "id": "tab-bar",
+      "name": "底部标签栏",
+      "tags": [
+        "mobile-consumer"
+      ],
+      "use": "App 一级导航，3–5 项；每项图标 + 2–4 字标签；底部留安全区",
+      "dont": "不要放动作（如“发布”）冒充导航，除非产品核心就是发布；二级页隐藏",
+      "states": [
+        "当前",
+        "其他",
+        "带红点"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [
+        "house",
+        "message-circle",
+        "route",
+        "user"
+      ],
+      "source": "按 iOS HIG Tab Bar 与 Material 3 Navigation Bar 规范整理",
+      "license": "MIT",
+      "file": "recipes/tab-bar.html"
+    },
+    {
+      "id": "tabs",
+      "name": "标签页（下划线式）",
+      "tags": [
+        "base",
+        "mobile-consumer",
+        "content"
+      ],
+      "use": "同一页面内切换平级内容（如 行程 / 住宿 / 美食）；超出宽度时横向滚动，不换行",
+      "dont": "App 一级导航用 tab-bar；筛选条件用 chip-group",
+      "states": [
+        "选中",
+        "未选",
+        "聚焦",
+        "横向溢出可滚"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [],
+      "source": "改写自 shadcn/ui Tabs（MIT）https://ui.shadcn.com/docs/components/tabs",
+      "license": "MIT",
+      "file": "recipes/tabs.html"
+    },
+    {
+      "id": "toast",
+      "name": "轻提示",
+      "tags": [
+        "base",
+        "mobile-consumer"
+      ],
+      "use": "操作完成的反馈（已保存、已复制）；可带一个撤销按钮；role=status",
+      "dont": "错误需要用户处理时放在出错的位置旁边，不用 toast",
+      "states": [
+        "出现",
+        "停留 3 秒",
+        "消失",
+        "带撤销"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [
+        "check"
+      ],
+      "source": "改写自 shadcn/ui Sonner 样式（MIT）",
+      "license": "MIT",
+      "file": "recipes/toast.html"
+    },
+    {
+      "id": "tooltip",
+      "name": "提示气泡",
+      "tags": [
+        "base"
+      ],
+      "use": "桌面端给图标按钮补一句说明",
+      "dont": "手机上没有悬停，关键信息要直接写出来或放进 sheet",
+      "states": [
+        "隐藏",
+        "悬停/聚焦显示"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [
+        "info"
+      ],
+      "source": "改写自 shadcn/ui Tooltip（MIT），纯 CSS，悬停和键盘聚焦都能触发",
+      "license": "MIT",
+      "file": "recipes/tooltip.html"
+    },
+    {
+      "id": "trip-summary-bar",
+      "name": "行程条件摘要条",
+      "tags": [
+        "travel",
+        "mobile-consumer"
+      ],
+      "use": "结果页顶部把已填条件压成一行（地点 · 日期 · 人数），点一下改；替代把整张表单留在页面上",
+      "dont": "不要在结果页重复展示完整表单",
+      "states": [
+        "默认",
+        "点开编辑（打开 sheet）"
+      ],
+      "variants": [],
+      "requires": [],
+      "icons": [
+        "sliders-horizontal"
+      ],
+      "source": "按 Airbnb 搜索结果页顶部摘要条、Booking 条件条做法整理",
+      "license": "MIT",
+      "file": "recipes/trip-summary-bar.html"
+    }
+  ]
+}

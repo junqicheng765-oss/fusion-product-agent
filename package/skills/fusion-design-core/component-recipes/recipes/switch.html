@@ -1,0 +1,38 @@
+<!-- recipe
+{
+  "id": "switch",
+  "name": "开关",
+  "tags": ["base", "form", "mobile-consumer"],
+  "source": "改写自 shadcn/ui Switch（MIT）https://ui.shadcn.com/docs/components/switch",
+  "license": "MIT",
+  "states": ["关", "开", "聚焦", "禁用"],
+  "use": "点了立即生效的设置；用 role=switch",
+  "dont": "需要点保存才生效的选项用 checkbox",
+  "icons": []
+}
+-->
+<style>
+.r-switch-row { display: flex; align-items: center; justify-content: space-between; gap: var(--r-gap-4); min-height: var(--r-touch); font: 400 15px/1.4 var(--r-font); }
+.r-switch {
+  flex: none; position: relative; width: 44px; height: 26px; padding: 0; border: 0; border-radius: 999px; cursor: pointer;
+  background: color-mix(in srgb, var(--foreground) 18%, var(--background)); transition: background-color .2s var(--r-ease);
+}
+.r-switch::after {
+  content: ""; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%;
+  background: var(--background); box-shadow: var(--r-shadow-sm); transition: transform .2s var(--r-ease);
+}
+.r-switch[aria-checked="true"] { background: var(--primary); }
+.r-switch[aria-checked="true"]::after { transform: translateX(18px); }
+.r-switch:disabled { opacity: .5; cursor: not-allowed; }
+</style>
+<!-- demo -->
+<div style="max-width:360px">
+  <div class="r-switch-row"><span id="r-sw1">出发前一天提醒我</span><button class="r-switch" role="switch" aria-checked="true" aria-labelledby="r-sw1"></button></div>
+  <div class="r-switch-row"><span id="r-sw2">只看无需预约的景点</span><button class="r-switch" role="switch" aria-checked="false" aria-labelledby="r-sw2"></button></div>
+</div>
+<!-- /demo -->
+<script>
+document.querySelectorAll('.r-switch').forEach(function (b) {
+  b.addEventListener('click', function () { b.setAttribute('aria-checked', String(b.getAttribute('aria-checked') !== 'true')); });
+});
+</script>

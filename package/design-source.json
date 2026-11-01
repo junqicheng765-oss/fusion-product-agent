@@ -1,0 +1,3046 @@
+{
+  "repository": "https://github.com/savvydd/jq-product-agent",
+  "branch": "feat/design-handoff-contract",
+  "commit": "6dcc771bb7b5d0c5f4d2ca25fc13994af12c73a1",
+  "adaptations": "Isolated Skill names and parent references; remove old D/E wrapper alias; align two inherited blanket Figma statements with latest author HTML-first route; clarify entrypoint precedence and host permissions. No script, component or asset removed. Product-stage wrapper skills are not imported.",
+  "files": [
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/SKILL.md",
+      "destination": "skills/fusion-design-core/SKILL.md",
+      "source_sha256": "d9f64406baf6b29bc2777891ac23d2094fd7fc32bc6f51569708e471e0f92288",
+      "sha256": "1e0a48383806aaf180d27942fc06e0a20fafda2f27ef2ecb36ab80381919501c",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/WORKFLOW-REVIEW.md",
+      "destination": "skills/fusion-design-core/WORKFLOW-REVIEW.md",
+      "source_sha256": "1214dca3560df9204780a1608d77f05c1f3d5653ae5982cddba572a87776a764",
+      "sha256": "743cd0c19b0caf5fa93a36f670ffa57d9db2d4ff03981925ccd13f819e3efd3d",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/asset-memory/index.json",
+      "destination": "skills/fusion-design-core/asset-memory/index.json",
+      "source_sha256": "7c1051f6e2bc3943b7c1dbe4da229694455681b8875a346c99279e555edb733f",
+      "sha256": "7c1051f6e2bc3943b7c1dbe4da229694455681b8875a346c99279e555edb733f",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/color-presets/radix/LICENSE",
+      "destination": "skills/fusion-design-core/color-presets/radix/LICENSE",
+      "source_sha256": "d981bc30e0d78b9ffc8f279fcaa274ea0444ff51d983548a609397d5c8a42dc2",
+      "sha256": "d981bc30e0d78b9ffc8f279fcaa274ea0444ff51d983548a609397d5c8a42dc2",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/color-presets/radix/scales.json",
+      "destination": "skills/fusion-design-core/color-presets/radix/scales.json",
+      "source_sha256": "d78405ae6a74f209c904c829c30459013436bd851ac40892faece5befffef22e",
+      "sha256": "d78405ae6a74f209c904c829c30459013436bd851ac40892faece5befffef22e",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/color-presets/registry.json",
+      "destination": "skills/fusion-design-core/color-presets/registry.json",
+      "source_sha256": "d6e6b2cfa1676dfb5c5012d5ef3c889e3594d711534d69be7d81ffcc2d830e12",
+      "sha256": "d6e6b2cfa1676dfb5c5012d5ef3c889e3594d711534d69be7d81ffcc2d830e12",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/color-presets/systems/ai-gradient.json",
+      "destination": "skills/fusion-design-core/color-presets/systems/ai-gradient.json",
+      "source_sha256": "4af67643591942a1aa3908743241e91f2246b7de4ffaf5273e869c7091048161",
+      "sha256": "4af67643591942a1aa3908743241e91f2246b7de4ffaf5273e869c7091048161",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/color-presets/systems/apple-minimal.json",
+      "destination": "skills/fusion-design-core/color-presets/systems/apple-minimal.json",
+      "source_sha256": "b5e28f82fe963eac27d86eadffc684418f111d53d73b824edaace88c898edb97",
+      "sha256": "b5e28f82fe963eac27d86eadffc684418f111d53d73b824edaace88c898edb97",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/color-presets/systems/dark-premium.json",
+      "destination": "skills/fusion-design-core/color-presets/systems/dark-premium.json",
+      "source_sha256": "2784d0f18887a6d98ccaa20540d3a608a2d1eeedc05dc20ffb2904591303bb51",
+      "sha256": "2784d0f18887a6d98ccaa20540d3a608a2d1eeedc05dc20ffb2904591303bb51",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/color-presets/systems/nature-calm.json",
+      "destination": "skills/fusion-design-core/color-presets/systems/nature-calm.json",
+      "source_sha256": "841de1f216df9c8700d54ca0f6df23d17285bb1a2f0799ccc127db738ffb1e2d",
+      "sha256": "841de1f216df9c8700d54ca0f6df23d17285bb1a2f0799ccc127db738ffb1e2d",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/color-presets/systems/warm-editorial.json",
+      "destination": "skills/fusion-design-core/color-presets/systems/warm-editorial.json",
+      "source_sha256": "fa4a849a7d0539bdc268d24d638d85915fb06f7d0dd6943ad9f6c256e6cea8d1",
+      "sha256": "fa4a849a7d0539bdc268d24d638d85915fb06f7d0dd6943ad9f6c256e6cea8d1",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/base.css",
+      "destination": "skills/fusion-design-core/component-recipes/base.css",
+      "source_sha256": "d10d7cffd223dab90b21e69cc6e10c51dc62ff7cd74ae21edde24dfd92de7c24",
+      "sha256": "d10d7cffd223dab90b21e69cc6e10c51dc62ff7cd74ae21edde24dfd92de7c24",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/LICENSE-lucide.txt",
+      "destination": "skills/fusion-design-core/component-recipes/icons/LICENSE-lucide.txt",
+      "source_sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+      "sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/arrow-right.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/arrow-right.svg",
+      "source_sha256": "12b97a4d2821da556ce7df95f89df46deb94aa711d46b36a848be0de0ac2a7f0",
+      "sha256": "12b97a4d2821da556ce7df95f89df46deb94aa711d46b36a848be0de0ac2a7f0",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/bookmark.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/bookmark.svg",
+      "source_sha256": "241aeb7d7e27ff9bd3ffca766820c9c080418d62b0bfb0e56458ed3ec48316c4",
+      "sha256": "241aeb7d7e27ff9bd3ffca766820c9c080418d62b0bfb0e56458ed3ec48316c4",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/calendar.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/calendar.svg",
+      "source_sha256": "2e2a7df92c2cca71dd6de34bb3f7187e276e8e8e003abe2e80b2ffd13347af60",
+      "sha256": "2e2a7df92c2cca71dd6de34bb3f7187e276e8e8e003abe2e80b2ffd13347af60",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/camera.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/camera.svg",
+      "source_sha256": "89b7493fb7f18b3a303184f9dea61e989521eae4a98349bbaa979a586f063cba",
+      "sha256": "89b7493fb7f18b3a303184f9dea61e989521eae4a98349bbaa979a586f063cba",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/check.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/check.svg",
+      "source_sha256": "538432eec072ceeccf5a7aacf347a2ad2bff9937d203dbd0b4f4245d7accd93c",
+      "sha256": "538432eec072ceeccf5a7aacf347a2ad2bff9937d203dbd0b4f4245d7accd93c",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/chevron-down.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/chevron-down.svg",
+      "source_sha256": "04458777b8a99214cd167dc9a8c8a1e35dcc9373b7577f74d5b5da6418ffcf67",
+      "sha256": "04458777b8a99214cd167dc9a8c8a1e35dcc9373b7577f74d5b5da6418ffcf67",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/chevron-left.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/chevron-left.svg",
+      "source_sha256": "a185985349089649d06747570c72f47fe1f5eb293a9a0f11278f6442b0b9d25c",
+      "sha256": "a185985349089649d06747570c72f47fe1f5eb293a9a0f11278f6442b0b9d25c",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/chevron-right.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/chevron-right.svg",
+      "source_sha256": "fea488a3b60fd7738bbbf8ca98826ef5c0381347c5fd1048d45ee70a75a51cfe",
+      "sha256": "fea488a3b60fd7738bbbf8ca98826ef5c0381347c5fd1048d45ee70a75a51cfe",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/circle-alert.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/circle-alert.svg",
+      "source_sha256": "2c65a5c03a73d3115ce493779f82af98d94f0d72facf1d97c61ea08566bb401c",
+      "sha256": "2c65a5c03a73d3115ce493779f82af98d94f0d72facf1d97c61ea08566bb401c",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/clock.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/clock.svg",
+      "source_sha256": "4bd6906a9b756dea41ff62ed88b594ce9a231c19f1a06522571457b6e4d774e6",
+      "sha256": "4bd6906a9b756dea41ff62ed88b594ce9a231c19f1a06522571457b6e4d774e6",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/club.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/club.svg",
+      "source_sha256": "bbc86a3d129ff5e95c0346085000e1d71f269b686b1c57d906611e52ff0c887c",
+      "sha256": "bbc86a3d129ff5e95c0346085000e1d71f269b686b1c57d906611e52ff0c887c",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/coins.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/coins.svg",
+      "source_sha256": "15c74fea83191438eb16486369a151620899fcdae48ad0a7d545eb79c33b6d58",
+      "sha256": "15c74fea83191438eb16486369a151620899fcdae48ad0a7d545eb79c33b6d58",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/diamond.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/diamond.svg",
+      "source_sha256": "8e0e62e2b1911c01b70082df288ab1c852abcd6d7dcb9ffa34dc9420140cbeba",
+      "sha256": "8e0e62e2b1911c01b70082df288ab1c852abcd6d7dcb9ffa34dc9420140cbeba",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/globe.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/globe.svg",
+      "source_sha256": "c3543ac3883a0841aa5d37ff974708fbc37d9c6afe64e14b03d56ed798b0b788",
+      "sha256": "c3543ac3883a0841aa5d37ff974708fbc37d9c6afe64e14b03d56ed798b0b788",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/hand.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/hand.svg",
+      "source_sha256": "102f6c2107e43ef50ee65910858f2a0e7bf01f5151d2c0f103c16c6271400271",
+      "sha256": "102f6c2107e43ef50ee65910858f2a0e7bf01f5151d2c0f103c16c6271400271",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/heart.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/heart.svg",
+      "source_sha256": "3e0ea938f896725eb5d9f1440bec881671761a6864f8d0eb1948065f3de99aae",
+      "sha256": "3e0ea938f896725eb5d9f1440bec881671761a6864f8d0eb1948065f3de99aae",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/house.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/house.svg",
+      "source_sha256": "2c13f570d9b9727c9b6c23400c95acfa9737e91884ed926332edb18fd47a2a76",
+      "sha256": "2c13f570d9b9727c9b6c23400c95acfa9737e91884ed926332edb18fd47a2a76",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/info.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/info.svg",
+      "source_sha256": "8b0a0b5641a875a2e0d8c04080c55cf6c1808c1f76477acb89958e8da00ba5a1",
+      "sha256": "8b0a0b5641a875a2e0d8c04080c55cf6c1808c1f76477acb89958e8da00ba5a1",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/lightbulb.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/lightbulb.svg",
+      "source_sha256": "31124a7d64a9f2639dbfa0441aeae845717d2fcc3e259fa6feab4b2562c969f8",
+      "sha256": "31124a7d64a9f2639dbfa0441aeae845717d2fcc3e259fa6feab4b2562c969f8",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/loader-circle.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/loader-circle.svg",
+      "source_sha256": "44ad0f822a89b28a3feecf7276686c818a92a4a9c77cc51404c58929e30f0f3a",
+      "sha256": "44ad0f822a89b28a3feecf7276686c818a92a4a9c77cc51404c58929e30f0f3a",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/map-pin.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/map-pin.svg",
+      "source_sha256": "ad781fbeaaa4c67a1a0c2144c6b3472877fc06c2dddf230bffcbe61a6adce984",
+      "sha256": "ad781fbeaaa4c67a1a0c2144c6b3472877fc06c2dddf230bffcbe61a6adce984",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/menu.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/menu.svg",
+      "source_sha256": "a8da12c1e9b80d9f70001e957ab7e8464d9ad676975702f07d86da8fb47ecdf3",
+      "sha256": "a8da12c1e9b80d9f70001e957ab7e8464d9ad676975702f07d86da8fb47ecdf3",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/message-circle.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/message-circle.svg",
+      "source_sha256": "f62830d9fbbbf697e53555398d31a342ddec8dd008d707f21cd90bb19befcc87",
+      "sha256": "f62830d9fbbbf697e53555398d31a342ddec8dd008d707f21cd90bb19befcc87",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/mic.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/mic.svg",
+      "source_sha256": "6b7893c14bc1d1a9f839571ee2119dd8c5b96d7301c87cb6735e43278788f934",
+      "sha256": "6b7893c14bc1d1a9f839571ee2119dd8c5b96d7301c87cb6735e43278788f934",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/minus.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/minus.svg",
+      "source_sha256": "116a64e7f95fe2c31490f084d4abbf49dc15af8e7fab4a29ed5b84bb3c26c00b",
+      "sha256": "116a64e7f95fe2c31490f084d4abbf49dc15af8e7fab4a29ed5b84bb3c26c00b",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/plus.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/plus.svg",
+      "source_sha256": "b29207ee8f5cc0e829c0bab2e5b223fc88687599c6bd40b94ba35f52327615d6",
+      "sha256": "b29207ee8f5cc0e829c0bab2e5b223fc88687599c6bd40b94ba35f52327615d6",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/route.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/route.svg",
+      "source_sha256": "89ddd60ddeeb633f71890ab923509f80b18f74b116eff501fc0fb80ec542a9ee",
+      "sha256": "89ddd60ddeeb633f71890ab923509f80b18f74b116eff501fc0fb80ec542a9ee",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/search.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/search.svg",
+      "source_sha256": "e11a04d51c122a8a759211424920efc65fa36b7ab06237c34ef90317d920ddf9",
+      "sha256": "e11a04d51c122a8a759211424920efc65fa36b7ab06237c34ef90317d920ddf9",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/send.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/send.svg",
+      "source_sha256": "c12c313d7409cb0e3c98aa07562e6e49dd5359dbcfe54692a0263a7eb57a8194",
+      "sha256": "c12c313d7409cb0e3c98aa07562e6e49dd5359dbcfe54692a0263a7eb57a8194",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/settings.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/settings.svg",
+      "source_sha256": "ceea1a72d04b112291222ba9ad0779a12d47d816079fe4174900c724f360b55c",
+      "sha256": "ceea1a72d04b112291222ba9ad0779a12d47d816079fe4174900c724f360b55c",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/share-2.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/share-2.svg",
+      "source_sha256": "c5bf7b02192ee893b0554351d0e08d14091cb3c7a86528b2e51a28393584a36f",
+      "sha256": "c5bf7b02192ee893b0554351d0e08d14091cb3c7a86528b2e51a28393584a36f",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/sliders-horizontal.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/sliders-horizontal.svg",
+      "source_sha256": "995507595c7c24deffef382bacc452a24b40a2efc4aa54908563a0f09b6a75aa",
+      "sha256": "995507595c7c24deffef382bacc452a24b40a2efc4aa54908563a0f09b6a75aa",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/spade.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/spade.svg",
+      "source_sha256": "c044f58eef0cec0b5bc6f126ac0c2a54dff793c6725a7901828aa0d07b6a9712",
+      "sha256": "c044f58eef0cec0b5bc6f126ac0c2a54dff793c6725a7901828aa0d07b6a9712",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/sparkles.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/sparkles.svg",
+      "source_sha256": "40a7c96d3ad44a83803c7dc2f449653b972602763cda2adfea7f72f3925c375e",
+      "sha256": "40a7c96d3ad44a83803c7dc2f449653b972602763cda2adfea7f72f3925c375e",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/star.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/star.svg",
+      "source_sha256": "8169933b68b55d52313fd768386a435038f77dcc49acd198fb5afa965b26ce8b",
+      "sha256": "8169933b68b55d52313fd768386a435038f77dcc49acd198fb5afa965b26ce8b",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/suit-club.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/suit-club.svg",
+      "source_sha256": "8665c0467b41b7a1dce0d4944a3af0744a8a987a6b588657358d3874429c7353",
+      "sha256": "8665c0467b41b7a1dce0d4944a3af0744a8a987a6b588657358d3874429c7353",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/suit-diamond.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/suit-diamond.svg",
+      "source_sha256": "fe2f46b58cc2feccb81d858bb4f23a488aa64247151022d388204f4b72d3df1d",
+      "sha256": "fe2f46b58cc2feccb81d858bb4f23a488aa64247151022d388204f4b72d3df1d",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/suit-heart.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/suit-heart.svg",
+      "source_sha256": "175811be6f4300ae15d82195b11f900156571b2b5f8ced5700c8937f343ce959",
+      "sha256": "175811be6f4300ae15d82195b11f900156571b2b5f8ced5700c8937f343ce959",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/suit-spade.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/suit-spade.svg",
+      "source_sha256": "f6da9543137ce8b9667c45b544f14c9bba4fe18fd9a3a075375722332d4bf905",
+      "sha256": "f6da9543137ce8b9667c45b544f14c9bba4fe18fd9a3a075375722332d4bf905",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/user.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/user.svg",
+      "source_sha256": "bb1e0531065db51238a34b348cf8fb8267cd31932dc3f680c9f204a58d1520ea",
+      "sha256": "bb1e0531065db51238a34b348cf8fb8267cd31932dc3f680c9f204a58d1520ea",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/users.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/users.svg",
+      "source_sha256": "b3ed379df6aea1aa451ff4bbf8b2884c210849ed30fc220484eced85f5d53c2c",
+      "sha256": "b3ed379df6aea1aa451ff4bbf8b2884c210849ed30fc220484eced85f5d53c2c",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/utensils.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/utensils.svg",
+      "source_sha256": "63fc811d3f7dde1676a3f40a44df5b2027fe1e1357f10d1bc6a77fc6597048b5",
+      "sha256": "63fc811d3f7dde1676a3f40a44df5b2027fe1e1357f10d1bc6a77fc6597048b5",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/volume-2.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/volume-2.svg",
+      "source_sha256": "915b847fcee9bba25e4b5fbe8f78305ad3d22c903a51c239c57ca1c248c904e5",
+      "sha256": "915b847fcee9bba25e4b5fbe8f78305ad3d22c903a51c239c57ca1c248c904e5",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/icons/x.svg",
+      "destination": "skills/fusion-design-core/component-recipes/icons/x.svg",
+      "source_sha256": "0f38855d9d5775c10960ae53e46b745f77914b43f78c43bf8abc39f4d5e06de1",
+      "sha256": "0f38855d9d5775c10960ae53e46b745f77914b43f78c43bf8abc39f4d5e06de1",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/preview-assets/map-0-0.png",
+      "destination": "skills/fusion-design-core/component-recipes/preview-assets/map-0-0.png",
+      "source_sha256": "a0cac4678846222eaacd75659f78ff835124d26988f8a0304f3c3982e822d043",
+      "sha256": "a0cac4678846222eaacd75659f78ff835124d26988f8a0304f3c3982e822d043",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/preview-assets/map-0-1.png",
+      "destination": "skills/fusion-design-core/component-recipes/preview-assets/map-0-1.png",
+      "source_sha256": "cf9761654957d0eafbd1e9101dac8f4118ea4c88323111836d7d65ba99b4f727",
+      "sha256": "cf9761654957d0eafbd1e9101dac8f4118ea4c88323111836d7d65ba99b4f727",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/preview-assets/map-0-2.png",
+      "destination": "skills/fusion-design-core/component-recipes/preview-assets/map-0-2.png",
+      "source_sha256": "e4c24a625ba42e058cf110f9215336ab26ed67726946fe484fc4922f68290d4c",
+      "sha256": "e4c24a625ba42e058cf110f9215336ab26ed67726946fe484fc4922f68290d4c",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/preview-assets/map-1-0.png",
+      "destination": "skills/fusion-design-core/component-recipes/preview-assets/map-1-0.png",
+      "source_sha256": "bc3c3a93069867c0bf590c83c8f55428cd4324163f03be4418767fb0914e9371",
+      "sha256": "bc3c3a93069867c0bf590c83c8f55428cd4324163f03be4418767fb0914e9371",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/preview-assets/map-1-1.png",
+      "destination": "skills/fusion-design-core/component-recipes/preview-assets/map-1-1.png",
+      "source_sha256": "6e128acfd61320c21c418b2fe16550172caabbb6248b322df603fb562084ed80",
+      "sha256": "6e128acfd61320c21c418b2fe16550172caabbb6248b322df603fb562084ed80",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/preview-assets/map-1-2.png",
+      "destination": "skills/fusion-design-core/component-recipes/preview-assets/map-1-2.png",
+      "source_sha256": "71e1eccbb9a726e4dacf87ca36ad2408acb3e998a33d6c17e489ecb7ae6fabbc",
+      "sha256": "71e1eccbb9a726e4dacf87ca36ad2408acb3e998a33d6c17e489ecb7ae6fabbc",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/preview-assets/map-2-0.png",
+      "destination": "skills/fusion-design-core/component-recipes/preview-assets/map-2-0.png",
+      "source_sha256": "cb2aea803ee6aa18dfc739c60c86c5369cd40b661e4d635ae642c0d8af78f060",
+      "sha256": "cb2aea803ee6aa18dfc739c60c86c5369cd40b661e4d635ae642c0d8af78f060",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/preview-assets/map-2-1.png",
+      "destination": "skills/fusion-design-core/component-recipes/preview-assets/map-2-1.png",
+      "source_sha256": "653b5a56298a8f3b164bb4508cb52bd1632e8dd097cffd07b498f8104481cc49",
+      "sha256": "653b5a56298a8f3b164bb4508cb52bd1632e8dd097cffd07b498f8104481cc49",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/preview-assets/map-2-2.png",
+      "destination": "skills/fusion-design-core/component-recipes/preview-assets/map-2-2.png",
+      "source_sha256": "18b2baa37966df460b28544aa5593fefa9086673f0e795b9f1cb368ae2d0719c",
+      "sha256": "18b2baa37966df460b28544aa5593fefa9086673f0e795b9f1cb368ae2d0719c",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/preview-assets/photo-1015.jpg",
+      "destination": "skills/fusion-design-core/component-recipes/preview-assets/photo-1015.jpg",
+      "source_sha256": "d2311cb59110328cd0915e802396d34986765529602b5ee1e73535f612e41b8c",
+      "sha256": "d2311cb59110328cd0915e802396d34986765529602b5ee1e73535f612e41b8c",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/preview-assets/photo-1036.jpg",
+      "destination": "skills/fusion-design-core/component-recipes/preview-assets/photo-1036.jpg",
+      "source_sha256": "62b26ab79a332ccd6a31f86435b5254007b79f86fe17b940489917ea76d0030d",
+      "sha256": "62b26ab79a332ccd6a31f86435b5254007b79f86fe17b940489917ea76d0030d",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/preview-assets/photo-1040.jpg",
+      "destination": "skills/fusion-design-core/component-recipes/preview-assets/photo-1040.jpg",
+      "source_sha256": "1823ac854288e7f21b4deca6f15081a37dbfd9564f4ce77b8c9ee70f76da7768",
+      "sha256": "1823ac854288e7f21b4deca6f15081a37dbfd9564f4ce77b8c9ee70f76da7768",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/preview-assets/photo-1043.jpg",
+      "destination": "skills/fusion-design-core/component-recipes/preview-assets/photo-1043.jpg",
+      "source_sha256": "90c61a5996a36b62b3fcd90b182efdbcc853745c3af414a0babb5ac4658a4ee3",
+      "sha256": "90c61a5996a36b62b3fcd90b182efdbcc853745c3af414a0babb5ac4658a4ee3",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/preview-assets/photo-1047.jpg",
+      "destination": "skills/fusion-design-core/component-recipes/preview-assets/photo-1047.jpg",
+      "source_sha256": "3e23f0ce01bdc500e6f62226cab208a452d6df31c7861f2ba8be493441a6cd23",
+      "sha256": "3e23f0ce01bdc500e6f62226cab208a452d6df31c7861f2ba8be493441a6cd23",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/preview-assets/photo-1067.jpg",
+      "destination": "skills/fusion-design-core/component-recipes/preview-assets/photo-1067.jpg",
+      "source_sha256": "77088529a6fb541f4bc34762185f8df1c895e6092bb52870b34c6e0d7ec4e7d3",
+      "sha256": "77088529a6fb541f4bc34762185f8df1c895e6092bb52870b34c6e0d7ec4e7d3",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/preview-assets/photo-1080.jpg",
+      "destination": "skills/fusion-design-core/component-recipes/preview-assets/photo-1080.jpg",
+      "source_sha256": "41a11dba5a6438ca53f45e605145e0f7fff4a35525bf7710a6c28c1847cd8f02",
+      "sha256": "41a11dba5a6438ca53f45e605145e0f7fff4a35525bf7710a6c28c1847cd8f02",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/preview-assets/photo-164.jpg",
+      "destination": "skills/fusion-design-core/component-recipes/preview-assets/photo-164.jpg",
+      "source_sha256": "c086f090fc537a695b8c184908751c0994d0df51a5e2eed96ffcaa7812be94e9",
+      "sha256": "c086f090fc537a695b8c184908751c0994d0df51a5e2eed96ffcaa7812be94e9",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/accordion.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/accordion.html",
+      "source_sha256": "efc25865d2668329a468b990e8eb42343439a939e40935c6d55c286b59fe7795",
+      "sha256": "efc25865d2668329a468b990e8eb42343439a939e40935c6d55c286b59fe7795",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/action-pill.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/action-pill.html",
+      "source_sha256": "5ea9fd81bbc5dc76d56c83d7d833a1c0ee634bef3522d8f7219509e3145bf04b",
+      "sha256": "5ea9fd81bbc5dc76d56c83d7d833a1c0ee634bef3522d8f7219509e3145bf04b",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/ai-result-card.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/ai-result-card.html",
+      "source_sha256": "50c52ad9f050cf206141d732295f6c289aefb7cc264ea95221e2b927c6c85878",
+      "sha256": "50c52ad9f050cf206141d732295f6c289aefb7cc264ea95221e2b927c6c85878",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/ai-thinking.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/ai-thinking.html",
+      "source_sha256": "f60c336221602720dc5771920c1f6ce07d1e25c964434732cd1fc3cebaa03abc",
+      "sha256": "f60c336221602720dc5771920c1f6ce07d1e25c964434732cd1fc3cebaa03abc",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/app-bar.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/app-bar.html",
+      "source_sha256": "82745de0e7ffda07fb6c832c6904729a778cc0f26637649f6fa3a3a31d7af4da",
+      "sha256": "82745de0e7ffda07fb6c832c6904729a778cc0f26637649f6fa3a3a31d7af4da",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/avatar.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/avatar.html",
+      "source_sha256": "20baaf5a0bfb0a3c767b1f4496d19b71a0128b21cf3500a65283f5cbc7f43dce",
+      "sha256": "20baaf5a0bfb0a3c767b1f4496d19b71a0128b21cf3500a65283f5cbc7f43dce",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/badge.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/badge.html",
+      "source_sha256": "2cf1b64106fbe874a3e82fed0569313bb967f06082035bde5dae9b9478c3481b",
+      "sha256": "2cf1b64106fbe874a3e82fed0569313bb967f06082035bde5dae9b9478c3481b",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/blur-fade.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/blur-fade.html",
+      "source_sha256": "34b142552ca2b9b1e7b9517a005e2324de3fa292fe7af4c0b5a461a86841698c",
+      "sha256": "34b142552ca2b9b1e7b9517a005e2324de3fa292fe7af4c0b5a461a86841698c",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/button.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/button.html",
+      "source_sha256": "303c98bb854fa2db5fb478227e0b6cd44cce62000685baffc8919107a4933f9c",
+      "sha256": "303c98bb854fa2db5fb478227e0b6cd44cce62000685baffc8919107a4933f9c",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/card.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/card.html",
+      "source_sha256": "4b937caf965ee4627c6b6b1c80718add9202dd90adebeb41f94268f414d404f6",
+      "sha256": "4b937caf965ee4627c6b6b1c80718add9202dd90adebeb41f94268f414d404f6",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/carousel.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/carousel.html",
+      "source_sha256": "2aa8b5f1b9f604fe94749b25a60258a5589bc2d4e58f8de8a0164e4cc0e76f8b",
+      "sha256": "2aa8b5f1b9f604fe94749b25a60258a5589bc2d4e58f8de8a0164e4cc0e76f8b",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/checkbox.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/checkbox.html",
+      "source_sha256": "152801679baffe6852f642490231750f6ff892d92930a1e7cfc20dde62a8cdd4",
+      "sha256": "152801679baffe6852f642490231750f6ff892d92930a1e7cfc20dde62a8cdd4",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/chip-group.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/chip-group.html",
+      "source_sha256": "e2e0ea637e68dfa03363cb6cd38ce7166a9efbf8a11411a48b5950ec4ca5d92d",
+      "sha256": "e2e0ea637e68dfa03363cb6cd38ce7166a9efbf8a11411a48b5950ec4ca5d92d",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/countdown-ring.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/countdown-ring.html",
+      "source_sha256": "78e5b7b695616750990b5b5e86ea4ffb2f92f0401f4f1839dacd785cb99f770e",
+      "sha256": "78e5b7b695616750990b5b5e86ea4ffb2f92f0401f4f1839dacd785cb99f770e",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/destination-hero.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/destination-hero.html",
+      "source_sha256": "f869cc2dbc310a1103b87f427eb40098943b4da91713e6decfcafda0e4354c6c",
+      "sha256": "f869cc2dbc310a1103b87f427eb40098943b4da91713e6decfcafda0e4354c6c",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/dialog.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/dialog.html",
+      "source_sha256": "92ff8075171f927430cf53fac5958942c8723d23afe071c83abf064d9168e650",
+      "sha256": "92ff8075171f927430cf53fac5958942c8723d23afe071c83abf064d9168e650",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/empty-state.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/empty-state.html",
+      "source_sha256": "80bba62f9f8024ad4553802841129a6c680771639c3265733452d6d36dfe48c7",
+      "sha256": "80bba62f9f8024ad4553802841129a6c680771639c3265733452d6d36dfe48c7",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/feed-masonry.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/feed-masonry.html",
+      "source_sha256": "9e0dbbf007e97a8bf364ff28ab16c0cb4adcf54a073aa89a53cb5f87c4652bf2",
+      "sha256": "9e0dbbf007e97a8bf364ff28ab16c0cb4adcf54a073aa89a53cb5f87c4652bf2",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/felt-table.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/felt-table.html",
+      "source_sha256": "fae5e44ef77138bb5f367b923ff4d8d44fa7c98d5ef3e6347974ea4a08371a73",
+      "sha256": "fae5e44ef77138bb5f367b923ff4d8d44fa7c98d5ef3e6347974ea4a08371a73",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/field.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/field.html",
+      "source_sha256": "6a9b6ea3762309cbd13afd4485ae80c95a3e4f75800bbc8d6bb7f72decae8799",
+      "sha256": "6a9b6ea3762309cbd13afd4485ae80c95a3e4f75800bbc8d6bb7f72decae8799",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/game-tokens.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/game-tokens.html",
+      "source_sha256": "0d0bc64b758c98bf547da55d75b955ced6b70f60429e8414088f75d9c50a5a6b",
+      "sha256": "0d0bc64b758c98bf547da55d75b955ced6b70f60429e8414088f75d9c50a5a6b",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/hand-fan.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/hand-fan.html",
+      "source_sha256": "5b043df30a088e56132d71f5f4531f0995825aff50983b048feba6b006234c9a",
+      "sha256": "5b043df30a088e56132d71f5f4531f0995825aff50983b048feba6b006234c9a",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/hero-media.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/hero-media.html",
+      "source_sha256": "c88b0c9b39c0f0d33aa62b505874a5931f3ef6d9822b29b1366530909661a530",
+      "sha256": "c88b0c9b39c0f0d33aa62b505874a5931f3ef6d9822b29b1366530909661a530",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/itinerary-preview-card.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/itinerary-preview-card.html",
+      "source_sha256": "344411fb5ba320c510598eef864ff1591592ac6e30d1946949ac5dd32c1313bd",
+      "sha256": "344411fb5ba320c510598eef864ff1591592ac6e30d1946949ac5dd32c1313bd",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/itinerary-timeline.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/itinerary-timeline.html",
+      "source_sha256": "b2a13cb3e102918d58e636a832aca09bd27a14bf33677ec833b52364ed546f59",
+      "sha256": "b2a13cb3e102918d58e636a832aca09bd27a14bf33677ec833b52364ed546f59",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/map-with-sheet.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/map-with-sheet.html",
+      "source_sha256": "a2b407d363d4ca00f27e097d70adcfd6a85e30923eaada12717e3d10090d1eaa",
+      "sha256": "a2b407d363d4ca00f27e097d70adcfd6a85e30923eaada12717e3d10090d1eaa",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/number-stepper.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/number-stepper.html",
+      "source_sha256": "9f598dbcd88ed52230ff1a557d69e953bf8effbad66af4253c5077f9e47034e0",
+      "sha256": "9f598dbcd88ed52230ff1a557d69e953bf8effbad66af4253c5077f9e47034e0",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/photo-card.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/photo-card.html",
+      "source_sha256": "a8428940808497c5a34805b31d28ea9ff11a025f1369231838202d1cc4f28ef6",
+      "sha256": "a8428940808497c5a34805b31d28ea9ff11a025f1369231838202d1cc4f28ef6",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/place-row.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/place-row.html",
+      "source_sha256": "6fdf125f9ae3d646d0c9f5c5dff6113dad12907e151b8769baf6148dff9327b3",
+      "sha256": "6fdf125f9ae3d646d0c9f5c5dff6113dad12907e151b8769baf6148dff9327b3",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/playing-card.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/playing-card.html",
+      "source_sha256": "d2442081f6bfcfd20420d1d31c17db91414dd9bdded10afe800fc22355042aa0",
+      "sha256": "d2442081f6bfcfd20420d1d31c17db91414dd9bdded10afe800fc22355042aa0",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/progress.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/progress.html",
+      "source_sha256": "973b7bbcea9036466b5989f7b4c1ebfab96d7305a86f752c52307dedcc6e182a",
+      "sha256": "973b7bbcea9036466b5989f7b4c1ebfab96d7305a86f752c52307dedcc6e182a",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/prompt-composer.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/prompt-composer.html",
+      "source_sha256": "687fb6eb45c5575e5863b19d5879d5102e6d4976cdab18e382451ff1f9fb86cf",
+      "sha256": "687fb6eb45c5575e5863b19d5879d5102e6d4976cdab18e382451ff1f9fb86cf",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/radio-group.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/radio-group.html",
+      "source_sha256": "0cec1573697db9a2a4bdcf5d9d4b7fa62bc0153e2e421813b78d468e4429f270",
+      "sha256": "0cec1573697db9a2a4bdcf5d9d4b7fa62bc0153e2e421813b78d468e4429f270",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/search-field.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/search-field.html",
+      "source_sha256": "c90ba4132d61da19cf90d528d157f27f0d925c382d3457e122563a4b1139b692",
+      "sha256": "c90ba4132d61da19cf90d528d157f27f0d925c382d3457e122563a4b1139b692",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/seat-nameplate.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/seat-nameplate.html",
+      "source_sha256": "efc97d7ca5667eb5a0be894abf08dbd90700f1bccd9d5992a1df17d3104a77ef",
+      "sha256": "efc97d7ca5667eb5a0be894abf08dbd90700f1bccd9d5992a1df17d3104a77ef",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/section-header.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/section-header.html",
+      "source_sha256": "9c4c5d60a60e8d0e1858989dcbc1afe2db5da63e253907551ad5d18ff8dd8dfc",
+      "sha256": "9c4c5d60a60e8d0e1858989dcbc1afe2db5da63e253907551ad5d18ff8dd8dfc",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/segmented.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/segmented.html",
+      "source_sha256": "18e64609a4c5c6258c91501e27f59253f82bcfa49b1ef297dda6957177876d72",
+      "sha256": "18e64609a4c5c6258c91501e27f59253f82bcfa49b1ef297dda6957177876d72",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/select.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/select.html",
+      "source_sha256": "623c0b855b721f4e2491b172a8c72ef018c14bc2e1b8e4f293b4bf37e3935317",
+      "sha256": "623c0b855b721f4e2491b172a8c72ef018c14bc2e1b8e4f293b4bf37e3935317",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/sheet.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/sheet.html",
+      "source_sha256": "f9d5e962502ffba101b2b18f6b4374c9c6b4ca226394cc011a51ef2fd71cdda2",
+      "sha256": "f9d5e962502ffba101b2b18f6b4374c9c6b4ca226394cc011a51ef2fd71cdda2",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/skeleton.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/skeleton.html",
+      "source_sha256": "45a9b5cc6b60cca156caf43801bfb6267c4ad17410e16202adb2966e883627df",
+      "sha256": "45a9b5cc6b60cca156caf43801bfb6267c4ad17410e16202adb2966e883627df",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/slider.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/slider.html",
+      "source_sha256": "e1d25b42cd6f327e57e5f3b3abeba86f3cbc1f45f0e3312c82ea3e9379b97110",
+      "sha256": "e1d25b42cd6f327e57e5f3b3abeba86f3cbc1f45f0e3312c82ea3e9379b97110",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/sticky-cta.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/sticky-cta.html",
+      "source_sha256": "46162a460e5a4d575b921c4f6b14a14803a1dd70e76f73f2cb00fcf88ae26a05",
+      "sha256": "46162a460e5a4d575b921c4f6b14a14803a1dd70e76f73f2cb00fcf88ae26a05",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/switch.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/switch.html",
+      "source_sha256": "fdbdb4e64d05232dbc2a585c42f8c8111f97b02905c83290f36745f691458180",
+      "sha256": "fdbdb4e64d05232dbc2a585c42f8c8111f97b02905c83290f36745f691458180",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/tab-bar.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/tab-bar.html",
+      "source_sha256": "f4c79dc033eab799ac8d2e4bdaabf2d1f2b8be9909eef65dacdcc4ad0f37d988",
+      "sha256": "f4c79dc033eab799ac8d2e4bdaabf2d1f2b8be9909eef65dacdcc4ad0f37d988",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/tabs.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/tabs.html",
+      "source_sha256": "98bf0cb359ddfca6ab841573f78e86f4c280a0364a88b5a448aa69c18ddafd63",
+      "sha256": "98bf0cb359ddfca6ab841573f78e86f4c280a0364a88b5a448aa69c18ddafd63",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/toast.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/toast.html",
+      "source_sha256": "5065b37e4e2a2c3c6e7a93d04d4a20a4f67071fbb635f2cb3d69dee6aa7a32c4",
+      "sha256": "5065b37e4e2a2c3c6e7a93d04d4a20a4f67071fbb635f2cb3d69dee6aa7a32c4",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/tooltip.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/tooltip.html",
+      "source_sha256": "550fdc55f6aa9f1c1e858e5f25773e939c99a3d85080d008b93e4f96b13bf276",
+      "sha256": "550fdc55f6aa9f1c1e858e5f25773e939c99a3d85080d008b93e4f96b13bf276",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/recipes/trip-summary-bar.html",
+      "destination": "skills/fusion-design-core/component-recipes/recipes/trip-summary-bar.html",
+      "source_sha256": "eb0e28ac6bbbb07fc9e1cd08f90d2b6343877a1726d0061a593127c146b51776",
+      "sha256": "eb0e28ac6bbbb07fc9e1cd08f90d2b6343877a1726d0061a593127c146b51776",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/component-recipes/registry.json",
+      "destination": "skills/fusion-design-core/component-recipes/registry.json",
+      "source_sha256": "dd362de99d6046f2f474086d0dba6b4d2800a833d64b9bd5723541e79ffe9101",
+      "sha256": "dd362de99d6046f2f474086d0dba6b4d2800a833d64b9bd5723541e79ffe9101",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/framework.md",
+      "destination": "skills/fusion-design-core/framework.md",
+      "source_sha256": "16c9fe3bedf43287fd5a6741c5ee2f11d5d05a5bb7561c795ec8cde2010085e9",
+      "sha256": "16c9fe3bedf43287fd5a6741c5ee2f11d5d05a5bb7561c795ec8cde2010085e9",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-close.md",
+      "destination": "skills/fusion-design-core/methods-close.md",
+      "source_sha256": "5a022478c8ae03faa7f1127e28e1e6efe4ef556e07ef6081e79c002c002fe683",
+      "sha256": "9cbd0e8a39e705e7a232eb6385912c8c081475c9f54eb9b9aaf28a72f30474e4",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-color.md",
+      "destination": "skills/fusion-design-core/methods-color.md",
+      "source_sha256": "58bd7e9579bab308d51d2716cf6af65ac898e1f79f07e726081dbe8d92dc65a5",
+      "sha256": "58bd7e9579bab308d51d2716cf6af65ac898e1f79f07e726081dbe8d92dc65a5",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-competitive.md",
+      "destination": "skills/fusion-design-core/methods-competitive.md",
+      "source_sha256": "52f4a47f279f08ef04f50eaf5085e15e5c6f4c015c0185b8d55f3fa40253e0c9",
+      "sha256": "52f4a47f279f08ef04f50eaf5085e15e5c6f4c015c0185b8d55f3fa40253e0c9",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-context.md",
+      "destination": "skills/fusion-design-core/methods-context.md",
+      "source_sha256": "197be52b1960aa6eef54e983625fcd38ccdcaa7f08a6c79c16ca0f85d84f7877",
+      "sha256": "197be52b1960aa6eef54e983625fcd38ccdcaa7f08a6c79c16ca0f85d84f7877",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-dispatch.md",
+      "destination": "skills/fusion-design-core/methods-dispatch.md",
+      "source_sha256": "ff7f8b6542d8c3fab94922b1ba8a7b8e33aa095c213d2053b0a6fc2823d9a496",
+      "sha256": "ff7f8b6542d8c3fab94922b1ba8a7b8e33aa095c213d2053b0a6fc2823d9a496",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-execution.md",
+      "destination": "skills/fusion-design-core/methods-execution.md",
+      "source_sha256": "66cb87a693b48a9f26e388d3e2efce4bef4c8ab686484f2e8915006c5877382e",
+      "sha256": "66cb87a693b48a9f26e388d3e2efce4bef4c8ab686484f2e8915006c5877382e",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-flow.md",
+      "destination": "skills/fusion-design-core/methods-flow.md",
+      "source_sha256": "662c6a0a4715556393e204f5d649a548e4e887e5f44c8cc34ced016db26887ee",
+      "sha256": "662c6a0a4715556393e204f5d649a548e4e887e5f44c8cc34ced016db26887ee",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-image.md",
+      "destination": "skills/fusion-design-core/methods-image.md",
+      "source_sha256": "13d16afb1f7ace1ccb44cc21f8dc9780f160e4cb3609efcfe200d2da5be98de4",
+      "sha256": "13d16afb1f7ace1ccb44cc21f8dc9780f160e4cb3609efcfe200d2da5be98de4",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-intake.md",
+      "destination": "skills/fusion-design-core/methods-intake.md",
+      "source_sha256": "67ed9b5ddd8f4ffe33baff7707cd032fb463ef7b15e8d7054b8cd20badc90e93",
+      "sha256": "67ed9b5ddd8f4ffe33baff7707cd032fb463ef7b15e8d7054b8cd20badc90e93",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-interaction.md",
+      "destination": "skills/fusion-design-core/methods-interaction.md",
+      "source_sha256": "1332996689a87edff0c94dc1db6b8f38d6d43ac4eb4cd07f996db308e21b4938",
+      "sha256": "1332996689a87edff0c94dc1db6b8f38d6d43ac4eb4cd07f996db308e21b4938",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-motion.md",
+      "destination": "skills/fusion-design-core/methods-motion.md",
+      "source_sha256": "96c48201eef249f8add6c3b022e0fb4c07bac143d5bb7e8e1dee2508b3821e6a",
+      "sha256": "96c48201eef249f8add6c3b022e0fb4c07bac143d5bb7e8e1dee2508b3821e6a",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-prototype.md",
+      "destination": "skills/fusion-design-core/methods-prototype.md",
+      "source_sha256": "36d984227d2688dd3ed8dfcd84456d8209a5014b9afc98894f7e1432486e7d3a",
+      "sha256": "36d984227d2688dd3ed8dfcd84456d8209a5014b9afc98894f7e1432486e7d3a",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-research.md",
+      "destination": "skills/fusion-design-core/methods-research.md",
+      "source_sha256": "0c4153f310965bc4c6268dc01f61bc3dce055e9f25126c52697dabba1bb0d7d6",
+      "sha256": "0c4153f310965bc4c6268dc01f61bc3dce055e9f25126c52697dabba1bb0d7d6",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-resource-routing.md",
+      "destination": "skills/fusion-design-core/methods-resource-routing.md",
+      "source_sha256": "09938bf46241dc5ece0a1162bb4591e5e2a10f464b9802c243b1edc443e85c75",
+      "sha256": "09938bf46241dc5ece0a1162bb4591e5e2a10f464b9802c243b1edc443e85c75",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-routing.md",
+      "destination": "skills/fusion-design-core/methods-routing.md",
+      "source_sha256": "3793fff353db5ff9cafc98cca255a6838b72efcd27f7ddd43aa709592eebbc30",
+      "sha256": "3793fff353db5ff9cafc98cca255a6838b72efcd27f7ddd43aa709592eebbc30",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-style-engine.md",
+      "destination": "skills/fusion-design-core/methods-style-engine.md",
+      "source_sha256": "a78a510d7192e74d6d91f95d496a734852217ccf669b636d4a74dd6fa8d0ef36",
+      "sha256": "a78a510d7192e74d6d91f95d496a734852217ccf669b636d4a74dd6fa8d0ef36",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-tool-routing.md",
+      "destination": "skills/fusion-design-core/methods-tool-routing.md",
+      "source_sha256": "4738da3fa47aa8a837b0c9fe16c754892e77722a273db2857f0847dbc8e71864",
+      "sha256": "a43ecda27a4fb613371c33d11adf820322d096af0389367f6a11fb05e1487ba5",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-ui.md",
+      "destination": "skills/fusion-design-core/methods-ui.md",
+      "source_sha256": "a439365430b4e07351f6ede017ec08052a866b220fc886d68a5df2ac222f5134",
+      "sha256": "a439365430b4e07351f6ede017ec08052a866b220fc886d68a5df2ac222f5134",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-visual.md",
+      "destination": "skills/fusion-design-core/methods-visual.md",
+      "source_sha256": "b44611081d536ab13bb32bc57ed54b47c972ac0b9d3080de45900c652e730f53",
+      "sha256": "3176cce9815c86f7dbb2ac38dafb73483f685d4faf3ccdc5291a2429b12ddc47",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/resource-adapters/aria-apg.json",
+      "destination": "skills/fusion-design-core/resource-adapters/aria-apg.json",
+      "source_sha256": "3145d384482ee6a015c5615d702c5f441a00eecdf2c9065a7309d3cffc1a2df8",
+      "sha256": "3145d384482ee6a015c5615d702c5f441a00eecdf2c9065a7309d3cffc1a2df8",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/resource-adapters/fonts/catalog.json",
+      "destination": "skills/fusion-design-core/resource-adapters/fonts/catalog.json",
+      "source_sha256": "c07230e8da73f4764a70dd752fa61d005a109a61aea69f2b16cbdb3987843a28",
+      "sha256": "c07230e8da73f4764a70dd752fa61d005a109a61aea69f2b16cbdb3987843a28",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/resource-adapters/registry.json",
+      "destination": "skills/fusion-design-core/resource-adapters/registry.json",
+      "source_sha256": "9922657a339f410eb5d34ad1ddd7541db6aa26efb5fcea28773c46748c108055",
+      "sha256": "9922657a339f410eb5d34ad1ddd7541db6aa26efb5fcea28773c46748c108055",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/scripts/a11y_audit.py",
+      "destination": "skills/fusion-design-core/scripts/a11y_audit.py",
+      "source_sha256": "a3f819fa314143f6aebf67409d6d256c378d563c1edac25f719de7d2f9e7a455",
+      "sha256": "a3f819fa314143f6aebf67409d6d256c378d563c1edac25f719de7d2f9e7a455",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/scripts/asset_memory.py",
+      "destination": "skills/fusion-design-core/scripts/asset_memory.py",
+      "source_sha256": "014881cd1cb640ad809cee77e085d5f73a48c62c4611cdc3446e06738ac13a47",
+      "sha256": "014881cd1cb640ad809cee77e085d5f73a48c62c4611cdc3446e06738ac13a47",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/scripts/color_intelligence.py",
+      "destination": "skills/fusion-design-core/scripts/color_intelligence.py",
+      "source_sha256": "6a17784b53b6d33cfde8e90199e75ed1b80ec9f250c4103f17442f662229d88d",
+      "sha256": "6a17784b53b6d33cfde8e90199e75ed1b80ec9f250c4103f17442f662229d88d",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/scripts/component_recipe.py",
+      "destination": "skills/fusion-design-core/scripts/component_recipe.py",
+      "source_sha256": "1869218178e197642be709ae6aae3254c40e6eaf3586cb2a862deb7dbde5eb3a",
+      "sha256": "1869218178e197642be709ae6aae3254c40e6eaf3586cb2a862deb7dbde5eb3a",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/scripts/iconscout.py",
+      "destination": "skills/fusion-design-core/scripts/iconscout.py",
+      "source_sha256": "f2ec0b9448819fb87af34d0855111e1ac57eafae3c06903539f52427ecfcf764",
+      "sha256": "f2ec0b9448819fb87af34d0855111e1ac57eafae3c06903539f52427ecfcf764",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/scripts/real_image.py",
+      "destination": "skills/fusion-design-core/scripts/real_image.py",
+      "source_sha256": "f6f75ce9d78fb729d8d270aa773570c04ceb41ca8a75ea585f3dab0d98a44a64",
+      "sha256": "f6f75ce9d78fb729d8d270aa773570c04ceb41ca8a75ea585f3dab0d98a44a64",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/scripts/resource_router.py",
+      "destination": "skills/fusion-design-core/scripts/resource_router.py",
+      "source_sha256": "93078e4e0959786337f323c5b6b41b82e780d11fd2ef7460dcd656118c630dfe",
+      "sha256": "93078e4e0959786337f323c5b6b41b82e780d11fd2ef7460dcd656118c630dfe",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/scripts/side_by_side.py",
+      "destination": "skills/fusion-design-core/scripts/side_by_side.py",
+      "source_sha256": "6011c626c57a6205d8c78d6802fff7726782620730282a4db3faed107c4f8baa",
+      "sha256": "6011c626c57a6205d8c78d6802fff7726782620730282a4db3faed107c4f8baa",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/scripts/style_consistency_audit.py",
+      "destination": "skills/fusion-design-core/scripts/style_consistency_audit.py",
+      "source_sha256": "e8fdbc68b18f98c64003386747b62f095725439b5dca74843ef319dbd2c8072f",
+      "sha256": "e8fdbc68b18f98c64003386747b62f095725439b5dca74843ef319dbd2c8072f",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/scripts/style_preset.py",
+      "destination": "skills/fusion-design-core/scripts/style_preset.py",
+      "source_sha256": "f4a69efdc4d67e913e6c35d67054f1892f8be27e3a2ed7a0cfe8c6820297bc89",
+      "sha256": "f4a69efdc4d67e913e6c35d67054f1892f8be27e3a2ed7a0cfe8c6820297bc89",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/scripts/typography_intelligence.py",
+      "destination": "skills/fusion-design-core/scripts/typography_intelligence.py",
+      "source_sha256": "3c8cfb27087d88b5d45fdcf744314dc2343cf12accd857e074d62ae2957caaed",
+      "sha256": "3c8cfb27087d88b5d45fdcf744314dc2343cf12accd857e074d62ae2957caaed",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/scripts/ui_geometry_audit.py",
+      "destination": "skills/fusion-design-core/scripts/ui_geometry_audit.py",
+      "source_sha256": "c0ff7187faa08ffe3780da7d28a22ea1d06b70b0d875063ba9c88fbdd49635d7",
+      "sha256": "c0ff7187faa08ffe3780da7d28a22ea1d06b70b0d875063ba9c88fbdd49635d7",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/scripts/verify_library_usage.py",
+      "destination": "skills/fusion-design-core/scripts/verify_library_usage.py",
+      "source_sha256": "9b12f7e8f6687851ba4f80ba66c0f7ffa6cf7d087480cc29cf13004c355bb1b9",
+      "sha256": "9b12f7e8f6687851ba4f80ba66c0f7ffa6cf7d087480cc29cf13004c355bb1b9",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/cn-01-cn-workbench.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/cn-01-cn-workbench.json",
+      "source_sha256": "df50a6595f35e45f29bb41c0f1f608416d06113224cb4372060bd37a1b6f4dd9",
+      "sha256": "df50a6595f35e45f29bb41c0f1f608416d06113224cb4372060bd37a1b6f4dd9",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/cn-02-cn-lifestyle.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/cn-02-cn-lifestyle.json",
+      "source_sha256": "f7a2ac2f825bd6e264a1572c97e7cc5fb71dccdca03ef18c60a2ffd8e841f65b",
+      "sha256": "f7a2ac2f825bd6e264a1572c97e7cc5fb71dccdca03ef18c60a2ffd8e841f65b",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/cn-03-cn-wealth.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/cn-03-cn-wealth.json",
+      "source_sha256": "2f3b1ce37f310eb856d61edefa078979dfe459be023f6c4279ad5a336fb6011f",
+      "sha256": "2f3b1ce37f310eb856d61edefa078979dfe459be023f6c4279ad5a336fb6011f",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/cn-04-cn-miniprogram.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/cn-04-cn-miniprogram.json",
+      "source_sha256": "5188b92b295dfa92a868ccad8a8af3b1c72edd6e32a48f676e26b69981aef3e1",
+      "sha256": "5188b92b295dfa92a868ccad8a8af3b1c72edd6e32a48f676e26b69981aef3e1",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/cn-05-cn-ecommerce.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/cn-05-cn-ecommerce.json",
+      "source_sha256": "dbdd189f9cae940446637c449af1eb7660d2732d3746b5e31ecc24cac0cb3902",
+      "sha256": "dbdd189f9cae940446637c449af1eb7660d2732d3746b5e31ecc24cac0cb3902",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/cn-06-cn-oriental.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/cn-06-cn-oriental.json",
+      "source_sha256": "6ae1e3a5fc6616c58e5224a3522b35120486e5c549ed0cf6e652a74a64681376",
+      "sha256": "6ae1e3a5fc6616c58e5224a3522b35120486e5c549ed0cf6e652a74a64681376",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/cn-07-cn-acid-dark.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/cn-07-cn-acid-dark.json",
+      "source_sha256": "46a0a6055a387a9740dc9b31998602a0481de430f9bc3b731e126b240522f2ae",
+      "sha256": "46a0a6055a387a9740dc9b31998602a0481de430f9bc3b731e126b240522f2ae",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/cn-08-cn-accessible.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/cn-08-cn-accessible.json",
+      "source_sha256": "78465bf79e40a401659fc4a645d753c7c9c43f6de22a4da236a7b0f4a11d4bd6",
+      "sha256": "78465bf79e40a401659fc4a645d753c7c9c43f6de22a4da236a7b0f4a11d4bd6",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/game-01-game-dark-fantasy.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/game-01-game-dark-fantasy.json",
+      "source_sha256": "9804eada8db3d109f28bee16fa19d20426a22fffeb384b4ce9b66dfbecd61130",
+      "sha256": "9804eada8db3d109f28bee16fa19d20426a22fffeb384b4ce9b66dfbecd61130",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/game-02-game-cartoon.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/game-02-game-cartoon.json",
+      "source_sha256": "067d56366b801cf071381567db1744fe28bb0ad5c9e6babd7e49be95636a4c5e",
+      "sha256": "067d56366b801cf071381567db1744fe28bb0ad5c9e6babd7e49be95636a4c5e",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/game-03-game-moba-gold.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/game-03-game-moba-gold.json",
+      "source_sha256": "e7ce07458c206010ea3efe0047c1537ca9e42ac5ff945bb1a908887150a7e856",
+      "sha256": "e7ce07458c206010ea3efe0047c1537ca9e42ac5ff945bb1a908887150a7e856",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/game-04-game-gothic.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/game-04-game-gothic.json",
+      "source_sha256": "d838ba5bb2ba99369fe48a25e050969ccb5306fe8420adfe73b2253b4a7cdbd8",
+      "sha256": "d838ba5bb2ba99369fe48a25e050969ccb5306fe8420adfe73b2253b4a7cdbd8",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/game-05-game-pearl-rose.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/game-05-game-pearl-rose.json",
+      "source_sha256": "47281b902256a95e374fa6a177d7dc771829ee457c337e538e124435885dbac6",
+      "sha256": "47281b902256a95e374fa6a177d7dc771829ee457c337e538e124435885dbac6",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/game-06-game-xianxia.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/game-06-game-xianxia.json",
+      "source_sha256": "f37d0c8040da4b39e494580f4cf5aa241c8d006236c1810eda8e73dc38276833",
+      "sha256": "f37d0c8040da4b39e494580f4cf5aa241c8d006236c1810eda8e73dc38276833",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/game-07-game-tactical.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/game-07-game-tactical.json",
+      "source_sha256": "9fbf96c2680b6321e94175f3a912c0051ac8d255614b2f620bc32748cf6bd4ef",
+      "sha256": "9fbf96c2680b6321e94175f3a912c0051ac8d255614b2f620bc32748cf6bd4ef",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/game-08-game-pixel.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/game-08-game-pixel.json",
+      "source_sha256": "5f5d5fbb86d53a9702d30fe74471b312d541a657de7cb678cef872b64d948034",
+      "sha256": "5f5d5fbb86d53a9702d30fe74471b312d541a657de7cb678cef872b64d948034",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/game-09-game-card-table.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/game-09-game-card-table.json",
+      "source_sha256": "32f5181958c26452e50cafd8dc1ae1b6a08b44ae47a1980fb3169007bd15edb7",
+      "sha256": "32f5181958c26452e50cafd8dc1ae1b6a08b44ae47a1980fb3169007bd15edb7",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/game-10-game-board-party.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/game-10-game-board-party.json",
+      "source_sha256": "bf19d04900844688bb9f0e8fcf0c5ef3373b0547392e64281f4ef621de95824e",
+      "sha256": "bf19d04900844688bb9f0e8fcf0c5ef3373b0547392e64281f4ef621de95824e",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/int-01-glass.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/int-01-glass.json",
+      "source_sha256": "b931bf2b83f9215b34fc67a245caae741116783b6df29d5c07f3fab54aee87c1",
+      "sha256": "b931bf2b83f9215b34fc67a245caae741116783b6df29d5c07f3fab54aee87c1",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/int-02-swiss-minimal.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/int-02-swiss-minimal.json",
+      "source_sha256": "bd1ae471f14b2186c91476c748997350150eb7f57a3cdfa7361e08c45cbd683a",
+      "sha256": "bd1ae471f14b2186c91476c748997350150eb7f57a3cdfa7361e08c45cbd683a",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/int-03-dark-bento.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/int-03-dark-bento.json",
+      "source_sha256": "05911529257b41b3fbfb58cdb6871a894b988e769dae72bba932ec44be786d8c",
+      "sha256": "05911529257b41b3fbfb58cdb6871a894b988e769dae72bba932ec44be786d8c",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/int-04-fintech-fluid.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/int-04-fintech-fluid.json",
+      "source_sha256": "ddb48f10192fdb95c756bf422630b585022d3d00a75a0e081124882c6e4dbaff",
+      "sha256": "ddb48f10192fdb95c756bf422630b585022d3d00a75a0e081124882c6e4dbaff",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/int-05-warm-editorial.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/int-05-warm-editorial.json",
+      "source_sha256": "74a52ea12979d2dd1dc005d6db6ed44d81818ad42b0905a5159787740f503e92",
+      "sha256": "74a52ea12979d2dd1dc005d6db6ed44d81818ad42b0905a5159787740f503e92",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/int-06-tonal-soft.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/int-06-tonal-soft.json",
+      "source_sha256": "8ff33e28bdb20d6c7691fc4dbf09a3c6d76bf421f62cf95e57637fcb864c0900",
+      "sha256": "8ff33e28bdb20d6c7691fc4dbf09a3c6d76bf421f62cf95e57637fcb864c0900",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/int-07-candy-press.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/int-07-candy-press.json",
+      "source_sha256": "6ed709e2273030407d3258c5a13f7c2ab43b1f1b35f320d9eb971e7e2cee879f",
+      "sha256": "6ed709e2273030407d3258c5a13f7c2ab43b1f1b35f320d9eb971e7e2cee879f",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/dto/int-08-neo-brutal.json",
+      "destination": "skills/fusion-design-core/style-presets/dto/int-08-neo-brutal.json",
+      "source_sha256": "bb925768f2d282d3a9fc0d7197dc57b910a0313eb907db5d0f103c7f789067a8",
+      "sha256": "bb925768f2d282d3a9fc0d7197dc57b910a0313eb907db5d0f103c7f789067a8",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/registry.json",
+      "destination": "skills/fusion-design-core/style-presets/registry.json",
+      "source_sha256": "b7418d6ec94b524f4507dd134e446f4c1542378f00613a975c637cfb638e5fea",
+      "sha256": "b7418d6ec94b524f4507dd134e446f4c1542378f00613a975c637cfb638e5fea",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/systems/ant-design.json",
+      "destination": "skills/fusion-design-core/style-presets/systems/ant-design.json",
+      "source_sha256": "27d5283270e8d2141930cb4692e80677ff0065990aea3435f23f243c9ef246ba",
+      "sha256": "27d5283270e8d2141930cb4692e80677ff0065990aea3435f23f243c9ef246ba",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/systems/apple-native.json",
+      "destination": "skills/fusion-design-core/style-presets/systems/apple-native.json",
+      "source_sha256": "c5577085761736ba56b3ca96843db7239e0eb99d131db1219e71208aebb461a0",
+      "sha256": "c5577085761736ba56b3ca96843db7239e0eb99d131db1219e71208aebb461a0",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/systems/material-3.json",
+      "destination": "skills/fusion-design-core/style-presets/systems/material-3.json",
+      "source_sha256": "92ffee87e3d0682c60cc1c22d743af07397b2692a7e9ee1d7ab1b48b1a6141f1",
+      "sha256": "92ffee87e3d0682c60cc1c22d743af07397b2692a7e9ee1d7ab1b48b1a6141f1",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/LICENSE",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/LICENSE",
+      "source_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/amber-minimal.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/amber-minimal.json",
+      "source_sha256": "b2b3381480a1ffb021d814a41cc8bc76bb9a4de4d8915663309a09221f93d39a",
+      "sha256": "b2b3381480a1ffb021d814a41cc8bc76bb9a4de4d8915663309a09221f93d39a",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/amethyst-haze.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/amethyst-haze.json",
+      "source_sha256": "01e3d89eb5ab4e37fe648c84142f1f9f216fdf4a91baf0ee28cddaeae087e505",
+      "sha256": "01e3d89eb5ab4e37fe648c84142f1f9f216fdf4a91baf0ee28cddaeae087e505",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/bold-tech.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/bold-tech.json",
+      "source_sha256": "d102d95cde0159fcf5c0ffb4e6c88afa7147dba8e58c09046f9fd13a679a6646",
+      "sha256": "d102d95cde0159fcf5c0ffb4e6c88afa7147dba8e58c09046f9fd13a679a6646",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/bubblegum.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/bubblegum.json",
+      "source_sha256": "5dfe52860e06f2618750b240144f6ce1a206779bc980f4aef0deb79426df3086",
+      "sha256": "5dfe52860e06f2618750b240144f6ce1a206779bc980f4aef0deb79426df3086",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/caffeine.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/caffeine.json",
+      "source_sha256": "db534054a01386c17f3bcc8ed247047d5ad15172894268fab5419544c21b9958",
+      "sha256": "db534054a01386c17f3bcc8ed247047d5ad15172894268fab5419544c21b9958",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/candyland.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/candyland.json",
+      "source_sha256": "d5f0a180ddea99227b270197f40855558eec6de399e9cace730b3da85565ee20",
+      "sha256": "d5f0a180ddea99227b270197f40855558eec6de399e9cace730b3da85565ee20",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/catppuccin.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/catppuccin.json",
+      "source_sha256": "27d1da357085e2a2b9fca0cdb506d9cd46760255958541394aa7d37e70f25721",
+      "sha256": "27d1da357085e2a2b9fca0cdb506d9cd46760255958541394aa7d37e70f25721",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/claude.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/claude.json",
+      "source_sha256": "8140e8caf6f467c8f85b7c5a97b9c6aa42ed42e9c93f8e863a95bc4cdfec297c",
+      "sha256": "8140e8caf6f467c8f85b7c5a97b9c6aa42ed42e9c93f8e863a95bc4cdfec297c",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/claymorphism.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/claymorphism.json",
+      "source_sha256": "46e429411136dc2b51259fe24176f731d47312be07b8e637d3a1a7f2d34a038a",
+      "sha256": "46e429411136dc2b51259fe24176f731d47312be07b8e637d3a1a7f2d34a038a",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/clean-slate.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/clean-slate.json",
+      "source_sha256": "00a40c4f8e11ddc6638465aea643d6c323e1996982b9d820e6ec742265a1918a",
+      "sha256": "00a40c4f8e11ddc6638465aea643d6c323e1996982b9d820e6ec742265a1918a",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/cosmic-night.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/cosmic-night.json",
+      "source_sha256": "50c4a7258733df40112ab3cab849ee76e7049066e1c18e9444f068380c841fed",
+      "sha256": "50c4a7258733df40112ab3cab849ee76e7049066e1c18e9444f068380c841fed",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/cyberpunk.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/cyberpunk.json",
+      "source_sha256": "ae9d26a26783123cbb9d0e3c25378b98516a48207dd658efa9751f0818d97ad8",
+      "sha256": "ae9d26a26783123cbb9d0e3c25378b98516a48207dd658efa9751f0818d97ad8",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/darkmatter.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/darkmatter.json",
+      "source_sha256": "7de7b4988b1959536b5c4fdb5133aea4a36bf4579582f2b31fcb05d9cca824ed",
+      "sha256": "7de7b4988b1959536b5c4fdb5133aea4a36bf4579582f2b31fcb05d9cca824ed",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/doom-64.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/doom-64.json",
+      "source_sha256": "8990a0e01c205b4cc4f2c6afd3748252710e1b838ced753a6ddcff8fc44f9b7d",
+      "sha256": "8990a0e01c205b4cc4f2c6afd3748252710e1b838ced753a6ddcff8fc44f9b7d",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/elegant-luxury.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/elegant-luxury.json",
+      "source_sha256": "8b32c8fc6d55758c0cd777e3bba1855f7a14dc91a12feb37cc9f3c9d96f843a0",
+      "sha256": "8b32c8fc6d55758c0cd777e3bba1855f7a14dc91a12feb37cc9f3c9d96f843a0",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/graphite.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/graphite.json",
+      "source_sha256": "db2f4da41cf43ea29f2068084644deaed516db8b456f2d3b03f9d87adc22196f",
+      "sha256": "db2f4da41cf43ea29f2068084644deaed516db8b456f2d3b03f9d87adc22196f",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/kodama-grove.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/kodama-grove.json",
+      "source_sha256": "18376c9820341f89361911a907373e347feee0690fd923b613e9b3c6a8408836",
+      "sha256": "18376c9820341f89361911a907373e347feee0690fd923b613e9b3c6a8408836",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/midnight-bloom.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/midnight-bloom.json",
+      "source_sha256": "0192c5c6c0c9785bc275042bbcef4c8f01172170c4f69ba1b4f4e90e8725d3fe",
+      "sha256": "0192c5c6c0c9785bc275042bbcef4c8f01172170c4f69ba1b4f4e90e8725d3fe",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/mocha-mousse.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/mocha-mousse.json",
+      "source_sha256": "1bc7d133117c0462d985ca4f3cf7bc7de784609974d8a753cc1724498130c883",
+      "sha256": "1bc7d133117c0462d985ca4f3cf7bc7de784609974d8a753cc1724498130c883",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/modern-minimal.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/modern-minimal.json",
+      "source_sha256": "99d34e03231743aee076add2dc40302194651f04eede2dc3177094bd5981313a",
+      "sha256": "99d34e03231743aee076add2dc40302194651f04eede2dc3177094bd5981313a",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/mono.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/mono.json",
+      "source_sha256": "f4c33f7efa4fb76daf94e151a3460a4b168aad11ee9dcb0322867bea6b086f22",
+      "sha256": "f4c33f7efa4fb76daf94e151a3460a4b168aad11ee9dcb0322867bea6b086f22",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/nature.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/nature.json",
+      "source_sha256": "9adc048b4dc4ad81de22a2de654eb07b2c80664501ba8e1c2fed56e58da60fec",
+      "sha256": "9adc048b4dc4ad81de22a2de654eb07b2c80664501ba8e1c2fed56e58da60fec",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/neo-brutalism.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/neo-brutalism.json",
+      "source_sha256": "f43ede9dd270c8168daa96b9130970032f60f950de90a4a6b92e58e76287cb60",
+      "sha256": "f43ede9dd270c8168daa96b9130970032f60f950de90a4a6b92e58e76287cb60",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/northern-lights.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/northern-lights.json",
+      "source_sha256": "2f3d95028c7ea64b15ca0d484013bacc6ce9ef091ff8aa2b662abf126ccb853d",
+      "sha256": "2f3d95028c7ea64b15ca0d484013bacc6ce9ef091ff8aa2b662abf126ccb853d",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/notebook.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/notebook.json",
+      "source_sha256": "7f1db5bb6a0ada8013c494a127168607dacc01a218ec5e6dfb29b7d214b7e91d",
+      "sha256": "7f1db5bb6a0ada8013c494a127168607dacc01a218ec5e6dfb29b7d214b7e91d",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/ocean-breeze.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/ocean-breeze.json",
+      "source_sha256": "1013d0a94d6a12d77be21e4f89c64459d6b536758a28abc2a1c3799a2255661b",
+      "sha256": "1013d0a94d6a12d77be21e4f89c64459d6b536758a28abc2a1c3799a2255661b",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/pastel-dreams.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/pastel-dreams.json",
+      "source_sha256": "5797b1f8071708d6888ab9210e9b6005bdea366c090c123751830b244c52197b",
+      "sha256": "5797b1f8071708d6888ab9210e9b6005bdea366c090c123751830b244c52197b",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/perpetuity.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/perpetuity.json",
+      "source_sha256": "a0b7dd057174330dc6ee7f43d68bc22ae980b0042f1383c1db30d201f21bb6a2",
+      "sha256": "a0b7dd057174330dc6ee7f43d68bc22ae980b0042f1383c1db30d201f21bb6a2",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/quantum-rose.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/quantum-rose.json",
+      "source_sha256": "726c77f9607430bc626fcc50f3eb15cfa6453e7ec583b3b8c905acc0196ccb14",
+      "sha256": "726c77f9607430bc626fcc50f3eb15cfa6453e7ec583b3b8c905acc0196ccb14",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/retro-arcade.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/retro-arcade.json",
+      "source_sha256": "e646497fc50b27a3c505bfd50c8fd8be9b96b35a63774bd24a4402ec85d2a001",
+      "sha256": "e646497fc50b27a3c505bfd50c8fd8be9b96b35a63774bd24a4402ec85d2a001",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/sage-garden.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/sage-garden.json",
+      "source_sha256": "a1b433ee7e29126143b29d28def59de328dc34a8bbfd5512c1376535409ad3cf",
+      "sha256": "a1b433ee7e29126143b29d28def59de328dc34a8bbfd5512c1376535409ad3cf",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/soft-pop.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/soft-pop.json",
+      "source_sha256": "d7307c3a49a2a3d0dc08f96bd72d0e0336cb03ff3421cf69f0dfba3d4fe53ef7",
+      "sha256": "d7307c3a49a2a3d0dc08f96bd72d0e0336cb03ff3421cf69f0dfba3d4fe53ef7",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/solar-dusk.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/solar-dusk.json",
+      "source_sha256": "5914a6b3ff1bad9ea2ccbdc4def334f0ff0353f7494844e0bcd67431b4a30052",
+      "sha256": "5914a6b3ff1bad9ea2ccbdc4def334f0ff0353f7494844e0bcd67431b4a30052",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/starry-night.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/starry-night.json",
+      "source_sha256": "c21234398f72c31834495635571d80a262c0bb714c0cd7a5f18b977a5c9d762d",
+      "sha256": "c21234398f72c31834495635571d80a262c0bb714c0cd7a5f18b977a5c9d762d",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/sunset-horizon.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/sunset-horizon.json",
+      "source_sha256": "7aca5140f88d7325879e086bc4e16eaf8c8ae2f28a9f6d2a1239f6a49e15231a",
+      "sha256": "7aca5140f88d7325879e086bc4e16eaf8c8ae2f28a9f6d2a1239f6a49e15231a",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/supabase.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/supabase.json",
+      "source_sha256": "d0fd46b6563aba41f6eb54f81820ed8395caff7016eb0085ca3286a81263ebfb",
+      "sha256": "d0fd46b6563aba41f6eb54f81820ed8395caff7016eb0085ca3286a81263ebfb",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/t3-chat.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/t3-chat.json",
+      "source_sha256": "fdc7e0507d6944638210ca11190134d2030cb6fd37ddf518eacb1f263e6ed88e",
+      "sha256": "fdc7e0507d6944638210ca11190134d2030cb6fd37ddf518eacb1f263e6ed88e",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/tangerine.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/tangerine.json",
+      "source_sha256": "b09640e8f60ec99025eba13b11a9ad70d1cc949164f12889ec09c38ce3fb92e2",
+      "sha256": "b09640e8f60ec99025eba13b11a9ad70d1cc949164f12889ec09c38ce3fb92e2",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/twitter.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/twitter.json",
+      "source_sha256": "b858fe5f14d4adcb52c40b79c36ea82431a81c996380fe1a74d4f17ba487c388",
+      "sha256": "b858fe5f14d4adcb52c40b79c36ea82431a81c996380fe1a74d4f17ba487c388",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/vercel.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/vercel.json",
+      "source_sha256": "4dbb2a4738e0ae4026c71bc9aca1a986a896432314e40a75d83bf9c2150912f9",
+      "sha256": "4dbb2a4738e0ae4026c71bc9aca1a986a896432314e40a75d83bf9c2150912f9",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/vintage-paper.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/vintage-paper.json",
+      "source_sha256": "a5df5a9bd951177fc995ccf63f7cd94976f6ec3545c75aa975b8a4f9abe04acb",
+      "sha256": "a5df5a9bd951177fc995ccf63f7cd94976f6ec3545c75aa975b8a4f9abe04acb",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/style-presets/themes/tweakcn/violet-bloom.json",
+      "destination": "skills/fusion-design-core/style-presets/themes/tweakcn/violet-bloom.json",
+      "source_sha256": "4d7bcfd73733b607f5df58228b030801d15f61609af3ffbcd7e3a352b87ce4f0",
+      "sha256": "4d7bcfd73733b607f5df58228b030801d15f61609af3ffbcd7e3a352b87ce4f0",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/templates.md",
+      "destination": "skills/fusion-design-core/templates.md",
+      "source_sha256": "6f3ad6f0e2848476e3f5b5872b982012816cbddf444d7aff35a109d3cb684668",
+      "sha256": "6f3ad6f0e2848476e3f5b5872b982012816cbddf444d7aff35a109d3cb684668",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/design-thinking-os/walkthrough.md",
+      "destination": "skills/fusion-design-core/walkthrough.md",
+      "source_sha256": "d8213d578aa137234f03f8043227204a61c894b0c217ba2639bb78b50c8a7b4e",
+      "sha256": "d8213d578aa137234f03f8043227204a61c894b0c217ba2639bb78b50c8a7b4e",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/SKILL.md",
+      "destination": "skills/fusion-design-impeccable/SKILL.md",
+      "source_sha256": "11c4b308fc8aadc07dae3dca78640ddbad196518e81e9b7d5d9df0ca60b0584c",
+      "sha256": "34aa9663cd8818e2ba846c4914b047339c57c0f515e8f22f8cfad2cd788f1321",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/agents/impeccable_asset_producer.toml",
+      "destination": "skills/fusion-design-impeccable/agents/impeccable_asset_producer.toml",
+      "source_sha256": "4effda08f93ca843d346d78e3fbd68c7ee2d45bcfc44abb7ef891e0f6eadbf31",
+      "sha256": "4effda08f93ca843d346d78e3fbd68c7ee2d45bcfc44abb7ef891e0f6eadbf31",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/agents/impeccable_finish_reviewer.toml",
+      "destination": "skills/fusion-design-impeccable/agents/impeccable_finish_reviewer.toml",
+      "source_sha256": "0d775c2ffa10ff6acb5150e84fd8e9c67b36246be120d7197e600cb74ad6aabd",
+      "sha256": "0d775c2ffa10ff6acb5150e84fd8e9c67b36246be120d7197e600cb74ad6aabd",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/agents/impeccable_manual_edit_applier.toml",
+      "destination": "skills/fusion-design-impeccable/agents/impeccable_manual_edit_applier.toml",
+      "source_sha256": "b7ca38e2f7822a6a13f32fd735011aefaccc5eeaf4f993850f0076ff30128657",
+      "sha256": "b7ca38e2f7822a6a13f32fd735011aefaccc5eeaf4f993850f0076ff30128657",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/agents/openai.yaml",
+      "destination": "skills/fusion-design-impeccable/agents/openai.yaml",
+      "source_sha256": "cbd8bd68fa00935dd0f179adb169252629cf7ee443ea9dc7db77e7ef2cf77446",
+      "sha256": "cbd8bd68fa00935dd0f179adb169252629cf7ee443ea9dc7db77e7ef2cf77446",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/adapt.md",
+      "destination": "skills/fusion-design-impeccable/reference/adapt.md",
+      "source_sha256": "bead87679caad7c537dd7c04c3bb78be56ac7eec279ad6aad7322f48ff2df2d9",
+      "sha256": "1f284855f439ab2a324bbc3255db8501330275a455423685b5af661b4b0444b3",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/adapt.native.md",
+      "destination": "skills/fusion-design-impeccable/reference/adapt.native.md",
+      "source_sha256": "6acc0bf221a4ddc6e5c6438348920b2ca2393b29c4314dbde2cdc23f2b1a9639",
+      "sha256": "c20add256f90143be6b80f268d987a7e04c9646db3dacff850e9eb206477e06a",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/android.md",
+      "destination": "skills/fusion-design-impeccable/reference/android.md",
+      "source_sha256": "dacaaf57fe334fb1a02ddb4da5217c78f4e154ac9e6b760d2cc69cceaed0eac4",
+      "sha256": "dacaaf57fe334fb1a02ddb4da5217c78f4e154ac9e6b760d2cc69cceaed0eac4",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/animate.md",
+      "destination": "skills/fusion-design-impeccable/reference/animate.md",
+      "source_sha256": "b6a1ddbe1030d738bb73c0d2e9654f671c8a82871b4d6752ed501e377e7649ac",
+      "sha256": "eb84dbb1f73ee97119a22ecdd1c4c867ba641f1be591819ec388c4e61a7cd3e2",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/audit.md",
+      "destination": "skills/fusion-design-impeccable/reference/audit.md",
+      "source_sha256": "b6b5731306a59c62856d203fba0e2314462ce3889fc0e8724595173ef54831a4",
+      "sha256": "f8fe68a8cdccd2639cca5b58fbad1a459a0661da8c1757e80c49e650cb0ac0ee",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/audit.native.md",
+      "destination": "skills/fusion-design-impeccable/reference/audit.native.md",
+      "source_sha256": "1b10f9ad3d3a1494ee1bbdf35bb6aa453e98defa6e1ae99177b167795054a4f1",
+      "sha256": "f0e46a6fbce6ba7cf53ec43370b3c34c01212124499df6199dc199dd77183555",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/bolder.md",
+      "destination": "skills/fusion-design-impeccable/reference/bolder.md",
+      "source_sha256": "1690702a489e486f796ad2985adf72fea74269407acab2fa8f6876b39fcf4d75",
+      "sha256": "de253103142e1c43e3831b8efd5ebe7c504f605bd1fb11e753c3a2dd97ab24c3",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/clarify.md",
+      "destination": "skills/fusion-design-impeccable/reference/clarify.md",
+      "source_sha256": "173dd66abe65633910dcb04a51f40d6ff2a793f87088f022a02fc4cad24dd133",
+      "sha256": "05245e9f4ddee3b2fc9ca380f6b7b8f42c89f176059aa66df6a1167bf643d8fa",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/colorize.md",
+      "destination": "skills/fusion-design-impeccable/reference/colorize.md",
+      "source_sha256": "bc5f71f1129d0f2c310d913d07c8dc609a1d25644121bd78c308f42d52a0b9e9",
+      "sha256": "f03cb31df3d9e234bd760f472b7b8481d166a0f1ad35a19264c72e530cf6144b",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/craft-floor.md",
+      "destination": "skills/fusion-design-impeccable/reference/craft-floor.md",
+      "source_sha256": "69cefb064f51d391cc05b1a65e3968e7384fbe24c26fd5df9d28a973dcf369fa",
+      "sha256": "69cefb064f51d391cc05b1a65e3968e7384fbe24c26fd5df9d28a973dcf369fa",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/craft.md",
+      "destination": "skills/fusion-design-impeccable/reference/craft.md",
+      "source_sha256": "9205e222bc6565b37fb504ceec93233c2d2a456802b69d16e6b1c44723907c4c",
+      "sha256": "9205e222bc6565b37fb504ceec93233c2d2a456802b69d16e6b1c44723907c4c",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/critique.md",
+      "destination": "skills/fusion-design-impeccable/reference/critique.md",
+      "source_sha256": "845f37336ef401643fb8912f53f3aadf62e25b62f5a927fbdd6f284385ec4e44",
+      "sha256": "8787a4c354953c31620c357de07b763676e1355c56df76a5bae8753ea0e947bf",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/delight.md",
+      "destination": "skills/fusion-design-impeccable/reference/delight.md",
+      "source_sha256": "098a891028ce59c212b747d3c70468dd750aff7053a703d1336045ed31e0da7c",
+      "sha256": "685681b267c682fa0185694e742dc1c7c84eafad993c51005b8021c94e0960ec",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/distill.md",
+      "destination": "skills/fusion-design-impeccable/reference/distill.md",
+      "source_sha256": "c549b0a41617772df7c6108e52173684620f88fa4ef2d5f94097f7e39551edf0",
+      "sha256": "da2ee4fe22d9386f30c523b2c0ec64a37251ff82ed3cba7db90ae46cc1f76d7e",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/doctor.md",
+      "destination": "skills/fusion-design-impeccable/reference/doctor.md",
+      "source_sha256": "8111dfc587ef59354a354d8ddde9d07ad1caa3ee59ebe5e480154c258198271f",
+      "sha256": "7c4f636f0893d0c3acadb43d5af2176b6a8cdd2c0c563d25702dd193f53a3a1d",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/document.md",
+      "destination": "skills/fusion-design-impeccable/reference/document.md",
+      "source_sha256": "2dae70733dc1013dadc5848736cf68b751765081f4d6105cd3da7fab5d657f7f",
+      "sha256": "ba2bc5d3816c8a4dbf3d5223910c57e42790789ac5aed8bd1138139d34e016d7",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/extract.md",
+      "destination": "skills/fusion-design-impeccable/reference/extract.md",
+      "source_sha256": "527fad000a1ac24a81e9da4b28f29ee055a442425f001301b8c3e9c161c43bea",
+      "sha256": "527fad000a1ac24a81e9da4b28f29ee055a442425f001301b8c3e9c161c43bea",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/harden.md",
+      "destination": "skills/fusion-design-impeccable/reference/harden.md",
+      "source_sha256": "b0e6b3b29b42271480c148727d5d62831d665644753d61e20e95382daddb34a7",
+      "sha256": "d6d7960466df54a446c181158d7c088965efda04a65199fda1b504c9fef0eb63",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/hooks.md",
+      "destination": "skills/fusion-design-impeccable/reference/hooks.md",
+      "source_sha256": "958b7c5e45f12ffeff881b8a5b97a04d7006d69f2389518f9d1af6d0f83ec0df",
+      "sha256": "ed2ee8cc5fd0da6017e81568dffef01bc57f563ae3fe8f0bded94667327aa763",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/init.md",
+      "destination": "skills/fusion-design-impeccable/reference/init.md",
+      "source_sha256": "6dbc6263c9f965c64872c228ca0b2cf6a440b45a02fa28fd196f26972fc4e118",
+      "sha256": "37ac33cc46af7af025821907dd17d9a75f148ac20559b083958b4d294a20f3b1",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/ios.md",
+      "destination": "skills/fusion-design-impeccable/reference/ios.md",
+      "source_sha256": "07131918b18ce50dbd62fa20bb519d7a0b4a36c798f0e5332522b75cbc7d0574",
+      "sha256": "07131918b18ce50dbd62fa20bb519d7a0b4a36c798f0e5332522b75cbc7d0574",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/layout.md",
+      "destination": "skills/fusion-design-impeccable/reference/layout.md",
+      "source_sha256": "2d5eba1b9493f85c149a197fe6c4e9d015f5e68c49f24f5210a237cee4e44348",
+      "sha256": "1b94b873b6b5211ee81eeda0b300a4e606cd0baa67b324e724e0f9fb08cffcee",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/live.md",
+      "destination": "skills/fusion-design-impeccable/reference/live.md",
+      "source_sha256": "92451281b79efa7384e393ca20f24b2606c8f995c32fee74953e9de3f9fee724",
+      "sha256": "7497520c73cb7ae2223796365126abc87ef19fcd0433f5f0bca6b7c81585a0ad",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/new-work.md",
+      "destination": "skills/fusion-design-impeccable/reference/new-work.md",
+      "source_sha256": "d59ec182c1868b86f382da6a4eddef85ffa25c0cf049866649d374caf978d6d6",
+      "sha256": "1e528a62d65a4046b9d3470554279c1c3111a9545c41a997b4b2bbc8a230b495",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/onboard.md",
+      "destination": "skills/fusion-design-impeccable/reference/onboard.md",
+      "source_sha256": "ef2dde00030580ed2765cbf7be9b2ea4a6f64cb915b804fd6f6abcf38051c7b9",
+      "sha256": "32fc0fb27bcb40284a5b19218aea5960a7e7a5c385a06c5ac6229f59d4b649fa",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/operate.md",
+      "destination": "skills/fusion-design-impeccable/reference/operate.md",
+      "source_sha256": "a9d2203acd45ca33a13d5c68b02b23ed512425ac15f0e8438318ed124b43729d",
+      "sha256": "a9d2203acd45ca33a13d5c68b02b23ed512425ac15f0e8438318ed124b43729d",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/optimize.md",
+      "destination": "skills/fusion-design-impeccable/reference/optimize.md",
+      "source_sha256": "9f7f2c5ef63d06b5d6597e88f98cbdf1de841c7b2027763bf5725523860ab3b7",
+      "sha256": "4ae56714c71a24f34278908dc4bf22304bb435a67929b013895bd77f8c78af20",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/overdrive.md",
+      "destination": "skills/fusion-design-impeccable/reference/overdrive.md",
+      "source_sha256": "5b49e25d46335eb35d7c1b86d8c99d6cef869388f9d17be1277b2f6b45f4b68d",
+      "sha256": "5b49e25d46335eb35d7c1b86d8c99d6cef869388f9d17be1277b2f6b45f4b68d",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/polish.md",
+      "destination": "skills/fusion-design-impeccable/reference/polish.md",
+      "source_sha256": "bcd4514f498fb056878c618b17271bcf3f10c1f66cb131f4b4f03145bb763ae1",
+      "sha256": "6216cc68a3870401c2300363c9ac52c1354e7e7f61e3c5282ed2664cdbea566d",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/quieter.md",
+      "destination": "skills/fusion-design-impeccable/reference/quieter.md",
+      "source_sha256": "8f3fe181091c75098041ddeed502447a725e0127db9a9752c8784d40f3e1355a",
+      "sha256": "7d2f895b7b64f3c0c93aef2813bf5f1aace76c804ae973fede90f93b02754571",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/routing.md",
+      "destination": "skills/fusion-design-impeccable/reference/routing.md",
+      "source_sha256": "b2fda1126e4a05d127f656d878d9baa593860bd8bc7f70186f8e13c5474c14cc",
+      "sha256": "2b0fbdbf32436efb75066b039bf1548a79c4c9c71ef142a33b5f7d08b7231a72",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/shape.md",
+      "destination": "skills/fusion-design-impeccable/reference/shape.md",
+      "source_sha256": "a55f016c046cb6a27c55bd7f346375aeb506a755c4fbca19a5f92dbd42309c23",
+      "sha256": "a55f016c046cb6a27c55bd7f346375aeb506a755c4fbca19a5f92dbd42309c23",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/typeset.md",
+      "destination": "skills/fusion-design-impeccable/reference/typeset.md",
+      "source_sha256": "6d803447fb419ee718012f6263d2685ad462a14dc08c338392e28b79823a0553",
+      "sha256": "fd15020bbac2fb2b74c8db59ef7c331d4b4b696e91dd0f80790fc0ad2deffdc8",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/reference/visualize.md",
+      "destination": "skills/fusion-design-impeccable/reference/visualize.md",
+      "source_sha256": "4ac59b9a95da9425abc8f0dc0fd73d95eaed3da9fe447f711be98229dda1ed30",
+      "sha256": "4ac59b9a95da9425abc8f0dc0fd73d95eaed3da9fe447f711be98229dda1ed30",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/command-metadata.json",
+      "destination": "skills/fusion-design-impeccable/scripts/command-metadata.json",
+      "source_sha256": "6bdbc3f745ceee15e10b050f109ce42bbeb53ab3c3b5239257de1d596654dee7",
+      "sha256": "6bdbc3f745ceee15e10b050f109ce42bbeb53ab3c3b5239257de1d596654dee7",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/concept-seed.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/concept-seed.mjs",
+      "source_sha256": "54cee84d286f31ce1bccec809b0da9df9e1c08d25596d115f651747bae62f925",
+      "sha256": "54cee84d286f31ce1bccec809b0da9df9e1c08d25596d115f651747bae62f925",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/context-signals.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/context-signals.mjs",
+      "source_sha256": "e83efa10ce09cf411efce55cdd02e2c55e3a3cbd4d576a4f9ea849688bd628ce",
+      "sha256": "e83efa10ce09cf411efce55cdd02e2c55e3a3cbd4d576a4f9ea849688bd628ce",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/context.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/context.mjs",
+      "source_sha256": "387b9e051ed4e9ff957b62c6530d57f653f84eaf7d583560c724135f0786fcbd",
+      "sha256": "387b9e051ed4e9ff957b62c6530d57f653f84eaf7d583560c724135f0786fcbd",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/critique-storage.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/critique-storage.mjs",
+      "source_sha256": "ecafe838f5596a8da37d8b995d51d0954e26f98dec3608afd6cc20dcea1603f6",
+      "sha256": "ecafe838f5596a8da37d8b995d51d0954e26f98dec3608afd6cc20dcea1603f6",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/detect-csp.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/detect-csp.mjs",
+      "source_sha256": "2d80520bef13cb93107699714bc0d2be5a2787a9aa079ecec91b94508a8125a4",
+      "sha256": "2d80520bef13cb93107699714bc0d2be5a2787a9aa079ecec91b94508a8125a4",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/detect.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/detect.mjs",
+      "source_sha256": "f5dfd05ca1e314acd8ed79c6301a20a1b844f2eb6691bd63e04116a8e7efb187",
+      "sha256": "f5dfd05ca1e314acd8ed79c6301a20a1b844f2eb6691bd63e04116a8e7efb187",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/detector/browser/injected/index.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/detector/browser/injected/index.mjs",
+      "source_sha256": "2d00cbdbdcd15abfdbbfc0fe80fdf61292c460424040084c3cd731b1ee9ce7b3",
+      "sha256": "2d00cbdbdcd15abfdbbfc0fe80fdf61292c460424040084c3cd731b1ee9ce7b3",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/detector/cli/main.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/detector/cli/main.mjs",
+      "source_sha256": "7d922711abb67ea3c626f1a2fcbe4464e72230bfdd61644217c4ac351065edd5",
+      "sha256": "7d922711abb67ea3c626f1a2fcbe4464e72230bfdd61644217c4ac351065edd5",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/detector/design-system.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/detector/design-system.mjs",
+      "source_sha256": "a3f995a4223e8eb8295bca41ba08ea6d4be3409597fdb163a0775ee61c5ffd35",
+      "sha256": "a3f995a4223e8eb8295bca41ba08ea6d4be3409597fdb163a0775ee61c5ffd35",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/detector/detect-antipatterns-browser.js",
+      "destination": "skills/fusion-design-impeccable/scripts/detector/detect-antipatterns-browser.js",
+      "source_sha256": "7d99c4506f3265c6a525c8166996171fc7f9a9ffdfd3d26bf5ef63fa6956b6fb",
+      "sha256": "7d99c4506f3265c6a525c8166996171fc7f9a9ffdfd3d26bf5ef63fa6956b6fb",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/detector/detect-antipatterns.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/detector/detect-antipatterns.mjs",
+      "source_sha256": "f5240e4162b270efafd099b81d315309a6f25a83a887aedf02bf9bcf3ed5c724",
+      "sha256": "f5240e4162b270efafd099b81d315309a6f25a83a887aedf02bf9bcf3ed5c724",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/detector/engines/browser/detect-url.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/detector/engines/browser/detect-url.mjs",
+      "source_sha256": "5a2240c5a56ea6d302bd008a03b1319facc3289056d44beb45d38c3ace8252f6",
+      "sha256": "5a2240c5a56ea6d302bd008a03b1319facc3289056d44beb45d38c3ace8252f6",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/detector/engines/regex/detect-text.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/detector/engines/regex/detect-text.mjs",
+      "source_sha256": "813f4662f477fee2cbc9320cb22a8251fc0ab2405ae89b0bbac984d4886dbe4d",
+      "sha256": "813f4662f477fee2cbc9320cb22a8251fc0ab2405ae89b0bbac984d4886dbe4d",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/detector/engines/static-html/css-cascade.mjs",
+      "source_sha256": "2200cd98dd6c5d2123dda81db1f13d0ea20adedfc9f3c116edb08300174805db",
+      "sha256": "2200cd98dd6c5d2123dda81db1f13d0ea20adedfc9f3c116edb08300174805db",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/detector/engines/static-html/detect-html.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/detector/engines/static-html/detect-html.mjs",
+      "source_sha256": "007d29e69dd90b0dc65597ad43003693d0f9a310d40a74708ff76a8c3fc1d245",
+      "sha256": "007d29e69dd90b0dc65597ad43003693d0f9a310d40a74708ff76a8c3fc1d245",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/detector/engines/visual/screenshot-contrast.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/detector/engines/visual/screenshot-contrast.mjs",
+      "source_sha256": "b4520b3f001079bd175bf20d46c5197b1b8ec5fb98fdf72c50a24c0b6598ee99",
+      "sha256": "b4520b3f001079bd175bf20d46c5197b1b8ec5fb98fdf72c50a24c0b6598ee99",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/detector/findings.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/detector/findings.mjs",
+      "source_sha256": "8b8af7212c8515d6791a8af1375d0619a9f9a707a881e6fbd850e4216b3f8eca",
+      "sha256": "8b8af7212c8515d6791a8af1375d0619a9f9a707a881e6fbd850e4216b3f8eca",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/detector/node/file-system.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/detector/node/file-system.mjs",
+      "source_sha256": "4004ac034bd6c09419558608b1185271e4ceb741e8edb3b06082af122ac14697",
+      "sha256": "4004ac034bd6c09419558608b1185271e4ceb741e8edb3b06082af122ac14697",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/detector/profile/profiler.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/detector/profile/profiler.mjs",
+      "source_sha256": "5e201f3557360bd368a3977fecf925f376fd95f8a4dd6c4cc63fbd62848cda43",
+      "sha256": "5e201f3557360bd368a3977fecf925f376fd95f8a4dd6c4cc63fbd62848cda43",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/detector/registry/antipatterns.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/detector/registry/antipatterns.mjs",
+      "source_sha256": "5f2729e744c893ba06b3475a881a76fc0f295d2d8288d24c2dff78fb52c7022a",
+      "sha256": "5f2729e744c893ba06b3475a881a76fc0f295d2d8288d24c2dff78fb52c7022a",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/detector/rules/checks.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/detector/rules/checks.mjs",
+      "source_sha256": "78a01b8f1e672c5d75f1fedabb22f3803dd87b006081b1ca3e3d66725439f770",
+      "sha256": "78a01b8f1e672c5d75f1fedabb22f3803dd87b006081b1ca3e3d66725439f770",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/detector/shared/color.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/detector/shared/color.mjs",
+      "source_sha256": "01a68231413473f2c1183e12663ccf8aca26a87d067de75fbf3c21e73b751a83",
+      "sha256": "01a68231413473f2c1183e12663ccf8aca26a87d067de75fbf3c21e73b751a83",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/detector/shared/constants.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/detector/shared/constants.mjs",
+      "source_sha256": "606f50159d56b5e972724c13933e63220696636215292e5316846426f3e12896",
+      "sha256": "606f50159d56b5e972724c13933e63220696636215292e5316846426f3e12896",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/detector/shared/fonts.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/detector/shared/fonts.mjs",
+      "source_sha256": "869c297295a10082d87988f31c136c5df9ddad84da0c2bbba2e85e1261e320a6",
+      "sha256": "869c297295a10082d87988f31c136c5df9ddad84da0c2bbba2e85e1261e320a6",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/detector/shared/inline-ignores.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/detector/shared/inline-ignores.mjs",
+      "source_sha256": "74c80303e25f017b4671ae299b9fca424a5f7714203d19207a8d8896dfd2eecc",
+      "sha256": "74c80303e25f017b4671ae299b9fca424a5f7714203d19207a8d8896dfd2eecc",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/detector/shared/page.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/detector/shared/page.mjs",
+      "source_sha256": "b4cef5548d84fa90d15e6b42b20be9ef74ed05e4e6e46076ec5acc61b343315c",
+      "sha256": "b4cef5548d84fa90d15e6b42b20be9ef74ed05e4e6e46076ec5acc61b343315c",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/doctor.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/doctor.mjs",
+      "source_sha256": "5a3968ce3fc961c158e649cc34cd846d8ebac5895a488b5d412804efe1616ca7",
+      "sha256": "5a3968ce3fc961c158e649cc34cd846d8ebac5895a488b5d412804efe1616ca7",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/generate-image.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/generate-image.mjs",
+      "source_sha256": "8fdcd629a4c974d01791e91c7116d78f2e7e4fd884584be7048ec5fc85363dea",
+      "sha256": "8fdcd629a4c974d01791e91c7116d78f2e7e4fd884584be7048ec5fc85363dea",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/hook-admin.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/hook-admin.mjs",
+      "source_sha256": "d767c332a64f09cdeecb53bb103725cdcacde4a6b5b4468fedd1cc0ce1e0947d",
+      "sha256": "d767c332a64f09cdeecb53bb103725cdcacde4a6b5b4468fedd1cc0ce1e0947d",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/hook-before-edit.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/hook-before-edit.mjs",
+      "source_sha256": "4c399b8287a2a5b46b392c98926ea269558daaa16a052fb9a0c645c5e3b9c28b",
+      "sha256": "4c399b8287a2a5b46b392c98926ea269558daaa16a052fb9a0c645c5e3b9c28b",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/hook-lib.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/hook-lib.mjs",
+      "source_sha256": "79e42b74d827adcc6d75db607bdc3ca2d08bbfcaf3ffbdf6e38eeeba74939595",
+      "sha256": "79e42b74d827adcc6d75db607bdc3ca2d08bbfcaf3ffbdf6e38eeeba74939595",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/hook.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/hook.mjs",
+      "source_sha256": "4e3629e60d2672258ab98ae382325096a237f100cb0f430d9f692b6d5b93cc7e",
+      "sha256": "4e3629e60d2672258ab98ae382325096a237f100cb0f430d9f692b6d5b93cc7e",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/lib/artifact-schema.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/lib/artifact-schema.mjs",
+      "source_sha256": "ad0a72e96c74be09490b1aea095478e307f45d707b15021c922cbd4466619359",
+      "sha256": "ad0a72e96c74be09490b1aea095478e307f45d707b15021c922cbd4466619359",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/lib/composition-catalog.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/lib/composition-catalog.mjs",
+      "source_sha256": "f6af36dd67438793aa098e9afe41c2fad6e183279512c4d073e2053db24481a5",
+      "sha256": "f6af36dd67438793aa098e9afe41c2fad6e183279512c4d073e2053db24481a5",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/lib/concept-catalog.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/lib/concept-catalog.mjs",
+      "source_sha256": "4eac82911c8ad49b7d4ce1565c24213aa8a048528045502972de2428e32dca4b",
+      "sha256": "4eac82911c8ad49b7d4ce1565c24213aa8a048528045502972de2428e32dca4b",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/lib/design-parser.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/lib/design-parser.mjs",
+      "source_sha256": "096747b1225f0b78f6fe155477324c592f4fc38021b7007177e70b2dc55df588",
+      "sha256": "096747b1225f0b78f6fe155477324c592f4fc38021b7007177e70b2dc55df588",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/lib/impeccable-config.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/lib/impeccable-config.mjs",
+      "source_sha256": "132d158e5a14c70ca4dd338eff110c671ba55fef8e7f7729677c7afd627cebe3",
+      "sha256": "132d158e5a14c70ca4dd338eff110c671ba55fef8e7f7729677c7afd627cebe3",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/lib/impeccable-paths.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/lib/impeccable-paths.mjs",
+      "source_sha256": "276ec7ac47e3c250e76616755d83cca4846f0f951b51c29f985ec84b51282aa2",
+      "sha256": "276ec7ac47e3c250e76616755d83cca4846f0f951b51c29f985ec84b51282aa2",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/lib/is-generated.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/lib/is-generated.mjs",
+      "source_sha256": "ed5b0b00e99ed385db541c7a068cb85f72456a4b6aa7a5460037d24b58bd90cd",
+      "sha256": "ed5b0b00e99ed385db541c7a068cb85f72456a4b6aa7a5460037d24b58bd90cd",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/lib/provider.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/lib/provider.mjs",
+      "source_sha256": "998c57324fdab98a0bfbd01a6099eadac7276038da961697d6069bbdeb0e5856",
+      "sha256": "998c57324fdab98a0bfbd01a6099eadac7276038da961697d6069bbdeb0e5856",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/lib/staleness-deep.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/lib/staleness-deep.mjs",
+      "source_sha256": "52f28d2834b00b82ab58fed7aa9bba19d1a9813fa86c39933a23b2f102c7668c",
+      "sha256": "52f28d2834b00b82ab58fed7aa9bba19d1a9813fa86c39933a23b2f102c7668c",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/lib/staleness-notice.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/lib/staleness-notice.mjs",
+      "source_sha256": "2770f3360119836822a5823d08248976e327d49adbb06caee1492493e257c8c4",
+      "sha256": "2770f3360119836822a5823d08248976e327d49adbb06caee1492493e257c8c4",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/lib/staleness.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/lib/staleness.mjs",
+      "source_sha256": "f4c95606f5dc69e2d430e41f986468a8f526114d4f27b6a4ba1493ad3408b3ba",
+      "sha256": "f4c95606f5dc69e2d430e41f986468a8f526114d4f27b6a4ba1493ad3408b3ba",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/lib/surface-briefs.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/lib/surface-briefs.mjs",
+      "source_sha256": "abcc992d8d05475f8761b4d9147ffdf0258e17facb9abedcc0c77c7a56600e0d",
+      "sha256": "abcc992d8d05475f8761b4d9147ffdf0258e17facb9abedcc0c77c7a56600e0d",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/lib/target-args.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/lib/target-args.mjs",
+      "source_sha256": "8f8b902d9ec7dbad0431226bb8aea935cd67d68878d19d95a605be0585056f31",
+      "sha256": "8f8b902d9ec7dbad0431226bb8aea935cd67d68878d19d95a605be0585056f31",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/lib/target-slug.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/lib/target-slug.mjs",
+      "source_sha256": "dbc2670ad1461658d1b43fe15778ac220bc0db57af1f3fd8ccb6251b5ca5a2a4",
+      "sha256": "dbc2670ad1461658d1b43fe15778ac220bc0db57af1f3fd8ccb6251b5ca5a2a4",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/lib/template-extensions.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/lib/template-extensions.mjs",
+      "source_sha256": "1a3808237835998f3fea600424c64ab1775beac7e0c344d6b23f472ffc2a3e64",
+      "sha256": "1a3808237835998f3fea600424c64ab1775beac7e0c344d6b23f472ffc2a3e64",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live-accept.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live-accept.mjs",
+      "source_sha256": "bd95e4668f7ce37f550af913f8187eb5d1c005b0246af74db445bd9d6eaef7a3",
+      "sha256": "bd95e4668f7ce37f550af913f8187eb5d1c005b0246af74db445bd9d6eaef7a3",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live-browser-dom.js",
+      "destination": "skills/fusion-design-impeccable/scripts/live-browser-dom.js",
+      "source_sha256": "bcfa4022e741f8034b841aed76b9ea3f6a64a8e08e4dfa43ba99f8be65a73393",
+      "sha256": "bcfa4022e741f8034b841aed76b9ea3f6a64a8e08e4dfa43ba99f8be65a73393",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live-browser-session.js",
+      "destination": "skills/fusion-design-impeccable/scripts/live-browser-session.js",
+      "source_sha256": "dddcb8b941f7460aa6a134f7d456b1820747172c12e01de36dab3265b1065cff",
+      "sha256": "dddcb8b941f7460aa6a134f7d456b1820747172c12e01de36dab3265b1065cff",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live-browser.js",
+      "destination": "skills/fusion-design-impeccable/scripts/live-browser.js",
+      "source_sha256": "ce38b372523a5135e7e69a9c6344bedee38f106268e4eef53a534dad82f278f5",
+      "sha256": "ce38b372523a5135e7e69a9c6344bedee38f106268e4eef53a534dad82f278f5",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live-commit-manual-edits.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live-commit-manual-edits.mjs",
+      "source_sha256": "f179372ebcd34723cfca72bf718853beb5cfa05ea3a02e9137508d585eb94aa9",
+      "sha256": "f179372ebcd34723cfca72bf718853beb5cfa05ea3a02e9137508d585eb94aa9",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live-complete.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live-complete.mjs",
+      "source_sha256": "76e5053c7d912d9368b858a9132e6796546871ec8a25bc3dcce5718018026877",
+      "sha256": "76e5053c7d912d9368b858a9132e6796546871ec8a25bc3dcce5718018026877",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live-copy-edit-agent.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live-copy-edit-agent.mjs",
+      "source_sha256": "d8ec18a339675d252edf878cdfdb96cffb35ece471ec9008a792a302eb529db3",
+      "sha256": "d8ec18a339675d252edf878cdfdb96cffb35ece471ec9008a792a302eb529db3",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live-discard-manual-edits.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live-discard-manual-edits.mjs",
+      "source_sha256": "fa967fe27e442dd6c9b467713dd4a05c5d2189af03ad76b98bae9f6642cda545",
+      "sha256": "fa967fe27e442dd6c9b467713dd4a05c5d2189af03ad76b98bae9f6642cda545",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live-inject.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live-inject.mjs",
+      "source_sha256": "a271c566293c63546936d91a129fc9ac712f2e804438a311a1fbcabd702871db",
+      "sha256": "a271c566293c63546936d91a129fc9ac712f2e804438a311a1fbcabd702871db",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live-insert.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live-insert.mjs",
+      "source_sha256": "79f43958c8107178e0dce51c07c0de51dd23aa530fd3001a785344ffb1915447",
+      "sha256": "79f43958c8107178e0dce51c07c0de51dd23aa530fd3001a785344ffb1915447",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live-manual-edit-evidence.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live-manual-edit-evidence.mjs",
+      "source_sha256": "c5a36c361c435fc023e17be16a78aaf672adb48a6a74e8177cfa775592502638",
+      "sha256": "c5a36c361c435fc023e17be16a78aaf672adb48a6a74e8177cfa775592502638",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live-poll.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live-poll.mjs",
+      "source_sha256": "36d41970e412da21fb8f354d4b43ddcc396a37c049616e02cdaab3a016a8dd18",
+      "sha256": "36d41970e412da21fb8f354d4b43ddcc396a37c049616e02cdaab3a016a8dd18",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live-resume.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live-resume.mjs",
+      "source_sha256": "5f7f88fb6cbcdd5dcf210ace22225dbbe43afee4cf9c7c0e1d8b5b3a1f4b79a2",
+      "sha256": "5f7f88fb6cbcdd5dcf210ace22225dbbe43afee4cf9c7c0e1d8b5b3a1f4b79a2",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live-server.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live-server.mjs",
+      "source_sha256": "86f215fdd8b237dc94e8747a2d039cb2168c50d3a7b1a685d864256fa9fd969e",
+      "sha256": "86f215fdd8b237dc94e8747a2d039cb2168c50d3a7b1a685d864256fa9fd969e",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live-status.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live-status.mjs",
+      "source_sha256": "fa8dd753c51d8659003b8250e62a3832bac86ab4e20f7f21afc3166f4fd6ee1b",
+      "sha256": "fa8dd753c51d8659003b8250e62a3832bac86ab4e20f7f21afc3166f4fd6ee1b",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live-target.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live-target.mjs",
+      "source_sha256": "7f18323b89167804c2d9005d4766b159c81268c9f21daab9fdec24f513f25eb0",
+      "sha256": "7f18323b89167804c2d9005d4766b159c81268c9f21daab9fdec24f513f25eb0",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live-wrap.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live-wrap.mjs",
+      "source_sha256": "c6cf666fd18e17b92d02aa2fd7e3ff948cfdee0177cccb58631b13329d2c3e6e",
+      "sha256": "c6cf666fd18e17b92d02aa2fd7e3ff948cfdee0177cccb58631b13329d2c3e6e",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live.mjs",
+      "source_sha256": "db1ec81e40c288982d6465cf0f6d7f2774b115c31afe399fa7bc268ab5f99427",
+      "sha256": "db1ec81e40c288982d6465cf0f6d7f2774b115c31afe399fa7bc268ab5f99427",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live/browser-script-parts.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live/browser-script-parts.mjs",
+      "source_sha256": "6edf11e7fa195d847476fe059a0a24895d62d8f0e6c255955db94f1200028ea2",
+      "sha256": "6edf11e7fa195d847476fe059a0a24895d62d8f0e6c255955db94f1200028ea2",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live/completion.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live/completion.mjs",
+      "source_sha256": "d7821979aec5fbc2028a6d98aa3d0abe34b88b0e2527f6df4e4f71e5782430bd",
+      "sha256": "d7821979aec5fbc2028a6d98aa3d0abe34b88b0e2527f6df4e4f71e5782430bd",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live/event-validation.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live/event-validation.mjs",
+      "source_sha256": "d987ec7b071190b39a838f2f7ee58afeb530f19171b14d24ee06e4cea1ff9a94",
+      "sha256": "d987ec7b071190b39a838f2f7ee58afeb530f19171b14d24ee06e4cea1ff9a94",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live/generation-preflight.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live/generation-preflight.mjs",
+      "source_sha256": "d98806a798bc0425c204e3dcbbf40071fe9ab46a95bcfb3624f36740b6a0f1da",
+      "sha256": "d98806a798bc0425c204e3dcbbf40071fe9ab46a95bcfb3624f36740b6a0f1da",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live/insert-ui.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live/insert-ui.mjs",
+      "source_sha256": "c86839fc9be98eadc0ff6afaa6ab010a7539e9af77e8deeba898cb93f7f311f4",
+      "sha256": "c86839fc9be98eadc0ff6afaa6ab010a7539e9af77e8deeba898cb93f7f311f4",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live/manual-apply.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live/manual-apply.mjs",
+      "source_sha256": "c0e7fc5c3d4a7d6e1d6a8e6f85cbe005e5dc01d77b16fd0735605f287c4c8b66",
+      "sha256": "c0e7fc5c3d4a7d6e1d6a8e6f85cbe005e5dc01d77b16fd0735605f287c4c8b66",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live/manual-edit-routes.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live/manual-edit-routes.mjs",
+      "source_sha256": "5517c40db7c91a5b24b134f79cb0f87c90e307b2f7831b1de670d60e529557c0",
+      "sha256": "5517c40db7c91a5b24b134f79cb0f87c90e307b2f7831b1de670d60e529557c0",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live/manual-edits-buffer.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live/manual-edits-buffer.mjs",
+      "source_sha256": "bbd1aba1b9bc891cba771ee8b891d344542119967ae4666e7147da59de5485fd",
+      "sha256": "bbd1aba1b9bc891cba771ee8b891d344542119967ae4666e7147da59de5485fd",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live/poll-lanes.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live/poll-lanes.mjs",
+      "source_sha256": "a516bc942c55b66be915619794f4ec79aadf94d6966c6fc7aee24f1fbaa60ab3",
+      "sha256": "a516bc942c55b66be915619794f4ec79aadf94d6966c6fc7aee24f1fbaa60ab3",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live/session-store.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live/session-store.mjs",
+      "source_sha256": "1e3095a99016b00adc3d0d00d7afd0d1668270b2caa9c4c81a225991262a9202",
+      "sha256": "1e3095a99016b00adc3d0d00d7afd0d1668270b2caa9c4c81a225991262a9202",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live/source-lock.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live/source-lock.mjs",
+      "source_sha256": "2919dd7641a5ff2320a01a1bf9f9adcff6e7e2f2b3ccb1b48cdf0b5c091b3803",
+      "sha256": "2919dd7641a5ff2320a01a1bf9f9adcff6e7e2f2b3ccb1b48cdf0b5c091b3803",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live/source-search.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live/source-search.mjs",
+      "source_sha256": "429dcbcf21785df225fa97a24906dec11b5170e76df6ed0a2b098fa2c2057de2",
+      "sha256": "429dcbcf21785df225fa97a24906dec11b5170e76df6ed0a2b098fa2c2057de2",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live/svelte-component.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live/svelte-component.mjs",
+      "source_sha256": "f3bbda2a05790c82e511e9c316b758b5449dba1e7d34d6a6b29707c7c9da1de2",
+      "sha256": "f3bbda2a05790c82e511e9c316b758b5449dba1e7d34d6a6b29707c7c9da1de2",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live/sveltekit-adapter.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live/sveltekit-adapter.mjs",
+      "source_sha256": "8dcf719001da27f11fd5359696dc9f3e69a4731752597eafdda864045dff17ba",
+      "sha256": "8dcf719001da27f11fd5359696dc9f3e69a4731752597eafdda864045dff17ba",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live/tanstack-adapter.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live/tanstack-adapter.mjs",
+      "source_sha256": "25b62214e8a8f4a4cecdc7cb8badcca3289b45384052afa49f8274efb24a83de",
+      "sha256": "25b62214e8a8f4a4cecdc7cb8badcca3289b45384052afa49f8274efb24a83de",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live/ui-core.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live/ui-core.mjs",
+      "source_sha256": "e8e56f72c17556ee5e20d89818563a868b54bb933341bb0d4ff56db2aadef28b",
+      "sha256": "e8e56f72c17556ee5e20d89818563a868b54bb933341bb0d4ff56db2aadef28b",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/live/vocabulary.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/live/vocabulary.mjs",
+      "source_sha256": "0a2c5278382906b3b459f268ed40f7b04bc607f88df9133f6d681e94929d2858",
+      "sha256": "0a2c5278382906b3b459f268ed40f7b04bc607f88df9133f6d681e94929d2858",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/modern-screenshot.umd.js",
+      "destination": "skills/fusion-design-impeccable/scripts/modern-screenshot.umd.js",
+      "source_sha256": "bb36665889124a0b6e15f16045265737449c3bdcf2712cdb08af3cfa01563e2b",
+      "sha256": "bb36665889124a0b6e15f16045265737449c3bdcf2712cdb08af3cfa01563e2b",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/palette.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/palette.mjs",
+      "source_sha256": "6e09e15188033bfb8fe1f8de66f667c2b8b13d48cb55b1f50808330856e5fe16",
+      "sha256": "6e09e15188033bfb8fe1f8de66f667c2b8b13d48cb55b1f50808330856e5fe16",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/pin.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/pin.mjs",
+      "source_sha256": "43cf60991a233a84646eb73883461cb4184f680d903d26610f82db6e3e905fa5",
+      "sha256": "43cf60991a233a84646eb73883461cb4184f680d903d26610f82db6e3e905fa5",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/serve-question.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/serve-question.mjs",
+      "source_sha256": "fc97f36bce2dbe7420f5330fee0fe94484e4b35e3337c96389adee074b9ab33e",
+      "sha256": "fc97f36bce2dbe7420f5330fee0fe94484e4b35e3337c96389adee074b9ab33e",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/impeccable/scripts/surface-brief.mjs",
+      "destination": "skills/fusion-design-impeccable/scripts/surface-brief.mjs",
+      "source_sha256": "acd03bf38f6aef2b5d5287cefccacac018063b5b5356c99d191b3bd012f28ed3",
+      "sha256": "acd03bf38f6aef2b5d5287cefccacac018063b5b5356c99d191b3bd012f28ed3",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/SKILL.md",
+      "destination": "skills/fusion-design-ui-ux-pro-max/SKILL.md",
+      "source_sha256": "709e51d8c0f0115ef2e1a1bf135e3226434d09fc7e5d36a86f4ae229765fcda3",
+      "sha256": "56caa8b09e2e0f782985611b8ebbcb24e1646986dda4d387a90ddc1811d330e0",
+      "adapted": true
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/app-interface.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/app-interface.csv",
+      "source_sha256": "331e7cf2c0b222d80c566c5f255c63cb339f65bfd02e471a720f28e4864a9f08",
+      "sha256": "331e7cf2c0b222d80c566c5f255c63cb339f65bfd02e471a720f28e4864a9f08",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/catalog-summary.json",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/catalog-summary.json",
+      "source_sha256": "6638da97231c07fb5cef3cd9d3ce483ca7b2f9748980f8c27490eb03968d8894",
+      "sha256": "6638da97231c07fb5cef3cd9d3ce483ca7b2f9748980f8c27490eb03968d8894",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/charts.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/charts.csv",
+      "source_sha256": "4115cf1120680f2cedef0676cb648f30c7ef4699e2a947535d4113e71ed3b12a",
+      "sha256": "4115cf1120680f2cedef0676cb648f30c7ef4699e2a947535d4113e71ed3b12a",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/colors.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/colors.csv",
+      "source_sha256": "8162429222bce22df62b564085946a30d07cc9722c58d0a3a494bd0d1d00841c",
+      "sha256": "8162429222bce22df62b564085946a30d07cc9722c58d0a3a494bd0d1d00841c",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/data-provenance.json",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/data-provenance.json",
+      "source_sha256": "e82fb33ed49375a300e93d9c11ccd1c1493c999e84ee7ee295e527634786e2e0",
+      "sha256": "e82fb33ed49375a300e93d9c11ccd1c1493c999e84ee7ee295e527634786e2e0",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/google-font-licenses.json",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/google-font-licenses.json",
+      "source_sha256": "35688523f2955795caa1a47c53b83099e60c1708461476f9cc3a050cf3b0148a",
+      "sha256": "35688523f2955795caa1a47c53b83099e60c1708461476f9cc3a050cf3b0148a",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/google-fonts.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/google-fonts.csv",
+      "source_sha256": "1c8c3b2ea1faf6a1012da463756def8b3889db33f2226f0343bb4daa80307d03",
+      "sha256": "1c8c3b2ea1faf6a1012da463756def8b3889db33f2226f0343bb4daa80307d03",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/icons.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/icons.csv",
+      "source_sha256": "50816c6012030178195a16ee481ebf58b47bd985d70e8ec58886cc83f6eddafc",
+      "sha256": "50816c6012030178195a16ee481ebf58b47bd985d70e8ec58886cc83f6eddafc",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/landing.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/landing.csv",
+      "source_sha256": "9a2edd3bb676c2a58f00ade7a062e285222d4297bfd847c8d5b056f0dbbf52d0",
+      "sha256": "9a2edd3bb676c2a58f00ade7a062e285222d4297bfd847c8d5b056f0dbbf52d0",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/motion.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/motion.csv",
+      "source_sha256": "381affe8df8ea1f66fbbda2598827f9f54299107bbe6a1b4e9b68f6b62091ceb",
+      "sha256": "381affe8df8ea1f66fbbda2598827f9f54299107bbe6a1b4e9b68f6b62091ceb",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/phosphor-icons-upstream.json",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/phosphor-icons-upstream.json",
+      "source_sha256": "2399325233b277b5c97a80e6a5e8941154f5d057beee4e7613db87c87d700236",
+      "sha256": "2399325233b277b5c97a80e6a5e8941154f5d057beee4e7613db87c87d700236",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/products.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/products.csv",
+      "source_sha256": "42473f75e8dde5987bdf89ce55d8c168091b80a356cae691dd60247d80720b70",
+      "sha256": "42473f75e8dde5987bdf89ce55d8c168091b80a356cae691dd60247d80720b70",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/react-performance.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/react-performance.csv",
+      "source_sha256": "3d925802539abac5afeb63ae8aa1960b7229ad271b3a47caed40ab2d97ad0734",
+      "sha256": "3d925802539abac5afeb63ae8aa1960b7229ad271b3a47caed40ab2d97ad0734",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/stacks/angular.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/stacks/angular.csv",
+      "source_sha256": "704be83f2bad30c7e6de01afb113ffa01e0c458762f48b7102f31ba2367b5553",
+      "sha256": "704be83f2bad30c7e6de01afb113ffa01e0c458762f48b7102f31ba2367b5553",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/stacks/astro.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/stacks/astro.csv",
+      "source_sha256": "2c2f55fadaafc05e04cc321c8194a1a28b656e6757fe2ba316f41b16428299c6",
+      "sha256": "2c2f55fadaafc05e04cc321c8194a1a28b656e6757fe2ba316f41b16428299c6",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/stacks/avalonia.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/stacks/avalonia.csv",
+      "source_sha256": "442fca14675a020683473e7e49f08abb27b9df0765c80efe54aef61f1a4ac258",
+      "sha256": "442fca14675a020683473e7e49f08abb27b9df0765c80efe54aef61f1a4ac258",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/stacks/flutter.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/stacks/flutter.csv",
+      "source_sha256": "64dba0ac17349f28bce517a0f5f48c54d9ed2e487ec0c0258303463b382f41a0",
+      "sha256": "64dba0ac17349f28bce517a0f5f48c54d9ed2e487ec0c0258303463b382f41a0",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/stacks/html-tailwind.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/stacks/html-tailwind.csv",
+      "source_sha256": "d05a581d20af57b8ca0104a6d31d90a07c437d500662a96c3029fc2f9a4678ee",
+      "sha256": "d05a581d20af57b8ca0104a6d31d90a07c437d500662a96c3029fc2f9a4678ee",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/stacks/javafx.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/stacks/javafx.csv",
+      "source_sha256": "2e819b8d5abdd23ad4dae0991650fdb57af497aabd68b37463aa9c442944c869",
+      "sha256": "2e819b8d5abdd23ad4dae0991650fdb57af497aabd68b37463aa9c442944c869",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/stacks/jetpack-compose.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/stacks/jetpack-compose.csv",
+      "source_sha256": "699de218b286948eaec7d15767b6e1350ee299167e49bf476d82e3ff58724e0a",
+      "sha256": "699de218b286948eaec7d15767b6e1350ee299167e49bf476d82e3ff58724e0a",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/stacks/laravel.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/stacks/laravel.csv",
+      "source_sha256": "854ea4daa5fc61292d22235ad33b49ba3fe22423c3de8d3cb03758ffed3b59f9",
+      "sha256": "854ea4daa5fc61292d22235ad33b49ba3fe22423c3de8d3cb03758ffed3b59f9",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/stacks/nextjs.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/stacks/nextjs.csv",
+      "source_sha256": "ecd2c27b2ea0127d203ae726060efcdd7335b5e83f96b99e4f3befbbfeebd5a4",
+      "sha256": "ecd2c27b2ea0127d203ae726060efcdd7335b5e83f96b99e4f3befbbfeebd5a4",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/stacks/nuxt-ui.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/stacks/nuxt-ui.csv",
+      "source_sha256": "fce682a338cfcdbf35d318d20e5befbe7b5d81b05abc37f87677a6d9cde84dc6",
+      "sha256": "fce682a338cfcdbf35d318d20e5befbe7b5d81b05abc37f87677a6d9cde84dc6",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/stacks/nuxtjs.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/stacks/nuxtjs.csv",
+      "source_sha256": "3d9b54ed2d151bd9c86e9e5609b8a6f88a00c4c52fa601a30af96c49b2c4d176",
+      "sha256": "3d9b54ed2d151bd9c86e9e5609b8a6f88a00c4c52fa601a30af96c49b2c4d176",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/stacks/react-native.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/stacks/react-native.csv",
+      "source_sha256": "ba31dd9c0c04da6bc02a74448bf121f9c0728ae5ba3b4d47b487778b0a1135b5",
+      "sha256": "ba31dd9c0c04da6bc02a74448bf121f9c0728ae5ba3b4d47b487778b0a1135b5",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/stacks/react.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/stacks/react.csv",
+      "source_sha256": "4dd176a9787e5c6306b5df94158d75955adcdc6edab41ce5286641a5842303c1",
+      "sha256": "4dd176a9787e5c6306b5df94158d75955adcdc6edab41ce5286641a5842303c1",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/stacks/shadcn.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/stacks/shadcn.csv",
+      "source_sha256": "e56cfde5b74907836ac3582a4779d5b7f3d206a702ab81b8669a1b668c3eeb51",
+      "sha256": "e56cfde5b74907836ac3582a4779d5b7f3d206a702ab81b8669a1b668c3eeb51",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/stacks/svelte.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/stacks/svelte.csv",
+      "source_sha256": "f6e379ba802941ba26b01d4ffbe3cd39120f2587659a1d93851c707f66bc13db",
+      "sha256": "f6e379ba802941ba26b01d4ffbe3cd39120f2587659a1d93851c707f66bc13db",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/stacks/swiftui.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/stacks/swiftui.csv",
+      "source_sha256": "bdd9231ff3ad658f4e7c063e1eb49df2fd09ac8d90631a86df899b39833b9623",
+      "sha256": "bdd9231ff3ad658f4e7c063e1eb49df2fd09ac8d90631a86df899b39833b9623",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/stacks/threejs.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/stacks/threejs.csv",
+      "source_sha256": "97542e0ba34915a0ff7578be20e1619495df47c95c8c1c39b83e3785e1de771f",
+      "sha256": "97542e0ba34915a0ff7578be20e1619495df47c95c8c1c39b83e3785e1de771f",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/stacks/uno.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/stacks/uno.csv",
+      "source_sha256": "a0474363e4225b5367214d5675fd3e075f137026f9500f0d04357882ef4f6d48",
+      "sha256": "a0474363e4225b5367214d5675fd3e075f137026f9500f0d04357882ef4f6d48",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/stacks/uwp.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/stacks/uwp.csv",
+      "source_sha256": "c409f08c1fbba1f1029f1acaa554e7b4471cc85517a5751c9f2e62465badcd5c",
+      "sha256": "c409f08c1fbba1f1029f1acaa554e7b4471cc85517a5751c9f2e62465badcd5c",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/stacks/vue.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/stacks/vue.csv",
+      "source_sha256": "b655f1ebb9dff2652d15981f31b1784c8a6d4759efd2815a14f3088257569f95",
+      "sha256": "b655f1ebb9dff2652d15981f31b1784c8a6d4759efd2815a14f3088257569f95",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/stacks/winui.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/stacks/winui.csv",
+      "source_sha256": "e676dc1c13ee6c205c40b0746f1335150a346c7a49a0616d2545bc3d2c930c85",
+      "sha256": "e676dc1c13ee6c205c40b0746f1335150a346c7a49a0616d2545bc3d2c930c85",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/stacks/wpf.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/stacks/wpf.csv",
+      "source_sha256": "9781a9950b20333637b30a02e498b7efca21b618a3eeb8665836f3ac6e974da7",
+      "sha256": "9781a9950b20333637b30a02e498b7efca21b618a3eeb8665836f3ac6e974da7",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/styles.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/styles.csv",
+      "source_sha256": "a93a4d9d7025856575d7b7583bda020be9043013432c5af7c58af9dbdfb206b7",
+      "sha256": "a93a4d9d7025856575d7b7583bda020be9043013432c5af7c58af9dbdfb206b7",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/typography.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/typography.csv",
+      "source_sha256": "321fc446e89024488ebae96dda93efc4d2307bd8bddb240857ad51364f6782c8",
+      "sha256": "321fc446e89024488ebae96dda93efc4d2307bd8bddb240857ad51364f6782c8",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/ui-reasoning.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/ui-reasoning.csv",
+      "source_sha256": "f0774dd741cecdad5eec842034bd6d5e9ea50e9f220a1910069748daa0bb8e9a",
+      "sha256": "f0774dd741cecdad5eec842034bd6d5e9ea50e9f220a1910069748daa0bb8e9a",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/ux-guidelines.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/data/ux-guidelines.csv",
+      "source_sha256": "ff81ec613f70ba9fc3fcce52dbe4ae35d44b2079dbe6dc066d2d6e38c28facd5",
+      "sha256": "ff81ec613f70ba9fc3fcce52dbe4ae35d44b2079dbe6dc066d2d6e38c28facd5",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/references/pro-rules.md",
+      "destination": "skills/fusion-design-ui-ux-pro-max/references/pro-rules.md",
+      "source_sha256": "d28442d61c310b49c054a4ea736f89fb3008beebdbbc38c4b3a540b8f7fadf23",
+      "sha256": "d28442d61c310b49c054a4ea736f89fb3008beebdbbc38c4b3a540b8f7fadf23",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/references/quick-reference.md",
+      "destination": "skills/fusion-design-ui-ux-pro-max/references/quick-reference.md",
+      "source_sha256": "0609bc7c89dacb40472465d8fc14257b56b2c43439660fc8d6fa3b8c022e1876",
+      "sha256": "0609bc7c89dacb40472465d8fc14257b56b2c43439660fc8d6fa3b8c022e1876",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/core.py",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/core.py",
+      "source_sha256": "c3be4b23e7150e6b45095213158cfa3c8ad96502f01dde3f6ffff9de64a4f481",
+      "sha256": "c3be4b23e7150e6b45095213158cfa3c8ad96502f01dde3f6ffff9de64a4f481",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/design_system.py",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/design_system.py",
+      "source_sha256": "6a94743c3362c9c7e6d1450b94f4014d9ea752e7b4e151f6f0bdb217e0544bf7",
+      "sha256": "6a94743c3362c9c7e6d1450b94f4014d9ea752e7b4e151f6f0bdb217e0544bf7",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/reasoning_contract.py",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/reasoning_contract.py",
+      "source_sha256": "b8bac1af82aa280d3e06f00aabaeac4337e632996b07fed874e2b6ee6e9c5913",
+      "sha256": "b8bac1af82aa280d3e06f00aabaeac4337e632996b07fed874e2b6ee6e9c5913",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/search.py",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/search.py",
+      "source_sha256": "d54e648fe0ec2932cac66684220cc17be4bd4b4eba1d23d3195d509d398db374",
+      "sha256": "d54e648fe0ec2932cac66684220cc17be4bd4b4eba1d23d3195d509d398db374",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/fixtures/catalogs/google-api.json",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/fixtures/catalogs/google-api.json",
+      "source_sha256": "22d8dc81a7d6827b7e8b64b53e7d184210fb9759e8e294e0d5133c81cc460176",
+      "sha256": "22d8dc81a7d6827b7e8b64b53e7d184210fb9759e8e294e0d5133c81cc460176",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/fixtures/catalogs/google-catalog.json",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/fixtures/catalogs/google-catalog.json",
+      "source_sha256": "c608ad5c4084ebc50a4bbbfb69ea2456c01fd5519c457e18410fffd250ae948f",
+      "sha256": "c608ad5c4084ebc50a4bbbfb69ea2456c01fd5519c457e18410fffd250ae948f",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/fixtures/catalogs/google-existing.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/fixtures/catalogs/google-existing.csv",
+      "source_sha256": "4e0761b839dc6b2187a370e82eddc0aed8a7ff10c09e28dd814bb3656dac595b",
+      "sha256": "4e0761b839dc6b2187a370e82eddc0aed8a7ff10c09e28dd814bb3656dac595b",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/fixtures/catalogs/google-metadata.json",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/fixtures/catalogs/google-metadata.json",
+      "source_sha256": "30bffc29ae348416a2de2f9c6c418e768e4578f136b0f4bac5d2f70124f2e9ba",
+      "sha256": "30bffc29ae348416a2de2f9c6c418e768e4578f136b0f4bac5d2f70124f2e9ba",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/fixtures/catalogs/google-overrides.json",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/fixtures/catalogs/google-overrides.json",
+      "source_sha256": "6243a48a4619986768c4628e2d0c98ff195beba71ba9be5df8f0c52fc6d90c0b",
+      "sha256": "6243a48a4619986768c4628e2d0c98ff195beba71ba9be5df8f0c52fc6d90c0b",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/fixtures/catalogs/icons-curated.csv",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/fixtures/catalogs/icons-curated.csv",
+      "source_sha256": "68362c9a700c13b96f000784a0198c1c7e117a7088a01c85744e44233038fe9d",
+      "sha256": "68362c9a700c13b96f000784a0198c1c7e117a7088a01c85744e44233038fe9d",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/fixtures/catalogs/phosphor-core.json",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/fixtures/catalogs/phosphor-core.json",
+      "source_sha256": "ae4d0bb076240824e1b643c2270d1f8cc0952a69502ec1e622b7dedd85b930bb",
+      "sha256": "ae4d0bb076240824e1b643c2270d1f8cc0952a69502ec1e622b7dedd85b930bb",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/fixtures/catalogs/phosphor-package.json",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/fixtures/catalogs/phosphor-package.json",
+      "source_sha256": "500588c757d6de03e3d7e69b27a8b8b1f88ccf6bb0333e4c1e9b0d6a4f112475",
+      "sha256": "500588c757d6de03e3d7e69b27a8b8b1f88ccf6bb0333e4c1e9b0d6a4f112475",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/fixtures/catalogs/phosphor-react-exports.json",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/fixtures/catalogs/phosphor-react-exports.json",
+      "source_sha256": "d79f2ee0afdbc2f87776733e145df3538a16a25d7c2fba0056bb48295dad0ded",
+      "sha256": "d79f2ee0afdbc2f87776733e145df3538a16a25d7c2fba0056bb48295dad0ded",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/fixtures/catalogs/phosphor-react-package.json",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/fixtures/catalogs/phosphor-react-package.json",
+      "source_sha256": "1c57a1d76bcc0cdd3632d4c18b9c0e79576b4591df39831c9607e5d0eb4f2cec",
+      "sha256": "1c57a1d76bcc0cdd3632d4c18b9c0e79576b4591df39831c9607e5d0eb4f2cec",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/fixtures/relevance-baseline.json",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/fixtures/relevance-baseline.json",
+      "source_sha256": "f28913c31b53948ddc62dd5479adf9f4c526b30fb2d3048b131807dd26d4d2a7",
+      "sha256": "f28913c31b53948ddc62dd5479adf9f4c526b30fb2d3048b131807dd26d4d2a7",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/fixtures/relevance-cases.json",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/fixtures/relevance-cases.json",
+      "source_sha256": "e77d36eebbf6ddc2860946a02cdb659351da6c09f2688f1ed30939a418099646",
+      "sha256": "e77d36eebbf6ddc2860946a02cdb659351da6c09f2688f1ed30939a418099646",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/fixtures/relevance-thresholds.json",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/fixtures/relevance-thresholds.json",
+      "source_sha256": "50ff56681a5f40e912e68ddf8ef7b3d7e8cf8a393246eeeed147b912f7f1da18",
+      "sha256": "50ff56681a5f40e912e68ddf8ef7b3d7e8cf8a393246eeeed147b912f7f1da18",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/test_catalog_refresh.py",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/test_catalog_refresh.py",
+      "source_sha256": "3e2ca5d12702318f641ae62d0c14f22a3bcc84d84e79b863c0e947d475604adb",
+      "sha256": "3e2ca5d12702318f641ae62d0c14f22a3bcc84d84e79b863c0e947d475604adb",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/test_catalog_summary_line_endings.py",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/test_catalog_summary_line_endings.py",
+      "source_sha256": "fa6ff09f0ec2c99013588c77397f5082dddebe8f467e94c5f8378ec9595f4989",
+      "sha256": "fa6ff09f0ec2c99013588c77397f5082dddebe8f467e94c5f8378ec9595f4989",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/test_core.py",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/test_core.py",
+      "source_sha256": "3527fe2f4b852f69f07c17ddc0d615d9a6e025c924e45a33985579a94a8d2118",
+      "sha256": "3527fe2f4b852f69f07c17ddc0d615d9a6e025c924e45a33985579a94a8d2118",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/test_core_data_quality.py",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/test_core_data_quality.py",
+      "source_sha256": "3ffc6b4905c9ea26d7ac4527ab154d153584231aee71b2ae4bd017977fa09cc5",
+      "sha256": "3ffc6b4905c9ea26d7ac4527ab154d153584231aee71b2ae4bd017977fa09cc5",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/test_data_contracts.py",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/test_data_contracts.py",
+      "source_sha256": "0360d6e10080c0bca214f2b0bbad582ba50702a542ce21013351aca54938df3a",
+      "sha256": "0360d6e10080c0bca214f2b0bbad582ba50702a542ce21013351aca54938df3a",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/test_design_system_mode.py",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/test_design_system_mode.py",
+      "source_sha256": "517ba1ba6195c94811126d1162139c51aff77fc68c3e320c7bb6c1e89e76bc9b",
+      "sha256": "517ba1ba6195c94811126d1162139c51aff77fc68c3e320c7bb6c1e89e76bc9b",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/test_design_system_stack.py",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/test_design_system_stack.py",
+      "source_sha256": "83d09ffe8cfbf7b265f362129f061dfe8e5e167ce5db43adaead197cabc9ca38",
+      "sha256": "83d09ffe8cfbf7b265f362129f061dfe8e5e167ce5db43adaead197cabc9ca38",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/test_native_desktop_stack_freshness.py",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/test_native_desktop_stack_freshness.py",
+      "source_sha256": "904f90bc6d364763673fa6067d98a4227d535760fa8b6d26abe22208176997ca",
+      "sha256": "904f90bc6d364763673fa6067d98a4227d535760fa8b6d26abe22208176997ca",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/test_relevance_evaluator.py",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/test_relevance_evaluator.py",
+      "source_sha256": "2fe56a4d6fe5fff15ff592274b0eeaba925146cefea6c0fa29d8f1b77c9aca1f",
+      "sha256": "2fe56a4d6fe5fff15ff592274b0eeaba925146cefea6c0fa29d8f1b77c9aca1f",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/test_skill_script_paths.py",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/test_skill_script_paths.py",
+      "source_sha256": "7cec24b94be771bc60bc84f8993e614bb16d4047930e1dd3d3bed91628311d44",
+      "sha256": "7cec24b94be771bc60bc84f8993e614bb16d4047930e1dd3d3bed91628311d44",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/test_style_taxonomy.py",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/test_style_taxonomy.py",
+      "source_sha256": "cd14d0092e8a454d213aa104b53e4e70ba698491fa00fde9fdec5ca8a3d70011",
+      "sha256": "cd14d0092e8a454d213aa104b53e4e70ba698491fa00fde9fdec5ca8a3d70011",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/test_text_layout_resilience.py",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/test_text_layout_resilience.py",
+      "source_sha256": "b51d32ee8a15505b87cb81957fb2d1b385e041e8beb4463c311d236bfd29ebd4",
+      "sha256": "b51d32ee8a15505b87cb81957fb2d1b385e041e8beb4463c311d236bfd29ebd4",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/tests/test_web_stack_freshness.py",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/tests/test_web_stack_freshness.py",
+      "source_sha256": "74897571398585f27e2c35d09d81b0a531c8c774f4a2967e5e1b1d1b05a483d9",
+      "sha256": "74897571398585f27e2c35d09d81b0a531c8c774f4a2967e5e1b1d1b05a483d9",
+      "adapted": false
+    },
+    {
+      "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/scripts/validate_data.py",
+      "destination": "skills/fusion-design-ui-ux-pro-max/scripts/validate_data.py",
+      "source_sha256": "a599aa256049cf30954d1f164721b99e453eb7e4cb8241bcab2d5573e6cf58b8",
+      "sha256": "a599aa256049cf30954d1f164721b99e453eb7e4cb8241bcab2d5573e6cf58b8",
+      "adapted": false
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+<!-- recipe
+{
+  "id": "carousel",
+  "name": "横滑卡片带",
+  "tags": ["mobile-consumer", "content", "travel"],
+  "source": "改写自 shadcn/ui Carousel（MIT）的布局，去掉 embla 依赖，用 CSS scroll-snap",
+  "license": "MIT",
+  "states": ["静止", "滑动吸附", "末尾露出下一张提示可滑"],
+  "use": "同类内容的横向浏览：目的地、推荐、近期行程；卡宽约屏宽 70–80%，露出下一张一角",
+  "dont": "不要自动轮播；不要让唯一重要的内容藏在第 2 张之后",
+  "icons": [],
+  "requires": ["photo-card"]
+}
+-->
+<style>
+.r-carousel { display: grid; grid-auto-flow: column; grid-auto-columns: var(--r-carousel-w, 76%); gap: var(--r-gap-3); overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 var(--r-gap-4); padding: 0 var(--r-gap-4) 4px; scrollbar-width: none; overscroll-behavior-x: contain; }
+.r-carousel::-webkit-scrollbar { display: none; }
+.r-carousel > * { scroll-snap-align: start; min-width: 0; }
+.r-carousel--sm { --r-carousel-w: 42%; }
+</style>
+<!-- demo -->
+<div style="max-width:390px">
+  <div class="r-carousel r-carousel--sm" aria-label="热门城市">
+    <a class="r-photo" href="#"><img class="r-photo__img" src="preview-assets/photo-1040.jpg" alt="城市街景"><span class="r-photo__title">西安</span><span class="r-photo__meta">古城墙骑行</span></a>
+    <a class="r-photo" href="#"><img class="r-photo__img" src="preview-assets/photo-1036.jpg" alt="山景"><span class="r-photo__title">张家界</span><span class="r-photo__meta">峰林日出</span></a>
+    <a class="r-photo" href="#"><img class="r-photo__img" src="preview-assets/photo-1015.jpg" alt="河谷"><span class="r-photo__title">桂林</span><span class="r-photo__meta">漓江竹筏</span></a>
+  </div>
+</div>
+<!-- /demo -->

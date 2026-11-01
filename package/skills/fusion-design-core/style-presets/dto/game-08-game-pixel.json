@@ -1,0 +1,113 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dto-game-08-game-pixel",
+  "type": "registry:theme",
+  "title": "GAME-08 复古阶梯边框 8-Bit 像素街机风",
+  "cssVars": {
+    "theme": {
+      "font-sans": "\"Press Start 2P\", Zpix, VT323, monospace",
+      "radius": "0rem",
+      "font-mono": "VT323, monospace"
+    },
+    "light": {
+      "background": "#1A1C2C",
+      "foreground": "#F4F4F4",
+      "card": "#333C57",
+      "card-foreground": "#F4F4F4",
+      "popover": "#333C57",
+      "popover-foreground": "#F4F4F4",
+      "primary": "#E1252F",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#1A1C2C",
+      "secondary-foreground": "#F4F4F4",
+      "muted": "#1A1C2C",
+      "muted-foreground": "#94B0C2",
+      "accent": "#1A1C2C",
+      "accent-foreground": "#F4F4F4",
+      "destructive": "#E70B0B",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#0F101A",
+      "input": "#0F101A",
+      "ring": "#E43B44"
+    },
+    "dark": {
+      "background": "#1A1C2C",
+      "foreground": "#F4F4F4",
+      "card": "#333C57",
+      "card-foreground": "#F4F4F4",
+      "popover": "#333C57",
+      "popover-foreground": "#F4F4F4",
+      "primary": "#E1252F",
+      "primary-foreground": "#FFFFFF",
+      "secondary": "#1A1C2C",
+      "secondary-foreground": "#F4F4F4",
+      "muted": "#1A1C2C",
+      "muted-foreground": "#94B0C2",
+      "accent": "#1A1C2C",
+      "accent-foreground": "#F4F4F4",
+      "destructive": "#E70B0B",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#0F101A",
+      "input": "#0F101A",
+      "ring": "#E43B44"
+    }
+  },
+  "meta": {
+    "dto": {
+      "id": "GAME-08",
+      "tier": "theme",
+      "displayName": "复古阶梯边框 8-Bit 像素街机风",
+      "modes": [
+        "dark"
+      ],
+      "palette": {
+        "bg": "#1A1C2C",
+        "card": "#333C57",
+        "text": [
+          "#F4F4F4",
+          "#94B0C2",
+          "#FFCD75"
+        ],
+        "primary": "#E43B44",
+        "extra": [
+          "#FEAE34",
+          "#38B764",
+          "#8F563B"
+        ],
+        "extraSource": "methods-visual.md 参数字典同一行里写到、原预设漏收的颜色"
+      },
+      "radiusScale": {
+        "card": 0,
+        "control": 0
+      },
+      "border": {
+        "color": "#0F101A",
+        "width": "4px 阶梯"
+      },
+      "shadow": "4px 4px 0 #0F101A（零模糊）",
+      "blur": "",
+      "typeScale": "24/16/12/8px，8px 整数倍",
+      "spacing": "",
+      "family": [
+        "game"
+      ],
+      "derived": [
+        "secondary",
+        "muted",
+        "accent",
+        "input",
+        "ring",
+        "popover",
+        "destructive"
+      ],
+      "source": "methods-visual.md V0 参数字典（本 Skill 内置）",
+      "installables": {
+        "tweakcnNearest": [
+          "retro-arcade",
+          "doom-64"
+        ],
+        "system": ""
+      }
+    }
+  }
+}
