@@ -1,17 +1,11 @@
 ---
 name: fusion-design-core
 description: >-
-  Simulates a senior product/UI/visual designer and Design Director end-to-end.
-  Triages any request by how much is already defined: runs full 0-to-1 discovery
-  (user research, 3-type competitor analysis, flow design) when open, or critiques
-  and refines PM wireframes/expected interactions (information architecture, page
-  duty, concrete interaction controls like dropdown vs picker vs modal vs next page)
-  before entering UI. Routes UI through existing design systems, B2B component
-  libraries, or 0-to-1 style decisions, pulling real assets from IconScout, Real
-  Image Library, and component libraries instead of AI-slop icons, using
-  reference-image pad generation for posters, choosing the right tool (Figma vs
-  component code vs image generation vs motion), and running a strict Design
-  Director final review (QA0) before delivery.
+  Product/UI/visual design stage within Fusion Product Agent. Takes a product
+  brief with traceable goals, scope and decisions or explicit delegation; researches
+  interaction, selects visual direction, creates assets and runs design review (QA0).
+  For vague new-product ideas, restore the product intake before making designs or
+  demos. This capability does not replace the product workflow or decide user intent.
 ---
 
 # 设计师完整工作流（Design Thinking OS）
@@ -20,13 +14,23 @@ description: >-
 
 ---
 
+## 产品主线先于设计
+
+本模块是融合产品锤中的设计环节，产品主入口统一组织目标、领域需求、边界、方案、PRD和交接。先读取同包[产品启动条件](../fusion-product-agent/references/product-start.md)，核对本轮目标、核心范围、终点及其用户输入/既有决定/明确委托来源。只有产品名称或AI自行写出的候选画像、目标、流程，不算有效产品输入。
+
+若目标或核心范围仍有改变方向的缺口，回到产品主线给出可理解的推荐并通过原生Question询问，等待必要答案；不得直接开展受影响的正式设计或Demo制作。设计研究可以支持讨论，不能替人决定为什么做和先做什么。直接调用本Skill也遵守此条件，不要求另启一个Agent。专业设计判断、调研和QA0继续按下述方法执行；已有有效输入、局部改动或明确委托按范围复用，不重做访谈。
+
+## 流程位置与回传
+
+本环节沿用[产品主线六阶段与设计四步骤](../fusion-product-agent/references/progress-navigation.md)。每次成果、修订或提问回复，最终首行保留产品第几/6阶段，设计中附设计第几/4步、当前模块及真实状态；结尾交代下一动作或用户所需选择。四步骤对应下文的研究/流程交互、视觉决策、制作、终审，不按回复次数推进。向产品主入口回传同样的信息，不因要求自然语言、隐藏方法代号而省略导航，也不增加人工审批。
+
 ## ⛔ 开工与分步硬门禁（严禁跳步铁律——未汇报完【用研+竞品+流程+交互】并由用户选定风格前，严禁提前定风格或调制作工具！）
 
 1. **严禁一上来就确定视觉风格！严禁跳过前置推导直接跑 `style_preset.py` 或调 Figma！**  
    - 收到 0→1 需求（如“给我做一个掼蛋 / 做一个行程规划 App”）时，**绝不允许在还没向用户展示【1. 用户研究、2. 三类竞品调研、3. 任务流程、4. 具体交互控件设计】之前，就擅自宣布“视觉采用某某风格（如祖母绿台呢胡桃木）”或直接运行 `style_preset.py show`！**
    - 哪怕用户点了“先做高保真设计稿”，那也只是确认了最终交付物形态，**绝不代表允许跳过用研、竞品、流程和交互设计直接定视觉风格！**
 
-2. **0→1 需求必须严格分【两轮】推进（第一轮做完前置推导+请用户选风格，第二轮再调风格/组件/素材库制作）**：
+2. **产品启动条件已满足后的0→1设计需求，必须严格分【两轮】推进（第一轮做完前置推导+请用户选风格，第二轮再调风格/组件/素材库制作）**：
    - **【第一轮：完成并向用户汇报「用研 → 三类竞品 → 流程 → 交互方案」+ 提供 2–3 个视觉风格选项让用户挑】**
      1. 先读取 [methods-research.md](methods-research.md)、[methods-competitive.md](methods-competitive.md)、[methods-flow.md](methods-flow.md)、[methods-interaction.md](methods-interaction.md)、[methods-ui.md](methods-ui.md)；
      2. 搜索并下载 3–5 张同类成熟产品的**真实界面截图**（排除宣传海报，存入 `<任务目录>/refs/`）；
@@ -57,7 +61,7 @@ description: >-
 
 ## 一、设计师接单后的完整运作流程（按任务情况分流）
 
-### 第一步：看需求给到了什么程度，决定从哪切入（研究 → 竞品 → 流程 → 交互）
+### 第一步：核对产品输入有效后，再决定设计从哪切入（研究 → 竞品 → 流程 → 交互）
 
 接到任务后，先读取 [methods-intake.md](methods-intake.md)、[methods-context.md](methods-context.md)、[methods-routing.md](methods-routing.md)，判断上游给的信息处在哪个阶段：
 
@@ -186,8 +190,8 @@ description: >-
 
 ## 三、向用户提问与沟通的纪律
 
-1. **0→1 需求第一轮怎么汇报与提问（先给出用研/竞品/交互方案，再请用户选视觉风格与确认交互）**：
-   - 当用户给了一个 0→1 需求（如“给我做一个掼蛋”），**严禁第一轮什么都不分析就只抛一个空问题，更严禁一上来就直接宣布用什么视觉风格！**
+1. **产品目标与范围已有有效依据后，0→1设计第一轮怎么汇报与提问（先给出用研/竞品/交互方案，再请用户选视觉风格与确认交互）**：
+   - 如“给我做一个掼蛋”尚无产品目标和范围，先回产品主线给候选方向、推荐和关键问题；不能直接套用下面的风格问题。产品输入足够后，**严禁什么都不分析就只抛空问题，更严禁直接宣布视觉风格！**
    - 第一轮必须先完成并向用户汇报 **【① 用户与场景痛点、② 三类竞品调研拆解、③ 任务流程与具体交互控件方案】**，然后在同一次回复末尾用提问工具弹出 **2–3 道独立单选题**：
      - **第 1 题（选定整体视觉风格方向）**：提供 2–3 个适合该产品的差异化视觉风格选项（用大白话讲清各自想表达的感受与视觉手段，首项标 `(Recommended)`），让用户选择；
      - **第 2 题（选定人物头像画风，当界面有玩家/用户头像时必问）**：让用户选择想要 **3D 潮玩/Q 版卡通头像**、**国风/精致插画头像**、还是 **写实人物头像**；

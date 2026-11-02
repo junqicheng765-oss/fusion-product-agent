@@ -1,4 +1,4 @@
 interface:
   display_name: "融合产品锤"
   short_description: "帮助非专家补齐产品与业务领域知识，构建专业需求、边界、体验和上下游交接"
-  default_prompt: "使用 $fusion-product-agent，我可能不懂产品和业务领域；请围绕我的想法与目标交互，主动补齐领域需求、边界及交接，按本次范围推进。"
+  default_prompt: "使用 $fusion-product-agent；先校准我的产品目标和范围，再主动研究领域需求、边界与方案，按需要进入设计、Demo、PRD和交接。"

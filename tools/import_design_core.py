@@ -7,6 +7,7 @@ from pathlib import Path
 import re
 import subprocess
 from design_execution_adapter import adapt_execution
+from product_stage_adapter import adapt_product_stage
 
 COMMIT = '6dcc771bb7b5d0c5f4d2ca25fc13994af12c73a1'
 MAPPING = {'design-thinking-os': 'fusion-design-core', 'impeccable': 'fusion-design-impeccable', 'ui-ux-pro-max': 'fusion-design-ui-ux-pro-max'}
@@ -30,7 +31,7 @@ def adapt(data, suffix, filename):
     text = adapt_execution(text, filename)
     if filename == 'SKILL.md' and 'name: fusion-design-core\n' in text:
         text += '\n\n## 同包集成说明\n\n本模块负责设计研究、交互、风格、素材、提示词和QA0专业判断；工具配置、目标绑定、Figma生成/精修与Dev Mode还原执行同包 [fusion-figma-workflow](../fusion-figma-workflow/SKILL.md)。初始化只读核对可先于视觉选择，实际制作仍遵守有效设计决定。工具名称不是能力或权限证明，不把自动安装描述当成全局配置授权。已有有效选择或委托直接复用，缺少外部工具不静默更换设计主稿。\n'
-    return text.encode('utf-8')
+    return adapt_product_stage(text, filename).encode('utf-8')
 
 
 def main():
@@ -49,7 +50,7 @@ def main():
             dest.parent.mkdir(parents=True, exist_ok=True)
             dest.write_bytes(converted)
             files.append({'source': source, 'destination': rel.as_posix(), 'source_sha256': hashlib.sha256(raw).hexdigest(), 'sha256': hashlib.sha256(converted).hexdigest(), 'adapted': converted != raw})
-    (ROOT / 'package/design-source.json').write_text(json.dumps({'repository': 'https://github.com/savvydd/jq-product-agent', 'branch': 'feat/design-handoff-contract', 'commit': COMMIT, 'adaptations': 'Isolated Skill names and parent references; remove old D/E wrapper alias. Preserve designer methods, style decisions and QA0; route Figma execution to bundled workflow, remove mandatory HTML-first and Figma-Agent bans, scope CSS-only gates to local component code. No script, component or asset removed. Product-stage wrapper skills are not imported.', 'files': files}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    (ROOT / 'package/design-source.json').write_text(json.dumps({'repository': 'https://github.com/savvydd/jq-product-agent', 'branch': 'feat/design-handoff-contract', 'commit': COMMIT, 'adaptations': 'Isolated Skill names and parent references; remove old D/E wrapper alias. Preserve designer methods, style decisions and QA0; route Figma execution to bundled workflow, remove mandatory HTML-first and Figma-Agent bans, scope CSS-only gates to local component code. Bind design discovery, intake and routing to the product goal/scope evidence or explicit delegation; design is a stage, not a replacement product entry. No script, component or asset removed. Product-stage wrapper skills are not imported.', 'files': files}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({'imported': len(files), 'adapted': sum(f['adapted'] for f in files), 'commit': COMMIT}))
 
 

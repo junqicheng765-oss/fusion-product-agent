@@ -1,10 +1,10 @@
 # 融合产品锤 · Fusion Product Agent
 
-**v0.3.1 · 2026-11-01**
+**v0.3.3 · 2026-11-02（正式发布）**
 
 帮助有业务想法、但缺乏产品与领域知识的使用者，完成领域研究、产品规则、范围、专业设计、可操作体验及上下游交接。支持产品领域能力校验；首期可在Codex下运行，也可由具备文件读取能力的Agent按入口使用。
 
-本版采用设计同事的专业方法与QA0，同时保留原有Figma执行工作流：初始化并复用配置，在指定Figma生成或精修设计，再按同版Dev Mode / MCP还原Demo。产品主线维护业务目标、领域依据、规则及交接。
+本版明确产品主线先于设计：只有一句想法时，先给候选方向和推荐，通过必要问答校准目标与核心范围；依据足够或已有明确委托后再进入方案、设计和制作。设计是产品锤中的专业环节，采用设计同事的方法与QA0，保留Figma执行工作流及Dev Mode / MCP还原。已有充分需求或局部任务直接复用，不逐步审批。
 
 ## 安装使用
 
@@ -19,18 +19,22 @@ codex plugin add fusion-product-agent@fusion-product-agent
 
 已有GitHub来源安装，可先执行`codex plugin marketplace upgrade fusion-product-agent`，再执行上面的`codex plugin add`更新插件。当前运行中的旧会话不保证热加载；菜单没有刷新时重新打开Codex。
 
+产品过程持续展示位置：每次成果/修订/提问首行显示产品第几/6阶段；进入设计时附设计第几/4步、当前状态，结尾说明下一动作。首次展示路线和本次终点，已有输入复用、确认仅限关键决定。详见[流程位置展示](package/skills/fusion-product-agent/references/progress-navigation.md)。
+
 独立插件名与市场仍为`fusion-product-agent`，可与JQ正式版、设计试用版并存。安装本包不需要同时安装原来的三套产品锤子。
 
 ## 完整能力包与工作方式
 
-- [v0.3.1完整能力包](downloads/fusion-product-agent-v0.3.1.zip) · [SHA-256](downloads/fusion-product-agent-v0.3.1.zip.sha256)
+- [v0.3.3完整能力包](downloads/fusion-product-agent-v0.3.3.zip) · [SHA-256](downloads/fusion-product-agent-v0.3.3.zip.sha256)
 - [详细使用、五项Skill与项目级Skill/Subagent安装](package/README.md)
 - [完整工作流程](docs/workflow.md)
 - [产品主入口](package/skills/fusion-product-agent/SKILL.md) · [设计专家入口](package/skills/fusion-design-core/SKILL.md) · [Figma执行入口](package/skills/fusion-figma-workflow/SKILL.md)
 - [设计替换范围及固定来源](package/SOURCE-MAP.md) · [版本记录](CHANGELOG.md)
 - [检查结果与能力边界](package/VALIDATION.md)
 
-产品输入 → 设计专家判断切入点 → 研究/流程/交互 → 风格确认 → 组件与素材制作 → QA0及实际验证 → 产品核对业务与版本 → 下游交接。存量延展、已有稿还原和从0到1按设计专家规则分流。
+设计环节：有效产品输入 → 设计专家判断切入点 → 研究/流程/交互 → 风格确认 → 组件与素材制作 → QA0及实际验证 → 产品核对业务与版本 → 下游交接。存量延展、已有稿还原和从0到1按设计专家规则分流。
+
+完整主线：想法与业务目标 → 产品目标/范围校准 → 领域需求、边界及方案 → 设计与体验 → PRD、验收与上下游交接。上面的设计流程只在有效产品输入支持的范围内启动；直接调用设计或Figma模块也要核对[产品启动条件](package/skills/fusion-product-agent/references/product-start.md)。
 
 已有本产品Figma主稿或已选Figma时，先在指定Figma完成设计：旧页Computer Use精修，新整页按需Figma Agent生成后精修，再由Dev Mode / MCP还原Demo。明确选择本地代码时才走本地组件路线；HTML转Figma为实际可用且显式选择的可选分支。
 

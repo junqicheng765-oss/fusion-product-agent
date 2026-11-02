@@ -1,4 +1,4 @@
-# Codex插件 v0.3.1
+# Codex插件 v0.3.3
 
 融合锤子独立GitHub仓库提供Codex市场，入口`.agents/plugins/marketplace.json`指向`package/`。插件标识`fusion-product-agent@fusion-product-agent`。
 

@@ -1,13 +1,13 @@
 {
   "source": "JQ Product Agent 1.1.5",
   "repository": "https://github.com/junqicheng765-oss/jq-product-agent",
-  "adaptations": "Restore execution, configuration reuse, task/preflight, generation, Computer Use, Dev Mode reconstruction and copy/interaction review. Relink all dependencies within this package; design judgment and QA0 belong to designer core, product facts to fusion product entry; no legacy product-stage wrappers imported.",
+  "adaptations": "Restore execution, configuration reuse, task/preflight, generation, Computer Use, Dev Mode reconstruction and copy/interaction review. Relink all dependencies within this package; design judgment and QA0 belong to designer core, product facts to fusion product entry; require product goal/scope evidence or explicit delegation before execution; no legacy product-stage wrappers imported.",
   "files": [
     {
       "source": "skills/jq-figma-workflow/SKILL.md",
       "destination": "skills/fusion-figma-workflow/SKILL.md",
       "source_sha256": "7489045df0d6ed26e43e585291f312b5ae607c595160e99921c8464cbde4f9e6",
-      "sha256": "ab46dc27513110c7f2564bef6c51ef0a2fa304db8b5e108b77a123fbf0dd9f2a",
+      "sha256": "ea187f4e5039b1b40c12d3d8ebec49a630fc05b6d7713805a839b85466517be1",
       "adapted": true,
       "excerpt": false
     },

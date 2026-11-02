@@ -2,13 +2,13 @@
   "repository": "https://github.com/savvydd/jq-product-agent",
   "branch": "feat/design-handoff-contract",
   "commit": "6dcc771bb7b5d0c5f4d2ca25fc13994af12c73a1",
-  "adaptations": "Isolated Skill names and parent references; remove old D/E wrapper alias. Preserve designer methods, style decisions and QA0; route Figma execution to bundled workflow, remove mandatory HTML-first and Figma-Agent bans, scope CSS-only gates to local component code. No script, component or asset removed. Product-stage wrapper skills are not imported.",
+  "adaptations": "Isolated Skill names and parent references; remove old D/E wrapper alias. Preserve designer methods, style decisions and QA0; route Figma execution to bundled workflow, remove mandatory HTML-first and Figma-Agent bans, scope CSS-only gates to local component code. Bind design discovery, intake and routing to the product goal/scope evidence or explicit delegation; design is a stage, not a replacement product entry. No script, component or asset removed. Product-stage wrapper skills are not imported.",
   "files": [
     {
       "source": "plugins/tc-product-agent/skills/design-thinking-os/SKILL.md",
       "destination": "skills/fusion-design-core/SKILL.md",
       "source_sha256": "d9f64406baf6b29bc2777891ac23d2094fd7fc32bc6f51569708e471e0f92288",
-      "sha256": "c6d65dfc11538f2350ce67096da434c026c06904038b930a22fce24e08376afc",
+      "sha256": "eb40f97d5402f8b7f8cabac4d4b3fcd47033214ab0856a88ca5d4a6dc7d7fac4",
       "adapted": true
     },
     {
@@ -932,8 +932,8 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-intake.md",
       "destination": "skills/fusion-design-core/methods-intake.md",
       "source_sha256": "67ed9b5ddd8f4ffe33baff7707cd032fb463ef7b15e8d7054b8cd20badc90e93",
-      "sha256": "67ed9b5ddd8f4ffe33baff7707cd032fb463ef7b15e8d7054b8cd20badc90e93",
-      "adapted": false
+      "sha256": "67282fcdc93212e83ba8ac34a5974644ed55f30baec8bcb6a3b46828ea0101a0",
+      "adapted": true
     },
     {
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-interaction.md",
@@ -974,8 +974,8 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-routing.md",
       "destination": "skills/fusion-design-core/methods-routing.md",
       "source_sha256": "3793fff353db5ff9cafc98cca255a6838b72efcd27f7ddd43aa709592eebbc30",
-      "sha256": "3793fff353db5ff9cafc98cca255a6838b72efcd27f7ddd43aa709592eebbc30",
-      "adapted": false
+      "sha256": "152a0c897ae125019e6decdcb51280f9444c4845dfa8e2a4d9cd9f02256acf19",
+      "adapted": true
     },
     {
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-style-engine.md",
