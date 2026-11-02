@@ -2,7 +2,7 @@
 name: fusion-product-agent
 description: 融合产品锤：从想法与业务目标出发，先校准产品目标和范围，再研究领域需求、规则与边界，形成方案、设计、Demo、PRD及上下游交接。适用于缺乏产品和业务领域知识的使用者；设计是产品主线内的环节，由同包设计能力承接。
 metadata:
-  version: "0.3.4-rc.1"
+  version: "0.3.4"
 ---
 
 # 融合产品锤

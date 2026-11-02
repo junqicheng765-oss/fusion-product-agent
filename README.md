@@ -1,12 +1,12 @@
 # 融合产品锤 · Fusion Product Agent
 
-**v0.3.4-rc.1 · 2026-11-02（PR #1 合并候选，未发布）**
+**v0.3.4 · 2026-11-02（正式发布）**
 
 帮助有业务想法、但缺乏产品与领域知识的使用者，完成领域研究、产品规则、范围、专业设计、可操作体验及上下游交接。支持产品领域能力校验；首期可在Codex下运行，也可由具备文件读取能力的Agent按入口使用。
 
 本版明确产品主线先于设计：只有一句想法时，先给候选方向和推荐，通过必要问答校准目标与核心范围；依据足够或已有明确委托后再进入方案、设计和制作。设计是产品锤中的专业环节，采用设计同事的方法与QA0，保留Figma执行工作流及Dev Mode / MCP还原。已有充分需求或局部任务直接复用，不逐步审批。
 
-这是本地试合并版本；GitHub与本机正式插件仍为v0.3.3。下列GitHub命令安装正式版本，候选使用本目录完整包或项目级安装器。
+本版基于已完成本地流程试用的合并候选发布，纳入产品同事的PR #1，保留双方提交历史。
 
 ## 安装使用
 
@@ -29,7 +29,7 @@ codex plugin add fusion-product-agent@fusion-product-agent
 
 ## 完整能力包与工作方式
 
-- [v0.3.4-rc.1完整能力包](downloads/fusion-product-agent-v0.3.4-rc.1.zip) · [SHA-256](downloads/fusion-product-agent-v0.3.4-rc.1.zip.sha256)
+- [v0.3.4完整能力包](downloads/fusion-product-agent-v0.3.4.zip) · [SHA-256](downloads/fusion-product-agent-v0.3.4.zip.sha256)
 - [详细使用、五项Skill与项目级Skill/Subagent安装](package/README.md)
 - [完整工作流程](docs/workflow.md)
 - [产品主入口](package/skills/fusion-product-agent/SKILL.md) · [设计专家入口](package/skills/fusion-design-core/SKILL.md) · [Figma执行入口](package/skills/fusion-figma-workflow/SKILL.md)
@@ -51,6 +51,6 @@ python3 package/scripts/validate_package.py
 python3 package/scripts/test_package.py
 ```
 
-已通过结构、来源摘要与离线安装/交付引用检查，并验证部分设计工具路径。尚未完成本版整条设计流程的真实业务试用；这些检查不证明实际设计质量、Agent遵循率或生产能力。
+已通过结构、来源摘要与32项离线安装/交付及导入适配回归。合并候选已由维护者本地流程试用并反馈通过；该反馈不等于跨项目质量、完整Figma覆盖或生产能力的独立验证。
 
 来源的许可与权利说明继续适用；本包不添加未经确认的统一开放许可。历史[0.2.0 ZIP](downloads/fusion-product-agent-v0.2.0.zip)保留供回查，与本版内容不同。
