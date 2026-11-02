@@ -65,14 +65,15 @@ def install(project, mode, dry_run=False):
         if mode == 'agent':
             preset.parent.mkdir(parents=True, exist_ok=True)
             instructions = (
-                '你是融合产品锤，使用父任务的业务工作区和授权范围。\n'
+                '你是融合产品负责人，使用父任务的业务工作区和授权范围。\n'
                 '先读取规则根目录的SKILL.md，按当前任务加载同包参考，不读取原三套或作者本机路径。\n'
                 '规则根目录：' + str(target) + '\n'
-                '规则目录不是业务产物目录。用户决定由父任务统一询问，不重复访谈。\n'
+                '规则目录不是业务产物目录。从想法开始先判断用户、场景、目标、范围和关键规则，产品方向成立后再交设计。\n'
+                '用户决定由父任务统一询问：把会改变产品方向的问题、推荐和影响优先回传父任务，不重复访谈；父任务建议不等于用户决定。\n'
                 '只读委派不写项目基线；写入任务按明确责任完成，保留他人成果。\n'
                 '返回实际成果、验证层次、限制及待决事项，不把自检写成独立验收。'
             )
-            text = 'name = "fusion-product-agent"\ndescription = "融合产品锤：业务表达、可操作体验与复杂规则追溯。"\ndeveloper_instructions = ' + json.dumps(instructions, ensure_ascii=False) + '\n'
+            text = 'name = "fusion-product-agent"\ndescription = "融合产品负责人：先澄清用户、场景、目标与范围，再形成需求、设计输入和交接。"\ndeveloper_instructions = ' + json.dumps(instructions, ensure_ascii=False) + '\n'
             with preset.open('x', encoding='utf-8') as handle:
                 handle.write(text)
             created.append(preset)
