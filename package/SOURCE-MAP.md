@@ -9,6 +9,14 @@
 | Figma 初始化与配置复用、用户目标/权限、Agent生成、Computer Use精修、Dev Mode/MCP还原Demo、文案与交互复核 | 原 JQ 执行层适配为同包 fusion-figma-workflow |
 | 产品模型 | 84份原文及48项定义保持原摘要；用于产品判断，不另立设计方法 |
 
+## 当前源码中的本地修订（2026-11-05，未单独发布）
+
+以下版本沿革描述已发布的 0.3.4 基线。当前源码在其上叠加已批准的设计判断、桌面调研、创意概念、15 类任务路由、隔离方向样张，以及代表页/最终人工确认规则。保留产品启动门禁、流程导航、既有 Figma 执行路线与全部设计脚本、组件、主题和素材。
+
+原 434 份导入文件的 `source` 与 `source_sha256` 保留；本轮修订其中 17 份设计文本，其 `integration_sha256` 保存本地修订前的整合基线摘要，`sha256` 对应当前文件。另有两份本地扩展文档在清单中标为 `origin: local-extension`，不伪造上游来源。准确范围见 [design-source.json](design-source.json) 的 `local_refinements`。
+
+原导入脚本重建上游整合基线；本地修订由 Git 保留，重新导入时须保留并重放这些修订，不能直接导入覆盖后声称与当前源码一致。回归分别检查基线适配可复现、当前文件摘要、本地扩展范围，以及未改动的 Figma 执行手册与设计资源。下面“可重建”“字节未变”等历史描述应在这个版本范围内理解。
+
 ## 同事专业设计来源
 
 固定来源 `https://github.com/savvydd/jq-product-agent` 的 `feat/design-handoff-contract` 提交 `6dcc771bb7b5d0c5f4d2ca25fc13994af12c73a1`。完整导入 design-thinking-os 234份、impeccable 127份、ui-ux-pro-max 73份，共434份；不导入另一套产品主线或阶段包装。
