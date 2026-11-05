@@ -18,6 +18,8 @@ DESIGN = 'skills/fusion-design-core/'
 CHANGED_DESIGN = {'SKILL.md', 'methods-intake.md', 'methods-routing.md'}
 SOURCE = json.loads((ROOT / 'package/design-source.json').read_text(encoding='utf-8'))
 INVENTORY = {entry['destination']: entry for entry in SOURCE['files']}
+FIGMA_SOURCE = json.loads((ROOT / 'package/figma-source.json').read_text(encoding='utf-8'))
+FIGMA_INVENTORY = {entry['destination']: entry for entry in FIGMA_SOURCE['files']}
 
 
 def digest(data):
@@ -83,11 +85,13 @@ class ProductStageAdapterTests(unittest.TestCase):
     def test_figma_upgrade_is_reproducible_and_idempotent(self):
         relative = 'skills/fusion-figma-workflow/SKILL.md'
         old = self.old_bytes(relative).decode('utf-8')
-        current = (ROOT / 'package' / relative).read_text(encoding='utf-8')
-        self.assertEqual(adapt_figma_product_stage(old), current)
-        self.assertEqual(adapt_figma_product_stage(current), current)
+        integrated = adapt_figma_product_stage(old)
+        entry = FIGMA_INVENTORY[relative]
+        self.assertEqual(digest(integrated.encode('utf-8')), entry.get('integration_sha256', entry['sha256']))
+        self.assertEqual(adapt_figma_product_stage(integrated), integrated)
+        self.assertEqual(digest((ROOT / 'package' / relative).read_bytes()), entry['sha256'])
 
-    def test_figma_execution_manuals_are_preserved(self):
+    def test_figma_manual_baseline_and_current_adaptations_are_preserved(self):
         with ZipFile(BASELINE) as archive:
             names = [name for name in archive.namelist()
                      if name.startswith(PREFIX + 'skills/fusion-figma-workflow/references/') and not name.endswith('/')]
@@ -95,7 +99,18 @@ class ProductStageAdapterTests(unittest.TestCase):
             for name in names:
                 relative = name.removeprefix(PREFIX)
                 with self.subTest(path=relative):
-                    self.assertEqual(archive.read(name), (ROOT / 'package' / relative).read_bytes())
+                    entry = FIGMA_INVENTORY[relative]
+                    self.assertEqual(digest(archive.read(name)), entry.get('integration_sha256', entry['sha256']))
+                    self.assertEqual(digest((ROOT / 'package' / relative).read_bytes()), entry['sha256'])
+
+    def test_figma_local_refinement_scope_is_explicit(self):
+        changed = {path for path, entry in FIGMA_INVENTORY.items() if entry.get('local_refinement')}
+        self.assertEqual(changed, set(FIGMA_SOURCE['local_refinements']['changed_imported_files']))
+        for path in changed:
+            with self.subTest(path=path):
+                self.assertTrue(path.startswith('skills/fusion-figma-workflow/'))
+                self.assertTrue(path.endswith('.md'))
+                self.assertNotEqual(FIGMA_INVENTORY[path]['integration_sha256'], FIGMA_INVENTORY[path]['sha256'])
 
     def test_missing_upstream_anchor_fails_instead_of_silent_partial_adaptation(self):
         old = self.old_bytes(DESIGN + 'SKILL.md').decode('utf-8')

@@ -8,7 +8,7 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/SKILL.md",
       "destination": "skills/fusion-design-core/SKILL.md",
       "source_sha256": "d9f64406baf6b29bc2777891ac23d2094fd7fc32bc6f51569708e471e0f92288",
-      "sha256": "bd0745d0b69f0d5e0ed341c54fd2ee8952f4ba0c678762a27b1bef5e18e065e6",
+      "sha256": "16f55df5a4f3e4fe6cecb1ab6fc969cf4b641f3439e723bc2bbb7a18db7c9adb",
       "adapted": true,
       "integration_sha256": "eb40f97d5402f8b7f8cabac4d4b3fcd47033214ab0856a88ca5d4a6dc7d7fac4",
       "local_refinement": true
@@ -17,7 +17,7 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/WORKFLOW-REVIEW.md",
       "destination": "skills/fusion-design-core/WORKFLOW-REVIEW.md",
       "source_sha256": "1214dca3560df9204780a1608d77f05c1f3d5653ae5982cddba572a87776a764",
-      "sha256": "43597a954897b47d6aa147ab054314f013166918c8db030fb0faa32ccc3043d6",
+      "sha256": "fb57fcb5cec6b98cfa577b3fb3e36173d9d35b7ec64a7ae1835c99db10aed320",
       "adapted": true,
       "integration_sha256": "743cd0c19b0caf5fa93a36f670ffa57d9db2d4ff03981925ccd13f819e3efd3d",
       "local_refinement": true
@@ -873,7 +873,7 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/framework.md",
       "destination": "skills/fusion-design-core/framework.md",
       "source_sha256": "16c9fe3bedf43287fd5a6741c5ee2f11d5d05a5bb7561c795ec8cde2010085e9",
-      "sha256": "6fe3b60484647f36826f410160404213df5562c52206a8e9ca4794252a108adb",
+      "sha256": "e9bb8f29b1c18bc3de7e613a600b8c0911d58d68f3ca4ec204932f042b6f861f",
       "adapted": true,
       "integration_sha256": "16c9fe3bedf43287fd5a6741c5ee2f11d5d05a5bb7561c795ec8cde2010085e9",
       "local_refinement": true
@@ -925,7 +925,7 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-execution.md",
       "destination": "skills/fusion-design-core/methods-execution.md",
       "source_sha256": "66cb87a693b48a9f26e388d3e2efce4bef4c8ab686484f2e8915006c5877382e",
-      "sha256": "72463444f03f64c4b445dbcf405b484223117df30d975b7e4c72a086f9557c4f",
+      "sha256": "e1dc6bd242dd96daf922211464332618074bdfca292276b9fbcdd1b78ab3e8dc",
       "adapted": true,
       "integration_sha256": "66cb87a693b48a9f26e388d3e2efce4bef4c8ab686484f2e8915006c5877382e",
       "local_refinement": true
@@ -948,7 +948,7 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-intake.md",
       "destination": "skills/fusion-design-core/methods-intake.md",
       "source_sha256": "67ed9b5ddd8f4ffe33baff7707cd032fb463ef7b15e8d7054b8cd20badc90e93",
-      "sha256": "f3ce0516e53baf7bb6790066b52461fd55fd9322ef913ab045f6a4ece9106c11",
+      "sha256": "e00643b8feae622beaa6ef1dc31a1f05d269f2936ab4ff321bfd2f9cffccd73d",
       "adapted": true,
       "integration_sha256": "67282fcdc93212e83ba8ac34a5974644ed55f30baec8bcb6a3b46828ea0101a0",
       "local_refinement": true
@@ -964,8 +964,10 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-motion.md",
       "destination": "skills/fusion-design-core/methods-motion.md",
       "source_sha256": "96c48201eef249f8add6c3b022e0fb4c07bac143d5bb7e8e1dee2508b3821e6a",
-      "sha256": "96c48201eef249f8add6c3b022e0fb4c07bac143d5bb7e8e1dee2508b3821e6a",
-      "adapted": false
+      "sha256": "0ec1fbfde3dd6f11d6877aa230ef7512242c669a2b65d9b25248ec88f672bb5d",
+      "adapted": true,
+      "integration_sha256": "96c48201eef249f8add6c3b022e0fb4c07bac143d5bb7e8e1dee2508b3821e6a",
+      "local_refinement": true
     },
     {
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-prototype.md",
@@ -1005,7 +1007,7 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-style-engine.md",
       "destination": "skills/fusion-design-core/methods-style-engine.md",
       "source_sha256": "a78a510d7192e74d6d91f95d496a734852217ccf669b636d4a74dd6fa8d0ef36",
-      "sha256": "49697a0883f10a1eaf466f166e9afd0fe620d066bebe3a29ed478f3ebda3a98d",
+      "sha256": "3064611311cad2bd110e0ed21c08e7302dd8e971fd700ad5da5bba932112e923",
       "adapted": true,
       "integration_sha256": "a78a510d7192e74d6d91f95d496a734852217ccf669b636d4a74dd6fa8d0ef36",
       "local_refinement": true
@@ -1014,7 +1016,7 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-tool-routing.md",
       "destination": "skills/fusion-design-core/methods-tool-routing.md",
       "source_sha256": "4738da3fa47aa8a837b0c9fe16c754892e77722a273db2857f0847dbc8e71864",
-      "sha256": "9485b26fc9422dcc3d3c9d69b2f53264df2f1ac7701acb4cae100b8bca682911",
+      "sha256": "3b13e84065a9f5c9b5b7d2e2e929adc882d8feca31cb79321a8851b7d6ca0bc5",
       "adapted": true,
       "integration_sha256": "e6aa41a5daf6121c203dc469403bbd067479fc6ede0a516968ff691faeeb78db",
       "local_refinement": true
@@ -1023,7 +1025,7 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-ui.md",
       "destination": "skills/fusion-design-core/methods-ui.md",
       "source_sha256": "a439365430b4e07351f6ede017ec08052a866b220fc886d68a5df2ac222f5134",
-      "sha256": "db9f661700040a6c0793ec16b9aee1b96443af05b5ebc022fc941f55d8304acf",
+      "sha256": "2de636861a3498c6bda32c95902fd1e01c38f5287a4f82cdde437740cf75afe0",
       "adapted": true,
       "integration_sha256": "14ee8b37155a7dbdb32fc2e2139eea7d0d86eccd8f0617930998e69518438eb2",
       "local_refinement": true
@@ -1032,7 +1034,7 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-visual.md",
       "destination": "skills/fusion-design-core/methods-visual.md",
       "source_sha256": "b44611081d536ab13bb32bc57ed54b47c972ac0b9d3080de45900c652e730f53",
-      "sha256": "dc3a4f31c6846545c3552dc960609f86badf29ecb189149ff125297bb34fcb51",
+      "sha256": "79fbe4a41d7f60847ca0763490226cc4cd568e8557821c14bd263207f489cc3a",
       "adapted": true,
       "integration_sha256": "60841921978d3e930e83b5a016ac6f9b4dae0a82b43723968feebca1bb55bd78",
       "local_refinement": true
@@ -3088,7 +3090,7 @@
       "source": null,
       "destination": "skills/fusion-design-core/methods-deliverable-routing.md",
       "source_sha256": null,
-      "sha256": "5b47f3fce2d752b5216870d6f584e5a0648933d52bd13f00e1cf84aa67236d9f",
+      "sha256": "c2afbd49ebc0c1145d4bcae67e1417e4a75aa5cade9214d03c36b216102599d7",
       "adapted": true,
       "origin": "local-extension"
     }
@@ -3096,7 +3098,7 @@
   "local_refinements": {
     "date": "2026-11-05",
     "integration_base_commit": "1ed6071e8fc40db8a613c979de21ebe1af8305fa",
-    "scope": "Approved design judgment and desk research, creative concepts, 15-type deliverable routing, isolated visual samples, representative-page and final confirmation. Preserve product-first intake, existing Figma execution and all scripts/assets.",
+    "scope": "Approved design workflow refinements and tool-route recommendations with explicit human confirmation before production, including samples. Preserve prior explicit choices, read-only preparation, existing master assets and scope; all scripts/assets remain intact.",
     "changed_imported_files": [
       "skills/fusion-design-core/SKILL.md",
       "skills/fusion-design-core/WORKFLOW-REVIEW.md",
@@ -3107,6 +3109,7 @@
       "skills/fusion-design-core/methods-dispatch.md",
       "skills/fusion-design-core/methods-execution.md",
       "skills/fusion-design-core/methods-intake.md",
+      "skills/fusion-design-core/methods-motion.md",
       "skills/fusion-design-core/methods-research.md",
       "skills/fusion-design-core/methods-resource-routing.md",
       "skills/fusion-design-core/methods-routing.md",
@@ -3120,6 +3123,6 @@
       "skills/fusion-design-core/methods-creative-concept.md",
       "skills/fusion-design-core/methods-deliverable-routing.md"
     ],
-    "rebuild_note": "Import scripts reproduce the integrated upstream baseline. Local refinements are maintained by Git; preserve and reapply them when reimporting the upstream snapshot."
+    "rebuild_note": "Import scripts reproduce the integrated upstream baseline. Preserve and reapply Git-maintained local refinements when reimporting."
   }
 }

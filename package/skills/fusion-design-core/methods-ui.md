@@ -1,7 +1,7 @@
 # UI 方法库
 
 UI 方法只解决已知职责内的信息表达与操作表现，不能替代未解决的流程或交互决定。
-正式 UI 方案按 [methods-tool-routing.md](methods-tool-routing.md) `TR3` 与 [methods-visual.md](methods-visual.md) `VT` 分流。制作载体由同包 [Figma执行工作流](../fusion-figma-workflow/SKILL.md)恢复或收集：已有本产品Figma主稿或已选Figma时，先在Figma设计、精修，再还原Demo；B端或只换文案也不自动改变此路线。明确选择本地代码时复用组件与配方。UI与界面视觉组成同一分支，不固定另开视觉阶段。
+正式 UI 方案的工具选择与人工确认统一按 [methods-tool-routing.md](methods-tool-routing.md) TR0；先具备流程、架构、内容和交互依据，再根据成果、已有稿与实际能力推荐路线。用户明确确认后，Figma 路线交由同包执行工作流，代码路线在目标项目实现；已有有效选择直接复用。UI 与界面视觉属于同一分支，工具不决定专业设计步骤。
 
 ## U0 补充前置判断
 
@@ -32,7 +32,7 @@ UI 方法只解决已知职责内的信息表达与操作表现，不能替代�
 | 国际化 SaaS / 现代 AI 工具后台 | `shadcn/ui`（Radix + Tailwind） | 极简黑白灰 + 1px 细边、现代克制、无传统后台沉重感 | 出海 SaaS、AI 工作台、开发者后台、现代轻量 B2B 产品 |
 | 海外传统企业 / 跨端系统 | `MUI` / `Fluent UI` | 遵循 Google 或桌面办公习惯，高密度数据控件成熟 | 海外企业内部系统、桌面端重度专业软件 |
 
-     - **不问用户，Agent 直接定这 3 件事后开工**：① 组件库：项目已有技术栈或组件库就沿用，否则按上表的生态与场景选；② 主色：已知品牌色就替换，否则用组件库默认色并标注“可替换为品牌色”；③ 密度：表格、审批、数据密集型页面用紧凑 Compact，其余用标准 Default。交付时一句话说明这三项选择。组件库的主题从 `style-presets/` 直接取，不手调：Ant Design 用 `ant-design`，Material 用 `material-3`，shadcn 用「企业中后台」或「极简 SaaS」风格族里的主题。应用方式见 [methods-style-engine.md](methods-style-engine.md) `DS3`。
+     - **制作路线已按 TR0 确认后，Agent 在该路线内决定这 3 项专业参数，不逐项询问**：① 组件库：项目已有技术栈或组件库就沿用，否则按上表的生态与场景选；② 主色：已知品牌色就替换，否则用组件库默认色并标注“可替换为品牌色”；③ 密度：表格、审批、数据密集型页面用紧凑 Compact，其余用标准 Default。交付时一句话说明这三项选择。组件库的主题从 `style-presets/` 直接取，不手调：Ant Design 用 `ant-design`，Material 用 `material-3`，shadcn 用「企业中后台」或「极简 SaaS」风格族里的主题。应用方式见 [methods-style-engine.md](methods-style-engine.md) `DS3`。
    - **C 端产品 / 游戏 UI（或需要强品牌差异化的产品官网 / 游戏化活动页 / B 端 C 化体验产品）** → 走 **路线 3：0→1 风格库（国际化 8 种 / 国内 8 种 / 游戏 10 种 / 通用质感 6 种）与 6 维视觉决策漏斗**（见 [methods-visual.md](methods-visual.md) `V0`）。风格选定后，按 [methods-style-engine.md](methods-style-engine.md) 取出整套预设和绑定的线上资源，批量应用并验收跨页一致性。
 
 **产出**：UI 落地方案分流结论（路线 1 / 路线 2 / 路线 3）及绑定的组件库或风格决策入口。  
