@@ -59,7 +59,7 @@
 
 - **成果**：活动落地页、专题、打卡、收集或其他参与体验，通常是多类型组合。
 - **必要路径**：对象、触达场景和活动目标 → 真实利益、资格与规则 → 参与流程及机制 → 创意概念与表达 → 信息架构、内容主次和具体交互 → 主视觉与界面制作 → 参与/完成/再次进入等适用状态核验。
-- **已有方法**：[R8](methods-research.md)、[CT / BR](methods-context.md)、[F](methods-flow.md) / [I](methods-interaction.md)、[创意概念 CC](methods-creative-concept.md)，按实际组成关联 T03/T04/T05/T07/T12/T13。不因交付 HTML 就归为普通界面美化，也不因营销就默认需要抽奖或游戏化。
+- **已有方法**：[R8](methods-research.md)、[CT / BR](methods-context.md)、[F](methods-flow.md) / [I](methods-interaction.md)、[创意概念 CC](methods-creative-concept.md)，F4 与 CC2 共用同一概念记录，主题与行为部分按需补足，后续流程、架构、内容、交互、视觉仍分别设计和检查；按实际组成关联 T03/T04/T05/T07/T12/T13。不因交付 HTML 就归为普通界面美化，也不因营销就默认需要抽奖或游戏化。
 - **验收重点**：活动能被理解、动作与概念一致、利益与规则真实，完成反馈及后续参与理由有业务依据；原代表页与整套确认仍执行。
 
 ## T07 平面传播与运营物料

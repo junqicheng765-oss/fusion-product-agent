@@ -8,7 +8,7 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/SKILL.md",
       "destination": "skills/fusion-design-core/SKILL.md",
       "source_sha256": "d9f64406baf6b29bc2777891ac23d2094fd7fc32bc6f51569708e471e0f92288",
-      "sha256": "16f55df5a4f3e4fe6cecb1ab6fc969cf4b641f3439e723bc2bbb7a18db7c9adb",
+      "sha256": "c98c9d831ede19de03cb465e77fee7f7f0331c2f664da6b48ba9110527b4eb60",
       "adapted": true,
       "integration_sha256": "eb40f97d5402f8b7f8cabac4d4b3fcd47033214ab0856a88ca5d4a6dc7d7fac4",
       "local_refinement": true
@@ -17,7 +17,7 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/WORKFLOW-REVIEW.md",
       "destination": "skills/fusion-design-core/WORKFLOW-REVIEW.md",
       "source_sha256": "1214dca3560df9204780a1608d77f05c1f3d5653ae5982cddba572a87776a764",
-      "sha256": "fb57fcb5cec6b98cfa577b3fb3e36173d9d35b7ec64a7ae1835c99db10aed320",
+      "sha256": "ea5fa9167b85d2473ad0956526bcb2bf98c07473b624b65f7abec9b6eb46adde",
       "adapted": true,
       "integration_sha256": "743cd0c19b0caf5fa93a36f670ffa57d9db2d4ff03981925ccd13f819e3efd3d",
       "local_refinement": true
@@ -916,7 +916,7 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-dispatch.md",
       "destination": "skills/fusion-design-core/methods-dispatch.md",
       "source_sha256": "ff7f8b6542d8c3fab94922b1ba8a7b8e33aa095c213d2053b0a6fc2823d9a496",
-      "sha256": "dbf3568ea47761addec526c983dff9eda46eafc1aaf36a528df58569737dd6ac",
+      "sha256": "89076a41de623cb772350e123aa3337d342edb26d00a4909075b58ccad2ade05",
       "adapted": true,
       "integration_sha256": "ff7f8b6542d8c3fab94922b1ba8a7b8e33aa095c213d2053b0a6fc2823d9a496",
       "local_refinement": true
@@ -925,7 +925,7 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-execution.md",
       "destination": "skills/fusion-design-core/methods-execution.md",
       "source_sha256": "66cb87a693b48a9f26e388d3e2efce4bef4c8ab686484f2e8915006c5877382e",
-      "sha256": "e1dc6bd242dd96daf922211464332618074bdfca292276b9fbcdd1b78ab3e8dc",
+      "sha256": "d3f92164c1130d60f314cb5ca18173651ec648d7f7d867ef81fc52d64e31a38c",
       "adapted": true,
       "integration_sha256": "66cb87a693b48a9f26e388d3e2efce4bef4c8ab686484f2e8915006c5877382e",
       "local_refinement": true
@@ -934,8 +934,10 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-flow.md",
       "destination": "skills/fusion-design-core/methods-flow.md",
       "source_sha256": "662c6a0a4715556393e204f5d649a548e4e887e5f44c8cc34ced016db26887ee",
-      "sha256": "662c6a0a4715556393e204f5d649a548e4e887e5f44c8cc34ced016db26887ee",
-      "adapted": false
+      "sha256": "7d2f8125e3b407cf93e576962378c7e0711c83d8ef36a0466e8aae70d39c1aa9",
+      "adapted": true,
+      "integration_sha256": "662c6a0a4715556393e204f5d649a548e4e887e5f44c8cc34ced016db26887ee",
+      "local_refinement": true
     },
     {
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-image.md",
@@ -998,7 +1000,7 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-routing.md",
       "destination": "skills/fusion-design-core/methods-routing.md",
       "source_sha256": "3793fff353db5ff9cafc98cca255a6838b72efcd27f7ddd43aa709592eebbc30",
-      "sha256": "028afc9674711e50150224876424d0ccaa7ef9e4b9ad5adedb1dc13b5142b94f",
+      "sha256": "3ff9940f3ed0da39ee518715c3345d5dbbcb16787370ec2a1905b110dd922461",
       "adapted": true,
       "integration_sha256": "152a0c897ae125019e6decdcb51280f9444c4845dfa8e2a4d9cd9f02256acf19",
       "local_refinement": true
@@ -1666,7 +1668,7 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/templates.md",
       "destination": "skills/fusion-design-core/templates.md",
       "source_sha256": "6f3ad6f0e2848476e3f5b5872b982012816cbddf444d7aff35a109d3cb684668",
-      "sha256": "4e6deb3b24c5c50964ec60f4147398b408822b6a67bbd982cadd10ec68dbf381",
+      "sha256": "25a0dc8b5a5c0a97032b6006a5de96ce42f107acc080f23c68a18ddf354593d0",
       "adapted": true,
       "integration_sha256": "6f3ad6f0e2848476e3f5b5872b982012816cbddf444d7aff35a109d3cb684668",
       "local_refinement": true
@@ -3082,7 +3084,7 @@
       "source": null,
       "destination": "skills/fusion-design-core/methods-creative-concept.md",
       "source_sha256": null,
-      "sha256": "2d3fbabaff55c6a5c72e0f711e97f65ae283b16f0d7d86e653f3b93e26f52875",
+      "sha256": "df3a8ffed3a8be1e7420809c36c71759990da813586ae179f5359b4f42e64c85",
       "adapted": true,
       "origin": "local-extension"
     },
@@ -3090,7 +3092,7 @@
       "source": null,
       "destination": "skills/fusion-design-core/methods-deliverable-routing.md",
       "source_sha256": null,
-      "sha256": "c2afbd49ebc0c1145d4bcae67e1417e4a75aa5cade9214d03c36b216102599d7",
+      "sha256": "b83dd80885015c2f1b868c60f9df788befd8c744f0f6a128ccbbac34d9c6bfc2",
       "adapted": true,
       "origin": "local-extension"
     }
@@ -3098,7 +3100,7 @@
   "local_refinements": {
     "date": "2026-11-05",
     "integration_base_commit": "1ed6071e8fc40db8a613c979de21ebe1af8305fa",
-    "scope": "Approved design workflow refinements and tool-route recommendations with explicit human confirmation before production, including samples. Preserve prior explicit choices, read-only preparation, existing master assets and scope; all scripts/assets remain intact.",
+    "scope": "Approved design judgment, desk research, 15-type deliverable routing, shared concept exploration/selection without fixed candidate quotas, explicit human tool-route confirmation, isolated visual samples, representative-page and final review. Preserve distinct flow, architecture, content, interaction and visual design; all scripts/assets intact.",
     "changed_imported_files": [
       "skills/fusion-design-core/SKILL.md",
       "skills/fusion-design-core/WORKFLOW-REVIEW.md",
@@ -3108,6 +3110,7 @@
       "skills/fusion-design-core/methods-context.md",
       "skills/fusion-design-core/methods-dispatch.md",
       "skills/fusion-design-core/methods-execution.md",
+      "skills/fusion-design-core/methods-flow.md",
       "skills/fusion-design-core/methods-intake.md",
       "skills/fusion-design-core/methods-motion.md",
       "skills/fusion-design-core/methods-research.md",
