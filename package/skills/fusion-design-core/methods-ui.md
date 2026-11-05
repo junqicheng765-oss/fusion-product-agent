@@ -3,6 +3,10 @@
 UI 方法只解决已知职责内的信息表达与操作表现，不能替代未解决的流程或交互决定。
 正式 UI 方案按 [methods-tool-routing.md](methods-tool-routing.md) `TR3` 与 [methods-visual.md](methods-visual.md) `VT` 分流。制作载体由同包 [Figma执行工作流](../fusion-figma-workflow/SKILL.md)恢复或收集：已有本产品Figma主稿或已选Figma时，先在Figma设计、精修，再还原Demo；B端或只换文案也不自动改变此路线。明确选择本地代码时复用组件与配方。UI与界面视觉组成同一分支，不固定另开视觉阶段。
 
+## U0 补充前置判断
+
+执行下方分流前，读取 [methods-creative-concept.md](methods-creative-concept.md) CC1–CC2：路线 1 的“现成页面”须是本次要求沿用的已批准基线，待优化 Demo 的样式不自动视为规范；仅有 Demo 时先核对可复用约束，仍按原工作模式处理，不自动重开全产品。营销/品牌/游戏参与等需要概念的任务，先在原流程中形成概念与交互的对应，再选风格库与组件。原确认节点不变。
+
 ## U0 UI 落地前置分流（存量延展 / 纯 B 端公开库快搭 / C 端 0→1 视觉决策）
 
 **触发问题**：页面职责、信息层级（U1–U3）与所用组件类型（U4）明确后，采用哪条路径把界面快速、准确地搭出来？  

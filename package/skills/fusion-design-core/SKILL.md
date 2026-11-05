@@ -1,11 +1,12 @@
 ---
 name: fusion-design-core
 description: >-
-  Product/UI/visual design stage within Fusion Product Agent. Takes a product
-  brief with traceable goals, scope and decisions or explicit delegation; researches
-  interaction, selects visual direction, creates assets and runs design review (QA0).
-  For vague new-product ideas, restore the product intake before making designs or
-  demos. This capability does not replace the product workflow or decide user intent.
+  Design stage within Fusion Product Agent, taking traceable product goals,
+  scope and decisions or explicit delegation. Understands users and tasks,
+  checks direction, chooses research depth and methods by evidence and impact,
+  designs across deliverable types, and reviews actual results before staged
+  human confirmation. Vague product goals return to product intake; this
+  capability does not replace the product workflow or decide user intent.
 ---
 
 # 设计师完整工作流（Design Thinking OS）
@@ -24,27 +25,46 @@ description: >-
 
 本环节沿用[产品主线六阶段与设计四步骤](../fusion-product-agent/references/progress-navigation.md)。每次成果、修订或提问回复，最终首行保留产品第几/6阶段，设计中附设计第几/4步、当前模块及真实状态；结尾交代下一动作或用户所需选择。四步骤对应下文的研究/流程交互、视觉决策、制作、终审，不按回复次数推进。向产品主入口回传同样的信息，不因要求自然语言、隐藏方法代号而省略导航，也不增加人工审批。
 
-## ⛔ 开工与分步硬门禁（严禁跳步铁律——未汇报完【用研+竞品+流程+交互】并由用户选定风格前，严禁提前定风格或调制作工具！）
+## 任务分类与专业设计路径
 
-1. **严禁一上来就确定视觉风格！严禁跳过前置推导直接跑 `style_preset.py` 或调 Figma！**  
-   - 收到 0→1 需求（如“给我做一个掼蛋 / 做一个行程规划 App”）时，**绝不允许在还没向用户展示【1. 用户研究、2. 三类竞品调研、3. 任务流程、4. 具体交互控件设计】之前，就擅自宣布“视觉采用某某风格（如祖母绿台呢胡桃木）”或直接运行 `style_preset.py show`！**
-   - 哪怕用户点了“先做高保真设计稿”，那也只是确认了最终交付物形态，**绝不代表允许跳过用研、竞品、流程和交互设计直接定视觉风格！**
+接单先读 [15 类任务与必要环节](methods-deliverable-routing.md) 的总则，再读取匹配条目。AI 根据目标识别主类与组合类型，分别记录工作方式、交付载体及本轮终点，不让使用者选内部编号。任务类型决定哪些专业判断必须成立，RT0 决定各部分深度与具体方法，工具在此之后选择。
 
-2. **产品启动条件已满足后的0→1设计需求，必须严格分【两轮】推进（第一轮做完前置推导+请用户选风格，第二轮再调风格/组件/素材库制作）**：
-   - **【第一轮：完成并向用户汇报「用研 → 三类竞品 → 流程 → 交互方案」+ 提供 2–3 个视觉风格选项让用户挑】**
-     1. 先读取 [methods-research.md](methods-research.md)、[methods-competitive.md](methods-competitive.md)、[methods-flow.md](methods-flow.md)、[methods-interaction.md](methods-interaction.md)、[methods-ui.md](methods-ui.md)；
-     2. 搜索并下载 3–5 张同类成熟产品的**真实界面截图**（排除宣传海报，存入 `<任务目录>/refs/`）；
-     3. **在对话回复中向用户完整汇报**：
-        - **① 用户研究与场景痛点（`R1` + `CT`）**：服务什么人群、在什么设备与场景下使用、核心痛点是什么；
-        - **② 三类竞品调研结论（`CMP1` 垂类竞品 / `CMP2` 同类操作竞品 / `CMP3` 同类用户竞品）**：拆解刚看的真实竞品界面是怎么组织模块与交互的、各自优缺点是什么、我们大概想做成什么样；
-        - **③ 流程与具体交互形式设计（`F1–F3` + `I1–I6` + `U4`）**：明确页面职责（`I3`）、功能模块架构、对象尺寸（`U7`），以及**每个核心操作具体采用什么交互控件（`U4`：如下拉菜单、Picker、底部弹窗、常驻胶囊条还是分列点选）**；
-     4. **在汇报末尾调用提问工具（`request_user_input_async` / `AskQuestion`，不同维度分成独立单选题，最多 3 题）征求用户意见**：
-        - **问题 1（视觉风格方向选择 `V0`）**：根据前面的竞品与定位，给出 **2–3 个差异化的整体视觉风格方向**（用大白话讲清各自要传达的意思和视觉手段，首项标 `(Recommended)`），让用户选择；
-        - **问题 2（人物头像画风选择 `V5`，当界面包含玩家/用户头像时必问）**：询问用户偏好哪种头像画风——例如 **① 3D 潮玩 / Q 版卡通头像**、**② 国风 / 精致插画头像**、还是 **③ 写实人物头像**（避免未经询问直接生出写实大叔或违和泥人）；
-        - **问题 3（交互方案与交付载体确认）**：确认上述交互方案与设备场景是否合理，以及直接在浏览器预览出高保真可交互组件稿，还是先在 Figma 完成设计后还原 Demo。
-     5. **🛑 第一轮硬停止点**：发出上述汇报和提问后，**本轮立即停止等待用户回复！在用户选定视觉风格之前，严禁运行 `style_preset.py`、严禁运行 `component_recipe.py`、严禁运行 `iconscout.py`、严禁调 Figma 或写代码！**
+已有流程、信息架构、内容和交互须核对本次适用性，复核通过才复用；只改局部则只回查受影响依赖。界面任务按流程/复核 → 信息架构与页面职责 → 内容表达与层级 → 具体交互 → 视觉推进；平面传播按信息主次 → 表达与构图 → 风格制作推进；其他类型走对应条目。各环节可迭代回查，不能接单后直接套 UI 或生图。
 
-   - **【第二轮（用户选定风格并确认交互后）：调取风格/组件/IconScout 库落盘 → 写出 `design-decisions.md` → 制作与总监终审】**
+下文页面、控件、头像及 UI 调库门禁仅在对应界面/资产分支适用。纯研究、流程、信息架构或其他非界面委托不被要求先选 UI 风格；专业路径不新增工具权限，不豁免其类型原有确认与验收。目录中的专项缺口须如实处理，不因列入范围就宣称全部能力已齐备。
+
+## 补充入口：任务性质与创意概念（嵌入原流程，不替代原步骤）
+
+涉及新设计判断或“优化现有页面”时，先读 [methods-creative-concept.md](methods-creative-concept.md)。接单时执行 CC1，区分业务目标、设计性质、技术载体与已批准约束；研究/竞品后、风格和组件制作前，按 CC2–CC4 判断并推导必要的创意概念；QA0 加入 CC5 的适用检查。原有用研、三类竞品、流程、交互、风格确认、调库、工具路由和三审全部保留，不新增固定审批轮次。
+
+下文“有现成页面就延展”“排除宣传海报”“组件先行”等规则按职责适用：存量延展须有已批准的适用基线；真实界面仍用于交互取证，海报/包装可另作表达与机制参考；组件实现服务已推导的概念，不能替代概念。普通工具页、明确局部修饰和严格还原按补充方法的跳过条件执行，不强制创意包装。
+
+## 多页面制作与人工确认门禁（在原有流程内执行）
+
+涉及多个页面的设计或视觉优化时，执行 [methods-close.md](methods-close.md)「0.4 代表页与最终人工确认」：先制作一个完整代表页 → Agent 实际看图、运行原 QA0（含审美并排对比）、修改并重审 → 展示准确版本并等待用户明确确认 → 才能继续其余页面 → 全部完成后再次运行 QA0 与跨页检查 → 请用户最终确认。选定风格不等于确认代表页，代表页确认不等于整套验收；沉默不视为确认。
+
+上文“不新增固定审批轮次”仅指创意概念不另起审批，不豁免本条明确要求的代表页和最终确认。单页任务省略代表页扩展门禁，仍须展示前自审与完成后的人工确认。原前置研究、交互、风格确认与调库要求不变。
+
+## 开工与分步门禁（先做设计判断，再确认方向与制作）
+
+1. **产品启动条件成立后，理解使用者与任务，再判断设计重点。**
+   - 读取 [methods-intake.md](methods-intake.md)、[methods-context.md](methods-context.md)，并按 [methods-routing.md](methods-routing.md)「RT0 设计判断与研究深度」形成当前判断：谁在什么情境进入页面、要完成什么、已有何种经验与预期、怎样算成功。
+   - 从方向、体验和表现三个层面审视请求，区分症状与可能的主要障碍；可提出更上游的解释，但不因“资深判断”擅改业务目标或授权范围。
+   - AI 根据各问题的影响、证据可靠性、行业模式成熟度、试错代价和补证成本，分别决定思考深度，不要求人先选深度，也不把所有维度一律做浅或做深。
+
+2. **先完成必要推导与原有方向确认，再进入正式制作；研究不是固定问答轮次。**
+   - **【前置判断与汇报】**：
+     1. 保留完整方法库，根据待回答的问题选择并实际执行研究、竞品、流程和交互方法；已有适用结论直接复用。用户、情境与任务理解每次都要成立，但不必每次重做访谈或完整研究。
+     2. 桌面调研走 [methods-research.md](methods-research.md) `R0.1`；三类竞品分别按问题判断必要性，需要时依照 [methods-competitive.md](methods-competitive.md) 和 `RR` 取真实样本。范围与样本量由待回答问题、覆盖和新增信息是否改变判断决定，不为凑截图数量调用方法。用于后续 QA0 并排审美验收的参考要求仍按原验收规则执行。
+     3. 简洁汇报：使用者/任务/预期的理解及依据、当前主要问题与备选解释、研究和方法的选择理由、实际结论及其设计影响、待决事项。事实、推断和假设分开；不把思考过程或已批准材料重复写成长报告。
+     4. 无法取得真实访谈或观察证据时，先做可执行的桌面调研并检查已有材料；影响方向的关键未知转为给使用者的问题，说明为何重要、不同答案的影响与推荐。区分请求补充事实、提供真实用户材料和作业务取舍；人的决定不冒充用户验证。必要答案未到时暂停依赖部分，独立工作继续。
+     5. 按任务类型完成必要前置设计/复核后，再沿用原方向确认节点；需要选择视觉方向时，先按 DS1 制作独立样张、自审并展示：
+        - **视觉风格方向选择**：0→1 且用户未明确指定风格时，用同一代表内容的 2–3 个实际方向样张并排展示，解释差异与推荐，让用户看图选择；
+        - **人物头像画风**：包含角色/用户头像时，按原要求询问画风；
+        - **交互方案与交付载体**：确认必要的交互取舍、设备场景及本地 Demo / Figma 等交付要求。
+     6. **样张制作与正式应用分开**：必要前置未成立时不进入视觉样张制作。前置成立后，允许在独立草稿目录/设计分区内按 DS1 调用预设、组件、素材和相应制作工具，形成待选样张；不修改现有项目的正式实现、不铺开其他页面、不将候选记作已批准。展示并发出方向选择问题后停止，等明确回复再正式应用。选方向不能绕过正式代表页自审、人工确认和最终确认。
+
+   - **【制作（用户选定风格并确认交互后）：调取风格/组件/IconScout 库落盘 → 写出 `design-decisions.md` → 制作与总监终审】**
      - 收到用户选定的风格方向后，必须依次真实执行：
        1. `python3 scripts/style_preset.py show <用户选定的风格编号>` 与 `color_intelligence.py contrast`、`typography_intelligence.py pick`；
        2. 仅本地组件代码路线执行 `python3 scripts/component_recipe.py copy <本页所用全部配方ID> --to <任务目录> --preset <风格编号>`（同时生成 `recipes.css` 与 `theme.css`，完整复用配方实现，禁止只跑 `show` 看一眼就自己手画平涂色块）；
@@ -59,20 +79,19 @@ description: >-
 
 ---
 
+以下四步主要展开 T05 界面任务及包含界面的复合任务。只委托其他类型时依上方目录使用对应专业路径、原有可复用方法与适用验收，不强行进入这四步的全部 UI 制作。
+
 ## 一、设计师接单后的完整运作流程（按任务情况分流）
 
-### 第一步：核对产品输入有效后，再决定设计从哪切入（研究 → 竞品 → 流程 → 交互）
+### 第一步：看需求给到了什么程度，决定从哪切入（研究 → 竞品 → 流程 → 交互）
 
 接到任务后，先读取 [methods-intake.md](methods-intake.md)、[methods-context.md](methods-context.md)、[methods-routing.md](methods-routing.md)，判断上游给的信息处在哪个阶段：
 
-1. **如果是 0→1 的需求（只给了一句话或粗略想法，做什么功能、服务谁、做成什么样还不清楚）**  
-   **必须先走完整的前置设计推导（打开对应细则文件逐项执行，绝不能直接跳去选风格或建 Figma 文件）**：
-   - **1.1 用户研究与语境翻译**（读取 [methods-research.md](methods-research.md) `R0–R8` + [methods-context.md](methods-context.md) `CT2–CT9`）：搞清楚这是什么功能、服务什么人群、在什么真实设备与情境下使用、核心痛点与完成标准是什么，转化成具体可验收的设计原则（`BR1–BR2`）。
-   - **1.2 分类竞品调研**（读取 [methods-competitive.md](methods-competitive.md) `CMP1–CMP3` + [methods-resource-routing.md](methods-resource-routing.md) `RR`）：
-     - 先运行 `python3 scripts/asset_memory.py search <场景>` 查内部已沉淀资产；
-     - 再按问题分别调研 **垂类/行业竞品（`CMP1`）**、**跨行业同类操作竞品（`CMP2`）**、**服务同类用户的竞品（`CMP3`）**，用网页搜索查看 3–5 个同类成熟产品的**真实实机界面**（剔除宣传海报，存入任务目录 `refs/`），弄清楚行业基本盘、别人是怎么组织模块与视觉主角的、我们复用什么与规避什么。
-   - **1.3 流程设计**（读取 [methods-flow.md](methods-flow.md) `F1–F5`）：明确本轮范围表（做什么/不做什么 `F1`）、核心使用场景（`F2`）与用户主路径（`F3`）。
-   - **1.4 交互设计**（读取 [methods-interaction.md](methods-interaction.md) `I1–I6` + [methods-ui.md](methods-ui.md) `U1–U7`）：确定页面职责（`I3`）、信息分级（`U1`）、领域对象表现形态与尺寸分级（`U7`）、具体交互控件选型（`U4`）以及主行动反馈与异常出口（`I5–I6`）。
+1. **如果是 0→1 的需求（方向或使用方式尚未清楚）**
+   - 按上方设计判断入口，先识别使用者、情境、任务、已有预期及关键不确定。完成必要推导，不直接选风格或制作。
+   - **用户理解与证据**：按问题读取 [methods-research.md](methods-research.md) `R0–R8`（含 `R0.1` 桌面调研）与 [methods-context.md](methods-context.md)；功能和行业惯例可支持任务角色、基本预期的初步推断，不能自动证明具体人群属性、能力或动机。
+   - **分类竞品**：扫描 `CMP1/2/3` 各自能回答什么；需要新增取证时走 `RR`，已有适用证据直接引用，不适用则说明理由，不强制三类全部新做。
+   - **流程与交互**：保留 [methods-flow.md](methods-flow.md) `F1–F5`、[methods-interaction.md](methods-interaction.md) `I1–I6` 与 [methods-ui.md](methods-ui.md) `U1–U7`，实际调用解决本轮问题的方法。形成页面职责、主路径、信息层级、对象表现、控件及关键反馈的有效依据；完整方法库不等于每次把所有方法跑一遍。
 
 2. **如果产品经理已经给了需求文档、字段清单或“交互原型”（局部优化 / 新建单屏）**  
    - **产品经理给的“交互”往往只是一个业务预期，不是真正的交互设计。** 设计师绝不能不加思考地照着字段清单画个表单或把页面砍成半成品。
@@ -99,17 +118,17 @@ description: >-
 3. **情况 C｜C 端产品 / AI 产品 / 游戏 / 强品牌界面从 0 到 1（`U0` 路线 3 → `V0` 风格决策 + `DS` 风格引擎 + `CI` 配色 + `TY` 字体）**  
    - **必须先打开 [methods-visual.md](methods-visual.md) 查阅 `V0` 的 26 种风格预设参数字典 + 6 种通用质感**，结合第一步的用户语境与行业严肃度剪枝，思考这个 UI 要传达什么核心感受、通过什么样的视觉手段表达（例如国际化现代毛玻璃、瑞士细线网格、暗色微光便当盒、暖纸人文书刊、柔和色阶胶囊、国内生活卡片、稳重财富、东方宣纸，或游戏专用的 `GAME-01`～`GAME-10` 风格池）。
    - **风格怎么决策（`V0` Step 2 & `DS1`）**：
-     - **绝不允许在未向用户汇报完第一步（用研、三类竞品、流程、具体交互控件方案）之前就提前定死风格！**
+     - **绝不允许在未向用户汇报完第一步（使用者与任务理解、必要研究结论或复用依据、相关流程与交互方案）之前就提前定死风格！**
      - 对于任何 0→1 新需求（只要用户原话没有明确指定具体视觉风格），必须在汇报完第一步的交互方案后，结合竞品调研给出 **2–3 个差异化的视觉风格选项**（用大白话讲清各自想传达的意思和视觉手段，首项标 `(Recommended)`），调用提问工具征求用户的意见让用户选择！
-   - **用户选定风格方向后，才运行风格、配色与字体库脚本把参数配齐并写入 `design-decisions.md`**：
+   - **正式应用参数在用户选定方向后配齐并写入 `design-decisions.md`；方向样张可提前按 DS1 在隔离位置读取或导出候选参数，明确标为待确认**：
      - 风格规格：`python3 scripts/style_preset.py show <预设编号>`（导出/应用用 `export` / `apply`）；
      - 语义色与对比度：`python3 scripts/color_intelligence.py contrast --preset <预设编号>`（确保按钮与文字对比度达标，绝不搞出红底黑字）；
      - 字体与字阶：`python3 scripts/typography_intelligence.py pick --family <风格族> --langs zh,en`。
 
-> **阶段准出检查（写完 `design-decisions.md` 才能进入第三步）**：  
-> 在进入第三步调用 Figma、生图工具或写代码前，任务目录必须已经生成包含以下 4 块内容的 `design-decisions.md`，并先向用户展示核心推导结论：
+> **正式制作准出检查（方向样张按 DS1 单独记录，不冒充正式制作）**：
+> 正式制作前，任务目录必须已经生成包含以下 4 块内容的 `design-decisions.md`，并先向用户展示核心推导结论。前置已成立、方向尚未选定的样张按 [DS1](methods-style-engine.md) 在同一决定文件中记录前置依据、候选、隔离位置、自审和待确认状态，允许为样张调用制作工具；不能填成已选风格或正式准出：
 > 1. `D1–D9` 决定链状态与工作模式；
-> 2. 用户情境与痛点、三类竞品（`CMP1/2/3`）实机拆解结论、页面职责（`I3`）、功能模块清单、领域对象尺寸分级（`U7`）与具体交互控件选型（`U4`）；
+> 2. 用户/情境/任务/预期及来源、研究深度与方法选择依据、实际研究和适用竞品结论（或复用/不展开理由）、关键假设及待决项、页面职责（`I3`）、功能模块清单、领域对象尺寸分级（`U7`）与具体交互控件选型（`U4`）；
 > 3. 选定的风格预设编号、语义色 Hex、字体字阶、组件配方 ID、真实素材清单与逐组件材质要求；
 > 4. 「前置推导已完成，现在进入工具制作」。
 
@@ -176,8 +195,9 @@ description: >-
 
 | 阶段 / 职责 | 必须打开阅读的细则文件 | 内置可调用的库与脚本 |
 | :--- | :--- | :--- |
+| **任务分类与必要环节** | [methods-deliverable-routing.md](methods-deliverable-routing.md)（15 类任务、工作方式/载体区分、复核与专项缺口） | 按匹配类型调用原方法与工具 |
 | **总框架与接单分诊** | [framework.md](framework.md)、[methods-intake.md](methods-intake.md)、[methods-routing.md](methods-routing.md)、[methods-dispatch.md](methods-dispatch.md)、[methods-execution.md](methods-execution.md) | [templates.md](templates.md)、[walkthrough.md](walkthrough.md)、[WORKFLOW-REVIEW.md](WORKFLOW-REVIEW.md) |
-| **用户研究与语境翻译** | [methods-research.md](methods-research.md)（`R0–R8`）、[methods-context.md](methods-context.md)（`CT0–CT9`、`BR1–BR2`） | `python3 scripts/resource_router.py` |
+| **用户研究与语境翻译** | [methods-research.md](methods-research.md)（`R0–R8`，含 `R0.1` 桌面调研）、[methods-context.md](methods-context.md)（`CT0–CT9`、`BR1–BR2`） | `python3 scripts/resource_router.py` |
 | **分类竞品与参考智能** | [methods-competitive.md](methods-competitive.md)（`CMP1` 垂类 / `CMP2` 同类操作 / `CMP3` 同类用户）、[methods-resource-routing.md](methods-resource-routing.md)（`RR`、`AM`） | `python3 scripts/asset_memory.py search <场景>`、Mobbin MCP / 应用商店与公开实机截图 |
 | **任务流程与交互设计** | [methods-flow.md](methods-flow.md)（`F1–F5`）、[methods-interaction.md](methods-interaction.md)（`I1–I6`） | `python3 scripts/resource_router.py apg <模式>` |
 | **UI 架构、控件与对象** | [methods-ui.md](methods-ui.md)（`U0` 三路分流、`U1–U6` 层级/对齐/控件/状态/文案、`U7` 领域对象表现） | `python3 scripts/component_recipe.py`（[component-recipes/](component-recipes/registry.json) 48 个通用配方） |
@@ -190,13 +210,13 @@ description: >-
 
 ## 三、向用户提问与沟通的纪律
 
-1. **产品目标与范围已有有效依据后，0→1设计第一轮怎么汇报与提问（先给出用研/竞品/交互方案，再请用户选视觉风格与确认交互）**：
-   - 如“给我做一个掼蛋”尚无产品目标和范围，先回产品主线给候选方向、推荐和关键问题；不能直接套用下面的风格问题。产品输入足够后，**严禁什么都不分析就只抛空问题，更严禁直接宣布视觉风格！**
-   - 第一轮必须先完成并向用户汇报 **【① 用户与场景痛点、② 三类竞品调研拆解、③ 任务流程与具体交互控件方案】**，然后在同一次回复末尾用提问工具弹出 **2–3 道独立单选题**：
+1. **产品目标与范围已有有效依据后，0→1 设计怎样汇报与确认方向**：
+   - 产品目标或核心范围未校准时先回产品主线，给出有依据的推荐与关键问题；只有名称或自行推导的候选不算有效输入。输入充分后再开展设计判断和方向样张，不重做已有研究，不直接宣布风格。
+   - 先完成并简洁汇报 **【① 使用者、任务与预期及依据，② 必要研究/竞品结论或复用依据，③ 相关流程与具体交互方案】**；关键事实或业务取舍未清时先提问，不虚构结论。达到原方向确认条件后，用提问工具提出下列适用问题，最多 3 道：
      - **第 1 题（选定整体视觉风格方向）**：提供 2–3 个适合该产品的差异化视觉风格选项（用大白话讲清各自想表达的感受与视觉手段，首项标 `(Recommended)`），让用户选择；
      - **第 2 题（选定人物头像画风，当界面有玩家/用户头像时必问）**：让用户选择想要 **3D 潮玩/Q 版卡通头像**、**国风/精致插画头像**、还是 **写实人物头像**；
      - **第 3 题（确认交互方案与交付载体）**：确认设备场景与交互控件方案，以及直接出浏览器高保真组件预览/可交互 Demo 还是先在 Figma 完成设计后还原 Demo。
-   - **发出提问后立即停止本轮，等用户回复选定视觉风格后，第二轮再跑 `style_preset.py`、`component_recipe.py`、`iconscout.py` 调库制作！**
+   - **先完成专业前置，再制作并自审方向样张供人看图；发出方向选择问题后停止等待。收到明确选择后才正式应用风格，样张选择不等于正式代表页批准。**
 2. **其他情况什么时候征求用户意见**：
    - **做海报 / KV 走 AI 生图时**：先搜 2–3 张不同感觉的风格参考图并排给用户看，让用户挑 1 张最想要的感觉拿去垫图；
    - **海报交付静态版后且场景支持动图时**：问用户要不要顺手做一版微动态升级版；
