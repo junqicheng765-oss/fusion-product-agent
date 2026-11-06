@@ -33,9 +33,11 @@ description: >-
 
 下文页面、控件、头像及 UI 调库门禁仅在对应界面/资产分支适用。只委托研究、流程、信息架构、图表、图标或其他局部成果时，到该范围结束，不补做上级项目或强制先选 UI 风格；专业路径不新增工具权限，不豁免适用的原有确认与验收。目录中的专项缺口须如实处理，不因列入范围就宣称全部能力已齐备。
 
+本轮主成果是产品界面与网站，或复合项目中包含界面设计时，读取 [产品界面与网站详细流程](workflow-product-interface.md)，只应用到该界面范围。九个工作环节接回下文原四步骤和 N0–N5，不新增全局阶段或逐步审批；先判断哪些新做、修改、复核或复用，每个适用环节按所选方法的完成证据自审，再交给下游。其他成果仍按目录走自己的路径。
+
 ## 工具路线先推荐、确认后执行
 
-工具选择与确认的唯一依据为 [TR0](methods-tool-routing.md)。专业前置完成后，先说明“根据成果与现状，推荐哪条工具路线、为什么、改哪里、交付什么、实际能力和必要取舍”，请人决定再制作；方向样张也在此范围内。只读检查可先做，已有覆盖本轮的明确路线直接引用，不对每个步骤重问。后文工具、组件和素材细则均为已确认路线内的执行方法，不能作为自动选路或绕过确认的理由。
+工具选择与确认的唯一依据为 [TR0](methods-tool-routing.md)。该制作动作的必要专业前置完成后，先说明“根据成果与现状，推荐哪条工具路线、为什么、改哪里、交付什么、实际能力和必要取舍”，请人决定再制作；测试原型、方向样张和正式页面均在此范围内。工具确认不固定等到全部交互或视觉完成：前期确需测试载体时，先明确验证问题、满足 PROTO1 最低输入，再确认对应原型路线后制作。只读检查可先做，已有覆盖本轮的明确路线直接引用，不对每个步骤重问。后文工具、组件和素材细则均为已确认路线内的执行方法，不能作为自动选路或绕过确认的理由。
 
 ## 补充入口：任务性质与创意概念（嵌入原流程，不替代原步骤）
 
@@ -78,7 +80,7 @@ description: >-
    - **砍掉 4 项浪费时间的无用功（不要再白跑）**：
      1. **0→1 新项目且无 `.design-memory/index.json` 时，不跑 `asset_memory.py search`**（空库必未命中）；
      2. **0→1 新建的空白 Figma 文件，严禁调用 `figma_search_design_system` / `figma_get_libraries`**（空白文件只会搜出无关的 Material 普通内容卡片，语义完全不适用）；
-     3. **目标是高保真设计稿或可交互 Demo 时，严禁先在 Figma 里用 `use_figma` 画一遍“灰框结构稿”再去填色**；
+     3. **目标是高保真设计稿或可交互 Demo 时，不默认先画灰框，也不得给灰框填色充当正式高保真。确有待验证判断时，可按 PROTO1/TR0 在满足输入并确认对应制作路线后制作独立测试原型；已有有效原型优先复用，测试原型与正式 UI 分开**；
      4. **游戏/UI 表面纹理（桌布、木纹、金属边框）不跑 `real_image.py`**。
 
 ---
@@ -198,6 +200,7 @@ description: >-
 | 阶段 / 职责 | 必须打开阅读的细则文件 | 内置可调用的库与脚本 |
 | :--- | :--- | :--- |
 | **成果、环节与子任务** | [methods-deliverable-routing.md](methods-deliverable-routing.md)（主成果路径、独立环节、专项子成果、复核与专项缺口） | 按实际范围与依赖调用原方法、资源和工具 |
+| **产品界面与网站详细流程** | [workflow-product-interface.md](workflow-product-interface.md)（仅界面主成果或复合项目的界面部分） | 按各环节的问题接回现有方法、资源、产出和自审 |
 | **总框架与接单分诊** | [framework.md](framework.md)、[methods-intake.md](methods-intake.md)、[methods-routing.md](methods-routing.md)、[methods-dispatch.md](methods-dispatch.md)、[methods-execution.md](methods-execution.md) | [templates.md](templates.md)、[walkthrough.md](walkthrough.md)、[WORKFLOW-REVIEW.md](WORKFLOW-REVIEW.md) |
 | **用户研究与语境翻译** | [methods-research.md](methods-research.md)（`R0–R8`，含 `R0.1` 桌面调研）、[methods-context.md](methods-context.md)（`CT0–CT9`、`BR1–BR2`） | `python3 scripts/resource_router.py` |
 | **分类竞品与参考智能** | [methods-competitive.md](methods-competitive.md)（`CMP1` 垂类 / `CMP2` 同类操作 / `CMP3` 同类用户）、[methods-resource-routing.md](methods-resource-routing.md)（`RR`、`AM`） | `python3 scripts/asset_memory.py search <场景>`、Mobbin MCP / 应用商店与公开实机截图 |

@@ -75,7 +75,9 @@ class ProductStageAdapterTests(unittest.TestCase):
         self.assertEqual(changed, set(local['changed_imported_files']))
         additions = {path for path, entry in INVENTORY.items() if entry.get('origin') == 'local-extension'}
         self.assertEqual(additions, set(local['added_files']))
-        self.assertEqual(additions, {DESIGN + 'methods-creative-concept.md', DESIGN + 'methods-deliverable-routing.md'})
+        self.assertEqual(additions, {DESIGN + 'methods-creative-concept.md',
+                                     DESIGN + 'methods-deliverable-routing.md',
+                                     DESIGN + 'workflow-product-interface.md'})
         for path in additions:
             with self.subTest(path=path):
                 self.assertIsNone(INVENTORY[path]['source'])
