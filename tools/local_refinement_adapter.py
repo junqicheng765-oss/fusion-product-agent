@@ -1,4 +1,4 @@
-"""Replay reviewed PR refinements after the deterministic rc.6 import adapters."""
+"""Replay reviewed PR refinements and scoped local fixes after rc.6 adapters."""
 import hashlib
 import json
 from pathlib import Path
@@ -64,7 +64,7 @@ def extensions(prefix):
 def provenance(prefix):
     data = inventory()
     return dict(date='2026-11-07', pr=data['pr'], pr_head=data['pr_head'],
-                integration_baseline='0.3.6-rc.6',
+                integration_baseline='0.3.6-rc.6', local_updates=data.get('local_updates', []),
                 changed_imported_files=[p for p in data['files'] if p.startswith(prefix)],
                 added_files=[p for p in data['extensions'] if p.startswith(prefix)],
-                rebuild_note='Import adapters reconstruct the rc.6 baseline; hash-pinned PR2 patches and explicit local extensions are then replayed automatically. Unknown inputs fail.')
+                rebuild_note='Import adapters reconstruct the rc.6 baseline; hash-pinned PR2 patches, scoped local fixes and explicit local extensions are then replayed automatically. Unknown inputs fail.')

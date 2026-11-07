@@ -1,0 +1,13 @@
+--- a/skills/fusion-design-ui-ux-pro-max/SKILL.md
++++ b/skills/fusion-design-ui-ux-pro-max/SKILL.md
+@@ -6,6 +6,10 @@
+ # UI/UX Pro Max — 设计知识与决策支持
+ 
+ 可检索的本地 UI/UX 指南包括：79 种风格（50 种启用）、192 套产品配色及精确匹配的推理方案、74 组字体搭配、119 条 UX 指南、105 个精选图标、17 套 GSAP 预设、25 种图表类型和 22 种技术栈。
++
++## 本包产品工作中的实现边界
++
++在本包业务项目中，执行界面代码前读取技能 `fusion-product-agent` 内的 `references/technical-handoff.md`：只在已约定本地体验稿范围制作和验证；生产工程变更与业务仓库Git写入/部署发布交技术Agent。界面制作、审美或修复指引不自动授权这些操作；需要接力回产品主线准备当前有效输入与边界，不虚报技术已接收。
+ 
+ ## 适用时机
+ 

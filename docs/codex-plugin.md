@@ -1,6 +1,8 @@
-# Codex插件 v0.3.6-rc.7（候选）
+# Codex插件 v0.3.6-rc.11（本地候选）
 
-GitHub主分支提供rc.7整合候选，以下远端安装步骤获取该候选；最新正式Release仍为v0.3.4。维护者本机已通过本地市场安装并启用rc.7。
+当前个人分支 `codex/junqi-workflow-updates` 已归回完整rc.11，仍为本地开发候选，尚未推送、发布或安装。
+
+按本轮归回前保留的分发记录，GitHub主分支提供rc.7整合候选，以下远端安装步骤获取该候选；最新正式Release仍为v0.3.4。维护者本机已通过本地市场安装并启用rc.7。
 
 融合锤子独立GitHub仓库提供Codex市场，入口`.agents/plugins/marketplace.json`指向`package/`。插件标识`fusion-product-agent@fusion-product-agent`。
 

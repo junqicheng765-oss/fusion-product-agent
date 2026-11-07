@@ -1,6 +1,17 @@
 --- a/skills/fusion-design-core/SKILL.md
 +++ b/skills/fusion-design-core/SKILL.md
-@@ -49,61 +49,94 @@
+@@ -27,6 +27,10 @@
+ 
+ 若目标或核心范围仍有改变方向的缺口，回到产品主线给出可理解的推荐并通过原生Question询问，等待必要答案；不得直接开展受影响的正式设计或Demo制作。设计研究可以支持讨论，不能替人决定为什么做和先做什么。直接调用本Skill也遵守此条件，不要求另启一个Agent。专业设计判断、调研和QA0继续按下述方法执行；已有有效输入、局部改动或明确委托按范围复用，不重做访谈。
+ 
++## 本地前端与技术接力
++
++执行代码或接到Git/发布请求前，读取技能 `fusion-product-agent` 内的 `references/technical-handoff.md`。本环节可在约定本地范围制作/验证正式体验稿，不接管生产工程或业务仓库暂存、提交、推送、合并与发布；需工程实现回传产品主线整理技术任务，由获授权技术Agent执行。辅助Skill同样继承该边界，文件生成/QA0通过不是提交依据。
++
+ ## 流程位置与回传
+ 
+ 本环节沿用产品主线六阶段与设计四步骤（技能 `fusion-product-agent` 内的 `references/progress-navigation.md`）。每次成果、修订或提问回复，最终首行保留产品第几/6阶段，设计中附设计第几/4步、当前模块及真实状态；结尾交代下一动作或用户所需选择。四步骤对应下文的研究/流程交互、视觉决策、制作、终审，不按回复次数推进。向产品主入口回传同样的信息，不因要求自然语言、隐藏方法代号而省略导航，也不增加人工审批。
+@@ -49,61 +53,104 @@
  
  本包Demo按技能 `fusion-product-agent` 内的 `references/formal-design-delivery.md` 交付与目标生产规格一致的本地前端，界面/样式/响应、交互与文案不因Demo降级；本地数据和受控返回仅替代服务接入。关键操作、校验、状态反馈及恢复须实际按规则发生，必要前端缺项就是未完成；不把讲解、假设或测试控制放入用户画面。QA0与专项复核分别报告前端规格一致性及真实服务接入，不用缺后端作为省略前端体验的理由；明确委托的探索稿另行标明，不当作正式Demo。
  
@@ -25,6 +36,16 @@
 -     5. **🛑 第一轮硬停止点**：发出上述汇报和提问后，**本轮立即停止等待用户回复！在用户选定视觉风格之前，严禁运行 `style_preset.py`、严禁运行 `component_recipe.py`、严禁运行 `iconscout.py`、严禁调 Figma 或写代码！**
 -
 -   - **【第二轮（用户选定风格并确认交互后）：调取风格/组件/IconScout 库落盘 → 写出 `design-decisions.md` → 制作与总监终审】**
++## 共用基线的承接与回填
++
++界面任务按技能 `fusion-product-agent` 内的 `references/shared-components-and-rules.md` 承接本轮共用基线、行为/COPY来源与允许变体；沿用U4、DS0–DS4做专业组件判断和映射，不另定产品规则。代表页落实共用项后，展开页引用同一有效定义；回传实际采用/新增/变体及使用位置，共享变更回查已知使用页并明确未覆盖。小改动引用已有规范，不强建全产品设计系统，也不增加逐组件审批。
++
++异常界面在I6到正式制作之间读取技能 `fusion-product-agent` 内的 `references/exception-presentation-reuse.md`，先完成实际资产与呈现分流，QA0回查覆盖；原矩阵不逐行生成整页。
++
++## 异常页面对应的设计回传
++
++界面涉及异常时，按技能 `fusion-product-agent` 内的 `references/exception-layers.md` 承接本轮实际异常页面规则与文案对应表或等价视图。设计补齐呈现时机/位置、阻断与提示并存、共用项/变体、操作去向、输入保留和状态更新；本轮相关行为与COPY就绪后再正式制作，制作后回传真实节点/版本与检查证据。内容变化回产品和文案唯一来源，不把对应表逐行变成页面清单，不新增逐条审批。
++
 +## 成果、工作环节与专业设计路径
 +
 +接单先读 [成果、环节与子任务目录](methods-deliverable-routing.md) 的总则，再读取匹配的主成果、独立环节或专项条目。AI 根据委托范围明确主成果或独立环节、本轮工作范围与起止、子成果及依赖；工作方式、交付载体和本轮终点分别记录，不让使用者选内部编号。研究、流程、信息架构与交互可以是完整项目的环节，也可独立委托；图表、资产、动效、视频及其他成果可独立交付或嵌入项目，不作为互斥的平行分类。适用路径决定哪些专业判断必须成立，RT0 决定各部分深度与具体方法，工具在此之后选择。
@@ -131,7 +152,7 @@
       - 如果发现上游安排对用户不合理（需要删减、合并或后置某些步骤），用提问工具给出专业建议让用户确认。
  
  3. **如果已有正式设计主稿要求还原，或只是替换已确认文案**  
-@@ -122,20 +155,20 @@
+@@ -122,20 +169,20 @@
     - 直接调用成熟的公开组件库（国内中后台用 `Ant Design` / `Arco Design` / `TDesign`；出海 SaaS / AI 工作台用 `shadcn/ui`；海外企业用 `MUI` / `Fluent UI`）及 `style-presets/systems/` 预设快速搭建。
  
  3. **情况 C｜C 端产品 / AI 产品 / 游戏 / 强品牌界面从 0 到 1（`U0` 路线 3 → `V0` 风格决策 + `DS` 风格引擎 + `CI` 配色 + `TY` 字体）**  
@@ -162,7 +183,7 @@
  > 4. 「前置推导已完成，现在进入工具制作」。
  
  ---
-@@ -152,21 +185,19 @@
+@@ -152,21 +199,19 @@
  
  2. **按最终交付物类型走对应的工具与制作工作流（[methods-tool-routing.md](methods-tool-routing.md) + [methods-visual.md](methods-visual.md) `VT` / `V7`）**：
     - **路线 A｜UI / 产品界面**
@@ -190,7 +211,7 @@
  
  ---
  
-@@ -175,10 +206,11 @@
+@@ -175,10 +220,11 @@
  所有内容做完后，**绝不能做完就交**！必须切换成**设计总监（Design Director）**视角，用 `Read` 打开成品图并运行验证脚本，从三个核心维度把关：
  
  1. **一审：有没有达到最初的设计目标？所有功能与交互是不是完备、合理？（`QA0` 维度一 + A–D）**
@@ -203,7 +224,7 @@
     - 运行 `python3 scripts/side_by_side.py --shot <成品图> --width <宽> --height <高> --refs <refs下同方向真实竞品截图> -o compare-r1.png`，用 `Read` 打开并排对比图：
     - 和成熟竞品放在一起，我们的构图张力、留白呼吸感、60-30-10 色彩比例、容器与按钮材质能不能打？
     - **零 AI 廉价感检查**：有没有一眼假的 AI 生成图标？有没有红底黑字等低级对比度错误？有没有把 `Photo: / CC BY` 版权字印在界面上？人物头像是不是符合产品文化且同屏统一画风？
-@@ -190,7 +222,7 @@
+@@ -190,7 +236,7 @@
     - 凡产出 HTML/代码界面，交付前还必须运行适用的检查，工具不适配时用等价实测并记录原因，不能把未检查写成通过：
       - `python3 scripts/ui_geometry_audit.py <html文件> --width <宽> --height <高>`（检查对齐、横排条垂直居中、**拦截容器或卡牌行倾斜旋转 `CROOKED_ROTATED_ELEMENT` / `CARD_ROW_NOT_LEVEL`（严禁给 `.played` 或卡牌行加 `transform: rotate(...)` 把牌弄歪）**、图标来源、跨区文字碰撞、首页完备度）；
       - `python3 scripts/color_intelligence.py contrast --css <主题CSS>`（检查实际对比度）；
@@ -212,7 +233,7 @@
       - `python3 scripts/a11y_audit.py <html文件>`（检查无障碍）。
  
  > **设计总监打回机制**：只要上面三审中有任何一项不达标（功能残缺、交互生硬、质感不如标杆、有 AI 塑料感或脚本报错），**严禁交付给用户**！立即按 [methods-close.md](methods-close.md) `0.2 回炉路由表` 退回对应环节重改，改完再次终审，直到真正达到高水准才交付。
-@@ -201,8 +233,10 @@
+@@ -201,8 +247,10 @@
  
  | 阶段 / 职责 | 必须打开阅读的细则文件 | 内置可调用的库与脚本 |
  | :--- | :--- | :--- |
@@ -224,7 +245,7 @@
  | **分类竞品与参考智能** | [methods-competitive.md](methods-competitive.md)（`CMP1` 垂类 / `CMP2` 同类操作 / `CMP3` 同类用户）、[methods-resource-routing.md](methods-resource-routing.md)（`RR`、`AM`） | `python3 scripts/asset_memory.py search <场景>`、Mobbin MCP / 应用商店与公开实机截图 |
  | **任务流程与交互设计** | [methods-flow.md](methods-flow.md)（`F1–F5`）、[methods-interaction.md](methods-interaction.md)（`I1–I6`） | `python3 scripts/resource_router.py apg <模式>` |
  | **UI 架构、控件与对象** | [methods-ui.md](methods-ui.md)（`U0` 三路分流、`U1–U6` 层级/对齐/控件/状态/文案、`U7` 领域对象表现） | `python3 scripts/component_recipe.py`（[component-recipes/](component-recipes/registry.json) 48 个通用配方） |
-@@ -215,20 +249,20 @@
+@@ -215,20 +263,20 @@
  
  ## 三、向用户提问与沟通的纪律
  

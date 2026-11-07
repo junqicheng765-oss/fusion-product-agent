@@ -1,12 +1,12 @@
-# 融合产品锤 0.3.6-rc.7
+# 融合产品锤 0.3.6-rc.11
 
-rc.7 整合候选另含已批准的设计流程修订；设计目录按主成果、工作环节与专项子任务组织，方法和资源保留。产品界面与网站已细化各环节的方法、资源和自审，其他主流程及专项细则尚未全部补齐。本候选与已发布 0.3.4 安装包分开，具体范围与重新导入注意事项见 [来源说明](SOURCE-MAP.md)。
+本地 rc.11 候选包含001—006六项修复及已批准的设计流程修订；设计目录按主成果、工作环节与专项子任务组织，方法和资源保留。产品界面与网站已细化各环节的方法、资源和自审，其他主流程及专项细则尚未全部补齐。本候选与已发布 0.3.4 安装包分开，具体范围与重新导入注意事项见 [来源说明](SOURCE-MAP.md)。
 
 **Demo统一定义**：[正式产品的本地前端交付](skills/fusion-product-agent/references/formal-design-delivery.md)，约定范围内的界面、交互、文案与目标生产规格一致；本地数据/受控返回只替代服务接入，不能以Demo名义降低体验标准。
 
-本轮修复第002项：[正式设计交付](skills/fusion-product-agent/references/formal-design-delivery.md)区分探索、主稿与按稿还原，正式页面面向实际用户；保留第001项文案审查可见性。
+已保留第002项：[正式设计交付](skills/fusion-product-agent/references/formal-design-delivery.md)区分探索、主稿与按稿还原，正式页面面向实际用户；保留第001项文案审查可见性。
 
-2026-11-07整合候选，基于正式v0.3.4；经GitHub主分支提供，并已在维护者本机安装试用，未并入独立的v0.3.5-rc.1一致性检查候选。产品领域研究、需求与规则、复杂状态、业务验收和交接沿用融合锤子；设计判断采用同事分支的专家模块；原有Figma执行流程独立随包提供，不再运行旧设计判断方法。GitHub主分支及候选ZIP提供rc.7；最新正式Release仍为v0.3.4。
+2026-11-07本地rc.11开发候选，承接GitHub main的rc.7及个人分支rc.8/rc.9；本轮归回开发分支，尚未推送、发布或安装，未并入独立的v0.3.5-rc.1一致性检查候选。产品领域研究、需求与规则、复杂状态、业务验收和交接沿用融合锤子；设计判断采用同事分支的专家模块；原有Figma执行流程独立随包提供，不再运行旧设计判断方法。按本轮归回前保留的分发记录，GitHub主分支及候选ZIP提供rc.7，维护者本机安装试用rc.7；最新正式Release为v0.3.4。rc.11与远端和已安装版本分开。
 
 ## 产品主线与设计环节
 
@@ -74,3 +74,15 @@ python3 scripts/test_package.py
 专业设计来源固定为同事分支`6dcc771`，见[设计来源清单](design-source.json)；原JQ 1.1.5的Figma执行层及本地适配见[Figma来源清单](figma-source.json)。明确适配了HTML优先、Figma Agent禁令和仅适合本地CSS的门槛，专业方法与QA0继续保留。脚本、组件和素材未删改。来源的既有许可与权利说明继续适用，本版不添加未经确认的统一开放许可。
 
 文案编写、审查和实屏复核统一使用[界面文案质量标准](skills/fusion-product-agent/references/copy-quality.md)：四组标准与模型相关能力要求合并，文案基线记录适用性、依据和后续验证要求，不逐句重复全模型检查。
+
+共用组件与规则按[共用基线方法](skills/fusion-product-agent/references/shared-components-and-rules.md)按需建立，优先引用已有规范；页面复用同一有效定义，允许有依据的变体，共享变更按使用位置核对。小需求可内联，不要求建设全套设计系统。
+
+本轮涉及用户侧异常时，按[异常对应方法](skills/fusion-product-agent/references/exception-layers.md)实际产出[页面规则与文案对应](skills/fusion-product-agent/assets/exception-page-map.md)或沿用已有等价视图；准确文字只在文案基线维护，设计与实现引用同版关系。
+
+## rc.10：异常呈现复用
+
+rc.10按[呈现复用方法](skills/fusion-product-agent/references/exception-presentation-reuse.md)将异常覆盖与页面制作分开；不同业务状态可以复用呈现，独立页需有任务依据，状态展示Frame不自动变路由。
+
+## rc.11：产品与技术执行分责
+
+业务项目按[技术交接与分责](skills/fusion-product-agent/references/technical-handoff.md)区分约定本地前端制作和生产工程；Git写入/发布交技术Agent。安装为Skill或子Agent均使用同一边界，不自动安装/创建技术Agent或获得调用授权。

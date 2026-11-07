@@ -2,12 +2,68 @@
   "repository": "https://github.com/savvydd/jq-product-agent",
   "branch": "feat/design-handoff-contract",
   "commit": "6dcc771bb7b5d0c5f4d2ca25fc13994af12c73a1",
-  "adaptations": "Isolated Skill names and parent references; remove old D/E wrapper alias. Preserve designer methods, style decisions and QA0; route Figma execution to bundled workflow, remove mandatory HTML-first and Figma-Agent bans, scope CSS-only gates to local component code. Bind design discovery, intake and routing to the product goal/scope evidence or explicit delegation; design is a stage, not a replacement product entry. MR1 localized entry overlays are hash-pinned; resource references resolve by host-selected Skill roots. Product owns reviewed interface copy, design owns presentation and page behavior. Visible copy-review handoff and formal-design artifact/source boundaries are integrated; tool checklist respects the existing Figma route and explicit carrier changes. No script, component or asset removed. Product-stage wrapper skills are not imported. Hash-pinned PR2 patches are replayed after the rc.6 baseline; three explicit local method extensions are restored. Unknown refinement inputs fail.",
+  "adaptations": "Isolated Skill names and parent references; remove old D/E wrapper alias. Preserve designer methods, style decisions and QA0; route Figma execution to bundled workflow, remove mandatory HTML-first and Figma-Agent bans, scope CSS-only gates to local component code. Bind design discovery, intake and routing to the product goal/scope evidence or explicit delegation; design is a stage, not a replacement product entry. MR1 localized entry overlays are hash-pinned; resource references resolve by host-selected Skill roots. Product owns reviewed interface copy, design owns presentation and page behavior. Visible copy-review handoff and formal-design artifact/source boundaries are integrated; tool checklist respects the existing Figma route and explicit carrier changes. No script, component or asset removed. Product-stage wrapper skills are not imported. Hash-pinned PR2 patches are replayed after the rc.6 baseline; three explicit local method extensions are restored. Shared component/rule references, consumers and change impacts are linked to the product baseline (FUS-ISSUE-003). Unknown refinement inputs fail.",
   "local_refinements": {
     "date": "2026-11-07",
     "pr": "https://github.com/junqicheng765-oss/fusion-product-agent/pull/2",
     "pr_head": "7affdbe1ecabc61cf1d081e8d5d152894c40fa11",
     "integration_baseline": "0.3.6-rc.6",
+    "local_updates": [
+      {
+        "version": "0.3.6-rc.8",
+        "issue": "FUS-ISSUE-003",
+        "files": [
+          "skills/fusion-design-core/SKILL.md",
+          "skills/fusion-design-core/methods-close.md",
+          "skills/fusion-design-core/methods-style-engine.md",
+          "skills/fusion-figma-workflow/SKILL.md",
+          "skills/fusion-figma-workflow/references/demo-review.md",
+          "skills/fusion-figma-workflow/references/design-to-demo.md",
+          "skills/fusion-figma-workflow/references/preflight.md",
+          "skills/fusion-figma-workflow/references/task-package.md"
+        ]
+      },
+      {
+        "version": "0.3.6-rc.9",
+        "issue": "FUS-ISSUE-004",
+        "files": [
+          "skills/fusion-design-core/SKILL.md",
+          "skills/fusion-design-core/methods-close.md",
+          "skills/fusion-figma-workflow/SKILL.md",
+          "skills/fusion-figma-workflow/references/demo-review.md",
+          "skills/fusion-figma-workflow/references/design-to-demo.md",
+          "skills/fusion-figma-workflow/references/preflight.md",
+          "skills/fusion-figma-workflow/references/task-package.md"
+        ]
+      },
+      {
+        "version": "0.3.6-rc.10",
+        "issue": "FUS-ISSUE-005",
+        "files": [
+          "skills/fusion-design-core/SKILL.md",
+          "skills/fusion-design-core/methods-close.md",
+          "skills/fusion-design-core/methods-interaction.md",
+          "skills/fusion-figma-workflow/SKILL.md",
+          "skills/fusion-figma-workflow/references/demo-review.md",
+          "skills/fusion-figma-workflow/references/design-to-demo.md",
+          "skills/fusion-figma-workflow/references/figma-execution.md",
+          "skills/fusion-figma-workflow/references/preflight.md",
+          "skills/fusion-figma-workflow/references/task-package.md"
+        ]
+      },
+      {
+        "version": "0.3.6-rc.11",
+        "issue": "FUS-ISSUE-006",
+        "files": [
+          "skills/fusion-design-core/SKILL.md",
+          "skills/fusion-design-impeccable/SKILL.md",
+          "skills/fusion-design-ui-ux-pro-max/SKILL.md",
+          "skills/fusion-figma-workflow/SKILL.md",
+          "skills/fusion-figma-workflow/references/design-to-demo.md",
+          "skills/fusion-figma-workflow/references/task-package.md"
+        ]
+      }
+    ],
     "changed_imported_files": [
       "skills/fusion-design-core/SKILL.md",
       "skills/fusion-design-core/WORKFLOW-REVIEW.md",
@@ -32,14 +88,16 @@
       "skills/fusion-design-core/methods-ui.md",
       "skills/fusion-design-core/methods-visual.md",
       "skills/fusion-design-core/templates.md",
-      "skills/fusion-design-core/walkthrough.md"
+      "skills/fusion-design-core/walkthrough.md",
+      "skills/fusion-design-impeccable/SKILL.md",
+      "skills/fusion-design-ui-ux-pro-max/SKILL.md"
     ],
     "added_files": [
       "skills/fusion-design-core/methods-creative-concept.md",
       "skills/fusion-design-core/methods-deliverable-routing.md",
       "skills/fusion-design-core/workflow-product-interface.md"
     ],
-    "rebuild_note": "Import adapters reconstruct the rc.6 baseline; hash-pinned PR2 patches and explicit local extensions are then replayed automatically. Unknown inputs fail."
+    "rebuild_note": "Import adapters reconstruct the rc.6 baseline; hash-pinned PR2 patches, scoped local fixes and explicit local extensions are then replayed automatically. Unknown inputs fail."
   },
   "files": [
     {
@@ -47,7 +105,7 @@
       "destination": "skills/fusion-design-core/SKILL.md",
       "source_sha256": "d9f64406baf6b29bc2777891ac23d2094fd7fc32bc6f51569708e471e0f92288",
       "adapted": true,
-      "sha256": "fbbd679e6720aa00e99210ed5a9bac2724b78eef618dc95ef7b7cafff2932fc7",
+      "sha256": "f8608ba4a43b799f1a285098edc735c11243738b67a701f154f5216c995afac1",
       "integration_sha256": "279ceac5b523bf90a23cfa308d093443be667890fcb94417b4f7e7c79e2c83c6",
       "local_refinement": true
     },
@@ -921,7 +979,7 @@
       "destination": "skills/fusion-design-core/methods-close.md",
       "source_sha256": "5a022478c8ae03faa7f1127e28e1e6efe4ef556e07ef6081e79c002c002fe683",
       "adapted": true,
-      "sha256": "5fa206310549dfb661d6d2286e8234745944ed1d35aacf2d18996c183ae5f8f7",
+      "sha256": "e6c8903db40d4f54bb24d6e89497f239c0fd0fbaec0b7740d0db42deb7e3c71a",
       "integration_sha256": "f5d91bee14443e534a03ab0f0b6a9171cd3952a22f67b7dc6ffe2fab94e13f36",
       "local_refinement": true
     },
@@ -1002,7 +1060,7 @@
       "destination": "skills/fusion-design-core/methods-interaction.md",
       "source_sha256": "1332996689a87edff0c94dc1db6b8f38d6d43ac4eb4cd07f996db308e21b4938",
       "adapted": true,
-      "sha256": "276a306ec430ffbc75c063aa390aaec3abdcc0570aae2e9e4e7a62a82d020b8b",
+      "sha256": "663578d1f472c994fd2e62fdc20862029489a929f631b9f4124a9000506d9eb4",
       "integration_sha256": "1332996689a87edff0c94dc1db6b8f38d6d43ac4eb4cd07f996db308e21b4938",
       "local_refinement": true
     },
@@ -1056,7 +1114,7 @@
       "destination": "skills/fusion-design-core/methods-style-engine.md",
       "source_sha256": "a78a510d7192e74d6d91f95d496a734852217ccf669b636d4a74dd6fa8d0ef36",
       "adapted": true,
-      "sha256": "d0faf28622aec0b02efaf4a5f8ab3d77f936b61b541da2182455da9830af6d33",
+      "sha256": "6e68ebb89a128a91373d368aacd2652d6e7b26dbe2728894e72cb869f1fac785",
       "integration_sha256": "a78a510d7192e74d6d91f95d496a734852217ccf669b636d4a74dd6fa8d0ef36",
       "local_refinement": true
     },
@@ -1733,7 +1791,9 @@
       "destination": "skills/fusion-design-impeccable/SKILL.md",
       "source_sha256": "11c4b308fc8aadc07dae3dca78640ddbad196518e81e9b7d5d9df0ca60b0584c",
       "adapted": true,
-      "sha256": "d1f2c58ee1c93fef6a7107050b46cd695d496271875dc34b78d2e2c0ad357b02"
+      "sha256": "6e7c60fa149b54674297938efe8ae68de136f18311a06bb6927f29e5af4ece36",
+      "integration_sha256": "d1f2c58ee1c93fef6a7107050b46cd695d496271875dc34b78d2e2c0ad357b02",
+      "local_refinement": true
     },
     {
       "source": "plugins/tc-product-agent/skills/impeccable/agents/impeccable_asset_producer.toml",
@@ -2622,7 +2682,9 @@
       "destination": "skills/fusion-design-ui-ux-pro-max/SKILL.md",
       "source_sha256": "709e51d8c0f0115ef2e1a1bf135e3226434d09fc7e5d36a86f4ae229765fcda3",
       "adapted": true,
-      "sha256": "aae4007576ac8d14bb3f07f152a90383035e95966b7be72fa46d39abd2b8d45f"
+      "sha256": "b83d8a4e02a0893c51b6963b522e7942f0dbcb66e1fd28ed46161dbc2e9ca87c",
+      "integration_sha256": "aae4007576ac8d14bb3f07f152a90383035e95966b7be72fa46d39abd2b8d45f",
+      "local_refinement": true
     },
     {
       "source": "plugins/tc-product-agent/skills/ui-ux-pro-max/data/app-interface.csv",

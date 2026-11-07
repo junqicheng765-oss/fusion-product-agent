@@ -7,3 +7,19 @@ The import tools first apply the existing rc.6 adapters, then replay these patch
 To revise this layer, review the package and patch together, update the pinned digests intentionally, then run both import tools twice and the adapter regression. Do not refresh a digest merely to silence an unexpected upstream difference. The original imported source hashes remain in `package/design-source.json` and `package/figma-source.json`.
 
 `integration_sha256` now means the rc.6 adapted baseline immediately before this layer; `sha256` means the merged current document. These patches are repository build resources; they are not installed as duplicate Skills or shipped in the runtime package.
+
+## Scoped local update: FUS-ISSUE-003
+
+Version 0.3.6-rc.8 adds the product shared-definition handoff to the reviewed design/Figma documents. The original rc.6 baseline hashes stay unchanged; patches replay PR2 content and this scoped addition together. `local_updates` records the exact affected files. No designer scripts, assets or unrelated methods are altered.
+
+## Scoped local update: FUS-ISSUE-004
+
+Version 0.3.6-rc.9 adds the actual page/exception/copy relationship artifact to design and Figma handoffs and review. Patches retain PR2 and issue003, using unchanged rc.6 baseline hashes; the new scope is recorded in local_updates. Accurate text stays in the sole copy baseline.
+
+## Scoped local update: FUS-ISSUE-005
+
+Version 0.3.6-rc.10 adds asset-first exception presentation reuse, scoped generation and state-based restoration with coverage preservation. Patches retain PR2 and issues003 and004, using unchanged rc.6 baseline hashes; the new scope is recorded in local_updates. Accurate text stays in the sole copy baseline.
+
+## Scoped local update: FUS-ISSUE-006
+
+Version 0.3.6-rc.11 routes production engineering and business Git writes to a technical Agent while retaining scoped local frontend work. Designer helper entries and Figma restoration inherit the product execution boundary. Existing source hashes and updates are retained; new entry patches are verified from the prior integration bytes.

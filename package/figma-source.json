@@ -7,15 +7,73 @@
     "pr": "https://github.com/junqicheng765-oss/fusion-product-agent/pull/2",
     "pr_head": "7affdbe1ecabc61cf1d081e8d5d152894c40fa11",
     "integration_baseline": "0.3.6-rc.6",
+    "local_updates": [
+      {
+        "version": "0.3.6-rc.8",
+        "issue": "FUS-ISSUE-003",
+        "files": [
+          "skills/fusion-design-core/SKILL.md",
+          "skills/fusion-design-core/methods-close.md",
+          "skills/fusion-design-core/methods-style-engine.md",
+          "skills/fusion-figma-workflow/SKILL.md",
+          "skills/fusion-figma-workflow/references/demo-review.md",
+          "skills/fusion-figma-workflow/references/design-to-demo.md",
+          "skills/fusion-figma-workflow/references/preflight.md",
+          "skills/fusion-figma-workflow/references/task-package.md"
+        ]
+      },
+      {
+        "version": "0.3.6-rc.9",
+        "issue": "FUS-ISSUE-004",
+        "files": [
+          "skills/fusion-design-core/SKILL.md",
+          "skills/fusion-design-core/methods-close.md",
+          "skills/fusion-figma-workflow/SKILL.md",
+          "skills/fusion-figma-workflow/references/demo-review.md",
+          "skills/fusion-figma-workflow/references/design-to-demo.md",
+          "skills/fusion-figma-workflow/references/preflight.md",
+          "skills/fusion-figma-workflow/references/task-package.md"
+        ]
+      },
+      {
+        "version": "0.3.6-rc.10",
+        "issue": "FUS-ISSUE-005",
+        "files": [
+          "skills/fusion-design-core/SKILL.md",
+          "skills/fusion-design-core/methods-close.md",
+          "skills/fusion-design-core/methods-interaction.md",
+          "skills/fusion-figma-workflow/SKILL.md",
+          "skills/fusion-figma-workflow/references/demo-review.md",
+          "skills/fusion-figma-workflow/references/design-to-demo.md",
+          "skills/fusion-figma-workflow/references/figma-execution.md",
+          "skills/fusion-figma-workflow/references/preflight.md",
+          "skills/fusion-figma-workflow/references/task-package.md"
+        ]
+      },
+      {
+        "version": "0.3.6-rc.11",
+        "issue": "FUS-ISSUE-006",
+        "files": [
+          "skills/fusion-design-core/SKILL.md",
+          "skills/fusion-design-impeccable/SKILL.md",
+          "skills/fusion-design-ui-ux-pro-max/SKILL.md",
+          "skills/fusion-figma-workflow/SKILL.md",
+          "skills/fusion-figma-workflow/references/design-to-demo.md",
+          "skills/fusion-figma-workflow/references/task-package.md"
+        ]
+      }
+    ],
     "changed_imported_files": [
       "skills/fusion-figma-workflow/SKILL.md",
       "skills/fusion-figma-workflow/references/figma-execution.md",
       "skills/fusion-figma-workflow/references/initialization.md",
       "skills/fusion-figma-workflow/references/preflight.md",
-      "skills/fusion-figma-workflow/references/task-package.md"
+      "skills/fusion-figma-workflow/references/task-package.md",
+      "skills/fusion-figma-workflow/references/demo-review.md",
+      "skills/fusion-figma-workflow/references/design-to-demo.md"
     ],
     "added_files": [],
-    "rebuild_note": "Import adapters reconstruct the rc.6 baseline; hash-pinned PR2 patches and explicit local extensions are then replayed automatically. Unknown inputs fail."
+    "rebuild_note": "Import adapters reconstruct the rc.6 baseline; hash-pinned PR2 patches, scoped local fixes and explicit local extensions are then replayed automatically. Unknown inputs fail."
   },
   "files": [
     {
@@ -24,7 +82,7 @@
       "source_sha256": "7489045df0d6ed26e43e585291f312b5ae607c595160e99921c8464cbde4f9e6",
       "adapted": true,
       "excerpt": false,
-      "sha256": "b195fcded23f01a7b8fbaa57c6112e2788e888ffe67ecc52ad37bc3bd1ff95e6",
+      "sha256": "a01ec3b9e86f30475cfc9039e8ad88b036a15adabf11ea6ed22fa44b2d36d5b9",
       "integration_sha256": "da608fd4fcf7d5f0ed6179070a961dc4243895f9529a449b1af5721ad351953b",
       "local_refinement": true
     },
@@ -34,7 +92,7 @@
       "source_sha256": "1cbea9aff8e451f187195f153954dffaa2a9d674927f02756279016d09e63449",
       "adapted": true,
       "excerpt": false,
-      "sha256": "64b49c998e86e8856dad27a196549fe3c5614057d5f202e5dbd2c227f2ee282b",
+      "sha256": "f8de74e7392867372b9d3562d6d1496c11c38ad36144f897610814da0313a118",
       "integration_sha256": "1c7aa678a72b1fa92d8b976e4f87c9c126d0ea0a0cc6d60626d6504669267925",
       "local_refinement": true
     },
@@ -44,7 +102,9 @@
       "source_sha256": "b82d8b0a09f5aaa27d6c963dc280e0898e1c3468c7f02ccb4aa31666e88c1f2e",
       "adapted": true,
       "excerpt": false,
-      "sha256": "ab27a27d9b21916875f98ea1cf2fea23195723ae239eb4c19e96d531cb69244e"
+      "sha256": "ff586891ef9adbd270db1bf130d427d1ff679e0d605837d4ef3d2b057042aa91",
+      "integration_sha256": "ab27a27d9b21916875f98ea1cf2fea23195723ae239eb4c19e96d531cb69244e",
+      "local_refinement": true
     },
     {
       "source": "skills/tc-product-agent/references/26-设计能力初始化与复用.md",
@@ -62,7 +122,7 @@
       "source_sha256": "982624bca11a58a131358312b4e7f2709c3ebacb17085958be6b0a5b5a1276a3",
       "adapted": true,
       "excerpt": false,
-      "sha256": "a0654c785f1f9f4afb1f9eb25e8247f70d52844fdf1ce46b7e65313439c07f31",
+      "sha256": "103441ca8d2e1f459f6cb27ac2bd325b2d66f77e92992c3ddb867a428fabca18",
       "integration_sha256": "c1cc9b14fd7984308e1f40a245b9c3f753c045bcd8216f15c09ebb2f4e7508fb",
       "local_refinement": true
     },
@@ -72,7 +132,7 @@
       "source_sha256": "b83ee12f94eec0e37dcc663d37abcf2954be0e760e3f80a2d39863315692d7ee",
       "adapted": true,
       "excerpt": true,
-      "sha256": "a0bf2c3985eee1cb02390c4698d36027ff581310f8962adadc99edd30afb0bcd",
+      "sha256": "76acaf6737c56a4ddee77be5d158c498094c881991c3ecb8e11be729560e0f4c",
       "integration_sha256": "468f5075fb2f384513b9f6fdc6762f94c18631e73b4bed1666da469f020c44b6",
       "local_refinement": true
     },
@@ -82,7 +142,9 @@
       "source_sha256": "7e0f27da82c85e21076552f085661a68825790c5b78dafb9a5cd9cb0678f09b0",
       "adapted": true,
       "excerpt": false,
-      "sha256": "771a70040d4b0b2f89a33e6aa17b76247dc012bd3574744c324a4662d48aa3a3"
+      "sha256": "aa7c3d32fc1ae4c1776602314d4468856e9f6cd4eb3f81ca00f28100fe15abb5",
+      "integration_sha256": "771a70040d4b0b2f89a33e6aa17b76247dc012bd3574744c324a4662d48aa3a3",
+      "local_refinement": true
     }
   ]
 }
