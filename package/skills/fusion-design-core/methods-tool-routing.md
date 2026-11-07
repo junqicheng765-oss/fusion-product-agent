@@ -151,7 +151,7 @@ D7 不是“离开 Figma 去做视觉成品”的固定下一阶段。TR4 的独
 - Figma 路线在主稿完成颜色、字体、间距、密度、图标、图片裁切及状态；已有页直接精修，新增整页按需生成后精修，再还原 Demo。具体执行、配置及授权见同包 [工作流](../fusion-figma-workflow/SKILL.md)。本地路线沿用组件与素材要求。
 - **IconScout 双通道真实资产调取（优先官方 MCP `https://mcp.iconscout.com/mcp` + 内置 v3 API 脚本自动兜底，覆盖 `icon` / `3d` / `lottie` / `illustration`）**：
   1. **通道 A（MCP 优先）**：先用 `GetDynamicTools` 检查当前宿主是否已连接 `iconscout` MCP（端点：`https://mcp.iconscout.com/mcp`，指南：`https://iconscout.com/mcp`）。若已连接，优先调用 MCP 工具用自然语言按风格与色板检索同系列 Pack，并直接下载 `SVG`、`PNG`、`Lottie JSON`、`GIF` 或 `MP4`。
-  2. **缺失能力与备选渠道**：未连接 MCP 时，先按 TR0 说明素材获取路线与缺项，确认本轮采用已可用的替代渠道还是配置服务；未经覆盖该动作的授权不改全局配置或发起安装。使用已确认的脚本渠道时可调用预置的 `scripts/iconscout.py`（已内置 `Client-ID: 232598791050530`，文档：`https://api-docs.iconscout.com/#description/credits-and-limits`），按 `V0` 第 6 维选定的风格（`line` / `glyph` / `dualtone` / `flat` / `gradient` / `isometric`）和 `--icon-grid 24` 拉取真实素材导入 Figma 或代码，严禁手画劣质 SVG 占位。
+  2. **缺失能力与备选渠道**：未连接 MCP 时，先按 TR0 核对本轮可用替代渠道或配置需求；已有适用授权直接复用，未经覆盖该动作的授权不改全局配置。采用 `scripts/iconscout.py` 时继承 V5 已形成的图标组和检索规格，只传当前渠道真实支持的资产、风格及适用网格参数；源网格不等于显示尺寸。集合身份、文件格式、透明性及许可分别核验，不承诺脚本未提供的整组检索或下载能力，不以粗糙占位替代成品。
 - **UI 界面内配图（`V7 路径 A`）**：功能图标优先复用适用的成品库；表现图标、字形及局部图形按 V3/V5 判断可用资源或本轮主视觉派生制作。真实摄影仍先按 [methods-image.md](methods-image.md) 检索并导入。图形/字形生成沿 TR0 已确认的实际能力与工具组合执行，再导入所属主稿或代码，不因它位于 UI 中强制切换 Figma 工具。引用准确方向及版本、材质/光影/比例与落位，不擅自锁成另一套风格。
 - 已有外部正式资产只有经过来源、授权和版本确认并以真实文件导入后，才能进入正式 UI；通用素材缺失时按 IconScout、Real Image Library 或（最后）生图补齐；只有用户方才有的素材缺失时才阻断并向用户要，不自动调用外部视觉工具扩张范围。
 - 正式主稿与低保真交互稿分开；不得在低保真页面上直接覆盖视觉后称正式完成。
