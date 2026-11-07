@@ -31,10 +31,10 @@
 | 页面区块库 | 拿页面结构与模板 | `registry.json` 里每个风格族绑定的区块库 | [shadcn Blocks](https://ui.shadcn.com/blocks)、[Magic UI](https://magicui.design)、[Origin UI](https://originui.com)、[Float UI](https://floatui.com)、[Shadcn Studio](https://shadcnstudio.com) 免费部分；[Tailwind Plus](https://tailwindcss.com/plus) 仅限用户已购买许可证 |
 | 动效库 | 交互反馈与动态表现 | 风格族绑定的动效库 | 见 `MI` |
 
-**风格适配器**是把这四层串起来的那一步。例如用户说“把当前产品改成苹果风”，流程是：
-1. 先从风格库取出苹果设计语言；
-2. 再按项目技术栈找对应组件：SwiftUI 用系统组件，Web 用 shadcn 加苹果主题；
-3. 最后统一应用 token、组件规则和页面规则。
+**风格适配器**连接这四个资源层：
+1. 从有效方向提取所需的视觉语言与规则；
+2. 按项目技术栈核对组件、主题与资源的适用性；
+3. 统一应用 token、组件规则和页面规则，并验证实际表现。
 
 **技术边界**：
 - shadcn/ui 或 Tailwind 项目换主题比较容易，改 CSS 变量即可。
@@ -77,15 +77,15 @@
 - `recipes`：通用组件配方的标签，见 [component-recipes/](component-recipes/registry.json)。纯 HTML、React、Figma 都能用，组件只引用风格变量，换风格自动跟着变。**所有技术栈先用它当结构、交互和状态的骨架**；页面长相跟 [methods-visual.md](methods-visual.md) `VT` 的目标稿走，拷进来后按目标稿改字体、照片处理、容器和点睛元素。只用配方默认样式拼出来的页面就是模板脸。
 - `layout`：React + Tailwind 区块库（shadcn Blocks、Magic UI 等）。只在 React 项目里补配方库没有的零件。它们以后台、官网、表单为主，不提供手机消费产品的页面构图；构图按 `RR` 看同类真实页面，结构用下面的画面级配方。
 
-**画面级配方是必做的，不是「需要时再看」。** 消费级主屏、游戏主界面、内容流，动手前先 `copy` 其中一个，它决定第一眼是什么画面。`field`、`card`、`button`、`chip-group` 只是零件，不许用它们拼出「一行大标题 + 三张小图 + 三张输入卡 + 一颗按钮」。
+**画面级配方是必做的，不是「需要时再看」。** 消费级主屏、游戏主界面、内容流，动手前先 `copy` 其中一个，它决定第一眼是什么画面。`field`、`card`、`button`、`chip-group` 只是零件，不能仅拼装零件替代画面级构图。
 
 | 这一屏是什么 | 先 copy 哪个 |
 | :--- | :--- |
-| 旅行首页 | 先过 `I3` 的首页职责。`destination-hero` 只是首页里的一块主视觉，不是整页。同屏还要有进入自己的行程的入口，以及一个能认出的行程例子。整页只有一个地方、一个名字、「开始这一个」，那是详情页，配方也不许这么拼 |
+| 目的地主题画面 | `destination-hero`；它是局部主视觉，完整页面职责仍按 `I3` 判断 |
 | 行程长什么样 | `itinerary-preview-card`、`itinerary-timeline` |
 | 地图上选地方 | `map-with-sheet` |
 | 内容 / 照片流 | `hero-media`、`feed-masonry`、`photo-card` |
-| 牌桌、桌游 | `felt-table`。自己的手牌是完整牌面的 `playing-card`（角标加牌心花色，不能只剩一排角标），再配 `hand-fan`、`seat-nameplate` |
+| 游戏场景与对象 | `felt-table`、`playing-card`、`hand-fan`、`seat-nameplate`；对象识别及尺寸分级按 `U7` |
 | AI 工具本身的输入页 | `prompt-composer`、`ai-result-card` |
 
 拷进来之后仍按 `VT` 的目标稿改字体、照片处理和材质。配方默认样式拼出来的页面是模板脸。
@@ -194,13 +194,11 @@
 | Jetpack Compose | `MaterialTheme(colorScheme, typography, shapes)` | 同上，写死的 `Color(0x…)` 要收进主题 |
 
 **组件映射表**：现有组件逐个列出，标明以下四项：
-- 对应目标风格的哪个组件或规则，例如：
-  - 自写的顶部栏 → 苹果大标题导航栏；
-  - 自写的弹窗 → Material 圆角 28 的 Dialog。
-- 只换 token 就够，还是要改结构。比如从底部 Tab 改成侧边栏，就属于结构改造。
+- 对应目标风格的组件或规则及其适用依据。
+- 仅替换 token 是否足够；信息位置、导航关系或行为改变时，列出所需结构改造。
 - 组件从哪里来：先 `python3 scripts/component_recipe.py list --tag <风格族的 recipes 标签>`，用 `copy` 取出纯 HTML/CSS 配方。主屏先 copy 上表的画面级配方，再 copy 零件。这一步不能跳。配方库没有的，React 项目再按风格族绑定的区块库检索（审源码规则同 `MI`），其余技术栈自己按配方格式写。区块库不提供手机消费页面的构图，不能用它代替画面级配方。
 - 选风格时可以先看效果：`python3 scripts/component_recipe.py preview --preset <风格编号> --tag <标签> -o <文件.html>`，截图对比两三个候选预设，比读参数表直观。
-- 新写的配方放进 `component-recipes/recipes/<id>.html`（元数据注释 + `<style>` + `<!-- demo -->` 结构 + 可选 `<script>`），只读风格变量和 `base.css` 的 `--r-*` 变量，然后运行 `index`。`index` 会检查标签、依赖、图标文件，以及示例里用到的每个类是否有样式来源。
+- 新写的配方放进 `component-recipes/recipes/<id>.html`（元数据注释 + `<style>` + `<!-- demo -->` 结构 + 可选 `<script>`），只读风格变量和 `base.css` 的 `--r-*` 变量，然后运行 `index`。`index` 会检查标签、依赖、图标文件，以及配方内每个类是否有样式来源。
 - 改造涉及的文件。
 
 **产出**：组件映射表与改造文件清单。  
@@ -216,7 +214,7 @@
 1. **token**：用 `DS3` 的方式写入一个集中位置（全局 CSS、主题文件或 `ConfigProvider`），全产品只有这一处定义颜色、字体、圆角、间距和阴影。
 2. **写死值收口**：按 `DS0` 的清点，把页面和组件里写死的值替换成 token 引用。
 3. **组件**：按映射表改组件本身，包括结构改造和材质规则；从区块库补进来的组件同样改成用 token。
-4. **页面**：只处理页面特有的布局问题。页面里不再出现新的写死样式值；确实需要例外的元素加 `data-style-exempt` 并写明理由，例如品牌 Logo、插画、第三方嵌入。
+4. **页面**：只处理页面特有的布局问题。页面里不再出现新的写死样式值；确实需要例外的元素加 `data-style-exempt` 并写明适用范围与理由。
 
 **不允许**：
 - 逐页手调颜色和圆角；

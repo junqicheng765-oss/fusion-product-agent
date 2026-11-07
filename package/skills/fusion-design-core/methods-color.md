@@ -33,7 +33,7 @@
 
 UI Colors 的「主色生成完整色阶」由本模块 `from-brand` 在本地用插值完成，不调用它的 API（要 key，且禁止做竞品色阶生成器）。Happy Hues、Color Hunt 只作参考。
 
-**本地 5 套产品级系统**（示例名是本 Skill 的预设，不是各网站的官方主题）：
+**本地 5 套产品级系统**（下列 ID 是本 Skill 的实际预设，不是各网站的官方主题）：
 
 | ID | 观感 | 中性色阶 + 主色色阶 | 默认绑定的风格族 |
 | :--- | :--- | :--- | :--- |
@@ -80,7 +80,7 @@ python3 scripts/color_intelligence.py show <id>
 3. **用户粘贴的灵感色板**：Coolors / Color Hunt / Huemint / Happy Hues / Realtime Colors 导出，一律等用户把 hex 或导出 CSS 贴进来，再运行 `from-palette bg,fg,primary[,muted][,border]`。**禁止**打开这些站点批量抓色。
 4. **完整主题**：用户要的是整站换肤（连字体圆角一起换），转 `DS1`，不用本模块。
 
-检索不到真实来源时，不得写「来自 Coolors xxx」。来源为本地系统 ID、Radix 色阶名、品牌 hex、用户粘贴的色板，或主视觉分支可追溯的 DS2 派生规格；推导值与品牌事实分开。
+检索不到真实来源时，不得编造来源标记。来源为本地系统 ID、Radix 色阶名、品牌 hex、用户粘贴的色板，或主视觉分支可追溯的 DS2 派生规格；推导值与品牌事实分开。
 
 **产出**：来源记录 + 一套或三套候选的 hex。  
 **完成证据**：来源可核对；没有抓取、没有调用 Huemint API、没有编造色板出处。  
@@ -96,10 +96,10 @@ python3 scripts/color_intelligence.py show <id>
 - **用户要求看看配色、品牌色有 2–3 种合理映射、或给已有产品换色**：生成 3 套不同方向（不要 3 个只差一档明度的变体），运行：
 
 ```
-python3 scripts/color_intelligence.py preview a,b,c -o color-preview.html
+python3 scripts/color_intelligence.py preview <候选系统ID列表> -o <配色预览.html>
 ```
 
-用同一个代表页结构展示浅色卡片、主按钮、次按钮、成功 / 错误，并附暗色小预览。脚本同时给出 Realtime Colors 链接，供用户看整页效果。用提问工具问一次，选项用大白话（「冷灰配系统蓝，干净克制」），不出现内部 ID。
+用同一个代表页结构展示浅色卡片、主按钮、次按钮、成功 / 错误，并附暗色小预览。脚本同时给出 Realtime Colors 链接，供用户看整页效果。用提问工具问一次，选项说明实际可见的色彩关系及其感受，不出现内部 ID。
 - **改已有产品的颜色变量前**：代表页改前改后对比 + 要改的文件，用户确认后再写（`CI4`）。0→1 不需要。
 
 **产出**：选定的系统 ID 或「品牌色 + 中性/主色色阶名」。  
@@ -150,7 +150,7 @@ shadcn 项目若要连字体一起换，用 `npx shadcn@latest apply --preset <i
 **最低输入**：已写入的 token。
 
 ```
-python3 scripts/color_intelligence.py contrast --preset <配色系统或风格编号，如 INT-05>   # 选色前预检
+python3 scripts/color_intelligence.py contrast --preset <配色系统或风格编号>   # 选色前预检
 python3 scripts/color_intelligence.py contrast --css <页面引入的主题 CSS>          # 验收：页面实际用的颜色
 # 大字普惠 / 适老化加 --aaa（阈值 7:1）
 ```
@@ -170,7 +170,7 @@ python3 scripts/color_intelligence.py contrast --css <页面引入的主题 CSS>
 
 ## CI6 沉淀
 
-验收通过、可复用的新语义色系统，存进 `color-presets/systems/`，并在 `color-presets/registry.json` 登记：风格族、来源、许可证。来自用户粘贴灵感色板的，来源写「用户提供，转写自 Coolors / Color Hunt / …」，不要写成官方主题。没验收过的不进库。
+验收通过、可复用的新语义色系统，存进 `color-presets/systems/`，并在 `color-presets/registry.json` 登记：风格族、来源、许可证。来自用户粘贴灵感色板的，如实记录提供者与原始平台，不写成官方主题。没验收过的不进库。
 
 ## 配色验收
 

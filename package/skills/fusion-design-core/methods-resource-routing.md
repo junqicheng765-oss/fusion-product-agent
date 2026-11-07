@@ -19,9 +19,9 @@
 5. 参考链接（打开给用户看，**不抓取**）
 
 ```
-python3 scripts/resource_router.py list --stage research
-python3 scripts/resource_router.py show mobbin
-python3 scripts/resource_router.py apg dialog
+python3 scripts/resource_router.py list --stage <阶段>
+python3 scripts/resource_router.py show <资源ID>
+python3 scripts/resource_router.py apg <交互模式>
 ```
 
 ## Adapter 合同
@@ -48,13 +48,13 @@ python3 scripts/resource_router.py apg dialog
 重点不是照搬整个竞品，而是按**用户任务和交互问题**检索解法。新的消费级界面还要回答一个构图问题：这类页面第一眼靠什么画面撑起来。
 
 **步骤**
-1. 把任务拆成场景，例如拍照搜题：入口 → 相机权限 → 裁剪 → 识别中 → 答案 → 追问。每个场景写要解决的问题，不写产品名。
+1. 按进入条件、操作、系统反馈与后续任务拆分场景。每个场景写要解决的问题，不写产品名。
 2. 仅当项目目录已有 `.design-memory/index.json` 沉淀时才跑 `asset_memory.py search <场景>`；0→1 新项目且内部资产库为空时直接跳过此步，不浪费命令调用。
 3. 检索外部真实竞品界面：
-   - 有 Mobbin 授权（Pro 及以上）：MCP `search_screens` / `search_flows` / `search_sections`。按场景和状态搜，例如「camera permission deny state」，不要搜「像某某 App」。
+   - 有 Mobbin 授权（Pro 及以上）：MCP `search_screens` / `search_flows` / `search_sections`。按实际场景和状态构造检索词，不以指定产品的外观作为检索目标。
    - 无授权：自己看公开页面，不停工。用网页搜索找同类产品，打开应用商店页面（App Store、Google Play 的截图区）和产品官网，用浏览器截图或读图，按待回答问题选择同类产品及相关状态，范围由覆盖和新增信息是否改变判断决定。只看公开页面，不登录、不绕过付费墙、不批量抓取。也可以请用户导出 Mobbin / Page Flows 案例，但不等用户才开工。
    - 每个案例写：产品、页面、来源链接；第一眼是什么画面、占屏多大；信息怎么分区；主行动在哪；我们学什么、不学什么。
-   - 算数的只有同一种屏幕：手机首页对照手机首页，横屏牌桌对照横屏牌桌。应用商店宣传海报、带下载按钮的落地页、另一种设备的官网首屏，不能替代该任务的交互证据。样本不足以支持判断时写清缺口和下一动作，不许用海报凑数；跨媒介表达参考按 CC4 另记。
+   - 交互样本须与任务的设备、页面职责和状态可比较；不同媒介或用途的宣传材料不能替代交互证据。样本不足以支持判断时写清缺口和下一动作，不许用海报凑数；跨媒介表达参考按 CC4 另记。
    - 流程视频：Page Flows 无公开 API，只作参考链接。
    - 交互行为：`resource_router.py apg <模式>`，对照键盘与角色。
 4. 每个案例按 [methods-competitive.md](methods-competitive.md) 的样本模板记录。观察到的是事实，解释与假设分开。「别的产品都这样做」只能当候选，不能当完成证据。
@@ -75,12 +75,12 @@ Mobbin MCP：`https://api.mobbin.com/mcp`，OAuth，需要付费套餐。有套�
 **跳过**：本轮各文字角色均由有效正式规范锁定；仍检查实际文件与覆盖。正文已锁定不等于主标题的创意表达也已解决。
 
 ```
-python3 scripts/typography_intelligence.py pick --family editorial --langs zh,en --density relaxed
-python3 scripts/typography_intelligence.py pick --family ai-product --langs zh,en --css
+python3 scripts/typography_intelligence.py pick --family <风格族> --langs <语言列表> --density <密度>
+python3 scripts/typography_intelligence.py pick --family <风格族> --langs <语言列表> --css
 ```
 
 规则：
-- 先按品牌、已确认偏好、文字角色及内容决定要解决什么，再用风格族和字体库检索候选；不能把“编辑风”直接等同“宋体标题”，或把小型本地目录当作全部设计选项。
+- 先按品牌、已确认偏好、文字角色及内容决定要解决什么，再用风格族和字体库检索候选；不能把风格名称机械绑定为某种字族，或把小型本地目录当作全部设计选项。
 - 用户提供的正式字体/字体包可作为输入，先核对文件、版本、真实字重、中文覆盖与允许用途，再决定项目引用/嵌入方式；没有字体包就查实际可用的在线资源，不要求使用者先替 AI 完成字体选型，也不自动安装系统字体。
 - 目标语言含中日韩时，正文和需要中文造型的标题必须有适用字形；只支持拉丁文的搭配不能充当中文标题方案。
 - Google Fonts 的已知字体可通过 **CSS2 URL** 加载，无需目录 API key。本地 `resource-adapters/fonts/catalog.json` 与 `typography_intelligence.py` 是检索起点；不够时可查 [Google Fonts](https://fonts.google.com/)、[Google Fonts 官方字体源](https://github.com/google/fonts) 或其他实际可访问的官方目录，核实具体字体与来源再使用。完整目录 API 按实际能力和配置处理；没有该 API key 不等于没有其他可查证的字体。
