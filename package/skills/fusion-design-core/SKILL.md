@@ -35,7 +35,7 @@ description: >-
 
 本轮主成果是产品界面与网站，或复合项目中包含界面设计时，读取 [产品界面与网站详细流程](workflow-product-interface.md)，只应用到该界面范围。九个工作环节接回下文原四步骤和 N0–N5，不新增全局阶段或逐步审批；先判断哪些新做、修改、复核或复用，每个适用环节按所选方法的完成证据自审，再交给下游。其他成果仍按目录走自己的路径。
 
-视觉表达先按 [CT7](methods-context.md) 核对既有品牌、指定风格、参考、委托人偏好与禁区；会改变本轮决定的关键事实或约束未知时带推荐提问，仅缺主观偏好可依据任务和参考推导候选，不把未知写成用户无偏好或先用默认风格制作后再命名。候选按 [DS1](methods-style-engine.md) 实际检查整体感受差异，单换物件或配色的同风格方案标为变体。字体按 [V3](methods-visual.md) / [TY](methods-resource-routing.md) 分清正文、控件与主标题：字体包可选，在线资源按实际可用性核对；需要表达的标题可做字形资产，但不把所有文字都生图。上述要求嵌入原环节，不新增全局阶段或固定第二轮审批。
+视觉表达先按 [CT7](methods-context.md) 核对既有品牌、指定风格、参考、委托人偏好与禁区；会改变本轮决定的关键事实或约束未知时带推荐提问，仅缺主观偏好可依据任务和参考推导候选，不把未知写成用户无偏好或先用默认风格制作后再命名。候选按 [DS1](methods-style-engine.md) 实际检查整体感受差异，单换物件或配色的同风格方案标为变体。文字按 [V3](methods-visual.md) / [TY](methods-resource-routing.md) 区分作用、更新与维护需要：主副标题、眉题可采用独立字形资产，排版须设计字重、颜色、字距、行高及构图关系；字体包可选，在线资源核对实际可用性。按 DS2/V5 将同一方向落实到标签、主要控件和适用图标，判断形态、渐变/表面、材质与空间，展示前审完整图文组合；不强制所有静态文字生图或逐项加装饰。上述要求嵌入原环节，不新增全局阶段或固定第二轮审批。
 
 主题表达由主视觉带动且需据此延展页面时，按 DS1「主视觉引领分支」执行：理解产品/受众/目标与参考 → AI 推导并筛选方案 → 必要输入及工具路线成立后制作主视觉 → 自审后让人看图选择 → DS2 推导整页规格、按 V7 分层制作和数据合成 → 完整代表页及原有确认。不强制先选无图文字方案，也不重复整页方向候选；纯文字咨询、普通工具页、局部修改和严格还原按原范围执行。
 
@@ -80,12 +80,12 @@ description: >-
 
    - **【制作（用户选定风格并确认交互后）：调取风格/组件/IconScout 库落盘 → 写出 `design-decisions.md` → 制作与总监终审】**
      - 主视觉引领分支先按 DS2 从已确认主视觉建立本轮任务规格，下面预设命令仅用于实际采用的功能底座；不能为满足命令而把整页套回近似预设，也不虚构预设 ID。实际素材、字体、对比度与组件复用仍须检查。
-     - 收到用户选定的风格方向后，必须依次真实执行：
+     - 收到用户选定的风格方向后，按本轮适用范围和实际采用的来源执行下列动作；已有有效系统/组件先复核复用，不为运行命令扩大局部任务：
        1. 预设路线运行 `python3 scripts/style_preset.py show <实际采用的风格编号>`；主视觉引领分支读取确认主视觉及 DS2 任务规格，不强制该命令。两者均对实际主题运行 `color_intelligence.py contrast`，字体按 V3/TY 核对，`typography_intelligence.py pick` 可作适用检索起点；
        2. 本地组件代码路线采用配方底座时执行 `python3 scripts/component_recipe.py copy <实际采用的配方ID> --to <任务目录> --preset <实际底座编号>` 并实际复用；主视觉引领分支按 DS2 映射到任务主题，项目已有合适组件按 DS3 复核复用，不为运行命令虚构编号或覆盖确认表达。不能只看 `show` 就声称实际调库；
-       3. `python3 scripts/iconscout.py search -q "<英文关键词>" -a <icon|3d|illustration|lottie> -d <任务目录>/assets`（实际下载素材文件落盘，严禁去 GitHub 乱扒 `SVG-cards` 等老旧剪贴画）；
+       3. 按 V3/V5 取得实际采用的字形、功能图标和表现资产；采用 IconScout 时实际检索下载，成熟库或已授权生成路线保留对应真实文件与证据，不为过门下载未采用资产；
        4. 凡有角色/用户头像，先用 `iconscout.py` 检索并过 `V5` 第 7 条判断门；库内无匹配同套系头像时，**严格按用户在第一轮选定的头像画风（Q版3D卡通 / 国风插画 / 写实人物）**锁定统一母体风格前缀，调用生图工具成套生成头像图片（`avatar-*.png/jpg` 存入 `<任务目录>/assets`），**严禁用“名字首字圆圈”回退充数！**
-       5. 写出完整的 `<任务目录>/design-decisions.md`；仅本地组件代码路线运行 `python3 scripts/verify_library_usage.py <任务目录> [--require-avatars N] [--require-photos]`，返回 `"passed": true`。Figma 路线把配方结构、主题参数和真实素材引用纳入设计任务包，检查目标组件/变量与素材可访问性，不以本地 CSS 已生成作为 Figma 开工条件。
+       5. 写出本轮适用的 `<任务目录>/design-decisions.md`；仅本地组件代码路线运行 `python3 scripts/verify_library_usage.py <任务目录> [--require-avatars N] [--require-photos]`，按 QA0 核对原始报告、实际覆盖及逐资产采用证据。适用失败须修正；仅提供方文件名检查不适配时按 QA0 的限定规则核验，不能伪称脚本通过。Figma 路线核对目标组件/变量及真实素材的采用与可访问性，不以本地 CSS 已生成作为开工条件。
    - **砍掉 4 项浪费时间的无用功（不要再白跑）**：
      1. **0→1 新项目且无 `.design-memory/index.json` 时，不跑 `asset_memory.py search`**（空库必未命中）；
      2. **0→1 新建的空白 Figma 文件，严禁调用 `figma_search_design_system` / `figma_get_libraries`**（空白文件只会搜出无关的 Material 普通内容卡片，语义完全不适用）；
@@ -154,7 +154,7 @@ description: >-
 成熟设计师做东西**绝不会让 AI 现画劣质图标，也不会拿一个风格词就盲目生图**，而是分清里面有哪些是 UI 组件、哪些是视觉设计（Banner、头像、海报、动效），调取准备好的专业库并选用最合适的工具：
 
 1. **严禁 AI 现画劣质 Icon！一律调取成熟素材库与组件库**：
-   - **图标 / 3D 元素 / 插画 / Lottie 微动效**（[methods-visual.md](methods-visual.md) `V5`）：一律从 **IconScout**（优先官方 MCP，或内置脚本 `python3 scripts/iconscout.py search -q "<英文关键词>" -a <icon|3d|illustration|lottie> -s <风格> -d <目录>`）或成熟开源图标库拉取同一套系（Same Pack）的成品文件，**严禁手写简陋 SVG 路径或让 AI 画一眼假的图标**。
+   - **图标与表达小资产**（[methods-visual.md](methods-visual.md) `V5`）：功能图标优先复用适用成品库，表现图形可按本轮主视觉派生取得或生成独立资产，核对材质、光影、透视、语义和最小尺寸。实际库文件或生成文件与来源、参考和落位相对应，不以形式调库或简陋占位代替设计；Lottie 等正式动态格式仍按原工具合同。
    - **真实世界摄影（风景、城市地标、建筑、人文生活）**（[methods-image.md](methods-image.md) `IM`）：一律先运行 `python3 scripts/real_image.py search "<主题>" --role hero|card|background|place` 从 Unsplash / Openverse / Pixabay / Wikimedia 检索并 `get` 真实摄影（作者与许可证只记入资产记录文件，**绝不印在产品 UI 画面上**）。
    - **人物头像（Avatar）**（`V5` 第 7 条）：先搜素材库并过「文化风格 + 同套系判断门」；如果库里搜出来是欧美橡皮泥人、不符合国风或当前产品气质，立即放弃库结果，锁定统一母体风格前缀词成套生成高颜值头像。
    - **成熟组件库与通用配方**（[methods-style-engine.md](methods-style-engine.md) `DS3`）：React 项目调 `shadcn/ui`、`Magic UI`、`Ant Design` 等组件库；跨技术栈或 HTML 原型用 `python3 scripts/component_recipe.py` 调取结构配方。
@@ -193,10 +193,10 @@ description: >-
 
 3. **三审：组件库/素材库真调核验与工程规范准不准？（`QA0` 维度三 + `VE` 脚本）**
    - **按制作载体核验真实调库（防止“只看不用、自己瞎画”）**：
-     - 本地组件代码路线运行 `python3 scripts/verify_library_usage.py <任务目录> [--require-avatars N] [--require-photos]`（核验 `recipes.css`、`theme.css`、IconScout 真实素材、真实头像图片是否全部落盘，拦截“名字首字当头像”和第三方老旧剪贴画，必须 `"passed": true`！）
+     - 本地组件代码路线运行 `python3 scripts/verify_library_usage.py <任务目录> [--require-avatars N] [--require-photos]`，按 QA0 维度三核对原始报告与实际采用的组件/资产；适用失败修正，仅提供方文件名项的覆盖局限按其限定规则逐资产核验，不改名凑文件或伪称脚本通过。
    - Figma 原生稿核对实际组件实例、Variables / Styles、字体、真实素材及同版截图，记录证据；CSS 文件不作为原生设计稿的门槛。按稿还原复用既有项目组件时，核验真实组件/Token映射，不强造配方 CSS。
    - 凡产出 HTML/代码界面，交付前还必须运行适用的检查，工具不适配时用等价实测并记录原因，不能把未检查写成通过：
-     - `python3 scripts/ui_geometry_audit.py <html文件> --width <宽> --height <高>`（检查对齐、横排条垂直居中、**拦截容器或卡牌行倾斜旋转 `CROOKED_ROTATED_ELEMENT` / `CARD_ROW_NOT_LEVEL`（严禁给 `.played` 或卡牌行加 `transform: rotate(...)` 把牌弄歪）**、图标来源、跨区文字碰撞、首页完备度）；
+     - `python3 scripts/ui_geometry_audit.py <html文件> --width <宽> --height <高>`（按准确目标尺寸检查分区、对齐、图标来源、跨区内容碰撞及脚本实际覆盖的页面完整性，保留原始结果和覆盖限制）；
      - `python3 scripts/color_intelligence.py contrast --css <主题CSS>`（检查实际对比度）；
      - 按 DS5 的实际规格来源运行 `python3 scripts/style_consistency_audit.py <页面> --preset <实际预设编号>`；主视觉推导规格不带 `--preset`，另补 DS2 颜色/字体/圆角及相关状态的逐项实际值核对，两部分均须通过，不声称脚本覆盖未检查的任务规格；
      - `python3 scripts/a11y_audit.py <html文件>`（检查无障碍）。
