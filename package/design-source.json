@@ -8,7 +8,7 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/SKILL.md",
       "destination": "skills/fusion-design-core/SKILL.md",
       "source_sha256": "d9f64406baf6b29bc2777891ac23d2094fd7fc32bc6f51569708e471e0f92288",
-      "sha256": "5c8046bcfa64e76b4d062ff3911483dde69caef309f14f65ad9a527ccfb26a2d",
+      "sha256": "12836ab8f4f2efa8a8d487a9a8a4c5f8070f79dfb06bbd370b3212efdbf336e9",
       "adapted": true,
       "integration_sha256": "eb40f97d5402f8b7f8cabac4d4b3fcd47033214ab0856a88ca5d4a6dc7d7fac4",
       "local_refinement": true
@@ -999,7 +999,7 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-resource-routing.md",
       "destination": "skills/fusion-design-core/methods-resource-routing.md",
       "source_sha256": "09938bf46241dc5ece0a1162bb4591e5e2a10f464b9802c243b1edc443e85c75",
-      "sha256": "33ead68f7b7f5be6952dc915783b014da866d20a341f56bd2a2f1bea7a5e4acf",
+      "sha256": "ce9b55de8d9260a27713b8a132e3fa652590171c335486c875a13aa3c741ea9e",
       "adapted": true,
       "integration_sha256": "09938bf46241dc5ece0a1162bb4591e5e2a10f464b9802c243b1edc443e85c75",
       "local_refinement": true
@@ -1017,7 +1017,7 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-style-engine.md",
       "destination": "skills/fusion-design-core/methods-style-engine.md",
       "source_sha256": "a78a510d7192e74d6d91f95d496a734852217ccf669b636d4a74dd6fa8d0ef36",
-      "sha256": "a85fd8ff1b53a44a23bdf058042282f5cac1ec216ca446b2d3d2a2cca1ad2632",
+      "sha256": "4e9da196c165475cc2831748a1f96b0132a498ce8c6515b4a4aa984a721060a7",
       "adapted": true,
       "integration_sha256": "a78a510d7192e74d6d91f95d496a734852217ccf669b636d4a74dd6fa8d0ef36",
       "local_refinement": true
@@ -1044,7 +1044,7 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-visual.md",
       "destination": "skills/fusion-design-core/methods-visual.md",
       "source_sha256": "b44611081d536ab13bb32bc57ed54b47c972ac0b9d3080de45900c652e730f53",
-      "sha256": "111d25ddf5b20d960029c84a04e0066594d7c660d5d6a2a429ed037e0e01ba5e",
+      "sha256": "82a49a3e040762d904e5eda85f3ee91c05ba27780c1cc41f570b5477d73ec2aa",
       "adapted": true,
       "integration_sha256": "60841921978d3e930e83b5a016ac6f9b4dae0a82b43723968feebca1bb55bd78",
       "local_refinement": true
@@ -3113,12 +3113,884 @@
       "sha256": "0d69014fedf703ed2ff1ef98ca4f325bbd218e4bdfa1822f7fb1c6719bca25fb",
       "adapted": true,
       "origin": "local-extension"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/scripts/visual_reference.py",
+      "source_sha256": null,
+      "sha256": "83cd8edc024d75b6c4e3f1e717f8d8188bebfb6f472d3f916de4a4e8a6927f65",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/README.md",
+      "source_sha256": null,
+      "sha256": "791cae41483b8a4eb81d074938d2d1314912f1dba52b9e5d846188f9667ea36e",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/catalog.json",
+      "source_sha256": null,
+      "sha256": "a7ab9066a05ae23b4769a5454d0fd386fb84ac4f2fdbf8ef94ae2dd7a80c73ee",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-1823290881.webp",
+      "source_sha256": null,
+      "sha256": "e604f09278d3f8148917197a59a03c8d153c24c1884bf5dcbfeaa91942a29d07",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-2820998435.webp",
+      "source_sha256": null,
+      "sha256": "e8b4d9beb05bd35b9489f0f29e9ee8c437f6fecb70fe0424d5daae8b75232389",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-3112476067.webp",
+      "source_sha256": null,
+      "sha256": "2b1298ee2712f4b8006e6f11e5f36a54ac2e00ec6305a28230d09c3d10f132e4",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-3328081118.webp",
+      "source_sha256": null,
+      "sha256": "24e41e4e93fe8f160297a7cdcbb7a34704e6b9e40ae169f595ed73a49b2bfd1a",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-4205575926.webp",
+      "source_sha256": null,
+      "sha256": "6f222fd5a88bf536fc9225b3effe2d992d07cc993dd67e2208be811d8736326a",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-4337806704.webp",
+      "source_sha256": null,
+      "sha256": "ef7c31b572d427b5873564de7b4566658bbb690ffeafa9026afef83475d4c9c1",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-4611134562.webp",
+      "source_sha256": null,
+      "sha256": "a1ddda2a421ce113707cc5eb16c261bb937cb9cd0740e3890aeaa8a8dd67dde0",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-4731383746.webp",
+      "source_sha256": null,
+      "sha256": "741cc4d1543881908541885380658e030832e218fc2ea87f229c4100c3677462",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-4795352360.webp",
+      "source_sha256": null,
+      "sha256": "8aaf981dcbfdae21d90123bd8dfc25e1ee23177823d9b04e8f2c8f164155dbda",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-5268319110.webp",
+      "source_sha256": null,
+      "sha256": "1de14bf9826f17fb82a4c8969d420190545eadd55ea7ac42f79961ca961b0288",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-5466620194.webp",
+      "source_sha256": null,
+      "sha256": "646f0d6d34faa66f2d70d4891e698110596b201135b2d62c60a19edac2b8dd00",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-5518977081.webp",
+      "source_sha256": null,
+      "sha256": "128f3707cf11f96d023619ebd86b5842936c986387b62e56c8d4484070cd532a",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-5700158752.webp",
+      "source_sha256": null,
+      "sha256": "195f1f8396fb308a4a86db10038a3f530d1d10aad7eae43a0631c9f241ada0de",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6195921187.webp",
+      "source_sha256": null,
+      "sha256": "b559a01b4c2baa5dc043fb53511239de5cb0653b87f58b6bd6400f860c7f1a2a",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6251374503.webp",
+      "source_sha256": null,
+      "sha256": "e6bfa1ab7e3f84c2f344aaef65f85d31acef0288ac1b0c633a6e207bf6592510",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6273630538.webp",
+      "source_sha256": null,
+      "sha256": "cacf03b14ad7081abdf782b4b171f30e3e7c5f1f86803a9115826a6c16692af6",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6334376273.webp",
+      "source_sha256": null,
+      "sha256": "3ae66a4d6ea5e96419cec1ef976e297b880c8632d74b3c1d72056e7e1b686d9d",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6341987389.webp",
+      "source_sha256": null,
+      "sha256": "69e3c45b3b5c36a28d1befee9038bbf04a01f4cdc9f947e09d59f6d2461d9b68",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6342935204.webp",
+      "source_sha256": null,
+      "sha256": "545eaf42cec50033c8ec7fddd457604ab2c83aefcbab9e5ee8f29dfcb06322ea",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6344502040.webp",
+      "source_sha256": null,
+      "sha256": "32aaac7220ab023d13568a6570df58ba3023b0f740653fdac9fb58dae9f508c9",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6381967588.webp",
+      "source_sha256": null,
+      "sha256": "487585e0daed25fc42390cf002eaba384922d67f7adef5416847163bac558a78",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6393753116.webp",
+      "source_sha256": null,
+      "sha256": "e707cffb788f7f7908b4f2085702badc1c0d317af2deee1ef110e170c6813c11",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6423881967.webp",
+      "source_sha256": null,
+      "sha256": "a7fea11976e19a1d91fcc873104f3ee4e974e1c187a62d2590b4cdaa668c793d",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6445147669.webp",
+      "source_sha256": null,
+      "sha256": "5ee4eb8d97c8cd846f847a5d129edcda6e5503ad096364826775f406e08f28b0",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6449886676.webp",
+      "source_sha256": null,
+      "sha256": "9eebd24be089cb4885f2c9ca55827cce39a1ae1eeaa3df809de850ec639a2f65",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6450396633.webp",
+      "source_sha256": null,
+      "sha256": "a982a880f4911fa37e9bae26e3cc9f3fdb91ae31180914f0dff553dc5e20c519",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6450600202.webp",
+      "source_sha256": null,
+      "sha256": "22b37f6fc9ba1f76ffe70c8ca3c9485c044178e056b08b0e04924224b0d727ec",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6450755324.webp",
+      "source_sha256": null,
+      "sha256": "a6adb61dee40da90b430b9cddb836c5354d9d644394c57028f713ca41534d888",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6465057410.webp",
+      "source_sha256": null,
+      "sha256": "5ded75005c92a7b2d4c1e40cdc397c2ec106238a801ac98fa78cb04467610a3e",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6466282002.webp",
+      "source_sha256": null,
+      "sha256": "bab6f0fc3ec2450cc6d9583b0bab198531d69a334a151f55c75190aecf8ba0a7",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6466316855.webp",
+      "source_sha256": null,
+      "sha256": "4a10ef030f9a82d37cd80b1994ca70dc7efbe44a0a4dbedae96080fb2ac4cbad",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6479591168.webp",
+      "source_sha256": null,
+      "sha256": "0c76485772ecee51e7568ffb42f29dccf922d3c9e96184f9520deb98af831daf",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6480059609.webp",
+      "source_sha256": null,
+      "sha256": "1f3c6144d56772c7e5e15228c438d876a4bb8477dd72c530dfa4093f12dacf10",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6487490072.webp",
+      "source_sha256": null,
+      "sha256": "cb713f565e62768be74f1a11810bde320f6c0b1eba1c62aa64ea4f37033cfcc2",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6490934892.webp",
+      "source_sha256": null,
+      "sha256": "f549fd5ea273baa4c88a026006335ec38ae8ec171ec1448f0a23c368e7469dc7",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6524273685.webp",
+      "source_sha256": null,
+      "sha256": "96f49b2ae3ad9770d2eed4b46a81698951456232c3331cf20a1a100f1d397e67",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6546724065.webp",
+      "source_sha256": null,
+      "sha256": "1e7fd9b0b0a745ceafca58b7affbde6ef00b9ef1eaddca0f1fe43df2ad04b3a5",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6610638651.webp",
+      "source_sha256": null,
+      "sha256": "9018987966b9d78cff20d77146641aacec2ff6b7d67a766985b9efd24ab212e9",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6643581984.webp",
+      "source_sha256": null,
+      "sha256": "d39e62144b2a18fe7bc0cf32ef2f10e68dff96d4d0fcf71e047b498b5c349ab4",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6655662110.webp",
+      "source_sha256": null,
+      "sha256": "52ce6f04e69558cae7feb49ae273b33ec6e3e21298a41480d6c3cccf84100b37",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6658516749.webp",
+      "source_sha256": null,
+      "sha256": "c047bf716a3ff058cc9d0a4f8835a8174582b0f8353fa1beff6926e6c45c376a",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6695023218.webp",
+      "source_sha256": null,
+      "sha256": "fd2d1e329c288480a02224e9115687878345534c6284606b630e57b6ff1a33b7",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6714599886.webp",
+      "source_sha256": null,
+      "sha256": "a8bea4612ea2f261f1ee87048561fdd73a7a3994dc44e6fdf99452891ac0090e",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6752022443.webp",
+      "source_sha256": null,
+      "sha256": "5dcaf3177924d958d4eb680a4b76944f2ff4fc1d384515b2aa1923a16f2bbb84",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6752081445.webp",
+      "source_sha256": null,
+      "sha256": "a92c3a76e3288e85d2eeb8345f10e084a4508349e5cb82c0fe5df906e05b71fa",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6778792408.webp",
+      "source_sha256": null,
+      "sha256": "ae6f568ded73d5c6ef5da5646863e835899870e407640b34b914e055632eafde",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6812406561.webp",
+      "source_sha256": null,
+      "sha256": "df493442c57fad9097e1132435c3f258833a793fae61a1674efd16ecf75df1e9",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6815488045.webp",
+      "source_sha256": null,
+      "sha256": "efb0fafa4c516c17299777c507cd8c2a9793dee6dd87abbac1b13e647f52889e",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6834007421.webp",
+      "source_sha256": null,
+      "sha256": "d2d6f1597d48676000dd75f0a7e90cdfe76d0388a03a22b2932ab0706a80a575",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6835884913.webp",
+      "source_sha256": null,
+      "sha256": "71c26fa3983157ddf5f1d2d9e844d5f99e2a271792443911e4d5a3ca40800a0a",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6857332288.webp",
+      "source_sha256": null,
+      "sha256": "1cde490386a8cc417da79e8c740af3414ca5703778310ace15ec5804675230e3",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6864573678.webp",
+      "source_sha256": null,
+      "sha256": "163d65e2b6458544e527cd00dddde996cbd3efd303c6ed9dd151050cb38c0075",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6867022747.webp",
+      "source_sha256": null,
+      "sha256": "fd1119bc179c8a4dff4445c4bc24412c74071ce1ac9e60167a9a92c31f7ea17a",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6940568082.webp",
+      "source_sha256": null,
+      "sha256": "9838f04d941569e491c10cefe55a3875b86c430eed86ae9a73f52b28ca5c17ab",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6963464193.webp",
+      "source_sha256": null,
+      "sha256": "b08054e4c39da27bf60e96a19370329242dc7d5f7ec5586be42a4bfab73d6a60",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-6967543797.webp",
+      "source_sha256": null,
+      "sha256": "fcc4373b95bc90a25d140e23d2aaa69ad536031cb95dd1847d0b836163e264a8",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7038726724.webp",
+      "source_sha256": null,
+      "sha256": "08371df7b190188964516deb010595cb1c731984d83f20891ad264716b112450",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7042521321.webp",
+      "source_sha256": null,
+      "sha256": "a9944885b3bccc88f692014b450e9f7a00cd7471031823cb943b06a4d8690a8b",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7050855078.webp",
+      "source_sha256": null,
+      "sha256": "2fb47dbbc50c735fd0d17f43407143ff5a7f0f9ff989fdcfda793884874e3455",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7068025553.webp",
+      "source_sha256": null,
+      "sha256": "cfc5e6b4f33e08bf93f17eef94a099bb6e768a4af236e2e2933b07295f5ad27f",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7079800295.webp",
+      "source_sha256": null,
+      "sha256": "bc19bba1277aa272b440c317fde2548c8998975f93501d1464598c82fe7304b1",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7094966228.webp",
+      "source_sha256": null,
+      "sha256": "7f01af0930279cd17df4e1efaad0776f46f4234c8e801f6a16e2cde5e5c67ee5",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7096285981.webp",
+      "source_sha256": null,
+      "sha256": "35b26767e1fb2cd0b487c0df5de2025711aabb3ef1d5ecf3e4c1da8c36db194a",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7132722144.webp",
+      "source_sha256": null,
+      "sha256": "e76eee8e9c43be3a36eb7f602a1271f7133788e68786383f52614b3620e515b3",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7134057826.webp",
+      "source_sha256": null,
+      "sha256": "36ed71e839e91488e6950cca92a291386e56bc2edab61f00ca974682a6605772",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7134689547.webp",
+      "source_sha256": null,
+      "sha256": "e5b446ec35f3e93226f4ccf532b6ff175e77806fe8a1e23ce388adc34fb6c0dc",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7137059688.webp",
+      "source_sha256": null,
+      "sha256": "d6357a6edab9b2e5777edc20acab1f481c6cd8c906d947227e24414be22fdcbf",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7147593333.webp",
+      "source_sha256": null,
+      "sha256": "1892b44afda724b0853ff22b009162ebf78012d739b032c54b8483bea9690e43",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7194422034.webp",
+      "source_sha256": null,
+      "sha256": "5e0555f3863d0b577dc0c7354efe35a1356363b378973981472f80bc166d1734",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7195217572.webp",
+      "source_sha256": null,
+      "sha256": "cac3d66bdd95cb7d9df06caf6a812c56fca67a7b2bd2747a6c29c9af9c28ca0a",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7205997205.webp",
+      "source_sha256": null,
+      "sha256": "f8c84324c16eafe651dc31f1c5bc0f6191ba763798f51856662f54201bd7620a",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7214963695.webp",
+      "source_sha256": null,
+      "sha256": "2e83acac51bc508e78eb5527fd73eb5e75e30e3cbeac4f569971770469bda273",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7220577848.webp",
+      "source_sha256": null,
+      "sha256": "54a25d1a0ed804f4b29a58809beaf3b17cc79a46c48dfae9258ad97b77c6e2a8",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7220853258.webp",
+      "source_sha256": null,
+      "sha256": "a6f28471d69d99f06bd615cce5c9484f069c8ad2a55e21c6d02ea12e13c0dab1",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7224375607.webp",
+      "source_sha256": null,
+      "sha256": "dc2a4c8819f4f86aa39816abd471bab32e189b0f2422d69f80bc01d9e5af6904",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7225238192.webp",
+      "source_sha256": null,
+      "sha256": "9a0b6844114a2c7aecf400db1a6ce22fa195f1a90e2248bde988f45e69acf910",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7225470622.webp",
+      "source_sha256": null,
+      "sha256": "eb8cc593a4446749a478feb010c045e979aa6559b7bd20f948bb2e6a804b9056",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7226589212.webp",
+      "source_sha256": null,
+      "sha256": "063eb6cf7f797af9fcac3d20a60706a4158484bb952d5ed4f459a9e2281eb4a4",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7237754112.webp",
+      "source_sha256": null,
+      "sha256": "a6ef3c8114479298bb612465b4df27572affe50a87275950ce49a7344c02feff",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7242962071.webp",
+      "source_sha256": null,
+      "sha256": "ae5de64a111166a7132c4dc03d5313e0c04e92d98f39bf787de56f3a3f3e0c4b",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7252857052.webp",
+      "source_sha256": null,
+      "sha256": "eef4c930c462a5a41774835355d9c16f6a94259eb1cd273a5093970bc917356a",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7252866738.webp",
+      "source_sha256": null,
+      "sha256": "fd0366dc8f8d381f935c3ea36ba126599488eda1eecdd39a295d58af6ab5cf6c",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7267946651.webp",
+      "source_sha256": null,
+      "sha256": "0a054b4d277bb4f913cf01c5e2a6cf0aeb25e50c05b3400b73e508716c767d06",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7274800587.webp",
+      "source_sha256": null,
+      "sha256": "6ec8814679520b82e4e289a23fff8e56cc37763c8a1d5a40fa80870e5f9ee911",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7277650270.webp",
+      "source_sha256": null,
+      "sha256": "8371018ab75888bd9c79e075335d86e6e8fbe79d5e0563c3ca3cc83e05a311ea",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7287077264.webp",
+      "source_sha256": null,
+      "sha256": "427972fc1000a1cb1cd21916af86e8f5ea26a6b5cde152493b08b997ec3ea168",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7293812312.webp",
+      "source_sha256": null,
+      "sha256": "e3bce2fda7f800fce58c13102b4983a9aa7a63e8c0a8d50e6c2ce4b517ee2bf2",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7296221682.webp",
+      "source_sha256": null,
+      "sha256": "62863e294b5df2cad48692cb6073469801f19a5c47b4e1502375591604974b4f",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7306980950.webp",
+      "source_sha256": null,
+      "sha256": "2f218ef7f527fc6e5292062e5d5a580208e1f2fa6f40456cfc07497ae462c237",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7311749733.webp",
+      "source_sha256": null,
+      "sha256": "381dfb83c7801bb8fb6ad7b7a1805862e170a691787cfde4c0e937c71bc785c0",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7311838111.webp",
+      "source_sha256": null,
+      "sha256": "9cd105cb556d1e2244677dd50b38bf78059f4f37ecfb1442f8b3cecff00f81f7",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7311965246.webp",
+      "source_sha256": null,
+      "sha256": "9260e318b1ac72510e004d71bc99a7ecd82487243638a4606040d644b37d3743",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7311991923.webp",
+      "source_sha256": null,
+      "sha256": "2fe00b37b1d6950b2986ffe1c7a1dd627d0d5bba4eb7ac8b0a8f086469a55dc9",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7311994112.webp",
+      "source_sha256": null,
+      "sha256": "fad3d4d2afa5ba20d6b9c35dae930d0c4ae56b2e410b076d273b9fe239a6d920",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7311995877.webp",
+      "source_sha256": null,
+      "sha256": "a75f6e9af77779737d001c743d6a82c95c7427241fbff270c0be8f35c329a902",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7312007926.webp",
+      "source_sha256": null,
+      "sha256": "c71a1790bd396f0f485593f75c8901deb18cf7246610a0b712932d7e87f726bd",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7312047376.webp",
+      "source_sha256": null,
+      "sha256": "34a78569875b9391cfe90e0f8f00d5b0c8497c07ee699b2d9568bb736153295c",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7312061247.webp",
+      "source_sha256": null,
+      "sha256": "b639c9a01e82a5216f59b94ef55d67eaf3311bf154e42aa3422893b56e6f1a2f",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7312557399.webp",
+      "source_sha256": null,
+      "sha256": "8cabf4394359b33299de6cd14abd7fc7eb93a742e198e0de5121695cfb87ec0b",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7315484384.webp",
+      "source_sha256": null,
+      "sha256": "487197b1cae629fd805f838b41caa9128b44deb10e4c808a69f7392aee69c7bb",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7315552828.webp",
+      "source_sha256": null,
+      "sha256": "3e124f6ccbc9c33fe81c06874923137ee248aeb21792032ca8347e07c22ebb92",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7315929260.webp",
+      "source_sha256": null,
+      "sha256": "a2d7ea98a2a3477c69abe9d1c741c96949967a2d2657b6e958530099ad3757c4",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7315938812.webp",
+      "source_sha256": null,
+      "sha256": "916abf84f1227c2eb41d980abc448cff7e2ff14d038fedc4486a0f0dfa05df85",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7316095034.webp",
+      "source_sha256": null,
+      "sha256": "2085c33cb5c71b104f89958768924a7291c21e388495715a32d0e49084cd256c",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7317362029.webp",
+      "source_sha256": null,
+      "sha256": "d7e48b6c75802e7127bf73c6156343b7384885b852faa6ee6719390ef57f50f8",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
+    },
+    {
+      "source": null,
+      "destination": "skills/fusion-design-core/visual-reference-library/images/huaban-7317477345.webp",
+      "source_sha256": null,
+      "sha256": "c6ee42cf0f0a395e357a0ba3e780cc6ab61d90e94fb6bd631444bd48aba80476",
+      "adapted": false,
+      "origin": "bundled-visual-reference"
     }
   ],
   "local_refinements": {
     "date": "2026-11-07",
     "integration_base_commit": "1ed6071e8fc40db8a613c979de21ebe1af8305fa",
-    "scope": "Approved design judgment and desk research; outcome, work-stage and subdeliverable relationships; detailed product-interface/website workflow connecting existing methods, resources, outputs, per-step self-review and handoff; early test prototypes with explicit tool-route confirmation and no default wireframe pass; shared concept exploration without fixed quotas; isolated visual samples, representative-page and final review. Other detailed outcome workflows remain to be agreed. Preserve original navigation, distinct professional judgments, and all scripts/assets. Visual-input and preference checks before samples; substantive candidate differentiation; typography role selection, optional supplied/verified online fonts, and expressive title sub-assets with file, text, render and tool-scope checks. Approved information-role and priority to visual-expression mapping uses one shared U1/U3/V3 record and rendered QA0 evidence; logical grouping need not have visible containers, and same-role/state consistency permits justified variants. Approved conditional key-visual-led workflow: context/audience/goals and applicable references, AI concept derivation followed directly by one or two self-reviewed rendered KV samples and human picture selection, then derived DS2 page specifications and existing representative/final review; no mandatory text-only direction approval. Preserve essential fact/business decisions, explicit text-only consulting scope and TR0 tool-route confirmation. Reconcile page sub-asset routing, color-source provenance, optional preset scaffolds and evidence for custom specifications without changing scripts or globally restyling unrelated tasks. Independent trials use fresh context and original inputs without prior preferences/candidates, with direction provenance and bounded evidence; remove seeded travel-calendar concept examples. Formal interface production separates visual/title layers, program-managed data and optional reusable glyphs, with composition and replacement checks, without automatically commissioning animation or editable source deliverables. Reconcile direct TR3/TR6 routing conflicts with approved TR0 and applicable baseline rules. Methodology-only cleanup removes worked cases, concrete scenario answers, illustrative copy and task-specific test records from design instructions; preserve general decision criteria, method IDs, execution and evidence boundaries, blank records and actual tool/resource capabilities. Walkthrough becomes general method/route verification. Actual trial tasks and artifacts stay outside the package. Extend role/update/maintenance-based visual expression from main titles to fixed subtitles and eyebrow text, with optional independent transparent glyph assets; derive typography, labels, controls, gradients/surfaces and functional/expressive icons from the same direction. Preserve live controls and data, approved-system reuse and human review boundaries. Review the complete rendered composition and actual complex backgrounds, reconcile page subasset routing, scoped component reuse and provider-specific legacy check coverage without changing scripts or assets. No project examples or trial artifacts added. Centralize icon selection in V5 from page/content duties, hierarchy, necessity, role, image/text priority and actual size to visual grouping, semantic search versus supported filters, real collection coverage and composed review. Permit multiple role-based groups with within-group provenance/optical consistency and cross-group coordination; prefer the same verified collection without conflating style labels with identity. Scope missing-item alternatives/custom work to approved systems and real tool authorization, preserve unknown provenance and actual channel limits, and reconcile duplicated whole-page uniformity and fixed-grid instructions. No script, asset or demo changes. Establish a provisional whole-composition CI color framework before candidate element production and SVG adaptation, calibrating DS2 after visual selection without extra palette approval. Distinguish information importance, interaction state and visual weight from fill/outline, size and contrast. Map actual SVG structure to semantic colors while preserving locked colors and embedding/format limits. Add solid/gradient construction decisions and Open Props as an optional documentation-level CSS resource, with version/license/dependency and real composite checks; document existing helper output limitations without changing scripts, resource JSON or assets. No demos or worked examples added. Preserve explicit production requirements, rejection criteria and acceptance evidence through intake, handoff and rendered QA; unrequested methods remain professional choices. Cover key content sections and relationship graphics beyond functional icons, distinguish underdesigned expression from useful restraint, and return unmet candidates to production before recommendation. Independent tests remove prior answers without removing valid requirements; feedback regression and continuous iteration retain accurate labels. No new stages, approvals, mandatory decorative quota or task examples. Separate content references, visual direction and craftsmanship benchmarks for generated assets. Define observable form, edge, negative-space, detail/material scale and lighting goals; inspect source-size craft and target-size composition, refine the affected asset and preserve effective structure. Do not equate stylistic matching with accepted direction or quality, inherit unapproved generated artifacts as quality standards, mandate output quotas, or treat pixel upscaling as refinement. No project examples or generated assets added. Connect key-visual-led DS1 to context-based style selection using activity goals, participation mechanisms, desired perception, brand and reading/operation constraints across existing visual resources. For unresolved visual-direction comparison, default to two or three genuinely distinct matching complete first-screen/KV proposals, with scoped reuse, single-direction delegation and real-constraint exceptions; preserve CC2 concept-count discretion. Include designed background/space/atmosphere, subject, typography and controls as each direction requires, without prescribing complex scenes, gradients or 3D. Transparent subasset format does not determine final composition. Preserve tool confirmation and existing visual-choice, representative and final gates; no project examples or demos added. Treat source-demo copy as reviewable input rather than automatically frozen content. At intake establish provenance and edit scope; before layout and image production use U1 to retain, delete, merge or rewrite according to actual comprehension, recognition, decision or action value. Preserve necessary facts, conditions, units, labels and explicitly frozen wording, and obtain specific batch approval with rationale and meaning/scope impact before applying copy changes, reusing existing concrete approval without repeated per-string questions. Share the cleaned necessary content baseline across direction candidates; audit newly generated decorative copy as well as retained source text. No blanket language/slogan ban, project examples or demo files in the package. Add an all-candidates-rejected branch within the existing rendered-direction choice. Collect concrete multi-dimensional reasons and desired tendencies only where unknown, retain accepted scope, route targeted revisions to existing methods, self-review and return to the same choice gate. Respect actual host multi-select capabilities and allow multi-item free text instead of inventing parameters or repeated single-choice rounds. Users may be unsure or delegate new recommendations without professional diagnosis; recommendations do not imply acceptance. No new global questionnaire, approval stage, project examples or demos. Require a reviewable original-to-proposed copy change record with reasons, meaning/scope impact and human confirmation before applying deletions, merges, rewrites or additions to pages, artwork or image-generation inputs. Broad optimization, tool-route or visual-style approval does not approve copy edits. Preserve proposals separately, update shared candidate content only after approval, and check implementation against the approved version and scope. This conditional copy gate does not require text-only visual-concept selection or repeated approval for unchanged text. No demo or project example is packaged. Revise visual-direction selection after a failed perceptual-diversity review: distinguish fixed constraints from optional expression; derive different perceptual emphases and picture structures before choosing media; use cross-pool resources and independently justified references instead of inheriting the first candidate. Replace category-wide automatic aesthetic exclusions with concrete brand, comprehension and operation conflicts, without inferring unsupported business mechanisms from visual language. Inspect cross-candidate briefs and actual generation inputs for unnecessary shared motifs, lighting, palette and composition before production. Judge task fit, craftsmanship and actual whole-picture choice diversity separately; return convergent candidates to direction development rather than passing media or parameter differences. Palette and color QA support intentional contrasts without universal same-temperature or 60-30-10 rules. Reusing source wording does not approve replacing or omitting other source text. Existing human/tool gates remain; no prescribed style, project example, demo or asset is packaged. Connect campaign communication and participation thinking to the actual title, subject graphics, participation area and action expression before choosing assets. Respect specific intended liveliness or restraint without making every campaign noisy. Rewrite U6 from syntax formulas to editorial roles, natural complete messages, actual click expectations and truthful benefit conditions; diagnose unsuitable source copy and propose approved edits rather than treating unchanged wording as quality evidence. Keep the existing specific copy approval gate, frozen-copy boundaries and valid reuse. Distinguish functional-symbol recognition from expressive-graphic contribution; keywords, matching packs, generated titles or image presence do not prove campaign expression. Review actual compositions before author rationale and compare authorized source/new versions for concrete improvement, regression and unresolved issues within existing QA0; independent review is optional and does not replace human acceptance. Update existing blank records without scores, new global stages, fixed icon treatment, project examples or demos. Replace rigid key-visual area-ratio/isolated-zone defaults and full-component-skin reuse with composition-led production. Derive visible focal relationships, hierarchy and necessary subjects before material/detail prompts; preserve accurate actual inputs and pre-generation reference provenance. Design whole-canvas background continuity, spacing rhythm and adjacent-layer boundaries before asset decomposition, then implement intentional transitions or separation with suitable surfaces, gradients, masks or overlaps without requiring them universally. Keep independent generated title and live data/control requirements. Keep imported component resources byte-identical; treat their usage metadata as discovery hints and decide secondary-action appearance from the actual composition and state requirements. Audit generic container metaphors, equalized section spacing and decorative borders/stripes against content roles, including visible artwork contours rather than DOM boxes alone. Keep observed, goal-met and unverified evidence distinct; do not promote unresolved composition defects or missing comparisons as completed candidates. Trace rejected visual directions to actual adopted resources before scoped deprecation; no unrelated style removed on name similarity. No new global phase, human approval, forced effect, project example, demo or output asset is packaged. Synchronize the existing routing, dispatcher, framework and human-readable workflow to the single V7 production method, removing duplicated fixed-ratio, mandatory dual-reference and baseboard-first instructions that would override composition-led asset creation. Existing reference-selection scope and animation decisions are retained; no additional approval or stage is introduced. Make RR the detailed visual-reference retrieval method: begin with subject/theme and actual campaign semantics, examine relevant target-market mature products/platform cases, and expand through related brand campaigns and visual communities before fixing new art directions. Do not treat popularity, brand fame, labels or matching subject matter as visual quality. Distinguish original project/publication dates from repost/collection updates and lookup time; inspect real images and trace original authors. Allow one source to support multiple explicitly bounded evidence roles. Distinguish reference-only registration from actual browser viewing and allowed acquisition without claiming an API or bypassing access checks. Preserve discovered, viewed, acquired and actually submitted image evidence separately, bind selected references to current candidates/assets and real tool image parameters, and do not substitute URL/text style labels for required image reference. Synchronize CMP, CC4, DS1, V7, entry/workflow, QA and existing blank records. No fixed source quota, extra approval, project examples, downloaded images, demos or resource-code changes packaged. Require actual reference-image input together with the prompt on every image-generation call for direction samples, key visuals, expressive lettering and graphics, including internal explorations. Reuse suitable approved or quality-verified images when applicable; otherwise acquire and inspect relevant mature references through RR. Verify model-readable inputs and real image parameters, preserve reference versus edit-target roles, and stop dependent generation to repair missing images or unsupported input instead of falling back to text-only generation. Derived assets and retries retain actual image inputs, and missing evidence cannot be repaired retroactively. Keep visual quality and composition review distinct from successful image submission. No provider setup, new workflow stages, extra approvals, resource-code changes or project artifacts packaged. Preserve the explicit work object when processing trial feedback: Skill evaluation diagnoses rule gaps versus execution/review failures and delivers method changes with bounded validation, rather than silently polishing the trial artifact. Candidate rejection alone does not authorize another production round; existing explicit scopes remain reusable without extra fixed approvals. Operationalize per-candidate visual-language evidence and whole-composition versus local-reference support; require this coverage in self-review and delegated visual review rather than only spelling, collisions, readability or cross-candidate difference. Review text-on-image support for natural integration as well as contrast; permit justified shadows, gradients and hard edges without making them universal or banned. Preserve existing stages, confirmation gates and non-Markdown resources; package no project example, demo or test artifact.",
+    "scope": "Approved design judgment and desk research; outcome, work-stage and subdeliverable relationships; detailed product-interface/website workflow connecting existing methods, resources, outputs, per-step self-review and handoff; early test prototypes with explicit tool-route confirmation and no default wireframe pass; shared concept exploration without fixed quotas; isolated visual samples, representative-page and final review. Other detailed outcome workflows remain to be agreed. Preserve original navigation, distinct professional judgments, and all scripts/assets. Visual-input and preference checks before samples; substantive candidate differentiation; typography role selection, optional supplied/verified online fonts, and expressive title sub-assets with file, text, render and tool-scope checks. Approved information-role and priority to visual-expression mapping uses one shared U1/U3/V3 record and rendered QA0 evidence; logical grouping need not have visible containers, and same-role/state consistency permits justified variants. Approved conditional key-visual-led workflow: context/audience/goals and applicable references, AI concept derivation followed directly by one or two self-reviewed rendered KV samples and human picture selection, then derived DS2 page specifications and existing representative/final review; no mandatory text-only direction approval. Preserve essential fact/business decisions, explicit text-only consulting scope and TR0 tool-route confirmation. Reconcile page sub-asset routing, color-source provenance, optional preset scaffolds and evidence for custom specifications without changing scripts or globally restyling unrelated tasks. Independent trials use fresh context and original inputs without prior preferences/candidates, with direction provenance and bounded evidence; remove seeded travel-calendar concept examples. Formal interface production separates visual/title layers, program-managed data and optional reusable glyphs, with composition and replacement checks, without automatically commissioning animation or editable source deliverables. Reconcile direct TR3/TR6 routing conflicts with approved TR0 and applicable baseline rules. Methodology-only cleanup removes worked cases, concrete scenario answers, illustrative copy and task-specific test records from design instructions; preserve general decision criteria, method IDs, execution and evidence boundaries, blank records and actual tool/resource capabilities. Walkthrough becomes general method/route verification. Actual trial tasks and artifacts stay outside the package. Extend role/update/maintenance-based visual expression from main titles to fixed subtitles and eyebrow text, with optional independent transparent glyph assets; derive typography, labels, controls, gradients/surfaces and functional/expressive icons from the same direction. Preserve live controls and data, approved-system reuse and human review boundaries. Review the complete rendered composition and actual complex backgrounds, reconcile page subasset routing, scoped component reuse and provider-specific legacy check coverage without changing scripts or assets. No project examples or trial artifacts added. Centralize icon selection in V5 from page/content duties, hierarchy, necessity, role, image/text priority and actual size to visual grouping, semantic search versus supported filters, real collection coverage and composed review. Permit multiple role-based groups with within-group provenance/optical consistency and cross-group coordination; prefer the same verified collection without conflating style labels with identity. Scope missing-item alternatives/custom work to approved systems and real tool authorization, preserve unknown provenance and actual channel limits, and reconcile duplicated whole-page uniformity and fixed-grid instructions. No script, asset or demo changes. Establish a provisional whole-composition CI color framework before candidate element production and SVG adaptation, calibrating DS2 after visual selection without extra palette approval. Distinguish information importance, interaction state and visual weight from fill/outline, size and contrast. Map actual SVG structure to semantic colors while preserving locked colors and embedding/format limits. Add solid/gradient construction decisions and Open Props as an optional documentation-level CSS resource, with version/license/dependency and real composite checks; document existing helper output limitations without changing scripts, resource JSON or assets. No demos or worked examples added. Preserve explicit production requirements, rejection criteria and acceptance evidence through intake, handoff and rendered QA; unrequested methods remain professional choices. Cover key content sections and relationship graphics beyond functional icons, distinguish underdesigned expression from useful restraint, and return unmet candidates to production before recommendation. Independent tests remove prior answers without removing valid requirements; feedback regression and continuous iteration retain accurate labels. No new stages, approvals, mandatory decorative quota or task examples. Separate content references, visual direction and craftsmanship benchmarks for generated assets. Define observable form, edge, negative-space, detail/material scale and lighting goals; inspect source-size craft and target-size composition, refine the affected asset and preserve effective structure. Do not equate stylistic matching with accepted direction or quality, inherit unapproved generated artifacts as quality standards, mandate output quotas, or treat pixel upscaling as refinement. No project examples or generated assets added. Connect key-visual-led DS1 to context-based style selection using activity goals, participation mechanisms, desired perception, brand and reading/operation constraints across existing visual resources. For unresolved visual-direction comparison, default to two or three genuinely distinct matching complete first-screen/KV proposals, with scoped reuse, single-direction delegation and real-constraint exceptions; preserve CC2 concept-count discretion. Include designed background/space/atmosphere, subject, typography and controls as each direction requires, without prescribing complex scenes, gradients or 3D. Transparent subasset format does not determine final composition. Preserve tool confirmation and existing visual-choice, representative and final gates; no project examples or demos added. Treat source-demo copy as reviewable input rather than automatically frozen content. At intake establish provenance and edit scope; before layout and image production use U1 to retain, delete, merge or rewrite according to actual comprehension, recognition, decision or action value. Preserve necessary facts, conditions, units, labels and explicitly frozen wording, and obtain specific batch approval with rationale and meaning/scope impact before applying copy changes, reusing existing concrete approval without repeated per-string questions. Share the cleaned necessary content baseline across direction candidates; audit newly generated decorative copy as well as retained source text. No blanket language/slogan ban, project examples or demo files in the package. Add an all-candidates-rejected branch within the existing rendered-direction choice. Collect concrete multi-dimensional reasons and desired tendencies only where unknown, retain accepted scope, route targeted revisions to existing methods, self-review and return to the same choice gate. Respect actual host multi-select capabilities and allow multi-item free text instead of inventing parameters or repeated single-choice rounds. Users may be unsure or delegate new recommendations without professional diagnosis; recommendations do not imply acceptance. No new global questionnaire, approval stage, project examples or demos. Require a reviewable original-to-proposed copy change record with reasons, meaning/scope impact and human confirmation before applying deletions, merges, rewrites or additions to pages, artwork or image-generation inputs. Broad optimization, tool-route or visual-style approval does not approve copy edits. Preserve proposals separately, update shared candidate content only after approval, and check implementation against the approved version and scope. This conditional copy gate does not require text-only visual-concept selection or repeated approval for unchanged text. No demo or project example is packaged. Revise visual-direction selection after a failed perceptual-diversity review: distinguish fixed constraints from optional expression; derive different perceptual emphases and picture structures before choosing media; use cross-pool resources and independently justified references instead of inheriting the first candidate. Replace category-wide automatic aesthetic exclusions with concrete brand, comprehension and operation conflicts, without inferring unsupported business mechanisms from visual language. Inspect cross-candidate briefs and actual generation inputs for unnecessary shared motifs, lighting, palette and composition before production. Judge task fit, craftsmanship and actual whole-picture choice diversity separately; return convergent candidates to direction development rather than passing media or parameter differences. Palette and color QA support intentional contrasts without universal same-temperature or 60-30-10 rules. Reusing source wording does not approve replacing or omitting other source text. Existing human/tool gates remain; no prescribed style, project example, demo or asset is packaged. Connect campaign communication and participation thinking to the actual title, subject graphics, participation area and action expression before choosing assets. Respect specific intended liveliness or restraint without making every campaign noisy. Rewrite U6 from syntax formulas to editorial roles, natural complete messages, actual click expectations and truthful benefit conditions; diagnose unsuitable source copy and propose approved edits rather than treating unchanged wording as quality evidence. Keep the existing specific copy approval gate, frozen-copy boundaries and valid reuse. Distinguish functional-symbol recognition from expressive-graphic contribution; keywords, matching packs, generated titles or image presence do not prove campaign expression. Review actual compositions before author rationale and compare authorized source/new versions for concrete improvement, regression and unresolved issues within existing QA0; independent review is optional and does not replace human acceptance. Update existing blank records without scores, new global stages, fixed icon treatment, project examples or demos. Replace rigid key-visual area-ratio/isolated-zone defaults and full-component-skin reuse with composition-led production. Derive visible focal relationships, hierarchy and necessary subjects before material/detail prompts; preserve accurate actual inputs and pre-generation reference provenance. Design whole-canvas background continuity, spacing rhythm and adjacent-layer boundaries before asset decomposition, then implement intentional transitions or separation with suitable surfaces, gradients, masks or overlaps without requiring them universally. Keep independent generated title and live data/control requirements. Keep imported component resources byte-identical; treat their usage metadata as discovery hints and decide secondary-action appearance from the actual composition and state requirements. Audit generic container metaphors, equalized section spacing and decorative borders/stripes against content roles, including visible artwork contours rather than DOM boxes alone. Keep observed, goal-met and unverified evidence distinct; do not promote unresolved composition defects or missing comparisons as completed candidates. Trace rejected visual directions to actual adopted resources before scoped deprecation; no unrelated style removed on name similarity. No new global phase, human approval, forced effect, project example, demo or output asset is packaged. Synchronize the existing routing, dispatcher, framework and human-readable workflow to the single V7 production method, removing duplicated fixed-ratio, mandatory dual-reference and baseboard-first instructions that would override composition-led asset creation. Existing reference-selection scope and animation decisions are retained; no additional approval or stage is introduced. Make RR the detailed visual-reference retrieval method: begin with subject/theme and actual campaign semantics, examine relevant target-market mature products/platform cases, and expand through related brand campaigns and visual communities before fixing new art directions. Do not treat popularity, brand fame, labels or matching subject matter as visual quality. Distinguish original project/publication dates from repost/collection updates and lookup time; inspect real images and trace original authors. Allow one source to support multiple explicitly bounded evidence roles. Distinguish reference-only registration from actual browser viewing and allowed acquisition without claiming an API or bypassing access checks. Preserve discovered, viewed, acquired and actually submitted image evidence separately, bind selected references to current candidates/assets and real tool image parameters, and do not substitute URL/text style labels for required image reference. Synchronize CMP, CC4, DS1, V7, entry/workflow, QA and existing blank records. No fixed source quota, extra approval, project examples, downloaded images, demos or resource-code changes packaged. Require actual reference-image input together with the prompt on every image-generation call for direction samples, key visuals, expressive lettering and graphics, including internal explorations. Reuse suitable approved or quality-verified images when applicable; otherwise acquire and inspect relevant mature references through RR. Verify model-readable inputs and real image parameters, preserve reference versus edit-target roles, and stop dependent generation to repair missing images or unsupported input instead of falling back to text-only generation. Derived assets and retries retain actual image inputs, and missing evidence cannot be repaired retroactively. Keep visual quality and composition review distinct from successful image submission. No provider setup, new workflow stages, extra approvals, resource-code changes or project artifacts packaged. Preserve the explicit work object when processing trial feedback: Skill evaluation diagnoses rule gaps versus execution/review failures and delivers method changes with bounded validation, rather than silently polishing the trial artifact. Candidate rejection alone does not authorize another production round; existing explicit scopes remain reusable without extra fixed approvals. Operationalize per-candidate visual-language evidence and whole-composition versus local-reference support; require this coverage in self-review and delegated visual review rather than only spelling, collisions, readability or cross-candidate difference. Review text-on-image support for natural integration as well as contrast; permit justified shadows, gradients and hard edges without making them universal or banned. Preserve existing stages, confirmation gates and non-Markdown resources; package no project example, demo or test artifact. Package a deduplicated global non-UI visual reference library with multi-dimensional observations and portable list/search/show/validate helper; UI reference images remain outside the package and are retrieved online. Task relevance, quality and current verified references select a small candidate set without traversing all style categories; curated image dates are not trend evidence. Preserve existing methods and confirmation gates.",
     "changed_imported_files": [
       "skills/fusion-design-core/SKILL.md",
       "skills/fusion-design-core/WORKFLOW-REVIEW.md",
@@ -3151,5 +4023,128 @@
       "skills/fusion-design-core/workflow-product-interface.md"
     ],
     "rebuild_note": "Import scripts reproduce the integrated upstream baseline. Preserve and reapply Git-maintained local refinements when reimporting."
+  },
+  "visual_reference_library": {
+    "curated_on": "2026-11-07",
+    "origin": "user-provided-non-ui-visual-learning-references",
+    "source_manifest": "visual-reference-source.json",
+    "root": "skills/fusion-design-core/visual-reference-library",
+    "helper": "skills/fusion-design-core/scripts/visual_reference.py",
+    "files": [
+      "skills/fusion-design-core/scripts/visual_reference.py",
+      "skills/fusion-design-core/visual-reference-library/README.md",
+      "skills/fusion-design-core/visual-reference-library/catalog.json",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-1823290881.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-2820998435.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-3112476067.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-3328081118.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-4205575926.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-4337806704.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-4611134562.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-4731383746.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-4795352360.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-5268319110.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-5466620194.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-5518977081.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-5700158752.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6195921187.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6251374503.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6273630538.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6334376273.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6341987389.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6342935204.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6344502040.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6381967588.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6393753116.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6423881967.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6445147669.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6449886676.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6450396633.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6450600202.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6450755324.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6465057410.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6466282002.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6466316855.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6479591168.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6480059609.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6487490072.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6490934892.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6524273685.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6546724065.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6610638651.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6643581984.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6655662110.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6658516749.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6695023218.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6714599886.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6752022443.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6752081445.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6778792408.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6812406561.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6815488045.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6834007421.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6835884913.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6857332288.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6864573678.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6867022747.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6940568082.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6963464193.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-6967543797.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7038726724.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7042521321.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7050855078.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7068025553.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7079800295.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7094966228.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7096285981.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7132722144.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7134057826.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7134689547.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7137059688.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7147593333.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7194422034.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7195217572.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7205997205.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7214963695.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7220577848.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7220853258.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7224375607.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7225238192.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7225470622.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7226589212.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7237754112.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7242962071.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7252857052.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7252866738.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7267946651.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7274800587.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7277650270.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7287077264.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7293812312.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7296221682.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7306980950.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7311749733.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7311838111.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7311965246.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7311991923.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7311994112.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7311995877.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7312007926.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7312047376.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7312061247.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7312557399.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7315484384.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7315552828.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7315929260.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7315938812.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7316095034.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7317362029.webp",
+      "skills/fusion-design-core/visual-reference-library/images/huaban-7317477345.webp"
+    ],
+    "input_files": 150,
+    "unique_images": 148,
+    "bundled_images": 106,
+    "excluded_ui_images": 42,
+    "original_imported_resources_preserved": true
   }
 }

@@ -19,6 +19,14 @@
 
 原导入脚本重建上游整合基线；本地修订由 Git 保留，重新导入时须保留并重放这些修订，不能直接导入覆盖后声称与当前源码一致。回归分别检查基线适配可复现、当前文件摘要、本地扩展范围，以及原始 Figma 执行基线与当前文件。Figma 执行入口和四份相关手册的工具确认适配另记在 [figma-source.json](figma-source.json) 的 `local_refinements`，原始来源摘要保留。下面“可重建”“字节未变”等历史描述应在这个版本范围内理解。
 
+### 全局视觉参考资源增量（2026-11-07）
+
+使用者明确提供并要求随包整理的两批图片共 150 个文件，按内容去重为 148 张；106 张非 UI 视觉参考进入 `fusion-design-core/visual-reference-library/`，42 张不同 UI 图排除。标签支持跨成果的构图、字形、材质、配色、图形与整体表达；原始图片每份仅存一次。UI／实际界面案例继续按任务在线检索，不加入本地分发图库。
+
+[独立来源与收录登记](visual-reference-source.json) 记录提供批次、原文件名、哈希和审阅决定；[图像目录](skills/fusion-design-core/visual-reference-library/catalog.json) 记录实际相对路径、观察、多维标签、索引和使用边界。文件名推测的来源链接未冒称已核验，原作日期与许可未知如实保留。图片是视觉学习参考，不是可直接复制到成品的品牌素材或已安装字体。
+
+新增库、说明及其独立检索脚本在 `design-source.json` 标为 `origin: bundled-visual-reference`，并以 `visual_reference_library` 登记完整资源路径；原 434 份导入基线、原非 Markdown 脚本／素材、三份 `local-extension` 方法文档及其来源约束保持。重导上游会覆盖来源清单，维护时须保留并重登本资源增量；安装与检索可移植性由专项回归另验。此为源码资源增量，不改写旧 Release 附件。
+
 ## 同事专业设计来源
 
 固定来源 `https://github.com/savvydd/jq-product-agent` 的 `feat/design-handoff-contract` 提交 `6dcc771bb7b5d0c5f4d2ca25fc13994af12c73a1`。完整导入 design-thinking-os 234份、impeccable 127份、ui-ux-pro-max 73份，共434份；不导入另一套产品主线或阶段包装。
