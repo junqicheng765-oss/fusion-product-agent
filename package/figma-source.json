@@ -1,63 +1,88 @@
 {
   "source": "JQ Product Agent 1.1.5",
   "repository": "https://github.com/junqicheng765-oss/jq-product-agent",
-  "adaptations": "Restore execution, configuration reuse, task/preflight, generation, Computer Use, Dev Mode reconstruction and copy/interaction review. Relink all dependencies within this package; design judgment and QA0 belong to designer core, product facts to fusion product entry; require product goal/scope evidence or explicit delegation before execution; no legacy product-stage wrappers imported.",
+  "adaptations": "Restore execution, configuration reuse, task/preflight, generation, Computer Use, Dev Mode reconstruction and copy/interaction review. Relink all dependencies within this package; design judgment and QA0 belong to designer core, product facts to fusion product entry; require product goal/scope evidence or explicit delegation before execution; reviewed product copy is a separate upstream input, with copy IDs/versions propagated through preflight, task prompts, Figma and Demo review; MR1 logical Skill references and location contract are reproduced on import; no legacy product-stage wrappers imported. Hash-pinned PR2 refinements are replayed after the rc.6 baseline; unknown inputs fail.",
+  "local_refinements": {
+    "date": "2026-11-07",
+    "pr": "https://github.com/junqicheng765-oss/fusion-product-agent/pull/2",
+    "pr_head": "7affdbe1ecabc61cf1d081e8d5d152894c40fa11",
+    "integration_baseline": "0.3.6-rc.6",
+    "changed_imported_files": [
+      "skills/fusion-figma-workflow/SKILL.md",
+      "skills/fusion-figma-workflow/references/figma-execution.md",
+      "skills/fusion-figma-workflow/references/initialization.md",
+      "skills/fusion-figma-workflow/references/preflight.md",
+      "skills/fusion-figma-workflow/references/task-package.md"
+    ],
+    "added_files": [],
+    "rebuild_note": "Import adapters reconstruct the rc.6 baseline; hash-pinned PR2 patches and explicit local extensions are then replayed automatically. Unknown inputs fail."
+  },
   "files": [
     {
       "source": "skills/jq-figma-workflow/SKILL.md",
       "destination": "skills/fusion-figma-workflow/SKILL.md",
       "source_sha256": "7489045df0d6ed26e43e585291f312b5ae607c595160e99921c8464cbde4f9e6",
-      "sha256": "ea187f4e5039b1b40c12d3d8ebec49a630fc05b6d7713805a839b85466517be1",
       "adapted": true,
-      "excerpt": false
+      "excerpt": false,
+      "sha256": "b195fcded23f01a7b8fbaa57c6112e2788e888ffe67ecc52ad37bc3bd1ff95e6",
+      "integration_sha256": "da608fd4fcf7d5f0ed6179070a961dc4243895f9529a449b1af5721ad351953b",
+      "local_refinement": true
     },
     {
       "source": "skills/jq-figma-workflow/references/figma-execution.md",
       "destination": "skills/fusion-figma-workflow/references/figma-execution.md",
       "source_sha256": "1cbea9aff8e451f187195f153954dffaa2a9d674927f02756279016d09e63449",
-      "sha256": "1c7aa678a72b1fa92d8b976e4f87c9c126d0ea0a0cc6d60626d6504669267925",
       "adapted": true,
-      "excerpt": false
+      "excerpt": false,
+      "sha256": "64b49c998e86e8856dad27a196549fe3c5614057d5f202e5dbd2c227f2ee282b",
+      "integration_sha256": "1c7aa678a72b1fa92d8b976e4f87c9c126d0ea0a0cc6d60626d6504669267925",
+      "local_refinement": true
     },
     {
       "source": "skills/jq-figma-workflow/references/design-to-demo.md",
       "destination": "skills/fusion-figma-workflow/references/design-to-demo.md",
       "source_sha256": "b82d8b0a09f5aaa27d6c963dc280e0898e1c3468c7f02ccb4aa31666e88c1f2e",
-      "sha256": "3b192b599f700117d553dc8230d4444ab3c92902ef7bbfe6e01844daf69d0a38",
       "adapted": true,
-      "excerpt": false
+      "excerpt": false,
+      "sha256": "ab27a27d9b21916875f98ea1cf2fea23195723ae239eb4c19e96d531cb69244e"
     },
     {
       "source": "skills/tc-product-agent/references/26-设计能力初始化与复用.md",
       "destination": "skills/fusion-figma-workflow/references/initialization.md",
       "source_sha256": "e883411cb983bd411bf2cc4647a261256569e0c3a6120d47245391901c1fd76e",
-      "sha256": "6a137ca0898cfa31a13f9b1760d33ac7a058b1e4ccc43e2caabc0d5ec3894b6f",
       "adapted": true,
-      "excerpt": false
+      "excerpt": false,
+      "sha256": "e90811348d78ab43cd6c4a94a62652a13a7a7ce8c6d261adaa3cbc966e6fe113",
+      "integration_sha256": "0ce64cef2327eb82a6415615a0d340056089e08be20ee047a89f76de9c736002",
+      "local_refinement": true
     },
     {
       "source": "skills/tc-product-agent/references/18-Figma执行前核对卡.md",
       "destination": "skills/fusion-figma-workflow/references/preflight.md",
       "source_sha256": "982624bca11a58a131358312b4e7f2709c3ebacb17085958be6b0a5b5a1276a3",
-      "sha256": "cb055ff14aee4b64c2ed9d811715e073f9fb5298ec625659f044ddaf40a6b557",
       "adapted": true,
-      "excerpt": false
+      "excerpt": false,
+      "sha256": "a0654c785f1f9f4afb1f9eb25e8247f70d52844fdf1ce46b7e65313439c07f31",
+      "integration_sha256": "c1cc9b14fd7984308e1f40a245b9c3f753c045bcd8216f15c09ebb2f4e7508fb",
+      "local_refinement": true
     },
     {
       "source": "skills/tc-product-agent/references/15-设计交付与Figma回传规范.md",
       "destination": "skills/fusion-figma-workflow/references/task-package.md",
       "source_sha256": "b83ee12f94eec0e37dcc663d37abcf2954be0e760e3f80a2d39863315692d7ee",
-      "sha256": "4e2fc4987700b6164eb3cb577ef3fe6fb5de973f380bcd87a62e00fde49c2146",
       "adapted": true,
-      "excerpt": true
+      "excerpt": true,
+      "sha256": "a0bf2c3985eee1cb02390c4698d36027ff581310f8962adadc99edd30afb0bcd",
+      "integration_sha256": "468f5075fb2f384513b9f6fdc6762f94c18631e73b4bed1666da469f020c44b6",
+      "local_refinement": true
     },
     {
       "source": "skills/tc-product-agent/references/24-Demo文案与交互复核.md",
       "destination": "skills/fusion-figma-workflow/references/demo-review.md",
       "source_sha256": "7e0f27da82c85e21076552f085661a68825790c5b78dafb9a5cd9cb0678f09b0",
-      "sha256": "21787cb225a311168b05623c1bed27f1234052ad51ec9d8b9c1e7d0c8efecfff",
       "adapted": true,
-      "excerpt": false
+      "excerpt": false,
+      "sha256": "771a70040d4b0b2f89a33e6aa17b76247dc012bd3574744c324a4662d48aa3a3"
     }
   ]
 }

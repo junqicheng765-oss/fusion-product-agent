@@ -1,0 +1,194 @@
+{
+  "pr": "https://github.com/junqicheng765-oss/fusion-product-agent/pull/2",
+  "pr_head": "7affdbe1ecabc61cf1d081e8d5d152894c40fa11",
+  "files": {
+    "skills/fusion-design-core/SKILL.md": {
+      "baseline_sha256": "279ceac5b523bf90a23cfa308d093443be667890fcb94417b4f7e7c79e2c83c6",
+      "sha256": "fbbd679e6720aa00e99210ed5a9bac2724b78eef618dc95ef7b7cafff2932fc7",
+      "patch": "patches/skills/fusion-design-core/SKILL.md.patch",
+      "patch_sha256": "4b33fc99aa1f0426b69c7da1bef2f911ec9d502740879cade87bf2da582248a6"
+    },
+    "skills/fusion-design-core/WORKFLOW-REVIEW.md": {
+      "baseline_sha256": "743cd0c19b0caf5fa93a36f670ffa57d9db2d4ff03981925ccd13f819e3efd3d",
+      "sha256": "9774497219328663e8d81f484d5933933decd5877bbb590bac0278e204e30517",
+      "patch": "patches/skills/fusion-design-core/WORKFLOW-REVIEW.md.patch",
+      "patch_sha256": "52a3d129bf1770e8fd2050d809552637c29caed659f94c384b8bd48e6529b3b8"
+    },
+    "skills/fusion-design-core/framework.md": {
+      "baseline_sha256": "16c9fe3bedf43287fd5a6741c5ee2f11d5d05a5bb7561c795ec8cde2010085e9",
+      "sha256": "8ddf53c22dfa221ea9245482d0a825e3e64ed5d7e369e658a263556842276bcd",
+      "patch": "patches/skills/fusion-design-core/framework.md.patch",
+      "patch_sha256": "24ec2793785bc64dd3f0ed9f884089251a8fd2c051d7b5b5fa777e22e974312c"
+    },
+    "skills/fusion-design-core/methods-close.md": {
+      "baseline_sha256": "f5d91bee14443e534a03ab0f0b6a9171cd3952a22f67b7dc6ffe2fab94e13f36",
+      "sha256": "5fa206310549dfb661d6d2286e8234745944ed1d35aacf2d18996c183ae5f8f7",
+      "patch": "patches/skills/fusion-design-core/methods-close.md.patch",
+      "patch_sha256": "5e1f6ec3e9863e990f5cbc9520310b8b1e616434c8b7cd3d7cac315b3615fa06"
+    },
+    "skills/fusion-design-core/methods-color.md": {
+      "baseline_sha256": "58bd7e9579bab308d51d2716cf6af65ac898e1f79f07e726081dbe8d92dc65a5",
+      "sha256": "dca357c767a3bf459d093ff8b02fe41043c83bc0f663de1c9e70d7bdafc96507",
+      "patch": "patches/skills/fusion-design-core/methods-color.md.patch",
+      "patch_sha256": "648b2f8e92dbc8bcd9eceb918fb977fc8487943f9a501c6ee41a47ff28f50ba6"
+    },
+    "skills/fusion-design-core/methods-competitive.md": {
+      "baseline_sha256": "52f4a47f279f08ef04f50eaf5085e15e5c6f4c015c0185b8d55f3fa40253e0c9",
+      "sha256": "8754dc221d0c50e49d60719aac2198b2819be0311f9abb4ae8d3b7fdc4e1bdcd",
+      "patch": "patches/skills/fusion-design-core/methods-competitive.md.patch",
+      "patch_sha256": "a18d07143f7e14e501ddafa5bdadb530a2b9d46f13336ed2bfaa85b410f969eb"
+    },
+    "skills/fusion-design-core/methods-context.md": {
+      "baseline_sha256": "197be52b1960aa6eef54e983625fcd38ccdcaa7f08a6c79c16ca0f85d84f7877",
+      "sha256": "44e87d16044dfef7f466acf15062d4378aacc41afca19af68a1d8e5dd8ffa38a",
+      "patch": "patches/skills/fusion-design-core/methods-context.md.patch",
+      "patch_sha256": "cbbb70574057817c1478d50c10afcacc7c9f53f0806b3654c390e03ab9d7e35a"
+    },
+    "skills/fusion-design-core/methods-dispatch.md": {
+      "baseline_sha256": "ff7f8b6542d8c3fab94922b1ba8a7b8e33aa095c213d2053b0a6fc2823d9a496",
+      "sha256": "aa2c33866622a0f64fa86647e53024facc8790078d3f23c55dbc82787ecca700",
+      "patch": "patches/skills/fusion-design-core/methods-dispatch.md.patch",
+      "patch_sha256": "0c2a2273727c78998975f9c11f7ee4de2ff084ac5e39d338d7fbb5e092608be8"
+    },
+    "skills/fusion-design-core/methods-execution.md": {
+      "baseline_sha256": "66cb87a693b48a9f26e388d3e2efce4bef4c8ab686484f2e8915006c5877382e",
+      "sha256": "2aff26db3930430b0b6cd45f2c278f507c02536d673730ef3ad5e6a67f1e6b28",
+      "patch": "patches/skills/fusion-design-core/methods-execution.md.patch",
+      "patch_sha256": "2e1f7acc95bafedd10225a35ef52182edf2867ed3db50a2b030a5472db1a2411"
+    },
+    "skills/fusion-design-core/methods-flow.md": {
+      "baseline_sha256": "662c6a0a4715556393e204f5d649a548e4e887e5f44c8cc34ced016db26887ee",
+      "sha256": "7d2f8125e3b407cf93e576962378c7e0711c83d8ef36a0466e8aae70d39c1aa9",
+      "patch": "patches/skills/fusion-design-core/methods-flow.md.patch",
+      "patch_sha256": "f71ebe94b08fb825a577cc95cffde01782426f4d15616ba9bf1160e0a874c8df"
+    },
+    "skills/fusion-design-core/methods-image.md": {
+      "baseline_sha256": "13d16afb1f7ace1ccb44cc21f8dc9780f160e4cb3609efcfe200d2da5be98de4",
+      "sha256": "21c6813d5744575ef8018ad2cef4d3cba7fff0dfa5d86d278780abaf5b06fe81",
+      "patch": "patches/skills/fusion-design-core/methods-image.md.patch",
+      "patch_sha256": "19f115bfa230b007f67565bcda533fef7e74d3e3268d82ca6a863dd4effd3eab"
+    },
+    "skills/fusion-design-core/methods-intake.md": {
+      "baseline_sha256": "167b75dd90cf840b93f590cc91e288011a4777c851ee6b2f60322b9966d1ca21",
+      "sha256": "441980ab3cd98061c4e883875ba64f75c4813b4e0bbcd1341d0514f1f87a9c0e",
+      "patch": "patches/skills/fusion-design-core/methods-intake.md.patch",
+      "patch_sha256": "5c582aa39f4e033e166ebad68c725a7ed81402a2a1acddbbafa413e6a1e2ed38"
+    },
+    "skills/fusion-design-core/methods-interaction.md": {
+      "baseline_sha256": "1332996689a87edff0c94dc1db6b8f38d6d43ac4eb4cd07f996db308e21b4938",
+      "sha256": "276a306ec430ffbc75c063aa390aaec3abdcc0570aae2e9e4e7a62a82d020b8b",
+      "patch": "patches/skills/fusion-design-core/methods-interaction.md.patch",
+      "patch_sha256": "f13f631aa831d9a8f557a3d6ba411c69f3d693e589cb48a8d807ceddb9b890d5"
+    },
+    "skills/fusion-design-core/methods-motion.md": {
+      "baseline_sha256": "96c48201eef249f8add6c3b022e0fb4c07bac143d5bb7e8e1dee2508b3821e6a",
+      "sha256": "adec019cdb153f8979b44ce7ba659827a1f04cd778ecd8d672c869989cb17581",
+      "patch": "patches/skills/fusion-design-core/methods-motion.md.patch",
+      "patch_sha256": "4a8bde81b0737fedc077814f4d09eef3a435b990f6fbd64f2a5929bf528ea630"
+    },
+    "skills/fusion-design-core/methods-prototype.md": {
+      "baseline_sha256": "36d984227d2688dd3ed8dfcd84456d8209a5014b9afc98894f7e1432486e7d3a",
+      "sha256": "bac8d45521ae5084b600f9d8500de0d187b712ad2e83250847b98be000fb9222",
+      "patch": "patches/skills/fusion-design-core/methods-prototype.md.patch",
+      "patch_sha256": "e6e32de251c09440ad3b916dbf0800e7ae4f24f547dbd7400fdd21e2693a35b2"
+    },
+    "skills/fusion-design-core/methods-research.md": {
+      "baseline_sha256": "0c4153f310965bc4c6268dc01f61bc3dce055e9f25126c52697dabba1bb0d7d6",
+      "sha256": "4a7b318b4921464bc1d8a1f0c5cbfc85571a2f148e1e7f7da1ce67044b7191f7",
+      "patch": "patches/skills/fusion-design-core/methods-research.md.patch",
+      "patch_sha256": "a0c7727e8d67418f2f7c76077214b20b78f5ae53aeab6329258efbb79deb7f7d"
+    },
+    "skills/fusion-design-core/methods-resource-routing.md": {
+      "baseline_sha256": "09938bf46241dc5ece0a1162bb4591e5e2a10f464b9802c243b1edc443e85c75",
+      "sha256": "f122bb0ec310b76536fe658d4b318c494380aff8163df7f4da3ecd9d55d31718",
+      "patch": "patches/skills/fusion-design-core/methods-resource-routing.md.patch",
+      "patch_sha256": "c101528a501f7005bcc9e4555fa05cd3ecf01c9ff32895bc0decb110ad846f2e"
+    },
+    "skills/fusion-design-core/methods-routing.md": {
+      "baseline_sha256": "3bdbaa6ab9de625fdb4031eb51f41b85ca1c794e5619e0b91d81737d73d84756",
+      "sha256": "154a089f192d08e8fef82deaa06487f7b54ed2b75fd3e2ddf94c9af12baa1111",
+      "patch": "patches/skills/fusion-design-core/methods-routing.md.patch",
+      "patch_sha256": "81e05b5d8914df04e235d12be45abc15fa064cc6656bf000776aa222397dcf04"
+    },
+    "skills/fusion-design-core/methods-style-engine.md": {
+      "baseline_sha256": "a78a510d7192e74d6d91f95d496a734852217ccf669b636d4a74dd6fa8d0ef36",
+      "sha256": "d0faf28622aec0b02efaf4a5f8ab3d77f936b61b541da2182455da9830af6d33",
+      "patch": "patches/skills/fusion-design-core/methods-style-engine.md.patch",
+      "patch_sha256": "3c2bfbb2323956242517b364c81f1bc28befede528b2a23928417e5cc8b01984"
+    },
+    "skills/fusion-design-core/methods-tool-routing.md": {
+      "baseline_sha256": "792a3a3f0066c3b6c0c488751b5b819638b9c32c5ada005da8affd44bb4f3afe",
+      "sha256": "c8eede75302552316b7dddc661668796b0527832ca60a16acd1b0a5b3db43a83",
+      "patch": "patches/skills/fusion-design-core/methods-tool-routing.md.patch",
+      "patch_sha256": "22fc8f604125c4d512a74cea96cd39c466ec7a3534cb9e44a8f0c608bcc09160"
+    },
+    "skills/fusion-design-core/methods-ui.md": {
+      "baseline_sha256": "15196e12d6a7a675a1b324b9c2a0c2ef988d35a9f60ff8b72492b89190e7688c",
+      "sha256": "3cf9fc2a551d8754a40cd0c39939513a6506a0570bef1a63092def0b751300c9",
+      "patch": "patches/skills/fusion-design-core/methods-ui.md.patch",
+      "patch_sha256": "2a8ba0559bb1ee3b6ac3f2c67487e62da50237e1b2113a5c028181c5e09b9b64"
+    },
+    "skills/fusion-design-core/methods-visual.md": {
+      "baseline_sha256": "179d348b748c64864008c5d73219352b6de0f3f978b92b1ddeecf6715cfb431d",
+      "sha256": "196d8d6c0ca118e8fe4ab613ef153188415329569250813aea082bb026e7da91",
+      "patch": "patches/skills/fusion-design-core/methods-visual.md.patch",
+      "patch_sha256": "ae86938ff104acb9ee34c955418fb9eabaf790065a6c7f0b6490996d688a8918"
+    },
+    "skills/fusion-design-core/templates.md": {
+      "baseline_sha256": "6f3ad6f0e2848476e3f5b5872b982012816cbddf444d7aff35a109d3cb684668",
+      "sha256": "c19e1498d8fdf79cdf38523312a4894f3e510ac0d6f5403e4c5e177b0be5971d",
+      "patch": "patches/skills/fusion-design-core/templates.md.patch",
+      "patch_sha256": "2876b9df6b28ca07a54a5cdc29890deb70b022fb73e29b21259c575e7a086853"
+    },
+    "skills/fusion-design-core/walkthrough.md": {
+      "baseline_sha256": "d8213d578aa137234f03f8043227204a61c894b0c217ba2639bb78b50c8a7b4e",
+      "sha256": "a5dcd3b605e8c785ad612bd7ebce4370fee34ad79826ebc37c7eb64071abac98",
+      "patch": "patches/skills/fusion-design-core/walkthrough.md.patch",
+      "patch_sha256": "068cdf6c36cfa8bbc2fd119b0d39719c25666e6080a0637a42f2664b7934316d"
+    },
+    "skills/fusion-figma-workflow/SKILL.md": {
+      "baseline_sha256": "da608fd4fcf7d5f0ed6179070a961dc4243895f9529a449b1af5721ad351953b",
+      "sha256": "b195fcded23f01a7b8fbaa57c6112e2788e888ffe67ecc52ad37bc3bd1ff95e6",
+      "patch": "patches/skills/fusion-figma-workflow/SKILL.md.patch",
+      "patch_sha256": "956515d2e546eba9fe8a55a34d0d11094425a101a19b08bfbb14689223a90b89"
+    },
+    "skills/fusion-figma-workflow/references/figma-execution.md": {
+      "baseline_sha256": "1c7aa678a72b1fa92d8b976e4f87c9c126d0ea0a0cc6d60626d6504669267925",
+      "sha256": "64b49c998e86e8856dad27a196549fe3c5614057d5f202e5dbd2c227f2ee282b",
+      "patch": "patches/skills/fusion-figma-workflow/references/figma-execution.md.patch",
+      "patch_sha256": "3f942f0260cc0f68d93ed0bbb46618ab2dd8841aed10709b26233fa637c46178"
+    },
+    "skills/fusion-figma-workflow/references/initialization.md": {
+      "baseline_sha256": "0ce64cef2327eb82a6415615a0d340056089e08be20ee047a89f76de9c736002",
+      "sha256": "e90811348d78ab43cd6c4a94a62652a13a7a7ce8c6d261adaa3cbc966e6fe113",
+      "patch": "patches/skills/fusion-figma-workflow/references/initialization.md.patch",
+      "patch_sha256": "f078b7137fe88ed73ecad5da95bf9ceac56fe9e0f73659415468487b3f864676"
+    },
+    "skills/fusion-figma-workflow/references/preflight.md": {
+      "baseline_sha256": "c1cc9b14fd7984308e1f40a245b9c3f753c045bcd8216f15c09ebb2f4e7508fb",
+      "sha256": "a0654c785f1f9f4afb1f9eb25e8247f70d52844fdf1ce46b7e65313439c07f31",
+      "patch": "patches/skills/fusion-figma-workflow/references/preflight.md.patch",
+      "patch_sha256": "6db814ba1c9066eb4c370380d2c4c15fa9ad8d205913a4d4fda6de52fa591cf6"
+    },
+    "skills/fusion-figma-workflow/references/task-package.md": {
+      "baseline_sha256": "468f5075fb2f384513b9f6fdc6762f94c18631e73b4bed1666da469f020c44b6",
+      "sha256": "a0bf2c3985eee1cb02390c4698d36027ff581310f8962adadc99edd30afb0bcd",
+      "patch": "patches/skills/fusion-figma-workflow/references/task-package.md.patch",
+      "patch_sha256": "fa9eb2fda79adf72dcec33ef91459da835fbf4fc96542f484d718b74b7a2ff90"
+    }
+  },
+  "extensions": {
+    "skills/fusion-design-core/methods-creative-concept.md": {
+      "file": "extensions/skills/fusion-design-core/methods-creative-concept.md",
+      "sha256": "f90020a1db54c0f4fc1334b2b955f415784f8a1858fa97fc99ecf45c2f540325"
+    },
+    "skills/fusion-design-core/methods-deliverable-routing.md": {
+      "file": "extensions/skills/fusion-design-core/methods-deliverable-routing.md",
+      "sha256": "5bd3e3853b51242b4d2879aa2e03472816fcf5604839b600a50ebcb805455307"
+    },
+    "skills/fusion-design-core/workflow-product-interface.md": {
+      "file": "extensions/skills/fusion-design-core/workflow-product-interface.md",
+      "sha256": "02f51305c7e38276415afbc00e73d8a00d52d75201d7aac4765d69849e318fca"
+    }
+  }
+}

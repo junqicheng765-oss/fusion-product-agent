@@ -5,15 +5,19 @@ These tests exercise text adaptation and preservation, not LLM conversation beha
 """
 from pathlib import Path
 import unittest
+import hashlib
+import json
 from zipfile import ZipFile
 
-from product_stage_adapter import adapt_figma_product_stage, adapt_product_stage
+from product_stage_adapter import adapt_copy_handoff, adapt_figma_product_stage, adapt_product_stage
+from resource_location_adapter import adapt_resources
+from local_refinement_adapter import refine, inventory, extensions
 
 ROOT = Path(__file__).resolve().parents[1]
 BASELINE = ROOT / 'downloads/fusion-product-agent-v0.3.1.zip'
 PREFIX = 'fusion-product-agent-v0.3.1/'
 DESIGN = 'skills/fusion-design-core/'
-CHANGED_DESIGN = {'SKILL.md', 'methods-intake.md', 'methods-routing.md'}
+CHANGED_DESIGN = {'SKILL.md', 'methods-intake.md', 'methods-routing.md', 'methods-ui.md', 'methods-tool-routing.md', 'methods-visual.md'}
 
 
 class ProductStageAdapterTests(unittest.TestCase):
@@ -26,15 +30,18 @@ class ProductStageAdapterTests(unittest.TestCase):
             with self.subTest(name=name):
                 old = self.old_bytes(DESIGN + name).decode('utf-8')
                 expected = (ROOT / 'package' / DESIGN / name).read_text(encoding='utf-8')
-                self.assertEqual(adapt_product_stage(old, name), expected)
+                self.assertEqual(refine(adapt_product_stage(old, name).encode(), DESIGN + name).decode(), expected)
 
     def test_reapplying_design_adapter_is_idempotent(self):
         for name in sorted(CHANGED_DESIGN):
             with self.subTest(name=name):
-                text = (ROOT / 'package' / DESIGN / name).read_text(encoding='utf-8')
+                old = self.old_bytes(DESIGN + name).decode('utf-8')
+                text = adapt_product_stage(old, name)
                 self.assertEqual(adapt_product_stage(text, name), text)
+                current = (ROOT / 'package' / DESIGN / name).read_bytes()
+                self.assertEqual(refine(current, DESIGN + name), current)
 
-    def test_all_other_designer_resources_remain_byte_identical(self):
+    def test_all_434_designer_resources_reproduce_current_bytes(self):
         prefixes = tuple(PREFIX + 'skills/' + name + '/' for name in
                          ('fusion-design-core', 'fusion-design-impeccable', 'fusion-design-ui-ux-pro-max'))
         with ZipFile(BASELINE) as archive:
@@ -42,19 +49,49 @@ class ProductStageAdapterTests(unittest.TestCase):
             self.assertEqual(len(names), 434)
             for name in names:
                 relative = name.removeprefix(PREFIX)
-                if relative in {DESIGN + filename for filename in CHANGED_DESIGN}:
-                    continue
+                raw = archive.read(name)
+                path = Path(relative)
                 with self.subTest(path=relative):
-                    self.assertEqual(archive.read(name), (ROOT / 'package' / relative).read_bytes())
+                    baseline = (adapt_product_stage(raw.decode(), path.name).encode()
+                                if path.suffix in ('.md', '.yaml', '.yml') else raw)
+                    self.assertEqual(refine(baseline, relative), (ROOT / 'package' / relative).read_bytes())
+
+    def test_refinements_reject_unknown_input_and_extensions_are_explicit(self):
+        meta = inventory()
+        for relative in meta['files']:
+            with self.subTest(path=relative):
+                current = (ROOT / 'package' / relative).read_bytes()
+                self.assertEqual(refine(current, relative), current)
+                with self.assertRaisesRegex(ValueError, 'Unknown refinement input'):
+                    refine(current + b'\nUnknown edit\n', relative)
+        source = json.loads((ROOT / 'package/design-source.json').read_text())
+        declared = {entry['destination'] for entry in source['files'] if entry.get('origin') == 'local-extension'}
+        self.assertEqual(declared, set(meta['extensions']))
+        self.assertEqual(len(declared), 3)
+        for relative, data, record in extensions('skills/fusion-design-'):
+            self.assertIsNone(record['source'])
+            self.assertEqual(data, (ROOT / 'package' / relative).read_bytes())
+
+    def test_localized_entries_reproduce_and_reject_unknown_upstream(self):
+        for skill in ('fusion-design-impeccable', 'fusion-design-ui-ux-pro-max'):
+            path = 'skills/' + skill + '/SKILL.md'
+            old = self.old_bytes(path).decode('utf-8')
+            current = (ROOT / 'package' / path).read_text()
+            self.assertEqual(adapt_resources(old, 'SKILL.md'), current)
+            self.assertEqual(adapt_resources(current, 'SKILL.md'), current)
+            with self.assertRaisesRegex(ValueError, 'Unknown translation input'):
+                adapt_resources(old + '\nUpstream method changed.\n', 'SKILL.md')
 
     def test_figma_upgrade_is_reproducible_and_idempotent(self):
         relative = 'skills/fusion-figma-workflow/SKILL.md'
         old = self.old_bytes(relative).decode('utf-8')
         current = (ROOT / 'package' / relative).read_text(encoding='utf-8')
-        self.assertEqual(adapt_figma_product_stage(old), current)
-        self.assertEqual(adapt_figma_product_stage(current), current)
+        baseline = adapt_figma_product_stage(old)
+        self.assertEqual(refine(baseline.encode(), relative).decode(), current)
+        self.assertEqual(adapt_figma_product_stage(baseline), baseline)
+        self.assertEqual(refine(current.encode(), relative).decode(), current)
 
-    def test_figma_execution_manuals_are_preserved(self):
+    def test_figma_execution_manuals_are_preserved_or_reproducibly_adapted(self):
         with ZipFile(BASELINE) as archive:
             names = [name for name in archive.namelist()
                      if name.startswith(PREFIX + 'skills/fusion-figma-workflow/references/') and not name.endswith('/')]
@@ -62,7 +99,12 @@ class ProductStageAdapterTests(unittest.TestCase):
             for name in names:
                 relative = name.removeprefix(PREFIX)
                 with self.subTest(path=relative):
-                    self.assertEqual(archive.read(name), (ROOT / 'package' / relative).read_bytes())
+                    target = relative.removeprefix('skills/fusion-figma-workflow/')
+                    original = archive.read(name).decode('utf-8')
+                    current = (ROOT / 'package' / relative).read_text(encoding='utf-8')
+                    baseline = adapt_copy_handoff(original, target)
+                    self.assertEqual(refine(baseline.encode(), relative).decode(), current)
+                    self.assertEqual(adapt_copy_handoff(baseline, target), baseline)
 
     def test_missing_upstream_anchor_fails_instead_of_silent_partial_adaptation(self):
         old = self.old_bytes(DESIGN + 'SKILL.md').decode('utf-8')

@@ -1,8 +1,8 @@
 # Figma 执行接入
 
-设计判断由同包 [设计专家](../../fusion-design-core/SKILL.md)负责；实际工具初始化、目标绑定、Figma Agent 生成、Computer Use 精修、Dev Mode / MCP 读取及 Demo 还原，统一执行同包 [fusion-figma-workflow](../../fusion-figma-workflow/SKILL.md)。必须实际读取相关手册，不以本摘要代替执行。
+设计判断由同包 设计专家（技能 `fusion-design-core` 内的 `SKILL.md`）负责；实际工具初始化、目标绑定、Figma Agent 生成、Computer Use 精修、Dev Mode / MCP 读取及 Demo 还原，统一执行同包 fusion-figma-workflow（技能 `fusion-figma-workflow` 内的 `SKILL.md`）。必须实际读取相关手册，不以本摘要代替执行。
 
-首次设计读取[初始化与复用](../../fusion-figma-workflow/references/initialization.md)。尚无路线时，用原生 Question 询问是否使用 Figma，并按缺口引导配置。已有本产品 Figma 主稿或已明确选择 Figma 时，先在指定 Figma 完成本次设计，再按同版节点还原 Demo；仅作竞品/灵感参考的链接不触发此默认。已有配置、有效选择和授权不重复收集。
+工具选择统一按设计专家 TR0（技能 `fusion-design-core` 内的 `methods-tool-routing.md`）：先由 AI 根据成果、现状主稿与实际能力给出推荐、理由、修改目标和交付结果，请人确认后才实际制作（包括方向样张）。没有明确选择时不能因已有 Figma 文件就默认开工；优先推荐沿用原稿，用户已明确指定在该稿编辑或有适用批准则直接复用。纯只读核对可先行，已有有效路线和授权不重复收集。选择 Figma 后读取初始化与复用（技能 `fusion-figma-workflow` 内的 `references/initialization.md`）及适用手册。
 
 已有页直接 Computer Use 精修，新增整页需要生成时才要求实际可用的 Figma Agent，然后精修。Figma MCP、Agent、Computer Use、账号与文件读写权分别验证；缺少 Agent 不阻断条件齐备的旧页编辑。已选 Figma 缺工具时先恢复，不静默换为本地独立设计。
 

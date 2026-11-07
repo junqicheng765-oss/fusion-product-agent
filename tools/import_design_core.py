@@ -8,6 +8,7 @@ import re
 import subprocess
 from design_execution_adapter import adapt_execution
 from product_stage_adapter import adapt_product_stage
+from local_refinement_adapter import extensions, provenance, refine, source_record
 
 COMMIT = '6dcc771bb7b5d0c5f4d2ca25fc13994af12c73a1'
 MAPPING = {'design-thinking-os': 'fusion-design-core', 'impeccable': 'fusion-design-impeccable', 'ui-ux-pro-max': 'fusion-design-ui-ux-pro-max'}
@@ -46,11 +47,17 @@ def main():
             raw = subprocess.check_output(['git', '-C', str(args.source_repo), 'show', COMMIT + ':' + source])
             rel = Path('skills') / new / source[len(prefix):]
             dest = ROOT / 'package' / rel
-            converted = adapt(raw, dest.suffix, dest.name)
+            baseline = adapt(raw, dest.suffix, dest.name)
+            converted = refine(baseline, rel.as_posix())
             dest.parent.mkdir(parents=True, exist_ok=True)
             dest.write_bytes(converted)
-            files.append({'source': source, 'destination': rel.as_posix(), 'source_sha256': hashlib.sha256(raw).hexdigest(), 'sha256': hashlib.sha256(converted).hexdigest(), 'adapted': converted != raw})
-    (ROOT / 'package/design-source.json').write_text(json.dumps({'repository': 'https://github.com/savvydd/jq-product-agent', 'branch': 'feat/design-handoff-contract', 'commit': COMMIT, 'adaptations': 'Isolated Skill names and parent references; remove old D/E wrapper alias. Preserve designer methods, style decisions and QA0; route Figma execution to bundled workflow, remove mandatory HTML-first and Figma-Agent bans, scope CSS-only gates to local component code. Bind design discovery, intake and routing to the product goal/scope evidence or explicit delegation; design is a stage, not a replacement product entry. No script, component or asset removed. Product-stage wrapper skills are not imported.', 'files': files}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+            files.append(source_record({'source': source, 'destination': rel.as_posix(), 'source_sha256': hashlib.sha256(raw).hexdigest(), 'adapted': converted != raw}, baseline))
+    for relative, data, record in extensions('skills/fusion-design-'):
+        dest = ROOT / 'package' / relative
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_bytes(data)
+        files.append(record)
+    (ROOT / 'package/design-source.json').write_text(json.dumps({'repository': 'https://github.com/savvydd/jq-product-agent', 'branch': 'feat/design-handoff-contract', 'commit': COMMIT, 'adaptations': 'Isolated Skill names and parent references; remove old D/E wrapper alias. Preserve designer methods, style decisions and QA0; route Figma execution to bundled workflow, remove mandatory HTML-first and Figma-Agent bans, scope CSS-only gates to local component code. Bind design discovery, intake and routing to the product goal/scope evidence or explicit delegation; design is a stage, not a replacement product entry. MR1 localized entry overlays are hash-pinned; resource references resolve by host-selected Skill roots. Product owns reviewed interface copy, design owns presentation and page behavior. Visible copy-review handoff and formal-design artifact/source boundaries are integrated; tool checklist respects the existing Figma route and explicit carrier changes. No script, component or asset removed. Product-stage wrapper skills are not imported. Hash-pinned PR2 patches are replayed after the rc.6 baseline; three explicit local method extensions are restored. Unknown refinement inputs fail.', 'local_refinements': provenance('skills/fusion-design-'), 'files': files}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({'imported': len(files), 'adapted': sum(f['adapted'] for f in files), 'commit': COMMIT}))
 
 

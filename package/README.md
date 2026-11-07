@@ -1,6 +1,12 @@
-# 融合产品锤 0.3.4
+# 融合产品锤 0.3.6-rc.7
 
-2026-11-02正式版本。产品领域研究、需求与规则、复杂状态、业务验收和交接沿用融合锤子；设计判断采用同事分支的专家模块；原有Figma执行流程独立随包提供，不再运行旧设计判断方法。本版通过融合锤子独立GitHub仓库分发。
+rc.7 整合候选另含已批准的设计流程修订；设计目录按主成果、工作环节与专项子任务组织，方法和资源保留。产品界面与网站已细化各环节的方法、资源和自审，其他主流程及专项细则尚未全部补齐。本候选与已发布 0.3.4 安装包分开，具体范围与重新导入注意事项见 [来源说明](SOURCE-MAP.md)。
+
+**Demo统一定义**：[正式产品的本地前端交付](skills/fusion-product-agent/references/formal-design-delivery.md)，约定范围内的界面、交互、文案与目标生产规格一致；本地数据/受控返回只替代服务接入，不能以Demo名义降低体验标准。
+
+本轮修复第002项：[正式设计交付](skills/fusion-product-agent/references/formal-design-delivery.md)区分探索、主稿与按稿还原，正式页面面向实际用户；保留第001项文案审查可见性。
+
+2026-11-07整合候选，基于正式v0.3.4；经GitHub主分支提供，并已在维护者本机安装试用，未并入独立的v0.3.5-rc.1一致性检查候选。产品领域研究、需求与规则、复杂状态、业务验收和交接沿用融合锤子；设计判断采用同事分支的专家模块；原有Figma执行流程独立随包提供，不再运行旧设计判断方法。GitHub主分支及候选ZIP提供rc.7；最新正式Release仍为v0.3.4。
 
 ## 产品主线与设计环节
 
@@ -18,7 +24,7 @@
 
 每次成果、修订或提问的最终回复首行按[流程位置展示](skills/fusion-product-agent/references/progress-navigation.md)显示产品六阶段位置，设计中附设计四步骤位置及真实状态；结尾说明下一项产物、责任方或用户动作。导航不增加审批，位置从当前项目状态恢复。
 
-想法与目标 → 产品目标/范围校准 → 领域需求、规则/边界/场景与方案 → [设计交接](skills/fusion-product-agent/references/design-and-demo.md) → 设计专家判断切入点 → 专业设计与QA0 → 产品核对业务/版本 → PRD、验收与下游交接。
+想法与目标 → 产品目标/范围校准 → 领域需求、规则/边界/场景与方案 → [设计交接](skills/fusion-product-agent/references/design-and-demo.md) → 设计研究/交互推导 → [独立文案步骤](skills/fusion-product-agent/references/product-copy.md)与[界面文案基线](skills/fusion-product-agent/assets/interface-copy.md) → 专业设计制作与QA0 → 产品核对业务/版本 → PRD、验收与下游交接。
 
 产品启动条件成立后，0到1设计按同事入口先完成并汇报研究、竞品、流程和具体交互，再原生提问确认风格等事项，随后调组件、主题、字体与真实素材制作；风格问答不能替代产品意图校准。存量延展和按正式稿还原走设计模块对应分流。不是所有任务都重新走0到1。
 
@@ -66,3 +72,5 @@ python3 scripts/test_package.py
 校验范围见[验证说明](VALIDATION.md)。安装清单`.codex/fusion-product-agent-install.json`包含`resources`及每份资源的摘要；卸载或升级要检查这些资源是否被本地修改，保留项目产物与定制，不整体删除`.agents`或`.codex`。旧版本仍用旧记录处理。
 
 专业设计来源固定为同事分支`6dcc771`，见[设计来源清单](design-source.json)；原JQ 1.1.5的Figma执行层及本地适配见[Figma来源清单](figma-source.json)。明确适配了HTML优先、Figma Agent禁令和仅适合本地CSS的门槛，专业方法与QA0继续保留。脚本、组件和素材未删改。来源的既有许可与权利说明继续适用，本版不添加未经确认的统一开放许可。
+
+文案编写、审查和实屏复核统一使用[界面文案质量标准](skills/fusion-product-agent/references/copy-quality.md)：四组标准与模型相关能力要求合并，文案基线记录适用性、依据和后续验证要求，不逐句重复全模型检查。
