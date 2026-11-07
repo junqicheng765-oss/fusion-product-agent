@@ -6,7 +6,7 @@
 
 四个登记库已经在 Skill 里，先用它们：
 - **Reference**：`resource-adapters/registry.json` 里 `capability=reference|spec`（Mobbin、Page Flows、ARIA APG…）
-- **Style**：`style-presets/` + `color-presets/`
+- **Style**：`style-presets/` + `color-presets/`；整体配色与可选渐变资源入口见 [CI](methods-color.md)，Open Props 仅为按需 CSS 资源，不宣称已自动装入本地路由或项目
 - **Component**：shadcn / Magic UI / Origin UI / Figma 套件（风格引擎 + 本文件）
 - **Asset**：IconScout（`V5`，图标/3D/插画/Lottie）+ Real Image Library（`IM`，真实摄影）+ SVG Repo 降级
 
