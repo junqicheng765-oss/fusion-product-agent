@@ -1,6 +1,6 @@
 # GitHub PR #2 与 rc.6 整合候选
 
-2026-11-07，本地版本 `0.3.6-rc.7`，分支 `codex/integrate-design-rc6`。
+2026-11-07，候选版本 `0.3.6-rc.7`，分支 `codex/integrate-design-rc6`。
 
 本候选把同事的设计更新与本地已确认的产品约束整合到同一份包。GitHub来源为 [fusion-product-agent PR #2](https://github.com/junqicheng765-oss/fusion-product-agent/pull/2)，头提交 `7affdbe1ecabc61cf1d081e8d5d152894c40fa11`；另一来源为原本地 `0.3.6-rc.6` 候选。原rc.6目录单独保留，没有覆盖。
 
@@ -28,4 +28,4 @@ PR原有六份文档摘要和包清单曾失配，本候选按实际整合结果
 
 ## 当前交付边界
 
-仅生成本地候选、整合源码和审阅材料。未推送远端、未合并main、未发布Release、未更新本机插件；远端PR保持原状态，不能把本地整合称为已上线。
+rc.7整合内容通过GitHub主分支和候选ZIP提供；同事PR #2的提交历史保留在整合分支中。维护者本机已安装试用，新宿主发现全部5项Skill。版本仍为候选，最新正式Release为v0.3.4；公司GitLab未改变。真实新会话效果、Figma生成与实际交互验收继续分别验证。

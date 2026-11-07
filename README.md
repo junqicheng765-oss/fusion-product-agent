@@ -2,17 +2,17 @@
 
 **Demo统一定义**：[正式产品的本地前端交付](package/skills/fusion-product-agent/references/formal-design-delivery.md)，约定范围内的界面、交互、文案与目标生产规格一致；本地数据/受控返回只替代服务接入，不能以Demo名义降低体验标准。
 
-**v0.3.6-rc.7 · 2026-11-07（本地整合候选）**
+**v0.3.6-rc.7 · 2026-11-07（整合候选）**
 
 本轮增量：FUS-ISSUE-002，正式页面按实际用户体验组织，区分探索原型与正式主稿，Figma先设计再同版还原；修复工具路由检查表的载体冲突。保留第001项文案审查可见性；第003—006项分项处理，实际新会话效果尚需验证。
 
-本候选整合 GitHub PR #2（`7affdbe`）与本地 rc.6，详见[整合说明](docs/pr2-rc6-integration.md)。当前工作位于本地分支 `codex/integrate-design-rc6`，远端正式版仍为 0.3.4；候选 ZIP 仅供审阅。
+本候选整合 GitHub PR #2（`7affdbe`）与本地 rc.6，详见[整合说明](docs/pr2-rc6-integration.md)。GitHub `main` 提供这份 rc.7 候选，以下市场安装命令获取主分支版本；最新正式 Release 仍为 0.3.4。
 
 帮助有业务想法、但缺乏产品与领域知识的使用者，完成领域研究、产品规则、范围、专业设计、可操作体验及上下游交接。支持产品领域能力校验；首期可在Codex下运行，也可由具备文件读取能力的Agent按入口使用。
 
 本版明确产品主线先于设计：只有一句想法时，先给候选方向和推荐，通过必要问答校准目标与核心范围；依据足够或已有明确委托后再进入方案、设计和制作。设计是产品锤中的专业环节，采用设计同事的方法与QA0，保留Figma执行工作流及Dev Mode / MCP还原。已有充分需求或局部任务直接复用，不逐步审批。
 
-本候选基于正式v0.3.4，增加[独立文案编写与审查](package/skills/fusion-product-agent/references/product-copy.md)及[界面文案基线模板](package/skills/fusion-product-agent/assets/interface-copy.md)。四组文案标准按[统一质量标准](package/skills/fusion-product-agent/references/copy-quality.md)整合七大能力中的适用要求；吸收内部MR !1的中文入口与跨安装目录资源定位、MR !2的异常分层；文案就绪后交给设计直接使用；未合并另一份v0.3.5-rc.1一致性检查候选，也尚未发布或安装。下方GitHub安装命令获取远端正式版，不是本地候选。
+本候选基于正式v0.3.4，增加[独立文案编写与审查](package/skills/fusion-product-agent/references/product-copy.md)及[界面文案基线模板](package/skills/fusion-product-agent/assets/interface-copy.md)。四组文案标准按[统一质量标准](package/skills/fusion-product-agent/references/copy-quality.md)整合七大能力中的适用要求；吸收内部MR !1的中文入口与跨安装目录资源定位、MR !2的异常分层；文案就绪后交给设计直接使用；未合并另一份v0.3.5-rc.1一致性检查候选，已在维护者本机安装启用并验证五项Skill发现；实际模型与Figma效果继续试用验证。下方GitHub安装命令获取rc.7候选。
 
 ## 安装使用
 
@@ -35,7 +35,7 @@ codex plugin add fusion-product-agent@fusion-product-agent
 
 ## 完整能力包与工作方式
 
-- [v0.3.6-rc.7本地候选完整包](downloads/fusion-product-agent-v0.3.6-rc.7.zip) · [SHA-256](downloads/fusion-product-agent-v0.3.6-rc.7.zip.sha256)
+- [v0.3.6-rc.7候选完整包](downloads/fusion-product-agent-v0.3.6-rc.7.zip) · [SHA-256](downloads/fusion-product-agent-v0.3.6-rc.7.zip.sha256)
 - [详细使用、五项Skill与项目级Skill/Subagent安装](package/README.md)
 - [完整工作流程](docs/workflow.md)
 - [产品主入口](package/skills/fusion-product-agent/SKILL.md) · [设计专家入口](package/skills/fusion-design-core/SKILL.md) · [Figma执行入口](package/skills/fusion-figma-workflow/SKILL.md)
