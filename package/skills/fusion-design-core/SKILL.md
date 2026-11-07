@@ -181,9 +181,7 @@ description: >-
    - **路线 B｜产出本身是一张图（概念图、插画、角色立绘/头像、局部材质/背景图等纯图片交付）**
      - **标准动作**：先按 TR0 确认适合本次成果的制作组合；已选择图片生成时，**Codex 负责产出结构化提示词（Prompt）+ 准备参考垫图（`reference_image_paths`）→ 直接调用生图工具（`GenerateImage` / Figma `generate_image`）生成图片**。
    - **路线 C｜产出是海报 / 运营图 / Banner / 主视觉 KV（[methods-visual.md](methods-visual.md) `V7 路径 B`）**
-     - 先定图文占比与**版面结构草图（`layout_sketch`）**，按场景二选一：
-       1. **搜索素材去 Figma 拼装**：从 IconScout 搜索透明底 3D/插画素材、从 `real_image.py` 搜索真实摄影，带进 Figma 配合 Figma AI / 版式底板与清晰矢量文字拼装成稿；
-       2. **垫图 + 提示词调生图工具**：独立成品无适用参考时先展示参考选择；DS1 主视觉样张引用本轮 AI 推导与参考，不重复审批。按 V7 产出结构化提示词和实际可用参考，调用已确认的生图工具。
+     - 按 V7 先确定可见主导关系和完整组合稿，再选择能支撑表达的素材、真实摄影或定制资产；独立字形和动态数据/控件的明确要求仍须落实。由同一画布的主辅、层次与接合决定实际提示和合成，不套固定比例或底板拼装；独立成品的参考选择沿 V7，页面方向沿 DS1，不重复审批，工具沿 TR0 有效路线。
    - **动效判断（[methods-motion.md](methods-motion.md) `D8` / `TR5`）**：
      - **UI 交互动效（`TR5-A`）**：从动效组件库（`MI`：React Bits / Aceternity UI / Motion Primitives / Uiverse / 21st.dev）检索源码集成到可交互 Demo；
      - **轻量矢量动画（`TR5-C`）**：从 IconScout 拉取真 `Lottie (.json)` 或基于专业矢量图标加动画；
