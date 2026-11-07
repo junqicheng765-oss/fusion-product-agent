@@ -14,7 +14,7 @@
 
 ## 三类资源：只有前两类能自动化
 
-| 类型 | 是什么 | 能不能自动化 | 例子 |
+| 类型 | 是什么 | 能不能自动化 | 可用资源 |
 | :--- | :--- | :--- | :--- |
 | 可复制的 UI 组件 / 页面区块 | 能直接拿到源码 | 能：按命令安装或复制，再改成项目的 token | shadcn/ui 组件与区块、Magic UI、Origin UI、Float UI，以及 `MI` 里的动效库 |
 | 可应用的完整设计系统 / 主题 | 有 token、组件和规则 | 能：一处改 token，全站跟着变 | Tweakcn 主题、shadcn 预设、Material 3、Ant Design、Apple HIG |
