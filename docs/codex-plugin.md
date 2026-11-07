@@ -1,4 +1,6 @@
-# Codex插件 v0.3.4
+# Codex插件 v0.3.6-rc.7（本地候选）
+
+本地候选尚未发布到GitHub，也未安装。本页远端安装步骤获取远端正式版；候选试用须明确选择对应本地包。
 
 融合锤子独立GitHub仓库提供Codex市场，入口`.agents/plugins/marketplace.json`指向`package/`。插件标识`fusion-product-agent@fusion-product-agent`。
 

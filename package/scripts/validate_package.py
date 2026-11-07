@@ -7,6 +7,22 @@ import re
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
+SKILL_REFERENCE = re.compile(r'技能\s+`([^`]+)`\s+内的\s+`([^`]+)`')
+
+
+def skill_reference_errors(text, locations):
+    """Validate logical references using host-selected Skill roots, not siblings."""
+    errors = []
+    for name, relative in SKILL_REFERENCE.findall(text):
+        if name not in locations:
+            errors.append('unknown Skill: ' + name)
+            continue
+        root = Path(locations[name]).resolve()
+        path = unquote(urlsplit(relative).path)
+        target = (root / path).resolve()
+        if Path(path).is_absolute() or not target.is_relative_to(root) or not target.is_file():
+            errors.append('invalid Skill resource: ' + name + '/' + relative)
+    return errors
 
 
 def validate():
@@ -33,8 +49,13 @@ def validate():
     metadata = json.loads((ROOT / '.codex-plugin/plugin.json').read_text(encoding='utf-8'))
     if metadata['name'] != manifest['name'] or metadata['version'] != manifest['version']:
         errors.append('plugin and manifest identities differ')
+    locations = {p.parent.name: p.parent for p in skills}
+    logical_references = 0
     for p in ROOT.rglob('*.md'):
         text = p.read_text(encoding='utf-8')
+        logical_references += len(SKILL_REFERENCE.findall(text))
+        errors.extend(str(p.relative_to(ROOT)) + ': ' + error
+                      for error in skill_reference_errors(text, locations))
         if '/Users/' in text or re.search(r'\[TODO\]|TODO:|TBD', text):
             errors.append(str(p.relative_to(ROOT)) + ': author path or scaffold marker')
         for raw in re.findall(r'\]\(([^\s)]+)\)', text):
@@ -65,6 +86,7 @@ def validate():
         errors.append('expected 48 secondary capability definitions')
     return {'structural_check_passed': not errors, 'errors': errors,
             'files': len(actual), 'discoverable_skills': len(skills),
+            'logical_skill_references': logical_references,
             'bundled_knowledge_files': len(provenance['bundled_knowledge']['files']),
             'capability_definitions': len(capabilities),
             'limits': 'Checks structure, local reference closure and byte integrity; does not prove product quality or host runtime discovery.'}

@@ -1,29 +1,53 @@
 ---
 name: fusion-design-core
 description: >-
-  Design stage within Fusion Product Agent, taking traceable product goals,
-  scope and decisions or explicit delegation. Understands users and tasks,
-  checks direction, chooses research depth and methods by evidence and impact,
-  designs across deliverable types, and reviews actual results before staged
-  human confirmation. Vague product goals return to product intake; this
-  capability does not replace the product workflow or decide user intent.
+  Fusion Product Agent 中的产品界面与视觉设计环节。承接目标、范围与决定可追溯的产品任务说明，
+  或明确委托，完成交互研究、视觉方向选择、素材制作与设计评审（QA0）。
+  面对模糊的新产品想法，先回到产品承接环节补齐输入，再制作设计或 Demo。
+  本能力不替代产品工作流，也不代替用户决定意图。
 ---
 
-# 设计师完整工作流（Design Thinking OS）
+# 设计师完整工作流（设计思维操作系统）
 
 本 Skill 模拟一名**成熟设计师 + 设计总监**接到工作后的真实思考、决策、调库、选工具与终审全流程。
 
 ---
 
+## 技能与资源定位
+
+跨 Skill 资料以“技能名 + 技能内路径”标识，例如“技能 `fusion-product-agent` 内的 `references/product-start.md`”。先从当前宿主提供的可用技能清单取得目标技能本次实际安装目录，再读取该目录下的指定文件；同名多版本以本会话宿主选中的版本为准。清单未提供路径时，仅在宿主明确配置的技能根目录中定位，不假定技能同级安装或使用固定本机路径。
+
+仅引用资料时读取指定文件，不自动启动目标技能的完整流程；调用目标技能时读取其 `SKILL.md` 并按任务范围执行。依赖缺失或位置无法确定时，说明缺失的技能、文件和受影响能力，继续不依赖它的工作。同一 Skill 内的相对链接按当前文档所在目录解析；跨 Skill 文档的后续相对链接以该目标文档所在目录为准。执行任意 Skill 的脚本时，按脚本所属技能的实际安装目录拼出绝对路径，当前工作目录保持为用户的业务项目。
+
+执行本文及方法文件中 `scripts/...` 的脚本示例时，将脚本路径展开为本技能实际安装目录的绝对路径，例如 `python3 "<skill-base-dir>/scripts/style_preset.py" ...`。当前工作目录保持为用户的业务项目，产物路径按任务显式指定；`<skill-base-dir>` 始终指脚本所属技能的目录。
+
 ## 产品主线先于设计
 
-本模块是融合产品锤中的设计环节，产品主入口统一组织目标、领域需求、边界、方案、PRD和交接。先读取同包[产品启动条件](../fusion-product-agent/references/product-start.md)，核对本轮目标、核心范围、终点及其用户输入/既有决定/明确委托来源。只有产品名称或AI自行写出的候选画像、目标、流程，不算有效产品输入。
+本模块是融合产品锤中的设计环节，产品主入口统一组织目标、领域需求、边界、方案、PRD和交接。先读取同包产品启动条件（技能 `fusion-product-agent` 内的 `references/product-start.md`），核对本轮目标、核心范围、终点及其用户输入/既有决定/明确委托来源。只有产品名称或AI自行写出的候选画像、目标、流程，不算有效产品输入。
 
 若目标或核心范围仍有改变方向的缺口，回到产品主线给出可理解的推荐并通过原生Question询问，等待必要答案；不得直接开展受影响的正式设计或Demo制作。设计研究可以支持讨论，不能替人决定为什么做和先做什么。直接调用本Skill也遵守此条件，不要求另启一个Agent。专业设计判断、调研和QA0继续按下述方法执行；已有有效输入、局部改动或明确委托按范围复用，不重做访谈。
 
 ## 流程位置与回传
 
-本环节沿用[产品主线六阶段与设计四步骤](../fusion-product-agent/references/progress-navigation.md)。每次成果、修订或提问回复，最终首行保留产品第几/6阶段，设计中附设计第几/4步、当前模块及真实状态；结尾交代下一动作或用户所需选择。四步骤对应下文的研究/流程交互、视觉决策、制作、终审，不按回复次数推进。向产品主入口回传同样的信息，不因要求自然语言、隐藏方法代号而省略导航，也不增加人工审批。
+本环节沿用产品主线六阶段与设计四步骤（技能 `fusion-product-agent` 内的 `references/progress-navigation.md`）。每次成果、修订或提问回复，最终首行保留产品第几/6阶段，设计中附设计第几/4步、当前模块及真实状态；结尾交代下一动作或用户所需选择。四步骤对应下文的研究/流程交互、视觉决策、制作、终审，不按回复次数推进。向产品主入口回传同样的信息，不因要求自然语言、隐藏方法代号而省略导航，也不增加人工审批。
+
+## 文案与异常的承接职责
+
+正式页面制作前，承接产品主线已编写审查的《界面文案基线》及版本、适用COPY ID和原文；执行技能 `fusion-product-agent` 内的 `references/product-copy.md`。U6的文案编写由该上游步骤完成，设计不另写最终文案，只核对呈现、理解和实际操作；改字建议回产品主线修订同一来源后同步。研究和交互推导可以先行，三套正式风格候选使用同一就绪文案。
+
+异常按技能 `fusion-product-agent` 内的 `references/exception-layers.md` 承接共享规则、差异状态、异常ID与COPY引用；设计补页面位置、优先级、阻断、操作去向、输入保留与状态更新。不为每个技术触发新增页面，不省略真实不同的业务后果。QA0与实屏/动态复核仍执行。
+
+## 文案审查结果的可见回传
+
+按技能 `fusion-product-agent` 内的 `references/product-copy.md` 的“文案审查摘要”回传：本轮文案基线/版本、复用或新审查的范围与证据、关键修改前后及理由（无变化如实说明）、内容/实屏/动态检查结论、阻断与下一动作。产品主线在最终可见回复保留本轮摘要；直接面向使用者时本模块展示。只改呈现不冒称改过文案，不把内部自检或保存文件当已向用户展示，不增加逐句审批。
+
+## 正式设计交付约束
+
+正式界面设计和还原读取技能 `fusion-product-agent` 内的 `references/formal-design-delivery.md`。探索原型只验证指定问题，不默认先做也不自动升级成主稿；正式页面从结构、文案、内容、控件到状态都面向实际用户。使用就绪文案，讲解、评审备注与模拟控制留在协作说明。已有本产品Figma或已选Figma先完成主稿再按同版还原；明确本地路线可直接形成正式页面。QA0及文案/交互复核一并核对产物性质、用户视角、设计源版本和实际行为；回传检查结论、证据与未覆盖，不增加批准轮次。
+
+## Demo即正式产品前端
+
+本包Demo按技能 `fusion-product-agent` 内的 `references/formal-design-delivery.md` 交付与目标生产规格一致的本地前端，界面/样式/响应、交互与文案不因Demo降级；本地数据和受控返回仅替代服务接入。关键操作、校验、状态反馈及恢复须实际按规则发生，必要前端缺项就是未完成；不把讲解、假设或测试控制放入用户画面。QA0与专项复核分别报告前端规格一致性及真实服务接入，不用缺后端作为省略前端体验的理由；明确委托的探索稿另行标明，不当作正式Demo。
 
 ## 成果、工作环节与专业设计路径
 
@@ -162,7 +186,7 @@ description: >-
 2. **按最终交付物类型走对应的工具与制作工作流（[methods-tool-routing.md](methods-tool-routing.md) + [methods-visual.md](methods-visual.md) `VT` / `V7`）**：
    - **路线 A｜UI / 产品界面**
      - 先按 [TR0](methods-tool-routing.md) 结合成果、已有主稿与实际能力提出推荐并请人确认。已有明确路线直接复用；没有主稿要求的可操作 Demo 可推荐本地代码，不强制 Figma 或 HTML 优先。
-     - 已确认沿用 Figma 时调用同包 [执行工作流](../fusion-figma-workflow/SKILL.md)，在授权目标中设计/精修，并按需要依据同版主稿还原 Demo；已确认代码路线则在目标项目复用组件、主题和素材，实际运行并核验。
+     - 已确认沿用 Figma 时调用同包 执行工作流（技能 `fusion-figma-workflow` 内的 `SKILL.md`），在授权目标中设计/精修，并按需要依据同版主稿还原 Demo；已确认代码路线则在目标项目复用组件、主题和素材，实际运行并核验。
      - 本地文件不会自动传入设计软件；按已确认载体传递参数、素材和组件对应关系。转换能力须实际存在并核验可编辑性，不以整屏图片冒充可编辑稿。
    - **路线 B｜产出本身是一张图（概念图、插画、角色立绘/头像、局部材质/背景图等纯图片交付）**
      - **标准动作**：先按 TR0 确认适合本次成果的制作组合；已选择图片生成时，**Codex 负责产出结构化提示词（Prompt）+ 准备参考垫图（`reference_image_paths`）→ 直接调用生图工具（`GenerateImage` / Figma `generate_image`）生成图片**。
@@ -241,4 +265,4 @@ description: >-
 
 ## 同包集成说明
 
-本模块负责设计研究、交互、风格、素材、提示词和QA0专业判断；工具路线推荐与人的确认统一见 TR0。已确认采用 Figma 的工具配置、目标绑定、生成/精修与 Dev Mode 还原执行同包 [fusion-figma-workflow](../fusion-figma-workflow/SKILL.md)。初始化只读核对可先于视觉选择，实际制作仍遵守有效设计决定。工具名称不是能力或权限证明，不把自动安装描述当成全局配置授权。已有有效选择或委托直接复用，缺少外部工具不静默更换设计主稿。
+本模块负责设计研究、交互、风格、素材、提示词和QA0专业判断；工具路线推荐与人的确认统一见 TR0。已确认采用 Figma 的工具配置、目标绑定、生成/精修与 Dev Mode 还原执行同包 fusion-figma-workflow（技能 `fusion-figma-workflow` 内的 `SKILL.md`）。初始化只读核对可先于视觉选择，实际制作仍遵守有效设计决定。工具名称不是能力或权限证明，不把自动安装描述当成全局配置授权。已有有效选择或委托直接复用，缺少外部工具不静默更换设计主稿。

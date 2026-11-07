@@ -153,7 +153,7 @@ python3 scripts/asset_memory.py deposit --type pattern --title "权限被拒可�
 
 ### 资源身份与实际可用性
 
-- `style-presets/`、`color-presets/`、字体目录、组件配方，以及同包 [Pro Max](../fusion-design-ui-ux-pro-max/SKILL.md) 的 UX/字体/图表等数据是本地资源；同包 [Impeccable](../fusion-design-impeccable/SKILL.md) 是可按需调用的界面方法参考。两项辅助 Skill 不接管主流程、产品事实或原确认规则。
+- `style-presets/`、`color-presets/`、字体目录、组件配方，以及同包 Pro Max（技能 `fusion-design-ui-ux-pro-max` 内的 `SKILL.md`） 的 UX/字体/图表等数据是本地资源；同包 Impeccable（技能 `fusion-design-impeccable` 内的 `SKILL.md`） 是可按需调用的界面方法参考。两项辅助 Skill 不接管主流程、产品事实或原确认规则。
 - Mobbin、IconScout、Figma 等是外部入口；参考链接、可自动调用资源和需授权工具按 adapter 合同区别记录。登记存在不代表已连接、已有付费权限或已取得素材。
 - 内部记忆仅在对应目录有真实条目时检索；随包的空索引只是机制，不可报告为已命中历史资产。确认并通过验收后再按 AM 沉淀。
 - 品牌、服务蓝图、视频叙事/声音、文稿出版和印刷生产的完整专项仍有缺口；上表部分方法或素材可支持它们，不能据此宣称专项已齐备。按目录补足实际专业依据，不为补一个库另开平行流程。

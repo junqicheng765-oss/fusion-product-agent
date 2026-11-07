@@ -1,0 +1,29 @@
+--- a/skills/fusion-design-core/methods-image.md
++++ b/skills/fusion-design-core/methods-image.md
+@@ -33,14 +33,14 @@
+ 不给每个图库写一套 Skill。只调一个脚本，下面接多个官方 REST API。不依赖社区 MCP。
+ 
+ ```
+-python3 scripts/real_image.py search "桂林山水首页" --role hero --tone cool --json /tmp/photos.json
+-python3 scripts/real_image.py get wikimedia:Guilin_mifan.jpg --from-json /tmp/photos.json --out ./assets/real-images
++python3 scripts/real_image.py search "<主题>" --role <用途> --tone <色调> --json <检索结果.json>
++python3 scripts/real_image.py get <图片ID> --from-json <检索结果.json> --out <图片保存目录>
+ ```
+ 
+ `--role`：`hero`（横构图、大留白、≥1600） / `card`（主体清楚、≥800） / `portrait` / `background` / `place`  
+ `--tone`：跟当前 UI 冷暖走，`warm` / `cool` / `neutral` / `dark` / `green`
+ 
+-脚本会把中文主题扩成英文检索词，例如「中国旅游首页」→ `China travel landscape cinematic wide shot no text no watermark`。Pixabay 有 key 时中文可走 `lang=zh`。具体地点保留原名给 Wikimedia。
++脚本会把中文主题扩成英文检索词，检索语义须与真实内容和画面用途一致。Pixabay 有 key 时中文可走 `lang=zh`。具体地点保留原名给 Wikimedia。
+ 
+ 返回统一结构：`id, source, title, creator, license, license_url, page_url, preview_url, download_url, width, height, attribution`。`get` 下载**适合尺寸的版本**（不是 8MB 原图），并写同名 `.json` 和 `ATTRIBUTION.md`。
+ 
+@@ -68,7 +68,7 @@
+ 检索顺序：
+ 
+ - 一般主题：Pixabay → Openverse → Unsplash → Pexels → Wikimedia
+-- 具体地点（桂林、故宫、外滩、`--role place`）：Wikimedia 提到最前，再走其余库
++- 具体地点（`--role place`）：Wikimedia 提到最前，再走其余库
+ 
+ Unsplash Access Key 已预置在 `scripts/real_image.py`（和 IconScout Client-ID 一样，给所有使用本 Skill 的人直接调）。环境变量 `UNSPLASH_ACCESS_KEY` 可覆盖。Pixabay / Pexels 仍只读环境变量，没有就跳过。某个库超时或失败记入 `errors`，不整段停工。Openverse 偶发超时是预期，自动落到 Unsplash / Wikimedia。
+ 

@@ -1,0 +1,10 @@
+{
+  "fusion-design-impeccable": {
+    "input_sha256": "34aa9663cd8818e2ba846c4914b047339c57c0f515e8f22f8cfad2cd788f1321",
+    "overlay_sha256": "d1f2c58ee1c93fef6a7107050b46cd695d496271875dc34b78d2e2c0ad357b02"
+  },
+  "fusion-design-ui-ux-pro-max": {
+    "input_sha256": "56caa8b09e2e0f782985611b8ebbcb24e1646986dda4d387a90ddc1811d330e0",
+    "overlay_sha256": "aae4007576ac8d14bb3f07f152a90383035e95966b7be72fa46d39abd2b8d45f"
+  }
+}

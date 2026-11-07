@@ -6,7 +6,9 @@ import hashlib
 import json
 from pathlib import Path
 import re
-from product_stage_adapter import adapt_figma_product_stage
+from product_stage_adapter import adapt_copy_handoff, adapt_figma_product_stage
+from resource_location_adapter import adapt_resources
+from local_refinement_adapter import provenance, refine, source_record
 
 ROOT = Path(__file__).resolve().parents[1]
 FILES = {
@@ -86,7 +88,8 @@ def adapt(text, target):
         text = re.sub(r'^先使用 \[P3.*$', '文案按同包[语义与表达能力](../../fusion-product-agent/knowledge/product-capability-model/standards/P3/model.md)及相关定义判断，结合[设计文案与控件方法](../../fusion-design-core/methods-ui.md)；规则含义引用当前产品正文，不重复加载全部能力。', text, flags=re.M)
         text = re.sub(r'^先使用 \[P5.*$', '交互按同包[交互与反馈能力](../../fusion-product-agent/knowledge/product-capability-model/standards/P5/model.md)与[交互设计方法](../../fusion-design-core/methods-interaction.md)核验；专业设计建议与业务规则冲突时回产品主线处理，不自行改写已确认规则。', text, flags=re.M)
         text = re.sub(r'^严重度沿用.*$', '严重度按[产品评审与交接](../../fusion-product-agent/references/review-and-handoff.md)和设计 QA0 处理。阻断/重大问题，或核心/关键风险交互缺少动态证据时，对应范围不得标为“复核通过”；可交付明确标注的待修/待验证草稿。品质问题暂缓须说明理由、责任和影响，不藏在总体通过中。', text, flags=re.M)
-    return adapt_figma_product_stage(text) if main else text
+    text = adapt_figma_product_stage(text) if main else text
+    return adapt_resources(adapt_copy_handoff(text, target), target.rsplit("/", 1)[-1])
 
 
 def main():
@@ -96,12 +99,13 @@ def main():
     files = []
     for source, target in FILES.items():
         raw = (args.source_plugin_root / source).read_bytes()
-        data = adapt(raw.decode('utf-8'), target).encode('utf-8')
+        baseline = adapt(raw.decode('utf-8'), target).encode('utf-8')
+        data = refine(baseline, 'skills/fusion-figma-workflow/' + target)
         dest = ROOT / 'package/skills/fusion-figma-workflow' / target
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_bytes(data)
-        files.append({'source': source, 'destination': str(dest.relative_to(ROOT / 'package')), 'source_sha256': hashlib.sha256(raw).hexdigest(), 'sha256': hashlib.sha256(data).hexdigest(), 'adapted': True, 'excerpt': target.endswith('task-package.md')})
-    (ROOT / 'package/figma-source.json').write_text(json.dumps({'source': 'JQ Product Agent 1.1.5', 'repository': 'https://github.com/junqicheng765-oss/jq-product-agent', 'adaptations': 'Restore execution, configuration reuse, task/preflight, generation, Computer Use, Dev Mode reconstruction and copy/interaction review. Relink all dependencies within this package; design judgment and QA0 belong to designer core, product facts to fusion product entry; require product goal/scope evidence or explicit delegation before execution; no legacy product-stage wrappers imported.', 'files': files}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        files.append(source_record({'source': source, 'destination': str(dest.relative_to(ROOT / 'package')), 'source_sha256': hashlib.sha256(raw).hexdigest(), 'adapted': True, 'excerpt': target.endswith('task-package.md')}, baseline))
+    (ROOT / 'package/figma-source.json').write_text(json.dumps({'source': 'JQ Product Agent 1.1.5', 'repository': 'https://github.com/junqicheng765-oss/jq-product-agent', 'adaptations': 'Restore execution, configuration reuse, task/preflight, generation, Computer Use, Dev Mode reconstruction and copy/interaction review. Relink all dependencies within this package; design judgment and QA0 belong to designer core, product facts to fusion product entry; require product goal/scope evidence or explicit delegation before execution; reviewed product copy is a separate upstream input, with copy IDs/versions propagated through preflight, task prompts, Figma and Demo review; MR1 logical Skill references and location contract are reproduced on import; no legacy product-stage wrappers imported. Hash-pinned PR2 refinements are replayed after the rc.6 baseline; unknown inputs fail.', 'local_refinements': provenance('skills/fusion-figma-workflow/'), 'files': files}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({'imported': len(files), 'source': 'JQ Product Agent 1.1.5'}))
 
 
