@@ -4,7 +4,15 @@
 
 本文件负责把资源接到已有方法和专业环节，每个资源用 adapter 描述，不为新增一个库另开 U8 / V8。专项方法尚缺时按 [成果、环节与子任务目录](methods-deliverable-routing.md) 补足专业依据；增加资源入口本身不代表补齐方法。
 
-四个登记库已经在 Skill 里，先用它们：
+## 全局共享资源池
+
+登记资源由本 Skill 的所有主成果、工作环节和子任务共享，按当前需要的能力及真实适用性选用，不归某个页面、题材或成果类型独占。IconScout 是同一个素材服务，`icon / illustration / 3d / lottie` 是单次检索的资产类型，不是四个限定用途的库；V5/V7 的常见应用路径也不是调用白名单。跨成果复用同一入口和来源记录，各成果仍按自身方法完成内容、构图与验收。
+
+`registry.stage` 只用于资源列表筛选，不是调用权限或成果范围。共享图像/图标资源以 `all` 登记，避免只查当前环节时漏列；其他资源即使仅标典型环节，也可按真实能力用在适用任务。全局可发现不代表每步必须调用全部资源，不把组件、素材、字体和参考混作可互相替代的成品。
+
+配置声明、当前宿主提供工具、账号权限、资产取得及实际采用分别核验。`wired` 表示已有登记/实现，不证明当前会话已连接；一个宿主里的配置也不能当作另一个宿主可用。缺少工具时按既有 adapter/TR0 判断可用渠道，不能直接略过该资源需要，也不自动安装、改全局配置或扩大授权。
+
+四类登记资源的入口如下；实际连接和能力在使用时核对：
 - **Reference**：`resource-adapters/registry.json` 里 `capability=reference|spec`（Mobbin、Page Flows、ARIA APG…）
 - **Style**：`style-presets/` + `color-presets/`；整体配色与可选渐变资源入口见 [CI](methods-color.md)，Open Props 仅为按需 CSS 资源，不宣称已自动装入本地路由或项目
 - **Component**：shadcn / Magic UI / Origin UI / Figma 套件（风格引擎 + 本文件）

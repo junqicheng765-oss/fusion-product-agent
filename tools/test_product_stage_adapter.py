@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Regression-test the imported baseline and declared local design refinements.
 
-These tests exercise text adaptation and preservation, not LLM conversation behavior.
+These tests exercise adaptation, preservation and resource discovery, not LLM conversation behavior.
 """
 from pathlib import Path
 import hashlib
 import json
+import subprocess
+import sys
 import unittest
 from zipfile import ZipFile
 
@@ -16,6 +18,13 @@ BASELINE = ROOT / 'downloads/fusion-product-agent-v0.3.1.zip'
 PREFIX = 'fusion-product-agent-v0.3.1/'
 DESIGN = 'skills/fusion-design-core/'
 CHANGED_DESIGN = {'SKILL.md', 'methods-intake.md', 'methods-routing.md'}
+SHARED_ASSET_REGISTRY = DESIGN + 'resource-adapters/registry.json'
+STYLE_RESOURCE_REGISTRY = DESIGN + 'style-presets/registry.json'
+IMPORTED_RUNTIME_REFINEMENTS = {
+    DESIGN + 'scripts/' + name for name in (
+        'verify_library_usage.py', 'ui_geometry_audit.py', 'side_by_side.py',
+        'style_preset.py', 'style_consistency_audit.py')
+}
 SOURCE = json.loads((ROOT / 'package/design-source.json').read_text(encoding='utf-8'))
 INVENTORY = {entry['destination']: entry for entry in SOURCE['files']}
 FIGMA_SOURCE = json.loads((ROOT / 'package/figma-source.json').read_text(encoding='utf-8'))
@@ -66,8 +75,28 @@ class ProductStageAdapterTests(unittest.TestCase):
                         self.assertEqual(digest(archive.read(name)), integration_digest(relative))
                     if entry.get('local_refinement'):
                         self.assertTrue(relative.startswith(DESIGN))
-                        self.assertTrue(relative.endswith('.md'))
+                        self.assertTrue(relative.endswith('.md') or relative in {SHARED_ASSET_REGISTRY, STYLE_RESOURCE_REGISTRY}
+                                        or relative in IMPORTED_RUNTIME_REFINEMENTS)
                         self.assertNotEqual(entry['integration_sha256'], entry['sha256'])
+
+    def test_shared_asset_libraries_are_discoverable_across_stages(self):
+        router = ROOT / 'package' / DESIGN / 'scripts/resource_router.py'
+        shared = {'iconscout', 'real-image-library', 'svgrepo'}
+        for stage in ('research', 'flow', 'interaction', 'ui', 'asset', 'motion', 'close'):
+            with self.subTest(stage=stage):
+                result = subprocess.run([sys.executable, str(router), 'list', '--stage', stage],
+                                        check=True, capture_output=True, text=True)
+                listed = {line.split()[1] for line in result.stdout.splitlines()
+                          if line.startswith('  [')}
+                self.assertTrue(shared.issubset(listed))
+                if stage == 'research':
+                    self.assertNotIn('shadcn-ui', listed)
+        registry = json.loads((ROOT / 'package' / SHARED_ASSET_REGISTRY).read_text(encoding='utf-8'))
+        for adapter in registry['adapters']:
+            if adapter['id'] in shared:
+                with self.subTest(adapter=adapter['id']):
+                    for field in ('mode', 'search', 'returns', 'acquire', 'license', 'fallback'):
+                        self.assertTrue(adapter.get(field), field)
 
     def test_local_extensions_and_refinement_inventory_are_explicit(self):
         local = SOURCE['local_refinements']

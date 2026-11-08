@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
-"""并排对比：把我们的页面截图、视觉目标稿、同类标杆截图拼成一张图，用来做审美验收。
+"""Create comparison evidence for visual review; do not issue an aesthetic verdict.
 
 用法：
-  python3 side_by_side.py --page index.html --width 390 --height 844 \
+  python3 side_by_side.py --mode restore --page index.html --width 390 --height 844 \
       --target target.png --refs refs/airbnb.png refs/klook.png -o compare-r1.png
 
 输出：
   - 一张横向拼图：OURS | TARGET | REF 1 | REF 2 ...，统一高度，便于一眼比较
   - JSON 报告（stdout）：截图路径、页面实际用上的字体、是否只用了系统字体
 
-规则：
-  - 脚本拒绝无效对比：没有目标稿、标杆少于 2 张、目标稿和成品几乎同一张、竖屏页面配了横屏标杆。这些是 FAIL，进程退出码 1。
-  - 图放在一起之后，好不好仍要按 methods-close.md 的三个问题看图回答。脚本退出码 0 不能代替看图。
-  - 只用系统默认字体（没有加载任何网页字体或本地字体文件）会给出 WARN。
+Modes:
+  compare (default): compare against at least one actual reference or target.
+  restore: compare against a required target; additional references are optional.
+Success means readable comparison inputs/output, not visual quality or fidelity approval.
+Similarity metrics cannot establish chronology, copying, legitimacy, or beauty.
 """
 import argparse, json, os, sys
 
@@ -59,8 +60,8 @@ def thumb_mae(a_path, b_path, n=32):
 
 def image_is_wide(path):
     from PIL import Image
-    im = Image.open(path)
-    return im.width > im.height * 1.15
+    with Image.open(path) as im:
+        return im.width > im.height * 1.15
 
 
 def band_corr(a_path, b_path, bands=12):
@@ -125,12 +126,62 @@ def compose(paths, labels, out, height=1200):
     canvas.save(out)
 
 
+def comparison_report(ours, target=None, refs=None, width=390, height=844, mode="compare"):
+    """Validate comparison evidence and report diagnostic metrics without judging design."""
+    from PIL import Image
+
+    refs = list(refs or [])
+    report = {
+        "mode": mode,
+        "ours": os.path.abspath(ours),
+        "target": os.path.abspath(target) if target else None,
+        "refs": refs,
+        "issues": [],
+        "visual_verdict": "NOT_EVALUATED",
+        "fidelity_verdict": "NOT_EVALUATED",
+        "limits": "Readability of comparison inputs and diagnostic image similarity only; not an aesthetic verdict, semantic review or proof of source chronology.",
+    }
+    if mode not in ("compare", "restore"):
+        report["issues"].append({"code": "INVALID_MODE", "severity": "FAIL", "message": "Use compare or restore."})
+    if mode == "restore" and not target:
+        report["issues"].append({"code": "TARGET_REQUIRED", "severity": "FAIL", "message": "还原对照需要准确的 --target；标杆不代替正式目标稿。"})
+    if mode == "compare" and not target and not refs:
+        report["issues"].append({"code": "NO_COMPARISON_INPUT", "severity": "FAIL", "message": "至少提供一张适用参考或目标图；只有成品不能构成对比。"})
+
+    inputs = [("ours", ours)] + ([("target", target)] if target else [])
+    inputs += [("reference", path) for path in refs]
+    readable = True
+    for role, path in inputs:
+        try:
+            with Image.open(path) as im:
+                im.load()
+                if im.width <= 0 or im.height <= 0:
+                    raise ValueError("Empty image")
+        except (OSError, ValueError) as exc:
+            readable = False
+            report["issues"].append({"code": "COMPARISON_IMAGE_UNREADABLE", "severity": "FAIL", "element": str(path), "message": f"{role}: {exc}"})
+    if readable:
+        for path in refs:
+            if (height > width and image_is_wide(path)) or (width > height and not image_is_wide(path)):
+                report["issues"].append({"code": "REF_ORIENTATION_DIFFERENT", "severity": "WARN", "element": str(path), "message": "参考与目标视口方向不同；核对其实际支持范围，局部手法参考不能自动为整页平台构图背书。"})
+        if target:
+            report["target_mae"] = round(thumb_mae(ours, target), 1)
+            report["target_layout"] = round(band_corr(ours, target), 3)
+            report["similarity_note"] = "Thumbnail metrics are diagnostic only. High similarity is compatible with accurate restoration; confirm exact content, states, source versions and rendering in visual review."
+
+    report["evidence_ready"] = not any(i["severity"] == "FAIL" for i in report["issues"])
+    # Backward-compatible key: it refers only to this script's evidence checks.
+    report["passed"] = report["evidence_ready"]
+    return report
+
+
 def main():
     ap = argparse.ArgumentParser(description="并排对比：我们 vs 目标稿 vs 标杆")
     ap.add_argument("--page", help="我们的页面（html 路径或 URL）；不给时用 --shot")
     ap.add_argument("--shot", help="已经截好的我们的截图")
     ap.add_argument("--width", type=int, default=390)
     ap.add_argument("--height", type=int, default=844)
+    ap.add_argument("--mode", choices=["compare", "restore"], default="compare", help="compare：方向/标杆比较；restore：正式目标稿还原对照。成功仅表示对比材料有效。")
     ap.add_argument("--target", help="视觉目标稿图片")
     ap.add_argument("--refs", nargs="*", default=[], help="同类标杆截图。有 --refs-dir 时不用这个")
     ap.add_argument("--refs-dir", help="RR 存图的目录。脚本只取和本屏同方向的图，横屏官网和横幅会被丢掉")
@@ -146,58 +197,28 @@ def main():
         report_note = f"从 {a.refs_dir} 取了同方向标杆 {len(a.refs)} 张"
     else:
         report_note = ""
-    report = {"compare": os.path.abspath(a.o), "issues": [], "refs": list(a.refs)}
-    if report_note:
-        report["refs_note"] = report_note
     ours = a.shot
+    fonts = None
     if a.page:
         ours = os.path.splitext(a.o)[0] + "-ours.png"
         fonts = screenshot(a.page, a.width, a.height, ours)
+    report = comparison_report(ours, a.target, a.refs, a.width, a.height, a.mode)
+    report["compare"] = None
+    if report_note:
+        report["refs_note"] = report_note
+    if fonts is not None:
         report["fonts"] = fonts
         custom = [f for f in fonts["loaded"] if f.lower() not in SYSTEM_FONTS]
         if not custom:
-            report["issues"].append({"code": "SYSTEM_FONT_ONLY", "severity": "WARN",
-                                     "message": "页面没有加载任何非系统字体。展示字体（标题、品牌字）要真正加载字体文件，不能只写 font-family 名字。"})
+            report["issues"].append({"code": "SYSTEM_FONT_ONLY", "severity": "INFO", "message": "当前未检测到非系统字体；系统字体可按任务采用，此记录不评价排版或字形质量。"})
     paths, labels = [ours], ["OURS"]
     if a.target:
         paths.append(a.target); labels.append("TARGET")
-    elif a.page:
-        report["issues"].append({"code": "NO_TARGET", "severity": "FAIL", "message": "还原代码时必须提供 --target 视觉目标稿。直接验证 UI 视觉稿时请用 --shot <UI视觉稿> --refs-dir <标杆目录>。"})
     for i, r in enumerate(a.refs, 1):
         paths.append(r); labels.append(f"REF {i}")
-        if os.path.exists(r) and a.height > a.width and image_is_wide(r):
-            report["issues"].append({
-                "code": "REF_WRONG_DEVICE", "severity": "FAIL",
-                "message": f"{r} 是横屏图。竖屏页面的标杆必须是同一种屏幕的竖屏截图，官网首屏和横幅不能凑数。",
-            })
-        if os.path.exists(r) and a.width > a.height and not image_is_wide(r):
-            report["issues"].append({
-                "code": "REF_WRONG_DEVICE", "severity": "FAIL",
-                "message": f"{r} 是竖屏图。横屏页面（如棋牌桌/横版游戏）的标杆必须是横屏实机截图。",
-            })
-    if len(a.refs) < 2:
-        report["issues"].append({"code": "FEW_REFS", "severity": "FAIL", "message": "标杆截图少于 2 张，对比不可靠。"})
-    for p in paths:
-        if not os.path.exists(p):
-            sys.exit(f"找不到图片 {p}")
-    compose(paths, labels, a.o)
-    report["ours"] = os.path.abspath(ours)
-    if a.target and os.path.exists(ours):
-        mae = round(thumb_mae(ours, a.target), 1)
-        report["target_mae"] = mae
-        if mae < 18:
-            report["issues"].append({
-                "code": "TARGET_IS_COPY", "severity": "FAIL",
-                "message": f"目标稿和成品几乎是同一张图（差异 {mae}）。这轮对比作废。目标稿要先于成品，并且看得出完成度差在哪。",
-            })
-        layout = round(band_corr(ours, a.target), 3)
-        report["target_layout"] = layout
-        if mae >= 18 and layout >= 0.9:
-            report["issues"].append({
-                "code": "TARGET_SAME_LAYOUT", "severity": "FAIL",
-                "message": f"目标稿和成品不是同一张图（像素差 {mae}），但上下结构几乎一样（相关 {layout}）。这轮对比作废。目标稿要先定完成度，不能照着成品的构图再画一张。",
-            })
-    report["passed"] = not any(i["severity"] == "FAIL" for i in report["issues"])
+    if report["evidence_ready"]:
+        compose(paths, labels, a.o)
+        report["compare"] = os.path.abspath(a.o)
     print(json.dumps(report, ensure_ascii=False, indent=2))
     if not report["passed"]:
         sys.exit(1)
