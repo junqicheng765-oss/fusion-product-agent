@@ -882,7 +882,7 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/methods-close.md",
       "destination": "skills/fusion-design-core/methods-close.md",
       "source_sha256": "5a022478c8ae03faa7f1127e28e1e6efe4ef556e07ef6081e79c002c002fe683",
-      "sha256": "2dedec342e23b45513e8f2ade7e085d5f74ecccc7a981bd1900a9228868f6664",
+      "sha256": "65e1099ea5e6b80f057be038cb767fcc83481bcb98da408ef017e9a7dd464126",
       "adapted": true,
       "integration_sha256": "f5d91bee14443e534a03ab0f0b6a9171cd3952a22f67b7dc6ffe2fab94e13f36",
       "local_refinement": true
@@ -1690,7 +1690,7 @@
       "source": "plugins/tc-product-agent/skills/design-thinking-os/templates.md",
       "destination": "skills/fusion-design-core/templates.md",
       "source_sha256": "6f3ad6f0e2848476e3f5b5872b982012816cbddf444d7aff35a109d3cb684668",
-      "sha256": "e9723bb39765a4e61b4a60fe5256dda288ce15aa94a9f24b6121893502dd3830",
+      "sha256": "d880284a298a0300c9976bd7ec30899e4836c745a31bdfd1ee70a10a19abfb1c",
       "adapted": true,
       "integration_sha256": "6f3ad6f0e2848476e3f5b5872b982012816cbddf444d7aff35a109d3cb684668",
       "local_refinement": true
@@ -3124,7 +3124,7 @@
       "source": null,
       "destination": "skills/fusion-design-core/workflow-product-interface.md",
       "source_sha256": null,
-      "sha256": "83ef652ba16f1943f27134af1c1d2ae2959df34f3c11f82aec234f6a992c302c",
+      "sha256": "0139cf3977c8204ccb54036557eedbebb2cd82b220fac5c0e7268bfcc4b374c8",
       "adapted": true,
       "origin": "local-extension"
     },
