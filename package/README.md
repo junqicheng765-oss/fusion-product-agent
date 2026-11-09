@@ -1,5 +1,8 @@
 # 融合产品锤 0.3.6-rc.7
 
+2026-11-09：本目录为 rc.7 基线叠加 GitHub PR #4 的源码增量，含 106 张可检索视觉参考；仓库历史 rc.7 ZIP 不含这次增量。当前来源与检查以本目录清单及 VALIDATION.md 为准，未创建新的正式 Release。
+
+
 rc.7 整合候选另含已批准的设计流程修订；设计目录按主成果、工作环节与专项子任务组织，方法和资源保留。产品界面与网站已细化各环节的方法、资源和自审，其他主流程及专项细则尚未全部补齐。本候选与已发布 0.3.4 安装包分开，具体范围与重新导入注意事项见 [来源说明](SOURCE-MAP.md)。
 
 **Demo统一定义**：[正式产品的本地前端交付](skills/fusion-product-agent/references/formal-design-delivery.md)，约定范围内的界面、交互、文案与目标生产规格一致；本地数据/受控返回只替代服务接入，不能以Demo名义降低体验标准。
@@ -59,6 +62,8 @@ python3 scripts/install.py --project /absolute/path/to/project --mode agent
 ## 工具条件
 
 自带方法、组件配方、主题/字体数据、真实素材处理和检查脚本，不提供Figma、Computer Use、浏览器、生图服务账号或付费素材权限。按[工具接入](skills/fusion-product-agent/references/figma-adapter.md)检查；已有有效配置复用，不乱建Figma文件。
+
+当前源码另随设计 Skill 收录 [全局视觉参考库](skills/fusion-design-core/visual-reference-library/README.md)：106 张非 UI 图片、跨成果多维标签与可移植检索 CLI，图片本身随安装分发。完整 UI 参考按任务在线搜索，不进入图包。目录用于筛选，AI 结合任务、设计质量及近期实际作品确定侧重，不逐类尝试全部风格；库图原作日期未知时不冒称流行或最新。该源码增量尚不属于历史 0.3.4 Release 附件。
 
 安装/校验/交付引用辅助脚本使用Python 3.9+标准库；设计脚本依功能还可能依赖Node、Playwright、Pillow、网络或宿主工具，不应沿用旧包“所有脚本只需标准库”的描述。具体见各脚本帮助与实际环境。
 

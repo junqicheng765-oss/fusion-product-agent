@@ -1,11 +1,22 @@
 {
   "source": "JQ Product Agent 1.1.5",
   "repository": "https://github.com/junqicheng765-oss/jq-product-agent",
-  "adaptations": "Restore execution, configuration reuse, task/preflight, generation, Computer Use, Dev Mode reconstruction and copy/interaction review. Relink all dependencies within this package; design judgment and QA0 belong to designer core, product facts to fusion product entry; require product goal/scope evidence or explicit delegation before execution; reviewed product copy is a separate upstream input, with copy IDs/versions propagated through preflight, task prompts, Figma and Demo review; MR1 logical Skill references and location contract are reproduced on import; no legacy product-stage wrappers imported. Hash-pinned PR2 refinements are replayed after the rc.6 baseline; unknown inputs fail.",
+  "adaptations": "Restore execution, configuration reuse, task/preflight, generation, Computer Use, Dev Mode reconstruction and copy/interaction review. Relink all dependencies within this package; design judgment and QA0 belong to designer core, product facts to fusion product entry; require product goal/scope evidence or explicit delegation before execution; reviewed product copy is a separate upstream input, with copy IDs/versions propagated through preflight, task prompts, Figma and Demo review; MR1 logical Skill references and location contract are reproduced on import; no legacy product-stage wrappers imported. Hash-pinned PR2 refinements are replayed after the rc.6 baseline; unknown inputs fail. The integration provenance also records the subsequent PR4 design-only batch.",
   "local_refinements": {
-    "date": "2026-11-07",
+    "date": "2026-11-09",
     "pr": "https://github.com/junqicheng765-oss/fusion-product-agent/pull/2",
     "pr_head": "7affdbe1ecabc61cf1d081e8d5d152894c40fa11",
+    "integrated_prs": [
+      {
+        "pr": "https://github.com/junqicheng765-oss/fusion-product-agent/pull/2",
+        "head": "7affdbe1ecabc61cf1d081e8d5d152894c40fa11"
+      },
+      {
+        "pr": "https://github.com/junqicheng765-oss/fusion-product-agent/pull/4",
+        "head": "5f3c7a2715435fe608339610a3150fe1c6ab5882",
+        "base": "7affdbe1ecabc61cf1d081e8d5d152894c40fa11"
+      }
+    ],
     "integration_baseline": "0.3.6-rc.6",
     "changed_imported_files": [
       "skills/fusion-figma-workflow/SKILL.md",
@@ -15,7 +26,8 @@
       "skills/fusion-figma-workflow/references/task-package.md"
     ],
     "added_files": [],
-    "rebuild_note": "Import adapters reconstruct the rc.6 baseline; hash-pinned PR2 patches and explicit local extensions are then replayed automatically. Unknown inputs fail."
+    "bundled_files": [],
+    "rebuild_note": "Import adapters reconstruct the rc.6 baseline; hash-pinned PR2/PR4 patches and explicit local extensions are replayed automatically. Separately curated resources remain in their single Git-versioned package location and are hash-checked and registered again. Missing resources must be restored from Git; unknown inputs fail."
   },
   "files": [
     {
