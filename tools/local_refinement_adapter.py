@@ -87,7 +87,7 @@ def provenance(prefix):
     data = inventory()
     return dict(date='2026-11-09', pr=data['pr'], pr_head=data['pr_head'],
                 integrated_prs=data.get('integrated_prs', []),
-                integration_baseline='0.3.6-rc.6',
+                integration_baseline='0.3.6-rc.6', local_updates=data.get('local_updates', []),
                 changed_imported_files=[p for p in data['files'] if p.startswith(prefix)],
                 added_files=[p for p in data['extensions'] if p.startswith(prefix)],
                 bundled_files=[p for p in data.get('bundled_resources', {}) if p.startswith(prefix)],
