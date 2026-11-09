@@ -82,8 +82,10 @@ class ProductStageAdapterTests(unittest.TestCase):
             path = 'skills/' + skill + '/SKILL.md'
             old = self.old_bytes(path).decode('utf-8')
             current = (ROOT / 'package' / path).read_text()
-            self.assertEqual(adapt_resources(old, 'SKILL.md'), current)
-            self.assertEqual(adapt_resources(current, 'SKILL.md'), current)
+            localized = adapt_resources(old, 'SKILL.md')
+            self.assertEqual(adapt_resources(localized, 'SKILL.md'), localized)
+            self.assertEqual(refine(localized.encode(), path).decode(), current)
+            self.assertEqual(refine(current.encode(), path).decode(), current)
             with self.assertRaisesRegex(ValueError, 'Unknown translation input'):
                 adapt_resources(old + '\nUpstream method changed.\n', 'SKILL.md')
 

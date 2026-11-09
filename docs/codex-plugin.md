@@ -1,6 +1,6 @@
-# Codex插件 v0.3.6-rc.7（候选）
+# Codex 插件 v0.3.6-rc.12.pr4（整合候选）
 
-GitHub主分支提供rc.7整合候选，以下远端安装步骤获取该候选；最新正式Release仍为v0.3.4。维护者本机已通过本地市场安装并启用rc.7。
+GitHub 主分支的 `package/` 提供这份整合候选，包含 PR #4 与本地 rc.8—rc.12 修复。维护者本机已安装相同版本，插件文件逐字节一致。整合来源与检查边界见[整合记录](rc12-pr4-integration.md)。
 
 融合锤子独立GitHub仓库提供Codex市场，入口`.agents/plugins/marketplace.json`指向`package/`。插件标识`fusion-product-agent@fusion-product-agent`。
 
