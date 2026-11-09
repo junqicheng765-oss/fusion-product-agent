@@ -14,6 +14,9 @@
 
 本候选基于正式v0.3.4，增加[独立文案编写与审查](package/skills/fusion-product-agent/references/product-copy.md)及[界面文案基线模板](package/skills/fusion-product-agent/assets/interface-copy.md)。四组文案标准按[统一质量标准](package/skills/fusion-product-agent/references/copy-quality.md)整合七大能力中的适用要求；吸收内部MR !1的中文入口与跨安装目录资源定位、MR !2的异常分层；文案就绪后交给设计直接使用；未合并另一份v0.3.5-rc.1一致性检查候选，已在维护者本机安装启用并验证五项Skill发现；实际模型与Figma效果继续试用验证。下方GitHub安装命令获取rc.7候选。
 
+
+**2026-11-09 源码更新**：当前 `main` 在 rc.7 基线上整合 PR #4 的 18 个设计提交，包含文案建议与确认、视觉方向、图标配色、106 张可检索视觉参考和评审证据规则。见[整合说明](docs/pr4-design-integration.md)。下方 rc.7 ZIP 是此前快照，不含这批新增内容；本轮未改正式 Release 或本机已安装插件。
+
 ## 安装使用
 
 ```sh
@@ -57,7 +60,7 @@ python3 package/scripts/validate_package.py
 python3 package/scripts/test_package.py
 ```
 
-已通过结构、来源摘要与38项离线安装/交付、导入适配及资源引用回归。v0.3.4的流程试用反馈不能代表本候选已验证。本候选尚需新会话检查文案前置、设计直接使用及修改回流，不以离线检查代替真实Figma或模型行为验证。
+当前源码已通过结构、来源摘要与121项离线安装/交付、导入适配、图库、风格及视觉检查回归；历史rc.7快照对应38项。v0.3.4的流程试用反馈不能代表本候选已验证。本候选尚需新会话检查文案前置、设计直接使用及修改回流，不以离线检查代替真实Figma或模型行为验证。
 
 来源的许可与权利说明继续适用；本包不添加未经确认的统一开放许可。历史[0.2.0 ZIP](downloads/fusion-product-agent-v0.2.0.zip)保留供回查，与本版内容不同。
 

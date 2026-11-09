@@ -1,0 +1,131 @@
+--- a/skills/fusion-design-core/scripts/ui_geometry_audit.py
++++ b/skills/fusion-design-core/scripts/ui_geometry_audit.py
+@@ -5,15 +5,15 @@
+ with zero third-party Python dependencies.
+ 
+ Checks, for any page:
+-  1. ICON_RAW_TEXT_GLYPH / ICON_INLINE_HAND_DRAWN / ICON_CHILD_OFF_CENTER: icon buttons must hold a downloaded
+-     icon file (not a text glyph, not a hand-written <path>) and be optically centered.
++  1. ICON_RAW_TEXT_GLYPH / ICON_CHILD_OFF_CENTER: inspect icon-button glyphs and centering.
++     INLINE_SVG_SOURCE_UNVERIFIED warns that embedding alone cannot prove asset provenance.
+   2. HEADER_VERTICAL_MISALIGNMENT: children of horizontal bars not vertically centered (centerY diff > 3px).
+   3. ZONE_MARKUP_MISSING / ZONE_BOUNDING_BOX_COLLISION: top-level functional areas marked with data-zone must not overlap.
+-  4. AVATAR_CULTURAL_FIT_CHECK (WARN) / BANNED_HAND_DRAWN_SVG_AVATAR: stock 3D character avatars need a style review;
+-     hand-coded SVG faces fail.
++  4. AVATAR_CULTURAL_FIT_CHECK / AVATAR_SVG_SOURCE_UNVERIFIED (WARN): inspect source/style manually;
++     SVG embedding does not prove a face was hand-drawn or unsuitable.
+   5. HERO_AREA_SHORT: with --hero ZONE=PCT, that data-zone must cover at least PCT percent of the viewport.
+-  6. FORM_SCREEN: with --consumer, three or more form controls on the first screen and no picture
+-     covering at least 40% of the viewport fails. A consumer home cannot be a form.
++  --consumer and --page-type describe context only. Page purpose, image share and
++  domain-specific object counts require task-specific visual review, not universal quotas.
+ """
+ 
+ import argparse
+@@ -95,10 +95,10 @@
+       const drawn = svg.querySelector('path, circle, line, polyline, polygon, rect');
+       if (!usesAssetFile && drawn) {
+         issues.push({
+-          code: 'ICON_INLINE_HAND_DRAWN',
+-          severity: 'FAIL',
++          code: 'INLINE_SVG_SOURCE_UNVERIFIED',
++          severity: 'WARN',
+           element: selectorOf(btn),
+-          message: `Icon button ${selectorOf(btn)} draws its own SVG path. Use an IconScout or icon-library file via <img> or <use href="assets/….svg">.`
++          message: `Icon button ${selectorOf(btn)} embeds SVG shapes. Verify actual source and task fit in V5; inline markup alone does not identify the author or acquisition method.`
+         });
+       }
+     }
+@@ -184,7 +184,7 @@
+     }
+   });
+ 
+-  // 3. Flag stock 3D character avatars for a cultural-fit review, and fail hand-drawn SVG faces.
++  // 3. Flag avatar source/style for human review without inferring authorship from embedding.
+   //    3D icons/props/badges are not flagged; only human avatars need the style-match check.
+   document.querySelectorAll('img').forEach(img => {
+     const src = (img.getAttribute('src') || '').toLowerCase();
+@@ -200,10 +200,10 @@
+   document.querySelectorAll('[class*="avatar"] svg').forEach(svg => {
+     if (svg.querySelectorAll('circle').length >= 2) {
+       issues.push({
+-        code: 'BANNED_HAND_DRAWN_SVG_AVATAR',
+-        severity: 'FAIL',
++        code: 'AVATAR_SVG_SOURCE_UNVERIFIED',
++        severity: 'WARN',
+         element: selectorOf(svg),
+-        message: `Hand-coded SVG face detected inside avatar container. Use AI-generated character portraits or real photography instead.`
++        message: `Inline SVG shapes occur inside an avatar container. Verify actual source, identity requirements and style fit; the embedding form does not establish hand-drawing or suitability.`
+       });
+     }
+   });
+@@ -315,52 +315,19 @@
+     }
+   }
+ 
+-  // 8. Consumer home: a form with only small pictures is still a prototype, even if cards and hairlines are styled.
+-  if (window.__QA0_CONSUMER__) {
+-    const visible = (el) => {
+-      const r = el.getBoundingClientRect();
+-      const cs = getComputedStyle(el);
+-      return r.width > 8 && r.height > 8 && cs.visibility !== 'hidden' && cs.display !== 'none' && r.top < H && r.bottom > 0;
+-    };
+-    const controls = [...document.querySelectorAll('input, select, textarea')].filter(el => {
+-      if (el.tagName === 'INPUT' && (el.type === 'hidden' || el.type === 'submit' || el.type === 'button')) return false;
+-      return visible(el);
+-    });
+-    let maxMedia = 0;
+-    document.querySelectorAll('img, video, canvas, [data-hero]').forEach(el => {
+-      const r = el.getBoundingClientRect();
+-      const visW = Math.min(r.right, W) - Math.max(r.left, 0);
+-      const visH = Math.min(r.bottom, H) - Math.max(r.top, 0);
+-      if (visW > 40 && visH > 40) maxMedia = Math.max(maxMedia, visW * visH);
+-    });
+-    const mediaPct = Math.round(100 * maxMedia / (W * H));
+-    if (controls.length >= 3 && mediaPct < 40) {
+-      issues.push({ code: 'FORM_SCREEN', severity: 'FAIL', element: 'document',
+-        message: `First screen has ${controls.length} form controls and the largest picture is ${mediaPct}% of the screen. A consumer home cannot be a form. Start from a screen recipe (destination hero, itinerary preview, media hero, table) so one picture carries the first glance.` });
+-    }
+-  }
+-
+   const pageText = (document.body && document.body.innerText) || '';
+   if (/photo\s*:|cc\s*by|creativecommons|图片来源|版权所有/i.test(pageText)) {
+     issues.push({ code: 'LICENSE_ON_SCREEN', severity: 'FAIL', element: 'document',
+       message: 'Author or license text is painted on the screen. Keep it in the asset sidecar, not on the product UI.' });
+   }
+-  if ((window.__QA0_PAGE_TYPE__ || '') === 'home') {
+-    const stops = [...document.querySelectorAll('[data-stop]')].filter(el => {
+-      const r = el.getBoundingClientRect();
+-      return r.width > 8 && r.height > 8 && r.top < H && r.bottom > 0;
+-    });
+-    if (stops.length < 3) {
+-      issues.push({ code: 'HOME_IS_ONE_OBJECT', severity: 'FAIL', element: 'document',
+-        message: `Homepage marks ${stops.length} stops. A home screen must show what the product produces: at least 3 data-stop places or days in an example, not one picture, a slogan, and a button.` });
+-    }
+-  }
+-
+   const out = document.createElement('script');
+   out.id = '__qa0_geometry_report__';
+   out.type = 'application/json';
+   out.textContent = JSON.stringify({
+     viewport: { width: W, height: H },
++    context: { consumer: !!window.__QA0_CONSUMER__, page_type: window.__QA0_PAGE_TYPE__ || '' },
++    scope: 'Mechanical geometry and declared expectations only; page purpose, visual quality and semantic completeness are not evaluated.',
++    visual_verdict: 'NOT_EVALUATED',
+     zone_map: zoneMap,
+     passed: issues.every(i => i.severity !== 'FAIL'),
+     issue_count: issues.length,
+@@ -495,11 +462,11 @@
+     )
+     parser.add_argument(
+         "--consumer", action="store_true",
+-        help="消费级主屏。第一屏有 3 个及以上输入框、且最大的图不足屏幕 40%，判 FORM_SCREEN。",
++        help="记录消费级页面语境；不据输入框数量或固定图片占比判定视觉质量。",
+     )
+     parser.add_argument(
+         "--page-type", default="", choices=["", "home", "list", "detail", "step", "tool"],
+-        help="页面类型。home 时，首屏可见的 data-stop 少于 3 个就判 HOME_IS_ONE_OBJECT。",
++        help="记录页面类型；完整性按本轮职责人工核对，不要求固定领域对象或数量。",
+     )
+     args = parser.parse_args()
+ 

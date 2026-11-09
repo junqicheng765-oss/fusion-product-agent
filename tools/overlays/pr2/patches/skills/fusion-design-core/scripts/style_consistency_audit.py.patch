@@ -1,0 +1,26 @@
+--- a/skills/fusion-design-core/scripts/style_consistency_audit.py
++++ b/skills/fusion-design-core/scripts/style_consistency_audit.py
+@@ -21,7 +21,7 @@
+ from pathlib import Path
+ 
+ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+-from style_preset import resolve, oklch_to_hex, radius_px, theme_vars  # noqa: E402
++from style_preset import resolve, oklch_to_hex, radius_px, theme_vars, effective_auxiliary_colors  # noqa: E402
+ 
+ CHROME = ["/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", "/Applications/Chromium.app/Contents/MacOS/Chromium"]
+ 
+@@ -124,12 +124,8 @@
+     _, item, data = resolve(pid)
+     theme, light, dark = theme_vars(data)
+     meta = data.get("meta", {}).get("dto", {})
+-    raw = list(light.values()) + list(dark.values())
+-    pal = meta.get("palette", {})
+-    raw += [pal.get("bg", ""), pal.get("card", ""), pal.get("primary", "")] + list(pal.get("text", [])) + list(pal.get("extra", []))
+-    for pair in meta.get("platformColors", {}).values():
+-        raw += list(pair)
+-    raw += re.findall(r"#[0-9a-fA-F]{6}\b", json.dumps(meta, ensure_ascii=False))
++    raw = list(theme.values()) + list(light.values()) + list(dark.values())
++    raw += list(effective_auxiliary_colors(data).values())
+     colors = [c for c in (parse_color(v) for v in raw if isinstance(v, str)) if c]
+     base = radius_px(theme.get("radius"))
+     radii = {0, base, base - 2, base - 4, base + 4}

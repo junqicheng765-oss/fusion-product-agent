@@ -1,0 +1,33 @@
+--- a/skills/fusion-design-core/style-presets/registry.json
++++ b/skills/fusion-design-core/style-presets/registry.json
+@@ -3,8 +3,9 @@
+   "updated": "2026-11-01",
+   "tiers": {
+     "copyable": "可复制的 UI 组件 / 区块：能直接拿源码，可自动化",
+-    "system": "可应用的完整设计系统 / 主题：Token + 组件 + 规则，可自动化批量应用",
+-    "referenceOnly": "只有视觉参考的网站：不可自动化，只能人工提取参数后沉淀为新预设"
++    "theme": "主题预设：实际存储的颜色、字体与表面参数可导出；不自动提供完整页面和组件",
++    "system": "设计系统及其实现：组件、导航、状态和交互规则，按实际平台支持范围应用",
++    "referenceOnly": "视觉参考：需看图并转译构图、字形、材质与关系，不等于可执行的主题或组件"
+   },
+   "families": [
+     {
+@@ -1146,7 +1147,7 @@
+       {
+         "id": "tweakcn",
+         "url": "https://tweakcn.com",
+-        "tier": "system",
++        "tier": "theme",
+         "get": "已离线打包 42 个主题（themes/tweakcn）；新主题 npx shadcn@latest add https://tweakcn.com/r/themes/<name>.json",
+         "license": "Apache-2.0（见 themes/tweakcn/LICENSE）"
+       },
+@@ -1166,6 +1167,9 @@
+       },
+       {
+         "id": "apple-hig",
++        "presetIds": [
++          "apple-native"
++        ],
+         "url": "https://developer.apple.com/design/human-interface-guidelines",
+         "tier": "system",
+         "get": "已离线打包（systems/apple-native.json）；原生直接用 SwiftUI 系统组件",

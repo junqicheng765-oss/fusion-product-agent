@@ -1,0 +1,1646 @@
+{
+  "schema_version": 1,
+  "curated_on": "2026-11-07",
+  "input_files": 150,
+  "unique_images": 148,
+  "bundled_images": 106,
+  "excluded_ui": 42,
+  "records": [
+    {
+      "sha256": "063eb6cf7f797af9fcac3d20a60706a4158484bb952d5ed4f459a9e2281eb4a4",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7226589212.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "可独立参考的标题字效图，无产品界面。"
+    },
+    {
+      "sha256": "08371df7b190188964516deb010595cb1c731984d83f20891ad264716b112450",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7038726724.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "独立商业 KV 对照板，核心是造型、材质和构图，不包含产品界面。"
+    },
+    {
+      "sha256": "0a054b4d277bb4f913cf01c5e2a6cf0aeb25e50c05b3400b73e508716c767d06",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7267946651.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "0bb75a6168fda9648118ecd6fbc84436589bc080390abba4e19a1986b9366cac",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-7173697697.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "实际手机活动说明页截屏，含状态栏、返回分享、顶部栏目条与下方玩法卡及话题标签；3D问号铅笔/气泡/饼干可另评裁切，整图排除。"
+    },
+    {
+      "sha256": "0c76485772ecee51e7568ffb42f29dccf922d3c9e96184f9520deb98af831daf",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6479591168.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "0db186d9ad5461aa57f0f75a1ee1e6fd987d9e5d41814b9bdf23dc92d2c4ee16",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-6970347798.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "带手机状态栏与返回操作的完整活动长页，含任务、投票、关注和转发等UI，整图不打包。"
+    },
+    {
+      "sha256": "128f3707cf11f96d023619ebd86b5842936c986387b62e56c8d4484070cd532a",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-5518977081.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "163d65e2b6458544e527cd00dddde996cbd3efd303c6ed9dd151050cb38c0075",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6864573678.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "完整非UI宣传画，人物与微缩城市的尺度关系及环绕文字可用于多种视觉输出。"
+    },
+    {
+      "sha256": "1892b44afda724b0853ff22b009162ebf78012d739b032c54b8483bea9690e43",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7147593333.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "独立标题字效作品，适合字形、边缘和高光参考。"
+    },
+    {
+      "sha256": "195f1f8396fb308a4a86db10038a3f530d1d10aad7eae43a0631c9f241ada0de",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-5700158752.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "1cde490386a8cc417da79e8c740af3414ca5703778310ace15ec5804675230e3",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6857332288.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "蓝色星球、外卖骑手与大标题构成完整商业海报；底部品牌搜索形提示只是宣传导流标记，没有真实页面内容或操作结构，按非UI视觉参考收录。"
+    },
+    {
+      "sha256": "1d2cdc066e517855572f26957814a899d90c9c6cd3ecfd90fc0d13f65a191578",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-7315486838.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "含状态栏、返回帮助按钮、榜单数据和身份切换，是完整活动 UI 截图。"
+    },
+    {
+      "sha256": "1de14bf9826f17fb82a4c8969d420190545eadd55ea7ac42f79961ca961b0288",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-5268319110.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "1e1c20c13944af5a542eb030d8fefdcd52d21b7a82081e454d97218c7b788e3b",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-6935389092.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "实际开屏广告截屏，右上有跳过广告倒计时，底部有上滑操作引导及系统手势条；彩色磨砂主图可另行评估裁切，整图排除。"
+    },
+    {
+      "sha256": "1e7fd9b0b0a745ceafca58b7affbde6ef00b9ef1eaddca0f1fe43df2ad04b3a5",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6546724065.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "非UI商业插画，适合提取中心爆发、透视和符号层级。"
+    },
+    {
+      "sha256": "1f3c6144d56772c7e5e15228c438d876a4bb8477dd72c530dfa4093f12dacf10",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6480059609.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "完整非UI海报，纸艺、微缩尺度和自然投影具备跨输出参考价值。"
+    },
+    {
+      "sha256": "2085c33cb5c71b104f89958768924a7291c21e388495715a32d0e49084cd256c",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7316095034.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "完整图形海报，等距字形、网点与场景可用于多种设计输出。"
+    },
+    {
+      "sha256": "22b37f6fc9ba1f76ffe70c8ca3c9485c044178e056b08b0e04924224b0d727ec",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6450600202.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "无界面、无操作结构的独立插画。"
+    },
+    {
+      "sha256": "24e41e4e93fe8f160297a7cdcbb7a34704e6b9e40ae169f595ed73a49b2bfd1a",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-3328081118.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "主体是完整独立活动海报；底部品牌搜索提示和码属于宣传落款，不构成一张产品 UI。"
+    },
+    {
+      "sha256": "2583648ec1a3c704607001d47cc59e2194a5cb94473e291ec28b3d0210675048",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-6979273806.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "完整健康应用UI案例板，包含数据仪表、功能入口、聊天与输入框，不打包。"
+    },
+    {
+      "sha256": "26aeb6ae6ab50547f455010a6569d8712f217236cc139650de151c1c92232305",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-7024734624.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "完整活动UI截图，含系统状态栏、返回分享、奖励进度、领取与能量操作、签到模块，不打包。"
+    },
+    {
+      "sha256": "2b1298ee2712f4b8006e6f11e5f36a54ac2e00ec6305a28230d09c3d10f132e4",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-3112476067.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "非 UI 的插画作品展示板，主体是纸雕场景及其构成证据。"
+    },
+    {
+      "sha256": "2b907cac9d90cc99aad5e6ea8dbb62af369fb020feef7276956905595cdf1f1b",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-7214980444.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "人物摄影KV下方接真实抽奖任务及榜单区，包含剩余积分、立即抽奖、奖品规则、任务0/5和去助力；原图及 R52-02 确认，整图排除，摄影头图可另评裁切。"
+    },
+    {
+      "sha256": "2e83acac51bc508e78eb5527fd73eb5e75e30e3cbeac4f569971770469bda273",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7214963695.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "主体是粉彩快闪装置与布偶的品牌活动摄影海报；底部小型搜索形条仅提示宣传关键词，没有实际App导航或内容控件，按非UI视觉参考收录。"
+    },
+    {
+      "sha256": "2f218ef7f527fc6e5292062e5d5a580208e1f2fa6f40456cfc07497ae462c237",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7306980950.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "2fb47dbbc50c735fd0d17f43407143ff5a7f0f9ff989fdcfda793884874e3455",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7050855078.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "以静态宣传标题条和字效为主体，未构成完整 App 或网页界面。"
+    },
+    {
+      "sha256": "2fe00b37b1d6950b2986ffe1c7a1dd627d0d5bba4eb7ac8b0a8f086469a55dc9",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7311991923.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "3102a0dbdce07ec4e30039180aa8cda37271b9076a445228675a73aeee0c3ba8",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-7035407546.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "主体是完整 App 页面与手机展示板，遵循 UI 参考不随 Skill 打包的规则。"
+    },
+    {
+      "sha256": "32aaac7220ab023d13568a6570df58ba3023b0f740653fdac9fb58dae9f508c9",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6344502040.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "独立概念海报，由交通灯、表情和文字构成。"
+    },
+    {
+      "sha256": "33f8aa28985a92d4077657302717b083a9d5ed7e2a3433db827d96657c911a7c",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-7189053573.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "完整手机 App 截图，含状态栏、导航和内容功能布局，UI 资源不随包分发。"
+    },
+    {
+      "sha256": "34326a11d2c66aa6410e0d9134fba5b21add3b1870c48da9dc460b441e222aa0",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-7246190502.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "包含状态栏、按钮、答题与用户信息流，是完整活动 UI 长页，不打包整图。"
+    },
+    {
+      "sha256": "34a78569875b9391cfe90e0f8f00d5b0c8497c07ee699b2d9568bb736153295c",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7312047376 (1).webp",
+          "collection": "first"
+        },
+        {
+          "filename": "huaban-7312047376.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "35b26767e1fb2cd0b487c0df5de2025711aabb3ef1d5ecf3e4c1da8c36db194a",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7096285981.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "凸面镜、夸张相机与街拍角色是完整叙事海报；底部微型全网搜索条只承担品牌关键词提示，没有页面内容和业务控件，作为非UI视觉参考收录。"
+    },
+    {
+      "sha256": "36ed71e839e91488e6950cca92a291386e56bc2edab61f00ca974682a6605772",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7134057826.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "暖光橘猫与麻袋是主体商业角色海报；底部极小全网搜索条仅是宣传标记，无真实页面内容或操作控件区块，作为非UI视觉参考收录。"
+    },
+    {
+      "sha256": "381dfb83c7801bb8fb6ad7b7a1805862e170a691787cfde4c0e937c71bc785c0",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7311749733.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "3ae66a4d6ea5e96419cec1ef976e297b880c8632d74b3c1d72056e7e1b686d9d",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6334376273.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "吊牌、礼物与宣传语构成单张广告海报；价格式数字是静态宣传信息，不是应用界面。"
+    },
+    {
+      "sha256": "3e124f6ccbc9c33fe81c06874923137ee248aeb21792032ca8347e07c22ebb92",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7315552828.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "3fadcc5110c8d0ab35fd88fc99d1f1398e038ec6c48a120f440788670f32f0d3",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-6461791574.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "带“跳过”“向上滑动”“广告”和系统底栏的实际开屏广告界面，整图按 UI 截图排除。"
+    },
+    {
+      "sha256": "427972fc1000a1cb1cd21916af86e8f5ea26a6b5cde152493b08b997ec3ea168",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7287077264.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "42fa7110295f9f94e1683d35234ae868f2231d3cf87a56920a139312a8a16c0b",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-6709082484.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "三屏手机UI案例板，包含真实引导层级、按钮及步骤，整图不打包。"
+    },
+    {
+      "sha256": "4598b2fa749b4a49fdb02e9741629c774cca16f51c075889031ea05dd3624dc0",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-7011632210.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "下半部同时包含搜索问句、AI身份、分段建议与高亮回答，形成完整搜索回答界面区块；虽采用海报构图，仍超出宣传搜索条边界，奶瓶视觉可另评裁切。"
+    },
+    {
+      "sha256": "46b0b48efee1fb61ccf4d372b7c4258fa684c265c28718be75498bda0e51ffb5",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-7313784005.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "完整订阅购买页面截屏，带状态栏、关闭、计时、价格和购买按钮。"
+    },
+    {
+      "sha256": "487197b1cae629fd805f838b41caa9128b44deb10e4c808a69f7392aee69c7bb",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7315484384.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "独立促销海报，以 3D 物件和图形排版为核心。"
+    },
+    {
+      "sha256": "487585e0daed25fc42390cf002eaba384922d67f7adef5416847163bac558a78",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6381967588.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "纯插画海报，无产品操作结构。"
+    },
+    {
+      "sha256": "4a10ef030f9a82d37cd80b1994ca70dc7efbe44a0a4dbedae96080fb2ac4cbad",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6466316855.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "单幅音乐活动视觉，无操作界面结构。"
+    },
+    {
+      "sha256": "52ce6f04e69558cae7feb49ae273b33ec6e3e21298a41480d6c3cccf84100b37",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6655662110.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "主体是手持冰淇淋猫头鹰的独立品牌海报；角落勾选、圆点、火焰20和星币是学习进度的图形意象，没有页面导航或完整内容操作区，作为玩具材质与角色视觉参考收录。"
+    },
+    {
+      "sha256": "53c4690e04b00e3806af91ba253f5993c99bd35e8a0562198a5858cdd00cd53c",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-6711038763.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "完整聊天助手应用界面，含Pro、设置、上传按钮和话题入口，不打包。"
+    },
+    {
+      "sha256": "545eaf42cec50033c8ec7fddd457604ab2c83aefcbab9e5ee8f29dfcb06322ea",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6342935204.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "54a25d1a0ed804f4b29a58809beaf3b17cc79a46c48dfae9258ad97b77c6e2a8",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7220577848.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "5978c11443df24c1aaf62c20f2bafdcfdbc06fe485220b83227f140d29783094",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-6793444184.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "完整招聘活动长页，含预约、报名、职位入口、滑动提示、视频与日历等UI模块，整图不打包。"
+    },
+    {
+      "sha256": "59c7ae9787d8bca88d4237dbbf2efc752d72c0496bda167de0c47e10b009899d",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-6464408480.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "可见系统栏、返回/分享、抽奖按钮和工具跳转卡片，是实际活动 UI 截图。"
+    },
+    {
+      "sha256": "5dcaf3177924d958d4eb680a4b76944f2ff4fc1d384515b2aa1923a16f2bbb84",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6752022443.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "卷轴、手部和黄色角色组成独立促销海报；中部美团App搜索形条只提示宣传关键词，不展示搜索结果、输入过程或业务界面，按非UI视觉参考收录。"
+    },
+    {
+      "sha256": "5ded75005c92a7b2d4c1e40cdc397c2ec106238a801ac98fa78cb04467610a3e",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6465057410.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "5e0555f3863d0b577dc0c7354efe35a1356363b378973981472f80bc166d1734",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7194422034.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "5ee4eb8d97c8cd846f847a5d129edcda6e5503ad096364826775f406e08f28b0",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6445147669.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "单张节庆插画海报，不含应用界面。"
+    },
+    {
+      "sha256": "62863e294b5df2cad48692cb6073469801f19a5c47b4e1502375591604974b4f",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7296221682.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "646f0d6d34faa66f2d70d4891e698110596b201135b2d62c60a19edac2b8dd00",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-5466620194.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "69e3c45b3b5c36a28d1befee9038bbf04a01f4cdc9f947e09d59f6d2461d9b68",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6341987389.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "6ec8814679520b82e4e289a23fff8e56cc37763c8a1d5a40fa80870e5f9ee911",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7274800587.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "独立标题图形，可跨屏幕、印刷与动态输出参考。"
+    },
+    {
+      "sha256": "6f222fd5a88bf536fc9225b3effe2d992d07cc993dd67e2208be811d8736326a",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-4205575926.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "这是无导航、按钮或应用截图的数据回顾长海报，属于可跨输出借鉴的叙事信息图。"
+    },
+    {
+      "sha256": "71c26fa3983157ddf5f1d2d9e844d5f99e2a271792443911e4d5a3ca40800a0a",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6835884913.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "741cc4d1543881908541885380658e030832e218fc2ea87f229c4100c3677462",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-4731383746.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "76c3d8fad2d175f57efc057050adde2bb74a0eef679e5f8f065dec952bd335b0",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-5223515568.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "实际科普活动长页，除插画信息图外还含返回分享、作者视频卡、浮动发布按钮和多处跳转链接；查看原图及 R05-02/04/07 后确认，整图不是纯科普海报。"
+    },
+    {
+      "sha256": "7b6bfa53332b92c1589921a7bfd01dd7fec08d09c6319a5ee86ffd5c19d0a186",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-4051302156.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "整图为带兑换、分享、报名和测试按钮的活动 UI 长页，排除本地打包。"
+    },
+    {
+      "sha256": "7c97daab98bac45e60c395e5f6f85146d16e4141531e3f838397c0eb66b01b6e",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-2709259248.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "整图是含系统栏、应用截图与操作步骤的活动 UI 长页，不能作为本地视觉参考图打包。"
+    },
+    {
+      "sha256": "7f01af0930279cd17df4e1efaad0776f46f4234c8e801f6a16e2cde5e5c67ee5",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7094966228.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "完整平面插画海报，可跨海报、文创和编辑插图参考。"
+    },
+    {
+      "sha256": "8371018ab75888bd9c79e075335d86e6e8fbe79d5e0563c3ca3cc83e05a311ea",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7277650270.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "8aaf981dcbfdae21d90123bd8dfc25e1ee23177823d9b04e8f2c8f164155dbda",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-4795352360.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "8cabf4394359b33299de6cd14abd7fc7eb93a742e198e0de5121695cfb87ec0b",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7312557399.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "9018987966b9d78cff20d77146641aacec2ff6b7d67a766985b9efd24ab212e9",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6610638651.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "916abf84f1227c2eb41d980abc448cff7e2ff14d038fedc4486a0f0dfa05df85",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7315938812.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "以文字机械结构为主体的独立展示图。"
+    },
+    {
+      "sha256": "9260e318b1ac72510e004d71bc99a7ecd82487243638a4606040d644b37d3743",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7311965246.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "936bd3e570752f0aa5e1c4a8e38a7d27e1cd3d0569c2a28052cb92c116d267eb",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-6740657350.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "手机语音与聊天UI案例板，整图不打包。"
+    },
+    {
+      "sha256": "93b1c2a943c8f650ea0e5ea7a8e66a2207227108aa2820ab179ca5073d6f2afc",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-7011632157.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "下半部呈现搜索问句、AI身份、准备装备/选择地点/出动时间等完整分条回答卡，是具体产品内容区块；不只是一条品牌搜索宣传提示。橙色礼物视觉可另评裁切，整图不打包。"
+    },
+    {
+      "sha256": "96a321ea785570c7a5f7b354b18dc9b2b154aa4fae7550fd921d6834b5910f31",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-7097966603.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "实际叫车助手开屏截屏，顶部有状态栏，底部有点击查看详情、跳转说明和跳过倒计时；中心立体输入槽属于插画，但整图仍含真实界面控件。"
+    },
+    {
+      "sha256": "96f49b2ae3ad9770d2eed4b46a81698951456232c3331cf20a1a100f1d397e67",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6524273685.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "主体为完整角色插画；社交帖画框与点赞符号是宣传画的构图元素，无完整应用页面或实际操作界面。"
+    },
+    {
+      "sha256": "9798062d5fe1f2ffc41486dda051055425be8032a9390c328e1bf310d698c640",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-7285946911.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "实际手机开屏广告，含状态栏、跳过广告、车况价格卡、立即估价按钮和扭转手机跳转引导；街机造型是界面外皮，整图不作为独立非UI海报纳入。"
+    },
+    {
+      "sha256": "9838f04d941569e491c10cefe55a3875b86c430eed86ae9a73f52b28ca5c17ab",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6940568082.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "雪绒礼盒、冬装道具与红色角色构成独立商品促销海报；底部品牌加关键词的搜索形条为宣传提示，不是完整商城或内容界面。"
+    },
+    {
+      "sha256": "9a0b6844114a2c7aecf400db1a6ce22fa195f1a90e2248bde988f45e69acf910",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7225238192.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "9cd105cb556d1e2244677dd50b38bf78059f4f37ecfb1442f8b3cecff00f81f7",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7311838111.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "9eebd24be089cb4885f2c9ca55827cce39a1ae1eeaa3df809de850ec639a2f65",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6449886676.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "无文字、无界面的独立概念插画。"
+    },
+    {
+      "sha256": "9f36e23e97c5c14ec8c48afd655b5f0efc8e70e7617fa33b200ad6aa1c9e7702",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-5625727033.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "完整手机内容长页，顶部有状态栏、返回分享，尾部有头像账号条和已关注按钮；照片手账部分有视觉价值，但整图含真实内容与关注控件。"
+    },
+    {
+      "sha256": "a1ddda2a421ce113707cc5eb16c261bb937cb9cd0740e3890aeaa8a8dd67dde0",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-4611134562.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "整图是静态手账故事海报；地图与车票是叙事图形，未见按钮、导航或操作表单。"
+    },
+    {
+      "sha256": "a2d7ea98a2a3477c69abe9d1c741c96949967a2d2657b6e958530099ad3757c4",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7315929260.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "单独文字图形，适合字面与描边层次参考。"
+    },
+    {
+      "sha256": "a6adb61dee40da90b430b9cddb836c5354d9d644394c57028f713ca41534d888",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6450755324.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "a6ef3c8114479298bb612465b4df27572affe50a87275950ce49a7344c02feff",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7237754112.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "a6f28471d69d99f06bd615cce5c9484f069c8ad2a55e21c6d02ea12e13c0dab1",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7220853258.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "完整商业广告画面，主体为产品、角色和场景，不是操作界面。"
+    },
+    {
+      "sha256": "a75f6e9af77779737d001c743d6a82c95c7427241fbff270c0be8f35c329a902",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7311995877.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "a7fea11976e19a1d91fcc873104f3ee4e974e1c187a62d2590b4cdaa668c793d",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6423881967.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "画面是独立横向活动 KV：主题、日期与报名宣传短条之外，无网站导航、内容模块或完整应用界面。"
+    },
+    {
+      "sha256": "a89a8b7e76532e318470a702310fd7fbb4165909ae524d4fc0bf40040b1b6a23",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-5011150033.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "实际开屏广告截屏，含手机状态栏、跳过倒计时、跳转条和系统手势条；整图属于带真实控件的界面，人物光束插画可另行评估裁切。"
+    },
+    {
+      "sha256": "a8bea4612ea2f261f1ee87048561fdd73a7a3994dc44e6fdf99452891ac0090e",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6714599886.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "完整非UI装饰插画，光学材质与拱门层次适合跨输出使用。"
+    },
+    {
+      "sha256": "a9011ca417307dd0e0da48f7da4f5e580105de674000fb30f26429152dda68f6",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-6814659914.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "完整社交应用引导UI案例板，包含通知样例、权限操作和手机系统元素，不打包。"
+    },
+    {
+      "sha256": "a92c3a76e3288e85d2eeb8345f10e084a4508349e5cb82c0fe5df906e05b71fa",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6752081445.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "a982a880f4911fa37e9bae26e3cc9f3fdb91ae31180914f0dff553dc5e20c519",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6450396633.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "独立建筑图形海报，未见产品界面。"
+    },
+    {
+      "sha256": "a9944885b3bccc88f692014b450e9f7a00cd7471031823cb943b06a4d8690a8b",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7042521321.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "完整庆典海报，可复用角色、舞台和标题层级方法。"
+    },
+    {
+      "sha256": "ac79174d21e753c0f94e57836a12ac2bd8b4347d3dfe11e75066a475a1b36789",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-6952157205.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "完整游戏社区首页UI，含搜索、导航、交易及话题入口，不打包。"
+    },
+    {
+      "sha256": "ae5de64a111166a7132c4dc03d5313e0c04e92d98f39bf787de56f3a3f3e0c4b",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7242962071.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "单独标题字形作品，适合外轮廓与字形变形参考。"
+    },
+    {
+      "sha256": "ae6f568ded73d5c6ef5da5646863e835899870e407640b34b914e055632eafde",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6778792408.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "完整非UI字标图，字形切角、倒角层次和外框关系清晰。"
+    },
+    {
+      "sha256": "afe619a1d4fa053369047e5a3f24109e91dfd3e9a212029e35f5c805b6679eb8",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-6466730691.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "原图是带系统状态栏、Done和底部手势条的完整手机截图，按UI截图规则不打包。"
+    },
+    {
+      "sha256": "b08054e4c39da27bf60e96a19370329242dc7d5f7ec5586be42a4bfab73d6a60",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6963464193.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "完整非UI会议信息海报，角色、聚光与环形舞台形成清楚焦点。"
+    },
+    {
+      "sha256": "b559a01b4c2baa5dc043fb53511239de5cb0653b87f58b6bd6400f860c7f1a2a",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6195921187.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "内容是海报及其视觉延展展示；一处仿窗口图形是装饰，不是完整产品界面。"
+    },
+    {
+      "sha256": "b639c9a01e82a5216f59b94ef55d67eaf3311bf154e42aa3422893b56e6f1a2f",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7312061247.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "bab6f0fc3ec2450cc6d9583b0bab198531d69a334a151f55c75190aecf8ba0a7",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6466282002.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "完整非UI抽象插画，可提取环形节奏、噪点、色彩与大小对比。"
+    },
+    {
+      "sha256": "bb8b30f5ecf5e8c9de4a380a3a97c3177516bc15cf2a8cddd06212d4be791ace",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-6697934216.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "完整个人主页UI，包含头像资料、歌曲列表和底部导航，不打包。"
+    },
+    {
+      "sha256": "bc19bba1277aa272b440c317fde2548c8998975f93501d1464598c82fe7304b1",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7079800295.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "c047bf716a3ff058cc9d0a4f8835a8174582b0f8353fa1beff6926e6c45c376a",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6658516749.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "c43c0092fb3a2b6bfbd3ebdab2430ce979b9b3733905335afa05a85f891e5821",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-6595234705.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "带跳过广告倒计时与向上滑动操作引导的实际开屏广告；整图包含真实界面覆盖层，月亮夜游插画可另行评估裁切。"
+    },
+    {
+      "sha256": "c6ee42cf0f0a395e357a0ba3e780cc6ab61d90e94fb6bd631444bd48aba80476",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7317477345.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "c71a1790bd396f0f485593f75c8901deb18cf7246610a0b712932d7e87f726bd",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7312007926.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "c8159972b6a3b9112d13de65dea895452a3e44b2333546e23eff88b50963379f",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-7152423362.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "完整家居活动长页，含状态栏、返回分享、角色关注按钮、作者视频卡和照片轮播箭头；原图及 R46-02/04 确认含真实内容控件，不能因手绘纸感而按纯插画整图收录。"
+    },
+    {
+      "sha256": "cac3d66bdd95cb7d9df06caf6a812c56fca67a7b2bd2747a6c29c9af9c28ca0a",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7195217572.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "cacf03b14ad7081abdf782b4b171f30e3e7c5f1f86803a9115826a6c16692af6",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6273630538.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "纯图形漫画海报，无应用或网页 UI 结构。"
+    },
+    {
+      "sha256": "cb525099a5220fae9c4b02ac6a88c408f0ee5880a5c85199510f57efa090e299",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-7291170873 (1).webp",
+          "collection": "second"
+        },
+        {
+          "filename": "huaban-7291170873.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "完整 App 服务与促销页面，包含状态栏、导航和产品卡，UI 参考不打包。"
+    },
+    {
+      "sha256": "cb713f565e62768be74f1a11810bde320f6c0b1eba1c62aa64ea4f37033cfcc2",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6487490072.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "cc7b254ced945be6bade826d20007239cb365ca2169c9a2a1ad674d0f4bbd196",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-6008627646.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "整图有系统状态栏、返回/分享控件、答题按钮及抽奖操作，属于实际活动 UI 截图。"
+    },
+    {
+      "sha256": "cfc5e6b4f33e08bf93f17eef94a099bb6e768a4af236e2e2933b07295f5ad27f",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7068025553.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "独立抽象活动主视觉与展示落款，不是 UI 页面。"
+    },
+    {
+      "sha256": "d0de330bed208b6235ff465f5b1cdca353876b357f613a3fe981c1053b899a18",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-6951832855.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "虽以旅行玩偶KV为主体，左下仍展示助手输入框、深度搜索快捷项及加号/语音/相机功能按钮，属于具体产品内容控件区块，超过单纯品牌搜索提示；整图排除，人物场景可另评裁切。"
+    },
+    {
+      "sha256": "d2d6f1597d48676000dd75f0a7e90cdfe76d0388a03a22b2932ab0706a80a575",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6834007421.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "完整活动KV，动线、角色比例和晶体光效具有跨输出价值。"
+    },
+    {
+      "sha256": "d39e62144b2a18fe7bc0cf32ef2f10e68dff96d4d0fcf71e047b498b5c349ab4",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6643581984.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "d3eb0a91715dca247d2b7986b586b23758f753a0ec701b04fb24afee73d416d9",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-5842488414.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "完整积分抽奖活动页，含状态栏、返回分享、奖池、我的奖品、点击抽奖、剩余积分与四条去完成任务；原图及 R12-03/04 清楚显示真实业务控件。"
+    },
+    {
+      "sha256": "d6357a6edab9b2e5777edc20acab1f481c6cd8c906d947227e24414be22fdcbf",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7137059688.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "d7e48b6c75802e7127bf73c6156343b7384885b852faa6ee6719390ef57f50f8",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7317362029.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "d9695d9691c2c8364153c4161224c7457a0bcfcebb2e5a9d065abf13fef02812",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-6390278502.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "整图是八张完整手机 UI 的汇总板，按用户要求排除本地打包。"
+    },
+    {
+      "sha256": "dc2a4c8819f4f86aa39816abd471bab32e189b0f2422d69f80bc01d9e5af6904",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7224375607.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "df493442c57fad9097e1132435c3f258833a793fae61a1674efd16ecf75df1e9",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6812406561.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "e3bce2fda7f800fce58c13102b4983a9aa7a63e8c0a8d50e6c2ce4b517ee2bf2",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7293812312.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "e5b446ec35f3e93226f4ccf532b6ff175e77806fe8a1e23ce388adc34fb6c0dc",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7134689547.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "以概念图像和手写标题为核心的完整海报，不是产品 UI。"
+    },
+    {
+      "sha256": "e604f09278d3f8148917197a59a03c8d153c24c1884bf5dcbfeaa91942a29d07",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-1823290881.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "e67635cfd4f397240c75ce8397c15a44788771da45fabc004ae9ac4fa6356553",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-5846089595.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "完整旅行活动长页，含返回分享、规则链接、浮动立即发布、横向作者视频卡和底部点赞内容流；原图及 R13-02/05 确认其为界面长页。"
+    },
+    {
+      "sha256": "e6bfa1ab7e3f84c2f344aaef65f85d31acef0288ac1b0c633a6e207bf6592510",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6251374503.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "e707cffb788f7f7908b4f2085702badc1c0d317af2deee1ef110e170c6813c11",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6393753116.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "e76eee8e9c43be3a36eb7f602a1271f7133788e68786383f52614b3620e515b3",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7132722144.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "蓝布、撕纸、图钉与潮玩角色构成独立档案拼贴海报；底部搜索形胶囊只提供品牌主题关键词，没有真实搜索内容或页面布局，按非UI视觉参考收录。"
+    },
+    {
+      "sha256": "e8b4d9beb05bd35b9489f0f29e9ee8c437f6fecb70fe0424d5daae8b75232389",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-2820998435.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "单张独立旅行主题插画海报，未见应用界面或页面操作结构。"
+    },
+    {
+      "sha256": "eb8cc593a4446749a478feb010c045e979aa6559b7bd20f948bb2e6a804b9056",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7225470622.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "ee275dc3be49a20de3c7b9026f3796e044ec1734eb5a6cb40552057d72f73ac7",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-5618992035.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "整图为带导航、答题/提案/关注入口和“App内打开”浮层的真实活动 UI。"
+    },
+    {
+      "sha256": "eef4c930c462a5a41774835355d9c16f6a94259eb1cd273a5093970bc917356a",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7252857052.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "ef7c31b572d427b5873564de7b4566658bbb690ffeafa9026afef83475d4c9c1",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-4337806704.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "单张静态发布海报，画面由光效、字形与时间地点宣传信息构成。"
+    },
+    {
+      "sha256": "efb0fafa4c516c17299777c507cd8c2a9793dee6dd87abbac1b13e647f52889e",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6815488045.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "f549fd5ea273baa4c88a026006335ec38ae8ec171ec1448f0a23c368e7469dc7",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6490934892.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "f8850d190f58df24cffd2393326f5c7f4d0091f744d2399de7978dd555dd80ba",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-6395368348.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "含系统状态栏、应用标记、返回/分享、月份筛选和带价格榜单，属于实际旅游活动 UI。"
+    },
+    {
+      "sha256": "f8c84324c16eafe651dc31f1c5bc0f6191ba763798f51856662f54201bd7620a",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7205997205.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "标题字形展示板，无完整页面或操作结构。"
+    },
+    {
+      "sha256": "fad3d4d2afa5ba20d6b9c35dae930d0c4ae56b2e410b076d273b9fe239a6d920",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7311994112.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "fae07949d97577c0aeeec36c558a87d9db35969e99fddc5538bad0752c8e74ec",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-5756462202.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "活动长页包含多排带头像、作者名与截断标题的真实内容卡片及底部分享行动入口；搜索提示不是唯一 UI 证据，原图及 R11-02 已确认。"
+    },
+    {
+      "sha256": "fcc4373b95bc90a25d140e23d2aaa69ad536031cb95dd1847d0b836163e264a8",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6967543797.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "属于非UI海报与工牌实物应用板，可作为视觉语言跨载体延展参考。"
+    },
+    {
+      "sha256": "fcc4c726b96908b0f27468655f42667ab0a24f747e8dfd4755c3c478f3cc00ac",
+      "decision": "exclude-ui",
+      "sources": [
+        {
+          "filename": "huaban-7181600758.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "完整AI伙伴引导界面截屏，含状态栏、关闭、开始按钮、协议勾选和协议链接；弥散渐变与衬线排版有参考价值，但不能随包纳入整张UI。"
+    },
+    {
+      "sha256": "fd0366dc8f8d381f935c3ea36ba126599488eda1eecdd39a295d58af6ab5cf6c",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-7252866738.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    },
+    {
+      "sha256": "fd1119bc179c8a4dff4445c4bc24412c74071ce1ac9e60167a9a92c31f7ea17a",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6867022747.webp",
+          "collection": "second"
+        }
+      ],
+      "reason": "完整非UI文字KV，适合研究大字、嵌入图标和挤出层次。"
+    },
+    {
+      "sha256": "fd2d1e329c288480a02224e9115687878345534c6284606b630e57b6ff1a33b7",
+      "decision": "include",
+      "sources": [
+        {
+          "filename": "huaban-6695023218.webp",
+          "collection": "first"
+        }
+      ],
+      "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
+    }
+  ]
+}

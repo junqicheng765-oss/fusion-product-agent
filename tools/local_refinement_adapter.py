@@ -61,10 +61,34 @@ def extensions(prefix):
     return result
 
 
+def bundled_resources(prefix):
+    """Retain the single canonical copy of separately curated package resources.
+
+    These authored resources are versioned with the package, not imported from
+    the older designer repository. Missing or changed data must be reviewed or
+    restored from Git before import; it must never disappear from provenance.
+    """
+    package = ROOT.parents[2] / 'package'
+    result = []
+    for relative, record in inventory().get('bundled_resources', {}).items():
+        if not relative.startswith(prefix):
+            continue
+        path = package / relative
+        if not path.resolve().is_relative_to(package.resolve()) or not path.is_file():
+            raise ValueError('Missing bundled resource; restore from Git: ' + relative)
+        data = path.read_bytes()
+        if digest(data) != record['sha256']:
+            raise ValueError('Bundled resource digest differs: ' + relative)
+        result.append((relative, data, dict(record)))
+    return result
+
+
 def provenance(prefix):
     data = inventory()
-    return dict(date='2026-11-07', pr=data['pr'], pr_head=data['pr_head'],
+    return dict(date='2026-11-09', pr=data['pr'], pr_head=data['pr_head'],
+                integrated_prs=data.get('integrated_prs', []),
                 integration_baseline='0.3.6-rc.6',
                 changed_imported_files=[p for p in data['files'] if p.startswith(prefix)],
                 added_files=[p for p in data['extensions'] if p.startswith(prefix)],
-                rebuild_note='Import adapters reconstruct the rc.6 baseline; hash-pinned PR2 patches and explicit local extensions are then replayed automatically. Unknown inputs fail.')
+                bundled_files=[p for p in data.get('bundled_resources', {}) if p.startswith(prefix)],
+                rebuild_note='Import adapters reconstruct the rc.6 baseline; hash-pinned PR2/PR4 patches and explicit local extensions are replayed automatically. Separately curated resources remain in their single Git-versioned package location and are hash-checked and registered again. Missing resources must be restored from Git; unknown inputs fail.')

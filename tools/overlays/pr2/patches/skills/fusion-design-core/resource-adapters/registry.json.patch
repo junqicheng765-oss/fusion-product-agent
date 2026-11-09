@@ -1,0 +1,70 @@
+--- a/skills/fusion-design-core/resource-adapters/registry.json
++++ b/skills/fusion-design-core/resource-adapters/registry.json
+@@ -240,18 +240,25 @@
+     {
+       "id": "iconscout",
+       "stage": [
+-        "asset"
++        "all"
+       ],
+       "capability": "asset",
+       "mode": "mcp+script",
+       "priority": "S",
+       "wired": true,
+-      "note": "V5 / V7 已接 MCP + scripts/iconscout.py"
++      "note": "所有成果共享的素材服务；V5 决定语义、主题与成组适配，V7 提供适用制作路径；不专属 UI、头像、3D 或海报。",
++      "scope": "cross-deliverable",
++      "availability": "登记/实现已提供；当前宿主工具、账号权限及资产能力在使用时分别核验",
++      "search": "先检查当前宿主实际提供的 IconScout 工具；MCP 可用时按真实字段检索，否则仅在既有路线覆盖时使用 scripts/iconscout.py search/item。语义、主题与组规范按 V5；资产类型和风格仅作当次查询筛选。",
++      "returns": "以实际工具结果为准；本地脚本提供简化检索/详情及预览，不保证返回 Pack、作者、许可或可编辑源文件。",
++      "acquire": "选定后按当前接口、账号权限和许可取得实际文件，核验格式、尺寸与透明性，再写入 V5 manifest；预览和格式参数不证明已取得源文件。",
++      "license": "逐项核验真实来源及使用许可；已配置、能搜索或已取得预览均不证明商用或分发授权。",
++      "fallback": "MCP 未暴露或不可用时先区分宿主加载和账号问题；沿已确认路线检查内置脚本或其他适用资源，能力/路线实质变化按 TR0，不自动安装、改全局配置、付费或用占位代替。"
+     },
+     {
+       "id": "real-image-library",
+       "stage": [
+-        "asset"
++        "all"
+       ],
+       "capability": "photo",
+       "mode": "api",
+@@ -294,20 +301,27 @@
+           "note": "具体地点、地标、历史文化提到最前。"
+         }
+       ],
+-      "wired": true
++      "wired": true,
++      "scope": "cross-deliverable",
++      "availability": "登记/实现已提供；当前宿主工具、账号权限及资产能力在使用时分别核验"
+     },
+     {
+       "id": "svgrepo",
+       "stage": [
+-        "asset"
++        "all"
+       ],
+       "capability": "asset",
+       "mode": "reference",
+       "priority": "A",
+       "url": "https://www.svgrepo.com",
+-      "search": "用户下载后提供文件；不抓取",
++      "search": "通过当前允许的公开检索/浏览渠道查看条目，或复用使用者提供的准确文件；不声明已有自动 API、批量抓取或源文件下载能力。",
+       "fallback": "IconScout icon",
+-      "wired": true
++      "wired": true,
++      "scope": "cross-deliverable",
++      "availability": "登记/实现已提供；当前宿主工具、账号权限及资产能力在使用时分别核验",
++      "returns": "公开参考链接或使用者提供的实际 SVG 文件；不声明当前脚本具备自动检索/下载能力。",
++      "acquire": "通过当前允许的公开浏览/取得方式或使用者提供文件，核验实际结构、来源和许可后导入；不虚构 API。",
++      "license": "逐文件核验原作者、许可与修改/分发条件，不把公开可见当作可任意使用。"
+     },
+     {
+       "id": "react-bits",
+@@ -374,4 +388,4 @@
+       "wired": true
+     }
+   ]
+-}
+\ No newline at end of file
++}

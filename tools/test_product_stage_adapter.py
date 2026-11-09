@@ -7,16 +7,21 @@ from pathlib import Path
 import unittest
 import hashlib
 import json
+import subprocess
+import sys
+import tempfile
+from unittest.mock import patch
 from zipfile import ZipFile
 
 from product_stage_adapter import adapt_copy_handoff, adapt_figma_product_stage, adapt_product_stage
 from resource_location_adapter import adapt_resources
-from local_refinement_adapter import refine, inventory, extensions
+from local_refinement_adapter import bundled_resources, refine, inventory, extensions
 
 ROOT = Path(__file__).resolve().parents[1]
 BASELINE = ROOT / 'downloads/fusion-product-agent-v0.3.1.zip'
 PREFIX = 'fusion-product-agent-v0.3.1/'
 DESIGN = 'skills/fusion-design-core/'
+SHARED_ASSET_REGISTRY = DESIGN + 'resource-adapters/registry.json'
 CHANGED_DESIGN = {'SKILL.md', 'methods-intake.md', 'methods-routing.md', 'methods-ui.md', 'methods-tool-routing.md', 'methods-visual.md'}
 
 
@@ -81,6 +86,58 @@ class ProductStageAdapterTests(unittest.TestCase):
             self.assertEqual(adapt_resources(current, 'SKILL.md'), current)
             with self.assertRaisesRegex(ValueError, 'Unknown translation input'):
                 adapt_resources(old + '\nUpstream method changed.\n', 'SKILL.md')
+
+    def test_curated_library_is_registered_on_reimport_without_duplicate_images(self):
+        resources = bundled_resources('skills/fusion-design-')
+        source = json.loads((ROOT / 'package/design-source.json').read_text())
+        records = {entry['destination']: entry for entry in source['files']
+                   if entry.get('origin') == 'bundled-visual-reference'}
+        self.assertEqual(len(resources), 109)
+        self.assertEqual(len([name for name, _, _ in resources if name.endswith('.webp')]), 106)
+        self.assertEqual({name for name, _, _ in resources}, set(records))
+        for name, data, record in resources:
+            self.assertEqual(record, records[name])
+            self.assertEqual(hashlib.sha256(data).hexdigest(), record['sha256'])
+
+    def test_reimport_rejects_missing_or_modified_curated_resources(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            overlay = root / 'tools/overlays/pr2'
+            overlay.mkdir(parents=True)
+            name = 'skills/fusion-design-core/visual-reference-library/images/test.webp'
+            data = b'curated reference'
+            record = {'sha256': hashlib.sha256(data).hexdigest()}
+            (overlay / 'metadata.json').write_text(json.dumps({'bundled_resources': {name: record}}))
+            with patch('local_refinement_adapter.ROOT', overlay):
+                with self.assertRaisesRegex(ValueError, 'Missing bundled resource'):
+                    bundled_resources('skills/fusion-design-')
+                resource = root / 'package' / name
+                resource.parent.mkdir(parents=True)
+                resource.write_bytes(data + b'changed')
+                with self.assertRaisesRegex(ValueError, 'Bundled resource digest differs'):
+                    bundled_resources('skills/fusion-design-')
+                resource.write_bytes(data)
+                self.assertEqual(bundled_resources('skills/fusion-design-')[0][1], data)
+
+    def test_shared_asset_libraries_are_discoverable_across_stages(self):
+        router = ROOT / 'package' / DESIGN / 'scripts/resource_router.py'
+        shared = {'iconscout', 'real-image-library', 'svgrepo'}
+        for stage in ('research', 'flow', 'interaction', 'ui', 'asset', 'motion', 'close'):
+            with self.subTest(stage=stage):
+                result = subprocess.run([sys.executable, str(router), 'list', '--stage', stage],
+                                        check=True, capture_output=True, text=True)
+                listed = {line.split()[1] for line in result.stdout.splitlines()
+                          if line.startswith('  [')}
+                self.assertTrue(shared.issubset(listed))
+                if stage == 'research':
+                    self.assertNotIn('shadcn-ui', listed)
+        registry = json.loads((ROOT / 'package' / SHARED_ASSET_REGISTRY).read_text(encoding='utf-8'))
+        for adapter in registry['adapters']:
+            if adapter['id'] in shared:
+                with self.subTest(adapter=adapter['id']):
+                    for field in ('mode', 'search', 'returns', 'acquire', 'license', 'fallback'):
+                        self.assertTrue(adapter.get(field), field)
+
 
     def test_figma_upgrade_is_reproducible_and_idempotent(self):
         relative = 'skills/fusion-figma-workflow/SKILL.md'
