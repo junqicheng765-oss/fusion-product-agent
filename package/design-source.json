@@ -84,6 +84,16 @@
           "skills/fusion-figma-workflow/references/initialization.md"
         ],
         "scope": "Local frontend runtime/keyboard evidence and scoped continuation of copy preparation when design tools or current assets are unavailable."
+      },
+      {
+        "version": "0.3.6-rc.14",
+        "date": "2026-11-10",
+        "scope": "Refresh-return focus/context and actual keyboard verification; preserve PR4 design methods."
+      },
+      {
+        "version": "0.3.6-rc.15",
+        "date": "2026-11-10",
+        "scope": "Cross-document history context and focus eligibility, asynchronous rebuild ordering and real keyboard verification; preserve established design methods."
       }
     ],
     "changed_imported_files": [
