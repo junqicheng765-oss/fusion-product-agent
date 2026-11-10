@@ -2,11 +2,11 @@
 
 **Demo统一定义**：[正式产品的本地前端交付](package/skills/fusion-product-agent/references/formal-design-delivery.md)，约定范围内的界面、交互、文案与目标生产规格一致；本地数据/受控返回只替代服务接入，不能以Demo名义降低体验标准。
 
-**v0.3.6-rc.12.pr4 · 2026-11-09（整合候选）**
+**v0.3.6-rc.15 · 2026-11-10（预发布候选）**
 
-当前源码整合 GitHub PR #4 的 18 个设计提交、本地 rc.8—rc.11 修复，以及 rc.12 的键盘/焦点验收、工具受阻时的候选文案准备和真实证据边界。完整插件与维护者本机已安装版本逐文件一致，保留 106 张可检索视觉参考。
+在 rc.14 上修正共用动作与局部权限例外的收敛方法，补充跨文档历史返回的上下文、焦点及实际键盘复核；保留既有文案、请求判定、状态映射和专业设计能力。范围及验证边界见[修复说明](docs/rc15-evaluation-fixes.md)。[本版预发布](https://github.com/junqicheng765-oss/fusion-product-agent/releases/tag/v0.3.6-rc.15)提供固定候选包及校验文件，安装者可按下方方式更新。
 
-整合来源、验证范围与交付说明见[rc.12 + PR #4 整合记录](docs/rc12-pr4-integration.md)。市场安装获取当前主分支的 `package/`；下方历史 ZIP 按文件版本理解。
+本次 GitHub 交付沿用已冻结并用于定向复评的 rc.15 包，679 个文件逐项一致。包内“本地候选”“未提交/发布”等说明是冻结时状态；当前分发状态以仓库根说明、版本记录及 Release 为准。本次发布未更新维护者本机插件。
 
 帮助有业务想法、但缺乏产品与领域知识的使用者，完成领域研究、产品规则、范围、专业设计、可操作体验及上下游交接。支持产品领域能力校验；首期可在Codex下运行，也可由具备文件读取能力的Agent按入口使用。
 
@@ -35,6 +35,7 @@ codex plugin add fusion-product-agent@fusion-product-agent
 
 ## 完整能力包与工作方式
 
+- 当前候选：[v0.3.6-rc.15 完整包](downloads/fusion-product-agent-v0.3.6-rc.15.zip) · [SHA-256](downloads/fusion-product-agent-v0.3.6-rc.15.zip.sha256)
 - 历史快照：[v0.3.6-rc.7 候选完整包](downloads/fusion-product-agent-v0.3.6-rc.7.zip) · [SHA-256](downloads/fusion-product-agent-v0.3.6-rc.7.zip.sha256)（不含本次整合增量）
 - [详细使用、五项Skill与项目级Skill/Subagent安装](package/README.md)
 - [rc.11归回与验证记录](docs/rc11-integration.md)
