@@ -281,7 +281,11 @@ def main():
         pages.append(json.load(open(j, encoding="utf-8")))
     if not pages:
         sys.exit("至少给一个页面。")
-    spec = preset_spec(a.preset) if a.preset else None
+    from design_resources import ResourceError
+    try:
+        spec = preset_spec(a.preset) if a.preset else None
+    except ResourceError as exc:
+        ap.exit(2, "预设资源读取失败：" + str(exc) + "\n")
     issues = audit(pages, spec, a.tolerance)
     report = {"preset": spec["id"] if spec else None, "pages": [p["url"] for p in pages],
               "passed": all(i["severity"] != "FAIL" for i in issues), "issue_count": len(issues), "issues": issues}

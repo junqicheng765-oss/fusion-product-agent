@@ -38,7 +38,11 @@ def run():
             for name, dest in result['resources'].items():
                 assert install.digest_tree(Path(dest)) == install.digest_tree(ROOT / 'skills' / name)
             assert (target.parent / 'fusion-design-core/component-recipes/registry.json').is_file()
+            assert (target.parent / 'fusion-design-core/scripts/design_resources.py').is_file()
+            assert (target.parent / 'fusion-design-core/resource-adapters/library-store.json').is_file()
             assert (target.parent / 'fusion-design-ui-ux-pro-max/scripts/search.py').is_file()
+            assert not (target.parent / 'fusion-design-ui-ux-pro-max/data').exists()
+            assert not (target.parent / 'fusion-design-core/component-recipes/recipes').exists()
             assert (target.parent / 'fusion-design-impeccable/SKILL.md').is_file()
             figma = target.parent / 'fusion-figma-workflow'
             assert len(list(figma.rglob('*.md'))) == 7

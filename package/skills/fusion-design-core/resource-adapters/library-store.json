@@ -1,0 +1,939 @@
+{
+  "schema_version": 1,
+  "repository": "https://github.com/junqicheng765-oss/fusion-product-agent",
+  "libraries": {
+    "style-presets": {
+      "path": "libraries/style-presets",
+      "files": {
+        "dto/cn-01-cn-workbench.json": {
+          "sha256": "df50a6595f35e45f29bb41c0f1f608416d06113224cb4372060bd37a1b6f4dd9",
+          "bytes": 2839
+        },
+        "dto/cn-02-cn-lifestyle.json": {
+          "sha256": "f7a2ac2f825bd6e264a1572c97e7cc5fb71dccdca03ef18c60a2ffd8e841f65b",
+          "bytes": 2670
+        },
+        "dto/cn-03-cn-wealth.json": {
+          "sha256": "2f3b1ce37f310eb856d61edefa078979dfe459be023f6c4279ad5a336fb6011f",
+          "bytes": 2938
+        },
+        "dto/cn-04-cn-miniprogram.json": {
+          "sha256": "5188b92b295dfa92a868ccad8a8af3b1c72edd6e32a48f676e26b69981aef3e1",
+          "bytes": 2664
+        },
+        "dto/cn-05-cn-ecommerce.json": {
+          "sha256": "dbdd189f9cae940446637c449af1eb7660d2732d3746b5e31ecc24cac0cb3902",
+          "bytes": 2948
+        },
+        "dto/cn-06-cn-oriental.json": {
+          "sha256": "6ae1e3a5fc6616c58e5224a3522b35120486e5c549ed0cf6e652a74a64681376",
+          "bytes": 2846
+        },
+        "dto/cn-07-cn-acid-dark.json": {
+          "sha256": "46a0a6055a387a9740dc9b31998602a0481de430f9bc3b731e126b240522f2ae",
+          "bytes": 2866
+        },
+        "dto/cn-08-cn-accessible.json": {
+          "sha256": "78465bf79e40a401659fc4a645d753c7c9c43f6de22a4da236a7b0f4a11d4bd6",
+          "bytes": 2840
+        },
+        "dto/game-01-game-dark-fantasy.json": {
+          "sha256": "9804eada8db3d109f28bee16fa19d20426a22fffeb384b4ce9b66dfbecd61130",
+          "bytes": 2876
+        },
+        "dto/game-02-game-cartoon.json": {
+          "sha256": "067d56366b801cf071381567db1744fe28bb0ad5c9e6babd7e49be95636a4c5e",
+          "bytes": 2948
+        },
+        "dto/game-03-game-moba-gold.json": {
+          "sha256": "e7ce07458c206010ea3efe0047c1537ca9e42ac5ff945bb1a908887150a7e856",
+          "bytes": 2778
+        },
+        "dto/game-04-game-gothic.json": {
+          "sha256": "d838ba5bb2ba99369fe48a25e050969ccb5306fe8420adfe73b2253b4a7cdbd8",
+          "bytes": 2705
+        },
+        "dto/game-05-game-pearl-rose.json": {
+          "sha256": "47281b902256a95e374fa6a177d7dc771829ee457c337e538e124435885dbac6",
+          "bytes": 3071
+        },
+        "dto/game-06-game-xianxia.json": {
+          "sha256": "f37d0c8040da4b39e494580f4cf5aa241c8d006236c1810eda8e73dc38276833",
+          "bytes": 2876
+        },
+        "dto/game-07-game-tactical.json": {
+          "sha256": "9fbf96c2680b6321e94175f3a912c0051ac8d255614b2f620bc32748cf6bd4ef",
+          "bytes": 3031
+        },
+        "dto/game-08-game-pixel.json": {
+          "sha256": "5f5d5fbb86d53a9702d30fe74471b312d541a657de7cb678cef872b64d948034",
+          "bytes": 2915
+        },
+        "dto/game-09-game-card-table.json": {
+          "sha256": "32f5181958c26452e50cafd8dc1ae1b6a08b44ae47a1980fb3169007bd15edb7",
+          "bytes": 3046
+        },
+        "dto/game-10-game-board-party.json": {
+          "sha256": "bf19d04900844688bb9f0e8fcf0c5ef3373b0547392e64281f4ef621de95824e",
+          "bytes": 2919
+        },
+        "dto/int-01-glass.json": {
+          "sha256": "b931bf2b83f9215b34fc67a245caae741116783b6df29d5c07f3fab54aee87c1",
+          "bytes": 2858
+        },
+        "dto/int-02-swiss-minimal.json": {
+          "sha256": "bd1ae471f14b2186c91476c748997350150eb7f57a3cdfa7361e08c45cbd683a",
+          "bytes": 2993
+        },
+        "dto/int-03-dark-bento.json": {
+          "sha256": "05911529257b41b3fbfb58cdb6871a894b988e769dae72bba932ec44be786d8c",
+          "bytes": 3059
+        },
+        "dto/int-04-fintech-fluid.json": {
+          "sha256": "ddb48f10192fdb95c756bf422630b585022d3d00a75a0e081124882c6e4dbaff",
+          "bytes": 2743
+        },
+        "dto/int-05-warm-editorial.json": {
+          "sha256": "74a52ea12979d2dd1dc005d6db6ed44d81818ad42b0905a5159787740f503e92",
+          "bytes": 2948
+        },
+        "dto/int-06-tonal-soft.json": {
+          "sha256": "8ff33e28bdb20d6c7691fc4dbf09a3c6d76bf421f62cf95e57637fcb864c0900",
+          "bytes": 2815
+        },
+        "dto/int-07-candy-press.json": {
+          "sha256": "6ed709e2273030407d3258c5a13f7c2ab43b1f1b35f320d9eb971e7e2cee879f",
+          "bytes": 2815
+        },
+        "dto/int-08-neo-brutal.json": {
+          "sha256": "bb925768f2d282d3a9fc0d7197dc57b910a0313eb907db5d0f103c7f789067a8",
+          "bytes": 2758
+        },
+        "systems/ant-design.json": {
+          "sha256": "27d5283270e8d2141930cb4692e80677ff0065990aea3435f23f243c9ef246ba",
+          "bytes": 4762
+        },
+        "systems/apple-native.json": {
+          "sha256": "c5577085761736ba56b3ca96843db7239e0eb99d131db1219e71208aebb461a0",
+          "bytes": 6113
+        },
+        "systems/material-3.json": {
+          "sha256": "92ffee87e3d0682c60cc1c22d743af07397b2692a7e9ee1d7ab1b48b1a6141f1",
+          "bytes": 5280
+        },
+        "themes/tweakcn/LICENSE": {
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "bytes": 11357
+        },
+        "themes/tweakcn/amber-minimal.json": {
+          "sha256": "b2b3381480a1ffb021d814a41cc8bc76bb9a4de4d8915663309a09221f93d39a",
+          "bytes": 6119
+        },
+        "themes/tweakcn/amethyst-haze.json": {
+          "sha256": "01e3d89eb5ab4e37fe648c84142f1f9f216fdf4a91baf0ee28cddaeae087e505",
+          "bytes": 6480
+        },
+        "themes/tweakcn/bold-tech.json": {
+          "sha256": "d102d95cde0159fcf5c0ffb4e6c88afa7147dba8e58c09046f9fd13a679a6646",
+          "bytes": 6467
+        },
+        "themes/tweakcn/bubblegum.json": {
+          "sha256": "5dfe52860e06f2618750b240144f6ce1a206779bc980f4aef0deb79426df3086",
+          "bytes": 6755
+        },
+        "themes/tweakcn/caffeine.json": {
+          "sha256": "db534054a01386c17f3bcc8ed247047d5ad15172894268fab5419544c21b9958",
+          "bytes": 6866
+        },
+        "themes/tweakcn/candyland.json": {
+          "sha256": "d5f0a180ddea99227b270197f40855558eec6de399e9cace730b3da85565ee20",
+          "bytes": 6090
+        },
+        "themes/tweakcn/catppuccin.json": {
+          "sha256": "27d1da357085e2a2b9fca0cdb506d9cd46760255958541394aa7d37e70f25721",
+          "bytes": 6483
+        },
+        "themes/tweakcn/claude.json": {
+          "sha256": "8140e8caf6f467c8f85b7c5a97b9c6aa42ed42e9c93f8e863a95bc4cdfec297c",
+          "bytes": 7136
+        },
+        "themes/tweakcn/claymorphism.json": {
+          "sha256": "46e429411136dc2b51259fe24176f731d47312be07b8e637d3a1a7f2d34a038a",
+          "bytes": 6461
+        },
+        "themes/tweakcn/clean-slate.json": {
+          "sha256": "00a40c4f8e11ddc6638465aea643d6c323e1996982b9d820e6ec742265a1918a",
+          "bytes": 6417
+        },
+        "themes/tweakcn/cosmic-night.json": {
+          "sha256": "50c4a7258733df40112ab3cab849ee76e7049066e1c18e9444f068380c841fed",
+          "bytes": 6505
+        },
+        "themes/tweakcn/cyberpunk.json": {
+          "sha256": "ae9d26a26783123cbb9d0e3c25378b98516a48207dd658efa9751f0818d97ad8",
+          "bytes": 6493
+        },
+        "themes/tweakcn/darkmatter.json": {
+          "sha256": "7de7b4988b1959536b5c4fdb5133aea4a36bf4579582f2b31fcb05d9cca824ed",
+          "bytes": 6121
+        },
+        "themes/tweakcn/doom-64.json": {
+          "sha256": "8990a0e01c205b4cc4f2c6afd3748252710e1b838ced753a6ddcff8fc44f9b7d",
+          "bytes": 6110
+        },
+        "themes/tweakcn/elegant-luxury.json": {
+          "sha256": "8b32c8fc6d55758c0cd777e3bba1855f7a14dc91a12feb37cc9f3c9d96f843a0",
+          "bytes": 6434
+        },
+        "themes/tweakcn/graphite.json": {
+          "sha256": "db2f4da41cf43ea29f2068084644deaed516db8b456f2d3b03f9d87adc22196f",
+          "bytes": 5756
+        },
+        "themes/tweakcn/kodama-grove.json": {
+          "sha256": "18376c9820341f89361911a907373e347feee0690fd923b613e9b3c6a8408836",
+          "bytes": 6533
+        },
+        "themes/tweakcn/midnight-bloom.json": {
+          "sha256": "0192c5c6c0c9785bc275042bbcef4c8f01172170c4f69ba1b4f4e90e8725d3fe",
+          "bytes": 6131
+        },
+        "themes/tweakcn/mocha-mousse.json": {
+          "sha256": "1bc7d133117c0462d985ca4f3cf7bc7de784609974d8a753cc1724498130c883",
+          "bytes": 6401
+        },
+        "themes/tweakcn/modern-minimal.json": {
+          "sha256": "99d34e03231743aee076add2dc40302194651f04eede2dc3177094bd5981313a",
+          "bytes": 6082
+        },
+        "themes/tweakcn/mono.json": {
+          "sha256": "f4c33f7efa4fb76daf94e151a3460a4b168aad11ee9dcb0322867bea6b086f22",
+          "bytes": 5704
+        },
+        "themes/tweakcn/nature.json": {
+          "sha256": "9adc048b4dc4ad81de22a2de654eb07b2c80664501ba8e1c2fed56e58da60fec",
+          "bytes": 6359
+        },
+        "themes/tweakcn/neo-brutalism.json": {
+          "sha256": "f43ede9dd270c8168daa96b9130970032f60f950de90a4a6b92e58e76287cb60",
+          "bytes": 5995
+        },
+        "themes/tweakcn/northern-lights.json": {
+          "sha256": "2f3d95028c7ea64b15ca0d484013bacc6ce9ef091ff8aa2b662abf126ccb853d",
+          "bytes": 6076
+        },
+        "themes/tweakcn/notebook.json": {
+          "sha256": "7f1db5bb6a0ada8013c494a127168607dacc01a218ec5e6dfb29b7d214b7e91d",
+          "bytes": 5859
+        },
+        "themes/tweakcn/ocean-breeze.json": {
+          "sha256": "1013d0a94d6a12d77be21e4f89c64459d6b536758a28abc2a1c3799a2255661b",
+          "bytes": 6397
+        },
+        "themes/tweakcn/pastel-dreams.json": {
+          "sha256": "5797b1f8071708d6888ab9210e9b6005bdea366c090c123751830b244c52197b",
+          "bytes": 6450
+        },
+        "themes/tweakcn/perpetuity.json": {
+          "sha256": "a0b7dd057174330dc6ee7f43d68bc22ae980b0042f1383c1db30d201f21bb6a2",
+          "bytes": 6581
+        },
+        "themes/tweakcn/quantum-rose.json": {
+          "sha256": "726c77f9607430bc626fcc50f3eb15cfa6453e7ec583b3b8c905acc0196ccb14",
+          "bytes": 6538
+        },
+        "themes/tweakcn/retro-arcade.json": {
+          "sha256": "e646497fc50b27a3c505bfd50c8fd8be9b96b35a63774bd24a4402ec85d2a001",
+          "bytes": 6540
+        },
+        "themes/tweakcn/sage-garden.json": {
+          "sha256": "a1b433ee7e29126143b29d28def59de328dc34a8bbfd5512c1376535409ad3cf",
+          "bytes": 6436
+        },
+        "themes/tweakcn/soft-pop.json": {
+          "sha256": "d7307c3a49a2a3d0dc08f96bd72d0e0336cb03ff3421cf69f0dfba3d4fe53ef7",
+          "bytes": 6107
+        },
+        "themes/tweakcn/solar-dusk.json": {
+          "sha256": "5914a6b3ff1bad9ea2ccbdc4def334f0ff0353f7494844e0bcd67431b4a30052",
+          "bytes": 6362
+        },
+        "themes/tweakcn/starry-night.json": {
+          "sha256": "c21234398f72c31834495635571d80a262c0bb714c0cd7a5f18b977a5c9d762d",
+          "bytes": 6765
+        },
+        "themes/tweakcn/sunset-horizon.json": {
+          "sha256": "7aca5140f88d7325879e086bc4e16eaf8c8ae2f28a9f6d2a1239f6a49e15231a",
+          "bytes": 6367
+        },
+        "themes/tweakcn/supabase.json": {
+          "sha256": "d0fd46b6563aba41f6eb54f81820ed8395caff7016eb0085ca3286a81263ebfb",
+          "bytes": 6105
+        },
+        "themes/tweakcn/t3-chat.json": {
+          "sha256": "fdc7e0507d6944638210ca11190134d2030cb6fd37ddf518eacb1f263e6ed88e",
+          "bytes": 7233
+        },
+        "themes/tweakcn/tangerine.json": {
+          "sha256": "b09640e8f60ec99025eba13b11a9ad70d1cc949164f12889ec09c38ce3fb92e2",
+          "bytes": 6240
+        },
+        "themes/tweakcn/twitter.json": {
+          "sha256": "b858fe5f14d4adcb52c40b79c36ea82431a81c996380fe1a74d4f17ba487c388",
+          "bytes": 6751
+        },
+        "themes/tweakcn/vercel.json": {
+          "sha256": "4dbb2a4738e0ae4026c71bc9aca1a986a896432314e40a75d83bf9c2150912f9",
+          "bytes": 5591
+        },
+        "themes/tweakcn/vintage-paper.json": {
+          "sha256": "a5df5a9bd951177fc995ccf63f7cd94976f6ec3545c75aa975b8a4f9abe04acb",
+          "bytes": 6438
+        },
+        "themes/tweakcn/violet-bloom.json": {
+          "sha256": "4d7bcfd73733b607f5df58228b030801d15f61609af3ffbcd7e3a352b87ce4f0",
+          "bytes": 6072
+        }
+      }
+    },
+    "color-presets": {
+      "path": "libraries/color-presets",
+      "files": {
+        "systems/ai-gradient.json": {
+          "sha256": "4af67643591942a1aa3908743241e91f2246b7de4ffaf5273e869c7091048161",
+          "bytes": 9383
+        },
+        "systems/apple-minimal.json": {
+          "sha256": "b5e28f82fe963eac27d86eadffc684418f111d53d73b824edaace88c898edb97",
+          "bytes": 9335
+        },
+        "systems/dark-premium.json": {
+          "sha256": "2784d0f18887a6d98ccaa20540d3a608a2d1eeedc05dc20ffb2904591303bb51",
+          "bytes": 9340
+        },
+        "systems/nature-calm.json": {
+          "sha256": "841de1f216df9c8700d54ca0f6df23d17285bb1a2f0799ccc127db738ffb1e2d",
+          "bytes": 9321
+        },
+        "systems/warm-editorial.json": {
+          "sha256": "fa4a849a7d0539bdc268d24d638d85915fb06f7d0dd6943ad9f6c256e6cea8d1",
+          "bytes": 9325
+        },
+        "radix/LICENSE": {
+          "sha256": "d981bc30e0d78b9ffc8f279fcaa274ea0444ff51d983548a609397d5c8a42dc2",
+          "bytes": 1102
+        },
+        "radix/scales.json": {
+          "sha256": "d78405ae6a74f209c904c829c30459013436bd851ac40892faece5befffef22e",
+          "bytes": 41684
+        }
+      }
+    },
+    "component-recipes": {
+      "path": "libraries/component-recipes",
+      "files": {
+        "recipes/accordion.html": {
+          "sha256": "efc25865d2668329a468b990e8eb42343439a939e40935c6d55c286b59fe7795",
+          "bytes": 1576
+        },
+        "recipes/action-pill.html": {
+          "sha256": "5ea9fd81bbc5dc76d56c83d7d833a1c0ee634bef3522d8f7219509e3145bf04b",
+          "bytes": 2098
+        },
+        "recipes/ai-result-card.html": {
+          "sha256": "50c52ad9f050cf206141d732295f6c289aefb7cc264ea95221e2b927c6c85878",
+          "bytes": 2748
+        },
+        "recipes/ai-thinking.html": {
+          "sha256": "f60c336221602720dc5771920c1f6ce07d1e25c964434732cd1fc3cebaa03abc",
+          "bytes": 2780
+        },
+        "recipes/app-bar.html": {
+          "sha256": "82745de0e7ffda07fb6c832c6904729a778cc0f26637649f6fa3a3a31d7af4da",
+          "bytes": 3020
+        },
+        "recipes/avatar.html": {
+          "sha256": "20baaf5a0bfb0a3c767b1f4496d19b71a0128b21cf3500a65283f5cbc7f43dce",
+          "bytes": 2259
+        },
+        "recipes/badge.html": {
+          "sha256": "2cf1b64106fbe874a3e82fed0569313bb967f06082035bde5dae9b9478c3481b",
+          "bytes": 1976
+        },
+        "recipes/blur-fade.html": {
+          "sha256": "34b142552ca2b9b1e7b9517a005e2324de3fa292fe7af4c0b5a461a86841698c",
+          "bytes": 1790
+        },
+        "recipes/button.html": {
+          "sha256": "303c98bb854fa2db5fb478227e0b6cd44cce62000685baffc8919107a4933f9c",
+          "bytes": 3808
+        },
+        "recipes/card.html": {
+          "sha256": "4b937caf965ee4627c6b6b1c80718add9202dd90adebeb41f94268f414d404f6",
+          "bytes": 2313
+        },
+        "recipes/carousel.html": {
+          "sha256": "2aa8b5f1b9f604fe94749b25a60258a5589bc2d4e58f8de8a0164e4cc0e76f8b",
+          "bytes": 1797
+        },
+        "recipes/checkbox.html": {
+          "sha256": "152801679baffe6852f642490231750f6ff892d92930a1e7cfc20dde62a8cdd4",
+          "bytes": 3101
+        },
+        "recipes/chip-group.html": {
+          "sha256": "e2e0ea637e68dfa03363cb6cd38ce7166a9efbf8a11411a48b5950ec4ca5d92d",
+          "bytes": 2618
+        },
+        "recipes/countdown-ring.html": {
+          "sha256": "78e5b7b695616750990b5b5e86ea4ffb2f92f0401f4f1839dacd785cb99f770e",
+          "bytes": 1805
+        },
+        "recipes/destination-hero.html": {
+          "sha256": "f869cc2dbc310a1103b87f427eb40098943b4da91713e6decfcafda0e4354c6c",
+          "bytes": 3421
+        },
+        "recipes/dialog.html": {
+          "sha256": "92ff8075171f927430cf53fac5958942c8723d23afe071c83abf064d9168e650",
+          "bytes": 2713
+        },
+        "recipes/empty-state.html": {
+          "sha256": "80bba62f9f8024ad4553802841129a6c680771639c3265733452d6d36dfe48c7",
+          "bytes": 1397
+        },
+        "recipes/feed-masonry.html": {
+          "sha256": "9e0dbbf007e97a8bf364ff28ab16c0cb4adcf54a073aa89a53cb5f87c4652bf2",
+          "bytes": 1948
+        },
+        "recipes/felt-table.html": {
+          "sha256": "fae5e44ef77138bb5f367b923ff4d8d44fa7c98d5ef3e6347974ea4a08371a73",
+          "bytes": 2524
+        },
+        "recipes/field.html": {
+          "sha256": "6a9b6ea3762309cbd13afd4485ae80c95a3e4f75800bbc8d6bb7f72decae8799",
+          "bytes": 2730
+        },
+        "recipes/game-tokens.html": {
+          "sha256": "0d0bc64b758c98bf547da55d75b955ced6b70f60429e8414088f75d9c50a5a6b",
+          "bytes": 1586
+        },
+        "recipes/hand-fan.html": {
+          "sha256": "5b043df30a088e56132d71f5f4531f0995825aff50983b048feba6b006234c9a",
+          "bytes": 3565
+        },
+        "recipes/hero-media.html": {
+          "sha256": "c88b0c9b39c0f0d33aa62b505874a5931f3ef6d9822b29b1366530909661a530",
+          "bytes": 2372
+        },
+        "recipes/itinerary-preview-card.html": {
+          "sha256": "344411fb5ba320c510598eef864ff1591592ac6e30d1946949ac5dd32c1313bd",
+          "bytes": 2071
+        },
+        "recipes/itinerary-timeline.html": {
+          "sha256": "b2a13cb3e102918d58e636a832aca09bd27a14bf33677ec833b52364ed546f59",
+          "bytes": 3651
+        },
+        "recipes/map-with-sheet.html": {
+          "sha256": "a2b407d363d4ca00f27e097d70adcfd6a85e30923eaada12717e3d10090d1eaa",
+          "bytes": 5472
+        },
+        "recipes/number-stepper.html": {
+          "sha256": "9f598dbcd88ed52230ff1a557d69e953bf8effbad66af4253c5077f9e47034e0",
+          "bytes": 2876
+        },
+        "recipes/photo-card.html": {
+          "sha256": "a8428940808497c5a34805b31d28ea9ff11a025f1369231838202d1cc4f28ef6",
+          "bytes": 2993
+        },
+        "recipes/place-row.html": {
+          "sha256": "6fdf125f9ae3d646d0c9f5c5dff6113dad12907e151b8769baf6148dff9327b3",
+          "bytes": 3483
+        },
+        "recipes/playing-card.html": {
+          "sha256": "d2442081f6bfcfd20420d1d31c17db91414dd9bdded10afe800fc22355042aa0",
+          "bytes": 4268
+        },
+        "recipes/progress.html": {
+          "sha256": "973b7bbcea9036466b5989f7b4c1ebfab96d7305a86f752c52307dedcc6e182a",
+          "bytes": 1613
+        },
+        "recipes/prompt-composer.html": {
+          "sha256": "d36852c510504daccf8bcfb66f0cd8bdfd1d9db1aefe2eeb4cd777f719e575ff",
+          "bytes": 3605
+        },
+        "recipes/radio-group.html": {
+          "sha256": "0cec1573697db9a2a4bdcf5d9d4b7fa62bc0153e2e421813b78d468e4429f270",
+          "bytes": 2989
+        },
+        "recipes/search-field.html": {
+          "sha256": "c90ba4132d61da19cf90d528d157f27f0d925c382d3457e122563a4b1139b692",
+          "bytes": 2130
+        },
+        "recipes/seat-nameplate.html": {
+          "sha256": "efc97d7ca5667eb5a0be894abf08dbd90700f1bccd9d5992a1df17d3104a77ef",
+          "bytes": 2851
+        },
+        "recipes/section-header.html": {
+          "sha256": "9c4c5d60a60e8d0e1858989dcbc1afe2db5da63e253907551ad5d18ff8dd8dfc",
+          "bytes": 1564
+        },
+        "recipes/segmented.html": {
+          "sha256": "18e64609a4c5c6258c91501e27f59253f82bcfa49b1ef297dda6957177876d72",
+          "bytes": 1984
+        },
+        "recipes/select.html": {
+          "sha256": "623c0b855b721f4e2491b172a8c72ef018c14bc2e1b8e4f293b4bf37e3935317",
+          "bytes": 1719
+        },
+        "recipes/sheet.html": {
+          "sha256": "f9d5e962502ffba101b2b18f6b4374c9c6b4ca226394cc011a51ef2fd71cdda2",
+          "bytes": 2825
+        },
+        "recipes/skeleton.html": {
+          "sha256": "45a9b5cc6b60cca156caf43801bfb6267c4ad17410e16202adb2966e883627df",
+          "bytes": 1063
+        },
+        "recipes/slider.html": {
+          "sha256": "e1d25b42cd6f327e57e5f3b3abeba86f3cbc1f45f0e3312c82ea3e9379b97110",
+          "bytes": 2241
+        },
+        "recipes/sticky-cta.html": {
+          "sha256": "46162a460e5a4d575b921c4f6b14a14803a1dd70e76f73f2cb00fcf88ae26a05",
+          "bytes": 1493
+        },
+        "recipes/switch.html": {
+          "sha256": "fdbdb4e64d05232dbc2a585c42f8c8111f97b02905c83290f36745f691458180",
+          "bytes": 1903
+        },
+        "recipes/tab-bar.html": {
+          "sha256": "f4c79dc033eab799ac8d2e4bdaabf2d1f2b8be9909eef65dacdcc4ad0f37d988",
+          "bytes": 1910
+        },
+        "recipes/tabs.html": {
+          "sha256": "98bf0cb359ddfca6ab841573f78e86f4c280a0364a88b5a448aa69c18ddafd63",
+          "bytes": 3256
+        },
+        "recipes/toast.html": {
+          "sha256": "5065b37e4e2a2c3c6e7a93d04d4a20a4f67071fbb635f2cb3d69dee6aa7a32c4",
+          "bytes": 2505
+        },
+        "recipes/tooltip.html": {
+          "sha256": "550fdc55f6aa9f1c1e858e5f25773e939c99a3d85080d008b93e4f96b13bf276",
+          "bytes": 1407
+        },
+        "recipes/trip-summary-bar.html": {
+          "sha256": "eb0e28ac6bbbb07fc9e1cd08f90d2b6343877a1726d0061a593127c146b51776",
+          "bytes": 1813
+        },
+        "icons/LICENSE-lucide.txt": {
+          "sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+          "bytes": 880
+        },
+        "icons/arrow-right.svg": {
+          "sha256": "12b97a4d2821da556ce7df95f89df46deb94aa711d46b36a848be0de0ac2a7f0",
+          "bytes": 344
+        },
+        "icons/bookmark.svg": {
+          "sha256": "241aeb7d7e27ff9bd3ffca766820c9c080418d62b0bfb0e56458ed3ec48316c4",
+          "bytes": 355
+        },
+        "icons/calendar.svg": {
+          "sha256": "2e2a7df92c2cca71dd6de34bb3f7187e276e8e8e003abe2e80b2ffd13347af60",
+          "bytes": 410
+        },
+        "icons/camera.svg": {
+          "sha256": "89b7493fb7f18b3a303184f9dea61e989521eae4a98349bbaa979a586f063cba",
+          "bytes": 427
+        },
+        "icons/check.svg": {
+          "sha256": "538432eec072ceeccf5a7aacf347a2ad2bff9937d203dbd0b4f4245d7accd93c",
+          "bytes": 316
+        },
+        "icons/chevron-down.svg": {
+          "sha256": "04458777b8a99214cd167dc9a8c8a1e35dcc9373b7577f74d5b5da6418ffcf67",
+          "bytes": 320
+        },
+        "icons/chevron-left.svg": {
+          "sha256": "a185985349089649d06747570c72f47fe1f5eb293a9a0f11278f6442b0b9d25c",
+          "bytes": 322
+        },
+        "icons/chevron-right.svg": {
+          "sha256": "fea488a3b60fd7738bbbf8ca98826ef5c0381347c5fd1048d45ee70a75a51cfe",
+          "bytes": 322
+        },
+        "icons/circle-alert.svg": {
+          "sha256": "2c65a5c03a73d3115ce493779f82af98d94f0d72facf1d97c61ea08566bb401c",
+          "bytes": 416
+        },
+        "icons/clock.svg": {
+          "sha256": "4bd6906a9b756dea41ff62ed88b594ce9a231c19f1a06522571457b6e4d774e6",
+          "bytes": 362
+        },
+        "icons/club.svg": {
+          "sha256": "bbc86a3d129ff5e95c0346085000e1d71f269b686b1c57d906611e52ff0c887c",
+          "bytes": 411
+        },
+        "icons/coins.svg": {
+          "sha256": "15c74fea83191438eb16486369a151620899fcdae48ad0a7d545eb79c33b6d58",
+          "bytes": 432
+        },
+        "icons/diamond.svg": {
+          "sha256": "8e0e62e2b1911c01b70082df288ab1c852abcd6d7dcb9ffa34dc9420140cbeba",
+          "bytes": 436
+        },
+        "icons/globe.svg": {
+          "sha256": "c3543ac3883a0841aa5d37ff974708fbc37d9c6afe64e14b03d56ed798b0b788",
+          "bytes": 408
+        },
+        "icons/hand.svg": {
+          "sha256": "102f6c2107e43ef50ee65910858f2a0e7bf01f5151d2c0f103c16c6271400271",
+          "bytes": 559
+        },
+        "icons/heart.svg": {
+          "sha256": "3e0ea938f896725eb5d9f1440bec881671761a6864f8d0eb1948065f3de99aae",
+          "bytes": 437
+        },
+        "icons/house.svg": {
+          "sha256": "2c13f570d9b9727c9b6c23400c95acfa9737e91884ed926332edb18fd47a2a76",
+          "bytes": 468
+        },
+        "icons/info.svg": {
+          "sha256": "8b0a0b5641a875a2e0d8c04080c55cf6c1808c1f76477acb89958e8da00ba5a1",
+          "bytes": 370
+        },
+        "icons/lightbulb.svg": {
+          "sha256": "31124a7d64a9f2639dbfa0441aeae845717d2fcc3e259fa6feab4b2562c969f8",
+          "bytes": 452
+        },
+        "icons/loader-circle.svg": {
+          "sha256": "44ad0f822a89b28a3feecf7276686c818a92a4a9c77cc51404c58929e30f0f3a",
+          "bytes": 336
+        },
+        "icons/map-pin.svg": {
+          "sha256": "ad781fbeaaa4c67a1a0c2144c6b3472877fc06c2dddf230bffcbe61a6adce984",
+          "bytes": 438
+        },
+        "icons/menu.svg": {
+          "sha256": "a8da12c1e9b80d9f70001e957ab7e8464d9ad676975702f07d86da8fb47ecdf3",
+          "bytes": 408
+        },
+        "icons/message-circle.svg": {
+          "sha256": "f62830d9fbbbf697e53555398d31a342ddec8dd008d707f21cd90bb19befcc87",
+          "bytes": 340
+        },
+        "icons/mic.svg": {
+          "sha256": "6b7893c14bc1d1a9f839571ee2119dd8c5b96d7301c87cb6735e43278788f934",
+          "bytes": 436
+        },
+        "icons/minus.svg": {
+          "sha256": "116a64e7f95fe2c31490f084d4abbf49dc15af8e7fab4a29ed5b84bb3c26c00b",
+          "bytes": 309
+        },
+        "icons/plus.svg": {
+          "sha256": "b29207ee8f5cc0e829c0bab2e5b223fc88687599c6bd40b94ba35f52327615d6",
+          "bytes": 332
+        },
+        "icons/route.svg": {
+          "sha256": "89ddd60ddeeb633f71890ab923509f80b18f74b116eff501fc0fb80ec542a9ee",
+          "bytes": 421
+        },
+        "icons/search.svg": {
+          "sha256": "e11a04d51c122a8a759211424920efc65fa36b7ab06237c34ef90317d920ddf9",
+          "bytes": 351
+        },
+        "icons/send.svg": {
+          "sha256": "c12c313d7409cb0e3c98aa07562e6e49dd5359dbcfe54692a0263a7eb57a8194",
+          "bytes": 469
+        },
+        "icons/settings.svg": {
+          "sha256": "ceea1a72d04b112291222ba9ad0779a12d47d816079fe4174900c724f360b55c",
+          "bytes": 904
+        },
+        "icons/share-2.svg": {
+          "sha256": "c5bf7b02192ee893b0554351d0e08d14091cb3c7a86528b2e51a28393584a36f",
+          "bytes": 497
+        },
+        "icons/sliders-horizontal.svg": {
+          "sha256": "995507595c7c24deffef382bacc452a24b40a2efc4aa54908563a0f09b6a75aa",
+          "bytes": 673
+        },
+        "icons/spade.svg": {
+          "sha256": "c044f58eef0cec0b5bc6f126ac0c2a54dff793c6725a7901828aa0d07b6a9712",
+          "bytes": 458
+        },
+        "icons/sparkles.svg": {
+          "sha256": "40a7c96d3ad44a83803c7dc2f449653b972602763cda2adfea7f72f3925c375e",
+          "bytes": 648
+        },
+        "icons/star.svg": {
+          "sha256": "8169933b68b55d52313fd768386a435038f77dcc49acd198fb5afa965b26ce8b",
+          "bytes": 664
+        },
+        "icons/suit-club.svg": {
+          "sha256": "8665c0467b41b7a1dce0d4944a3af0744a8a987a6b588657358d3874429c7353",
+          "bytes": 438
+        },
+        "icons/suit-diamond.svg": {
+          "sha256": "fe2f46b58cc2feccb81d858bb4f23a488aa64247151022d388204f4b72d3df1d",
+          "bytes": 463
+        },
+        "icons/suit-heart.svg": {
+          "sha256": "175811be6f4300ae15d82195b11f900156571b2b5f8ced5700c8937f343ce959",
+          "bytes": 464
+        },
+        "icons/suit-spade.svg": {
+          "sha256": "f6da9543137ce8b9667c45b544f14c9bba4fe18fd9a3a075375722332d4bf905",
+          "bytes": 485
+        },
+        "icons/user.svg": {
+          "sha256": "bb1e0531065db51238a34b348cf8fb8267cd31932dc3f680c9f204a58d1520ea",
+          "bytes": 375
+        },
+        "icons/users.svg": {
+          "sha256": "b3ed379df6aea1aa451ff4bbf8b2884c210849ed30fc220484eced85f5d53c2c",
+          "bytes": 458
+        },
+        "icons/utensils.svg": {
+          "sha256": "63fc811d3f7dde1676a3f40a44df5b2027fe1e1357f10d1bc6a77fc6597048b5",
+          "bytes": 428
+        },
+        "icons/volume-2.svg": {
+          "sha256": "915b847fcee9bba25e4b5fbe8f78305ad3d22c903a51c239c57ca1c248c904e5",
+          "bytes": 556
+        },
+        "icons/x.svg": {
+          "sha256": "0f38855d9d5775c10960ae53e46b745f77914b43f78c43bf8abc39f4d5e06de1",
+          "bytes": 333
+        },
+        "preview-assets/map-0-0.png": {
+          "sha256": "a0cac4678846222eaacd75659f78ff835124d26988f8a0304f3c3982e822d043",
+          "bytes": 28012
+        },
+        "preview-assets/map-0-1.png": {
+          "sha256": "cf9761654957d0eafbd1e9101dac8f4118ea4c88323111836d7d65ba99b4f727",
+          "bytes": 25946
+        },
+        "preview-assets/map-0-2.png": {
+          "sha256": "e4c24a625ba42e058cf110f9215336ab26ed67726946fe484fc4922f68290d4c",
+          "bytes": 26061
+        },
+        "preview-assets/map-1-0.png": {
+          "sha256": "bc3c3a93069867c0bf590c83c8f55428cd4324163f03be4418767fb0914e9371",
+          "bytes": 31896
+        },
+        "preview-assets/map-1-1.png": {
+          "sha256": "6e128acfd61320c21c418b2fe16550172caabbb6248b322df603fb562084ed80",
+          "bytes": 30544
+        },
+        "preview-assets/map-1-2.png": {
+          "sha256": "71e1eccbb9a726e4dacf87ca36ad2408acb3e998a33d6c17e489ecb7ae6fabbc",
+          "bytes": 33321
+        },
+        "preview-assets/map-2-0.png": {
+          "sha256": "cb2aea803ee6aa18dfc739c60c86c5369cd40b661e4d635ae642c0d8af78f060",
+          "bytes": 35168
+        },
+        "preview-assets/map-2-1.png": {
+          "sha256": "653b5a56298a8f3b164bb4508cb52bd1632e8dd097cffd07b498f8104481cc49",
+          "bytes": 32401
+        },
+        "preview-assets/map-2-2.png": {
+          "sha256": "18b2baa37966df460b28544aa5593fefa9086673f0e795b9f1cb368ae2d0719c",
+          "bytes": 31091
+        },
+        "preview-assets/photo-1015.jpg": {
+          "sha256": "d2311cb59110328cd0915e802396d34986765529602b5ee1e73535f612e41b8c",
+          "bytes": 140117
+        },
+        "preview-assets/photo-1036.jpg": {
+          "sha256": "62b26ab79a332ccd6a31f86435b5254007b79f86fe17b940489917ea76d0030d",
+          "bytes": 98302
+        },
+        "preview-assets/photo-1040.jpg": {
+          "sha256": "1823ac854288e7f21b4deca6f15081a37dbfd9564f4ce77b8c9ee70f76da7768",
+          "bytes": 108078
+        },
+        "preview-assets/photo-1043.jpg": {
+          "sha256": "90c61a5996a36b62b3fcd90b182efdbcc853745c3af414a0babb5ac4658a4ee3",
+          "bytes": 179978
+        },
+        "preview-assets/photo-1047.jpg": {
+          "sha256": "3e23f0ce01bdc500e6f62226cab208a452d6df31c7861f2ba8be493441a6cd23",
+          "bytes": 185748
+        },
+        "preview-assets/photo-1067.jpg": {
+          "sha256": "77088529a6fb541f4bc34762185f8df1c895e6092bb52870b34c6e0d7ec4e7d3",
+          "bytes": 103920
+        },
+        "preview-assets/photo-1080.jpg": {
+          "sha256": "41a11dba5a6438ca53f45e605145e0f7fff4a35525bf7710a6c28c1847cd8f02",
+          "bytes": 144477
+        },
+        "preview-assets/photo-164.jpg": {
+          "sha256": "c086f090fc537a695b8c184908751c0994d0df51a5e2eed96ffcaa7812be94e9",
+          "bytes": 154528
+        }
+      }
+    },
+    "ui-ux-pro-max-data": {
+      "path": "libraries/ui-ux-pro-max-data",
+      "files": {
+        "app-interface.csv": {
+          "sha256": "331e7cf2c0b222d80c566c5f255c63cb339f65bfd02e471a720f28e4864a9f08",
+          "bytes": 11046
+        },
+        "catalog-summary.json": {
+          "sha256": "6638da97231c07fb5cef3cd9d3ce483ca7b2f9748980f8c27490eb03968d8894",
+          "bytes": 2392
+        },
+        "charts.csv": {
+          "sha256": "4115cf1120680f2cedef0676cb648f30c7ef4699e2a947535d4113e71ed3b12a",
+          "bytes": 23365
+        },
+        "colors.csv": {
+          "sha256": "8162429222bce22df62b564085946a30d07cc9722c58d0a3a494bd0d1d00841c",
+          "bytes": 37940
+        },
+        "data-provenance.json": {
+          "sha256": "e82fb33ed49375a300e93d9c11ccd1c1493c999e84ee7ee295e527634786e2e0",
+          "bytes": 36686
+        },
+        "google-font-licenses.json": {
+          "sha256": "35688523f2955795caa1a47c53b83099e60c1708461476f9cc3a050cf3b0148a",
+          "bytes": 433127
+        },
+        "google-fonts.csv": {
+          "sha256": "1c8c3b2ea1faf6a1012da463756def8b3889db33f2226f0343bb4daa80307d03",
+          "bytes": 747241
+        },
+        "icons.csv": {
+          "sha256": "50816c6012030178195a16ee481ebf58b47bd985d70e8ec58886cc83f6eddafc",
+          "bytes": 57945
+        },
+        "landing.csv": {
+          "sha256": "9a2edd3bb676c2a58f00ade7a062e285222d4297bfd847c8d5b056f0dbbf52d0",
+          "bytes": 25449
+        },
+        "motion.csv": {
+          "sha256": "381affe8df8ea1f66fbbda2598827f9f54299107bbe6a1b4e9b68f6b62091ceb",
+          "bytes": 14679
+        },
+        "phosphor-icons-upstream.json": {
+          "sha256": "2399325233b277b5c97a80e6a5e8941154f5d057beee4e7613db87c87d700236",
+          "bytes": 823933
+        },
+        "products.csv": {
+          "sha256": "42473f75e8dde5987bdf89ce55d8c168091b80a356cae691dd60247d80720b70",
+          "bytes": 75623
+        },
+        "react-performance.csv": {
+          "sha256": "3d925802539abac5afeb63ae8aa1960b7229ad271b3a47caed40ab2d97ad0734",
+          "bytes": 15080
+        },
+        "stacks/angular.csv": {
+          "sha256": "704be83f2bad30c7e6de01afb113ffa01e0c458762f48b7102f31ba2367b5553",
+          "bytes": 19863
+        },
+        "stacks/astro.csv": {
+          "sha256": "2c2f55fadaafc05e04cc321c8194a1a28b656e6757fe2ba316f41b16428299c6",
+          "bytes": 14591
+        },
+        "stacks/avalonia.csv": {
+          "sha256": "442fca14675a020683473e7e49f08abb27b9df0765c80efe54aef61f1a4ac258",
+          "bytes": 27327
+        },
+        "stacks/flutter.csv": {
+          "sha256": "64dba0ac17349f28bce517a0f5f48c54d9ed2e487ec0c0258303463b382f41a0",
+          "bytes": 14192
+        },
+        "stacks/html-tailwind.csv": {
+          "sha256": "d05a581d20af57b8ca0104a6d31d90a07c437d500662a96c3029fc2f9a4678ee",
+          "bytes": 16551
+        },
+        "stacks/javafx.csv": {
+          "sha256": "2e819b8d5abdd23ad4dae0991650fdb57af497aabd68b37463aa9c442944c869",
+          "bytes": 33577
+        },
+        "stacks/jetpack-compose.csv": {
+          "sha256": "699de218b286948eaec7d15767b6e1350ee299167e49bf476d82e3ff58724e0a",
+          "bytes": 12295
+        },
+        "stacks/laravel.csv": {
+          "sha256": "854ea4daa5fc61292d22235ad33b49ba3fe22423c3de8d3cb03758ffed3b59f9",
+          "bytes": 20163
+        },
+        "stacks/nextjs.csv": {
+          "sha256": "ecd2c27b2ea0127d203ae726060efcdd7335b5e83f96b99e4f3befbbfeebd5a4",
+          "bytes": 18687
+        },
+        "stacks/nuxt-ui.csv": {
+          "sha256": "fce682a338cfcdbf35d318d20e5befbe7b5d81b05abc37f87677a6d9cde84dc6",
+          "bytes": 28700
+        },
+        "stacks/nuxtjs.csv": {
+          "sha256": "3d9b54ed2d151bd9c86e9e5609b8a6f88a00c4c52fa601a30af96c49b2c4d176",
+          "bytes": 23014
+        },
+        "stacks/react-native.csv": {
+          "sha256": "ba31dd9c0c04da6bc02a74448bf121f9c0728ae5ba3b4d47b487778b0a1135b5",
+          "bytes": 14049
+        },
+        "stacks/react.csv": {
+          "sha256": "4dd176a9787e5c6306b5df94158d75955adcdc6edab41ce5286641a5842303c1",
+          "bytes": 21166
+        },
+        "stacks/shadcn.csv": {
+          "sha256": "e56cfde5b74907836ac3582a4779d5b7f3d206a702ab81b8669a1b668c3eeb51",
+          "bytes": 23184
+        },
+        "stacks/svelte.csv": {
+          "sha256": "f6e379ba802941ba26b01d4ffbe3cd39120f2587659a1d93851c707f66bc13db",
+          "bytes": 15078
+        },
+        "stacks/swiftui.csv": {
+          "sha256": "bdd9231ff3ad658f4e7c063e1eb49df2fd09ac8d90631a86df899b39833b9623",
+          "bytes": 15323
+        },
+        "stacks/threejs.csv": {
+          "sha256": "97542e0ba34915a0ff7578be20e1619495df47c95c8c1c39b83e3785e1de771f",
+          "bytes": 46051
+        },
+        "stacks/uno.csv": {
+          "sha256": "a0474363e4225b5367214d5675fd3e075f137026f9500f0d04357882ef4f6d48",
+          "bytes": 30091
+        },
+        "stacks/uwp.csv": {
+          "sha256": "c409f08c1fbba1f1029f1acaa554e7b4471cc85517a5751c9f2e62465badcd5c",
+          "bytes": 24692
+        },
+        "stacks/vue.csv": {
+          "sha256": "b655f1ebb9dff2652d15981f31b1784c8a6d4759efd2815a14f3088257569f95",
+          "bytes": 12813
+        },
+        "stacks/winui.csv": {
+          "sha256": "e676dc1c13ee6c205c40b0746f1335150a346c7a49a0616d2545bc3d2c930c85",
+          "bytes": 27890
+        },
+        "stacks/wpf.csv": {
+          "sha256": "9781a9950b20333637b30a02e498b7efca21b618a3eeb8665836f3ac6e974da7",
+          "bytes": 24158
+        },
+        "styles.csv": {
+          "sha256": "a93a4d9d7025856575d7b7583bda020be9043013432c5af7c58af9dbdfb206b7",
+          "bytes": 149478
+        },
+        "typography.csv": {
+          "sha256": "321fc446e89024488ebae96dda93efc4d2307bd8bddb240857ad51364f6782c8",
+          "bytes": 49997
+        },
+        "ui-reasoning.csv": {
+          "sha256": "f0774dd741cecdad5eec842034bd6d5e9ea50e9f220a1910069748daa0bb8e9a",
+          "bytes": 77360
+        },
+        "ux-guidelines.csv": {
+          "sha256": "ff81ec613f70ba9fc3fcce52dbe4ae35d44b2079dbe6dc066d2d6e38c28facd5",
+          "bytes": 27516
+        }
+      }
+    }
+  },
+  "revision": "dc90aa487f72049b899ad200c8878f82c39b5e02"
+}

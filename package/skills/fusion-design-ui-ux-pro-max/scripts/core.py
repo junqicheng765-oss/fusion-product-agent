@@ -6,14 +6,57 @@ UI/UX Pro Max Core - BM25 search engine for UI/UX style guides
 
 import csv
 import difflib
+import importlib.util
 import re
+import sys
 from pathlib import Path
 from math import log
 from collections import defaultdict
 
 # ============ CONFIGURATION ============
-DATA_DIR = Path(__file__).parent.parent / "data"
+_DEFAULT_DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+DATA_DIR = _DEFAULT_DATA_DIR
 MAX_RESULTS = 3
+
+# Skills are installed as siblings. Resolve the shared resource client from this
+# script's location, so CLI calls work from any project directory. Loading the
+# module only defines its API; actual resource I/O happens in data_file().
+_RESOURCE_CLIENT_PATH = (
+    Path(__file__).resolve().parents[2]
+    / "fusion-design-core" / "scripts" / "design_resources.py"
+)
+_RESOURCE_MODULE_NAME = "fusion_design_resources"
+_resource_client = sys.modules.get(_RESOURCE_MODULE_NAME)
+if (_resource_client is None
+        or Path(getattr(_resource_client, "__file__", "")).resolve()
+        != _RESOURCE_CLIENT_PATH):
+    _resource_spec = importlib.util.spec_from_file_location(
+        _RESOURCE_MODULE_NAME, _RESOURCE_CLIENT_PATH)
+    if _resource_spec is None or _resource_spec.loader is None:
+        raise ImportError(f"Unable to load design resource client: {_RESOURCE_CLIENT_PATH}")
+    _resource_client = importlib.util.module_from_spec(_resource_spec)
+    sys.modules[_RESOURCE_MODULE_NAME] = _resource_client
+    try:
+        _resource_spec.loader.exec_module(_resource_client)
+    except BaseException:
+        sys.modules.pop(_RESOURCE_MODULE_NAME, None)
+        raise
+ResourceError = _resource_client.ResourceError
+
+
+def data_file(relative, data_dir=None):
+    """Resolve only the requested CSV, retaining explicit/local data fixtures.
+
+    A bundled data directory (including older full installs), or an explicitly
+    replaced DATA_DIR, keeps its existing missing-file behavior. A normal slim
+    install resolves the requested file through the shared resource client.
+    """
+    directory = Path(DATA_DIR if data_dir is None else data_dir)
+    filepath = directory / relative
+    if directory != _DEFAULT_DATA_DIR or directory.is_dir():
+        return filepath
+    return _resource_client.resource_file(
+        "ui-ux-pro-max-data", relative, bundled_path=filepath)
 
 CSV_CONFIG = {
     "style": {
@@ -531,17 +574,16 @@ def _row_identities(row, fields):
     return identities
 
 
-# Load the product-domain keyword list from products.csv at import time so
-# it stays in sync with the data instead of needing manual updates to a
-# hardcoded list. Falls back to a small built-in seed if the file is
-# missing (e.g. package built without data/).
-def _load_product_keywords():
+# Product labels are needed only for automatic domain routing. Explicit domain
+# searches use the static routing vocabulary without opening products.csv.
+def _load_product_keywords(filepath=None):
     """Return high-signal product labels/aliases, never every corpus keyword."""
     seed = ["saas", "ecommerce", "fintech", "healthcare", "gaming", "portfolio",
             "crypto", "fitness", "marketplace", "banking", "cybersecurity",
             "education", "travel", "restaurant", "real estate", "social media",
             "beauty", "spa", "salon", "wellness", "booking"]
-    filepath = DATA_DIR / CSV_CONFIG["product"]["file"]
+    if filepath is None:
+        filepath = data_file(CSV_CONFIG["product"]["file"])
     if not filepath.exists():
         return seed
     try:
@@ -561,18 +603,13 @@ _DOMAIN_KEYWORDS = None
 _DOMAIN_KEYWORDS_SIGNATURE = None
 
 
-def _domain_keywords():
-    global _DOMAIN_KEYWORDS, _DOMAIN_KEYWORDS_SIGNATURE
-    product_path = DATA_DIR / CSV_CONFIG["product"]["file"]
-    signature = _file_signature(product_path) if product_path.exists() else None
-    if _DOMAIN_KEYWORDS is not None and _DOMAIN_KEYWORDS_SIGNATURE == signature:
-        return _DOMAIN_KEYWORDS
-
-    _DOMAIN_KEYWORDS = {
+def _base_domain_keywords():
+    """Routing vocabulary that does not depend on external CSV data."""
+    return {
         "color": ["color", "palette", "hex", "rgb", "token", "semantic", "accent", "destructive", "muted", "foreground"],
         "chart": ["time series", "chart", "graph", "visualization", "trend", "bar chart", "pie", "scatter", "heatmap", "funnel", "forecast"],
         "landing": ["landing", "page", "cta", "conversion", "hero", "testimonial", "pricing", "section"],
-        "product": _load_product_keywords(),
+        "product": [],
         "style": ["style", "design", "ui", "minimalism", "glassmorphism", "neumorphism", "brutalism", "dark mode", "flat", "aurora", "css", "implementation", "variable", "checklist", "tailwind"],
         "ux": ["ux", "usability", "accessibility", "wcag", "touch", "scroll", "animation", "keyboard", "navigation", "mobile"],
         "typography": ["font pairing", "typography pairing", "heading font", "body font"],
@@ -582,6 +619,18 @@ def _domain_keywords():
         "react": ["react", "next.js", "nextjs", "suspense", "memo", "usecallback", "useeffect", "rerender", "bundle", "waterfall", "barrel", "dynamic import", "rsc", "server component"],
         "web": ["aria", "focus", "outline", "semantic", "virtualize", "autocomplete", "form", "input type", "preconnect", "drag reorder", "single pointer", "touch target", "native accessibility"]
     }
+
+
+def _domain_keywords():
+    global _DOMAIN_KEYWORDS, _DOMAIN_KEYWORDS_SIGNATURE
+    product_path = data_file(CSV_CONFIG["product"]["file"])
+    signature = (product_path, _file_signature(product_path)
+                 if product_path.exists() else None)
+    if _DOMAIN_KEYWORDS is not None and _DOMAIN_KEYWORDS_SIGNATURE == signature:
+        return _DOMAIN_KEYWORDS
+
+    _DOMAIN_KEYWORDS = _base_domain_keywords()
+    _DOMAIN_KEYWORDS["product"] = _load_product_keywords(product_path)
     _DOMAIN_KEYWORDS_SIGNATURE = signature
     return _DOMAIN_KEYWORDS
 
@@ -594,13 +643,14 @@ def _contains_phrase(text, phrase):
 
 def _rewrite_query_for_domain(query, domain, index):
     """Apply only explicit, semantic rewrites for routing-only vocabulary."""
-    if not domain or domain not in _domain_keywords():
+    domain_keywords = _base_domain_keywords()
+    if not domain or domain not in domain_keywords:
         return query, []
     normalized = _normalize(query.lower())
     vocabulary = set(index.vocabulary())
     rewrites = []
     replacement_terms = []
-    for keyword in _domain_keywords()[domain]:
+    for keyword in domain_keywords[domain]:
         if not _contains_phrase(normalized, keyword):
             continue
         if set(index.tokenize(keyword)) & vocabulary:
@@ -762,7 +812,7 @@ def search(query, domain=None, max_results=MAX_RESULTS, diagnostics=False):
     exact_style = None
     redirect = None
     if domain is None:
-        style_path = DATA_DIR / CSV_CONFIG["style"]["file"]
+        style_path = data_file(CSV_CONFIG["style"]["file"])
         style_rows = _load_rows_or_empty(style_path)
         matched_style = _style_identity(style_rows, query, allow_contained=False)
         if matched_style is not None:
@@ -774,7 +824,7 @@ def search(query, domain=None, max_results=MAX_RESULTS, diagnostics=False):
 
     search_domain = domain if domain in CSV_CONFIG else "style"
     config = CSV_CONFIG[search_domain]
-    filepath = DATA_DIR / config["file"]
+    filepath = data_file(config["file"])
 
     if not filepath.exists():
         return {"error": f"File not found: {filepath}", "domain": domain}
@@ -955,7 +1005,7 @@ def search_stack(query, stack, max_results=MAX_RESULTS, diagnostics=False):
     if stack not in STACK_CONFIG:
         return {"error": f"Unknown stack: {stack}. Available: {', '.join(AVAILABLE_STACKS)}"}
 
-    filepath = DATA_DIR / STACK_CONFIG[stack]["file"]
+    filepath = data_file(STACK_CONFIG[stack]["file"])
 
     if not filepath.exists():
         return {"error": f"Stack file not found: {filepath}", "stack": stack}

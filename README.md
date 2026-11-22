@@ -44,7 +44,9 @@ codex plugin add fusion-product-agent@fusion-product-agent
 
 已有本产品Figma主稿或已选Figma时，先在指定Figma完成设计：旧页Computer Use精修，新整页按需Figma Agent生成后精修，再由Dev Mode / MCP还原Demo。明确选择本地代码时才走本地组件路线；HTML转Figma为实际可用且显式选择的可选分支。
 
-包内包含设计主模块、UI/UX Pro Max、Impeccable、Figma执行工作流及完整资源。方法和资源不附带Figma、素材、生图或浏览器账号与权限，需检查宿主实际能力和授权。
+包内包含设计主模块、UI/UX Pro Max、Impeccable、Figma执行工作流及核心方法/引擎。图片参考、风格/配色条目、组件配方及预览素材、Pro Max 检索数据拆入独立资源分支 `codex/design-resources`；主包保留小型索引与锁定版本，按本次操作取得所需文件并校验缓存，见[按需资源](package/skills/fusion-design-core/methods-resource-routing.md)及[按需图库](package/skills/fusion-design-core/visual-reference-library/README.md)。方法和资源不附带Figma、素材、生图或浏览器账号与权限，需检查宿主实际能力和授权。
+
+本次瘦身减少的是安装目录和源码归档的体积，不会清理已有 Git 历史或每轮模型上下文。仅需源码时使用指定代码分支的归档，或单分支浅克隆；完整克隆整个仓库仍可能取得资源分支和历史对象。资源分支须先发布，再发布引用它的代码版本。
 
 ## 验证
 

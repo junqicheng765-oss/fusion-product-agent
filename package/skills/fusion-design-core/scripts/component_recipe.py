@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """通用组件配方库工具：查、拷、预览纯 HTML/CSS 组件配方。
 
-配方在 component-recipes/recipes/<id>.html，只读风格预设写进 :root 的变量
+配方逻辑路径为 component-recipes/recipes/<id>.html；主包保留索引，源码及依赖按需取得并校验缓存，只读风格预设写进 :root 的变量
 （--background --foreground --primary --border --radius --font-sans ...），
 所以任何技术栈、任何风格预设都能用。
 
@@ -14,7 +14,7 @@
         把配方（连同依赖、用到的图标文件）拷进项目：<目录>/recipes.css、recipes.js、recipes-markup.html、icons/
         给了 --preset 时，额外写 <目录>/theme.css（风格变量）
   python3 component_recipe.py preview --preset <风格编号> [--tag <标签> | --ids a,b,c] -o <文件.html>
-        用某个风格预设渲染配方预览页，截图看效果
+        用某个风格预设渲染所选配方；完整目录预览须显式 --all
   python3 component_recipe.py icon-css --dir <项目里的 svg 目录> -o <icons.css>
         把 IconScout / 品牌图标文件转成 .i-<文件名> 类，写法 <span class="r-ico i-文件名"></span>
 
@@ -25,7 +25,9 @@
   - 配方给的是组件的结构、交互和状态；页面构图来自 design-decisions.md 第 2 块，页面长相来自 VT 视觉目标稿。
     拷进项目后按目标稿改字体、照片处理、容器和点睛元素；只用配方默认样式拼出来的页面就是模板脸。
 """
-import argparse, base64, json, os, re, shutil, subprocess, sys
+import argparse, base64, json, mimetypes, os, re, shutil, subprocess, sys
+from pathlib import Path
+from design_resources import ResourceError, resource_file, resource_directory
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, "..", "component-recipes"))
@@ -41,19 +43,23 @@ ICON_RE = re.compile(r"(?<=[\"\s])i-([a-z][a-z0-9-]*)(?=[\"\s])")
 
 
 def icon_rule(name, svg_path):
-    svg = open(svg_path, encoding="utf-8").read()
+    svg = Path(svg_path).read_text(encoding="utf-8")
     svg = re.sub(r"<!--.*?-->", "", svg, flags=re.S)
     svg = re.sub(r"\s+", " ", svg).strip()
     return f'.i-{name} {{ --ico: url("data:image/svg+xml;base64,{base64.b64encode(svg.encode()).decode()}"); }}'
 
 
+def recipe_resource(relative):
+    return resource_file("component-recipes", relative, bundled_path=Path(ROOT) / relative)
+
+
 def icons_css(names, folder=None):
-    folder = folder or os.path.join(ROOT, "icons")
-    return "\n".join(icon_rule(n, os.path.join(folder, n + ".svg")) for n in sorted(names))
+    return "\n".join(icon_rule(n, os.path.join(folder, n + ".svg") if folder else
+                               recipe_resource("icons/" + n + ".svg")) for n in sorted(names))
 
 
-def parse(path):
-    text = open(path, encoding="utf-8").read()
+def parse(path, relative=None):
+    text = Path(path).read_text(encoding="utf-8")
     m = META_RE.search(text)
     if not m:
         sys.exit(f"{path} 缺少 <!-- recipe {{...}} --> 元数据")
@@ -71,20 +77,68 @@ def parse(path):
         "demo": demo.group(1).strip() if demo else "",
         "script": script,
         "icons": icons,
-        "file": os.path.relpath(path, ROOT),
+        "file": relative or os.path.relpath(path, ROOT),
+        "path": str(path),
     }
 
 
 def load_all():
+    """Maintenance only: index a complete local mirror, never fetch every recipe."""
+    folder = Path(RECIPES)
+    if not folder.is_dir():
+        folder = resource_directory("component-recipes") / "recipes"
+    if not folder.is_dir():
+        raise ResourceError("index requires a complete local component resource root; it does not download the library")
+    expected = {row["file"].split("/")[-1] for row in recipe_catalog().values()}
+    found = {path.name for path in folder.glob("*.html")}
+    if not expected.issubset(found):
+        raise ResourceError("index refuses a partial recipe cache; provide the complete local resource root")
     out = {}
-    for name in sorted(os.listdir(RECIPES)):
+    for name in sorted(os.listdir(folder)):
         if name.endswith(".html"):
-            r = parse(os.path.join(RECIPES, name))
+            r = parse(folder / name, "recipes/" + name)
             rid = r["meta"]["id"]
             if rid + ".html" != name:
                 sys.exit(f"{name} 的 id 是 {rid}，文件名必须和 id 一致")
             out[rid] = r
     return out
+
+
+def recipe_catalog():
+    """Offline discovery uses only the small installed index."""
+    with open(REGISTRY, encoding="utf-8") as handle:
+        data = json.load(handle)
+    out = {}
+    for item in data["recipes"]:
+        rid = item["id"]
+        if not re.fullmatch(r"[a-z][a-z0-9-]*", rid) or item["file"] != "recipes/" + rid + ".html":
+            raise ResourceError("invalid recipe index entry")
+        if rid in out:
+            raise ResourceError("duplicate recipe id: " + rid)
+        out[rid] = {"meta": dict(item), "file": item["file"]}
+    return out
+
+
+def load_selected(ids, include_demo=False):
+    catalog, selected = recipe_catalog(), {}
+
+    def visit(rid):
+        if rid in selected:
+            return
+        if rid not in catalog:
+            raise ResourceError("unknown recipe id: " + rid)
+        relative = catalog[rid]["file"]
+        recipe = parse(recipe_resource(relative), relative)
+        if recipe["meta"].get("id") != rid:
+            raise ResourceError("recipe identity differs from index: " + rid)
+        selected[rid] = recipe
+        meta = recipe["meta"]
+        for dependency in meta.get("requires", []) + (meta.get("demoRequires", []) if include_demo else []):
+            visit(dependency)
+
+    for rid in ids:
+        visit(rid)
+    return selected
 
 
 CLASS_DEF_RE = re.compile(r"\.([rg]-[a-z0-9_-]+)")
@@ -97,7 +151,7 @@ def defined_classes(r):
 
 def check_classes(recs, rid):
     """Every r-/g- class a recipe's markup uses must be styled by itself, a requires, or (demo only) a demoRequires."""
-    base = set(CLASS_DEF_RE.findall(open(os.path.join(ROOT, "base.css"), encoding="utf-8").read()))
+    base = set(CLASS_DEF_RE.findall((Path(ROOT) / "base.css").read_text(encoding="utf-8")))
     r = recs[rid]
     m = r["meta"]
     runtime = closure(recs, [rid])
@@ -126,8 +180,9 @@ def build_index(recs):
             if dep not in recs:
                 sys.exit(f"{rid} 依赖的 {dep} 不存在")
         for ic in r["icons"]:
-            if not os.path.exists(os.path.join(ROOT, "icons", ic + ".svg")):
-                sys.exit(f"{rid} 用到的图标 icons/{ic}.svg 不存在")
+            icon_path = Path(r["path"]).parent.parent / "icons" / (ic + ".svg")
+            if not icon_path.is_file() or icon_path.is_symlink():
+                raise ResourceError("index requires complete local icon resources; no files are downloaded: " + ic)
         check_classes(recs, rid)
         items.append({
             "id": rid, "name": m["name"], "tags": m.get("tags", []), "use": m.get("use", ""), "dont": m.get("dont", ""),
@@ -181,8 +236,7 @@ def cmd_index(a):
 
 
 def cmd_list(a):
-    recs = load_all()
-    build_index(recs)
+    recs = recipe_catalog()
     for rid, r in recs.items():
         m = r["meta"]
         if a.tag and a.tag not in m.get("tags", []):
@@ -192,7 +246,7 @@ def cmd_list(a):
 
 
 def cmd_show(a):
-    recs = load_all()
+    recs = load_selected([a.id])
     r = recs.get(a.id) or sys.exit(f"找不到配方 {a.id}")
     m = r["meta"]
     print(f"# {m['id']} · {m['name']}")
@@ -211,7 +265,7 @@ def cmd_show(a):
     if m.get("skin"):
         print(f"皮肤：{m['skin']}")
     print(f"来源：{m.get('source', '')}（{m.get('license', '')}）")
-    print(f"文件：{os.path.join(ROOT, r['file'])}")
+    print(f"文件：{r['path']}")
     print("\n--- 样式 ---\n" + r["style"])
     print("\n--- 结构示例 ---\n" + r["demo"])
     if r["script"]:
@@ -219,7 +273,7 @@ def cmd_show(a):
 
 
 def cmd_search(a):
-    recs = load_all()
+    recs = recipe_catalog()
     kw = a.keyword.lower()
     hits = 0
     for rid, r in recs.items():
@@ -234,10 +288,10 @@ def cmd_search(a):
 
 
 def cmd_copy(a):
-    recs = load_all()
+    recs = load_selected(a.ids)
     ids = closure(recs, a.ids)
     os.makedirs(a.to, exist_ok=True)
-    base = open(os.path.join(ROOT, "base.css"), encoding="utf-8").read()
+    base = (Path(ROOT) / "base.css").read_text(encoding="utf-8")
     css = [base]
     js, markup, icons = [], [], set()
     for rid in ids:
@@ -249,18 +303,21 @@ def cmd_copy(a):
         icons.update(r["icons"])
     if icons:
         css.append("/* ---- icons (Lucide, ISC) as data URIs; add your own with: component_recipe.py icon-css --dir <svg 目录> ---- */\n" + icons_css(icons))
-    open(os.path.join(a.to, "recipes.css"), "w", encoding="utf-8").write("\n\n".join(css) + "\n")
+    icon_files = {ic: recipe_resource("icons/" + ic + ".svg") for ic in icons}
+    icon_license = recipe_resource("icons/LICENSE-lucide.txt") if icons else None
+    theme = preset_css(a.preset) if a.preset else None
+    (Path(a.to) / "recipes.css").write_text("\n\n".join(css) + "\n", encoding="utf-8")
     if js:
-        open(os.path.join(a.to, "recipes.js"), "w", encoding="utf-8").write("\n\n".join(js) + "\n")
-    open(os.path.join(a.to, "recipes-markup.html"), "w", encoding="utf-8").write(
-        "<!-- 结构参考：文案、图片、数据按 design-decisions.md 替换；preview-assets/ 下的图片不能进正式页面 -->\n\n" + "\n\n".join(markup) + "\n")
+        (Path(a.to) / "recipes.js").write_text("\n\n".join(js) + "\n", encoding="utf-8")
+    (Path(a.to) / "recipes-markup.html").write_text(
+        "<!-- 结构参考：文案、图片、数据按 design-decisions.md 替换；preview-assets/ 下的图片不能进正式页面 -->\n\n" + "\n\n".join(markup) + "\n", encoding="utf-8")
     if icons:
         os.makedirs(os.path.join(a.to, "icons"), exist_ok=True)
         for ic in sorted(icons):
-            shutil.copy(os.path.join(ROOT, "icons", ic + ".svg"), os.path.join(a.to, "icons", ic + ".svg"))
-        shutil.copy(os.path.join(ROOT, "icons", "LICENSE-lucide.txt"), os.path.join(a.to, "icons", "LICENSE-lucide.txt"))
+            shutil.copy(icon_files[ic], os.path.join(a.to, "icons", ic + ".svg"))
+        shutil.copy(icon_license, os.path.join(a.to, "icons", "LICENSE-lucide.txt"))
     if a.preset:
-        open(os.path.join(a.to, "theme.css"), "w", encoding="utf-8").write(preset_css(a.preset))
+        (Path(a.to) / "theme.css").write_text(theme, encoding="utf-8")
     print(f"已拷贝 {len(ids)} 个配方到 {a.to}：{', '.join(ids)}")
     print(f"图标 {len(icons)} 个 → {os.path.join(a.to, 'icons')}")
     print("页面里按顺序引入：theme.css（风格变量）→ recipes.css → 页面自己的 css；外层容器加 class=\"r-root\"。")
@@ -283,17 +340,20 @@ BLEED = {"tabs", "chip-group", "carousel", "section-header", "hero-media", "feed
 
 
 def cmd_preview(a):
-    recs = load_all()
+    catalogue = recipe_catalog()
     if a.ids:
         ids = [i.strip() for i in a.ids.split(",") if i.strip()]
     elif a.tag:
-        ids = [rid for rid, r in recs.items() if a.tag in r["meta"].get("tags", [])]
+        ids = [rid for rid, r in catalogue.items() if a.tag in r["meta"].get("tags", [])]
+    elif a.all:
+        ids = list(catalogue)
     else:
-        ids = list(recs)
+        raise ResourceError("preview requires --ids or --tag; use --all only for an intentional complete-library preview")
     if not ids:
         sys.exit("没有要预览的配方")
+    recs = load_selected(ids, include_demo=True)
     styles = closure(recs, ids, include_demo=True)
-    base = open(os.path.join(ROOT, "base.css"), encoding="utf-8").read()
+    base = (Path(ROOT) / "base.css").read_text(encoding="utf-8")
     used_icons = set().union(*(recs[i]["icons"] for i in styles))
     css = "\n".join([preset_css(a.preset), base] + [recs[i]["style"] for i in styles] + [icons_css(used_icons), PREVIEW_CSS])
     cells = []
@@ -303,10 +363,8 @@ def cmd_preview(a):
         cells.append(f'<section class="pv-item" data-recipe="{rid}"{bleed}><header><b>{m["name"]} · {rid}</b><span>{m.get("use", "")}</span></header><div class="pv-demo">{recs[rid]["demo"]}</div></section>')
     js = "\n".join(recs[i]["script"] for i in styles if recs[i]["script"])
     title = f"组件配方预览 · {a.preset}" + (f" · {a.tag}" if a.tag else "")
-    base_href = "file://" + ROOT.rstrip("/") + "/"
     html = f"""<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<base href="{base_href}">
 <title>{title}</title>
 <style>
 {css}
@@ -321,9 +379,17 @@ def cmd_preview(a):
 </script>
 </body></html>
 """
+    # Only assets referenced by the selected preview are fetched. Embedding these
+    # makes the generated preview independent of the installed or cache path.
+    assets = set(re.findall(r"preview-assets/[A-Za-z0-9_.-]+", html))
+    for relative in sorted(assets):
+        path = recipe_resource(relative)
+        mime = mimetypes.guess_type(relative)[0] or "application/octet-stream"
+        embedded = "data:" + mime + ";base64," + base64.b64encode(path.read_bytes()).decode()
+        html = html.replace(relative, embedded)
     out = os.path.abspath(a.o)
     os.makedirs(os.path.dirname(out), exist_ok=True)
-    open(out, "w", encoding="utf-8").write(html)
+    Path(out).write_text(html, encoding="utf-8")
     print(f"已写入 {out}（{len(ids)} 个配方，风格 {a.preset}）")
 
 
@@ -347,9 +413,12 @@ def main():
     q = sp.add_parser("search"); q.add_argument("keyword"); q.set_defaults(f=cmd_search)
     c = sp.add_parser("copy"); c.add_argument("ids", nargs="+"); c.add_argument("--to", required=True); c.add_argument("--preset"); c.set_defaults(f=cmd_copy)
     ic = sp.add_parser("icon-css"); ic.add_argument("--dir", required=True); ic.add_argument("-o", required=True); ic.set_defaults(f=cmd_icon_css)
-    p = sp.add_parser("preview"); p.add_argument("--preset", required=True); p.add_argument("--tag", choices=TAGS); p.add_argument("--ids"); p.add_argument("-o", required=True); p.set_defaults(f=cmd_preview)
+    p = sp.add_parser("preview"); p.add_argument("--preset", required=True); p.add_argument("--tag", choices=TAGS); p.add_argument("--ids"); p.add_argument("--all", action="store_true"); p.add_argument("-o", required=True); p.set_defaults(f=cmd_preview)
     a = ap.parse_args()
-    a.f(a)
+    try:
+        a.f(a)
+    except ResourceError as exc:
+        ap.exit(2, "资源读取失败：" + str(exc) + "\n")
 
 
 if __name__ == "__main__":

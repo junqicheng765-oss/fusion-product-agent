@@ -54,9 +54,9 @@ python3 scripts/install.py --project /absolute/path/to/project --mode agent
 
 ## 工具条件
 
-自带方法、组件配方、主题/字体数据、真实素材处理和检查脚本，不提供Figma、Computer Use、浏览器、生图服务账号或付费素材权限。按[工具接入](skills/fusion-product-agent/references/figma-adapter.md)检查；已有有效配置复用，不乱建Figma文件。
+自带方法、执行引擎、检查脚本及小型资源目录；风格/配色条目、组件配方与预览素材、UI/UX Pro Max 检索数据按锁定资源提交逐文件获取并校验缓存。目录查询不拉整库；首次无缓存使用需要已发布资源版本和网络，可使用本地完整镜像离线运行。图像参考另按下方图库取得。Figma、Computer Use、浏览器、生图服务账号或付费素材权限由宿主提供，按[工具接入](skills/fusion-product-agent/references/figma-adapter.md)检查；已有有效配置复用，不乱建Figma文件。
 
-当前源码另随设计 Skill 收录 [全局视觉参考库](skills/fusion-design-core/visual-reference-library/README.md)：106 张非 UI 图片、跨成果多维标签与可移植检索 CLI，图片本身随安装分发。完整 UI 参考按任务在线搜索，不进入图包。目录用于筛选，AI 结合任务、设计质量及近期实际作品确定侧重，不逐类尝试全部风格；库图原作日期未知时不冒称流行或最新。该源码增量尚不属于历史 0.3.4 Release 附件。
+当前源码提供 [全局按需视觉参考库](skills/fusion-design-core/visual-reference-library/README.md)：主包携带 106 张非 UI 参考的多维标签及可移植检索 CLI，实际图片存于独立资源分支，按固定提交下载单张、验哈希并缓存，不随安装整库复制。首次取得未缓存图片需要资源版本已发布且网络可用；已有缓存或显式本地资源根支持离线。完整 UI 参考按任务在线搜索，不进入图包。目录只辅助筛选，AI 结合任务、设计质量及近期实际作品确定侧重，不逐类尝试全部风格；原作日期未知时不冒称流行或最新。该源码增量尚不属于历史 0.3.4 Release 附件。
 
 安装/校验/交付引用辅助脚本使用Python 3.9+标准库；设计脚本依功能还可能依赖Node、Playwright、Pillow、网络或宿主工具，不应沿用旧包“所有脚本只需标准库”的描述。具体见各脚本帮助与实际环境。
 

@@ -14,6 +14,7 @@
 用户粘贴的 hex 或分享链接里的 hex，用 from-palette 转成语义色。
 """
 import argparse, colorsys, json, math, os, re, sys
+from design_resources import ResourceError, resource_file
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "color-presets")
 START, END = "/* dto-color:start */", "/* dto-color:end */"
@@ -25,18 +26,25 @@ ACCENTS = ["blue", "indigo", "violet", "iris", "purple", "plum", "pink", "crimso
 
 
 def registry():
-    return json.load(open(os.path.join(ROOT, "registry.json"), encoding="utf-8"))
+    with open(os.path.join(ROOT, "registry.json"), encoding="utf-8") as handle:
+        return json.load(handle)
 
 
 def scales():
-    return json.load(open(os.path.join(ROOT, "radix/scales.json"), encoding="utf-8"))
+    path = resource_file("color-presets", "radix/scales.json",
+                         bundled_path=os.path.join(ROOT, "radix/scales.json"))
+    with open(path, encoding="utf-8") as handle:
+        return json.load(handle)
 
 
 def load_system(pid):
-    path = os.path.join(ROOT, "systems", pid + ".json")
-    if not os.path.exists(path):
+    relative = "systems/" + pid + ".json"
+    bundled = os.path.join(ROOT, relative)
+    if not os.path.isfile(bundled) and pid not in {p["id"] for p in registry()["systems"]}:
         sys.exit(f"找不到配色系统 {pid}。可用：{', '.join(p['id'] for p in registry()['systems'])}")
-    return json.load(open(path, encoding="utf-8"))
+    path = resource_file("color-presets", relative, bundled_path=bundled)
+    with open(path, encoding="utf-8") as handle:
+        return json.load(handle)
 
 
 def hex_to_rgb(h):
@@ -327,18 +335,23 @@ STYLE_ROOT = os.path.join(os.path.dirname(ROOT), "style-presets")
 
 def load_style_preset(pid):
     """风格预设（INT-05、GAME-09、CN-02、Tweakcn 主题等）也能直接做对比度检查。"""
-    import glob
     want = pid.strip().lower()
-    for path in sorted(glob.glob(os.path.join(STYLE_ROOT, "**", "*.json"), recursive=True)):
-        if os.path.basename(path) == "registry.json":
-            continue
-        try:
-            data = json.load(open(path, encoding="utf-8"))
-        except (OSError, ValueError):
-            continue
-        dto = (data.get("meta") or {}).get("dto") or {}
-        stem = os.path.splitext(os.path.basename(path))[0].lower()
-        if want in {str(dto.get("id", "")).lower(), stem, str(data.get("name", "")).lower()} or stem.startswith(want + "-"):
+    # The bundled index identifies a single payload before fetching it. Scanning
+    # every theme would turn one contrast check into a full-library download.
+    with open(os.path.join(STYLE_ROOT, "registry.json"), encoding="utf-8") as handle:
+        reg = json.load(handle)
+    entries = [(group, item) for group, items in reg["presets"].items() for item in items]
+    for group, item in sorted(entries, key=lambda row: row[1]["file"]):
+        stem = os.path.splitext(os.path.basename(item["file"]))[0].lower()
+        aliases = {item["id"].lower(), stem}
+        if group == "dto":
+            aliases.add("dto-" + stem)
+        if want in aliases or stem.startswith(want + "-"):
+            path = resource_file("style-presets", item["file"],
+                                 bundled_path=os.path.join(STYLE_ROOT, item["file"]))
+            with open(path, encoding="utf-8") as handle:
+                data = json.load(handle)
+            dto = (data.get("meta") or {}).get("dto") or {}
             css = data.get("cssVars") or {}
             base = dict(css.get("theme") or {})
             modes = dto.get("modes") or ["light", "dark"]
@@ -371,7 +384,7 @@ def cmd_contrast(a):
         packs = [("page", tokens)]
     elif a.preset:
         system = os.path.join(ROOT, "systems", a.preset + ".json")
-        if os.path.exists(system):
+        if os.path.isfile(system) or a.preset in {p["id"] for p in registry()["systems"]}:
             data = load_system(a.preset)
             packs = [("light", data["cssVars"]["light"]), ("dark", data["cssVars"]["dark"])]
         else:
@@ -486,7 +499,11 @@ def main():
     pr = sp.add_parser("preview"); pr.add_argument("ids"); pr.add_argument("-o"); pr.set_defaults(f=cmd_preview)
     ap = sp.add_parser("apply"); ap.add_argument("id"); ap.add_argument("--css", required=True); ap.set_defaults(f=cmd_apply)
     e = sp.add_parser("export"); e.add_argument("id"); e.add_argument("--format", default="css", choices=["css", "shadcn"]); e.add_argument("-o"); e.set_defaults(f=cmd_export)
-    a = p.parse_args(); a.f(a)
+    a = p.parse_args()
+    try:
+        a.f(a)
+    except ResourceError as exc:
+        sys.exit(f"配色资源不可用：{exc}")
 
 
 if __name__ == "__main__":

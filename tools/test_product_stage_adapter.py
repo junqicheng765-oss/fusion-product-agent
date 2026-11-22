@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Regression-test the imported baseline and declared local design refinements.
 
-These tests exercise adaptation, preservation and resource discovery, not LLM conversation behavior.
+These tests exercise adaptation, preservation and resource discovery, not LLM
+conversation behavior. External resource checks compare local metadata only;
+they do not fetch or certify remote Git blob bytes or availability.
 """
 from pathlib import Path
 import hashlib
@@ -17,16 +19,41 @@ ROOT = Path(__file__).resolve().parents[1]
 BASELINE = ROOT / 'downloads/fusion-product-agent-v0.3.1.zip'
 PREFIX = 'fusion-product-agent-v0.3.1/'
 DESIGN = 'skills/fusion-design-core/'
+PROMAX = 'skills/fusion-design-ui-ux-pro-max/'
 CHANGED_DESIGN = {'SKILL.md', 'methods-intake.md', 'methods-routing.md'}
 SHARED_ASSET_REGISTRY = DESIGN + 'resource-adapters/registry.json'
 STYLE_RESOURCE_REGISTRY = DESIGN + 'style-presets/registry.json'
+COMPONENT_GUIDANCE_REFINEMENTS = {
+    DESIGN + 'component-recipes/registry.json',
+    DESIGN + 'component-recipes/recipes/prompt-composer.html',
+}
+PROMAX_RESOURCE_GUIDANCE = {PROMAX + 'SKILL.md'}
 IMPORTED_RUNTIME_REFINEMENTS = {
     DESIGN + 'scripts/' + name for name in (
         'verify_library_usage.py', 'ui_geometry_audit.py', 'side_by_side.py',
-        'style_preset.py', 'style_consistency_audit.py')
+        'style_preset.py', 'style_consistency_audit.py',
+        'component_recipe.py', 'color_intelligence.py')
+} | {
+    PROMAX + 'scripts/' + name for name in (
+        'core.py', 'design_system.py', 'search.py')
+}
+LOCAL_RESOURCE_RUNTIME = {
+    DESIGN + 'scripts/design_resources.py',
+    DESIGN + 'resource-adapters/library-store.json',
+}
+RESOURCE_PREFIXES = {
+    'style-presets': DESIGN + 'style-presets/',
+    'color-presets': DESIGN + 'color-presets/',
+    'component-recipes': DESIGN + 'component-recipes/',
+    'ui-ux-pro-max-data': PROMAX + 'data/',
 }
 SOURCE = json.loads((ROOT / 'package/design-source.json').read_text(encoding='utf-8'))
-INVENTORY = {entry['destination']: entry for entry in SOURCE['files']}
+BUNDLED_INVENTORY = {entry['destination']: entry for entry in SOURCE['files']}
+EXTERNAL = SOURCE['external_resources']
+EXTERNAL_INVENTORY = {entry['destination']: entry for entry in EXTERNAL['files']}
+INVENTORY = {**BUNDLED_INVENTORY, **EXTERNAL_INVENTORY}
+RESOURCE_STORE = json.loads((ROOT / 'package' / DESIGN /
+                            'resource-adapters/library-store.json').read_text(encoding='utf-8'))
 FIGMA_SOURCE = json.loads((ROOT / 'package/figma-source.json').read_text(encoding='utf-8'))
 FIGMA_INVENTORY = {entry['destination']: entry for entry in FIGMA_SOURCE['files']}
 
@@ -65,19 +92,76 @@ class ProductStageAdapterTests(unittest.TestCase):
         with ZipFile(BASELINE) as archive:
             names = [name for name in archive.namelist() if name.startswith(prefixes) and not name.endswith('/')]
             self.assertEqual(len(names), 434)
+            self.assertEqual({name.removeprefix(PREFIX) for name in names},
+                             {path for path, entry in INVENTORY.items() if entry.get('source')})
             for name in names:
                 relative = name.removeprefix(PREFIX)
                 with self.subTest(path=relative):
                     entry = INVENTORY[relative]
-                    current = (ROOT / 'package' / relative).read_bytes()
-                    self.assertEqual(digest(current), entry['sha256'])
-                    if relative not in {DESIGN + filename for filename in CHANGED_DESIGN}:
-                        self.assertEqual(digest(archive.read(name)), integration_digest(relative))
+                    baseline = archive.read(name)
+                    if relative in {DESIGN + filename for filename in CHANGED_DESIGN}:
+                        baseline = adapt_product_stage(
+                            baseline.decode('utf-8'), Path(relative).name).encode('utf-8')
+                    self.assertEqual(digest(baseline), integration_digest(relative))
+                    current = ROOT / 'package' / relative
+                    if relative in BUNDLED_INVENTORY:
+                        self.assertEqual(digest(current.read_bytes()), entry['sha256'])
+                    else:
+                        self.assertIn(relative, EXTERNAL_INVENTORY)
+                        self.assertFalse(current.exists())
                     if entry.get('local_refinement'):
-                        self.assertTrue(relative.startswith(DESIGN))
-                        self.assertTrue(relative.endswith('.md') or relative in {SHARED_ASSET_REGISTRY, STYLE_RESOURCE_REGISTRY}
-                                        or relative in IMPORTED_RUNTIME_REFINEMENTS)
+                        if relative not in IMPORTED_RUNTIME_REFINEMENTS | PROMAX_RESOURCE_GUIDANCE:
+                            self.assertTrue(relative.startswith(DESIGN))
+                            self.assertTrue(relative.endswith('.md') or relative in {SHARED_ASSET_REGISTRY, STYLE_RESOURCE_REGISTRY}
+                                            or relative in COMPONENT_GUIDANCE_REFINEMENTS)
                         self.assertNotEqual(entry['integration_sha256'], entry['sha256'])
+
+    def test_bundled_inventory_contains_existing_files_with_declared_current_bytes(self):
+        self.assertEqual(len(BUNDLED_INVENTORY), len(SOURCE['files']))
+        self.assertFalse(set(BUNDLED_INVENTORY) & set(EXTERNAL_INVENTORY))
+        for relative, entry in BUNDLED_INVENTORY.items():
+            with self.subTest(path=relative):
+                path = ROOT / 'package' / relative
+                self.assertTrue(path.is_file())
+                self.assertEqual(digest(path.read_bytes()), entry['sha256'])
+
+    def test_external_resource_metadata_matches_pinned_store_without_fetching_blobs(self):
+        self.assertEqual(len(EXTERNAL_INVENTORY), 228)
+        self.assertEqual(len(EXTERNAL_INVENTORY), len(EXTERNAL['files']))
+        self.assertEqual(EXTERNAL['store'], DESIGN + 'resource-adapters/library-store.json')
+        self.assertEqual(EXTERNAL['repository'], RESOURCE_STORE['repository'])
+        self.assertEqual(EXTERNAL['revision'], RESOURCE_STORE['revision'])
+        self.assertRegex(EXTERNAL['revision'], r'^[0-9a-f]{40}$')
+        self.assertEqual(set(RESOURCE_STORE['libraries']), set(RESOURCE_PREFIXES))
+        expected = {
+            RESOURCE_PREFIXES[library_id] + relative: (library_id, relative, record)
+            for library_id, profile in RESOURCE_STORE['libraries'].items()
+            for relative, record in profile['files'].items()
+        }
+        self.assertEqual(set(EXTERNAL_INVENTORY), set(expected))
+        for destination, (library_id, relative, record) in expected.items():
+            with self.subTest(path=destination):
+                profile = RESOURCE_STORE['libraries'][library_id]
+                self.assertEqual(profile['path'], 'libraries/' + library_id)
+                entry = EXTERNAL_INVENTORY[destination]
+                self.assertEqual(entry['resource_library'], library_id)
+                self.assertEqual(entry['resource_file'], relative)
+                self.assertEqual(entry['sha256'], record['sha256'])
+                self.assertRegex(entry['sha256'], r'^[0-9a-f]{64}$')
+                self.assertIs(type(entry['bytes']), int)
+                self.assertGreaterEqual(entry['bytes'], 0)
+                self.assertEqual(entry['bytes'], record['bytes'])
+                self.assertFalse((ROOT / 'package' / destination).exists())
+
+    def test_shared_resource_runtime_additions_have_explicit_local_origin(self):
+        additions = {path for path, entry in BUNDLED_INVENTORY.items()
+                     if entry.get('origin') == 'local-resource-runtime'}
+        self.assertEqual(additions, LOCAL_RESOURCE_RUNTIME)
+        for path in additions:
+            with self.subTest(path=path):
+                self.assertIsNone(BUNDLED_INVENTORY[path]['source'])
+                self.assertIsNone(BUNDLED_INVENTORY[path]['source_sha256'])
+                self.assertFalse(BUNDLED_INVENTORY[path].get('local_refinement', False))
 
     def test_shared_asset_libraries_are_discoverable_across_stages(self):
         router = ROOT / 'package' / DESIGN / 'scripts/resource_router.py'

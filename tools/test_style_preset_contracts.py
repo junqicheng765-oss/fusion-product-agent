@@ -18,6 +18,25 @@ SCRIPTS = ROOT / 'package/skills/fusion-design-core/scripts'
 sys.path.insert(0, str(SCRIPTS))
 import style_preset as presets
 import style_consistency_audit as consistency
+from design_resources import resource_directory
+
+
+def setUpModule():
+    """The full-catalogue suite requires offline data; it never primes a cache."""
+    required = [entry['file'] for entries in presets.registry()['presets'].values()
+                for entry in entries]
+    missing = [relative for relative in required if not (Path(presets.ROOT) / relative).is_file()]
+    if not missing:
+        return
+    # This validates the store profile but performs no downloads. Invalid store
+    # metadata remains an error instead of being mistaken for an absent fixture.
+    external = resource_directory('style-presets')
+    unavailable = [relative for relative in missing if not (external / relative).is_file()]
+    if unavailable:
+        raise unittest.SkipTest(
+            'Full preset contract tests require a complete bundled catalogue or local '
+            'FUSION_DESIGN_RESOURCE_ROOT/CACHE; no resources were downloaded '
+            f'({len(unavailable)} files unavailable).')
 
 
 def cli(*args):
@@ -29,6 +48,14 @@ def css_blocks(css):
     css = re.sub(r'/\*.*?\*/', '', css, flags=re.S)
     return {selector.strip(): dict(re.findall(r'--([\w-]+):\s*([^;]+);', body))
             for selector, body in re.findall(r'([^{}]+)\{([^{}]*)\}', css)}
+
+
+def human_guidance(output):
+    """Read the complete stored-guidance section, excluding summaries and routes."""
+    section = output.split('实际存储的设计指导（meta.dto；不补造缺失项）:\n', 1)[1]
+    section = section.split('关联资源入口', 1)[0]
+    return {key: json.loads(value) for key, value in
+            (line.split(': ', 1) for line in section.splitlines() if ': ' in line)}
 
 
 class PresetContractTests(unittest.TestCase):
@@ -111,10 +138,54 @@ class PresetContractTests(unittest.TestCase):
         self.assertEqual(oriental['modes']['light']['primary'], raw_oriental['cssVars']['light']['primary'])
         self.assertIn('not automatically applied', oriental['design_spec']['limits'])
 
-    def test_json_design_spec_preserves_sparse_and_new_fields_without_filling_gaps(self):
+    def test_human_and_json_show_keep_all_stored_guidance_across_catalogue(self):
+        for group, entries in presets.registry()['presets'].items():
+            for entry in entries:
+                with self.subTest(group=group, preset=entry['id']):
+                    _, _, raw = presets.resolve(entry['id'])
+                    expected = {key: value for key, value in raw.get('meta', {}).get('dto', {}).items()
+                                if key not in ('palette', 'sourcePalette')}
+                    stream = io.StringIO()
+                    with redirect_stdout(stream):
+                        presets.cmd_show(SimpleNamespace(id=entry['id'], json=False))
+                    self.assertEqual(human_guidance(stream.getvalue()), expected)
+
+    def test_human_cli_exposes_real_theme_craft_and_capability_boundary(self):
+        for pid in ('INT-05', 'INT-06', 'INT-08', 'CN-06'):
+            with self.subTest(preset=pid):
+                _, _, raw = presets.resolve(pid)
+                output = cli('show', pid)
+                guidance = human_guidance(output)
+                for field in ('border', 'shadow', 'blur'):
+                    self.assertEqual(guidance[field], raw['meta']['dto'][field])
+                self.assertEqual(guidance['tier'], 'theme')
+                self.assertNotIn('components', guidance)
+                self.assertIn('tier=theme', output)
+                self.assertIn('主题参数本身不提供整套组件系统', output)
+                self.assertIn('未自动应用或验证', output)
+        neo = human_guidance(cli('show', 'INT-08'))
+        self.assertEqual(neo['border']['width'], '2.5px')
+        self.assertEqual(neo['shadow'], '4px 4px 0 #000000（零模糊）')
+
+    def test_resource_profile_reports_declared_tier_without_inferring_implementation(self):
+        for pid, tier in (('INT-08', 'theme'), ('apple-native', 'design-system'),
+                          ('amber-minimal', None)):
+            with self.subTest(preset=pid):
+                _, _, raw = presets.resolve(pid)
+                shown = json.loads(cli('show', pid, '--json'))
+                profile = shown['resource_profile']
+                self.assertEqual(profile['declared_tier'], tier)
+                self.assertEqual(profile['tier_source'], 'meta.dto.tier' if tier is not None else None)
+                self.assertEqual(profile['registry_type'], raw.get('type'))
+                self.assertEqual(profile['stored_guidance_fields'], list(shown['design_spec']['values']))
+                self.assertIn('not implementation coverage', profile['limits'])
+        self.assertIn('tier=未声明', cli('show', 'amber-minimal'))
+
+    def test_design_spec_preserves_sparse_and_new_fields_in_both_outputs_without_filling_gaps(self):
         data = {'cssVars': {'light': {'primary': '#123456'}}, 'meta': {'dto': {
             'components': {}, 'motion': False, 'spacing': 0,
-            'futureRules': {'layers': [], 'disabled': False},
+            'blur': '', 'unsetRule': None,
+            'futureRules': {'layers': [], 'disabled': False, 'description': 'first\nsecond'},
             'palette': {'primary': '#FA0102'}, 'sourcePalette': {'primary': '#FB0203'},
         }}}
         original = deepcopy(data)
@@ -123,11 +194,21 @@ class PresetContractTests(unittest.TestCase):
             with redirect_stdout(stream):
                 presets.cmd_show(SimpleNamespace(id='TEST', json=True))
             shown = json.loads(stream.getvalue())
-        self.assertEqual(shown['design_spec']['values'], {
+            stream = io.StringIO()
+            with redirect_stdout(stream):
+                presets.cmd_show(SimpleNamespace(id='TEST', json=False))
+            human = human_guidance(stream.getvalue())
+        expected = {
             'components': {}, 'motion': False, 'spacing': 0,
-            'futureRules': {'layers': [], 'disabled': False},
-        })
+            'blur': '', 'unsetRule': None,
+            'futureRules': {'layers': [], 'disabled': False, 'description': 'first\nsecond'},
+        }
+        self.assertEqual(shown['design_spec']['values'], expected)
+        self.assertEqual(human, expected)
         self.assertNotIn('typeScale', shown['design_spec']['values'])
+        self.assertNotIn('typeScale', human)
+        self.assertIsNone(shown['resource_profile']['declared_tier'])
+        self.assertIsNone(shown['resource_profile']['registry_type'])
         self.assertEqual(shown['modes']['light']['primary'], '#123456')
         self.assertEqual(shown['reference_palette']['values']['primary'], '#FB0203')
         self.assertEqual(data, original)

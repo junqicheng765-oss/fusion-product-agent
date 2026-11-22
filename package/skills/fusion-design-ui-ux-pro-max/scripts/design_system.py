@@ -24,7 +24,7 @@ import io
 import tempfile
 from datetime import datetime
 from pathlib import Path
-from core import search, DATA_DIR
+from core import search, data_file, ResourceError
 from reasoning_contract import apply_decision_rules, parse_decision_rules
 
 # Force UTF-8 for stdout/stderr to handle emojis/box-drawing chars on Windows (cp1252 default)
@@ -266,21 +266,21 @@ class DesignSystemGenerator:
 
     def _load_reasoning(self) -> list:
         """Load reasoning rules from CSV."""
-        filepath = DATA_DIR / REASONING_FILE
+        filepath = data_file(REASONING_FILE)
         if not filepath.exists():
             return []
         with open(filepath, 'r', encoding='utf-8') as f:
             return list(csv.DictReader(f))
 
     def _load_styles(self) -> list:
-        filepath = DATA_DIR / "styles.csv"
+        filepath = data_file("styles.csv")
         if not filepath.exists():
             return []
         with open(filepath, 'r', encoding='utf-8') as f:
             return list(csv.DictReader(f))
 
     def _load_landing_patterns(self) -> dict:
-        filepath = DATA_DIR / "landing.csv"
+        filepath = data_file("landing.csv")
         if not filepath.exists():
             return {}
         with open(filepath, 'r', encoding='utf-8') as f:
@@ -1639,5 +1639,9 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    result = generate_design_system(args.query, args.project_name, args.format)
+    try:
+        result = generate_design_system(args.query, args.project_name, args.format)
+    except ResourceError as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        sys.exit(1)
     print(result["text"])

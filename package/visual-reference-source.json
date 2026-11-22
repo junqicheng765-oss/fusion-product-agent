@@ -3,7 +3,7 @@
   "curated_on": "2026-11-07",
   "input_files": 150,
   "unique_images": 148,
-  "bundled_images": 106,
+  "bundled_images": 0,
   "excluded_ui": 42,
   "records": [
     {
@@ -1642,5 +1642,14 @@
       ],
       "reason": "经逐图查看的非界面视觉参考；可借部分按标签和观察位置限定。"
     }
-  ]
+  ],
+  "included_images": 106,
+  "resource_store": {
+    "schema_version": 1,
+    "repository": "https://github.com/junqicheng765-oss/fusion-product-agent",
+    "revision": "411e76dc40c47d4f2a7028f54680f1d3ace8f34b",
+    "path": "visual-reference-library",
+    "branch": "codex/design-resources",
+    "manifest": "resource-manifest.json"
+  }
 }

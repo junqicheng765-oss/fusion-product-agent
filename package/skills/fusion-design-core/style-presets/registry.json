@@ -30,7 +30,7 @@
         "base",
         "mobile-consumer"
       ],
-      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+      "layoutNote": "先复核项目已有适用组件；按本轮职责、视觉语言与实际技术栈选择配方或区块，逐项核对源码与覆盖能力，通用配方不自动提供整页风格"
     },
     {
       "id": "material",
@@ -53,7 +53,7 @@
         "base",
         "mobile-consumer"
       ],
-      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+      "layoutNote": "先复核项目已有适用组件；按本轮职责、视觉语言与实际技术栈选择配方或区块，逐项核对源码与覆盖能力，通用配方不自动提供整页风格"
     },
     {
       "id": "enterprise",
@@ -78,7 +78,7 @@
         "base",
         "form"
       ],
-      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+      "layoutNote": "先复核项目已有适用组件；按本轮职责、视觉语言与实际技术栈选择配方或区块，逐项核对源码与覆盖能力，通用配方不自动提供整页风格"
     },
     {
       "id": "minimal-saas",
@@ -112,12 +112,12 @@
         "base",
         "form"
       ],
-      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+      "layoutNote": "先复核项目已有适用组件；按本轮职责、视觉语言与实际技术栈选择配方或区块，逐项核对源码与覆盖能力，通用配方不自动提供整页风格"
     },
     {
       "id": "ai-product",
       "name": "AI 产品",
-      "scenes": "AI 对话、生成工具本身。AI 只是交互方式、产品主题是别的行业（如 AI 行程规划）时，按行业选，不进这一族",
+      "scenes": "对话、自然语言输入、生成与结果处理等任务的检索入口；行业产品可按页面职责复用适用形态，不因含 AI 直接采用本族审美",
       "systems": [],
       "dto": [
         "INT-03",
@@ -144,7 +144,7 @@
         "mobile-consumer",
         "ai"
       ],
-      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+      "layoutNote": "先复核项目已有适用组件；按本轮职责、视觉语言与实际技术栈选择配方或区块，逐项核对源码与覆盖能力，通用配方不自动提供整页风格"
     },
     {
       "id": "editorial",
@@ -176,7 +176,7 @@
         "base",
         "content"
       ],
-      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+      "layoutNote": "先复核项目已有适用组件；按本轮职责、视觉语言与实际技术栈选择配方或区块，逐项核对源码与覆盖能力，通用配方不自动提供整页风格"
     },
     {
       "id": "soft-ui",
@@ -208,7 +208,7 @@
         "mobile-consumer",
         "content"
       ],
-      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+      "layoutNote": "先复核项目已有适用组件；按本轮职责、视觉语言与实际技术栈选择配方或区块，逐项核对源码与覆盖能力，通用配方不自动提供整页风格"
     },
     {
       "id": "glassmorphism",
@@ -233,7 +233,7 @@
         "base",
         "mobile-consumer"
       ],
-      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+      "layoutNote": "先复核项目已有适用组件；按本轮职责、视觉语言与实际技术栈选择配方或区块，逐项核对源码与覆盖能力，通用配方不自动提供整页风格"
     },
     {
       "id": "futuristic",
@@ -264,7 +264,7 @@
       "recipes": [
         "base"
       ],
-      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+      "layoutNote": "先复核项目已有适用组件；按本轮职责、视觉语言与实际技术栈选择配方或区块，逐项核对源码与覆盖能力，通用配方不自动提供整页风格"
     },
     {
       "id": "content-feed",
@@ -291,7 +291,7 @@
         "mobile-consumer",
         "content"
       ],
-      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+      "layoutNote": "先复核项目已有适用组件；按本轮职责、视觉语言与实际技术栈选择配方或区块，逐项核对源码与覆盖能力，通用配方不自动提供整页风格"
     },
     {
       "id": "accessible",
@@ -309,7 +309,7 @@
         "form",
         "mobile-consumer"
       ],
-      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+      "layoutNote": "先复核项目已有适用组件；按本轮职责、视觉语言与实际技术栈选择配方或区块，逐项核对源码与覆盖能力，通用配方不自动提供整页风格"
     },
     {
       "id": "game",
@@ -340,12 +340,12 @@
         "base",
         "game-table"
       ],
-      "layoutNote": "layout 里的区块库都是 React + Tailwind，只在 React 项目里补组件；所有技术栈先用 recipes 指向的通用组件配方（component-recipes/）"
+      "layoutNote": "先复核项目已有适用组件；按本轮职责、视觉语言与实际技术栈选择配方或区块，逐项核对源码与覆盖能力，通用配方不自动提供整页风格"
     },
     {
       "id": "travel",
       "name": "旅行与目的地",
-      "scenes": "旅行规划、目的地内容、文旅、酒店民宿、出行。第一眼靠目的地画面和行程预览，不靠表单",
+      "scenes": "旅行规划、目的地内容、文旅、酒店民宿、出行；按本页核心任务判断图像、输入、结果与操作的主次，不由行业预定首屏构成",
       "systems": [],
       "dto": [
         "CN-02",
@@ -368,7 +368,7 @@
         "content",
         "travel"
       ],
-      "layoutNote": "开源区块库里没有旅行类手机页面；用 component-recipes/ 的 travel 与 content 配方，构图先按 RR 看同类真实页面"
+      "layoutNote": "本族未登记完整设计系统或页面区块；按本页职责复核项目组件及适用配方，并沿 DS2/RR 补足界面规则与真实 UI 参考，不由题材或空入口锁定配方与构图"
     }
   ],
   "presets": {

@@ -29,7 +29,7 @@ import argparse
 import json as json_module
 import sys
 import io
-from core import CSV_CONFIG, AVAILABLE_STACKS, MAX_RESULTS, UNTRUNCATED_COLS, search, search_stack
+from core import CSV_CONFIG, AVAILABLE_STACKS, MAX_RESULTS, UNTRUNCATED_COLS, ResourceError, search, search_stack
 from design_system import generate_design_system
 
 # Force UTF-8 for stdout/stderr to handle emojis on Windows (cp1252 default)
@@ -118,60 +118,67 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    # Design system takes priority
-    if args.design_system:
-        if args.stack:
-            print(
-                f"note: --stack {args.stack} is ignored in --design-system mode; "
-                "run a separate --stack query for stack-specific guidelines",
-                file=sys.stderr,
+    try:
+        # Design system takes priority
+        if args.design_system:
+            if args.stack:
+                print(
+                    f"note: --stack {args.stack} is ignored in --design-system mode; "
+                    "run a separate --stack query for stack-specific guidelines",
+                    file=sys.stderr,
+                )
+            result = generate_design_system(
+                args.query,
+                args.project_name,
+                args.format,
+                persist=args.persist,
+                page=args.page,
+                output_dir=args.output_dir,
+                variance=args.variance,
+                motion=args.motion,
+                density=args.density,
+                force=args.force,
             )
-        result = generate_design_system(
-            args.query,
-            args.project_name,
-            args.format,
-            persist=args.persist,
-            page=args.page,
-            output_dir=args.output_dir,
-            variance=args.variance,
-            motion=args.motion,
-            density=args.density,
-            force=args.force,
-        )
 
-        if args.json:
-            print(json_module.dumps(
-                {"design_system": result["design_system"], "persistence": result["persistence"]},
-                indent=2, ensure_ascii=False,
-            ))
-        else:
-            print(result["text"])
+            if args.json:
+                print(json_module.dumps(
+                    {"design_system": result["design_system"], "persistence": result["persistence"]},
+                    indent=2, ensure_ascii=False,
+                ))
+            else:
+                print(result["text"])
 
-            if args.persist:
-                persistence = result["persistence"] or {}
-                print("\n" + "=" * 60)
-                if persistence.get("status") == "skipped_exists":
-                    print(f"⚠️  {persistence.get('message', 'MASTER.md already exists; not overwritten.')}")
-                else:
-                    ds_dir = persistence.get("design_system_dir", "design-system/<project>")
-                    print(f"✅ Design system persisted to {ds_dir}/")
-                    for f in persistence.get("created_files", []):
-                        print(f"   📄 {f}")
-                    print("")
-                    print(f"📖 Usage: When building a page, check {ds_dir}/pages/[page].md first.")
-                    print("   If it exists, its rules override MASTER.md. Otherwise, use MASTER.md.")
-                print("=" * 60)
-    # Stack search
-    elif args.stack:
-        result = search_stack(args.query, args.stack, args.max_results)
-        if args.json:
-            print(json_module.dumps(result, indent=2, ensure_ascii=False))
+                if args.persist:
+                    persistence = result["persistence"] or {}
+                    print("\n" + "=" * 60)
+                    if persistence.get("status") == "skipped_exists":
+                        print(f"⚠️  {persistence.get('message', 'MASTER.md already exists; not overwritten.')}")
+                    else:
+                        ds_dir = persistence.get("design_system_dir", "design-system/<project>")
+                        print(f"✅ Design system persisted to {ds_dir}/")
+                        for f in persistence.get("created_files", []):
+                            print(f"   📄 {f}")
+                        print("")
+                        print(f"📖 Usage: When building a page, check {ds_dir}/pages/[page].md first.")
+                        print("   If it exists, its rules override MASTER.md. Otherwise, use MASTER.md.")
+                    print("=" * 60)
+        # Stack search
+        elif args.stack:
+            result = search_stack(args.query, args.stack, args.max_results)
+            if args.json:
+                print(json_module.dumps(result, indent=2, ensure_ascii=False))
+            else:
+                print(format_output(result, full=args.full))
+        # Domain search
         else:
-            print(format_output(result, full=args.full))
-    # Domain search
-    else:
-        result = search(args.query, args.domain, args.max_results)
+            result = search(args.query, args.domain, args.max_results)
+            if args.json:
+                print(json_module.dumps(result, indent=2, ensure_ascii=False))
+            else:
+                print(format_output(result, full=args.full))
+    except ResourceError as exc:
         if args.json:
-            print(json_module.dumps(result, indent=2, ensure_ascii=False))
+            print(json_module.dumps({"error": str(exc)}, ensure_ascii=False))
         else:
-            print(format_output(result, full=args.full))
+            print(f"Error: {exc}", file=sys.stderr)
+        sys.exit(1)

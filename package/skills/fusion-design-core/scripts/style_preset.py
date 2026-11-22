@@ -12,6 +12,7 @@ Tweakcn 主题名（modern-minimal、claude ...）。
 apply 只改写 CSS 文件里 /* dto-style:start */ 与 /* dto-style:end */ 之间的内容，可重复执行。
 """
 import argparse, copy, json, math, os, re, sys
+from design_resources import ResourceError, resource_file
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "style-presets")
 START, END = "/* dto-style:start */", "/* dto-style:end */"
@@ -33,7 +34,9 @@ def resolve(pid):
     for group in ("systems", "dto", "tweakcn"):
         for item in p[group]:
             if item["id"].lower() == pid.lower():
-                with open(os.path.join(ROOT, item["file"]), encoding="utf-8") as handle:
+                path = resource_file("style-presets", item["file"],
+                                     bundled_path=os.path.join(ROOT, item["file"]))
+                with open(path, encoding="utf-8") as handle:
                     return group, item, json.load(handle)
     sys.exit(f"找不到预设 {pid}。先运行 list 查看可用 ID；本地没有时去线上库检索后再沉淀进 style-presets/。")
 
@@ -230,7 +233,7 @@ def cmd_list(a):
         print(f"[{f['id']}] {f['name']} — {f['scenes']}")
         print(f"   系统预设: {', '.join(f['systems']) or '-'} | 内置风格: {', '.join(f['dto']) or '-'} | Tweakcn: {', '.join(f['tweakcn']) or '-'}")
         print(f"   通用组件配方: {', '.join(f.get('recipes', [])) or '-'}（python3 scripts/component_recipe.py list --tag <标签>）")
-        print(f"   React 区块库: {', '.join(f['layout']) or '-'} | 动效库: {', '.join(f['motion']) or '-'}")
+        print(f"   区块入口: {', '.join(f['layout']) or '-'} | 动效库: {', '.join(f['motion']) or '-'}")
     if not a.family:
         print(f"\n共 {len(reg['presets']['systems'])} 个系统预设、{len(reg['presets']['dto'])} 个内置风格、{len(reg['presets']['tweakcn'])} 个 Tweakcn 主题。")
 
@@ -260,26 +263,49 @@ def related_resources(group, item):
     }
 
 
+def design_guidance(data):
+    """Preserve every stored guidance field; palettes have their own color contract."""
+    meta = data.get("meta", {}).get("dto", {})
+    return {
+        "source": "meta.dto",
+        "role": "stored-design-guidance",
+        "values": copy.deepcopy({k: v for k, v in meta.items()
+                                 if k not in ("palette", "sourcePalette")}),
+        "limits": "Stored design guidance is not automatically applied or verified. Embedded color literals and prompt snippets do not override effective CSS/DTO colors in theme/modes; native exports follow platform_export_contracts. Missing rules remain unspecified.",
+    }
+
+
+def resource_profile(data, guidance):
+    """Report declared identity and field presence, without inferring implementation."""
+    meta = data.get("meta", {}).get("dto", {})
+    return {
+        "declared_tier": copy.deepcopy(meta.get("tier")),
+        "tier_source": "meta.dto.tier" if "tier" in meta else None,
+        "registry_type": data.get("type"),
+        "stored_guidance_fields": list(guidance["values"]),
+        "limits": "Declared tier and stored field names are data descriptions, not implementation coverage, task suitability, adoption or visual completion. Theme parameters alone do not provide a complete component system; inspect separately stored or linked rules and implementations. Missing tier/rules remain unspecified.",
+    }
+
+
 def cmd_show(a):
     group, item, data = resolve(a.id)
-    theme, light, dark = theme_vars(data)
-    meta = data.get("meta", {}).get("dto", {})
+    theme, _, _ = theme_vars(data)
     contract = palette_contract(data)
     resources = related_resources(group, item)
+    guidance = design_guidance(data)
+    profile = resource_profile(data, guidance)
     if getattr(a, "json", False):
         print(json.dumps({"id": item["id"], "group": group, "title": data.get("title", ""),
                           **contract,
                           "registry_entry": copy.deepcopy(item),
                           "related_resources": resources,
-                          "design_spec": {
-                              "source": "meta.dto",
-                              "role": "stored-design-guidance",
-                              "values": copy.deepcopy({k: v for k, v in meta.items()
-                                                       if k not in ("palette", "sourcePalette")}),
-                              "limits": "Stored design guidance is not automatically applied or verified. Embedded color literals and prompt snippets do not override effective CSS/DTO colors in theme/modes; native exports follow platform_export_contracts. Missing rules remain unspecified.",
-                          }}, ensure_ascii=False, indent=2))
+                          "resource_profile": profile,
+                          "design_spec": guidance}, ensure_ascii=False, indent=2))
         return
     print(f"{item['id']}（{group}）{data.get('title', '')}")
+    tier = profile["declared_tier"] if profile["tier_source"] else "未声明"
+    print(f"资源声明: tier={tier} | registry type={profile['registry_type'] or '未声明'}")
+    print("能力边界: tier 与字段只描述实际存储内容，不证明组件实现覆盖、适配、采用或视觉完成；主题参数本身不提供整套组件系统，关联规则与实现需另行核对。缺失项不推定。")
     print("CSS/DTO 生效语义色来源: cssVars.<mode>；meta.dto.palette/sourcePalette 仅供设计追溯，不覆盖语义值。")
     print("字体:", theme.get("font-sans"), "| 圆角:", theme.get("radius"))
     for mode, values in contract["modes"].items():
@@ -293,9 +319,10 @@ def cmd_show(a):
             print(f"  {row['mode']}.{row['token']}: reference={row['reference']} -> effective={row['effective']}")
     native_contract = contract["platform_export_contracts"]["antd"]
     print("AntD 导出边界:", json.dumps(native_contract, ensure_ascii=False))
-    for k in ("displayName", "scenes", "typeScale", "spacing", "radiusScale", "components", "motion", "implementation", "installables", "license"):
-        if meta.get(k):
-            print(f"{k}: {json.dumps(meta[k], ensure_ascii=False)}")
+    print("设计指导边界: 以下内容未自动应用或验证；其中色值与提示片段不覆盖上述生效色合同，原生导出仍按各平台边界。")
+    print("实际存储的设计指导（meta.dto；不补造缺失项）:")
+    for key, value in guidance["values"].items():
+        print(f"{key}: {json.dumps(value, ensure_ascii=False)}")
     print("关联资源入口（不代表已采用或适合本轮任务）:")
     for family in resources["families"]:
         print(f"  [{family['id']}] {family.get('name', '')} — {family.get('scenes', '')}")
@@ -340,7 +367,11 @@ def main():
     s = sp.add_parser("show"); s.add_argument("id"); s.add_argument("--json", action="store_true", help="输出生效语义值、参考色板与差异；应用/提示词使用 modes 而非参考色板"); s.set_defaults(f=cmd_show)
     e = sp.add_parser("export"); e.add_argument("id"); e.add_argument("--format", required=True, choices=["css", "shadcn", "tailwind4", "antd"]); e.add_argument("-o"); e.set_defaults(f=cmd_export)
     ap = sp.add_parser("apply"); ap.add_argument("id"); ap.add_argument("--css", required=True); ap.add_argument("--mode", default="both", choices=["light", "dark", "both"]); ap.set_defaults(f=cmd_apply)
-    a = p.parse_args(); a.f(a)
+    a = p.parse_args()
+    try:
+        a.f(a)
+    except ResourceError as exc:
+        sys.exit(f"风格资源不可用：{exc}")
 
 
 if __name__ == "__main__":
